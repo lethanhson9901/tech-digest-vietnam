@@ -1,0 +1,124 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"TLDR\",\n  \"reportTitle\": \"Tổng hợp tin tức công nghệ ngày 19/03/2025\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Nvidia công bố lộ trình chip mới: Blackwell Ultra và Vera Rubin\",\n          \"link\": \"https://www.cnbc.com/2025/03/18/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips-.html?utm_source=tldrnewsletter\",\n          \"source\": \"CNBC\",\n          \"summary\": \"Nvidia vừa giới thiệu các chip mới Blackwell Ultra và Vera Rubin, được thiết kế để xây dựng và triển khai các mô hình trí tuệ nhân tạo. Blackwell Ultra dự kiến giúp các nhà cung cấp dịch vụ đám mây tăng doanh thu lên đến 50 lần so với chip thế hệ Hopper và sẽ được xuất xưởng vào nửa cuối năm nay. Vera Rubin, dự kiến ra mắt nửa cuối năm 2026, là một hệ thống với hai thành phần chính: CPU Vera (nhanh gấp đôi CPU Grace Blackwell năm ngoái) và GPU Rubin, có khả năng quản lý 50 petaflop khi thực hiện suy luận, gấp đôi công suất của chip Blackwell hiện tại.\"\n        },\n        {\n          \"headline\": \"Vì sao Google chi 32 tỷ đô-la mua Wiz được quảng bá là 'đa đám mây'\",\n          \"link\": \"https://techcrunch.com/2025/03/18/heres-why-google-pitched-its-32b-wiz-acquisition-as-multicloud/?utm_source=tldrnewsletter\",\n          \"source\": \"TechCrunch\",\n          \"summary\": \"Google đang mua lại Wiz với giá 32 tỷ đô-la. Wiz sẽ tiếp tục được định vị là một dịch vụ đa đám mây. Thương vụ này mang lại danh sách khách hàng khổng lồ cho Google, do đó hai công ty cần đảm bảo khách hàng hiện tại không tìm kiếm nhà cung cấp bảo mật khác. Nhiều khách hàng đã chọn Wiz vì khả năng hỗ trợ nhiều nền tảng đám mây. Việc cắt bỏ khả năng đó có nguy cơ làm mất lòng những người dùng này. Google Cloud hiện đang отстает đáng kể so với các đối thủ cạnh tranh với 12% thị phần trên thị trường đám mây toàn cầu.\"\n        }\n      ],\n      \"title\": \"Công nghệ lớn & Startup\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Nvidia và Google DeepMind hỗ trợ robot dễ thương của Disney\",\n          \"link\": \"https://techcrunch.com/2025/03/18/nvidia-and-google-deepmind-will-help-power-disneys-cute-robots/?utm_source=tldrnewsletter\",\n          \"source\": \"TechCrunch\",\n          \"summary\": \"Newton của Nvidia và Google DeepMind là một công cụ vật lý có thể mô phỏng các chuyển động của robot trong môi trường thực tế. Nó sẽ được Disney sử dụng để cung cấp sức mạnh cho robot giải trí thế hệ tiếp theo. Newton giúp robot biểu cảm hơn và học cách xử lý các tác vụ phức tạp một cách chính xác. Nó có khả năng tùy biến cao, các nhà phát triển có thể sử dụng nó để lập trình các tương tác robot với nhiều đối tượng biến dạng. Newton sẽ tương thích với hệ sinh thái các công cụ phát triển robot của Google DeepMind.\"\n        },\n        {\n          \"headline\": \"Bí mật đằng sau thành công hạ cánh xuống mặt trăng của Firefly\",\n          \"link\": \"https://arstechnica.com/science/2025/03/heres-the-secret-to-how-firefly-was-able-to-nail-its-very-first-lunar-landing/?utm_source=tldrnewsletter\",\n          \"source\": \"Ars Technica\",\n          \"summary\": \"Tàu đổ bộ Blue Ghost của Firefly Aerospace, một phần của chương trình Dịch vụ chở hàng lên Mặt Trăng Thương mại (CLPS) của NASA, đã đạt được rất nhiều thành tựu trên Mặt trăng trong hai tuần qua. Nó đã khoan vào bề mặt Mặt trăng, thử nghiệm máy hút bụi ngoài trái đất, chứng minh rằng GPS có thể được sử dụng để điều hướng trên bề mặt mặt trăng và gửi hình ảnh hàng ngày về Trái đất. Tất cả các mục tiêu nhiệm vụ cho Blue Ghost đã được đáp ứng. Bài viết này trình bày chi tiết cách Firefly đảm bảo hạ cánh xuống mặt trăng thương mại thành công đầu tiên, những thách thức mà các kỹ sư của Firefly phải vượt qua, một số khám phá mà Blue Ghost đã thực hiện cho đến nay và tiến độ của các nhiệm vụ khác trong chương trình CLPS.\"\n        }\n      ],\n      \"title\": \"Khoa học & Công nghệ tương lai\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Chia tay với chế độ trực ca\",\n          \"link\": \"https://archive.md/7UbbW?utm_source=tldrnewsletter\",\n          \"source\": \"Archive.md\",\n          \"summary\": \"Chế độ trực ca, trong trạng thái hiện tại ở Big Tech, là thiếu sót. AI đang thay đổi phạm vi trực ca và trách nhiệm của kỹ sư trong vòng lặp. Một số trực ca sẽ luôn không thể tránh khỏi, nhưng nó phải là ngoại lệ chứ không phải là tiêu chuẩn. Điều này sẽ cho các kỹ sư thời gian để tập trung vào các nhiệm vụ có ý nghĩa, điều này sẽ làm cho khách hàng hài lòng hơn.\"\n        },\n        {\n          \"headline\": \"Ngân sách đồng bộ\",\n          \"link\": \"https://www.morling.dev/blog/the-synchrony-budget/?utm_source=tldrnewsletter\",\n          \"source\": \"morling.dev\",\n          \"summary\": \"Các dịch vụ nên giảm thiểu số lượng yêu cầu đồng bộ mà chúng thực hiện đối với các dịch vụ khác càng nhiều càng tốt. Các cuộc gọi đồng bộ rất tốn kém và ảnh hưởng đến tính khả dụng của các dịch vụ. Ứng dụng càng phụ thuộc vào nhiều dịch vụ một cách đồng bộ, tính khả dụng của ứng dụng đó càng thấp. Lập ngân sách đồng bộ là việc lưu ý đến cách triển khai các luồng giao tiếp giữa các dịch vụ.\"\n        }\n      ],\n      \"title\": \"Lập trình, Thiết kế & Khoa học dữ liệu\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Anh ta phát cuồng với công nghệ thanh toán. Bây giờ, anh ta bị buộc tội làm gián điệp doanh nghiệp\",\n          \"link\": \"https://links.tldrnewsletter.com/w3DFny\",\n          \"source\": \"TLDR Newsletter\",\n          \"summary\": \"Keith O'Brien, một người quản lý tuân thủ thanh toán toàn cầu tại Rippling, một công ty khởi nghiệp phần mềm kinh doanh, bị buộc tội đánh cắp bí mật thương mại cho đối thủ Deel, như một phần của hoạt động gián điệp. O'Brien bị cáo buộc đã tìm kiếm 'deel' trung bình 23 lần một ngày trên các hệ thống nội bộ của Rippling, truy cập các diễn đàn không liên quan gì đến công việc của anh ta ở chế độ che giấu sự hiện diện của anh ta với những người khác. Rippling tuyên bố rằng họ đã đặt một cái bẫy honeypot chứng minh rằng O'Brien đã được các giám đốc hàng đầu của Deel chỉ đạo. O'Brien đã rời khỏi văn phòng của Rippling với điện thoại thông minh của mình sau khi bị cáo buộc là gián điệp doanh nghiệp mặc dù đã được thông báo rằng việc không giao thiết bị vi phạm lệnh của tòa án và có thể dẫn đến việc bỏ tù.\"\n        },\n        {\n          \"headline\": \"Đồng hồ thông minh Pebble mới đầu tiên sẽ ra mắt vào cuối năm nay\",\n          \"link\": \"https://www.theverge.com/news/631657/pebble-watch-core-devices-duo-2-time-2?utm_source=tldrnewsletter\",\n          \"source\": \"The Verge\",\n          \"summary\": \"Core Devices, một công ty của người sáng tạo ban đầu của đồng hồ thông minh Pebble, đang chuẩn bị xuất xưởng hai chiếc đồng hồ mới. Chúng sẽ có tất cả các tính năng của các thiết bị Pebble cũ và chạy hệ điều hành Pebble mã nguồn mở mới. Core 2 Duo sẽ được xuất xưởng vào tháng 7 với giá 149 đô la. Nó có màn hình e-paper đen trắng giống hệt như Pebble 2 cũ và thậm chí còn có cùng khung. Nó có pin kéo dài hơn 30 ngày và loa trong thiết bị để trò chuyện với trợ lý AI. Core Time 2 sẽ được xuất xưởng vào tháng 12 và có giá 225 đô la - nó sẽ có màn hình cảm ứng.\"\n        }\n      ],\n      \"title\": \"Khác\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"NVIDIA Dynamo (Kho lưu trữ GitHub)\",\n          \"link\": \"https://github.com/ai-dynamo/dynamo?utm_source=tldrnewsletter\",\n          \"source\": \"GitHub\",\n          \"summary\": \"NVIDIA Dynamo là một khuôn khổ suy luận có thông lượng cao, độ trễ thấp, không phụ thuộc vào công cụ suy luận, được thiết kế để phục vụ các mô hình suy luận và tạo AI trong môi trường phân tán nhiều nút.\"\n        },\n        {\n          \"headline\": \"Địa điểm Stargate đầu tiên của OpenAI có sức chứa lên đến 400.000 chip NVIDIA\",\n          \"link\": \"https://finance.yahoo.com/news/openai-first-stargate-hold-400-180014007.html?utm_source=tldrnewsletter\",\n          \"source\": \"Yahoo Finance\",\n          \"summary\": \"Việc xây dựng địa điểm, có công suất 1,2 gigawatt điện, sẽ hoàn thành vào giữa năm 2026.\"\n        },\n        {\n          \"headline\": \"Tỷ lệ thất bại thực sự của EBS\",\n          \"link\": \"https://planetscale.com/blog/the-real-fail-rate-of-ebs?utm_source=tldrnewsletter\",\n          \"source\": \"PlanetScale\",\n          \"summary\": \"Lỗi EBS là hằng số, có thể thay đổi và tất cả đều được thiết kế.\"\n        },\n        {\n          \"headline\": \"Công ty kiểm tra sự thèm muốn của Phố Wall đối với sức mạnh tính toán A.I.\",\n          \"link\": \"https://www.nytimes.com/2025/03/18/technology/coreweave-wall-street-ai-ipo.html?unlocked_article_code=1.5E4.iGsU._O2L21QoXOts&smid=url-share&utm_source=tldrnewsletter\",\n          \"source\": \"The New York Times\",\n          \"summary\": \"CoreWeave đã nộp giấy tờ cho một danh sách công khai - nếu đợt phát hành công khai ban đầu diễn ra, đây sẽ là công ty khởi nghiệp AI nổi bật đầu tiên tiếp cận thị trường chứng khoán.\"\n        },\n        {\n          \"headline\": \"Tạo các gói Ubuntu nhanh hơn 90% bằng cách xây dựng lại chúng\",\n          \"link\": \"https://gist.github.com/jwbee/7e8b27e298de8bbbf8abfa4c232db097?utm_source=tldrnewsletter\",\n          \"source\": \"Gist\",\n          \"summary\": \"Bài đăng này cho thấy cách tăng hiệu suất của jq lên 90% chỉ bằng cách biên dịch lại gói bằng cùng một gói nguồn mà Ubuntu sử dụng.\"\n        },\n        {\n          \"headline\": \"Mark Zuckerberg nói rằng các mô hình Llama của Meta đã đạt 1 tỷ lượt tải xuống\",\n          \"link\": \"https://techcrunch.com/2025/03/18/mark-zuckerberg-says-that-metas-llama-models-have-hit-1b-downloads/?utm_source=tldrnewsletter\",\n          \"source\": \"TechCrunch\",\n          \"summary\": \"Llama đã đạt được thành công rộng rãi kể từ khi ra mắt vào năm 2023, với các công ty bao gồm Spotify, AT&T và DoorDash sử dụng các mô hình Llama trong sản xuất ngày nay.\"\n        }\n      ],\n      \"title\": \"Liên kết nhanh\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 15.676143884658813,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "TLDR",
+    "reportTitle": "Tổng hợp tin tức công nghệ ngày 19/03/2025",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Nvidia công bố lộ trình chip mới: Blackwell Ultra và Vera Rubin",
+            "link": "https://www.cnbc.com/2025/03/18/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips-.html?utm_source=tldrnewsletter",
+            "source": "CNBC",
+            "summary": "Nvidia vừa giới thiệu các chip mới Blackwell Ultra và Vera Rubin, được thiết kế để xây dựng và triển khai các mô hình trí tuệ nhân tạo. Blackwell Ultra dự kiến giúp các nhà cung cấp dịch vụ đám mây tăng doanh thu lên đến 50 lần so với chip thế hệ Hopper và sẽ được xuất xưởng vào nửa cuối năm nay. Vera Rubin, dự kiến ra mắt nửa cuối năm 2026, là một hệ thống với hai thành phần chính: CPU Vera (nhanh gấp đôi CPU Grace Blackwell năm ngoái) và GPU Rubin, có khả năng quản lý 50 petaflop khi thực hiện suy luận, gấp đôi công suất của chip Blackwell hiện tại."
+          },
+          {
+            "headline": "Vì sao Google chi 32 tỷ đô-la mua Wiz được quảng bá là 'đa đám mây'",
+            "link": "https://techcrunch.com/2025/03/18/heres-why-google-pitched-its-32b-wiz-acquisition-as-multicloud/?utm_source=tldrnewsletter",
+            "source": "TechCrunch",
+            "summary": "Google đang mua lại Wiz với giá 32 tỷ đô-la. Wiz sẽ tiếp tục được định vị là một dịch vụ đa đám mây. Thương vụ này mang lại danh sách khách hàng khổng lồ cho Google, do đó hai công ty cần đảm bảo khách hàng hiện tại không tìm kiếm nhà cung cấp bảo mật khác. Nhiều khách hàng đã chọn Wiz vì khả năng hỗ trợ nhiều nền tảng đám mây. Việc cắt bỏ khả năng đó có nguy cơ làm mất lòng những người dùng này. Google Cloud hiện đang отстает đáng kể so với các đối thủ cạnh tranh với 12% thị phần trên thị trường đám mây toàn cầu."
+          }
+        ],
+        "title": "Công nghệ lớn & Startup"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Nvidia và Google DeepMind hỗ trợ robot dễ thương của Disney",
+            "link": "https://techcrunch.com/2025/03/18/nvidia-and-google-deepmind-will-help-power-disneys-cute-robots/?utm_source=tldrnewsletter",
+            "source": "TechCrunch",
+            "summary": "Newton của Nvidia và Google DeepMind là một công cụ vật lý có thể mô phỏng các chuyển động của robot trong môi trường thực tế. Nó sẽ được Disney sử dụng để cung cấp sức mạnh cho robot giải trí thế hệ tiếp theo. Newton giúp robot biểu cảm hơn và học cách xử lý các tác vụ phức tạp một cách chính xác. Nó có khả năng tùy biến cao, các nhà phát triển có thể sử dụng nó để lập trình các tương tác robot với nhiều đối tượng biến dạng. Newton sẽ tương thích với hệ sinh thái các công cụ phát triển robot của Google DeepMind."
+          },
+          {
+            "headline": "Bí mật đằng sau thành công hạ cánh xuống mặt trăng của Firefly",
+            "link": "https://arstechnica.com/science/2025/03/heres-the-secret-to-how-firefly-was-able-to-nail-its-very-first-lunar-landing/?utm_source=tldrnewsletter",
+            "source": "Ars Technica",
+            "summary": "Tàu đổ bộ Blue Ghost của Firefly Aerospace, một phần của chương trình Dịch vụ chở hàng lên Mặt Trăng Thương mại (CLPS) của NASA, đã đạt được rất nhiều thành tựu trên Mặt trăng trong hai tuần qua. Nó đã khoan vào bề mặt Mặt trăng, thử nghiệm máy hút bụi ngoài trái đất, chứng minh rằng GPS có thể được sử dụng để điều hướng trên bề mặt mặt trăng và gửi hình ảnh hàng ngày về Trái đất. Tất cả các mục tiêu nhiệm vụ cho Blue Ghost đã được đáp ứng. Bài viết này trình bày chi tiết cách Firefly đảm bảo hạ cánh xuống mặt trăng thương mại thành công đầu tiên, những thách thức mà các kỹ sư của Firefly phải vượt qua, một số khám phá mà Blue Ghost đã thực hiện cho đến nay và tiến độ của các nhiệm vụ khác trong chương trình CLPS."
+          }
+        ],
+        "title": "Khoa học & Công nghệ tương lai"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Chia tay với chế độ trực ca",
+            "link": "https://archive.md/7UbbW?utm_source=tldrnewsletter",
+            "source": "Archive.md",
+            "summary": "Chế độ trực ca, trong trạng thái hiện tại ở Big Tech, là thiếu sót. AI đang thay đổi phạm vi trực ca và trách nhiệm của kỹ sư trong vòng lặp. Một số trực ca sẽ luôn không thể tránh khỏi, nhưng nó phải là ngoại lệ chứ không phải là tiêu chuẩn. Điều này sẽ cho các kỹ sư thời gian để tập trung vào các nhiệm vụ có ý nghĩa, điều này sẽ làm cho khách hàng hài lòng hơn."
+          },
+          {
+            "headline": "Ngân sách đồng bộ",
+            "link": "https://www.morling.dev/blog/the-synchrony-budget/?utm_source=tldrnewsletter",
+            "source": "morling.dev",
+            "summary": "Các dịch vụ nên giảm thiểu số lượng yêu cầu đồng bộ mà chúng thực hiện đối với các dịch vụ khác càng nhiều càng tốt. Các cuộc gọi đồng bộ rất tốn kém và ảnh hưởng đến tính khả dụng của các dịch vụ. Ứng dụng càng phụ thuộc vào nhiều dịch vụ một cách đồng bộ, tính khả dụng của ứng dụng đó càng thấp. Lập ngân sách đồng bộ là việc lưu ý đến cách triển khai các luồng giao tiếp giữa các dịch vụ."
+          }
+        ],
+        "title": "Lập trình, Thiết kế & Khoa học dữ liệu"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Anh ta phát cuồng với công nghệ thanh toán. Bây giờ, anh ta bị buộc tội làm gián điệp doanh nghiệp",
+            "link": "https://links.tldrnewsletter.com/w3DFny",
+            "source": "TLDR Newsletter",
+            "summary": "Keith O'Brien, một người quản lý tuân thủ thanh toán toàn cầu tại Rippling, một công ty khởi nghiệp phần mềm kinh doanh, bị buộc tội đánh cắp bí mật thương mại cho đối thủ Deel, như một phần của hoạt động gián điệp. O'Brien bị cáo buộc đã tìm kiếm 'deel' trung bình 23 lần một ngày trên các hệ thống nội bộ của Rippling, truy cập các diễn đàn không liên quan gì đến công việc của anh ta ở chế độ che giấu sự hiện diện của anh ta với những người khác. Rippling tuyên bố rằng họ đã đặt một cái bẫy honeypot chứng minh rằng O'Brien đã được các giám đốc hàng đầu của Deel chỉ đạo. O'Brien đã rời khỏi văn phòng của Rippling với điện thoại thông minh của mình sau khi bị cáo buộc là gián điệp doanh nghiệp mặc dù đã được thông báo rằng việc không giao thiết bị vi phạm lệnh của tòa án và có thể dẫn đến việc bỏ tù."
+          },
+          {
+            "headline": "Đồng hồ thông minh Pebble mới đầu tiên sẽ ra mắt vào cuối năm nay",
+            "link": "https://www.theverge.com/news/631657/pebble-watch-core-devices-duo-2-time-2?utm_source=tldrnewsletter",
+            "source": "The Verge",
+            "summary": "Core Devices, một công ty của người sáng tạo ban đầu của đồng hồ thông minh Pebble, đang chuẩn bị xuất xưởng hai chiếc đồng hồ mới. Chúng sẽ có tất cả các tính năng của các thiết bị Pebble cũ và chạy hệ điều hành Pebble mã nguồn mở mới. Core 2 Duo sẽ được xuất xưởng vào tháng 7 với giá 149 đô la. Nó có màn hình e-paper đen trắng giống hệt như Pebble 2 cũ và thậm chí còn có cùng khung. Nó có pin kéo dài hơn 30 ngày và loa trong thiết bị để trò chuyện với trợ lý AI. Core Time 2 sẽ được xuất xưởng vào tháng 12 và có giá 225 đô la - nó sẽ có màn hình cảm ứng."
+          }
+        ],
+        "title": "Khác"
+      },
+      {
+        "articles": [
+          {
+            "headline": "NVIDIA Dynamo (Kho lưu trữ GitHub)",
+            "link": "https://github.com/ai-dynamo/dynamo?utm_source=tldrnewsletter",
+            "source": "GitHub",
+            "summary": "NVIDIA Dynamo là một khuôn khổ suy luận có thông lượng cao, độ trễ thấp, không phụ thuộc vào công cụ suy luận, được thiết kế để phục vụ các mô hình suy luận và tạo AI trong môi trường phân tán nhiều nút."
+          },
+          {
+            "headline": "Địa điểm Stargate đầu tiên của OpenAI có sức chứa lên đến 400.000 chip NVIDIA",
+            "link": "https://finance.yahoo.com/news/openai-first-stargate-hold-400-180014007.html?utm_source=tldrnewsletter",
+            "source": "Yahoo Finance",
+            "summary": "Việc xây dựng địa điểm, có công suất 1,2 gigawatt điện, sẽ hoàn thành vào giữa năm 2026."
+          },
+          {
+            "headline": "Tỷ lệ thất bại thực sự của EBS",
+            "link": "https://planetscale.com/blog/the-real-fail-rate-of-ebs?utm_source=tldrnewsletter",
+            "source": "PlanetScale",
+            "summary": "Lỗi EBS là hằng số, có thể thay đổi và tất cả đều được thiết kế."
+          },
+          {
+            "headline": "Công ty kiểm tra sự thèm muốn của Phố Wall đối với sức mạnh tính toán A.I.",
+            "link": "https://www.nytimes.com/2025/03/18/technology/coreweave-wall-street-ai-ipo.html?unlocked_article_code=1.5E4.iGsU._O2L21QoXOts&smid=url-share&utm_source=tldrnewsletter",
+            "source": "The New York Times",
+            "summary": "CoreWeave đã nộp giấy tờ cho một danh sách công khai - nếu đợt phát hành công khai ban đầu diễn ra, đây sẽ là công ty khởi nghiệp AI nổi bật đầu tiên tiếp cận thị trường chứng khoán."
+          },
+          {
+            "headline": "Tạo các gói Ubuntu nhanh hơn 90% bằng cách xây dựng lại chúng",
+            "link": "https://gist.github.com/jwbee/7e8b27e298de8bbbf8abfa4c232db097?utm_source=tldrnewsletter",
+            "source": "Gist",
+            "summary": "Bài đăng này cho thấy cách tăng hiệu suất của jq lên 90% chỉ bằng cách biên dịch lại gói bằng cùng một gói nguồn mà Ubuntu sử dụng."
+          },
+          {
+            "headline": "Mark Zuckerberg nói rằng các mô hình Llama của Meta đã đạt 1 tỷ lượt tải xuống",
+            "link": "https://techcrunch.com/2025/03/18/mark-zuckerberg-says-that-metas-llama-models-have-hit-1b-downloads/?utm_source=tldrnewsletter",
+            "source": "TechCrunch",
+            "summary": "Llama đã đạt được thành công rộng rãi kể từ khi ra mắt vào năm 2023, với các công ty bao gồm Spotify, AT&T và DoorDash sử dụng các mô hình Llama trong sản xuất ngày nay."
+          }
+        ],
+        "title": "Liên kết nhanh"
+      }
+    ]
+  }
+}

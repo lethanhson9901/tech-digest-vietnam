@@ -1,0 +1,92 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"Mailbrew\",\n  \"reportTitle\": \"Hacker News Daily #1243, ngày 19/03/2025\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Apple hạn chế Pebble phát huy tối đa tiềm năng với iPhone\",\n          \"link\": \"https://ericmigi.com/blog/apple-restricts-pebble-from-being-awesome-with-iphones/\",\n          \"source\": \"ericmigi.com\",\n          \"summary\": \"Apple đưa ra các hạn chế khiến Pebble không thể hoạt động tối ưu với iPhone.\"\n        },\n        {\n          \"headline\": \"Hai mẫu đồng hồ PebbleOS mới\",\n          \"link\": \"https://ericmigi.com/blog/introducing-two-new-pebbleos-watches/\",\n          \"source\": \"ericmigi.com\",\n          \"summary\": \"Giới thiệu hai mẫu đồng hồ PebbleOS mới.\"\n        },\n        {\n          \"headline\": \"Chặn quảng cáo YouTube trên AppleTV bằng cách giải mã và loại bỏ quảng cáo từ Profobuf (2022)\",\n          \"link\": \"https://ericdraken.com/pfsense-decrypt-ad-traffic/\",\n          \"source\": \"ericdraken.com\",\n          \"summary\": \"Phương pháp chặn quảng cáo YouTube trên AppleTV bằng cách can thiệp vào luồng dữ liệu Profobuf.\"\n        },\n        {\n          \"headline\": \"Chuyển dịch khỏi các dịch vụ đám mây của Mỹ\",\n          \"link\": \"https://martijnhols.nl/blog/moving-away-from-us-cloud-services\",\n          \"source\": \"martijnhols.nl\",\n          \"summary\": \"Xu hướng các tổ chức chuyển dịch khỏi việc sử dụng các dịch vụ đám mây có trụ sở tại Mỹ.\"\n        },\n        {\n          \"headline\": \"Tòa phúc thẩm Hoa Kỳ phán quyết rằng tác phẩm nghệ thuật do AI tạo ra không được bảo vệ bản quyền\",\n          \"link\": \"https://www.reuters.com/world/us/us-appeals-court-rejects-copyrights-ai-generated-art-lacking-human-creator-2025-03-18/\",\n          \"source\": \"reuters.com\",\n          \"summary\": \"Tòa án Hoa Kỳ ra phán quyết rằng các tác phẩm do AI tạo ra mà không có sự tham gia sáng tạo của con người thì không được bảo vệ bản quyền.\"\n        },\n        {\n          \"headline\": \"Google mua lại Wiz với giá 32 tỷ đô la\",\n          \"link\": \"https://www.reuters.com/technology/cybersecurity/google-agrees-buy-cybersecurity-startup-wiz-32-bln-ft-reports-2025-03-18/\",\n          \"source\": \"reuters.com\",\n          \"summary\": \"Google đạt thỏa thuận mua lại công ty khởi nghiệp Wiz trong lĩnh vực an ninh mạng với giá trị thương vụ lên tới 32 tỷ đô la.\"\n        },\n        {\n          \"headline\": \"Đại học Thổ Nhĩ Kỳ hủy bỏ bằng cấp của đối thủ của Erdogan, ngăn cản việc tranh cử tổng thống\",\n          \"link\": \"https://www.reuters.com/world/asia-pacific/istanbul-university-annuls-istanbul-mayor-imamoglus-diploma-over-irregularities-2025-03-18/\",\n          \"source\": \"reuters.com\",\n          \"summary\": \"Một trường đại học ở Thổ Nhĩ Kỳ đã hủy bỏ bằng cấp của một đối thủ chính trị của Tổng thống Erdogan, gây trở ngại cho khả năng tranh cử của ông.\"\n        },\n        {\n          \"headline\": \"Amazon loại bỏ xử lý cục bộ cho Alexa, tất cả yêu cầu bằng giọng nói được chuyển lên đám mây\",\n          \"link\": \"https://www.theregister.com/2025/03/17/amazon_kills_on_device_alexa/\",\n          \"source\": \"theregister.com\",\n          \"summary\": \"Amazon quyết định ngừng xử lý các yêu cầu Alexa trực tiếp trên thiết bị, thay vào đó chuyển tất cả lên đám mây.\"\n        },\n        {\n          \"headline\": \"Wired gỡ bỏ tường phí cho các bài báo dựa trên FOIA. Những đơn vị khác nên làm theo\",\n          \"link\": \"https://freedom.press/issues/wired-is-dropping-paywalls-for-foia-based-reporting-others-should-follow/\",\n          \"source\": \"freedom.press\",\n          \"summary\": \"Tạp chí Wired loại bỏ tường phí (paywall) cho các bài viết điều tra dựa trên Đạo luật Tự do Thông tin (FOIA), kêu gọi các tổ chức khác làm theo để tăng cường tính minh bạch.\"\n        },\n        {\n          \"headline\": \"Show HN: Tôi đã tạo một công cụ để chuyển các tweet sang Bluesky, giữ nguyên ngày tháng gốc\",\n          \"link\": \"https://bluemigrate.com\",\n          \"source\": \"bluemigrate.com\",\n          \"summary\": \"Công cụ cho phép người dùng chuyển toàn bộ lịch sử tweet từ Twitter (X) sang Bluesky, giữ lại nguyên vẹn thời gian đăng bài gốc.\"\n        },\n        {\n          \"headline\": \"Tăng tốc độ tạo gói Ubuntu lên 90% bằng cách xây dựng lại chúng\",\n          \"link\": \"https://gist.github.com/jwbee/7e8b27e298de8bbbf8abfa4c232db097\",\n          \"source\": \"gist.github.com\",\n          \"summary\": \"Hướng dẫn kỹ thuật giúp tăng tốc quá trình tạo các gói phần mềm trên Ubuntu bằng cách tối ưu hóa quy trình biên dịch.\"\n        },\n        {\n          \"headline\": \"FTC gỡ bỏ các bài viết chỉ trích Amazon, Microsoft và các công ty AI\",\n          \"link\": \"https://www.wired.com/story/federal-trade-commission-removed-blogs-critical-of-ai-amazon-microsoft/\",\n          \"source\": \"wired.com\",\n          \"summary\": \"Ủy ban Thương mại Liên bang (FTC) đã gỡ bỏ một số bài đăng trên blog có nội dung chỉ trích các tập đoàn công nghệ lớn như Amazon, Microsoft và các công ty hoạt động trong lĩnh vực AI.\"\n        }\n      ],\n      \"title\": \"Tin tức tổng hợp ngày 19/03/2025\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 8.696761846542358,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "Mailbrew",
+    "reportTitle": "Hacker News Daily #1243, ngày 19/03/2025",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Apple hạn chế Pebble phát huy tối đa tiềm năng với iPhone",
+            "link": "https://ericmigi.com/blog/apple-restricts-pebble-from-being-awesome-with-iphones/",
+            "source": "ericmigi.com",
+            "summary": "Apple đưa ra các hạn chế khiến Pebble không thể hoạt động tối ưu với iPhone."
+          },
+          {
+            "headline": "Hai mẫu đồng hồ PebbleOS mới",
+            "link": "https://ericmigi.com/blog/introducing-two-new-pebbleos-watches/",
+            "source": "ericmigi.com",
+            "summary": "Giới thiệu hai mẫu đồng hồ PebbleOS mới."
+          },
+          {
+            "headline": "Chặn quảng cáo YouTube trên AppleTV bằng cách giải mã và loại bỏ quảng cáo từ Profobuf (2022)",
+            "link": "https://ericdraken.com/pfsense-decrypt-ad-traffic/",
+            "source": "ericdraken.com",
+            "summary": "Phương pháp chặn quảng cáo YouTube trên AppleTV bằng cách can thiệp vào luồng dữ liệu Profobuf."
+          },
+          {
+            "headline": "Chuyển dịch khỏi các dịch vụ đám mây của Mỹ",
+            "link": "https://martijnhols.nl/blog/moving-away-from-us-cloud-services",
+            "source": "martijnhols.nl",
+            "summary": "Xu hướng các tổ chức chuyển dịch khỏi việc sử dụng các dịch vụ đám mây có trụ sở tại Mỹ."
+          },
+          {
+            "headline": "Tòa phúc thẩm Hoa Kỳ phán quyết rằng tác phẩm nghệ thuật do AI tạo ra không được bảo vệ bản quyền",
+            "link": "https://www.reuters.com/world/us/us-appeals-court-rejects-copyrights-ai-generated-art-lacking-human-creator-2025-03-18/",
+            "source": "reuters.com",
+            "summary": "Tòa án Hoa Kỳ ra phán quyết rằng các tác phẩm do AI tạo ra mà không có sự tham gia sáng tạo của con người thì không được bảo vệ bản quyền."
+          },
+          {
+            "headline": "Google mua lại Wiz với giá 32 tỷ đô la",
+            "link": "https://www.reuters.com/technology/cybersecurity/google-agrees-buy-cybersecurity-startup-wiz-32-bln-ft-reports-2025-03-18/",
+            "source": "reuters.com",
+            "summary": "Google đạt thỏa thuận mua lại công ty khởi nghiệp Wiz trong lĩnh vực an ninh mạng với giá trị thương vụ lên tới 32 tỷ đô la."
+          },
+          {
+            "headline": "Đại học Thổ Nhĩ Kỳ hủy bỏ bằng cấp của đối thủ của Erdogan, ngăn cản việc tranh cử tổng thống",
+            "link": "https://www.reuters.com/world/asia-pacific/istanbul-university-annuls-istanbul-mayor-imamoglus-diploma-over-irregularities-2025-03-18/",
+            "source": "reuters.com",
+            "summary": "Một trường đại học ở Thổ Nhĩ Kỳ đã hủy bỏ bằng cấp của một đối thủ chính trị của Tổng thống Erdogan, gây trở ngại cho khả năng tranh cử của ông."
+          },
+          {
+            "headline": "Amazon loại bỏ xử lý cục bộ cho Alexa, tất cả yêu cầu bằng giọng nói được chuyển lên đám mây",
+            "link": "https://www.theregister.com/2025/03/17/amazon_kills_on_device_alexa/",
+            "source": "theregister.com",
+            "summary": "Amazon quyết định ngừng xử lý các yêu cầu Alexa trực tiếp trên thiết bị, thay vào đó chuyển tất cả lên đám mây."
+          },
+          {
+            "headline": "Wired gỡ bỏ tường phí cho các bài báo dựa trên FOIA. Những đơn vị khác nên làm theo",
+            "link": "https://freedom.press/issues/wired-is-dropping-paywalls-for-foia-based-reporting-others-should-follow/",
+            "source": "freedom.press",
+            "summary": "Tạp chí Wired loại bỏ tường phí (paywall) cho các bài viết điều tra dựa trên Đạo luật Tự do Thông tin (FOIA), kêu gọi các tổ chức khác làm theo để tăng cường tính minh bạch."
+          },
+          {
+            "headline": "Show HN: Tôi đã tạo một công cụ để chuyển các tweet sang Bluesky, giữ nguyên ngày tháng gốc",
+            "link": "https://bluemigrate.com",
+            "source": "bluemigrate.com",
+            "summary": "Công cụ cho phép người dùng chuyển toàn bộ lịch sử tweet từ Twitter (X) sang Bluesky, giữ lại nguyên vẹn thời gian đăng bài gốc."
+          },
+          {
+            "headline": "Tăng tốc độ tạo gói Ubuntu lên 90% bằng cách xây dựng lại chúng",
+            "link": "https://gist.github.com/jwbee/7e8b27e298de8bbbf8abfa4c232db097",
+            "source": "gist.github.com",
+            "summary": "Hướng dẫn kỹ thuật giúp tăng tốc quá trình tạo các gói phần mềm trên Ubuntu bằng cách tối ưu hóa quy trình biên dịch."
+          },
+          {
+            "headline": "FTC gỡ bỏ các bài viết chỉ trích Amazon, Microsoft và các công ty AI",
+            "link": "https://www.wired.com/story/federal-trade-commission-removed-blogs-critical-of-ai-amazon-microsoft/",
+            "source": "wired.com",
+            "summary": "Ủy ban Thương mại Liên bang (FTC) đã gỡ bỏ một số bài đăng trên blog có nội dung chỉ trích các tập đoàn công nghệ lớn như Amazon, Microsoft và các công ty hoạt động trong lĩnh vực AI."
+          }
+        ],
+        "title": "Tin tức tổng hợp ngày 19/03/2025"
+      }
+    ]
+  }
+}

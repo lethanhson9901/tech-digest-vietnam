@@ -1,0 +1,59 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"Daily Dose of DS\",\n  \"reportTitle\": \"Tổng hợp tin tức về Khoa học Dữ liệu và Machine Learning ngày 18/03/2025\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Độ phức tạp thời gian của 10 thuật toán Machine Learning phổ biến\",\n          \"link\": \"https://click.convertkit-mail2.com/gku3nrndl4u5hlnn8xearh8gmp999cm/wnh2hghq5kqrm0i7/aHR0cHM6Ly9iaXQubHkvdHNuZS1mdWxs\",\n          \"source\": \"Daily Dose of DS\",\n          \"summary\": \"Bài viết này thảo luận về độ phức tạp thời gian (run-time complexity) của 10 thuật toán Machine Learning phổ biến nhất. Việc hiểu rõ độ phức tạp thời gian giúp chúng ta lựa chọn thuật toán phù hợp với kích thước dữ liệu và hiểu rõ hơn về cách thuật toán hoạt động. Ví dụ, SVM không phù hợp với bộ dữ liệu lớn vì độ phức tạp thời gian tăng theo cấp số nhân với số lượng mẫu, trong khi t-SNE tăng theo hàm bậc hai. Bài viết cũng đưa ra một số giả định để đơn giản hóa việc tính toán độ phức tạp, chẳng hạn như giả định độ sâu của các cây quyết định trong Random Forest là bằng nhau. Bài viết khuyến khích người đọc tự thử tính toán độ phức tạp thời gian của các thuật toán để củng cố kiến thức. Bạn có thể tìm hiểu thêm về cách t-SNE hoạt động tại đây: [tSNE article](https://click.convertkit-mail2.com/gku3nrndl4u5hlnn8xearh8gmp999cm/wnh2hghq5kqrm0i7/aHR0cHM6Ly9iaXQubHkvdHNuZS1mdWxs). Câu hỏi đặt ra: Độ phức tạp thời gian suy luận (inference run-time) của KMeans Clustering là bao nhiêu?\"\n        }\n      ],\n      \"title\": \"Độ phức tạp thời gian của thuật toán ML\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Xây dựng mô hình suy luận như DeepSeek-R1\",\n          \"link\": \"https://click.convertkit-mail2.com/gku3nrndl4u5hlnn8xearh8gmp999cm/reh8hohm23mqkoh2/aHR0cHM6Ly93d3cuZGFpbHlkb3Nlb2Zkcy5jb20vcC9idWlsZC1hLXJlYXNvbmluZy1tb2RlbC1saWtlLWRlZXBzZWVrLXIxLw==\",\n          \"source\": \"Daily Dose of DS\",\n          \"summary\": \"Bài viết này chia sẻ về cách nhúng khả năng suy luận vào bất kỳ LLM nào, tương tự như cách DeepSeek-R1 hoạt động. Mô hình sẽ tự động phân bổ thời gian suy nghĩ trước khi đưa ra phản hồi. Để thực hiện điều này, tác giả đã sử dụng UnslothAI để tinh chỉnh hiệu quả và Llama 3.1-8B làm LLM cơ sở để thêm khả năng suy luận. Bạn có thể tìm thấy chi tiết triển khai và hướng dẫn đầy đủ tại đây: [Build a Reasoning Model Like DeepSeek-R1](https://click.convertkit-mail2.com/gku3nrndl4u5hlnn8xearh8gmp999cm/reh8hohm23mqkoh2/aHR0cHM6Ly93d3cuZGFpbHlkb3Nlb2Zkcy5jb20vcC9idWlsZC1hLXJlYXNvbmluZy1tb2RlbC1saWtlLWRlZXBzZWVrLXIx/)\"\n        }\n      ],\n      \"title\": \"In Case You Missed It\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Phát triển các kỹ năng ML trong ngành\",\n          \"link\": \"https://www.dailydoseofds.com/membership\",\n          \"source\": \"Daily Dose of DS\",\n          \"summary\": \"Các doanh nghiệp quan tâm đến tác động thực tế. Bài viết này liệt kê một loạt các khóa học và tài liệu thực tế giúp phát triển các kỹ năng ML quan trọng trong ngành, bao gồm xây dựng hệ thống Agentic, ứng dụng RAG, kiến trúc đồ thị phức tạp, kỹ thuật lượng tử hóa, dự đoán tin cậy bằng Conformal Predictions, nhân quả, mở rộng quy mô mô hình, kiểm thử mô hình và Federated Learning. Đây là những tài liệu giúp bạn phát triển các kỹ năng quan trọng mà các công ty đang tìm kiếm. Bạn có thể tìm hiểu thêm tại: [Develop Industry ML skills](https://www.dailydoseofds.com/membership).\"\n        }\n      ],\n      \"title\": \"NO-FLUFF DS/ML RESOURCES TO...\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Cấp cho AI của bạn quyền truy cập vào Web với Bright Data\",\n          \"link\": \"https://brightdata.com/ai?utm_source=brand&utm_campaign=brnd-mkt_partner_dailydoseofds_NL&promo=dailydoseofds\",\n          \"source\": \"Bright Data\",\n          \"summary\": \"Nếu bạn đang đào tạo AI trên các bộ dữ liệu dựng sẵn, bạn đang bị tụt hậu. Bright Data cho phép bạn truy cập, tìm kiếm, thu thập và duyệt web ở quy mô không giới hạn cho AI. Với Bright Data, bạn có thể: Triển khai các tác nhân AI tìm kiếm, duyệt và trích xuất dữ liệu ở quy mô lớn; Cung cấp cho mô hình của bạn dữ liệu web có cấu trúc, theo thời gian thực; Tích hợp các luồng dữ liệu trực tiếp vào quá trình đào tạo LLM. Khám phá mọi trường hợp sử dụng AI mà Bright Data giải quyết tại [Bright Data](https://brightdata.com/ai?utm_source=brand&utm_campaign=brnd-mkt_partner_dailydoseofds_NL&promo=dailydoseofds).\"\n        }\n      ],\n      \"title\": \"Cùng với bright data\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 9.258102416992188,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "Daily Dose of DS",
+    "reportTitle": "Tổng hợp tin tức về Khoa học Dữ liệu và Machine Learning ngày 18/03/2025",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Độ phức tạp thời gian của 10 thuật toán Machine Learning phổ biến",
+            "link": "https://click.convertkit-mail2.com/gku3nrndl4u5hlnn8xearh8gmp999cm/wnh2hghq5kqrm0i7/aHR0cHM6Ly9iaXQubHkvdHNuZS1mdWxs",
+            "source": "Daily Dose of DS",
+            "summary": "Bài viết này thảo luận về độ phức tạp thời gian (run-time complexity) của 10 thuật toán Machine Learning phổ biến nhất. Việc hiểu rõ độ phức tạp thời gian giúp chúng ta lựa chọn thuật toán phù hợp với kích thước dữ liệu và hiểu rõ hơn về cách thuật toán hoạt động. Ví dụ, SVM không phù hợp với bộ dữ liệu lớn vì độ phức tạp thời gian tăng theo cấp số nhân với số lượng mẫu, trong khi t-SNE tăng theo hàm bậc hai. Bài viết cũng đưa ra một số giả định để đơn giản hóa việc tính toán độ phức tạp, chẳng hạn như giả định độ sâu của các cây quyết định trong Random Forest là bằng nhau. Bài viết khuyến khích người đọc tự thử tính toán độ phức tạp thời gian của các thuật toán để củng cố kiến thức. Bạn có thể tìm hiểu thêm về cách t-SNE hoạt động tại đây: [tSNE article](https://click.convertkit-mail2.com/gku3nrndl4u5hlnn8xearh8gmp999cm/wnh2hghq5kqrm0i7/aHR0cHM6Ly9iaXQubHkvdHNuZS1mdWxs). Câu hỏi đặt ra: Độ phức tạp thời gian suy luận (inference run-time) của KMeans Clustering là bao nhiêu?"
+          }
+        ],
+        "title": "Độ phức tạp thời gian của thuật toán ML"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Xây dựng mô hình suy luận như DeepSeek-R1",
+            "link": "https://click.convertkit-mail2.com/gku3nrndl4u5hlnn8xearh8gmp999cm/reh8hohm23mqkoh2/aHR0cHM6Ly93d3cuZGFpbHlkb3Nlb2Zkcy5jb20vcC9idWlsZC1hLXJlYXNvbmluZy1tb2RlbC1saWtlLWRlZXBzZWVrLXIxLw==",
+            "source": "Daily Dose of DS",
+            "summary": "Bài viết này chia sẻ về cách nhúng khả năng suy luận vào bất kỳ LLM nào, tương tự như cách DeepSeek-R1 hoạt động. Mô hình sẽ tự động phân bổ thời gian suy nghĩ trước khi đưa ra phản hồi. Để thực hiện điều này, tác giả đã sử dụng UnslothAI để tinh chỉnh hiệu quả và Llama 3.1-8B làm LLM cơ sở để thêm khả năng suy luận. Bạn có thể tìm thấy chi tiết triển khai và hướng dẫn đầy đủ tại đây: [Build a Reasoning Model Like DeepSeek-R1](https://click.convertkit-mail2.com/gku3nrndl4u5hlnn8xearh8gmp999cm/reh8hohm23mqkoh2/aHR0cHM6Ly93d3cuZGFpbHlkb3Nlb2Zkcy5jb20vcC9idWlsZC1hLXJlYXNvbmluZy1tb2RlbC1saWtlLWRlZXBzZWVrLXIx/)"
+          }
+        ],
+        "title": "In Case You Missed It"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Phát triển các kỹ năng ML trong ngành",
+            "link": "https://www.dailydoseofds.com/membership",
+            "source": "Daily Dose of DS",
+            "summary": "Các doanh nghiệp quan tâm đến tác động thực tế. Bài viết này liệt kê một loạt các khóa học và tài liệu thực tế giúp phát triển các kỹ năng ML quan trọng trong ngành, bao gồm xây dựng hệ thống Agentic, ứng dụng RAG, kiến trúc đồ thị phức tạp, kỹ thuật lượng tử hóa, dự đoán tin cậy bằng Conformal Predictions, nhân quả, mở rộng quy mô mô hình, kiểm thử mô hình và Federated Learning. Đây là những tài liệu giúp bạn phát triển các kỹ năng quan trọng mà các công ty đang tìm kiếm. Bạn có thể tìm hiểu thêm tại: [Develop Industry ML skills](https://www.dailydoseofds.com/membership)."
+          }
+        ],
+        "title": "NO-FLUFF DS/ML RESOURCES TO..."
+      },
+      {
+        "articles": [
+          {
+            "headline": "Cấp cho AI của bạn quyền truy cập vào Web với Bright Data",
+            "link": "https://brightdata.com/ai?utm_source=brand&utm_campaign=brnd-mkt_partner_dailydoseofds_NL&promo=dailydoseofds",
+            "source": "Bright Data",
+            "summary": "Nếu bạn đang đào tạo AI trên các bộ dữ liệu dựng sẵn, bạn đang bị tụt hậu. Bright Data cho phép bạn truy cập, tìm kiếm, thu thập và duyệt web ở quy mô không giới hạn cho AI. Với Bright Data, bạn có thể: Triển khai các tác nhân AI tìm kiếm, duyệt và trích xuất dữ liệu ở quy mô lớn; Cung cấp cho mô hình của bạn dữ liệu web có cấu trúc, theo thời gian thực; Tích hợp các luồng dữ liệu trực tiếp vào quá trình đào tạo LLM. Khám phá mọi trường hợp sử dụng AI mà Bright Data giải quyết tại [Bright Data](https://brightdata.com/ai?utm_source=brand&utm_campaign=brnd-mkt_partner_dailydoseofds_NL&promo=dailydoseofds)."
+          }
+        ],
+        "title": "Cùng với bright data"
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"TLDR DevOps\",\n  \"reportTitle\": \"Tổng hợp tin tức DevOps ngày 19/03/2025\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Grafana Loki v3.4 ra mắt với bộ nhớ được chuẩn hóa và đo từ xa hợp nhất\",\n          \"link\": \"https://www.infoq.com/news/2025/03/grafana-loki-updates/?utm_source=tldrdevops\",\n          \"source\": \"InfoQ\",\n          \"summary\": \"Grafana Loki v3.4 đã được phát hành, tích hợp Thanos Object Storage Client để chuẩn hóa bộ nhớ với các cơ sở dữ liệu khác của Grafana.\"\n        },\n        {\n          \"headline\": \"Tái sử dụng mật khẩu tràn lan: Gần một nửa số lần đăng nhập của người dùng bị xâm phạm\",\n          \"link\": \"https://blog.cloudflare.com/password-reuse-rampant-half-user-logins-compromised/?utm_source=tldrdevops\",\n          \"source\": \"Cloudflare Blog\",\n          \"summary\": \"Theo phân tích của Cloudflare về lưu lượng truy cập từ tháng 9 đến tháng 11 năm 2024, 41% số lần đăng nhập thành công của người dùng là do mật khẩu bị xâm phạm, làm nổi bật vấn đề tái sử dụng mật khẩu.\"\n        }\n      ],\n      \"title\": \"Tin tức & Xu hướng\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Công cụ quản lý sự cố của bạn có phải là điểm lỗi duy nhất? Trường hợp cho phương pháp tiếp cận đa kênh\",\n          \"link\": \"https://www.pagerduty.com/blog/is-your-incident-management-tool-a-single-point-of-failure-the-case-for-a-multi-channel-approach/?utm_source=tldrdevops\",\n          \"source\": \"PagerDuty Blog\",\n          \"summary\": \"Việc chỉ dựa vào một công cụ quản lý sự cố dựa trên chat tiềm ẩn những rủi ro cố hữu. Thay vào đó, nên sử dụng một phương pháp đa kênh, tự động để đảm bảo tính liên tục của hoạt động kinh doanh. PagerDuty có thể cung cấp khả năng dự phòng và tích hợp sâu để quản lý sự cố trong trường hợp hệ thống gặp sự cố.\"\n        },\n        {\n          \"headline\": \"Falcoctl: Quản lý Artifact cho Falco\",\n          \"link\": \"https://www.cncf.io/blog/2025/03/10/falcoctl-artifact-management-for-falco/?utm_source=tldrdevops\",\n          \"source\": \"CNCF Blog\",\n          \"summary\": \"Các công cụ như Falcoctl tạo điều kiện quản lý artifact bằng cách tương tác với các registry OCI để lưu trữ các artifact như file quy tắc Falco. Việc sử dụng các registry tuân thủ OCI đảm bảo quy trình phát triển phần mềm an toàn và có tổ chức.\"\n        },\n        {\n          \"headline\": \"Tại sao tôi không còn nói chuyện với các kiến trúc sư về Microservices\",\n          \"link\": \"https://blog.container-solutions.com/why-im-no-longer-talking-to-architects-about-microservices?utm_source=tldrdevops\",\n          \"source\": \"Container Solutions Blog\",\n          \"summary\": \"Các cuộc thảo luận về microservices giữa các kiến ​​trúc sư thường không hiệu quả do thiếu định nghĩa rõ ràng, tập trung trừu tượng tách rời các mục tiêu kinh doanh và không xem xét các thay đổi tổ chức cần thiết. Thay vì tranh luận về microservices như một mục tiêu, các nhóm nên tập trung vào giải quyết các vấn đề kinh doanh cụ thể, cải thiện thời gian chu kỳ và đảm bảo cấu trúc tổ chức của họ hỗ trợ các lựa chọn kiến ​​trúc của họ.\"\n        }\n      ],\n      \"title\": \"Ý kiến & Hướng dẫn\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"xlskubectl (GitHub Repo)\",\n          \"link\": \"https://github.com/learnk8s/xlskubectl?utm_source=tldrdevops\",\n          \"source\": \"GitHub\",\n          \"summary\": \"xlskubectl tích hợp Google Spreadsheets với Kubernetes, cho phép người dùng quản lý các cluster của họ từ một bảng tính bằng cách sử dụng API của Kubernetes để truyền phát các bản cập nhật gia tăng.\"\n        },\n        {\n          \"headline\": \"kagent (GitHub Repo)\",\n          \"link\": \"https://github.com/kagent-dev/kagent?utm_source=tldrdevops\",\n          \"source\": \"GitHub\",\n          \"summary\": \"kagent, một framework gốc Kubernetes, được thiết kế để xây dựng, triển khai và quản lý các AI agent trong Kubernetes. Nó sử dụng các custom resource của Kubernetes để đơn giản hóa việc quản lý và sửa đổi các agent.\"\n        }\n      ],\n      \"title\": \"Tài nguyên & Công cụ\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Đơn giản hóa quyền IAM cho Amazon EKS Addons với EKS Pod Identity\",\n          \"link\": \"https://aws.amazon.com/blogs/containers/simplifying-iam-permissions-for-amazon-eks-addons-with-eks-pod-identity/?utm_source=tldrdevops\",\n          \"source\": \"AWS Blog\",\n          \"summary\": \"Amazon EKS Pod Identity đơn giản hóa việc áp dụng các quyền AWS Identity and Access Management cho các Kubernetes workload. Nó cho phép các EKS add-on tương tác với các dịch vụ AWS bằng cách liên kết các role với các service account Kubernetes và hợp lý hóa quy trình quản lý quyền cho các add-on trong quá trình tạo cluster.\"\n        },\n        {\n          \"headline\": \"Jaguar Land Rover bị tấn công bởi nhóm ransomware HELLCAT sử dụng Infostealer Playbook của nó - sau đó một hacker thứ hai tấn công\",\n          \"link\": \"https://www.infostealers.com/article/jaguar-land-rover-breached-by-hellcat-ransomware-using-its-infostealer-playbook-then-a-second-hacker-strikes/?utm_source=tldrdevops\",\n          \"source\": \"Infostealers.com\",\n          \"summary\": \"Jaguar Land Rover đã bị tấn công bởi nhóm ransomware HELLCAT, nhóm này đã làm rò rỉ hàng gigabyte dữ liệu nhạy cảm bằng cách sử dụng thông tin đăng nhập Jira được thu thập từ thiết bị của nhân viên LG Electronics bị nhiễm phần mềm độc hại infostealer.\"\n        },\n        {\n          \"headline\": \"Tỷ lệ lỗi thực tế của EBS\",\n          \"link\": \"https://planetscale.com/blog/the-real-fail-rate-of-ebs?utm_source=tldrdevops\",\n          \"source\": \"PlanetScale Blog\",\n          \"summary\": \"Các volume Amazon EBS thường xuyên bị giảm hiệu suất, với các spike độ trễ ghi và chậm trễ bất ngờ ảnh hưởng đến độ tin cậy của cơ sở dữ liệu thường xuyên hơn so với các lỗi hoàn toàn. Để giảm thiểu những vấn đề này, PlanetScale đã phát triển các cơ chế giám sát tự động và chuyển đổi dự phòng nhanh chóng, cuối cùng dẫn đến việc tạo ra PlanetScale Metal, giúp tránh các hạn chế của EBS bằng cách sử dụng bộ nhớ cục bộ để có tính nhất quán và hiệu suất cao hơn.\"\n        }\n      ],\n      \"title\": \"Miscellaneous\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Các giá trị tạm thời trong Terraform\",\n          \"link\": \"https://www.hashicorp.com/en/blog/ephemeral-values-in-terraform?utm_source=tldrdevops\",\n          \"source\": \"HashiCorp Blog\",\n          \"summary\": \"Terraform đã giới thiệu tính năng tạm thời, một khái niệm cho phép xử lý an toàn dữ liệu nhạy cảm bằng cách tạo các tài nguyên tạm thời không tồn tại trong plan hoặc file trạng thái Terraform.\"\n        },\n        {\n          \"headline\": \"Cách xây dựng dashboard March Madness tối thượng trong Grafana\",\n          \"link\": \"https://grafana.com/blog/2025/03/17/how-to-build-the-ultimate-march-madness-dashboard-in-grafana/?utm_source=tldrdevops\",\n          \"source\": \"Grafana Blog\",\n          \"summary\": \"Grafana đã thiết kế một hướng dẫn để xây dựng dashboard March Madness theo thời gian thực trong Grafana, hoàn chỉnh với dữ liệu trò chơi NCAA trực tiếp, số liệu thống kê của người chơi và bảng điểm theo phong cách jumbotron.\"\n        }\n      ],\n      \"title\": \"Quick Links\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 10.273275375366211,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "TLDR DevOps",
+    "reportTitle": "Tổng hợp tin tức DevOps ngày 19/03/2025",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Grafana Loki v3.4 ra mắt với bộ nhớ được chuẩn hóa và đo từ xa hợp nhất",
+            "link": "https://www.infoq.com/news/2025/03/grafana-loki-updates/?utm_source=tldrdevops",
+            "source": "InfoQ",
+            "summary": "Grafana Loki v3.4 đã được phát hành, tích hợp Thanos Object Storage Client để chuẩn hóa bộ nhớ với các cơ sở dữ liệu khác của Grafana."
+          },
+          {
+            "headline": "Tái sử dụng mật khẩu tràn lan: Gần một nửa số lần đăng nhập của người dùng bị xâm phạm",
+            "link": "https://blog.cloudflare.com/password-reuse-rampant-half-user-logins-compromised/?utm_source=tldrdevops",
+            "source": "Cloudflare Blog",
+            "summary": "Theo phân tích của Cloudflare về lưu lượng truy cập từ tháng 9 đến tháng 11 năm 2024, 41% số lần đăng nhập thành công của người dùng là do mật khẩu bị xâm phạm, làm nổi bật vấn đề tái sử dụng mật khẩu."
+          }
+        ],
+        "title": "Tin tức & Xu hướng"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Công cụ quản lý sự cố của bạn có phải là điểm lỗi duy nhất? Trường hợp cho phương pháp tiếp cận đa kênh",
+            "link": "https://www.pagerduty.com/blog/is-your-incident-management-tool-a-single-point-of-failure-the-case-for-a-multi-channel-approach/?utm_source=tldrdevops",
+            "source": "PagerDuty Blog",
+            "summary": "Việc chỉ dựa vào một công cụ quản lý sự cố dựa trên chat tiềm ẩn những rủi ro cố hữu. Thay vào đó, nên sử dụng một phương pháp đa kênh, tự động để đảm bảo tính liên tục của hoạt động kinh doanh. PagerDuty có thể cung cấp khả năng dự phòng và tích hợp sâu để quản lý sự cố trong trường hợp hệ thống gặp sự cố."
+          },
+          {
+            "headline": "Falcoctl: Quản lý Artifact cho Falco",
+            "link": "https://www.cncf.io/blog/2025/03/10/falcoctl-artifact-management-for-falco/?utm_source=tldrdevops",
+            "source": "CNCF Blog",
+            "summary": "Các công cụ như Falcoctl tạo điều kiện quản lý artifact bằng cách tương tác với các registry OCI để lưu trữ các artifact như file quy tắc Falco. Việc sử dụng các registry tuân thủ OCI đảm bảo quy trình phát triển phần mềm an toàn và có tổ chức."
+          },
+          {
+            "headline": "Tại sao tôi không còn nói chuyện với các kiến trúc sư về Microservices",
+            "link": "https://blog.container-solutions.com/why-im-no-longer-talking-to-architects-about-microservices?utm_source=tldrdevops",
+            "source": "Container Solutions Blog",
+            "summary": "Các cuộc thảo luận về microservices giữa các kiến ​​trúc sư thường không hiệu quả do thiếu định nghĩa rõ ràng, tập trung trừu tượng tách rời các mục tiêu kinh doanh và không xem xét các thay đổi tổ chức cần thiết. Thay vì tranh luận về microservices như một mục tiêu, các nhóm nên tập trung vào giải quyết các vấn đề kinh doanh cụ thể, cải thiện thời gian chu kỳ và đảm bảo cấu trúc tổ chức của họ hỗ trợ các lựa chọn kiến ​​trúc của họ."
+          }
+        ],
+        "title": "Ý kiến & Hướng dẫn"
+      },
+      {
+        "articles": [
+          {
+            "headline": "xlskubectl (GitHub Repo)",
+            "link": "https://github.com/learnk8s/xlskubectl?utm_source=tldrdevops",
+            "source": "GitHub",
+            "summary": "xlskubectl tích hợp Google Spreadsheets với Kubernetes, cho phép người dùng quản lý các cluster của họ từ một bảng tính bằng cách sử dụng API của Kubernetes để truyền phát các bản cập nhật gia tăng."
+          },
+          {
+            "headline": "kagent (GitHub Repo)",
+            "link": "https://github.com/kagent-dev/kagent?utm_source=tldrdevops",
+            "source": "GitHub",
+            "summary": "kagent, một framework gốc Kubernetes, được thiết kế để xây dựng, triển khai và quản lý các AI agent trong Kubernetes. Nó sử dụng các custom resource của Kubernetes để đơn giản hóa việc quản lý và sửa đổi các agent."
+          }
+        ],
+        "title": "Tài nguyên & Công cụ"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Đơn giản hóa quyền IAM cho Amazon EKS Addons với EKS Pod Identity",
+            "link": "https://aws.amazon.com/blogs/containers/simplifying-iam-permissions-for-amazon-eks-addons-with-eks-pod-identity/?utm_source=tldrdevops",
+            "source": "AWS Blog",
+            "summary": "Amazon EKS Pod Identity đơn giản hóa việc áp dụng các quyền AWS Identity and Access Management cho các Kubernetes workload. Nó cho phép các EKS add-on tương tác với các dịch vụ AWS bằng cách liên kết các role với các service account Kubernetes và hợp lý hóa quy trình quản lý quyền cho các add-on trong quá trình tạo cluster."
+          },
+          {
+            "headline": "Jaguar Land Rover bị tấn công bởi nhóm ransomware HELLCAT sử dụng Infostealer Playbook của nó - sau đó một hacker thứ hai tấn công",
+            "link": "https://www.infostealers.com/article/jaguar-land-rover-breached-by-hellcat-ransomware-using-its-infostealer-playbook-then-a-second-hacker-strikes/?utm_source=tldrdevops",
+            "source": "Infostealers.com",
+            "summary": "Jaguar Land Rover đã bị tấn công bởi nhóm ransomware HELLCAT, nhóm này đã làm rò rỉ hàng gigabyte dữ liệu nhạy cảm bằng cách sử dụng thông tin đăng nhập Jira được thu thập từ thiết bị của nhân viên LG Electronics bị nhiễm phần mềm độc hại infostealer."
+          },
+          {
+            "headline": "Tỷ lệ lỗi thực tế của EBS",
+            "link": "https://planetscale.com/blog/the-real-fail-rate-of-ebs?utm_source=tldrdevops",
+            "source": "PlanetScale Blog",
+            "summary": "Các volume Amazon EBS thường xuyên bị giảm hiệu suất, với các spike độ trễ ghi và chậm trễ bất ngờ ảnh hưởng đến độ tin cậy của cơ sở dữ liệu thường xuyên hơn so với các lỗi hoàn toàn. Để giảm thiểu những vấn đề này, PlanetScale đã phát triển các cơ chế giám sát tự động và chuyển đổi dự phòng nhanh chóng, cuối cùng dẫn đến việc tạo ra PlanetScale Metal, giúp tránh các hạn chế của EBS bằng cách sử dụng bộ nhớ cục bộ để có tính nhất quán và hiệu suất cao hơn."
+          }
+        ],
+        "title": "Miscellaneous"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Các giá trị tạm thời trong Terraform",
+            "link": "https://www.hashicorp.com/en/blog/ephemeral-values-in-terraform?utm_source=tldrdevops",
+            "source": "HashiCorp Blog",
+            "summary": "Terraform đã giới thiệu tính năng tạm thời, một khái niệm cho phép xử lý an toàn dữ liệu nhạy cảm bằng cách tạo các tài nguyên tạm thời không tồn tại trong plan hoặc file trạng thái Terraform."
+          },
+          {
+            "headline": "Cách xây dựng dashboard March Madness tối thượng trong Grafana",
+            "link": "https://grafana.com/blog/2025/03/17/how-to-build-the-ultimate-march-madness-dashboard-in-grafana/?utm_source=tldrdevops",
+            "source": "Grafana Blog",
+            "summary": "Grafana đã thiết kế một hướng dẫn để xây dựng dashboard March Madness theo thời gian thực trong Grafana, hoàn chỉnh với dữ liệu trò chơi NCAA trực tiếp, số liệu thống kê của người chơi và bảng điểm theo phong cách jumbotron."
+          }
+        ],
+        "title": "Quick Links"
+      }
+    ]
+  }
+}

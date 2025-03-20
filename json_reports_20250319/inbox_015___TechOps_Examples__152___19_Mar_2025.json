@@ -1,0 +1,94 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash-lite",
+  "text": "{\n  \"from\": \"TechOps Examples <govardhana.mk@techopsexamples.com>\",\n  \"reportTitle\": \"TechOps Examples #152 - 19 Mar 2025\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"AWS IAM Permissions and Access Management Simplified\",\n          \"link\": \"https://www.techopsexamples.com/p/aws-iam-permissions-and-access-management-simplified\",\n          \"source\": \"TechOps Examples\",\n          \"summary\": \"Bài viết trình bày chi tiết về việc quản lý và cấp quyền truy cập trong AWS IAM, một yếu tố cốt lõi trong bảo mật các môi trường CNTT hiện đại. Bài viết tập trung vào các thành phần chính như người dùng (Principals), chính sách (Policies), vai trò (Roles), và các ranh giới quyền hạn (Permission Boundaries). Nó cũng giải thích cách các chính sách IAM được đánh giá dựa trên sự kết hợp của các câu lệnh cho phép (allow) và từ chối (deny), nhấn mạnh tầm quan trọng của việc hiểu rõ trình tự đánh giá để khắc phục sự cố truy cập. Tìm hiểu thêm về cách sử dụng chính sách dựa trên danh tính và tài nguyên, vai trò và chính sách tin cậy, cùng với các ranh giới quyền hạn. Bài viết cũng bao gồm các ví dụ minh họa và các công cụ hữu ích như IAM Policy Simulator, đồng thời nhấn mạnh tầm quan trọng của nguyên tắc đặc quyền tối thiểu và sử dụng các chính sách được quản lý.\"\n        }\n      ],\n      \"title\": \"🧠 Use Case\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"AWS is offering 50% off on Foundational & Associate Exams!\",\n          \"link\": \"https://pages.awscloud.com/GLOBAL-other-GC-Traincert-Foundational-and-Associate-Certification-Challenge-2025-reg.html\",\n          \"source\": \"TechOps Examples\",\n          \"summary\": \"AWS hiện đang có chương trình giảm giá 50% cho các kỳ thi Foundational & Associate Exams.\"\n        }\n      ],\n      \"title\": \"🚀 Top News\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Site Reliability / Gitops Engineer\",\n          \"link\": \"https://job-boards.greenhouse.io/canonical/jobs/1747487\",\n          \"source\": \"Canonical\",\n          \"summary\": \"Canonical tuyển dụng Site Reliability / Gitops Engineer (Địa điểm: Toàn cầu)\"\n        },\n        {\n          \"headline\": \"Senior Release Engineer\",\n          \"link\": \"https://jobs.ashbyhq.com/astronomer/7c760a9a-9c34-4fe2-be94-d821721a0364\",\n          \"source\": \"Astronomer\",\n          \"summary\": \"Astronomer tuyển dụng Senior Release Engineer (Địa điểm: Ấn Độ)\"\n        }\n      ],\n      \"title\": \"👀 Remote Jobs\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"1000+ DevOps Bash Scripts\",\n          \"link\": \"https://github.com/HariSekhon/DevOps-Bash-tools\",\n          \"source\": \"TechOps Examples\",\n          \"summary\": \"Tổng hợp hơn 1000 script Bash trong lĩnh vực DevOps.\"\n        },\n        {\n          \"headline\": \"How to integrate Backstage with Kubernetes\",\n          \"link\": \"https://piotrminkowski.com/2024/06/28/backstage-on-kubernetes/\",\n          \"source\": \"TechOps Examples\",\n          \"summary\": \"Hướng dẫn tích hợp Backstage với Kubernetes.\"\n        },\n        {\n          \"headline\": \"Best practices to respond to security risks across AWS Organizations\",\n          \"link\": \"https://aws.amazon.com/blogs/mt/best-practices-to-respond-to-security-risks-across-your-aws-organizations/\",\n          \"source\": \"TechOps Examples\",\n          \"summary\": \"Các phương pháp hay nhất để ứng phó với các rủi ro bảo mật trong các tổ chức AWS của bạn.\"\n        }\n      ],\n      \"title\": \"📚️ Resources\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Any good AWS CLI tools still out there?\",\n          \"link\": \"https://www.reddit.com/r/aws/comments/1jdtj8g/any_good_aws_cli_tools_still_out_there/\",\n          \"source\": \"Reddit\",\n          \"summary\": \"Thảo luận trên Reddit về các công cụ AWS CLI hữu ích.\"\n        },\n        {\n          \"headline\": \"Which free Kubernetes Monitoring stack would you recommend?\",\n          \"link\": \"https://www.reddit.com/r/kubernetes/comments/1jdc0k9/which_free_kubernetes_monitoring_stack_would_you/\",\n          \"source\": \"Reddit\",\n          \"summary\": \"Thảo luận trên Reddit về các stack giám sát Kubernetes miễn phí.\"\n        }\n      ],\n      \"title\": \"📢 Reddit Threads\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 8.348907470703125,
+  "attempts": 1,
+  "api_key_index": 1,
+  "structured_data": {
+    "from": "TechOps Examples <govardhana.mk@techopsexamples.com>",
+    "reportTitle": "TechOps Examples #152 - 19 Mar 2025",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "AWS IAM Permissions and Access Management Simplified",
+            "link": "https://www.techopsexamples.com/p/aws-iam-permissions-and-access-management-simplified",
+            "source": "TechOps Examples",
+            "summary": "Bài viết trình bày chi tiết về việc quản lý và cấp quyền truy cập trong AWS IAM, một yếu tố cốt lõi trong bảo mật các môi trường CNTT hiện đại. Bài viết tập trung vào các thành phần chính như người dùng (Principals), chính sách (Policies), vai trò (Roles), và các ranh giới quyền hạn (Permission Boundaries). Nó cũng giải thích cách các chính sách IAM được đánh giá dựa trên sự kết hợp của các câu lệnh cho phép (allow) và từ chối (deny), nhấn mạnh tầm quan trọng của việc hiểu rõ trình tự đánh giá để khắc phục sự cố truy cập. Tìm hiểu thêm về cách sử dụng chính sách dựa trên danh tính và tài nguyên, vai trò và chính sách tin cậy, cùng với các ranh giới quyền hạn. Bài viết cũng bao gồm các ví dụ minh họa và các công cụ hữu ích như IAM Policy Simulator, đồng thời nhấn mạnh tầm quan trọng của nguyên tắc đặc quyền tối thiểu và sử dụng các chính sách được quản lý."
+          }
+        ],
+        "title": "🧠 Use Case"
+      },
+      {
+        "articles": [
+          {
+            "headline": "AWS is offering 50% off on Foundational & Associate Exams!",
+            "link": "https://pages.awscloud.com/GLOBAL-other-GC-Traincert-Foundational-and-Associate-Certification-Challenge-2025-reg.html",
+            "source": "TechOps Examples",
+            "summary": "AWS hiện đang có chương trình giảm giá 50% cho các kỳ thi Foundational & Associate Exams."
+          }
+        ],
+        "title": "🚀 Top News"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Site Reliability / Gitops Engineer",
+            "link": "https://job-boards.greenhouse.io/canonical/jobs/1747487",
+            "source": "Canonical",
+            "summary": "Canonical tuyển dụng Site Reliability / Gitops Engineer (Địa điểm: Toàn cầu)"
+          },
+          {
+            "headline": "Senior Release Engineer",
+            "link": "https://jobs.ashbyhq.com/astronomer/7c760a9a-9c34-4fe2-be94-d821721a0364",
+            "source": "Astronomer",
+            "summary": "Astronomer tuyển dụng Senior Release Engineer (Địa điểm: Ấn Độ)"
+          }
+        ],
+        "title": "👀 Remote Jobs"
+      },
+      {
+        "articles": [
+          {
+            "headline": "1000+ DevOps Bash Scripts",
+            "link": "https://github.com/HariSekhon/DevOps-Bash-tools",
+            "source": "TechOps Examples",
+            "summary": "Tổng hợp hơn 1000 script Bash trong lĩnh vực DevOps."
+          },
+          {
+            "headline": "How to integrate Backstage with Kubernetes",
+            "link": "https://piotrminkowski.com/2024/06/28/backstage-on-kubernetes/",
+            "source": "TechOps Examples",
+            "summary": "Hướng dẫn tích hợp Backstage với Kubernetes."
+          },
+          {
+            "headline": "Best practices to respond to security risks across AWS Organizations",
+            "link": "https://aws.amazon.com/blogs/mt/best-practices-to-respond-to-security-risks-across-your-aws-organizations/",
+            "source": "TechOps Examples",
+            "summary": "Các phương pháp hay nhất để ứng phó với các rủi ro bảo mật trong các tổ chức AWS của bạn."
+          }
+        ],
+        "title": "📚️ Resources"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Any good AWS CLI tools still out there?",
+            "link": "https://www.reddit.com/r/aws/comments/1jdtj8g/any_good_aws_cli_tools_still_out_there/",
+            "source": "Reddit",
+            "summary": "Thảo luận trên Reddit về các công cụ AWS CLI hữu ích."
+          },
+          {
+            "headline": "Which free Kubernetes Monitoring stack would you recommend?",
+            "link": "https://www.reddit.com/r/kubernetes/comments/1jdc0k9/which_free_kubernetes_monitoring_stack_would_you/",
+            "source": "Reddit",
+            "summary": "Thảo luận trên Reddit về các stack giám sát Kubernetes miễn phí."
+          }
+        ],
+        "title": "📢 Reddit Threads"
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash-lite",
+  "text": "{\n  \"from\": \"Pen Name\",\n  \"reportTitle\": \"Báo cáo về an toàn bộ nhớ trong Rust và sự đóng góp cho nhân Linux\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"An toàn bộ nhớ và Rust\",\n          \"link\": \"https://www.rust-lang.org/\",\n          \"source\": \"Rust-lang.org\",\n          \"summary\": \"Rust tập trung vào an toàn vòng đời đối tượng và quyền sở hữu bộ nhớ, nhưng không loại bỏ hoàn toàn các lỗi. Việc sử dụng Rust cũng cải thiện mã C hiện có, khuyến khích đánh giá lại mã C để tăng cường an toàn và rõ ràng.\"\n        },\n        {\n          \"headline\": \"Rust và Nhân Linux\",\n          \"link\": \"https://www.linuxkernelfoundation.com/\",\n          \"source\": \"Linux Kernel Foundation\",\n          \"summary\": \"Hiện có sự tranh cãi về việc đưa ngôn ngữ mới vào nhân Linux, nhưng các nỗ lực đang diễn ra để viết trình điều khiển bằng Rust, đặc biệt là trình điều khiển GPU thử nghiệm. Xu hướng này được thúc đẩy bởi yêu cầu sử dụng các ngôn ngữ an toàn bộ nhớ từ chính phủ.\"\n        },\n        {\n          \"headline\": \"Cải thiện mã C trong Linux\",\n          \"link\": \"https://www.linuxkernelfoundation.com/\",\n          \"source\": \"Linux Kernel Foundation\",\n          \"summary\": \"Cộng đồng Linux cũng đang nỗ lực cải thiện an toàn của mã C thông qua kiểm tra giới hạn và các tiện ích mở rộng trình biên dịch.\"\n        },\n        {\n          \"headline\": \"Đóng góp vào nhân Linux\",\n          \"link\": \"https://kernelnewbies.org/\",\n          \"source\": \"Kernel Newbies\",\n          \"summary\": \"Việc xây dựng và kiểm thử nhân Linux là điều kiện tiên quyết để gửi các thay đổi. Đóng góp, dù chỉ một bản vá, mang lại lợi ích nghề nghiệp đáng kể và là cơ hội học tập. Người mới có thể bắt đầu bằng cách sửa lỗi hoặc xóa mã cũ.\"\n        }\n      ],\n      \"title\": \"Tóm tắt\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Thông tin thêm\",\n          \"link\": \"https://substack.com/redirect/a8e73a91-ebf6-4b20-8618-adb25159e6bf?j=eyJ1IjoiNTQya3k4In0.5HrgKbRwY5tq-N6VnEZhGD1pdFCefau3PItUmwWhs9c\",\n          \"source\": \"Kernel Newbies\",\n          \"summary\": \"Nơi bắt đầu cho người mới bắt đầu đóng góp.\"\n        },\n        {\n          \"headline\": \"Thông tin về Greg Kroah-Hartman\",\n          \"link\": \"https://social.kernel.org/gregkh\",\n          \"source\": \"social.kernel.org\",\n          \"summary\": \"Liên hệ với Greg Kroah-Hartman trên mạng xã hội.\"\n        },\n        {\n          \"headline\": \"Trang web cá nhân của Greg Kroah-Hartman\",\n          \"link\": \"http://www.kroah.com/log/about/\",\n          \"source\": \"kroah.com\",\n          \"summary\": \"Tìm hiểu thêm về Greg Kroah-Hartman.\"\n        },\n        {\n          \"headline\": \"Các dự án và tổ chức liên quan\",\n          \"link\": \"https://www.linuxkernelfoundation.com/\",\n          \"source\": \"Linux Kernel Foundation\",\n          \"summary\": \"Thông tin về Linux Kernel Foundation.\"\n        },\n        {\n          \"headline\": \"Diễn đàn\",\n          \"link\": \"https://www.nasa.gov/international-space-station/\",\n          \"source\": \"NASA\",\n          \"summary\": \"Tham khảo các liên kết quan trọng, bao gồm ISS, Raspberry Pi và GitHub.\"\n        },\n        {\n          \"headline\": \"Tìm hiểu thêm về Kernel CI\",\n          \"link\": \"https://kernelci.org/\",\n          \"source\": \"Kernel CI\",\n          \"summary\": \"Thông tin về Kernel CI.\"\n        },\n        {\n          \"headline\": \"LinkedIn của Linus Torvalds\",\n          \"link\": \"https://www.linkedin.com/in/linustorvalds/\",\n          \"source\": \"LinkedIn\",\n          \"summary\": \"Liên hệ với Linus Torvalds.\"\n        },\n        {\n          \"headline\": \"Quy trình phát triển nhân\",\n          \"link\": \"https://docs.kernel.org/process/development-process.html\",\n          \"source\": \"kernel.org\",\n          \"summary\": \"Hướng dẫn chi tiết về quy trình phát triển nhân Linux.\"\n        }\n      ],\n      \"title\": \"Tài liệu tham khảo\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 9.407695293426514,
+  "attempts": 1,
+  "api_key_index": 1,
+  "structured_data": {
+    "from": "Pen Name",
+    "reportTitle": "Báo cáo về an toàn bộ nhớ trong Rust và sự đóng góp cho nhân Linux",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "An toàn bộ nhớ và Rust",
+            "link": "https://www.rust-lang.org/",
+            "source": "Rust-lang.org",
+            "summary": "Rust tập trung vào an toàn vòng đời đối tượng và quyền sở hữu bộ nhớ, nhưng không loại bỏ hoàn toàn các lỗi. Việc sử dụng Rust cũng cải thiện mã C hiện có, khuyến khích đánh giá lại mã C để tăng cường an toàn và rõ ràng."
+          },
+          {
+            "headline": "Rust và Nhân Linux",
+            "link": "https://www.linuxkernelfoundation.com/",
+            "source": "Linux Kernel Foundation",
+            "summary": "Hiện có sự tranh cãi về việc đưa ngôn ngữ mới vào nhân Linux, nhưng các nỗ lực đang diễn ra để viết trình điều khiển bằng Rust, đặc biệt là trình điều khiển GPU thử nghiệm. Xu hướng này được thúc đẩy bởi yêu cầu sử dụng các ngôn ngữ an toàn bộ nhớ từ chính phủ."
+          },
+          {
+            "headline": "Cải thiện mã C trong Linux",
+            "link": "https://www.linuxkernelfoundation.com/",
+            "source": "Linux Kernel Foundation",
+            "summary": "Cộng đồng Linux cũng đang nỗ lực cải thiện an toàn của mã C thông qua kiểm tra giới hạn và các tiện ích mở rộng trình biên dịch."
+          },
+          {
+            "headline": "Đóng góp vào nhân Linux",
+            "link": "https://kernelnewbies.org/",
+            "source": "Kernel Newbies",
+            "summary": "Việc xây dựng và kiểm thử nhân Linux là điều kiện tiên quyết để gửi các thay đổi. Đóng góp, dù chỉ một bản vá, mang lại lợi ích nghề nghiệp đáng kể và là cơ hội học tập. Người mới có thể bắt đầu bằng cách sửa lỗi hoặc xóa mã cũ."
+          }
+        ],
+        "title": "Tóm tắt"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Thông tin thêm",
+            "link": "https://substack.com/redirect/a8e73a91-ebf6-4b20-8618-adb25159e6bf?j=eyJ1IjoiNTQya3k4In0.5HrgKbRwY5tq-N6VnEZhGD1pdFCefau3PItUmwWhs9c",
+            "source": "Kernel Newbies",
+            "summary": "Nơi bắt đầu cho người mới bắt đầu đóng góp."
+          },
+          {
+            "headline": "Thông tin về Greg Kroah-Hartman",
+            "link": "https://social.kernel.org/gregkh",
+            "source": "social.kernel.org",
+            "summary": "Liên hệ với Greg Kroah-Hartman trên mạng xã hội."
+          },
+          {
+            "headline": "Trang web cá nhân của Greg Kroah-Hartman",
+            "link": "http://www.kroah.com/log/about/",
+            "source": "kroah.com",
+            "summary": "Tìm hiểu thêm về Greg Kroah-Hartman."
+          },
+          {
+            "headline": "Các dự án và tổ chức liên quan",
+            "link": "https://www.linuxkernelfoundation.com/",
+            "source": "Linux Kernel Foundation",
+            "summary": "Thông tin về Linux Kernel Foundation."
+          },
+          {
+            "headline": "Diễn đàn",
+            "link": "https://www.nasa.gov/international-space-station/",
+            "source": "NASA",
+            "summary": "Tham khảo các liên kết quan trọng, bao gồm ISS, Raspberry Pi và GitHub."
+          },
+          {
+            "headline": "Tìm hiểu thêm về Kernel CI",
+            "link": "https://kernelci.org/",
+            "source": "Kernel CI",
+            "summary": "Thông tin về Kernel CI."
+          },
+          {
+            "headline": "LinkedIn của Linus Torvalds",
+            "link": "https://www.linkedin.com/in/linustorvalds/",
+            "source": "LinkedIn",
+            "summary": "Liên hệ với Linus Torvalds."
+          },
+          {
+            "headline": "Quy trình phát triển nhân",
+            "link": "https://docs.kernel.org/process/development-process.html",
+            "source": "kernel.org",
+            "summary": "Hướng dẫn chi tiết về quy trình phát triển nhân Linux."
+          }
+        ],
+        "title": "Tài liệu tham khảo"
+      }
+    ]
+  }
+}

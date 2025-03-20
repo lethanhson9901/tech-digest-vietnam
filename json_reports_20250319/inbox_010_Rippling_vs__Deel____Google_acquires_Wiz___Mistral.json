@@ -1,0 +1,130 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"TLDR Founders\",\n  \"reportTitle\": \"Tổng hợp tin tức ngày 19/03/2025: Rippling kiện Deel, Google mua lại Wiz, Mistral Small 3.1\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Vụ kiện cáo buộc 'kỳ lân' Deel trị giá 12 tỷ đô la Mỹ cài gián điệp, tổ chức đánh cắp bí mật thương mại và hoạt động gián điệp doanh nghiệp chống lại đối thủ cạnh tranh\",\n          \"link\": \"https://www.rippling.com/blog/lawsuit-alleges-12-billion-unicorn-deel-cultivated-spy-orchestrated-long-running-trade-secret-theft-corporate-espionage-against-competitor?utm_source=tldrfounders\",\n          \"source\": \"Rippling\",\n          \"summary\": \"Một vụ kiện chống lại Deel, kỳ lân nhân sự trị giá 12 tỷ đô la, cáo buộc công ty này đã thực hiện một chiến dịch gián điệp bằng cách cài một gián điệp vào đối thủ cạnh tranh Rippling, người này đã thực hiện hơn 6.000 lượt tìm kiếm để đánh cắp dữ liệu bán hàng. Rippling đã phát hiện ra âm mưu bằng cách giăng bẫy - tạo một kênh Slack giả chỉ được đề cập trong một lá thư gửi cho các giám đốc điều hành của Deel, mà gián điệp đã ngay lập tức tìm kiếm. Vụ kiện có nguy cơ phơi bày các hoạt động cạnh tranh bất hợp pháp trong ngành công nghệ nhân sự đầy rủi ro.\"\n        },\n        {\n          \"headline\": \"Google mua lại công ty bảo mật đám mây Wiz với giá 32 tỷ đô la\",\n          \"link\": \"https://9to5google.com/2025/03/18/google-wiz-cloud-security-acquisition?utm_source=tldrfounders\",\n          \"source\": \"9to5Google\",\n          \"summary\": \"Việc Google mua lại startup bảo mật đám mây Wiz với giá 32 tỷ đô la tiền mặt, nhằm tăng cường khả năng phòng thủ của Google Cloud trước các mối đe dọa mới nổi, đánh dấu một trong những thương vụ bảo mật lớn nhất của ngành công nghệ. Nền tảng của Wiz xây dựng các biểu đồ bảo mật toàn diện trên các môi trường đám mây để xác định các đường dẫn tấn công tiềm ẩn trước khi sự cố xảy ra. Mặc dù thuộc sở hữu của Google, Wiz sẽ tiếp tục hoạt động độc lập và hỗ trợ nhiều nhà cung cấp đám mây, bao gồm AWS và Azure, duy trì phương pháp tiếp cận đa đám mây đồng thời có được quyền truy cập vào tài nguyên của Google trong thị trường bảo mật đám mây ngày càng cạnh tranh.\"\n        },\n        {\n          \"headline\": \"Mistral Small 3.1\",\n          \"link\": \"https://mistral.ai/news/mistral-small-3-1?utm_source=tldrfounders\",\n          \"source\": \"Mistral AI\",\n          \"summary\": \"Mô hình Mistral Small 3.1 mới được phát hành vượt trội so với các đối thủ cạnh tranh như Gemma 3 và GPT-4o Mini với hiệu suất văn bản nâng cao, khả năng hiểu đa phương thức và cửa sổ ngữ cảnh 128k token. Nó được thiết kế cho nhiều ứng dụng AI khác nhau, bao gồm tuân theo hướng dẫn, hỗ trợ đàm thoại và xử lý hình ảnh, cung cấp tốc độ suy luận nhanh và chạy hiệu quả trên phần cứng như RTX 4090. Có sẵn theo Apache 2.0, Mistral Small 3.1 có thể được truy cập thông qua Hugging Face, được sử dụng qua API trên sân chơi dành cho nhà phát triển Mistral AI và sẽ sớm có sẵn trên NVIDIA NIM và Microsoft Azure AI Foundry.\"\n        }\n      ],\n      \"title\": \"Tin tức & Xu hướng\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Hãy tưởng tượng chi 1 đô la và kiếm được trung bình 68 đô la\",\n          \"link\": \"https://ckarchive.com/b/75u7h8h6884z8s6rgg7rlawx80666in?utm_source=tldrfounders\",\n          \"source\": \"ckarchive.com\",\n          \"summary\": \"EasyPlant đã biến sự thất vọng khi làm chết cây trồng trong nhà thành một doanh nghiệp phát đạt với một giải pháp tuyệt vời: cây tự tưới mà bạn chỉ cần tưới nước mỗi tháng một lần. Lời hứa bốn chữ của nó — “Cây của chúng tôi tự tưới nước” — trực tiếp giải quyết điểm khó khăn lớn nhất mà những người yêu cây trồng phải đối mặt. Hoạt động tiếp thị của EasyPlant hiệu quả vì nó loại bỏ nỗi sợ thất bại của người mua, nhắm mục tiêu đến mọi người vào những thời điểm quan trọng (chẳng hạn như khi trang trí lại) và giúp khách hàng cảm thấy như những bậc cha mẹ trồng cây thành công mà không bị căng thẳng. Bằng cách biến một vấn đề phổ biến thành một giải pháp đơn giản, nó đã tự biến mình thành lựa chọn hiển nhiên cho bất kỳ ai đã từng chứng kiến một cái cây chết và cảm thấy như một kẻ thất bại.\"\n        },\n        {\n          \"headline\": \"Nội dung nào hoạt động tốt trong LLM?\",\n          \"link\": \"https://www.growth-memo.com/p/what-content-works-well-in-llms?utm_source=tldrfounders\",\n          \"source\": \"growth-memo.com\",\n          \"summary\": \"Các chatbot AI bỏ qua các yếu tố SEO truyền thống và thay vào đó thích nội dung toàn diện với số lượng từ cao, với mức độ phổ biến của thương hiệu quyết định mạnh mẽ việc các công ty có được đề cập hay không. Để cải thiện khả năng hiển thị của AI, hãy tạo nội dung chuyên sâu trả lời các câu hỏi cụ thể, đảm bảo trang web của bạn không chặn trình thu thập dữ liệu AI và xây dựng nhận thức chung về thương hiệu vì các thương hiệu phổ biến nhận được nhiều lượt đề cập hơn trên tất cả các hệ thống AI.\"\n        },\n        {\n          \"headline\": \"Khi nào các startup nên ưu tiên điểm PMF hơn NPS?\",\n          \"link\": \"https://theventurecrew.substack.com/p/when-should-startups-prioritize-pmf-bc7?utm_source=tldrfounders\",\n          \"source\": \"substack.com\",\n          \"summary\": \"Các startup thông minh đo lường thành công khác nhau ở mỗi giai đoạn tăng trưởng. Ban đầu, hãy sử dụng Điểm phù hợp với thị trường sản phẩm để hỏi \\\"Bạn sẽ thất vọng như thế nào nếu sản phẩm của chúng tôi biến mất?\\\" Điều này cho thấy bạn đã xây dựng được thứ gì đó thực sự cần thiết hay chưa. Chỉ sau khi 40% người dùng \\\"rất thất vọng\\\" nếu không có bạn, bạn mới nên bắt đầu theo dõi Điểm quảng bá ròng, đo lường số lượt giới thiệu. Tuân theo trình tự này sẽ ngăn chặn cái bẫy phổ biến là có những khách hàng tình cờ giới thiệu sản phẩm của bạn nhưng sẽ không thực sự nhớ nó nếu nó biến mất.\"\n        }\n      ],\n      \"title\": \"Chiến lược & Chiến thuật\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Emojis\",\n          \"link\": \"https://www.emojis.com/?utm_source=tldrfounders\",\n          \"source\": \"emojis.com\",\n          \"summary\": \"AI copilot cho thiết kế đồ họa.\"\n        },\n        {\n          \"headline\": \"Captiwate\",\n          \"link\": \"https://www.captiwate.com/?utm_source=tldrfounders\",\n          \"source\": \"captiwate.com\",\n          \"summary\": \"Captiwate cho phép các cuộc gọi video đến tức thì với khách truy cập trang web, nắm bắt các khách hàng tiềm năng có ý định cao để thúc đẩy nhiều bản demo và chuyển đổi đủ điều kiện hơn.\"\n        },\n        {\n          \"headline\": \"Pinch\",\n          \"link\": \"https://startpinch.com/?utm_source=tldrfounders\",\n          \"source\": \"startpinch.com\",\n          \"summary\": \"Pinch là một nền tảng hội nghị ảo với bản dịch giọng nói theo thời gian thực, giúp bạn nghe như người bản xứ bằng hơn 30 ngôn ngữ.\"\n        }\n      ],\n      \"title\": \"Công cụ & Tài nguyên\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Sự căng thẳng của giao tiếp sản phẩm sớm\",\n          \"link\": \"https://www.fishmanafnewsletter.com/p/the-tension-of-early-product-communication-bring-people-along-zero-to-one?utm_source=tldrfounders\",\n          \"source\": \"fishmanafnewsletter.com\",\n          \"summary\": \"Khi tạo sản phẩm mới trong công ty của bạn, hãy cẩn thận về việc bạn nói với ai và khi nào. Bắt đầu bằng cách chỉ nói với sếp trực tiếp của bạn trong giai đoạn ý tưởng ban đầu. Khi bạn có thứ gì đó để thử nghiệm, hãy để một số đồng nghiệp dùng thử nhưng hãy gặp gỡ các trưởng nhóm quan trọng trước khi đưa ra thông báo lớn. Chỉ sau khi sản phẩm của bạn hoạt động tốt và khách hàng thích nó, bạn mới nên chia sẻ các bản cập nhật thường xuyên với mọi người. Đừng lo lắng nếu một số người ước họ biết sớm hơn - điều đó luôn xảy ra bất kể bạn làm gì.\"\n        },\n        {\n          \"headline\": \"Sổ tay hiệu quả và phân bổ tiếp thị: Các CMO ngày nay đang theo dõi những gì\",\n          \"link\": \"https://www.carilu.com/p/the-marketing-efficiency-and-attribution?utm_source=tldrfounders\",\n          \"source\": \"carilu.com\",\n          \"summary\": \"Một nghiên cứu so sánh mới quan trọng tiết lộ cách các nhà tiếp thị B2B thành công theo dõi tác động của họ. Các nhà sáng lập thông minh nên tập trung vào chi phí trên doanh thu thay vì chỉ các con số về kênh để xem hoạt động tiếp thị nào thực sự tạo ra khách hàng, chứ không chỉ khách hàng tiềm năng. Việc theo dõi của bạn sẽ phát triển cùng với công ty của bạn — hãy đếm các giao dịch bằng tay khi còn nhỏ, theo dõi nguồn gốc của khách hàng tiềm năng khi bạn phát triển, sau đó sử dụng các hệ thống hiển thị toàn bộ hành trình của khách hàng khi bạn lớn hơn.\"\n        },\n        {\n          \"headline\": \"Làm thế nào để trở thành một nhà đầu tư thiên thần hàng đầu 1%\",\n          \"link\": \"https://thegeneralist.substack.com/p/how-to-be-a-top-1-angel?utm_source=tldrfounders\",\n          \"source\": \"substack.com\",\n          \"summary\": \"Đầu tư thiên thần mang lại những lợi ích như học hỏi từ những người sáng lập và kết nối mạng, nhưng lại đặt ra những rủi ro cao với cơ hội thu được lợi nhuận tài chính đáng kể thấp. Thực tiễn này được tiếp cận tốt nhất với những ý định rõ ràng và một chiến lược có cấu trúc để giảm thiểu các rủi ro vốn có. Hướng dẫn toàn diện này, dựa trên những hiểu biết sâu sắc từ các nhà đầu tư giàu kinh nghiệm, phác thảo các bước để đầu tư thiên thần hiệu quả, bao gồm thiết lập động lực, cấu trúc đầu tư, tìm nguồn cung cấp giao dịch và xây dựng mạng lưới.\"\n        }\n      ],\n      \"title\": \"Khác\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Một điều chỉnh duy nhất đã tăng doanh thu của Opendoor lên 1 tỷ đô la vào năm 2021 như thế nào\",\n          \"link\": \"https://links.tldrnewsletter.com/NAA2rd\",\n          \"source\": \"tldrnewsletter.com\",\n          \"summary\": \"Opendoor đã loại bỏ giới hạn tùy ý hai năm đối với việc tái tương tác với những khách hàng cũ bằng các ưu đãi qua email, tăng gấp đôi số hợp đồng và tạo thêm doanh thu 1 tỷ đô la.\"\n        },\n        {\n          \"headline\": \"Mô hình ghi âm bị hỏng\",\n          \"link\": \"https://links.tldrnewsletter.com/EEwHxs\",\n          \"source\": \"tldrnewsletter.com\",\n          \"summary\": \"Người quản lý sản phẩm nên chọn một cách đơn giản để giải thích sản phẩm của họ và gắn bó với nó.\"\n        },\n        {\n          \"headline\": \"PayPal lập ngân sách và dự báo doanh thu như thế nào\",\n          \"link\": \"https://links.tldrnewsletter.com/PdkT4D\",\n          \"source\": \"tldrnewsletter.com\",\n          \"summary\": \"Nhóm FP&A của PayPal đã sử dụng các mô hình dự báo phức tạp dựa trên Tổng khối lượng thanh toán, chi tiêu của người tiêu dùng và chu kỳ kinh tế để quản lý dòng giao dịch trị giá 2 nghìn tỷ đô la của mình.\"\n        }\n      ],\n      \"title\": \"Liên kết nhanh\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 15.716264486312866,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "TLDR Founders",
+    "reportTitle": "Tổng hợp tin tức ngày 19/03/2025: Rippling kiện Deel, Google mua lại Wiz, Mistral Small 3.1",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Vụ kiện cáo buộc 'kỳ lân' Deel trị giá 12 tỷ đô la Mỹ cài gián điệp, tổ chức đánh cắp bí mật thương mại và hoạt động gián điệp doanh nghiệp chống lại đối thủ cạnh tranh",
+            "link": "https://www.rippling.com/blog/lawsuit-alleges-12-billion-unicorn-deel-cultivated-spy-orchestrated-long-running-trade-secret-theft-corporate-espionage-against-competitor?utm_source=tldrfounders",
+            "source": "Rippling",
+            "summary": "Một vụ kiện chống lại Deel, kỳ lân nhân sự trị giá 12 tỷ đô la, cáo buộc công ty này đã thực hiện một chiến dịch gián điệp bằng cách cài một gián điệp vào đối thủ cạnh tranh Rippling, người này đã thực hiện hơn 6.000 lượt tìm kiếm để đánh cắp dữ liệu bán hàng. Rippling đã phát hiện ra âm mưu bằng cách giăng bẫy - tạo một kênh Slack giả chỉ được đề cập trong một lá thư gửi cho các giám đốc điều hành của Deel, mà gián điệp đã ngay lập tức tìm kiếm. Vụ kiện có nguy cơ phơi bày các hoạt động cạnh tranh bất hợp pháp trong ngành công nghệ nhân sự đầy rủi ro."
+          },
+          {
+            "headline": "Google mua lại công ty bảo mật đám mây Wiz với giá 32 tỷ đô la",
+            "link": "https://9to5google.com/2025/03/18/google-wiz-cloud-security-acquisition?utm_source=tldrfounders",
+            "source": "9to5Google",
+            "summary": "Việc Google mua lại startup bảo mật đám mây Wiz với giá 32 tỷ đô la tiền mặt, nhằm tăng cường khả năng phòng thủ của Google Cloud trước các mối đe dọa mới nổi, đánh dấu một trong những thương vụ bảo mật lớn nhất của ngành công nghệ. Nền tảng của Wiz xây dựng các biểu đồ bảo mật toàn diện trên các môi trường đám mây để xác định các đường dẫn tấn công tiềm ẩn trước khi sự cố xảy ra. Mặc dù thuộc sở hữu của Google, Wiz sẽ tiếp tục hoạt động độc lập và hỗ trợ nhiều nhà cung cấp đám mây, bao gồm AWS và Azure, duy trì phương pháp tiếp cận đa đám mây đồng thời có được quyền truy cập vào tài nguyên của Google trong thị trường bảo mật đám mây ngày càng cạnh tranh."
+          },
+          {
+            "headline": "Mistral Small 3.1",
+            "link": "https://mistral.ai/news/mistral-small-3-1?utm_source=tldrfounders",
+            "source": "Mistral AI",
+            "summary": "Mô hình Mistral Small 3.1 mới được phát hành vượt trội so với các đối thủ cạnh tranh như Gemma 3 và GPT-4o Mini với hiệu suất văn bản nâng cao, khả năng hiểu đa phương thức và cửa sổ ngữ cảnh 128k token. Nó được thiết kế cho nhiều ứng dụng AI khác nhau, bao gồm tuân theo hướng dẫn, hỗ trợ đàm thoại và xử lý hình ảnh, cung cấp tốc độ suy luận nhanh và chạy hiệu quả trên phần cứng như RTX 4090. Có sẵn theo Apache 2.0, Mistral Small 3.1 có thể được truy cập thông qua Hugging Face, được sử dụng qua API trên sân chơi dành cho nhà phát triển Mistral AI và sẽ sớm có sẵn trên NVIDIA NIM và Microsoft Azure AI Foundry."
+          }
+        ],
+        "title": "Tin tức & Xu hướng"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Hãy tưởng tượng chi 1 đô la và kiếm được trung bình 68 đô la",
+            "link": "https://ckarchive.com/b/75u7h8h6884z8s6rgg7rlawx80666in?utm_source=tldrfounders",
+            "source": "ckarchive.com",
+            "summary": "EasyPlant đã biến sự thất vọng khi làm chết cây trồng trong nhà thành một doanh nghiệp phát đạt với một giải pháp tuyệt vời: cây tự tưới mà bạn chỉ cần tưới nước mỗi tháng một lần. Lời hứa bốn chữ của nó — “Cây của chúng tôi tự tưới nước” — trực tiếp giải quyết điểm khó khăn lớn nhất mà những người yêu cây trồng phải đối mặt. Hoạt động tiếp thị của EasyPlant hiệu quả vì nó loại bỏ nỗi sợ thất bại của người mua, nhắm mục tiêu đến mọi người vào những thời điểm quan trọng (chẳng hạn như khi trang trí lại) và giúp khách hàng cảm thấy như những bậc cha mẹ trồng cây thành công mà không bị căng thẳng. Bằng cách biến một vấn đề phổ biến thành một giải pháp đơn giản, nó đã tự biến mình thành lựa chọn hiển nhiên cho bất kỳ ai đã từng chứng kiến một cái cây chết và cảm thấy như một kẻ thất bại."
+          },
+          {
+            "headline": "Nội dung nào hoạt động tốt trong LLM?",
+            "link": "https://www.growth-memo.com/p/what-content-works-well-in-llms?utm_source=tldrfounders",
+            "source": "growth-memo.com",
+            "summary": "Các chatbot AI bỏ qua các yếu tố SEO truyền thống và thay vào đó thích nội dung toàn diện với số lượng từ cao, với mức độ phổ biến của thương hiệu quyết định mạnh mẽ việc các công ty có được đề cập hay không. Để cải thiện khả năng hiển thị của AI, hãy tạo nội dung chuyên sâu trả lời các câu hỏi cụ thể, đảm bảo trang web của bạn không chặn trình thu thập dữ liệu AI và xây dựng nhận thức chung về thương hiệu vì các thương hiệu phổ biến nhận được nhiều lượt đề cập hơn trên tất cả các hệ thống AI."
+          },
+          {
+            "headline": "Khi nào các startup nên ưu tiên điểm PMF hơn NPS?",
+            "link": "https://theventurecrew.substack.com/p/when-should-startups-prioritize-pmf-bc7?utm_source=tldrfounders",
+            "source": "substack.com",
+            "summary": "Các startup thông minh đo lường thành công khác nhau ở mỗi giai đoạn tăng trưởng. Ban đầu, hãy sử dụng Điểm phù hợp với thị trường sản phẩm để hỏi \"Bạn sẽ thất vọng như thế nào nếu sản phẩm của chúng tôi biến mất?\" Điều này cho thấy bạn đã xây dựng được thứ gì đó thực sự cần thiết hay chưa. Chỉ sau khi 40% người dùng \"rất thất vọng\" nếu không có bạn, bạn mới nên bắt đầu theo dõi Điểm quảng bá ròng, đo lường số lượt giới thiệu. Tuân theo trình tự này sẽ ngăn chặn cái bẫy phổ biến là có những khách hàng tình cờ giới thiệu sản phẩm của bạn nhưng sẽ không thực sự nhớ nó nếu nó biến mất."
+          }
+        ],
+        "title": "Chiến lược & Chiến thuật"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Emojis",
+            "link": "https://www.emojis.com/?utm_source=tldrfounders",
+            "source": "emojis.com",
+            "summary": "AI copilot cho thiết kế đồ họa."
+          },
+          {
+            "headline": "Captiwate",
+            "link": "https://www.captiwate.com/?utm_source=tldrfounders",
+            "source": "captiwate.com",
+            "summary": "Captiwate cho phép các cuộc gọi video đến tức thì với khách truy cập trang web, nắm bắt các khách hàng tiềm năng có ý định cao để thúc đẩy nhiều bản demo và chuyển đổi đủ điều kiện hơn."
+          },
+          {
+            "headline": "Pinch",
+            "link": "https://startpinch.com/?utm_source=tldrfounders",
+            "source": "startpinch.com",
+            "summary": "Pinch là một nền tảng hội nghị ảo với bản dịch giọng nói theo thời gian thực, giúp bạn nghe như người bản xứ bằng hơn 30 ngôn ngữ."
+          }
+        ],
+        "title": "Công cụ & Tài nguyên"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Sự căng thẳng của giao tiếp sản phẩm sớm",
+            "link": "https://www.fishmanafnewsletter.com/p/the-tension-of-early-product-communication-bring-people-along-zero-to-one?utm_source=tldrfounders",
+            "source": "fishmanafnewsletter.com",
+            "summary": "Khi tạo sản phẩm mới trong công ty của bạn, hãy cẩn thận về việc bạn nói với ai và khi nào. Bắt đầu bằng cách chỉ nói với sếp trực tiếp của bạn trong giai đoạn ý tưởng ban đầu. Khi bạn có thứ gì đó để thử nghiệm, hãy để một số đồng nghiệp dùng thử nhưng hãy gặp gỡ các trưởng nhóm quan trọng trước khi đưa ra thông báo lớn. Chỉ sau khi sản phẩm của bạn hoạt động tốt và khách hàng thích nó, bạn mới nên chia sẻ các bản cập nhật thường xuyên với mọi người. Đừng lo lắng nếu một số người ước họ biết sớm hơn - điều đó luôn xảy ra bất kể bạn làm gì."
+          },
+          {
+            "headline": "Sổ tay hiệu quả và phân bổ tiếp thị: Các CMO ngày nay đang theo dõi những gì",
+            "link": "https://www.carilu.com/p/the-marketing-efficiency-and-attribution?utm_source=tldrfounders",
+            "source": "carilu.com",
+            "summary": "Một nghiên cứu so sánh mới quan trọng tiết lộ cách các nhà tiếp thị B2B thành công theo dõi tác động của họ. Các nhà sáng lập thông minh nên tập trung vào chi phí trên doanh thu thay vì chỉ các con số về kênh để xem hoạt động tiếp thị nào thực sự tạo ra khách hàng, chứ không chỉ khách hàng tiềm năng. Việc theo dõi của bạn sẽ phát triển cùng với công ty của bạn — hãy đếm các giao dịch bằng tay khi còn nhỏ, theo dõi nguồn gốc của khách hàng tiềm năng khi bạn phát triển, sau đó sử dụng các hệ thống hiển thị toàn bộ hành trình của khách hàng khi bạn lớn hơn."
+          },
+          {
+            "headline": "Làm thế nào để trở thành một nhà đầu tư thiên thần hàng đầu 1%",
+            "link": "https://thegeneralist.substack.com/p/how-to-be-a-top-1-angel?utm_source=tldrfounders",
+            "source": "substack.com",
+            "summary": "Đầu tư thiên thần mang lại những lợi ích như học hỏi từ những người sáng lập và kết nối mạng, nhưng lại đặt ra những rủi ro cao với cơ hội thu được lợi nhuận tài chính đáng kể thấp. Thực tiễn này được tiếp cận tốt nhất với những ý định rõ ràng và một chiến lược có cấu trúc để giảm thiểu các rủi ro vốn có. Hướng dẫn toàn diện này, dựa trên những hiểu biết sâu sắc từ các nhà đầu tư giàu kinh nghiệm, phác thảo các bước để đầu tư thiên thần hiệu quả, bao gồm thiết lập động lực, cấu trúc đầu tư, tìm nguồn cung cấp giao dịch và xây dựng mạng lưới."
+          }
+        ],
+        "title": "Khác"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Một điều chỉnh duy nhất đã tăng doanh thu của Opendoor lên 1 tỷ đô la vào năm 2021 như thế nào",
+            "link": "https://links.tldrnewsletter.com/NAA2rd",
+            "source": "tldrnewsletter.com",
+            "summary": "Opendoor đã loại bỏ giới hạn tùy ý hai năm đối với việc tái tương tác với những khách hàng cũ bằng các ưu đãi qua email, tăng gấp đôi số hợp đồng và tạo thêm doanh thu 1 tỷ đô la."
+          },
+          {
+            "headline": "Mô hình ghi âm bị hỏng",
+            "link": "https://links.tldrnewsletter.com/EEwHxs",
+            "source": "tldrnewsletter.com",
+            "summary": "Người quản lý sản phẩm nên chọn một cách đơn giản để giải thích sản phẩm của họ và gắn bó với nó."
+          },
+          {
+            "headline": "PayPal lập ngân sách và dự báo doanh thu như thế nào",
+            "link": "https://links.tldrnewsletter.com/PdkT4D",
+            "source": "tldrnewsletter.com",
+            "summary": "Nhóm FP&A của PayPal đã sử dụng các mô hình dự báo phức tạp dựa trên Tổng khối lượng thanh toán, chi tiêu của người tiêu dùng và chu kỳ kinh tế để quản lý dòng giao dịch trị giá 2 nghìn tỷ đô la của mình."
+          }
+        ],
+        "title": "Liên kết nhanh"
+      }
+    ]
+  }
+}

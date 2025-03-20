@@ -1,0 +1,101 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"AI News\",\n  \"reportTitle\": \"Tổng hợp Tin Tức AI Ngày [Ngày]\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Cộng đồng Modular (Mojo 🔥) Đánh Giá Cao Nghệ Thuật AI\",\n          \"link\": \"https://discord.com/channels/1087530497313357884\",\n          \"source\": \"Discord Modular\",\n          \"summary\": \"Một thành viên bày tỏ sự thích thú với nghệ thuật AI do Modular sử dụng.\"\n        },\n        {\n          \"headline\": \"Discord Modular Bị Tấn Công Spam\",\n          \"link\": \"https://discord.com/channels/1087530497313357884\",\n          \"source\": \"Discord Modular\",\n          \"summary\": \"Một thành viên thông báo về tình trạng spam xuất hiện trong các kênh Discord của Modular.\"\n        },\n        {\n          \"headline\": \"Cải Tiến Compact Dict Được Tích Hợp Vào Mã Nguồn Chính\",\n          \"link\": \"https://github.com/mzaks/compact-dict\",\n          \"source\": \"Discord Modular\",\n          \"summary\": \"Các thành viên thảo luận về việc triển khai 'compact-dict', cho rằng nó có thể đã lỗi thời vì phần lớn mã đã được tích hợp vào loại 'Dict' tiêu chuẩn. Kho lưu trữ gốc có thể đã được lưu trữ.\"\n        },\n        {\n          \"headline\": \"SIMD Types Làm Chậm Dict Chuẩn\",\n          \"link\": \"https://discord.com/channels/1087530497313357884\",\n          \"source\": \"Discord Modular\",\n          \"summary\": \"Một thành viên báo cáo rằng thư viện chuẩn 'Dict' hoạt động chậm khi sử dụng với các loại SIMD [float64, 1], do hàm băm mặc định. Họ đã khám phá các cách triển khai 'Dict' thay thế để giải quyết các vấn đề về hiệu suất này.\"\n        }\n      ],\n      \"title\": \"Modular (Mojo 🔥) Discord\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"SVCAF Ra Mắt Cuộc Thi AI4Legislation\",\n          \"link\": \"https://github.com/svcaf/2025-AI4Legislation-Public\",\n          \"source\": \"MLOps @Chipro Discord\",\n          \"summary\": \"Silicon Valley Chinese Association Foundation (SVCAF) đã ra mắt cuộc thi AI4Legislation, kéo dài đến ngày 31 tháng 7 năm 2025, với giải thưởng lên tới $3,000 cho các chương trình lập pháp dựa trên AI. Một hội thảo trực tuyến dự kiến diễn ra vào cuối tháng này, với sự tham gia của các nhà lãnh đạo trong lĩnh vực AI trong lập pháp. RSVP tại [đây](https://forms.gle/pmbkRLVurbXcGBbAA).\"\n        },\n        {\n          \"headline\": \"Dnipro VC & Data Phoenix Tổ Chức AI Demo Jam\",\n          \"link\": \"https://lu.ma/AI-demo-jam\",\n          \"source\": \"MLOps @Chipro Discord\",\n          \"summary\": \"AI Demo Jam, được trình bày bởi Dnipro VC và Data Phoenix, sẽ được tổ chức vào ngày 20 tháng 3 tại Sunnyvale, CA, giới thiệu các bản demo AI trực tiếp và kết nối. Sự kiện sẽ bao gồm một cuộc thảo luận của hội đồng chuyên gia với Marianna Bonechi (Dnipro VC), Nick Bilogorskiy (Dnipro VC) và Dmytro Dzhulgakhov (fireworks.ai).\"\n        },\n        {\n          \"headline\": \"Tìm Kiếm Hợp Tác Cộng Đồng cho Phát Hiện Đối Tượng MRI\",\n          \"link\": \"https://discord.com/channels/814557108065534033\",\n          \"source\": \"MLOps @Chipro Discord\",\n          \"summary\": \"Một thành viên đang tìm kiếm sự hỗ trợ trong việc tạo ra một mô hình để xử lý hình ảnh (cụ thể là phát hiện đối tượng trong MRI). Đây là một yêu cầu hợp tác cộng đồng không được trả lương.\"\n        }\n      ],\n      \"title\": \"MLOps @Chipro Discord\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Qdrant Vector Database Bị Loại Bỏ\",\n          \"link\": \"https://discord.com/channels/874538902696914944\",\n          \"source\": \"AI21 Labs (Jamba) Discord\",\n          \"summary\": \"Dự án đã quyết định không sử dụng Qdrant làm cơ sở dữ liệu vector trong dự án Jamba mới của họ. Lý do không chọn Qdrant không được nêu rõ.\"\n        },\n        {\n          \"headline\": \"Người Dùng API Yêu Cầu Hỗ Trợ Repetition Penalty\",\n          \"link\": \"https://discord.com/channels/874538902696914944\",\n          \"source\": \"AI21 Labs (Jamba) Discord\",\n          \"summary\": \"Một người dùng API yêu cầu thêm hỗ trợ 'repetition penalty' vào API. Người dùng nói rằng tính năng này là yếu tố hạn chế duy nhất ngăn họ sử dụng mô hình nhiều hơn.\"\n        }\n      ],\n      \"title\": \"AI21 Labs (Jamba) Discord\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Mistral Phát Hành Small 3-1\",\n          \"link\": \"https://mistral.ai/news/mistral-small-3-1\",\n          \"source\": \"Torchtune Discord\",\n          \"summary\": \"Mistral đã phát hành mô hình Mistral Small 3-1, có sẵn thông qua mistral.ai. Thông báo được chia sẻ trong kênh chung.\"\n        },\n        {\n          \"headline\": \"Learnable Scalars Ngăn Chặn Hội Tụ Thất Bại\",\n          \"link\": \"https://www.alphaxiv.org/abs/2503.10622\",\n          \"source\": \"Torchtune Discord\",\n          \"summary\": \"Một thành viên đã chia sẻ một liên kết đến một bài báo trên alphaxiv.org về cách kết hợp một 'learnable scalar' giúp giảm thiểu các vấn đề hội tụ. Bài báo có tiêu đề 'Transformers without Normalization'.\"\n        }\n      ],\n      \"title\": \"Torchtune Discord\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 8.086869478225708,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "AI News",
+    "reportTitle": "Tổng hợp Tin Tức AI Ngày [Ngày]",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Cộng đồng Modular (Mojo 🔥) Đánh Giá Cao Nghệ Thuật AI",
+            "link": "https://discord.com/channels/1087530497313357884",
+            "source": "Discord Modular",
+            "summary": "Một thành viên bày tỏ sự thích thú với nghệ thuật AI do Modular sử dụng."
+          },
+          {
+            "headline": "Discord Modular Bị Tấn Công Spam",
+            "link": "https://discord.com/channels/1087530497313357884",
+            "source": "Discord Modular",
+            "summary": "Một thành viên thông báo về tình trạng spam xuất hiện trong các kênh Discord của Modular."
+          },
+          {
+            "headline": "Cải Tiến Compact Dict Được Tích Hợp Vào Mã Nguồn Chính",
+            "link": "https://github.com/mzaks/compact-dict",
+            "source": "Discord Modular",
+            "summary": "Các thành viên thảo luận về việc triển khai 'compact-dict', cho rằng nó có thể đã lỗi thời vì phần lớn mã đã được tích hợp vào loại 'Dict' tiêu chuẩn. Kho lưu trữ gốc có thể đã được lưu trữ."
+          },
+          {
+            "headline": "SIMD Types Làm Chậm Dict Chuẩn",
+            "link": "https://discord.com/channels/1087530497313357884",
+            "source": "Discord Modular",
+            "summary": "Một thành viên báo cáo rằng thư viện chuẩn 'Dict' hoạt động chậm khi sử dụng với các loại SIMD [float64, 1], do hàm băm mặc định. Họ đã khám phá các cách triển khai 'Dict' thay thế để giải quyết các vấn đề về hiệu suất này."
+          }
+        ],
+        "title": "Modular (Mojo 🔥) Discord"
+      },
+      {
+        "articles": [
+          {
+            "headline": "SVCAF Ra Mắt Cuộc Thi AI4Legislation",
+            "link": "https://github.com/svcaf/2025-AI4Legislation-Public",
+            "source": "MLOps @Chipro Discord",
+            "summary": "Silicon Valley Chinese Association Foundation (SVCAF) đã ra mắt cuộc thi AI4Legislation, kéo dài đến ngày 31 tháng 7 năm 2025, với giải thưởng lên tới $3,000 cho các chương trình lập pháp dựa trên AI. Một hội thảo trực tuyến dự kiến diễn ra vào cuối tháng này, với sự tham gia của các nhà lãnh đạo trong lĩnh vực AI trong lập pháp. RSVP tại [đây](https://forms.gle/pmbkRLVurbXcGBbAA)."
+          },
+          {
+            "headline": "Dnipro VC & Data Phoenix Tổ Chức AI Demo Jam",
+            "link": "https://lu.ma/AI-demo-jam",
+            "source": "MLOps @Chipro Discord",
+            "summary": "AI Demo Jam, được trình bày bởi Dnipro VC và Data Phoenix, sẽ được tổ chức vào ngày 20 tháng 3 tại Sunnyvale, CA, giới thiệu các bản demo AI trực tiếp và kết nối. Sự kiện sẽ bao gồm một cuộc thảo luận của hội đồng chuyên gia với Marianna Bonechi (Dnipro VC), Nick Bilogorskiy (Dnipro VC) và Dmytro Dzhulgakhov (fireworks.ai)."
+          },
+          {
+            "headline": "Tìm Kiếm Hợp Tác Cộng Đồng cho Phát Hiện Đối Tượng MRI",
+            "link": "https://discord.com/channels/814557108065534033",
+            "source": "MLOps @Chipro Discord",
+            "summary": "Một thành viên đang tìm kiếm sự hỗ trợ trong việc tạo ra một mô hình để xử lý hình ảnh (cụ thể là phát hiện đối tượng trong MRI). Đây là một yêu cầu hợp tác cộng đồng không được trả lương."
+          }
+        ],
+        "title": "MLOps @Chipro Discord"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Qdrant Vector Database Bị Loại Bỏ",
+            "link": "https://discord.com/channels/874538902696914944",
+            "source": "AI21 Labs (Jamba) Discord",
+            "summary": "Dự án đã quyết định không sử dụng Qdrant làm cơ sở dữ liệu vector trong dự án Jamba mới của họ. Lý do không chọn Qdrant không được nêu rõ."
+          },
+          {
+            "headline": "Người Dùng API Yêu Cầu Hỗ Trợ Repetition Penalty",
+            "link": "https://discord.com/channels/874538902696914944",
+            "source": "AI21 Labs (Jamba) Discord",
+            "summary": "Một người dùng API yêu cầu thêm hỗ trợ 'repetition penalty' vào API. Người dùng nói rằng tính năng này là yếu tố hạn chế duy nhất ngăn họ sử dụng mô hình nhiều hơn."
+          }
+        ],
+        "title": "AI21 Labs (Jamba) Discord"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Mistral Phát Hành Small 3-1",
+            "link": "https://mistral.ai/news/mistral-small-3-1",
+            "source": "Torchtune Discord",
+            "summary": "Mistral đã phát hành mô hình Mistral Small 3-1, có sẵn thông qua mistral.ai. Thông báo được chia sẻ trong kênh chung."
+          },
+          {
+            "headline": "Learnable Scalars Ngăn Chặn Hội Tụ Thất Bại",
+            "link": "https://www.alphaxiv.org/abs/2503.10622",
+            "source": "Torchtune Discord",
+            "summary": "Một thành viên đã chia sẻ một liên kết đến một bài báo trên alphaxiv.org về cách kết hợp một 'learnable scalar' giúp giảm thiểu các vấn đề hội tụ. Bài báo có tiêu đề 'Transformers without Normalization'."
+          }
+        ],
+        "title": "Torchtune Discord"
+      }
+    ]
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"AI News\",\n  \"reportTitle\": \"Điểm tin AI ngày 18/03/2025: Tổng hợp những thông tin đáng chú ý\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Tổng quan về sự kiện Nvidia GTC\",\n          \"link\": \"https://www.youtube.com/watch?v=_waPvOwL9Z8\",\n          \"source\": \"Nvidia GTC\",\n          \"summary\": \"Ngày đầu tiên của sự kiện Nvidia GTC diễn ra với nhiều thông báo nhỏ từ San Jose, tuy nhiên không có thông tin nào tác động lớn đến thị trường. Xem video tổng hợp tại [đây](https://www.youtube.com/watch?v=_waPvOwL9Z8).\"\n        }\n      ],\n      \"title\": \"Sự kiện Nvidia GTC\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Google Gemini 2.0 Flash tích hợp khả năng xử lý ảnh\",\n          \"link\": \"https://twitter.com/ArtificialAnlys/status/1902038008033079326\",\n          \"source\": \"Twitter - @ArtificialAnlys\",\n          \"summary\": \"Google Gemini 2.0 Flash tích hợp khả năng nhập/xuất hình ảnh, mở ra kỷ nguyên mới cho các mô hình ngôn ngữ đa phương thức. Tuy nhiên, [@ArtificialAnlys](https://twitter.com/ArtificialAnlys/status/1902038008033079326) khuyến cáo không nên dùng Gemini 2.0 Flash cho các tác vụ chuyển văn bản thành hình ảnh mà nên sử dụng các mô hình chuyên dụng như Imagen 3 của Google.\"\n        },\n        {\n          \"headline\": \"Mistral AI ra mắt Mistral Small 3.1\",\n          \"link\": \"https://twitter.com/ArtificialAnlys/status/1902017023917666351\",\n          \"source\": \"Twitter - @ArtificialAnlys\",\n          \"summary\": \"Mistral AI phát hành Mistral Small 3.1, bổ sung khả năng nhập ảnh và mở rộng context window lên 128k tokens. Theo [@ArtificialAnlys](https://twitter.com/ArtificialAnlys/status/1902017023917666351), mô hình này đạt chỉ số Artificial Analysis Intelligence là 35, tương đương Mistral 3, GPT-4o mini và Claude 3.5 Haiku. Giá endpoint của Mistral là $0.1/$0.3 trên một triệu token đầu vào/đầu ra.\"\n        },\n        {\n          \"headline\": \"Allen AI phát hành OLMo-32B\",\n          \"link\": \"https://twitter.com/mervenoyann/status/1901961859898458334\",\n          \"source\": \"Twitter - @mervenoyann\",\n          \"summary\": \"Allen AI ra mắt OLMo-32B, một LLM hoàn toàn mã nguồn mở, vượt trội hơn GPT-4o mini và Qwen 2.5. Theo [@mervenoyann](https://twitter.com/mervenoyann/status/1901961859898458334), chi phí pre-training của mô hình này rẻ hơn 3 lần so với Qwen 32B. Mô hình và datasets có thể tìm thấy [tại đây](https://twitter.com/mervenoyann/status/1901962806422913350).\"\n        },\n        {\n          \"headline\": \"ShieldGemma 2 - Mô hình 4B cho phân loại an toàn hình ảnh\",\n          \"link\": \"https://twitter.com/osanseviero/status/1901764379328037047\",\n          \"source\": \"Twitter - @osanseviero\",\n          \"summary\": \"[@osanseviero](https://twitter.com/osanseviero/status/1901764379328037047) giới thiệu ShieldGemma 2, một mô hình 4B để phân loại an toàn hình ảnh, có thể được sử dụng làm bộ lọc đầu vào cho VLMs hoặc để chặn các đầu ra tạo hình ảnh nguy hiểm. [@abacaj](https://twitter.com/abacaj/status/1901779115444687137) gợi ý nên sử dụng ShieldGemma 2 thay vì Gemma 3 vì nó tốt hơn trong một số trường hợp và có giấy phép tốt hơn.\"\n        }\n      ],\n      \"title\": \"Điểm tin Twitter về các mô hình ngôn ngữ và bản phát hành\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Cập nhật từ LangChainAI\",\n          \"link\": \"https://twitter.com/LangChainAI/status/1902100410745418007\",\n          \"source\": \"Twitter - @LangChainAI\",\n          \"summary\": \"LangChainAI thông báo nhiều cập nhật, bao gồm ra mắt Julian bởi [@11x_official](https://twitter.com/LangChainAI/status/1902100410745418007) sử dụng LangGraph, phát hành sách 'Learning LangChain' bởi [@nfcampos](https://twitter.com/LangChainAI/status/1902075104680607972) và [@mayowaoshin](https://twitter.com/LangChainAI/status/1902075104680607972), tích hợp LangGraph + AnthropicAI's MCP bởi [@QodoAI](https://twitter.com/LangChainAI/status/1902044311858168112) cho plug-in IDE của họ, công cụ LangGraph Builder, mã hóa cho agent checkpoints trong LangGraph Platform và giải thích về MCP từ đầu.\"\n        },\n        {\n          \"headline\": \"fasttransform - Thư viện Python cho chuyển đổi dữ liệu\",\n          \"link\": \"https://twitter.com/jeremyphoward/status/1902081681370370508\",\n          \"source\": \"Twitter - @jeremyphoward\",\n          \"summary\": \"Jeremy Howard công bố fasttransform, một thư viện Python cho các chuyển đổi dữ liệu có thể đảo ngược/mở rộng, được xây dựng trên multi-dispatch, hợp tác với [@R_Dimm](https://twitter.com/jeremyphoward/status/1902081681370370508).\"\n        },\n        {\n          \"headline\": \"StripeDev hỗ trợ tiêu chuẩn llms.txt\",\n          \"link\": \"https://twitter.com/aidan_mclau/status/1901796068733673855\",\n          \"source\": \"Twitter - @aidan_mclau\",\n          \"summary\": \"Aidan McLachlan đề cập đến một vai trò mở tại [@StripeDev](https://twitter.com/aidan_mclau/status/1901796068733673855) có thể là vai trò mở có đòn bẩy cao nhất trên thế giới. Jeremy Howard bày tỏ sự ủng hộ tiêu chuẩn llms.txt bằng cách cảm ơn StripeDev và những người khác trong cộng đồng [@StripeDev](https://twitter.com/jeremyphoward/status/1901796294257225857). Karpathy cũng gắn thẻ StripeDev với biểu tượng 👏 [@StripeDev](https://twitter.com/karpathy/status/1901891789423874547).\"\n        }\n      ],\n      \"title\": \"Frameworks và công cụ AI\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Perplexity AI hợp tác với Kalshi cho March Madness\",\n          \"link\": \"https://twitter.com/AravSrinivas/status/1902044102059028575\",\n          \"source\": \"Twitter - @AravSrinivas\",\n          \"summary\": \"Perplexity AI hợp tác với Kalshi cho March Madness để cung cấp dự đoán và tỷ lệ cược cho bóng rổ NCAA, theo [@AravSrinivas](https://twitter.com/AravSrinivas/status/1902044102059028575). Perplexity AI cũng ra mắt 'Roast My Bracket', nơi người dùng có thể tải lên ảnh chụp màn hình bracket của họ và để Perplexity đánh giá [@perplexity_ai](https://twitter.com/perplexity_ai/status/1902030531283546274). Perplexity hiện có thể tiếp nhận video và đưa ra giải thích [@AravSrinivas](https://twitter.com/AravSrinivas/status/1901840001866023146).\"\n        },\n        {\n          \"headline\": \"Codegen hiện đã GA, được xây dựng với Claude 3.7\",\n          \"link\": \"https://twitter.com/mathemagic1an/status/1902033541871141043\",\n          \"source\": \"Twitter - @mathemagic1an\",\n          \"summary\": \"[@mathemagic1an](https://twitter.com/mathemagic1an/status/1902033541871141043) thông báo Codegen hiện đã GA và được xây dựng với Claude 3.7 trên Slack, Github và Linear. Ông tin rằng các khả năng agentic dài hạn của Claude 3.7 bị đánh giá thấp [@mathemagic1an](https://twitter.com/mathemagic1an/status/1901869700222693647) vì nó có khả năng thực hiện các tác vụ mà các hệ thống đa tác nhân lớn không thể thực hiện được ngay cả 3 tháng trước.\"\n        },\n        {\n          \"headline\": \"Softbank trở thành nhà bán lẻ ủy quyền của Perplexity Enterprise Pro tại Nhật Bản\",\n          \"link\": \"https://twitter.com/AravSrinivas/status/1901763358019482076\",\n          \"source\": \"Twitter - @AravSrinivas\",\n          \"summary\": \"[@AravSrinivas](https://twitter.com/AravSrinivas/status/1901763358019482076) thông báo Softbank đã ký thỏa thuận với Perplexity để trở thành nhà bán lẻ ủy quyền của Perplexity Enterprise Pro tại Nhật Bản.\"\n        },\n        {\n          \"headline\": \"Jack ClarkSF tuyển dụng cho vị trí Policy Demos\",\n          \"link\": \"https://twitter.com/jackclarkSF/status/1901789490437669370\",\n          \"source\": \"Twitter - @jackclarkSF\",\n          \"summary\": \"[@jackclarkSF](https://twitter.com/jackclarkSF/status/1901789490437669370) có một công việc thú vị mà họ đang tuyển dụng - Policy Demos! Họ nhận thấy cách tốt nhất để giúp mọi người hiểu công nghệ AI mạnh mẽ là 'cho xem, không kể', và cách tốt nhất để làm điều này là trình diễn khả năng thực sự của các hệ thống thực.\"\n        }\n      ],\n      \"title\": \"Ứng dụng và trường hợp sử dụng AI\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Giá trị của phần mềm mã nguồn mở\",\n          \"link\": \"https://twitter.com/ClementDelangue/status/1901751361320206554\",\n          \"source\": \"Twitter - @ClementDelangue\",\n          \"summary\": \"Clement Delangue nhấn mạnh một nghiên cứu của Harvard về giá trị của phần mềm mã nguồn mở, lưu ý rằng 1 đô la đầu tư vào mã nguồn mở tạo ra 2,000 đô la giá trị và nếu không có OSS, các công ty sẽ cần chi gấp 3.5 lần cho phần mềm [@ClementDelangue](https://twitter.com/ClementDelangue/status/1901751361320206554).\"\n        },\n        {\n          \"headline\": \"Sản xuất chip AI trong nước rất quan trọng cho khả năng cạnh tranh\",\n          \"link\": \"https://twitter.com/DanHendrycks/status/1901766113509392547\",\n          \"source\": \"Twitter - @AIDanHendrycks\",\n          \"summary\": \"[@AIDanHendrycks](https://twitter.com/DanHendrycks/status/1901766113509392547) đồng ý rằng việc sản xuất chip AI trong nước là rất quan trọng để cạnh tranh, và điều này được thảo luận trong Chiến lược Siêu trí tuệ của họ, cùng với răn đe và không phổ biến.\"\n        },\n        {\n          \"headline\": \"Luôn có thể thu nhỏ mô hình để phù hợp với phần cứng của bạn\",\n          \"link\": \"https://twitter.com/jxmnop/status/1901761070961668256\",\n          \"source\": \"Twitter - @jxmnop\",\n          \"summary\": \"[@jxmnop](https://twitter.com/jxmnop/status/1901761070961668256) trả lời một tweet của [@lauriewired](https://twitter.com/lauriewired), lưu ý rằng bạn luôn có thể thu nhỏ mô hình để phù hợp với phần cứng của mình.\"\n        },\n        {\n          \"headline\": \"vllm_project được phát hiện trong Keynote của Jensen\",\n          \"link\": \"https://twitter.com/vllm_project/status/1902065243343425949\",\n          \"source\": \"Twitter - @vllm_project\",\n          \"summary\": \"[@vllm_project](https://twitter.com/vllm_project/status/1902065243343425949) được phát hiện trong Keynote của Jensen [@nvidia](https://twitter.com/nvidia) #GTC.\"\n        }\n      ],\n      \"title\": \"Cơ sở hạ tầng, phần cứng và mở rộng quy mô\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Phát triển phần mềm trực quan tiếp tục gặp khó khăn\",\n          \"link\": \"https://twitter.com/ID_AA_Carmack/status/1902088032519405919\",\n          \"source\": \"Twitter - @ID_AA_Carmack\",\n          \"summary\": \"[@ID_AA_Carmack](https://twitter.com/ID_AA_Carmack/status/1902088032519405919) lưu ý rằng đã có vô số nỗ lực để làm cho phát triển phần mềm 'trực quan hơn', nhưng bất cứ điều gì không phải là một tập hợp đơn giản các tệp văn bản có thể đọc được (và LLM!) tiếp tục dẫm phải mìn.\"\n        },\n        {\n          \"headline\": \"Nỗi lo về việc AI tạo ra nhiều công việc mới cho 'người bình thường'\",\n          \"link\": \"https://twitter.com/nearcyan/status/1901932030386127224\",\n          \"source\": \"Twitter - @nearcyan\",\n          \"summary\": \"[@nearcyan](https://twitter.com/nearcyan/status/1901932030386127224) không tin vào việc AI sẽ tạo ra nhiều công việc mới cho 'người bình thường'. Sẽ có nhiều công việc mới nhưng không dành cho người bình thường.\"\n        },\n        {\n          \"headline\": \"Nghiên cứu AI ứng dụng thường thiển cận\",\n          \"link\": \"https://twitter.com/iScienceLuvr/status/1901868384133808617\",\n          \"source\": \"Twitter - @iScienceLuvr\",\n          \"summary\": \"[@iScienceLuvr](https://twitter.com/iScienceLuvr/status/1901868384133808617) cho rằng vấn đề với rất nhiều nghiên cứu AI và AI ứng dụng là nó có thể thiển cận như thế nào, và hầu hết các bài báo này sẽ lỗi thời trong khoảng 6 tháng.\"\n        }\n      ],\n      \"title\": \"Mối quan tâm và hoài nghi\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Lời nhắc nhở hài hước về việc tính phí sửa chữa 'vibe-coded mess'\",\n          \"link\": \"https://twitter.com/svpino/status/1901740628301550011\",\n          \"source\": \"Twitter - @svpino\",\n          \"summary\": \"[@svpino](https://twitter.com/svpino/status/1901740628301550011) nói: 'Lời nhắc nhanh: Tôi đang tính phí 1,000 đô la/giờ để sửa chữa mớ hỗn độn vibe-coded của bạn.'\"\n        },\n        {\n          \"headline\": \"Anthropic ngừng hoạt động trong 6 phút gây xáo trộn cuộc sống\",\n          \"link\": \"https://twitter.com/nearcyan/status/1901914430360957258\",\n          \"source\": \"Twitter - @nearcyan\",\n          \"summary\": \"[@nearcyan](https://twitter.com/nearcyan/status/1901914430360957258) chia sẻ rằng Anthropic đã ngừng hoạt động trong 6 phút và cuộc sống của họ trở nên hỗn loạn đến nỗi họ nghĩ rằng một điểm trao đổi internet đã phát nổ.\"\n        }\n      ],\n      \"title\": \"Hài hước\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Chỉ trích các AI Benchmarks: Goodhart's Law trong hành động\",\n          \"link\": \"https://reddit.com/r/LocalLLaMA/comments/1jdw7bg/after_these_last_2_weeks_of_exciting_releases_the/\",\n          \"source\": \"Reddit - r/LocalLLaMA\",\n          \"summary\": \"Bài đăng chỉ trích độ tin cậy của các benchmarks để đánh giá LLMs cục bộ (Large Language Models), cho rằng chúng có thể gây hiểu lầm. Nhiều ý kiến đồng tình rằng các benchmarks đang bị 'gamed', với các mô hình được tối ưu hóa để vượt trội trên chúng thay vì cho sử dụng chung, điều này lặp lại Goodhart's Law.\"\n        },\n        {\n          \"headline\": \"Meta's Open-Source AI Đạt 1 Tỷ Lượt Tải Xuống\",\n          \"link\": \"https://reddit.com/r/LocalLLaMA/comments/1je6ns1/meta_talks_about_us_and_open_source_source_ai_for/\",\n          \"source\": \"Reddit - r/LocalLLaMA\",\n          \"summary\": \"Mô hình Llama của Meta đã đạt hơn 1 tỷ lượt tải xuống. Có sự hoài nghi về tuyên bố này. Thảo luận về chi phí cơ sở hạ tầng của Hugging Face liên quan đến việc tải xuống các mô hình, ước tính khoảng $9.3 triệu mỗi tháng trên các dịch vụ AWS.\"\n        },\n        {\n          \"headline\": \"LG's EXAONE Deep Models có hiệu suất tốt hơn trên Reasoning Tasks\",\n          \"link\": \"https://reddit.com/r/LocalLLaMA/comments/1jdt29q/lg_has_released_their_new_reasoning_models/\",\n          \"source\": \"Reddit - r/LocalLLaMA\",\n          \"summary\": \"Model EXAONE Deep Reasoning của LG đã được giới thiệu. Người dùng ấn tượng bởi model 8B vượt trội hơn o1-mini, với một số đánh giá cao khả năng đáng ngạc nhiên của model 2.4B. Tuy nhiên, có những lời chỉ trích đáng kể về Thỏa thuận Giấy phép Mô hình EXAONE AI, hạn chế sử dụng chỉ cho nghiên cứu và cấm các ứng dụng thương mại, với LG giữ quyền sở hữu mô hình và đầu ra của nó.\"\n        }\n      ],\n      \"title\": \"Điểm tin Reddit - r/LocalLlama\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 24.32947587966919,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "AI News",
+    "reportTitle": "Điểm tin AI ngày 18/03/2025: Tổng hợp những thông tin đáng chú ý",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Tổng quan về sự kiện Nvidia GTC",
+            "link": "https://www.youtube.com/watch?v=_waPvOwL9Z8",
+            "source": "Nvidia GTC",
+            "summary": "Ngày đầu tiên của sự kiện Nvidia GTC diễn ra với nhiều thông báo nhỏ từ San Jose, tuy nhiên không có thông tin nào tác động lớn đến thị trường. Xem video tổng hợp tại [đây](https://www.youtube.com/watch?v=_waPvOwL9Z8)."
+          }
+        ],
+        "title": "Sự kiện Nvidia GTC"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Google Gemini 2.0 Flash tích hợp khả năng xử lý ảnh",
+            "link": "https://twitter.com/ArtificialAnlys/status/1902038008033079326",
+            "source": "Twitter - @ArtificialAnlys",
+            "summary": "Google Gemini 2.0 Flash tích hợp khả năng nhập/xuất hình ảnh, mở ra kỷ nguyên mới cho các mô hình ngôn ngữ đa phương thức. Tuy nhiên, [@ArtificialAnlys](https://twitter.com/ArtificialAnlys/status/1902038008033079326) khuyến cáo không nên dùng Gemini 2.0 Flash cho các tác vụ chuyển văn bản thành hình ảnh mà nên sử dụng các mô hình chuyên dụng như Imagen 3 của Google."
+          },
+          {
+            "headline": "Mistral AI ra mắt Mistral Small 3.1",
+            "link": "https://twitter.com/ArtificialAnlys/status/1902017023917666351",
+            "source": "Twitter - @ArtificialAnlys",
+            "summary": "Mistral AI phát hành Mistral Small 3.1, bổ sung khả năng nhập ảnh và mở rộng context window lên 128k tokens. Theo [@ArtificialAnlys](https://twitter.com/ArtificialAnlys/status/1902017023917666351), mô hình này đạt chỉ số Artificial Analysis Intelligence là 35, tương đương Mistral 3, GPT-4o mini và Claude 3.5 Haiku. Giá endpoint của Mistral là $0.1/$0.3 trên một triệu token đầu vào/đầu ra."
+          },
+          {
+            "headline": "Allen AI phát hành OLMo-32B",
+            "link": "https://twitter.com/mervenoyann/status/1901961859898458334",
+            "source": "Twitter - @mervenoyann",
+            "summary": "Allen AI ra mắt OLMo-32B, một LLM hoàn toàn mã nguồn mở, vượt trội hơn GPT-4o mini và Qwen 2.5. Theo [@mervenoyann](https://twitter.com/mervenoyann/status/1901961859898458334), chi phí pre-training của mô hình này rẻ hơn 3 lần so với Qwen 32B. Mô hình và datasets có thể tìm thấy [tại đây](https://twitter.com/mervenoyann/status/1901962806422913350)."
+          },
+          {
+            "headline": "ShieldGemma 2 - Mô hình 4B cho phân loại an toàn hình ảnh",
+            "link": "https://twitter.com/osanseviero/status/1901764379328037047",
+            "source": "Twitter - @osanseviero",
+            "summary": "[@osanseviero](https://twitter.com/osanseviero/status/1901764379328037047) giới thiệu ShieldGemma 2, một mô hình 4B để phân loại an toàn hình ảnh, có thể được sử dụng làm bộ lọc đầu vào cho VLMs hoặc để chặn các đầu ra tạo hình ảnh nguy hiểm. [@abacaj](https://twitter.com/abacaj/status/1901779115444687137) gợi ý nên sử dụng ShieldGemma 2 thay vì Gemma 3 vì nó tốt hơn trong một số trường hợp và có giấy phép tốt hơn."
+          }
+        ],
+        "title": "Điểm tin Twitter về các mô hình ngôn ngữ và bản phát hành"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Cập nhật từ LangChainAI",
+            "link": "https://twitter.com/LangChainAI/status/1902100410745418007",
+            "source": "Twitter - @LangChainAI",
+            "summary": "LangChainAI thông báo nhiều cập nhật, bao gồm ra mắt Julian bởi [@11x_official](https://twitter.com/LangChainAI/status/1902100410745418007) sử dụng LangGraph, phát hành sách 'Learning LangChain' bởi [@nfcampos](https://twitter.com/LangChainAI/status/1902075104680607972) và [@mayowaoshin](https://twitter.com/LangChainAI/status/1902075104680607972), tích hợp LangGraph + AnthropicAI's MCP bởi [@QodoAI](https://twitter.com/LangChainAI/status/1902044311858168112) cho plug-in IDE của họ, công cụ LangGraph Builder, mã hóa cho agent checkpoints trong LangGraph Platform và giải thích về MCP từ đầu."
+          },
+          {
+            "headline": "fasttransform - Thư viện Python cho chuyển đổi dữ liệu",
+            "link": "https://twitter.com/jeremyphoward/status/1902081681370370508",
+            "source": "Twitter - @jeremyphoward",
+            "summary": "Jeremy Howard công bố fasttransform, một thư viện Python cho các chuyển đổi dữ liệu có thể đảo ngược/mở rộng, được xây dựng trên multi-dispatch, hợp tác với [@R_Dimm](https://twitter.com/jeremyphoward/status/1902081681370370508)."
+          },
+          {
+            "headline": "StripeDev hỗ trợ tiêu chuẩn llms.txt",
+            "link": "https://twitter.com/aidan_mclau/status/1901796068733673855",
+            "source": "Twitter - @aidan_mclau",
+            "summary": "Aidan McLachlan đề cập đến một vai trò mở tại [@StripeDev](https://twitter.com/aidan_mclau/status/1901796068733673855) có thể là vai trò mở có đòn bẩy cao nhất trên thế giới. Jeremy Howard bày tỏ sự ủng hộ tiêu chuẩn llms.txt bằng cách cảm ơn StripeDev và những người khác trong cộng đồng [@StripeDev](https://twitter.com/jeremyphoward/status/1901796294257225857). Karpathy cũng gắn thẻ StripeDev với biểu tượng 👏 [@StripeDev](https://twitter.com/karpathy/status/1901891789423874547)."
+          }
+        ],
+        "title": "Frameworks và công cụ AI"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Perplexity AI hợp tác với Kalshi cho March Madness",
+            "link": "https://twitter.com/AravSrinivas/status/1902044102059028575",
+            "source": "Twitter - @AravSrinivas",
+            "summary": "Perplexity AI hợp tác với Kalshi cho March Madness để cung cấp dự đoán và tỷ lệ cược cho bóng rổ NCAA, theo [@AravSrinivas](https://twitter.com/AravSrinivas/status/1902044102059028575). Perplexity AI cũng ra mắt 'Roast My Bracket', nơi người dùng có thể tải lên ảnh chụp màn hình bracket của họ và để Perplexity đánh giá [@perplexity_ai](https://twitter.com/perplexity_ai/status/1902030531283546274). Perplexity hiện có thể tiếp nhận video và đưa ra giải thích [@AravSrinivas](https://twitter.com/AravSrinivas/status/1901840001866023146)."
+          },
+          {
+            "headline": "Codegen hiện đã GA, được xây dựng với Claude 3.7",
+            "link": "https://twitter.com/mathemagic1an/status/1902033541871141043",
+            "source": "Twitter - @mathemagic1an",
+            "summary": "[@mathemagic1an](https://twitter.com/mathemagic1an/status/1902033541871141043) thông báo Codegen hiện đã GA và được xây dựng với Claude 3.7 trên Slack, Github và Linear. Ông tin rằng các khả năng agentic dài hạn của Claude 3.7 bị đánh giá thấp [@mathemagic1an](https://twitter.com/mathemagic1an/status/1901869700222693647) vì nó có khả năng thực hiện các tác vụ mà các hệ thống đa tác nhân lớn không thể thực hiện được ngay cả 3 tháng trước."
+          },
+          {
+            "headline": "Softbank trở thành nhà bán lẻ ủy quyền của Perplexity Enterprise Pro tại Nhật Bản",
+            "link": "https://twitter.com/AravSrinivas/status/1901763358019482076",
+            "source": "Twitter - @AravSrinivas",
+            "summary": "[@AravSrinivas](https://twitter.com/AravSrinivas/status/1901763358019482076) thông báo Softbank đã ký thỏa thuận với Perplexity để trở thành nhà bán lẻ ủy quyền của Perplexity Enterprise Pro tại Nhật Bản."
+          },
+          {
+            "headline": "Jack ClarkSF tuyển dụng cho vị trí Policy Demos",
+            "link": "https://twitter.com/jackclarkSF/status/1901789490437669370",
+            "source": "Twitter - @jackclarkSF",
+            "summary": "[@jackclarkSF](https://twitter.com/jackclarkSF/status/1901789490437669370) có một công việc thú vị mà họ đang tuyển dụng - Policy Demos! Họ nhận thấy cách tốt nhất để giúp mọi người hiểu công nghệ AI mạnh mẽ là 'cho xem, không kể', và cách tốt nhất để làm điều này là trình diễn khả năng thực sự của các hệ thống thực."
+          }
+        ],
+        "title": "Ứng dụng và trường hợp sử dụng AI"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Giá trị của phần mềm mã nguồn mở",
+            "link": "https://twitter.com/ClementDelangue/status/1901751361320206554",
+            "source": "Twitter - @ClementDelangue",
+            "summary": "Clement Delangue nhấn mạnh một nghiên cứu của Harvard về giá trị của phần mềm mã nguồn mở, lưu ý rằng 1 đô la đầu tư vào mã nguồn mở tạo ra 2,000 đô la giá trị và nếu không có OSS, các công ty sẽ cần chi gấp 3.5 lần cho phần mềm [@ClementDelangue](https://twitter.com/ClementDelangue/status/1901751361320206554)."
+          },
+          {
+            "headline": "Sản xuất chip AI trong nước rất quan trọng cho khả năng cạnh tranh",
+            "link": "https://twitter.com/DanHendrycks/status/1901766113509392547",
+            "source": "Twitter - @AIDanHendrycks",
+            "summary": "[@AIDanHendrycks](https://twitter.com/DanHendrycks/status/1901766113509392547) đồng ý rằng việc sản xuất chip AI trong nước là rất quan trọng để cạnh tranh, và điều này được thảo luận trong Chiến lược Siêu trí tuệ của họ, cùng với răn đe và không phổ biến."
+          },
+          {
+            "headline": "Luôn có thể thu nhỏ mô hình để phù hợp với phần cứng của bạn",
+            "link": "https://twitter.com/jxmnop/status/1901761070961668256",
+            "source": "Twitter - @jxmnop",
+            "summary": "[@jxmnop](https://twitter.com/jxmnop/status/1901761070961668256) trả lời một tweet của [@lauriewired](https://twitter.com/lauriewired), lưu ý rằng bạn luôn có thể thu nhỏ mô hình để phù hợp với phần cứng của mình."
+          },
+          {
+            "headline": "vllm_project được phát hiện trong Keynote của Jensen",
+            "link": "https://twitter.com/vllm_project/status/1902065243343425949",
+            "source": "Twitter - @vllm_project",
+            "summary": "[@vllm_project](https://twitter.com/vllm_project/status/1902065243343425949) được phát hiện trong Keynote của Jensen [@nvidia](https://twitter.com/nvidia) #GTC."
+          }
+        ],
+        "title": "Cơ sở hạ tầng, phần cứng và mở rộng quy mô"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Phát triển phần mềm trực quan tiếp tục gặp khó khăn",
+            "link": "https://twitter.com/ID_AA_Carmack/status/1902088032519405919",
+            "source": "Twitter - @ID_AA_Carmack",
+            "summary": "[@ID_AA_Carmack](https://twitter.com/ID_AA_Carmack/status/1902088032519405919) lưu ý rằng đã có vô số nỗ lực để làm cho phát triển phần mềm 'trực quan hơn', nhưng bất cứ điều gì không phải là một tập hợp đơn giản các tệp văn bản có thể đọc được (và LLM!) tiếp tục dẫm phải mìn."
+          },
+          {
+            "headline": "Nỗi lo về việc AI tạo ra nhiều công việc mới cho 'người bình thường'",
+            "link": "https://twitter.com/nearcyan/status/1901932030386127224",
+            "source": "Twitter - @nearcyan",
+            "summary": "[@nearcyan](https://twitter.com/nearcyan/status/1901932030386127224) không tin vào việc AI sẽ tạo ra nhiều công việc mới cho 'người bình thường'. Sẽ có nhiều công việc mới nhưng không dành cho người bình thường."
+          },
+          {
+            "headline": "Nghiên cứu AI ứng dụng thường thiển cận",
+            "link": "https://twitter.com/iScienceLuvr/status/1901868384133808617",
+            "source": "Twitter - @iScienceLuvr",
+            "summary": "[@iScienceLuvr](https://twitter.com/iScienceLuvr/status/1901868384133808617) cho rằng vấn đề với rất nhiều nghiên cứu AI và AI ứng dụng là nó có thể thiển cận như thế nào, và hầu hết các bài báo này sẽ lỗi thời trong khoảng 6 tháng."
+          }
+        ],
+        "title": "Mối quan tâm và hoài nghi"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Lời nhắc nhở hài hước về việc tính phí sửa chữa 'vibe-coded mess'",
+            "link": "https://twitter.com/svpino/status/1901740628301550011",
+            "source": "Twitter - @svpino",
+            "summary": "[@svpino](https://twitter.com/svpino/status/1901740628301550011) nói: 'Lời nhắc nhanh: Tôi đang tính phí 1,000 đô la/giờ để sửa chữa mớ hỗn độn vibe-coded của bạn.'"
+          },
+          {
+            "headline": "Anthropic ngừng hoạt động trong 6 phút gây xáo trộn cuộc sống",
+            "link": "https://twitter.com/nearcyan/status/1901914430360957258",
+            "source": "Twitter - @nearcyan",
+            "summary": "[@nearcyan](https://twitter.com/nearcyan/status/1901914430360957258) chia sẻ rằng Anthropic đã ngừng hoạt động trong 6 phút và cuộc sống của họ trở nên hỗn loạn đến nỗi họ nghĩ rằng một điểm trao đổi internet đã phát nổ."
+          }
+        ],
+        "title": "Hài hước"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Chỉ trích các AI Benchmarks: Goodhart's Law trong hành động",
+            "link": "https://reddit.com/r/LocalLLaMA/comments/1jdw7bg/after_these_last_2_weeks_of_exciting_releases_the/",
+            "source": "Reddit - r/LocalLLaMA",
+            "summary": "Bài đăng chỉ trích độ tin cậy của các benchmarks để đánh giá LLMs cục bộ (Large Language Models), cho rằng chúng có thể gây hiểu lầm. Nhiều ý kiến đồng tình rằng các benchmarks đang bị 'gamed', với các mô hình được tối ưu hóa để vượt trội trên chúng thay vì cho sử dụng chung, điều này lặp lại Goodhart's Law."
+          },
+          {
+            "headline": "Meta's Open-Source AI Đạt 1 Tỷ Lượt Tải Xuống",
+            "link": "https://reddit.com/r/LocalLLaMA/comments/1je6ns1/meta_talks_about_us_and_open_source_source_ai_for/",
+            "source": "Reddit - r/LocalLLaMA",
+            "summary": "Mô hình Llama của Meta đã đạt hơn 1 tỷ lượt tải xuống. Có sự hoài nghi về tuyên bố này. Thảo luận về chi phí cơ sở hạ tầng của Hugging Face liên quan đến việc tải xuống các mô hình, ước tính khoảng $9.3 triệu mỗi tháng trên các dịch vụ AWS."
+          },
+          {
+            "headline": "LG's EXAONE Deep Models có hiệu suất tốt hơn trên Reasoning Tasks",
+            "link": "https://reddit.com/r/LocalLLaMA/comments/1jdt29q/lg_has_released_their_new_reasoning_models/",
+            "source": "Reddit - r/LocalLLaMA",
+            "summary": "Model EXAONE Deep Reasoning của LG đã được giới thiệu. Người dùng ấn tượng bởi model 8B vượt trội hơn o1-mini, với một số đánh giá cao khả năng đáng ngạc nhiên của model 2.4B. Tuy nhiên, có những lời chỉ trích đáng kể về Thỏa thuận Giấy phép Mô hình EXAONE AI, hạn chế sử dụng chỉ cho nghiên cứu và cấm các ứng dụng thương mại, với LG giữ quyền sở hữu mô hình và đầu ra của nó."
+          }
+        ],
+        "title": "Điểm tin Reddit - r/LocalLlama"
+      }
+    ]
+  }
+}

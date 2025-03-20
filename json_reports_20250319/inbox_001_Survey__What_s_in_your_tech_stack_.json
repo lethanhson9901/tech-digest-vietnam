@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash-lite",
+  "text": "{\n  \"from\": \"The Pragmatic Engineer\",\n  \"reportTitle\": \"Khảo sát: Công cụ và công nghệ bạn đang sử dụng\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"The Pragmatic Engineer khảo sát về công nghệ\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/survey-whats-in-your-tech-stack\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"The Pragmatic Engineer đang thực hiện một khảo sát về các công cụ, ngôn ngữ, framework và nền tảng mà các chuyên gia công nghệ đang sử dụng. Mục tiêu là để hiểu rõ hơn về các xu hướng công nghệ hiện tại, những công cụ phổ biến và được yêu thích nhất. Kết quả khảo sát sẽ được công bố vào tháng 5. Tham gia khảo sát, bạn sẽ nhận được kết quả sớm và phân tích độc quyền.\"\n        },\n        {\n          \"headline\": \"Tham gia khảo sát và nhận thông tin chi tiết\",\n          \"link\": \"https://substack.com/redirect/6c31d572-ee32-40c2-a9c2-67991bd7b9cb?j=eyJ1IjoiNTQya3k4In0.5HrgKbRwY5tq-N6VnEZhGD1pdFCefau3PItUmwWhs9c\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Khảo sát bao gồm các câu hỏi về nền tảng, công cụ, và các công cụ tùy chỉnh bạn sử dụng. Thời gian hoàn thành khảo sát từ 5-15 phút. Bạn sẽ nhận được kết quả khảo sát sớm, cùng với phân tích chi tiết từ The Pragmatic Engineer.\"\n        }\n      ],\n      \"title\": \"Thông tin chính\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 4.043810129165649,
+  "attempts": 1,
+  "api_key_index": 1,
+  "structured_data": {
+    "from": "The Pragmatic Engineer",
+    "reportTitle": "Khảo sát: Công cụ và công nghệ bạn đang sử dụng",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "The Pragmatic Engineer khảo sát về công nghệ",
+            "link": "https://newsletter.pragmaticengineer.com/p/survey-whats-in-your-tech-stack",
+            "source": "The Pragmatic Engineer",
+            "summary": "The Pragmatic Engineer đang thực hiện một khảo sát về các công cụ, ngôn ngữ, framework và nền tảng mà các chuyên gia công nghệ đang sử dụng. Mục tiêu là để hiểu rõ hơn về các xu hướng công nghệ hiện tại, những công cụ phổ biến và được yêu thích nhất. Kết quả khảo sát sẽ được công bố vào tháng 5. Tham gia khảo sát, bạn sẽ nhận được kết quả sớm và phân tích độc quyền."
+          },
+          {
+            "headline": "Tham gia khảo sát và nhận thông tin chi tiết",
+            "link": "https://substack.com/redirect/6c31d572-ee32-40c2-a9c2-67991bd7b9cb?j=eyJ1IjoiNTQya3k4In0.5HrgKbRwY5tq-N6VnEZhGD1pdFCefau3PItUmwWhs9c",
+            "source": "The Pragmatic Engineer",
+            "summary": "Khảo sát bao gồm các câu hỏi về nền tảng, công cụ, và các công cụ tùy chỉnh bạn sử dụng. Thời gian hoàn thành khảo sát từ 5-15 phút. Bạn sẽ nhận được kết quả khảo sát sớm, cùng với phân tích chi tiết từ The Pragmatic Engineer."
+          }
+        ],
+        "title": "Thông tin chính"
+      }
+    ]
+  }
+}

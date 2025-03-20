@@ -1,0 +1,56 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash-lite",
+  "text": "{\n  \"from\": \"The Pragmatic Engineer\",\n  \"reportTitle\": \"Báo cáo về 'Cách Linux được xây dựng' với Greg Kroah-Hartman\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Cách Linux được xây dựng với Greg Kroah-Hartman\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Bài viết thảo luận về cách Linux được xây dựng, với sự tham gia của Greg Kroah-Hartman, một trong những người bảo trì kernel Linux. Nội dung bao gồm việc tìm hiểu về quy trình phát triển kernel, cách các thay đổi được thực hiện, và lý do tại sao phương pháp tiếp cận dựa vào cộng đồng lại tạo ra phần mềm đáng tin cậy.\"\n        },\n        {\n          \"headline\": \"Linux phổ biến như thế nào?\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Linux là hệ điều hành phổ biến nhất trên toàn cầu, vận hành trên hàng tỷ thiết bị Android, máy chủ và thiết bị nhúng. Nó cũng được sử dụng trong nhiều hệ thống như TV thông minh và Trạm Vũ trụ Quốc tế. Một điểm thú vị, Linux chạy bên trong nhiều iPhone, trong firmware cho modem Qualcomm 5G.\"\n        },\n        {\n          \"headline\": \"Quy trình hợp nhất thay đổi vào kernel Linux\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Quá trình này bao gồm việc tạo thay đổi (patch), kiểm tra tại chỗ và gửi đến người bảo trì thích hợp để xem xét. Patch phải đi qua một cây phân cấp các người bảo trì trước khi được chấp nhận vào kernel.\"\n        },\n        {\n          \"headline\": \"Giá trị của 'chủ nghĩa vị kỷ' trong phát triển Linux\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Các nhà phát triển đóng góp cho Linux để giải quyết các vấn đề của riêng họ. Điều này dẫn đến việc nhiều nhà phát triển gặp phải các vấn đề tương tự, và mọi đóng góp đều cải thiện Linux. Người bảo trì kernel chỉ chấp nhận các đóng góp phù hợp với toàn bộ dự án.\"\n        },\n        {\n          \"headline\": \"Phương pháp quản lý độc đáo của kernel Linux\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Kernel Linux có hàng ngàn người đóng góp mỗi năm, phát hành theo chu kỳ 9 tuần, nhưng không có nhiều cuộc họp hay người quản lý dự án. Quản lý dự án xảy ra bên ngoài kernel, với những người đóng góp mang đến công việc đã hoàn thành. Việc sử dụng email và git đã chứng minh được hiệu quả quy mô lớn.\"\n        },\n        {\n          \"headline\": \"Nguồn gốc của Git và vai trò trong Linux\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Git được tạo ra để đáp ứng nhu cầu kiểm soát mã nguồn của kernel Linux. Câu chuyện thú vị về cách Git được xây dựng và phát hành sau khi nhóm Linux không hài lòng với các giải pháp kiểm soát mã nguồn hiện có. Git đã trở thành sản phẩm kiểm soát mã nguồn mặc định trong ngành công nghệ.\"\n        }\n      ],\n      \"title\": \"Tóm tắt chính\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 8.488626480102539,
+  "attempts": 1,
+  "api_key_index": 1,
+  "structured_data": {
+    "from": "The Pragmatic Engineer",
+    "reportTitle": "Báo cáo về 'Cách Linux được xây dựng' với Greg Kroah-Hartman",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Cách Linux được xây dựng với Greg Kroah-Hartman",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Bài viết thảo luận về cách Linux được xây dựng, với sự tham gia của Greg Kroah-Hartman, một trong những người bảo trì kernel Linux. Nội dung bao gồm việc tìm hiểu về quy trình phát triển kernel, cách các thay đổi được thực hiện, và lý do tại sao phương pháp tiếp cận dựa vào cộng đồng lại tạo ra phần mềm đáng tin cậy."
+          },
+          {
+            "headline": "Linux phổ biến như thế nào?",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Linux là hệ điều hành phổ biến nhất trên toàn cầu, vận hành trên hàng tỷ thiết bị Android, máy chủ và thiết bị nhúng. Nó cũng được sử dụng trong nhiều hệ thống như TV thông minh và Trạm Vũ trụ Quốc tế. Một điểm thú vị, Linux chạy bên trong nhiều iPhone, trong firmware cho modem Qualcomm 5G."
+          },
+          {
+            "headline": "Quy trình hợp nhất thay đổi vào kernel Linux",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Quá trình này bao gồm việc tạo thay đổi (patch), kiểm tra tại chỗ và gửi đến người bảo trì thích hợp để xem xét. Patch phải đi qua một cây phân cấp các người bảo trì trước khi được chấp nhận vào kernel."
+          },
+          {
+            "headline": "Giá trị của 'chủ nghĩa vị kỷ' trong phát triển Linux",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Các nhà phát triển đóng góp cho Linux để giải quyết các vấn đề của riêng họ. Điều này dẫn đến việc nhiều nhà phát triển gặp phải các vấn đề tương tự, và mọi đóng góp đều cải thiện Linux. Người bảo trì kernel chỉ chấp nhận các đóng góp phù hợp với toàn bộ dự án."
+          },
+          {
+            "headline": "Phương pháp quản lý độc đáo của kernel Linux",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Kernel Linux có hàng ngàn người đóng góp mỗi năm, phát hành theo chu kỳ 9 tuần, nhưng không có nhiều cuộc họp hay người quản lý dự án. Quản lý dự án xảy ra bên ngoài kernel, với những người đóng góp mang đến công việc đã hoàn thành. Việc sử dụng email và git đã chứng minh được hiệu quả quy mô lớn."
+          },
+          {
+            "headline": "Nguồn gốc của Git và vai trò trong Linux",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Git được tạo ra để đáp ứng nhu cầu kiểm soát mã nguồn của kernel Linux. Câu chuyện thú vị về cách Git được xây dựng và phát hành sau khi nhóm Linux không hài lòng với các giải pháp kiểm soát mã nguồn hiện có. Git đã trở thành sản phẩm kiểm soát mã nguồn mặc định trong ngành công nghệ."
+          }
+        ],
+        "title": "Tóm tắt chính"
+      }
+    ]
+  }
+}

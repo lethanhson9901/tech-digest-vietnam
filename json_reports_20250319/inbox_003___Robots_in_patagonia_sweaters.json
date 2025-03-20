@@ -1,0 +1,83 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash-lite",
+  "text": "{\n  \"from\": \"The Frontier by Product Hunt\",\n  \"reportTitle\": \"Tổng hợp tin tức AI hàng tuần: Robot mặc áo len Patagonia\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"No Cap: Nhà đầu tư thiên thần AI\",\n          \"link\": \"https://www.producthunt.com/posts/no-cap\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Một nhà đầu tư thiên thần được hỗ trợ bởi AI, tự động hóa các quyết định tài trợ giai đoạn đầu cho các công ty khởi nghiệp. Mục tiêu là hợp lý hóa và dân chủ hóa quy trình đầu tư bằng cách sử dụng machine learning để xác định các dự án đầy hứa hẹn.\"\n        },\n        {\n          \"headline\": \"Twos PALs: Trợ lý AI cá nhân\",\n          \"link\": \"https://www.producthunt.com/posts/twos-pals\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Một trợ lý AI cá nhân được thiết kế để tổ chức các tác vụ, ghi chú và ý tưởng thành các danh sách có cấu trúc. Nó giúp người dùng luôn làm chủ được các công việc cần làm với nỗ lực tối thiểu.\"\n        },\n        {\n          \"headline\": \"Mistral Small 3.1: Mô hình AI hiệu quả\",\n          \"link\": \"https://www.producthunt.com/posts/mistral-small-3-1\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Một mô hình AI nhỏ gọn nhưng mạnh mẽ, được tối ưu hóa cho suy luận tốc độ cao và hiệu quả. Nó cân bằng kích thước nhỏ gọn với hiệu suất mạnh mẽ, phù hợp với các ứng dụng nhạy cảm với độ trễ.\"\n        },\n        {\n          \"headline\": \"Cuckoo: Trình dịch AI thời gian thực\",\n          \"link\": \"https://www.producthunt.com/posts/cuckoo-6\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Một trình dịch AI thời gian thực được xây dựng để giao tiếp đa ngôn ngữ liền mạch. Nó cho phép các nhóm toàn cầu làm việc cùng nhau mà không gặp rào cản ngôn ngữ, đảm bảo sự hợp tác suôn sẻ hơn.\"\n        },\n        {\n          \"headline\": \"Wispr Flow for Windows: Công cụ đọc chính tả bằng AI\",\n          \"link\": \"https://www.producthunt.com/posts/wispr-flow-for-windows\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Một công cụ đọc chính tả do AI điều khiển cho phép người dùng viết nhanh gấp ba lần bằng cách nói tự nhiên, với định dạng và sửa lỗi theo thời gian thực trên tất cả các ứng dụng.\"\n        }\n      ],\n      \"title\": \"Các sản phẩm AI nổi bật\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"New Relic: Tương lai của Quan sát thông minh\",\n          \"link\": \"https://newrelic.com/event/new-relic-now-on-demand?utm_source=product_hunt&utm_medium=e_newsletter&utm_campaign=amer-fy25-q4-dg-nr-now-feb-virtual-event-on-demand&utm_content=ai_newsletter\",\n          \"source\": \"New Relic\",\n          \"summary\": \"Cập nhật về các phiên trực tuyến theo yêu cầu với các chuyên gia hàng đầu trong ngành để thảo luận về giám sát do AI cung cấp, tăng cường hiệu suất hệ thống và các bản phát hành chính.\"\n        }\n      ],\n      \"title\": \"Tin tài trợ\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Manus AI: Trung Quốc có đang dẫn đầu cuộc đua AI?\",\n          \"link\": \"https://www.producthunt.com/posts/manus\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Manus AI là sản phẩm mới nhất của Trung Quốc trong cuộc đua giành các tác nhân AI tự chủ, đã tạo ra nhiều cuộc thảo luận. Tuy nhiên, sản phẩm này đã gặp phải một số vấn đề như tạo ra dữ liệu sai trong báo cáo tài chính.\"\n        }\n      ],\n      \"title\": \"Ý tưởng lớn\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Các nhà phát triển phần mềm có đang biến mất?\",\n          \"link\": \"https://www.producthunt.com/p/general/do-you-think-software-will-lose-its-value-as-a-product-to-build\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Cuộc tranh luận về việc liệu phần mềm có còn giá trị khi AI và các công cụ no-code cho phép bất kỳ ai cũng có thể xây dựng mọi thứ trong vài phút. Một số quan điểm trong cuộc thảo luận: Chi phí thực sự nằm ở marketing, hỗ trợ khách hàng và việc khiến mọi người sử dụng nó.\"\n        }\n      ],\n      \"title\": \"Thảo luận nổi bật\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 10.399921178817749,
+  "attempts": 1,
+  "api_key_index": 1,
+  "structured_data": {
+    "from": "The Frontier by Product Hunt",
+    "reportTitle": "Tổng hợp tin tức AI hàng tuần: Robot mặc áo len Patagonia",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "No Cap: Nhà đầu tư thiên thần AI",
+            "link": "https://www.producthunt.com/posts/no-cap",
+            "source": "Product Hunt",
+            "summary": "Một nhà đầu tư thiên thần được hỗ trợ bởi AI, tự động hóa các quyết định tài trợ giai đoạn đầu cho các công ty khởi nghiệp. Mục tiêu là hợp lý hóa và dân chủ hóa quy trình đầu tư bằng cách sử dụng machine learning để xác định các dự án đầy hứa hẹn."
+          },
+          {
+            "headline": "Twos PALs: Trợ lý AI cá nhân",
+            "link": "https://www.producthunt.com/posts/twos-pals",
+            "source": "Product Hunt",
+            "summary": "Một trợ lý AI cá nhân được thiết kế để tổ chức các tác vụ, ghi chú và ý tưởng thành các danh sách có cấu trúc. Nó giúp người dùng luôn làm chủ được các công việc cần làm với nỗ lực tối thiểu."
+          },
+          {
+            "headline": "Mistral Small 3.1: Mô hình AI hiệu quả",
+            "link": "https://www.producthunt.com/posts/mistral-small-3-1",
+            "source": "Product Hunt",
+            "summary": "Một mô hình AI nhỏ gọn nhưng mạnh mẽ, được tối ưu hóa cho suy luận tốc độ cao và hiệu quả. Nó cân bằng kích thước nhỏ gọn với hiệu suất mạnh mẽ, phù hợp với các ứng dụng nhạy cảm với độ trễ."
+          },
+          {
+            "headline": "Cuckoo: Trình dịch AI thời gian thực",
+            "link": "https://www.producthunt.com/posts/cuckoo-6",
+            "source": "Product Hunt",
+            "summary": "Một trình dịch AI thời gian thực được xây dựng để giao tiếp đa ngôn ngữ liền mạch. Nó cho phép các nhóm toàn cầu làm việc cùng nhau mà không gặp rào cản ngôn ngữ, đảm bảo sự hợp tác suôn sẻ hơn."
+          },
+          {
+            "headline": "Wispr Flow for Windows: Công cụ đọc chính tả bằng AI",
+            "link": "https://www.producthunt.com/posts/wispr-flow-for-windows",
+            "source": "Product Hunt",
+            "summary": "Một công cụ đọc chính tả do AI điều khiển cho phép người dùng viết nhanh gấp ba lần bằng cách nói tự nhiên, với định dạng và sửa lỗi theo thời gian thực trên tất cả các ứng dụng."
+          }
+        ],
+        "title": "Các sản phẩm AI nổi bật"
+      },
+      {
+        "articles": [
+          {
+            "headline": "New Relic: Tương lai của Quan sát thông minh",
+            "link": "https://newrelic.com/event/new-relic-now-on-demand?utm_source=product_hunt&utm_medium=e_newsletter&utm_campaign=amer-fy25-q4-dg-nr-now-feb-virtual-event-on-demand&utm_content=ai_newsletter",
+            "source": "New Relic",
+            "summary": "Cập nhật về các phiên trực tuyến theo yêu cầu với các chuyên gia hàng đầu trong ngành để thảo luận về giám sát do AI cung cấp, tăng cường hiệu suất hệ thống và các bản phát hành chính."
+          }
+        ],
+        "title": "Tin tài trợ"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Manus AI: Trung Quốc có đang dẫn đầu cuộc đua AI?",
+            "link": "https://www.producthunt.com/posts/manus",
+            "source": "Product Hunt",
+            "summary": "Manus AI là sản phẩm mới nhất của Trung Quốc trong cuộc đua giành các tác nhân AI tự chủ, đã tạo ra nhiều cuộc thảo luận. Tuy nhiên, sản phẩm này đã gặp phải một số vấn đề như tạo ra dữ liệu sai trong báo cáo tài chính."
+          }
+        ],
+        "title": "Ý tưởng lớn"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Các nhà phát triển phần mềm có đang biến mất?",
+            "link": "https://www.producthunt.com/p/general/do-you-think-software-will-lose-its-value-as-a-product-to-build",
+            "source": "Product Hunt",
+            "summary": "Cuộc tranh luận về việc liệu phần mềm có còn giá trị khi AI và các công cụ no-code cho phép bất kỳ ai cũng có thể xây dựng mọi thứ trong vài phút. Một số quan điểm trong cuộc thảo luận: Chi phí thực sự nằm ở marketing, hỗ trợ khách hàng và việc khiến mọi người sử dụng nó."
+          }
+        ],
+        "title": "Thảo luận nổi bật"
+      }
+    ]
+  }
+}
