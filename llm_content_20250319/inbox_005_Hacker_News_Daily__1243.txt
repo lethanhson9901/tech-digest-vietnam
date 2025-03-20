@@ -1,0 +1,67 @@
+EMAIL 5
+From: Mailbrew <noreply@mailbrew.com>
+Subject: Hacker News Daily #1243
+Date: Wed, 19 Mar 2025 06:58:30 +0000
+Folder: INBOX
+
+CONTENT:
+Apple restricts Pebble from being awesome with iPhones • Two new PebbleOS
+watches • Block YouTube ads on AppleTV by decrypting and stripping ads from
+Profobuf (2022) • Moving away from US cloud services • US appeals court rules
+AI generated art cannot be copyrighted • Google to buy Wiz for $32B • Turkish
+university annuls Erdogan rival's degree, preventing run for president •
+Amazon to kill off local Alexa processing, all voice requests shipped to cloud
+• Wired is dropping paywalls for FOIA-based reporting. Others should follow •
+Show HN: I made a tool to port tweets to Bluesky mantaining their original
+date • Make Ubuntu packages 90% faster by rebuilding them • FTC Removes Posts
+Critical of Amazon, Microsoft, and AI Companies # [ Hacker News Daily ](https://app.mailbrew.com/mailbrew/hacker-news-daily-
+ay3MU0QxSoma) March 19 • [Issue #1243](https://app.mailbrew.com/mailbrew/hacker-news-daily-
+ay3MU0QxSoma/1243 "Enjoy a better reading experience online.") [ • Tweet
+](https://twitter.com/intent/tweet?url=https://app.mailbrew.com/mailbrew/hacker-
+news-daily-ay3MU0QxSoma/1243&text=Check%20out%20%22Hacker News
+Daily%22%20by%20Mailbrew Team) [ • Forward ](mailto:?subject=Hacker News Daily
+by Mailbrew Team&body=Check out this issue of %22Hacker News Daily%22 by
+Mailbrew Team%3A https://app.mailbrew.com/mailbrew/hacker-news-daily-
+ay3MU0QxSoma/1243%0D%0A) [ Mailbrew Team ](https://app.mailbrew.com/mailbrew) ### ⚠️ Can't load styles You need a modern email client to view this email. [Read it
+online.](https://app.mailbrew.com/mailbrew/hacker-news-daily-
+ay3MU0QxSoma/1243) [ Apple restricts Pebble from being awesome with iPhones
+](https://ericmigi.com/blog/apple-restricts-pebble-from-being-awesome-with-
+iphones/) [1336](https://news.ycombinator.com/item?id=43401245)[812](https://news.ycombinator.com/item?id=43401245)[ericmigi.com](https://ericmigi.com/blog/apple-
+restricts-pebble-from-being-awesome-with-iphones/) [ Two new PebbleOS watches ](https://ericmigi.com/blog/introducing-two-new-
+pebbleos-watches/) [1227](https://news.ycombinator.com/item?id=43400989)[389](https://news.ycombinator.com/item?id=43400989)[ericmigi.com](https://ericmigi.com/blog/introducing-
+two-new-pebbleos-watches/) [ Block YouTube ads on AppleTV by decrypting and stripping ads from Profobuf
+(2022) ](https://ericdraken.com/pfsense-decrypt-ad-traffic/) [676](https://news.ycombinator.com/item?id=43396735)[405](https://news.ycombinator.com/item?id=43396735)[ericdraken.com](https://ericdraken.com/pfsense-
+decrypt-ad-traffic/) [ Moving away from US cloud services ](https://martijnhols.nl/blog/moving-
+away-from-us-cloud-services) [559](https://news.ycombinator.com/item?id=43396795)[355](https://news.ycombinator.com/item?id=43396795)[martijnhols.nl](https://martijnhols.nl/blog/moving-
+away-from-us-cloud-services) [ US appeals court rules AI generated art cannot be copyrighted
+](https://www.reuters.com/world/us/us-appeals-court-rejects-copyrights-ai-
+generated-art-lacking-human-creator-2025-03-18/) [544](https://news.ycombinator.com/item?id=43402790)[372](https://news.ycombinator.com/item?id=43402790)[reuters.com](https://www.reuters.com/world/us/us-
+appeals-court-rejects-copyrights-ai-generated-art-lacking-human-
+creator-2025-03-18/) [ Google to buy Wiz for $32B
+](https://www.reuters.com/technology/cybersecurity/google-agrees-buy-
+cybersecurity-startup-wiz-32-bln-ft-reports-2025-03-18/) [455](https://news.ycombinator.com/item?id=43398518)[652](https://news.ycombinator.com/item?id=43398518)[reuters.com](https://www.reuters.com/technology/cybersecurity/google-
+agrees-buy-cybersecurity-startup-wiz-32-bln-ft-reports-2025-03-18/) [ Turkish university annuls Erdogan rival's degree, preventing run for
+president ](https://www.reuters.com/world/asia-pacific/istanbul-university-
+annuls-istanbul-mayor-imamoglus-diploma-over-irregularities-2025-03-18/) [448](https://news.ycombinator.com/item?id=43404679)[267](https://news.ycombinator.com/item?id=43404679)[reuters.com](https://www.reuters.com/world/asia-
+pacific/istanbul-university-annuls-istanbul-mayor-imamoglus-diploma-over-
+irregularities-2025-03-18/) [ Amazon to kill off local Alexa processing, all voice requests shipped to
+cloud ](https://www.theregister.com/2025/03/17/amazon_kills_on_device_alexa/) [434](https://news.ycombinator.com/item?id=43402115)[116](https://news.ycombinator.com/item?id=43402115)[theregister.com](https://www.theregister.com/2025/03/17/amazon_kills_on_device_alexa/) [ Wired is dropping paywalls for FOIA-based reporting. Others should follow
+](https://freedom.press/issues/wired-is-dropping-paywalls-for-foia-based-
+reporting-others-should-follow/) [433](https://news.ycombinator.com/item?id=43399138)[72](https://news.ycombinator.com/item?id=43399138)[freedom.press](https://freedom.press/issues/wired-
+is-dropping-paywalls-for-foia-based-reporting-others-should-follow/) [ Show HN: I made a tool to port tweets to Bluesky mantaining their original
+date ](https://bluemigrate.com) [347](https://news.ycombinator.com/item?id=43401855)[134](https://news.ycombinator.com/item?id=43401855)[bluemigrate.com](https://bluemigrate.com) Bluesky allows to backdate their posts with their API, so I made this tool to
+copy your twitter (X) profile to Bluesky keeping the backdated dates of your
+tweets, showing as if they were posted back then [ Make Ubuntu packages 90% faster by rebuilding them
+](https://gist.github.com/jwbee/7e8b27e298de8bbbf8abfa4c232db097) [290](https://news.ycombinator.com/item?id=43406710)[158](https://news.ycombinator.com/item?id=43406710)[gist.github.com](https://gist.github.com/jwbee/7e8b27e298de8bbbf8abfa4c232db097) [ FTC Removes Posts Critical of Amazon, Microsoft, and AI Companies
+](https://www.wired.com/story/federal-trade-commission-removed-blogs-critical-
+of-ai-amazon-microsoft/) [284](https://news.ycombinator.com/item?id=43402957)[99](https://news.ycombinator.com/item?id=43402957)[wired.com](https://www.wired.com/story/federal-
+trade-commission-removed-blogs-critical-of-ai-amazon-microsoft/) ## Share Mailbrew with friends! Have friends who’d love Mailbrew too? Give them your unique referral link (below) and get an awesome reward when they subscribe. <https://join.mailbrew.com/4a33e899> PS: You referred 3 people so far! [](https://mailbrew.com/?utm_source=brew_footer&utm_medium=email&utm_campaign=ay3MU0QxSoma) Mailbrew Inc, 2803 Philadelphia Pike, Claymont, DE. Hacker News Daily is a digest by [Mailbrew
+Team](https://app.mailbrew.com/mailbrew). [Unsubscribe](https://api.mailbrew.com/unsubscribe_brew_sub/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9%2EeyJhY3Rpb24iOiJ1bnN1YnNjcmliZV9icmV3X3N1YiIsInN1YnNjcmlwdGlvbiI6ODQ0MjksImV4cCI6MTc0NzU1MTUxMCwiaWF0IjoxNzQyMzY3NTEwfQ%2EJ97rYuieTi0rYx13IH2zqiz6ZknnwNBpMWlCWFFu96M)
+• [View Online](https://app.mailbrew.com/mailbrew/hacker-news-daily-
+ay3MU0QxSoma/1243) • [Share](mailto:?subject=Check this out&body=Check out the
+latest issue of %22Hacker News
+Daily%22%3A%0D%0A%0D%0Ahttps://app.mailbrew.com/mailbrew/hacker-news-daily-
+ay3MU0QxSoma/1243)
+
+==================================================
+
