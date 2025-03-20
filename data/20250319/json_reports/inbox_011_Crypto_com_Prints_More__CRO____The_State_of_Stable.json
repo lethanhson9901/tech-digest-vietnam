@@ -1,0 +1,112 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"TLDR Crypto\",\n  \"reportTitle\": \"Tổng hợp tin tức Crypto ngày 19/03/2025\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Crypto.com thông qua bỏ phiếu gây tranh cãi để tái phát hành 70 tỷ token CRO\",\n          \"link\": \"https://unchainedcrypto.com/crypto-com-forces-through-controversial-vote-to-re-mint-70-billion-cro/?utm_source=tldrcrypto\",\n          \"source\": \"Unchained Crypto\",\n          \"summary\": \"Crypto.com đã thông qua một cuộc bỏ phiếu gây tranh cãi để tái phát hành 70 tỷ đô la giá trị token CRO, với các validator đóng vai trò quyết định trong việc xoay chuyển cuộc bỏ phiếu. Động thái này đã gây ra tranh luận về những lo ngại về sự pha loãng token và tác động của ảnh hưởng validator tập trung vào quản trị.\"\n        },\n        {\n          \"headline\": \"Burwick Law nộp đơn kiện tập thể về $LIBRA\",\n          \"link\": \"https://threadreaderapp.com/thread/1901811177543360551.html?utm_source=tldrcrypto\",\n          \"source\": \"Threadreaderapp\",\n          \"summary\": \"Burwick Law đã đệ đơn kiện tập thể lên Tòa án Tối cao New York, cáo buộc rằng Kelsier, KIP, Meteora và những người khác đã thao túng việc ra mắt token $LIBRA để đánh lừa các nhà đầu tư. Đơn khiếu nại tuyên bố những người trong cuộc đã thổi phồng giá một cách giả tạo, giữ lại 85% nguồn cung và sau đó rút tiền, gây ra sự sụp đổ thị trường gây tổn hại cho người mua lẻ.\"\n        }\n      ],\n      \"title\": \"Thị trường & Kinh doanh\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Tình hình Stablecoin 2025\",\n          \"link\": \"https://threadreaderapp.com/thread/1901982147587748193.html?utm_source=tldrcrypto\",\n          \"source\": \"Threadreaderapp\",\n          \"summary\": \"Tổng nguồn cung Stablecoin hiện đạt hơn 214 tỷ đô la, xử lý khối lượng hàng năm là 35 nghìn tỷ đô la và thu hút cả DeFi và sự chấp nhận của tổ chức. Các stablecoin lớn như USDC, USDT và những stablecoin mới hơn như USDe và USDS đang mở rộng trên nhiều blockchain, chứng minh rằng stablecoin cung cấp một cầu nối đáng tin cậy cho tài chính onchain, thanh toán xuyên biên giới và tài sản trong thế giới thực.\"\n        },\n        {\n          \"headline\": \"Binance ra mắt Binance Alpha\",\n          \"link\": \"https://threadreaderapp.com/thread/1901898979098390792.html?utm_source=tldrcrypto\",\n          \"source\": \"Threadreaderapp\",\n          \"summary\": \"Binance Alpha 2.0 tích hợp việc mua token on-chain trực tiếp vào Binance Exchange, kết nối giao dịch tập trung (CEX) và phi tập trung (DEX). Bản nâng cấp này loại bỏ những rắc rối về kết nối ví và bắc cầu, cho phép người dùng mua và quản lý token một cách liền mạch thông qua giao diện Binance và các tài khoản hiện có.\"\n        }\n      ],\n      \"title\": \"Đổi mới & Ra mắt\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Tình hình Hệ sinh thái Arbitrum\",\n          \"link\": \"https://threadreaderapp.com/thread/1901449648436621497.html?utm_source=tldrcrypto\",\n          \"source\": \"Threadreaderapp\",\n          \"summary\": \"Được thúc đẩy bởi khối lượng DEX mạnh mẽ và hoạt động perp DEX, Arbitrum đã đạt được một hệ sinh thái DeFi tự duy trì với TVL 2,5 tỷ đô la, hơn 1,7 triệu người dùng hoạt động hàng tuần, trung bình 1,9 triệu giao dịch hàng ngày và 782 giao thức kể từ năm 2022. Các lĩnh vực chính cho thấy sự tăng trưởng đáng kể, bao gồm thị trường cho vay của Aave tăng 370% lên 742 triệu đô la TVL vào năm 2024, việc chấp nhận stablecoin tăng lên và TVL tài sản trong thế giới thực đạt 150 triệu đô la, được hỗ trợ bởi sáng kiến ​​STEP của DAO trong bối cảnh quy định toàn cầu rõ ràng.\"\n        },\n        {\n          \"headline\": \"Thẩm định Dự án Crypto\",\n          \"link\": \"https://threadreaderapp.com/thread/1901789877642862710.html?utm_source=tldrcrypto\",\n          \"source\": \"Threadreaderapp\",\n          \"summary\": \"Trước khi đưa ra quyết định đầu tư, điều quan trọng là phải đánh giá tâm lý, hồ sơ rủi ro/phần thưởng, tính độc đáo, khoảng thời gian, tokenomics, chất lượng đội ngũ, khối lượng hữu cơ và hành động giá của một dự án. Điều này có thể giúp xác định các cơ hội hấp dẫn hơn khi các nhà đầu tư cân nhắc các yếu tố như khả năng giảm giá, tiện ích trong thế giới thực, cam kết của nhóm phát triển và hành vi giao dịch hữu cơ để tránh các đợt chơi trò chơi cường điệu hoặc rủi ro.\"\n        }\n      ],\n      \"title\": \"Hướng dẫn & Hướng dẫn\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Bạn là Thanh khoản Thoát\",\n          \"link\": \"https://rekt.news/you-are-the-exit-liquidity/?utm_source=tldrcrypto\",\n          \"source\": \"Rekt\",\n          \"summary\": \"Crypto đã biến thành một sòng bạc do AI điều khiển, sử dụng tự động hóa, cường điệu của người có ảnh hưởng và thao túng tâm lý để trích xuất thanh khoản từ các nhà đầu tư bán lẻ để nhà cái luôn thắng. Meme coin, token chính trị và các kế hoạch Ponzi được đổi thương hiệu phát triển mạnh, không phải vì sự đổi mới mà vì sự chú ý, chủ nghĩa bộ lạc và sự lừa dối theo thuật toán đã thay thế các nguyên tắc cơ bản.\"\n        },\n        {\n          \"headline\": \"Điều gì đã xảy ra với SIMD-228?\",\n          \"link\": \"https://threadreaderapp.com/thread/1900638109663981986.html?utm_source=tldrcrypto\",\n          \"source\": \"Threadreaderapp\",\n          \"summary\": \"Đề xuất quản trị SIMD-228 của Solana, nhằm giảm lạm phát bằng cách chuyển sang mô hình động dựa trên sự tham gia đặt cược, đã không được thông qua với 61,39% phiếu có, dưới mức 66,67% theo yêu cầu, mặc dù có kỷ lục 74,29% cổ phần tham gia từ 70,13% số validator. Việc từ chối đề xuất giữ tỷ lệ lạm phát của Solana ở mức 4,7%, giảm 15% hàng năm, nhưng sự tham gia cao—vượt qua Cosmos Hub (59,67%) và tỷ lệ cử tri đi bầu ở Hoa Kỳ năm 2020 (66,8%)—ám chỉ một cộng đồng bằng chứng cổ phần trưởng thành, tham gia tập trung vào tương lai kinh tế của mạng.\"\n        }\n      ],\n      \"title\": \"Linh tinh\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Raydium đang thực hiện một đối thủ cạnh tranh nhà máy memecoin Pump.fun\",\n          \"link\": \"https://links.tldrnewsletter.com/vtQfQm\",\n          \"source\": \"TLDR Newsletter\",\n          \"summary\": \"Sau tin đồn rằng Pump.fun sẽ tạo ra các nhóm thanh khoản của riêng mình, Solana DEX Raydium đã tạo ra các kế hoạch để tạo ra một bệ phóng memecoin.\"\n        },\n        {\n          \"headline\": \"Swyftx của Úc mua lại Easy Crypto của New Zealand trong đợt mở rộng khu vực\",\n          \"link\": \"https://decrypt.co/310103/australias-swyftx-acquires-new-zealands-easy-crypto-in-regional-expansion-push?utm_source=tldrcrypto\",\n          \"source\": \"Decrypt\",\n          \"summary\": \"Sàn giao dịch tiền điện tử của Úc, Swyftx, đã mua lại Easy Crypto của New Zealand, mở rộng dấu ấn của mình lên 1,1 triệu khách hàng và củng cố sự thống trị của mình trên thị trường ANZ.\"\n        },\n        {\n          \"headline\": \"Nghiên cứu của Coinbase cho thấy hơn 75% nhà đầu tư tổ chức sẽ tăng mức độ tiếp xúc với tiền điện tử\",\n          \"link\": \"https://links.tldrnewsletter.com/9q0UKn\",\n          \"source\": \"TLDR Newsletter\",\n          \"summary\": \"Một cuộc khảo sát của Coinbase cho thấy hơn 75% nhà đầu tư tổ chức (ví dụ: quỹ phòng hộ, nhà quản lý tài sản, v.v.) có kế hoạch tăng mức độ tiếp xúc với tiền điện tử của họ trong ba năm tới.\"\n        },\n        {\n          \"headline\": \"Xapo Bank tham gia thị trường cho vay được hỗ trợ bằng Bitcoin với quyền truy cập vào các khoản vay bằng đô la Mỹ lên tới 1 triệu đô la\",\n          \"link\": \"https://links.tldrnewsletter.com/f7AM7p\",\n          \"source\": \"TLDR Newsletter\",\n          \"summary\": \"Xapo Bank đã ra mắt dịch vụ cho vay được hỗ trợ bằng Bitcoin cho phép người đi vay sử dụng Bitcoin của họ làm tài sản thế chấp để đảm bảo các khoản vay (Tỷ lệ cho vay trên giá trị 20-40%).\"\n        }\n      ],\n      \"title\": \"Liên kết nhanh\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 12.891201496124268,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "TLDR Crypto",
+    "reportTitle": "Tổng hợp tin tức Crypto ngày 19/03/2025",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Crypto.com thông qua bỏ phiếu gây tranh cãi để tái phát hành 70 tỷ token CRO",
+            "link": "https://unchainedcrypto.com/crypto-com-forces-through-controversial-vote-to-re-mint-70-billion-cro/?utm_source=tldrcrypto",
+            "source": "Unchained Crypto",
+            "summary": "Crypto.com đã thông qua một cuộc bỏ phiếu gây tranh cãi để tái phát hành 70 tỷ đô la giá trị token CRO, với các validator đóng vai trò quyết định trong việc xoay chuyển cuộc bỏ phiếu. Động thái này đã gây ra tranh luận về những lo ngại về sự pha loãng token và tác động của ảnh hưởng validator tập trung vào quản trị."
+          },
+          {
+            "headline": "Burwick Law nộp đơn kiện tập thể về $LIBRA",
+            "link": "https://threadreaderapp.com/thread/1901811177543360551.html?utm_source=tldrcrypto",
+            "source": "Threadreaderapp",
+            "summary": "Burwick Law đã đệ đơn kiện tập thể lên Tòa án Tối cao New York, cáo buộc rằng Kelsier, KIP, Meteora và những người khác đã thao túng việc ra mắt token $LIBRA để đánh lừa các nhà đầu tư. Đơn khiếu nại tuyên bố những người trong cuộc đã thổi phồng giá một cách giả tạo, giữ lại 85% nguồn cung và sau đó rút tiền, gây ra sự sụp đổ thị trường gây tổn hại cho người mua lẻ."
+          }
+        ],
+        "title": "Thị trường & Kinh doanh"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Tình hình Stablecoin 2025",
+            "link": "https://threadreaderapp.com/thread/1901982147587748193.html?utm_source=tldrcrypto",
+            "source": "Threadreaderapp",
+            "summary": "Tổng nguồn cung Stablecoin hiện đạt hơn 214 tỷ đô la, xử lý khối lượng hàng năm là 35 nghìn tỷ đô la và thu hút cả DeFi và sự chấp nhận của tổ chức. Các stablecoin lớn như USDC, USDT và những stablecoin mới hơn như USDe và USDS đang mở rộng trên nhiều blockchain, chứng minh rằng stablecoin cung cấp một cầu nối đáng tin cậy cho tài chính onchain, thanh toán xuyên biên giới và tài sản trong thế giới thực."
+          },
+          {
+            "headline": "Binance ra mắt Binance Alpha",
+            "link": "https://threadreaderapp.com/thread/1901898979098390792.html?utm_source=tldrcrypto",
+            "source": "Threadreaderapp",
+            "summary": "Binance Alpha 2.0 tích hợp việc mua token on-chain trực tiếp vào Binance Exchange, kết nối giao dịch tập trung (CEX) và phi tập trung (DEX). Bản nâng cấp này loại bỏ những rắc rối về kết nối ví và bắc cầu, cho phép người dùng mua và quản lý token một cách liền mạch thông qua giao diện Binance và các tài khoản hiện có."
+          }
+        ],
+        "title": "Đổi mới & Ra mắt"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Tình hình Hệ sinh thái Arbitrum",
+            "link": "https://threadreaderapp.com/thread/1901449648436621497.html?utm_source=tldrcrypto",
+            "source": "Threadreaderapp",
+            "summary": "Được thúc đẩy bởi khối lượng DEX mạnh mẽ và hoạt động perp DEX, Arbitrum đã đạt được một hệ sinh thái DeFi tự duy trì với TVL 2,5 tỷ đô la, hơn 1,7 triệu người dùng hoạt động hàng tuần, trung bình 1,9 triệu giao dịch hàng ngày và 782 giao thức kể từ năm 2022. Các lĩnh vực chính cho thấy sự tăng trưởng đáng kể, bao gồm thị trường cho vay của Aave tăng 370% lên 742 triệu đô la TVL vào năm 2024, việc chấp nhận stablecoin tăng lên và TVL tài sản trong thế giới thực đạt 150 triệu đô la, được hỗ trợ bởi sáng kiến ​​STEP của DAO trong bối cảnh quy định toàn cầu rõ ràng."
+          },
+          {
+            "headline": "Thẩm định Dự án Crypto",
+            "link": "https://threadreaderapp.com/thread/1901789877642862710.html?utm_source=tldrcrypto",
+            "source": "Threadreaderapp",
+            "summary": "Trước khi đưa ra quyết định đầu tư, điều quan trọng là phải đánh giá tâm lý, hồ sơ rủi ro/phần thưởng, tính độc đáo, khoảng thời gian, tokenomics, chất lượng đội ngũ, khối lượng hữu cơ và hành động giá của một dự án. Điều này có thể giúp xác định các cơ hội hấp dẫn hơn khi các nhà đầu tư cân nhắc các yếu tố như khả năng giảm giá, tiện ích trong thế giới thực, cam kết của nhóm phát triển và hành vi giao dịch hữu cơ để tránh các đợt chơi trò chơi cường điệu hoặc rủi ro."
+          }
+        ],
+        "title": "Hướng dẫn & Hướng dẫn"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Bạn là Thanh khoản Thoát",
+            "link": "https://rekt.news/you-are-the-exit-liquidity/?utm_source=tldrcrypto",
+            "source": "Rekt",
+            "summary": "Crypto đã biến thành một sòng bạc do AI điều khiển, sử dụng tự động hóa, cường điệu của người có ảnh hưởng và thao túng tâm lý để trích xuất thanh khoản từ các nhà đầu tư bán lẻ để nhà cái luôn thắng. Meme coin, token chính trị và các kế hoạch Ponzi được đổi thương hiệu phát triển mạnh, không phải vì sự đổi mới mà vì sự chú ý, chủ nghĩa bộ lạc và sự lừa dối theo thuật toán đã thay thế các nguyên tắc cơ bản."
+          },
+          {
+            "headline": "Điều gì đã xảy ra với SIMD-228?",
+            "link": "https://threadreaderapp.com/thread/1900638109663981986.html?utm_source=tldrcrypto",
+            "source": "Threadreaderapp",
+            "summary": "Đề xuất quản trị SIMD-228 của Solana, nhằm giảm lạm phát bằng cách chuyển sang mô hình động dựa trên sự tham gia đặt cược, đã không được thông qua với 61,39% phiếu có, dưới mức 66,67% theo yêu cầu, mặc dù có kỷ lục 74,29% cổ phần tham gia từ 70,13% số validator. Việc từ chối đề xuất giữ tỷ lệ lạm phát của Solana ở mức 4,7%, giảm 15% hàng năm, nhưng sự tham gia cao—vượt qua Cosmos Hub (59,67%) và tỷ lệ cử tri đi bầu ở Hoa Kỳ năm 2020 (66,8%)—ám chỉ một cộng đồng bằng chứng cổ phần trưởng thành, tham gia tập trung vào tương lai kinh tế của mạng."
+          }
+        ],
+        "title": "Linh tinh"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Raydium đang thực hiện một đối thủ cạnh tranh nhà máy memecoin Pump.fun",
+            "link": "https://links.tldrnewsletter.com/vtQfQm",
+            "source": "TLDR Newsletter",
+            "summary": "Sau tin đồn rằng Pump.fun sẽ tạo ra các nhóm thanh khoản của riêng mình, Solana DEX Raydium đã tạo ra các kế hoạch để tạo ra một bệ phóng memecoin."
+          },
+          {
+            "headline": "Swyftx của Úc mua lại Easy Crypto của New Zealand trong đợt mở rộng khu vực",
+            "link": "https://decrypt.co/310103/australias-swyftx-acquires-new-zealands-easy-crypto-in-regional-expansion-push?utm_source=tldrcrypto",
+            "source": "Decrypt",
+            "summary": "Sàn giao dịch tiền điện tử của Úc, Swyftx, đã mua lại Easy Crypto của New Zealand, mở rộng dấu ấn của mình lên 1,1 triệu khách hàng và củng cố sự thống trị của mình trên thị trường ANZ."
+          },
+          {
+            "headline": "Nghiên cứu của Coinbase cho thấy hơn 75% nhà đầu tư tổ chức sẽ tăng mức độ tiếp xúc với tiền điện tử",
+            "link": "https://links.tldrnewsletter.com/9q0UKn",
+            "source": "TLDR Newsletter",
+            "summary": "Một cuộc khảo sát của Coinbase cho thấy hơn 75% nhà đầu tư tổ chức (ví dụ: quỹ phòng hộ, nhà quản lý tài sản, v.v.) có kế hoạch tăng mức độ tiếp xúc với tiền điện tử của họ trong ba năm tới."
+          },
+          {
+            "headline": "Xapo Bank tham gia thị trường cho vay được hỗ trợ bằng Bitcoin với quyền truy cập vào các khoản vay bằng đô la Mỹ lên tới 1 triệu đô la",
+            "link": "https://links.tldrnewsletter.com/f7AM7p",
+            "source": "TLDR Newsletter",
+            "summary": "Xapo Bank đã ra mắt dịch vụ cho vay được hỗ trợ bằng Bitcoin cho phép người đi vay sử dụng Bitcoin của họ làm tài sản thế chấp để đảm bảo các khoản vay (Tỷ lệ cho vay trên giá trị 20-40%)."
+          }
+        ],
+        "title": "Liên kết nhanh"
+      }
+    ]
+  }
+}

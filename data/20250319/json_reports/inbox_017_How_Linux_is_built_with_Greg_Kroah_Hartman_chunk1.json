@@ -1,0 +1,114 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash-lite",
+  "text": "{\n  \"from\": \"The Pragmatic Engineer\",\n  \"reportTitle\": \"Báo cáo: Cách Linux được xây dựng với Greg Kroah-Hartman\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Cách Linux được xây dựng với Greg Kroah-Hartman\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Một cuộc phỏng vấn với Greg Kroah-Hartman, người bảo trì kernel Linux trong 25 năm và là một trong ba thành viên của Linux Kernel Foundation. Bài viết thảo luận về cách thức hoạt động của việc phát triển kernel Linux, từ cách các thay đổi được thực hiện đến lý do tại sao phương pháp tiếp cận do cộng đồng điều khiển tạo ra phần mềm đáng tin cậy. Bài viết cũng đề cập đến việc Linux được sử dụng rộng rãi như thế nào và lợi ích nghề nghiệp của việc đóng góp vào các dự án nguồn mở.\"\n        }\n      ],\n      \"title\": \"Tổng quan\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Sự phổ biến của Linux\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Linux là hệ điều hành phổ biến nhất trên toàn cầu, chạy trên 4 tỷ thiết bị Android và được sử dụng rộng rãi trên máy chủ, thiết bị nhúng, TV thông minh, hệ thống kiểm soát không lưu và thậm chí trên Trạm vũ trụ quốc tế. Nó cũng được sử dụng bên trong nhiều iPhone cho modem Qualcomm 5G.\"\n        },\n        {\n          \"headline\": \"Quy trình hợp nhất thay đổi vào Linux Kernel\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Quy trình bao gồm tạo thay đổi (patch), kiểm tra cục bộ và gửi đến người bảo trì thích hợp để xem xét. Patch phải trải qua một cây phân cấp của người bảo trì trước khi được hợp nhất vào kernel.\"\n        },\n        {\n          \"headline\": \"Đóng góp 'ích kỷ' của các nhà phát triển\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Các nhà phát triển đóng góp vào Linux để giải quyết các vấn đề của riêng họ, nhưng nhiều người có cùng vấn đề, do đó, mọi đóng góp đều cải thiện Linux cho những người khác. Người bảo trì chỉ chấp nhận các đóng góp có ý nghĩa cho toàn bộ dự án. Các nhà cung cấp thiết bị nhúng đã giúp làm cho kernel Linux hiệu quả hơn, điều này sau đó đã giúp Linux trở thành lựa chọn tốt nhất cho hệ điều hành di động trên Android.\"\n        },\n        {\n          \"headline\": \"Cách thức hoạt động độc đáo của Linux Kernel\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Kernel Linux có khoảng 4.000 người đóng góp mỗi năm, phát hành theo chu kỳ 9 tuần và không có nhiều cuộc họp, người quản lý dự án, sử dụng email và git. Việc quản lý dự án diễn ra bên ngoài kernel, những người đóng góp mang đến các công việc đã hoàn thành. Đội ngũ kernel đầu tư rất nhiều vào tự động hóa. Email vẫn hiệu quả đối với nhóm này (mặc dù các dự án khác dựa trên kernel Linux, như bản phân phối Linux, hoạt động khác).\"\n        },\n        {\n          \"headline\": \"Git và Linux Kernel\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Git được tạo ra để đáp ứng nhu cầu kiểm soát nguồn của kernel Linux. Git đã trở thành sản phẩm kiểm soát nguồn tiêu chuẩn trên toàn ngành công nghệ nhờ các sản phẩm như GitHub và GitLab. Kernel Linux không sử dụng GitHub vì họ đã giải quyết các vấn đề về quy trình làm việc kiểm soát nguồn bằng cách viết git.\"\n        }\n      ],\n      \"title\": \"Phân tích sâu hơn\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Tóm tắt cuộc trò chuyện\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Kernel Linux có khoảng 40 triệu dòng mã, với phần kernel cốt lõi chiếm khoảng 5%. Phần còn lại hỗ trợ phần cứng, trình điều khiển, thiết bị, kiến trúc và chip khác nhau. Kernel trừu tượng hóa phần cứng cơ bản và trình bày một giao diện nhất quán cho các chương trình không gian người dùng.  Linux sử dụng kiến ​​trúc nguyên khối với trình điều khiển là một phần của kernel.  Nguyên tắc cốt lõi của Linux là không làm hỏng không gian người dùng. Quy trình phát triển kernel Linux có chu kỳ 9 tuần cố định. Khoảng 4.000 nhà phát triển đóng góp mã mỗi năm, gửi thay đổi qua email đến người bảo trì chịu trách nhiệm về các hệ thống con kernel cụ thể.\"\n        },\n        {\n          \"headline\": \"Sự tin tưởng trong phát triển kernel Linux\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Khi một người bảo trì chấp nhận mã từ một nhà phát triển, họ ngầm chịu trách nhiệm về nó. Đối với các phần quan trọng của kernel, người bảo trì cần có mức độ tin tưởng cao vào nhà phát triển và chất lượng công việc của họ.\"\n        },\n        {\n          \"headline\": \"Công cụ và quy trình phát triển\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Email và git là hai công cụ được sử dụng trong quá trình phát triển. 'Linux Next' là một cây phát triển riêng biệt tích hợp tất cả các thay đổi dự kiến ​​cho bản phát hành kernel tiếp theo hàng ngày để kiểm tra và xác định các sự cố tích hợp tiềm ẩn.\"\n        },\n        {\n          \"headline\": \"Kiểm thử và phát hành ổn định\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Kiểm tra tự động trong 'Linux Next', bao gồm xây dựng và khởi động kernel trên nhiều kiến ​​trúc và máy ảo. KernelCI cung cấp cơ sở hạ tầng tích hợp liên tục mở rộng. Các bản phát hành kernel ổn định được duy trì độc lập với nhánh phát triển chính, được bảo trì bởi Greg và Sasha Levin, phát hành các bản sửa lỗi hàng tuần. Greg chọn một kernel mỗi năm và hỗ trợ nó trong một thời gian dài, đôi khi lên đến sáu năm.\"\n        },\n        {\n          \"headline\": \"Thách thức với mã cũ\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Việc duy trì các cơ sở mã cũ hơn trở nên khó khăn hơn do sự phát triển liên tục của kernel. Các thay đổi trong các phiên bản mới hơn để sửa lỗi có thể khó chuyển lại vào mã cũ hơn.\"\n        },\n        {\n          \"headline\": \"Đóng góp và lợi ích\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Khoảng 80% người đóng góp kernel được trả lương bởi chủ lao động của họ. Các công ty đầu tư vào phát triển Linux vì nó thường hiệu quả hơn về chi phí để đóng góp các tính năng và sửa lỗi hơn là phát triển hệ điều hành của riêng họ. Đóng góp vào kernel Linux là một cách có giá trị để các nhà phát triển đầu tư vào sự nghiệp của họ.\"\n        },\n        {\n          \"headline\": \"Rust và LLMs trong Linux Kernel\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Rust đang được sử dụng để cải thiện tính an toàn bộ nhớ trong kernel. Khoảng 25.000 dòng mã Rust đã có trong kernel. LLMs đang được sử dụng trong việc sửa lỗi và viết mã trong Linux.\"\n        },\n        {\n          \"headline\": \"Giá trị của việc đóng góp vào Linux Kernel\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Đóng góp vào kernel Linux hoặc bất kỳ dự án nguồn mở nào là một cách có giá trị để đầu tư cho sự nghiệp của bạn. Nó thể hiện khả năng cộng tác, làm việc với các cơ sở mã hiện có và giải quyết các vấn đề trong thế giới thực.\"\n        }\n      ],\n      \"title\": \"Điểm chính và lưu ý\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 18.810601472854614,
+  "attempts": 1,
+  "api_key_index": 1,
+  "structured_data": {
+    "from": "The Pragmatic Engineer",
+    "reportTitle": "Báo cáo: Cách Linux được xây dựng với Greg Kroah-Hartman",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Cách Linux được xây dựng với Greg Kroah-Hartman",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Một cuộc phỏng vấn với Greg Kroah-Hartman, người bảo trì kernel Linux trong 25 năm và là một trong ba thành viên của Linux Kernel Foundation. Bài viết thảo luận về cách thức hoạt động của việc phát triển kernel Linux, từ cách các thay đổi được thực hiện đến lý do tại sao phương pháp tiếp cận do cộng đồng điều khiển tạo ra phần mềm đáng tin cậy. Bài viết cũng đề cập đến việc Linux được sử dụng rộng rãi như thế nào và lợi ích nghề nghiệp của việc đóng góp vào các dự án nguồn mở."
+          }
+        ],
+        "title": "Tổng quan"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Sự phổ biến của Linux",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Linux là hệ điều hành phổ biến nhất trên toàn cầu, chạy trên 4 tỷ thiết bị Android và được sử dụng rộng rãi trên máy chủ, thiết bị nhúng, TV thông minh, hệ thống kiểm soát không lưu và thậm chí trên Trạm vũ trụ quốc tế. Nó cũng được sử dụng bên trong nhiều iPhone cho modem Qualcomm 5G."
+          },
+          {
+            "headline": "Quy trình hợp nhất thay đổi vào Linux Kernel",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Quy trình bao gồm tạo thay đổi (patch), kiểm tra cục bộ và gửi đến người bảo trì thích hợp để xem xét. Patch phải trải qua một cây phân cấp của người bảo trì trước khi được hợp nhất vào kernel."
+          },
+          {
+            "headline": "Đóng góp 'ích kỷ' của các nhà phát triển",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Các nhà phát triển đóng góp vào Linux để giải quyết các vấn đề của riêng họ, nhưng nhiều người có cùng vấn đề, do đó, mọi đóng góp đều cải thiện Linux cho những người khác. Người bảo trì chỉ chấp nhận các đóng góp có ý nghĩa cho toàn bộ dự án. Các nhà cung cấp thiết bị nhúng đã giúp làm cho kernel Linux hiệu quả hơn, điều này sau đó đã giúp Linux trở thành lựa chọn tốt nhất cho hệ điều hành di động trên Android."
+          },
+          {
+            "headline": "Cách thức hoạt động độc đáo của Linux Kernel",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Kernel Linux có khoảng 4.000 người đóng góp mỗi năm, phát hành theo chu kỳ 9 tuần và không có nhiều cuộc họp, người quản lý dự án, sử dụng email và git. Việc quản lý dự án diễn ra bên ngoài kernel, những người đóng góp mang đến các công việc đã hoàn thành. Đội ngũ kernel đầu tư rất nhiều vào tự động hóa. Email vẫn hiệu quả đối với nhóm này (mặc dù các dự án khác dựa trên kernel Linux, như bản phân phối Linux, hoạt động khác)."
+          },
+          {
+            "headline": "Git và Linux Kernel",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Git được tạo ra để đáp ứng nhu cầu kiểm soát nguồn của kernel Linux. Git đã trở thành sản phẩm kiểm soát nguồn tiêu chuẩn trên toàn ngành công nghệ nhờ các sản phẩm như GitHub và GitLab. Kernel Linux không sử dụng GitHub vì họ đã giải quyết các vấn đề về quy trình làm việc kiểm soát nguồn bằng cách viết git."
+          }
+        ],
+        "title": "Phân tích sâu hơn"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Tóm tắt cuộc trò chuyện",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Kernel Linux có khoảng 40 triệu dòng mã, với phần kernel cốt lõi chiếm khoảng 5%. Phần còn lại hỗ trợ phần cứng, trình điều khiển, thiết bị, kiến trúc và chip khác nhau. Kernel trừu tượng hóa phần cứng cơ bản và trình bày một giao diện nhất quán cho các chương trình không gian người dùng.  Linux sử dụng kiến ​​trúc nguyên khối với trình điều khiển là một phần của kernel.  Nguyên tắc cốt lõi của Linux là không làm hỏng không gian người dùng. Quy trình phát triển kernel Linux có chu kỳ 9 tuần cố định. Khoảng 4.000 nhà phát triển đóng góp mã mỗi năm, gửi thay đổi qua email đến người bảo trì chịu trách nhiệm về các hệ thống con kernel cụ thể."
+          },
+          {
+            "headline": "Sự tin tưởng trong phát triển kernel Linux",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Khi một người bảo trì chấp nhận mã từ một nhà phát triển, họ ngầm chịu trách nhiệm về nó. Đối với các phần quan trọng của kernel, người bảo trì cần có mức độ tin tưởng cao vào nhà phát triển và chất lượng công việc của họ."
+          },
+          {
+            "headline": "Công cụ và quy trình phát triển",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Email và git là hai công cụ được sử dụng trong quá trình phát triển. 'Linux Next' là một cây phát triển riêng biệt tích hợp tất cả các thay đổi dự kiến ​​cho bản phát hành kernel tiếp theo hàng ngày để kiểm tra và xác định các sự cố tích hợp tiềm ẩn."
+          },
+          {
+            "headline": "Kiểm thử và phát hành ổn định",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Kiểm tra tự động trong 'Linux Next', bao gồm xây dựng và khởi động kernel trên nhiều kiến ​​trúc và máy ảo. KernelCI cung cấp cơ sở hạ tầng tích hợp liên tục mở rộng. Các bản phát hành kernel ổn định được duy trì độc lập với nhánh phát triển chính, được bảo trì bởi Greg và Sasha Levin, phát hành các bản sửa lỗi hàng tuần. Greg chọn một kernel mỗi năm và hỗ trợ nó trong một thời gian dài, đôi khi lên đến sáu năm."
+          },
+          {
+            "headline": "Thách thức với mã cũ",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Việc duy trì các cơ sở mã cũ hơn trở nên khó khăn hơn do sự phát triển liên tục của kernel. Các thay đổi trong các phiên bản mới hơn để sửa lỗi có thể khó chuyển lại vào mã cũ hơn."
+          },
+          {
+            "headline": "Đóng góp và lợi ích",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Khoảng 80% người đóng góp kernel được trả lương bởi chủ lao động của họ. Các công ty đầu tư vào phát triển Linux vì nó thường hiệu quả hơn về chi phí để đóng góp các tính năng và sửa lỗi hơn là phát triển hệ điều hành của riêng họ. Đóng góp vào kernel Linux là một cách có giá trị để các nhà phát triển đầu tư vào sự nghiệp của họ."
+          },
+          {
+            "headline": "Rust và LLMs trong Linux Kernel",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Rust đang được sử dụng để cải thiện tính an toàn bộ nhớ trong kernel. Khoảng 25.000 dòng mã Rust đã có trong kernel. LLMs đang được sử dụng trong việc sửa lỗi và viết mã trong Linux."
+          },
+          {
+            "headline": "Giá trị của việc đóng góp vào Linux Kernel",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Đóng góp vào kernel Linux hoặc bất kỳ dự án nguồn mở nào là một cách có giá trị để đầu tư cho sự nghiệp của bạn. Nó thể hiện khả năng cộng tác, làm việc với các cơ sở mã hiện có và giải quyết các vấn đề trong thế giới thực."
+          }
+        ],
+        "title": "Điểm chính và lưu ý"
+      }
+    ]
+  }
+}

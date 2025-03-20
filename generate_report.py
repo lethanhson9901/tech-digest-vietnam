@@ -1,3 +1,5 @@
+# generate_report.py
+
 import datetime
 import json
 import multiprocessing
@@ -108,7 +110,8 @@ def generate_json_reports(
     date: datetime.date = None,
     config_path: str = "config.yaml",
     model_name: str = "gemini-2.0-pro-exp-02-05",
-    max_workers: int = None
+    max_workers: int = None,
+    base_path: str = None
 ) -> int:
     """
     Generate JSON reports from chunked email content using multiprocessing.
@@ -118,13 +121,24 @@ def generate_json_reports(
         config_path: Path to config file
         model_name: Gemini model name to use
         max_workers: Maximum number of worker processes (defaults to half the number of API keys)
-    
+        base_path: Base directory path for storing data (overrides default)
+        
     Returns:
         int: Number of successfully processed files
     """
     # Determine the date to process
     if date is None:
         date = datetime.date.today() - datetime.timedelta(days=1)
+        
+    # Set up directories
+    if base_path is None:
+        base_path = f"{date.strftime('%Y%m%d')}"
+    
+    input_dir = os.path.join(base_path, "chunked_emails")
+    output_dir = os.path.join(base_path, "json_reports")
+    
+    # Create output directory if it doesn't exist
+    os.makedirs(output_dir, exist_ok=True)
     
     # Calculate number of workers based on API keys
     if max_workers is None:
@@ -132,15 +146,7 @@ def generate_json_reports(
         max_workers = max(1, api_key_count // 2)
     
     print(f"Using {max_workers} worker processes")
-    
-    # Set up directories
-    base_dir = f"{date.strftime('%Y%m%d')}"
-    input_dir = os.path.join(base_dir, "chunked_emails")
-    output_dir = os.path.join(base_dir, "json_reports")
-    
-    # Create output directory if it doesn't exist
-    os.makedirs(output_dir, exist_ok=True)
-    
+
     # Get list of all txt files in input directory
     try:
         input_files = [f for f in os.listdir(input_dir) if f.endswith('.txt')]

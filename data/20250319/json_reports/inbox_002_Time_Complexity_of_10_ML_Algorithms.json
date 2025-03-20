@@ -1,0 +1,59 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"Daily Dose of DS\",\n  \"reportTitle\": \"Tổng hợp thông tin từ Daily Dose of DS ngày 18/03/2025\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Thời gian tính toán của 10 thuật toán Machine Learning phổ biến\",\n          \"link\": \"https://www.dailydoseofds.com/membership\",\n          \"source\": \"Daily Dose of DS\",\n          \"summary\": \"Bài viết này trình bày trực quan về độ phức tạp thời gian chạy của 10 thuật toán ML phổ biến nhất. Việc hiểu rõ runtime giúp chúng ta hiểu cách một thuật toán hoạt động từ đầu đến cuối, đồng thời giúp lựa chọn thuật toán phù hợp với kích thước dữ liệu. Ví dụ: SVM có thời gian chạy tăng theo cấp số nhân với số lượng mẫu, trong khi t-SNE tăng theo cấp số bình phương. Bài viết khuyến khích người đọc tự tính toán độ phức tạp thời gian chạy để củng cố kiến thức về thuật toán và đặt câu hỏi về thời gian suy luận của KMeans Clustering.\"\n        }\n      ],\n      \"title\": \"Điểm tin về các thuật toán Machine Learning\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Xây dựng mô hình suy luận như DeepSeek-R1\",\n          \"link\": \"https://www.dailydoseofds.com/p/build-a-reasoning-model-like-deepseek-r1/\",\n          \"source\": \"Daily Dose of DS\",\n          \"summary\": \"Bài viết giới thiệu cách nhúng khả năng suy luận vào bất kỳ LLM nào, tương tự như DeepSeek-R1. Mô hình được huấn luyện bằng UnslothAI để tinh chỉnh hiệu quả và Llama 3.1-8B làm LLM nền tảng. Chi tiết về cách triển khai và hướng dẫn có tại link.\"\n        }\n      ],\n      \"title\": \"Góc nhìn về mô hình suy luận\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Bright Data: Cung cấp dữ liệu web trực tiếp cho AI của bạn\",\n          \"link\": \"https://brightdata.com/ai?utm_source=brand&utm_campaign=brnd-mkt_partner_dailydoseofds_NL&promo=dailydoseofds\",\n          \"source\": \"Bright Data\",\n          \"summary\": \"Bright Data cho phép truy cập, tìm kiếm, thu thập và duyệt web ở quy mô không giới hạn cho AI. Với Bright Data, bạn có thể triển khai các AI agent để tìm kiếm, duyệt và trích xuất dữ liệu ở quy mô lớn, cung cấp cho các mô hình dữ liệu web có cấu trúc theo thời gian thực và tích hợp các luồng dữ liệu trực tiếp vào quá trình đào tạo LLM.\"\n        }\n      ],\n      \"title\": \"Thông tin từ nhà tài trợ Bright Data\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Tài nguyên DS/ML giúp bạn thành công\",\n          \"link\": \"https://www.dailydoseofds.com/membership\",\n          \"source\": \"Daily Dose of DS\",\n          \"summary\": \"Tổng hợp các tài nguyên hữu ích để phát triển kỹ năng trong lĩnh vực Data Science/Machine Learning, bao gồm các khóa học về xây dựng hệ thống Agent, RAG, Graph Neural Networks, Pairwise Context Scoring, Quantization, Conformal Predictions, Causal Inference, Scale Model Training, Testing ML Models in Production, Federated Learning, và Model Compression. Các kỹ năng này giúp giảm chi phí, tăng doanh thu, mở rộng quy mô mô hình ML và dự đoán xu hướng.\"\n        }\n      ],\n      \"title\": \"Tài nguyên và Khóa học\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 5.373910427093506,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "Daily Dose of DS",
+    "reportTitle": "Tổng hợp thông tin từ Daily Dose of DS ngày 18/03/2025",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Thời gian tính toán của 10 thuật toán Machine Learning phổ biến",
+            "link": "https://www.dailydoseofds.com/membership",
+            "source": "Daily Dose of DS",
+            "summary": "Bài viết này trình bày trực quan về độ phức tạp thời gian chạy của 10 thuật toán ML phổ biến nhất. Việc hiểu rõ runtime giúp chúng ta hiểu cách một thuật toán hoạt động từ đầu đến cuối, đồng thời giúp lựa chọn thuật toán phù hợp với kích thước dữ liệu. Ví dụ: SVM có thời gian chạy tăng theo cấp số nhân với số lượng mẫu, trong khi t-SNE tăng theo cấp số bình phương. Bài viết khuyến khích người đọc tự tính toán độ phức tạp thời gian chạy để củng cố kiến thức về thuật toán và đặt câu hỏi về thời gian suy luận của KMeans Clustering."
+          }
+        ],
+        "title": "Điểm tin về các thuật toán Machine Learning"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Xây dựng mô hình suy luận như DeepSeek-R1",
+            "link": "https://www.dailydoseofds.com/p/build-a-reasoning-model-like-deepseek-r1/",
+            "source": "Daily Dose of DS",
+            "summary": "Bài viết giới thiệu cách nhúng khả năng suy luận vào bất kỳ LLM nào, tương tự như DeepSeek-R1. Mô hình được huấn luyện bằng UnslothAI để tinh chỉnh hiệu quả và Llama 3.1-8B làm LLM nền tảng. Chi tiết về cách triển khai và hướng dẫn có tại link."
+          }
+        ],
+        "title": "Góc nhìn về mô hình suy luận"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Bright Data: Cung cấp dữ liệu web trực tiếp cho AI của bạn",
+            "link": "https://brightdata.com/ai?utm_source=brand&utm_campaign=brnd-mkt_partner_dailydoseofds_NL&promo=dailydoseofds",
+            "source": "Bright Data",
+            "summary": "Bright Data cho phép truy cập, tìm kiếm, thu thập và duyệt web ở quy mô không giới hạn cho AI. Với Bright Data, bạn có thể triển khai các AI agent để tìm kiếm, duyệt và trích xuất dữ liệu ở quy mô lớn, cung cấp cho các mô hình dữ liệu web có cấu trúc theo thời gian thực và tích hợp các luồng dữ liệu trực tiếp vào quá trình đào tạo LLM."
+          }
+        ],
+        "title": "Thông tin từ nhà tài trợ Bright Data"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Tài nguyên DS/ML giúp bạn thành công",
+            "link": "https://www.dailydoseofds.com/membership",
+            "source": "Daily Dose of DS",
+            "summary": "Tổng hợp các tài nguyên hữu ích để phát triển kỹ năng trong lĩnh vực Data Science/Machine Learning, bao gồm các khóa học về xây dựng hệ thống Agent, RAG, Graph Neural Networks, Pairwise Context Scoring, Quantization, Conformal Predictions, Causal Inference, Scale Model Training, Testing ML Models in Production, Federated Learning, và Model Compression. Các kỹ năng này giúp giảm chi phí, tăng doanh thu, mở rộng quy mô mô hình ML và dự đoán xu hướng."
+          }
+        ],
+        "title": "Tài nguyên và Khóa học"
+      }
+    ]
+  }
+}

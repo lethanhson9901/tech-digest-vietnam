@@ -1,0 +1,41 @@
+gemini:
+  # Required: API Keys
+  api_keys:
+    - "AIzaxxx"
+ 
+  # Optional: Generation Settings
+  generation:
+    temperature: 0.7
+    top_p: 1.0
+    top_k: 40
+    max_output_tokens: 8192
+    stop_sequences: []
+    response_mime_type: "text/plain"
+ 
+  # Optional: Rate Limiting
+  rate_limits:
+    requests_per_minute: 60
+    reset_window: 60  # seconds
+ 
+  # Optional: Strategies
+  strategies:
+    content: "fallback"  # round_robin fallback retry
+    key_rotation: "round_robin"  # smart_cooldown sequential round_robin least_used
+ 
+  # Optional: Retry Settings
+  retry:
+    max_attempts: 1
+    delay: 3  # seconds
+ 
+  # Optional: Model Settings
+  default_model: "gemini-2.0-pro-exp-02-05"
+  system_instruction: null  # Custom system prompt
+ 
+# anht xfoj mbhc kxjw
+gmail:
+  email: "your-email@gmail.com"
+  email_app_password: "generated app password" # https://support.google.com/mail/thread/205453566/how-to-generate-an-app-password?hl=en
+
+storage:
+  # Default base path (can include date formatting)
+  base_path: "data/{date}"  # This will create folders like data/20250319

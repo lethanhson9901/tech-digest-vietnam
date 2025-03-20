@@ -1,3 +1,5 @@
+#fetch_emails.py
+
 import datetime
 import email
 import imaplib
@@ -160,7 +162,7 @@ def process_directory(input_dir, output_dir, max_chunk_size=15000):
     return results
 
 
-def get_llm_ready_emails(config, max_chunk_size=15000):
+def get_llm_ready_emails(config, max_chunk_size=15000, base_path=None):
     """
     Fetches emails from yesterday, processes them for LLM consumption,
     and chunks large emails for better processing.
@@ -168,7 +170,25 @@ def get_llm_ready_emails(config, max_chunk_size=15000):
     Args:
         config (dict): Configuration containing email settings
         max_chunk_size (int): Maximum size of each chunk in characters
+        base_path (str): Base directory path for storing data (overrides default)
     """
+    # Calculate yesterday's date
+    yesterday = datetime.date.today() - datetime.timedelta(days=1)
+    date_str = yesterday.strftime("%d-%b-%Y")  # Format: 19-Mar-2025
+    
+    print(f"Fetching emails from {date_str} for LLM processing...")
+    
+    # Use base_path if provided, otherwise use default format
+    if base_path is None:
+        base_path = f"{yesterday.strftime('%Y%m%d')}"
+        
+    # Create the base directory if it doesn't exist
+    os.makedirs(base_path, exist_ok=True)
+    
+    # Create subdirectories for raw and chunked emails
+    save_dir = os.path.join(base_path, "raw_emails")
+    os.makedirs(save_dir, exist_ok=True)
+    
     # Extract credentials from config
     try:
         email_address = config['gmail']['email']
@@ -177,20 +197,14 @@ def get_llm_ready_emails(config, max_chunk_size=15000):
     except KeyError as e:
         print(f"Missing required configuration: {e}")
         print("Please ensure your config.yaml contains gmail.email and gmail.email_app_password")
-        return
-    
-    # Calculate yesterday's date
-    yesterday = datetime.date.today() - datetime.timedelta(days=1)
-    date_str = yesterday.strftime("%d-%b-%Y")  # Format: 19-Mar-2025
-    
-    print(f"Fetching emails from {date_str} for LLM processing...")
+        return False
     
     # Connect to the IMAP server
     try:
         mail = imaplib.IMAP4_SSL(imap_server)
     except Exception as e:
         print(f"Error connecting to IMAP server: {str(e)}")
-        return
+        return False
     
     try:
         # Login to the account
@@ -199,15 +213,7 @@ def get_llm_ready_emails(config, max_chunk_size=15000):
         except imaplib.IMAP4.error as e:
             print(f"Login failed: {str(e)}")
             print("Please check your email and app password in config.yaml")
-            return
-        
-        # Tạo thư mục gốc theo ngày
-        base_dir = f"{yesterday.strftime('%Y%m%d')}"
-        os.makedirs(base_dir, exist_ok=True)
-        
-        # Tạo thư mục con cho nội dung email gốc
-        save_dir = os.path.join(base_dir, "raw_emails")
-        os.makedirs(save_dir, exist_ok=True)
+            return False
         
         # Initialize HTML to text converter
         h2t = html2text.HTML2Text()
@@ -346,12 +352,12 @@ def get_llm_ready_emails(config, max_chunk_size=15000):
         
         if email_count == 0:
             print(f"No emails found from {date_str}.")
-            return
+            return False
             
         print(f"\nAll emails from {date_str} have been processed and saved to '{save_dir}'.")
         
         # Now chunk the files if they're too large
-        chunked_dir = os.path.join(base_dir, "chunked_emails")
+        chunked_dir = os.path.join(base_path, "chunked_emails")
         os.makedirs(chunked_dir, exist_ok=True)
         
         print(f"\nChunking large files (limit: {max_chunk_size} characters)...")
@@ -364,7 +370,7 @@ def get_llm_ready_emails(config, max_chunk_size=15000):
             
             if not chunk_results:
                 print("No files were processed for chunking. Check if any emails were saved.")
-                return
+                return False
                 
             # Print summary of chunking
             total_files = len(chunk_results)
@@ -376,13 +382,16 @@ def get_llm_ready_emails(config, max_chunk_size=15000):
             print(f"Created {total_chunks} output files")
             print(f"Split {split_files} files into multiple chunks")
             print(f"Chunked files are available in '{chunked_dir}'")
+            return True
         except Exception as e:
             print(f"Error during chunking process: {str(e)}")
             traceback.print_exc()
+            return False
         
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         traceback.print_exc()
+        return False
     
     finally:
         # Close the connection
@@ -390,5 +399,4 @@ def get_llm_ready_emails(config, max_chunk_size=15000):
             mail.logout()
         except:
             pass
-
-
+        return email_count > 0

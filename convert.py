@@ -1,3 +1,5 @@
+# convert.py
+
 import datetime
 import json
 import os
@@ -127,17 +129,19 @@ def generate_toc(entries):
     
     return "\n".join(toc) + "\n\n---\n"
 
-def convert_to_beautiful_md(date=None):
+def convert_to_beautiful_md(date=None, base_path=None):
     # Xác định ngày nếu không được truyền vào
     if date is None:
         date = datetime.date.today() - datetime.timedelta(days=1)
     
     # Tạo đường dẫn đến thư mục base và json_reports
-    base_dir = f"{date.strftime('%Y%m%d')}"
-    json_dir = os.path.join(base_dir, "json_reports")
+    if base_path is None:
+        base_path = f"{date.strftime('%Y%m%d')}"
+    
+    json_dir = os.path.join(base_path, "json_reports")
     
     # Output file - saved in the base directory, not in json_reports
-    output_file = os.path.join(base_dir, f"tech_news_digest_{date.strftime('%Y%m%d')}.md")
+    output_file = os.path.join(base_path, f"tech_news_digest_{date.strftime('%Y%m%d')}.md")
     
     # Đảm bảo thư mục tồn tại
     if not os.path.exists(json_dir):

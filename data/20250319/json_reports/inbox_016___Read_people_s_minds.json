@@ -1,0 +1,109 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"Product Hunt Daily\",\n  \"reportTitle\": \"Điểm tin Product Hunt ngày 19/03/2025: Đọc vị người dùng và tối ưu video nhờ AI\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Đọc vị tâm trí người dùng với Attention Insight Figma plugin\",\n          \"link\": \"https://www.producthunt.com/posts/attention-insight-figma-plugin?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=editorial\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Plugin Attention Insight cho Figma sử dụng heatmaps hỗ trợ bởi AI để dự đoán vị trí người dùng sẽ nhìn vào đầu tiên trước khi thiết kế của bạn được xuất bản. Thay vì đoán vị trí đặt CTA, bạn có thể phân tích sự tập trung, so sánh các phiên bản và đưa ra quyết định dựa trên dữ liệu thực tế. Công cụ này giúp bỏ qua tranh luận thiết kế và chứng minh vị trí người dùng thực sự tập trung.\"\n        },\n        {\n          \"headline\": \"Graphite: Đánh giá code hiệu quả hơn với AI\",\n          \"link\": \"https://www.producthunt.com/p/graphite/you-re-doing-code-reviews-wrong-ama-w-ceo-of-graphite-hey-product-hunt?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=editorial\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Graphite tổ chức buổi AMA với CEO Merrill Lutsky để thảo luận về việc sử dụng AI trong phát triển và đánh giá code. Graphite là công cụ hỗ trợ quy trình làm việc cho phép các nhóm tạo, đánh giá và hợp nhất code liên tục.\"\n        },\n        {\n          \"headline\": \"Inbox by Novu: Thành phần thông báo mã nguồn mở cho nhà phát triển\",\n          \"link\": \"https://www.producthunt.com/posts/inbox-by-novu?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=editorial\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Inbox by Novu là một React notification component mã nguồn mở cho phép bạn thêm hộp thư đến thời gian thực vào ứng dụng của mình chỉ với sáu dòng code. Nó đi kèm với giao diện người dùng, cập nhật theo thời gian thực và tùy chọn người dùng tích hợp sẵn.\"\n        },\n        {\n          \"headline\": \"Shorty: Tạo video marketing tự động bằng AI\",\n          \"link\": \"https://www.producthunt.com/posts/shorty?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=editorial\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Shorty là một trình tạo video hỗ trợ bởi AI, có thể tạo hàng trăm video TikTok và Reels từ một liên kết hoặc mô tả sản phẩm. Nó xây dựng AI avatars, viết hooks và tự động hóa phân phối, giúp bạn dễ dàng xuất bản nội dung mà không cần tốn hàng giờ quay phim và chỉnh sửa.\"\n        }\n      ],\n      \"title\": \"Sản phẩm nổi bật\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Aha - Đội ngũ marketing influencer AI đầu tiên trên thế giới\",\n          \"link\": \"https://www.producthunt.com/posts/aha-6?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Aha là sản phẩm đứng đầu ngày hôm qua (18/03/2025) trong lĩnh vực Marketing với 267 votes.\"\n        },\n        {\n          \"headline\": \"Twos PALs - Danh sách hỗ trợ bởi AI giúp bạn tiết kiệm thời gian\",\n          \"link\": \"https://www.producthunt.com/posts/twos-pals?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Twos PALs xếp thứ hai trong lĩnh vực Productivity với 331 votes.\"\n        },\n        {\n          \"headline\": \"Kintsugi - Tự động hóa thuế bán hàng của bạn\",\n          \"link\": \"https://www.producthunt.com/posts/kintsugi?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Kintsugi xếp thứ ba trong lĩnh vực Payments với 49 votes.\"\n        },\n        {\n          \"headline\": \"Inbox by Novu - Thông báo mã nguồn mở cho các sản phẩm hiện đại\",\n          \"link\": \"https://www.producthunt.com/posts/inbox-by-novu?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Inbox by Novu xếp thứ tư trong lĩnh vực API với 84 votes.\"\n        },\n        {\n          \"headline\": \"Taskee.pro - Trình quản lý tác vụ đa chức năng miễn phí toàn diện cho các nhóm\",\n          \"link\": \"https://www.producthunt.com/posts/taskee-pro-2?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Taskee.pro xếp thứ năm trong lĩnh vực Productivity với 46 votes.\"\n        },\n        {\n          \"headline\": \"Shorty - Như Cursor nhưng dành cho Marketing\",\n          \"link\": \"https://www.producthunt.com/posts/shorty?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Shorty xếp thứ sáu trong lĩnh vực Marketing với 77 votes.\"\n        },\n        {\n          \"headline\": \"Bucket DX - Feature flags để đi nhanh với CLI, Toolbar, Event log & hơn thế nữa\",\n          \"link\": \"https://www.producthunt.com/posts/bucket-dx?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Bucket DX xếp thứ bảy trong lĩnh vực SaaS với 47 votes.\"\n        },\n        {\n          \"headline\": \"Mistral small 3.1 - Mô hình tốt nhất trong phân khúc trọng lượng của nó\",\n          \"link\": \"https://www.producthunt.com/posts/mistral-small-3-1?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Mistral small 3.1 xếp thứ tám trong lĩnh vực Artificial Intelligence với 6 votes.\"\n        },\n        {\n          \"headline\": \"Bebop.ai - Cần thêm doanh số? Chỉ cần hỏi.\",\n          \"link\": \"https://www.producthunt.com/posts/bebop-ai?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Bebop.ai xếp thứ chín trong lĩnh vực Productivity với 16 votes.\"\n        },\n        {\n          \"headline\": \"Tinybird Forward » - Cách nhanh nhất để vận chuyển phần mềm với các yêu cầu dữ liệu lớn.\",\n          \"link\": \"https://www.producthunt.com/posts/tinybird-forward?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Tinybird Forward » xếp thứ mười trong lĩnh vực User Experience với 12 votes.\"\n        }\n      ],\n      \"title\": \"Top 10 Sản phẩm của ngày hôm qua\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 11.436286926269531,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "Product Hunt Daily",
+    "reportTitle": "Điểm tin Product Hunt ngày 19/03/2025: Đọc vị người dùng và tối ưu video nhờ AI",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Đọc vị tâm trí người dùng với Attention Insight Figma plugin",
+            "link": "https://www.producthunt.com/posts/attention-insight-figma-plugin?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=editorial",
+            "source": "Product Hunt",
+            "summary": "Plugin Attention Insight cho Figma sử dụng heatmaps hỗ trợ bởi AI để dự đoán vị trí người dùng sẽ nhìn vào đầu tiên trước khi thiết kế của bạn được xuất bản. Thay vì đoán vị trí đặt CTA, bạn có thể phân tích sự tập trung, so sánh các phiên bản và đưa ra quyết định dựa trên dữ liệu thực tế. Công cụ này giúp bỏ qua tranh luận thiết kế và chứng minh vị trí người dùng thực sự tập trung."
+          },
+          {
+            "headline": "Graphite: Đánh giá code hiệu quả hơn với AI",
+            "link": "https://www.producthunt.com/p/graphite/you-re-doing-code-reviews-wrong-ama-w-ceo-of-graphite-hey-product-hunt?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=editorial",
+            "source": "Product Hunt",
+            "summary": "Graphite tổ chức buổi AMA với CEO Merrill Lutsky để thảo luận về việc sử dụng AI trong phát triển và đánh giá code. Graphite là công cụ hỗ trợ quy trình làm việc cho phép các nhóm tạo, đánh giá và hợp nhất code liên tục."
+          },
+          {
+            "headline": "Inbox by Novu: Thành phần thông báo mã nguồn mở cho nhà phát triển",
+            "link": "https://www.producthunt.com/posts/inbox-by-novu?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=editorial",
+            "source": "Product Hunt",
+            "summary": "Inbox by Novu là một React notification component mã nguồn mở cho phép bạn thêm hộp thư đến thời gian thực vào ứng dụng của mình chỉ với sáu dòng code. Nó đi kèm với giao diện người dùng, cập nhật theo thời gian thực và tùy chọn người dùng tích hợp sẵn."
+          },
+          {
+            "headline": "Shorty: Tạo video marketing tự động bằng AI",
+            "link": "https://www.producthunt.com/posts/shorty?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=editorial",
+            "source": "Product Hunt",
+            "summary": "Shorty là một trình tạo video hỗ trợ bởi AI, có thể tạo hàng trăm video TikTok và Reels từ một liên kết hoặc mô tả sản phẩm. Nó xây dựng AI avatars, viết hooks và tự động hóa phân phối, giúp bạn dễ dàng xuất bản nội dung mà không cần tốn hàng giờ quay phim và chỉnh sửa."
+          }
+        ],
+        "title": "Sản phẩm nổi bật"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Aha - Đội ngũ marketing influencer AI đầu tiên trên thế giới",
+            "link": "https://www.producthunt.com/posts/aha-6?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured",
+            "source": "Product Hunt",
+            "summary": "Aha là sản phẩm đứng đầu ngày hôm qua (18/03/2025) trong lĩnh vực Marketing với 267 votes."
+          },
+          {
+            "headline": "Twos PALs - Danh sách hỗ trợ bởi AI giúp bạn tiết kiệm thời gian",
+            "link": "https://www.producthunt.com/posts/twos-pals?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured",
+            "source": "Product Hunt",
+            "summary": "Twos PALs xếp thứ hai trong lĩnh vực Productivity với 331 votes."
+          },
+          {
+            "headline": "Kintsugi - Tự động hóa thuế bán hàng của bạn",
+            "link": "https://www.producthunt.com/posts/kintsugi?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured",
+            "source": "Product Hunt",
+            "summary": "Kintsugi xếp thứ ba trong lĩnh vực Payments với 49 votes."
+          },
+          {
+            "headline": "Inbox by Novu - Thông báo mã nguồn mở cho các sản phẩm hiện đại",
+            "link": "https://www.producthunt.com/posts/inbox-by-novu?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured",
+            "source": "Product Hunt",
+            "summary": "Inbox by Novu xếp thứ tư trong lĩnh vực API với 84 votes."
+          },
+          {
+            "headline": "Taskee.pro - Trình quản lý tác vụ đa chức năng miễn phí toàn diện cho các nhóm",
+            "link": "https://www.producthunt.com/posts/taskee-pro-2?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured",
+            "source": "Product Hunt",
+            "summary": "Taskee.pro xếp thứ năm trong lĩnh vực Productivity với 46 votes."
+          },
+          {
+            "headline": "Shorty - Như Cursor nhưng dành cho Marketing",
+            "link": "https://www.producthunt.com/posts/shorty?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured",
+            "source": "Product Hunt",
+            "summary": "Shorty xếp thứ sáu trong lĩnh vực Marketing với 77 votes."
+          },
+          {
+            "headline": "Bucket DX - Feature flags để đi nhanh với CLI, Toolbar, Event log & hơn thế nữa",
+            "link": "https://www.producthunt.com/posts/bucket-dx?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured",
+            "source": "Product Hunt",
+            "summary": "Bucket DX xếp thứ bảy trong lĩnh vực SaaS với 47 votes."
+          },
+          {
+            "headline": "Mistral small 3.1 - Mô hình tốt nhất trong phân khúc trọng lượng của nó",
+            "link": "https://www.producthunt.com/posts/mistral-small-3-1?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured",
+            "source": "Product Hunt",
+            "summary": "Mistral small 3.1 xếp thứ tám trong lĩnh vực Artificial Intelligence với 6 votes."
+          },
+          {
+            "headline": "Bebop.ai - Cần thêm doanh số? Chỉ cần hỏi.",
+            "link": "https://www.producthunt.com/posts/bebop-ai?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured",
+            "source": "Product Hunt",
+            "summary": "Bebop.ai xếp thứ chín trong lĩnh vực Productivity với 16 votes."
+          },
+          {
+            "headline": "Tinybird Forward » - Cách nhanh nhất để vận chuyển phần mềm với các yêu cầu dữ liệu lớn.",
+            "link": "https://www.producthunt.com/posts/tinybird-forward?utm_campaign=38605_2025-03-19&utm_medium=newsletter&utm_source=Daily+Digest&utm_term=featured",
+            "source": "Product Hunt",
+            "summary": "Tinybird Forward » xếp thứ mười trong lĩnh vực User Experience với 12 votes."
+          }
+        ],
+        "title": "Top 10 Sản phẩm của ngày hôm qua"
+      }
+    ]
+  }
+}

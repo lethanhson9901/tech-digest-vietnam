@@ -1,0 +1,83 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"TLDR Newsletter\",\n  \"reportTitle\": \"Tổng hợp tin tức công nghệ ngày 19/03/2025: Nvidia, Disney, Google\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Nvidia ra mắt chip AI Blackwell Ultra và Rubin\",\n          \"link\": \"https://www.cnbc.com/2025/03/18/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips-.html?utm_source=tldrnewsletter\",\n          \"source\": \"CNBC\",\n          \"summary\": \"Nvidia vừa công bố các chip mới Blackwell Ultra và Vera Rubin, được thiết kế để xây dựng và triển khai các mô hình trí tuệ nhân tạo. Blackwell Ultra sẽ cho phép các nhà cung cấp dịch vụ đám mây tăng doanh thu lên tới 50 lần so với chip thế hệ Hopper và sẽ được xuất xưởng vào nửa cuối năm nay. Vera Rubin, dự kiến xuất xưởng vào nửa cuối năm 2026, là một hệ thống với hai thành phần chính: CPU Vera và GPU Rubin. CPU Vera sẽ nhanh gấp đôi so với CPU được sử dụng trong chip Grace Blackwell năm ngoái và sẽ cho phép Rubin quản lý 50 petaflop trong khi thực hiện suy luận, gấp đôi công suất của chip Blackwell hiện tại.\"\n        },\n        {\n          \"headline\": \"Vì sao Google chi 32 tỷ đô la mua Wiz được xem là 'đa đám mây'\",\n          \"link\": \"https://techcrunch.com/2025/03/18/heres-why-google-pitched-its-32b-wiz-acquisition-as-multicloud/?utm_source=tldrnewsletter\",\n          \"source\": \"TechCrunch\",\n          \"summary\": \"Google đang mua lại Wiz với giá 32 tỷ đô la. Wiz sẽ tiếp tục được định vị là một dịch vụ đa đám mây. Thương vụ này mang lại một danh sách khách hàng khổng lồ cho Google, vì vậy các công ty cần đảm bảo rằng những khách hàng hiện tại không bắt đầu tìm kiếm một nhà cung cấp bảo mật khác. Nhiều khách hàng đã chọn Wiz vì khả năng hỗ trợ nhiều nền tảng đám mây - việc cắt bỏ khả năng đó có nguy cơ làm mất lòng những người dùng này. Google Cloud отстает đáng kể so với các đối thủ cạnh tranh với 12% thị phần trên thị trường đám mây toàn cầu.\"\n        }\n      ],\n      \"title\": \"BIG TECH & STARTUPS\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Nvidia và Google DeepMind sẽ giúp cung cấp năng lượng cho robot dễ thương của Disney\",\n          \"link\": \"https://techcrunch.com/2025/03/18/nvidia-and-google-deepmind-will-help-power-disneys-cute-robots/?utm_source=tldrnewsletter\",\n          \"source\": \"TechCrunch\",\n          \"summary\": \"Newton của Nvidia và Google DeepMind là một công cụ vật lý có thể mô phỏng chuyển động của robot trong môi trường thực tế. Nó sẽ được Disney sử dụng để cung cấp năng lượng cho robot giải trí thế hệ tiếp theo của mình - một video về một trong những robot này có sẵn trong bài viết. Newton giúp robot biểu cảm hơn và học cách xử lý các nhiệm vụ phức tạp một cách chính xác. Nó có khả năng tùy biến cao - các nhà phát triển có thể sử dụng nó để lập trình các tương tác robot với một loạt các vật thể biến dạng. Newton sẽ tương thích với hệ sinh thái các công cụ phát triển robot của Google DeepMind.\"\n        },\n        {\n          \"headline\": \"Đây là bí mật giúp Firefly hạ cánh lên mặt trăng thành công\",\n          \"link\": \"https://arstechnica.com/science/2025/03/heres-the-secret-to-how-firefly-was-able-to-nail-its-very-first-lunar-landing/?utm_source=tldrnewsletter\",\n          \"source\": \"Ars Technica\",\n          \"summary\": \"Tàu đổ bộ Blue Ghost của Firefly Aerospace, một phần của chương trình Dịch vụ Tải trọng Mặt trăng Thương mại (CLPS) của NASA, đã hoàn thành rất nhiều việc trên Mặt trăng trong hai tuần qua. Nó đã khoan vào bề mặt Mặt trăng, thử nghiệm máy hút bụi ngoài trái đất, chứng minh rằng GPS có thể được sử dụng để điều hướng trên bề mặt mặt trăng và gửi hình ảnh hàng ngày về Trái đất. Tất cả các mục tiêu nhiệm vụ cho Blue Ghost đã được đáp ứng. Bài viết này trình bày chi tiết cách Firefly đã đảm bảo được cuộc đổ bộ lên mặt trăng thương mại thành công hoàn toàn đầu tiên, những thách thức mà các kỹ sư của Firefly đã phải vượt qua, một số khám phá mà Blue Ghost đã thực hiện cho đến nay và tiến độ của các nhiệm vụ khác trong chương trình CLPS.\"\n        }\n      ],\n      \"title\": \"SCIENCE & FUTURISTIC TECHNOLOGY\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Chia tay với việc trực ca\",\n          \"link\": \"https://archive.md/7UbbW?utm_source=tldrnewsletter\",\n          \"source\": \"archive.md\",\n          \"summary\": \"Trực ca, trong trạng thái hiện tại ở Big Tech, là thiếu sót. AI đã thay đổi phạm vi của việc trực ca và trách nhiệm của kỹ sư trong vòng lặp. Một số ca trực sẽ luôn không thể tránh khỏi, nhưng đó nên là ngoại lệ hơn là quy tắc. Điều này sẽ cho các kỹ sư thời gian để tập trung vào các nhiệm vụ có ý nghĩa, điều này sẽ làm cho khách hàng hài lòng hơn.\"\n        },\n        {\n          \"headline\": \"Ngân sách đồng bộ\",\n          \"link\": \"https://www.morling.dev/blog/the-synchrony-budget/?utm_source=tldrnewsletter\",\n          \"source\": \"morling.dev\",\n          \"summary\": \"Các dịch vụ nên giảm thiểu số lượng yêu cầu đồng bộ mà chúng thực hiện đối với các dịch vụ khác càng nhiều càng tốt. Các cuộc gọi đồng bộ tốn kém và ảnh hưởng đến tính khả dụng của các dịch vụ. Ứng dụng càng phụ thuộc vào nhiều dịch vụ một cách đồng bộ, thì tính khả dụng của ứng dụng đó sẽ càng thấp. Lập ngân sách đồng bộ là về việc chú ý đến cách các luồng giao tiếp được triển khai giữa các dịch vụ.\"\n        }\n      ],\n      \"title\": \"PROGRAMMING, DESIGN & DATA SCIENCE\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Anh ấy phát cuồng vì công nghệ thanh toán lương. Bây giờ, anh ta bị buộc tội làm gián điệp công ty\",\n          \"link\": \"https://links.tldrnewsletter.com/w3DFny\",\n          \"source\": \"links.tldrnewsletter.com\",\n          \"summary\": \"Keith O'Brien, một người quản lý tuân thủ thanh toán lương toàn cầu tại Rippling, một công ty khởi nghiệp phần mềm kinh doanh, đã bị buộc tội đánh cắp bí mật thương mại cho đối thủ Deel, như một phần của hoạt động gián điệp. O'Brien bị cáo buộc đã tìm kiếm 'deel' trung bình 23 lần một ngày trên các hệ thống nội bộ của Rippling, truy cập các diễn đàn không liên quan gì đến công việc của anh ta ở chế độ che giấu sự hiện diện của anh ta với những người khác. Rippling tuyên bố rằng họ đã giăng một cái bẫy mật ong chứng minh rằng O'Brien đang bị các giám đốc hàng đầu của Deel chỉ đạo. O'Brien đã rời khỏi văn phòng của Rippling với điện thoại thông minh của mình sau khi bị buộc tội là gián điệp công ty mặc dù đã được thông báo rằng việc không giao thiết bị này vi phạm lệnh của tòa án và có thể dẫn đến việc bỏ tù.\"\n        },\n        {\n          \"headline\": \"Đồng hồ thông minh Pebble mới đầu tiên sẽ ra mắt vào cuối năm nay\",\n          \"link\": \"https://www.theverge.com/news/631657/pebble-watch-core-devices-duo-2-time-2?utm_source=tldrnewsletter\",\n          \"source\": \"The Verge\",\n          \"summary\": \"Core Devices, một công ty của người sáng tạo ban đầu của đồng hồ thông minh Pebble, đang chuẩn bị xuất xưởng hai chiếc đồng hồ mới. Chúng sẽ có tất cả các tính năng của các thiết bị Pebble cũ và chạy hệ điều hành Pebble mã nguồn mở mới. Core 2 Duo sẽ được xuất xưởng vào tháng 7 với giá 149 đô la. Nó có màn hình e-paper đen trắng giống hệt như Pebble 2 cũ và thậm chí còn có cùng khung hình. Nó có pin kéo dài hơn 30 ngày và loa trong thiết bị để trò chuyện với trợ lý AI. Core Time 2 sẽ được xuất xưởng vào tháng 12 và có giá 225 đô la - nó sẽ có màn hình cảm ứng.\"\n        }\n      ],\n      \"title\": \"MISCELLANEOUS\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 11.165574550628662,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "TLDR Newsletter",
+    "reportTitle": "Tổng hợp tin tức công nghệ ngày 19/03/2025: Nvidia, Disney, Google",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Nvidia ra mắt chip AI Blackwell Ultra và Rubin",
+            "link": "https://www.cnbc.com/2025/03/18/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips-.html?utm_source=tldrnewsletter",
+            "source": "CNBC",
+            "summary": "Nvidia vừa công bố các chip mới Blackwell Ultra và Vera Rubin, được thiết kế để xây dựng và triển khai các mô hình trí tuệ nhân tạo. Blackwell Ultra sẽ cho phép các nhà cung cấp dịch vụ đám mây tăng doanh thu lên tới 50 lần so với chip thế hệ Hopper và sẽ được xuất xưởng vào nửa cuối năm nay. Vera Rubin, dự kiến xuất xưởng vào nửa cuối năm 2026, là một hệ thống với hai thành phần chính: CPU Vera và GPU Rubin. CPU Vera sẽ nhanh gấp đôi so với CPU được sử dụng trong chip Grace Blackwell năm ngoái và sẽ cho phép Rubin quản lý 50 petaflop trong khi thực hiện suy luận, gấp đôi công suất của chip Blackwell hiện tại."
+          },
+          {
+            "headline": "Vì sao Google chi 32 tỷ đô la mua Wiz được xem là 'đa đám mây'",
+            "link": "https://techcrunch.com/2025/03/18/heres-why-google-pitched-its-32b-wiz-acquisition-as-multicloud/?utm_source=tldrnewsletter",
+            "source": "TechCrunch",
+            "summary": "Google đang mua lại Wiz với giá 32 tỷ đô la. Wiz sẽ tiếp tục được định vị là một dịch vụ đa đám mây. Thương vụ này mang lại một danh sách khách hàng khổng lồ cho Google, vì vậy các công ty cần đảm bảo rằng những khách hàng hiện tại không bắt đầu tìm kiếm một nhà cung cấp bảo mật khác. Nhiều khách hàng đã chọn Wiz vì khả năng hỗ trợ nhiều nền tảng đám mây - việc cắt bỏ khả năng đó có nguy cơ làm mất lòng những người dùng này. Google Cloud отстает đáng kể so với các đối thủ cạnh tranh với 12% thị phần trên thị trường đám mây toàn cầu."
+          }
+        ],
+        "title": "BIG TECH & STARTUPS"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Nvidia và Google DeepMind sẽ giúp cung cấp năng lượng cho robot dễ thương của Disney",
+            "link": "https://techcrunch.com/2025/03/18/nvidia-and-google-deepmind-will-help-power-disneys-cute-robots/?utm_source=tldrnewsletter",
+            "source": "TechCrunch",
+            "summary": "Newton của Nvidia và Google DeepMind là một công cụ vật lý có thể mô phỏng chuyển động của robot trong môi trường thực tế. Nó sẽ được Disney sử dụng để cung cấp năng lượng cho robot giải trí thế hệ tiếp theo của mình - một video về một trong những robot này có sẵn trong bài viết. Newton giúp robot biểu cảm hơn và học cách xử lý các nhiệm vụ phức tạp một cách chính xác. Nó có khả năng tùy biến cao - các nhà phát triển có thể sử dụng nó để lập trình các tương tác robot với một loạt các vật thể biến dạng. Newton sẽ tương thích với hệ sinh thái các công cụ phát triển robot của Google DeepMind."
+          },
+          {
+            "headline": "Đây là bí mật giúp Firefly hạ cánh lên mặt trăng thành công",
+            "link": "https://arstechnica.com/science/2025/03/heres-the-secret-to-how-firefly-was-able-to-nail-its-very-first-lunar-landing/?utm_source=tldrnewsletter",
+            "source": "Ars Technica",
+            "summary": "Tàu đổ bộ Blue Ghost của Firefly Aerospace, một phần của chương trình Dịch vụ Tải trọng Mặt trăng Thương mại (CLPS) của NASA, đã hoàn thành rất nhiều việc trên Mặt trăng trong hai tuần qua. Nó đã khoan vào bề mặt Mặt trăng, thử nghiệm máy hút bụi ngoài trái đất, chứng minh rằng GPS có thể được sử dụng để điều hướng trên bề mặt mặt trăng và gửi hình ảnh hàng ngày về Trái đất. Tất cả các mục tiêu nhiệm vụ cho Blue Ghost đã được đáp ứng. Bài viết này trình bày chi tiết cách Firefly đã đảm bảo được cuộc đổ bộ lên mặt trăng thương mại thành công hoàn toàn đầu tiên, những thách thức mà các kỹ sư của Firefly đã phải vượt qua, một số khám phá mà Blue Ghost đã thực hiện cho đến nay và tiến độ của các nhiệm vụ khác trong chương trình CLPS."
+          }
+        ],
+        "title": "SCIENCE & FUTURISTIC TECHNOLOGY"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Chia tay với việc trực ca",
+            "link": "https://archive.md/7UbbW?utm_source=tldrnewsletter",
+            "source": "archive.md",
+            "summary": "Trực ca, trong trạng thái hiện tại ở Big Tech, là thiếu sót. AI đã thay đổi phạm vi của việc trực ca và trách nhiệm của kỹ sư trong vòng lặp. Một số ca trực sẽ luôn không thể tránh khỏi, nhưng đó nên là ngoại lệ hơn là quy tắc. Điều này sẽ cho các kỹ sư thời gian để tập trung vào các nhiệm vụ có ý nghĩa, điều này sẽ làm cho khách hàng hài lòng hơn."
+          },
+          {
+            "headline": "Ngân sách đồng bộ",
+            "link": "https://www.morling.dev/blog/the-synchrony-budget/?utm_source=tldrnewsletter",
+            "source": "morling.dev",
+            "summary": "Các dịch vụ nên giảm thiểu số lượng yêu cầu đồng bộ mà chúng thực hiện đối với các dịch vụ khác càng nhiều càng tốt. Các cuộc gọi đồng bộ tốn kém và ảnh hưởng đến tính khả dụng của các dịch vụ. Ứng dụng càng phụ thuộc vào nhiều dịch vụ một cách đồng bộ, thì tính khả dụng của ứng dụng đó sẽ càng thấp. Lập ngân sách đồng bộ là về việc chú ý đến cách các luồng giao tiếp được triển khai giữa các dịch vụ."
+          }
+        ],
+        "title": "PROGRAMMING, DESIGN & DATA SCIENCE"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Anh ấy phát cuồng vì công nghệ thanh toán lương. Bây giờ, anh ta bị buộc tội làm gián điệp công ty",
+            "link": "https://links.tldrnewsletter.com/w3DFny",
+            "source": "links.tldrnewsletter.com",
+            "summary": "Keith O'Brien, một người quản lý tuân thủ thanh toán lương toàn cầu tại Rippling, một công ty khởi nghiệp phần mềm kinh doanh, đã bị buộc tội đánh cắp bí mật thương mại cho đối thủ Deel, như một phần của hoạt động gián điệp. O'Brien bị cáo buộc đã tìm kiếm 'deel' trung bình 23 lần một ngày trên các hệ thống nội bộ của Rippling, truy cập các diễn đàn không liên quan gì đến công việc của anh ta ở chế độ che giấu sự hiện diện của anh ta với những người khác. Rippling tuyên bố rằng họ đã giăng một cái bẫy mật ong chứng minh rằng O'Brien đang bị các giám đốc hàng đầu của Deel chỉ đạo. O'Brien đã rời khỏi văn phòng của Rippling với điện thoại thông minh của mình sau khi bị buộc tội là gián điệp công ty mặc dù đã được thông báo rằng việc không giao thiết bị này vi phạm lệnh của tòa án và có thể dẫn đến việc bỏ tù."
+          },
+          {
+            "headline": "Đồng hồ thông minh Pebble mới đầu tiên sẽ ra mắt vào cuối năm nay",
+            "link": "https://www.theverge.com/news/631657/pebble-watch-core-devices-duo-2-time-2?utm_source=tldrnewsletter",
+            "source": "The Verge",
+            "summary": "Core Devices, một công ty của người sáng tạo ban đầu của đồng hồ thông minh Pebble, đang chuẩn bị xuất xưởng hai chiếc đồng hồ mới. Chúng sẽ có tất cả các tính năng của các thiết bị Pebble cũ và chạy hệ điều hành Pebble mã nguồn mở mới. Core 2 Duo sẽ được xuất xưởng vào tháng 7 với giá 149 đô la. Nó có màn hình e-paper đen trắng giống hệt như Pebble 2 cũ và thậm chí còn có cùng khung hình. Nó có pin kéo dài hơn 30 ngày và loa trong thiết bị để trò chuyện với trợ lý AI. Core Time 2 sẽ được xuất xưởng vào tháng 12 và có giá 225 đô la - nó sẽ có màn hình cảm ứng."
+          }
+        ],
+        "title": "MISCELLANEOUS"
+      }
+    ]
+  }
+}

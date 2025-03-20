@@ -1,0 +1,130 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash-lite",
+  "text": "{\n  \"from\": \"TLDR AI <dan@tldrnewsletter.com>\",\n  \"reportTitle\": \"Tổng hợp tin tức AI\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Google cập nhật ứng dụng Gemini\",\n          \"link\": \"https://blog.google/products/gemini/gemini-collaboration-features/?utm_source=tldrai\",\n          \"source\": \"Google\",\n          \"summary\": \"Google đã phát hành một số tính năng mới cho ứng dụng và trình duyệt web Gemini, bao gồm Canvas, bản tóm tắt âm thanh và trợ lý viết code.\"\n        },\n        {\n          \"headline\": \"Roblox mở mã nguồn hệ thống tạo mẫu 3D\",\n          \"link\": \"https://corp.roblox.com/newsroom/2025/03/introducing-roblox-cube?utm_source=tldrai\",\n          \"source\": \"Roblox\",\n          \"summary\": \"Roblox giới thiệu Cube, hệ thống AI tạo sinh cho việc tạo mẫu 3D và 4D. Phiên bản beta của tính năng tạo lưới 3D sẽ được tích hợp vào Roblox Studio và API Lua.\"\n        },\n        {\n          \"headline\": \"AI search đang dần thay thế 'mười liên kết xanh' của Google\",\n          \"link\": \"https://www.theverge.com/ai-artificial-intelligence/631352/ai-search-adobe-analytics-google-perplexity-openai?utm_source=tldrai\",\n          \"source\": \"The Verge\",\n          \"summary\": \"Adobe báo cáo sự tăng trưởng 1.300% trong lượt giới thiệu tìm kiếm AI cho các nhà bán lẻ trong mùa lễ năm 2024, cho thấy sự chuyển dịch từ các công cụ tìm kiếm truyền thống. Các chỉ số tương tác cho thấy người dùng đến từ AI search ở lại lâu hơn và ít thoát hơn so với người dùng từ các nguồn giới thiệu truyền thống.\"\n        }\n      ],\n      \"title\": \"Tiêu điểm & Ra mắt\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Smoldocling\",\n          \"link\": \"https://arxiv.org/abs/2503.11576?utm_source=tldrai\",\n          \"source\": \"arXiv\",\n          \"summary\": \"Một mô hình mới, cực kỳ nhỏ, tối tân cho OCR tài liệu. Nó có thể chạy cực nhanh và có độ chính xác đủ cho nhiều tác vụ xử lý tài liệu.\"\n        },\n        {\n          \"headline\": \"Rewordbench\",\n          \"link\": \"https://arxiv.org/abs/2503.11751?utm_source=tldrai\",\n          \"source\": \"arXiv\",\n          \"summary\": \"Công trình này cho thấy rằng nhiều mô hình phần thưởng phổ biến dễ bị ảnh hưởng bởi việc diễn đạt lại các lời nhắc. Nó bao gồm một chuẩn mực và một chiến lược tiềm năng để làm cho các mô hình phần thưởng mạnh mẽ hơn.\"\n        },\n        {\n          \"headline\": \"Tái tạo cảnh 3D từ một góc nhìn\",\n          \"link\": \"https://ai-kunkun.github.io/Niagara_page/?utm_source=tldrai\",\n          \"source\": \"ai-kunkun.github.io\",\n          \"summary\": \"Niagara giới thiệu một framework mới để tái tạo các cảnh 3D ngoài trời từ một hình ảnh duy nhất, kết hợp ước tính độ sâu và chuẩn với một trường affine hình học và giải mã Gaussian 3D.\"\n        }\n      ],\n      \"title\": \"Nghiên cứu & Đổi mới\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Stable Virtual Camera\",\n          \"link\": \"https://github.com/Stability-AI/stable-virtual-camera?utm_source=tldrai\",\n          \"source\": \"GitHub\",\n          \"summary\": \"Stability AI đã phát hành một hệ thống camera đa góc nhìn tuyệt vời cho phép tổng hợp góc nhìn mới lạ. Nó mạnh mẽ, phi thương mại và chưa phải là trạng thái-của-nghệ thuật, nhưng nó chạy nhanh chỉ trong hai lượt chuyển tiếp.\"\n        },\n        {\n          \"headline\": \"Zero-Shot Steering cho việc tạo cảnh 3D/4D\",\n          \"link\": \"https://byeongjun-park.github.io/SteerX/?utm_source=tldrai\",\n          \"source\": \"byeongjun-park.github.io\",\n          \"summary\": \"SteerX đã đề xuất một phương pháp suy luận zero-shot để cải thiện sự liên kết hình học trong việc tạo cảnh 3D/4D bằng cách sử dụng các mô hình tái tạo feed-forward không có tư thế và các hàm phần thưởng hình học.\"\n        },\n        {\n          \"headline\": \"Mô hình ngôn ngữ-thị giác lai\",\n          \"link\": \"https://github.com/hustvl/MaTVLM?utm_source=tldrai\",\n          \"source\": \"GitHub\",\n          \"summary\": \"MaTVLM là một mô hình ngôn ngữ-thị giác lai tích hợp các lớp Mamba-2 vào một VLM được đào tạo trước, cải thiện tốc độ hội tụ và hiệu suất.\"\n        }\n      ],\n      \"title\": \"Kỹ thuật & Tài nguyên\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Cá nhân hóa mọi thứ\",\n          \"link\": \"https://fenghora.github.io/Personalize-Anything-Page/?utm_source=tldrai\",\n          \"source\": \"fenghora.github.io\",\n          \"summary\": \"Bạn có thể cá nhân hóa gần như bất kỳ hình ảnh nào mà không cần tinh chỉnh hoặc đào tạo thêm bằng cách sử dụng thay thế token trong một Diffusion Transformer.\"\n        },\n        {\n          \"headline\": \"Đào tạo XGB trong trình duyệt\",\n          \"link\": \"https://www.xgblog.ai/p/trainxgb-train-xgboost-in-browser?utm_source=tldrai\",\n          \"source\": \"xgblog.ai\",\n          \"summary\": \"Bài đăng trên blog này mô tả cách xây dựng một hệ thống đào tạo dựa trên trình duyệt được tăng tốc bởi WASM.\"\n        },\n        {\n          \"headline\": \"AI robot mới của Google có thể gấp origami tinh xảo\",\n          \"link\": \"https://arstechnica.com/ai/2025/03/googles-origami-folding-ai-brain-may-power-new-wave-of-humanoid-robots/?utm_source=tldrai\",\n          \"source\": \"Ars Technica\",\n          \"summary\": \"Google DeepMind đã ra mắt Gemini Robotics và Gemini Robotics-ER, các mô hình AI nâng cao các kỹ năng vận động tinh và khả năng thích ứng của robot cho các ứng dụng trong thế giới thực. Gemini Robotics tích hợp khả năng thị giác, ngôn ngữ và hành động, cho phép robot thực hiện các tác vụ phức tạp như gấp origami.\"\n        }\n      ],\n      \"title\": \"Tin tức khác\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Google và NVIDIA mở rộng hợp tác AI\",\n          \"link\": \"https://blog.google/technology/ai/google-nvidia-gtc-ai/?utm_source=tldrai\",\n          \"source\": \"Google\",\n          \"summary\": \"Google thông báo về sự hợp tác mở rộng với NVIDIA tại NVIDIA GTC, sẽ tập trung vào cơ sở hạ tầng AI, tối ưu hóa phần cứng và các ứng dụng trong các lĩnh vực như chăm sóc sức khỏe, năng lượng và robot.\"\n        },\n        {\n          \"headline\": \"NVIDIA thắng cuộc đua AI, nhưng inference vẫn là cuộc chơi của bất kỳ ai\",\n          \"link\": \"https://www.theregister.com/2025/03/12/training_inference_shift/?utm_source=tldrai\",\n          \"source\": \"The Register\",\n          \"summary\": \"Nvidia hiện đang thống trị việc đào tạo AI, nhưng thị trường inference vẫn mở cửa cho cạnh tranh.\"\n        },\n        {\n          \"headline\": \"Google chơi đuổi kịp AI search và xây dựng mối quan hệ với chatbot\",\n          \"link\": \"https://www.technologyreview.com/2025/03/17/1113264/the-download-google-playing-ai-search-catchup-and-forming-relationships-with-chatbots/?utm_source=tldrai\",\n          \"source\": \"Technology Review\",\n          \"summary\": \"Google đang thêm các tính năng AI mới từ Gemini vào công cụ tìm kiếm của mình, nhưng điều này được xem là đang đuổi kịp ChatGPT của OpenAI.\"\n        }\n      ],\n      \"title\": \"Liên kết nhanh\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 16.59711241722107,
+  "attempts": 1,
+  "api_key_index": 1,
+  "structured_data": {
+    "from": "TLDR AI <dan@tldrnewsletter.com>",
+    "reportTitle": "Tổng hợp tin tức AI",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Google cập nhật ứng dụng Gemini",
+            "link": "https://blog.google/products/gemini/gemini-collaboration-features/?utm_source=tldrai",
+            "source": "Google",
+            "summary": "Google đã phát hành một số tính năng mới cho ứng dụng và trình duyệt web Gemini, bao gồm Canvas, bản tóm tắt âm thanh và trợ lý viết code."
+          },
+          {
+            "headline": "Roblox mở mã nguồn hệ thống tạo mẫu 3D",
+            "link": "https://corp.roblox.com/newsroom/2025/03/introducing-roblox-cube?utm_source=tldrai",
+            "source": "Roblox",
+            "summary": "Roblox giới thiệu Cube, hệ thống AI tạo sinh cho việc tạo mẫu 3D và 4D. Phiên bản beta của tính năng tạo lưới 3D sẽ được tích hợp vào Roblox Studio và API Lua."
+          },
+          {
+            "headline": "AI search đang dần thay thế 'mười liên kết xanh' của Google",
+            "link": "https://www.theverge.com/ai-artificial-intelligence/631352/ai-search-adobe-analytics-google-perplexity-openai?utm_source=tldrai",
+            "source": "The Verge",
+            "summary": "Adobe báo cáo sự tăng trưởng 1.300% trong lượt giới thiệu tìm kiếm AI cho các nhà bán lẻ trong mùa lễ năm 2024, cho thấy sự chuyển dịch từ các công cụ tìm kiếm truyền thống. Các chỉ số tương tác cho thấy người dùng đến từ AI search ở lại lâu hơn và ít thoát hơn so với người dùng từ các nguồn giới thiệu truyền thống."
+          }
+        ],
+        "title": "Tiêu điểm & Ra mắt"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Smoldocling",
+            "link": "https://arxiv.org/abs/2503.11576?utm_source=tldrai",
+            "source": "arXiv",
+            "summary": "Một mô hình mới, cực kỳ nhỏ, tối tân cho OCR tài liệu. Nó có thể chạy cực nhanh và có độ chính xác đủ cho nhiều tác vụ xử lý tài liệu."
+          },
+          {
+            "headline": "Rewordbench",
+            "link": "https://arxiv.org/abs/2503.11751?utm_source=tldrai",
+            "source": "arXiv",
+            "summary": "Công trình này cho thấy rằng nhiều mô hình phần thưởng phổ biến dễ bị ảnh hưởng bởi việc diễn đạt lại các lời nhắc. Nó bao gồm một chuẩn mực và một chiến lược tiềm năng để làm cho các mô hình phần thưởng mạnh mẽ hơn."
+          },
+          {
+            "headline": "Tái tạo cảnh 3D từ một góc nhìn",
+            "link": "https://ai-kunkun.github.io/Niagara_page/?utm_source=tldrai",
+            "source": "ai-kunkun.github.io",
+            "summary": "Niagara giới thiệu một framework mới để tái tạo các cảnh 3D ngoài trời từ một hình ảnh duy nhất, kết hợp ước tính độ sâu và chuẩn với một trường affine hình học và giải mã Gaussian 3D."
+          }
+        ],
+        "title": "Nghiên cứu & Đổi mới"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Stable Virtual Camera",
+            "link": "https://github.com/Stability-AI/stable-virtual-camera?utm_source=tldrai",
+            "source": "GitHub",
+            "summary": "Stability AI đã phát hành một hệ thống camera đa góc nhìn tuyệt vời cho phép tổng hợp góc nhìn mới lạ. Nó mạnh mẽ, phi thương mại và chưa phải là trạng thái-của-nghệ thuật, nhưng nó chạy nhanh chỉ trong hai lượt chuyển tiếp."
+          },
+          {
+            "headline": "Zero-Shot Steering cho việc tạo cảnh 3D/4D",
+            "link": "https://byeongjun-park.github.io/SteerX/?utm_source=tldrai",
+            "source": "byeongjun-park.github.io",
+            "summary": "SteerX đã đề xuất một phương pháp suy luận zero-shot để cải thiện sự liên kết hình học trong việc tạo cảnh 3D/4D bằng cách sử dụng các mô hình tái tạo feed-forward không có tư thế và các hàm phần thưởng hình học."
+          },
+          {
+            "headline": "Mô hình ngôn ngữ-thị giác lai",
+            "link": "https://github.com/hustvl/MaTVLM?utm_source=tldrai",
+            "source": "GitHub",
+            "summary": "MaTVLM là một mô hình ngôn ngữ-thị giác lai tích hợp các lớp Mamba-2 vào một VLM được đào tạo trước, cải thiện tốc độ hội tụ và hiệu suất."
+          }
+        ],
+        "title": "Kỹ thuật & Tài nguyên"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Cá nhân hóa mọi thứ",
+            "link": "https://fenghora.github.io/Personalize-Anything-Page/?utm_source=tldrai",
+            "source": "fenghora.github.io",
+            "summary": "Bạn có thể cá nhân hóa gần như bất kỳ hình ảnh nào mà không cần tinh chỉnh hoặc đào tạo thêm bằng cách sử dụng thay thế token trong một Diffusion Transformer."
+          },
+          {
+            "headline": "Đào tạo XGB trong trình duyệt",
+            "link": "https://www.xgblog.ai/p/trainxgb-train-xgboost-in-browser?utm_source=tldrai",
+            "source": "xgblog.ai",
+            "summary": "Bài đăng trên blog này mô tả cách xây dựng một hệ thống đào tạo dựa trên trình duyệt được tăng tốc bởi WASM."
+          },
+          {
+            "headline": "AI robot mới của Google có thể gấp origami tinh xảo",
+            "link": "https://arstechnica.com/ai/2025/03/googles-origami-folding-ai-brain-may-power-new-wave-of-humanoid-robots/?utm_source=tldrai",
+            "source": "Ars Technica",
+            "summary": "Google DeepMind đã ra mắt Gemini Robotics và Gemini Robotics-ER, các mô hình AI nâng cao các kỹ năng vận động tinh và khả năng thích ứng của robot cho các ứng dụng trong thế giới thực. Gemini Robotics tích hợp khả năng thị giác, ngôn ngữ và hành động, cho phép robot thực hiện các tác vụ phức tạp như gấp origami."
+          }
+        ],
+        "title": "Tin tức khác"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Google và NVIDIA mở rộng hợp tác AI",
+            "link": "https://blog.google/technology/ai/google-nvidia-gtc-ai/?utm_source=tldrai",
+            "source": "Google",
+            "summary": "Google thông báo về sự hợp tác mở rộng với NVIDIA tại NVIDIA GTC, sẽ tập trung vào cơ sở hạ tầng AI, tối ưu hóa phần cứng và các ứng dụng trong các lĩnh vực như chăm sóc sức khỏe, năng lượng và robot."
+          },
+          {
+            "headline": "NVIDIA thắng cuộc đua AI, nhưng inference vẫn là cuộc chơi của bất kỳ ai",
+            "link": "https://www.theregister.com/2025/03/12/training_inference_shift/?utm_source=tldrai",
+            "source": "The Register",
+            "summary": "Nvidia hiện đang thống trị việc đào tạo AI, nhưng thị trường inference vẫn mở cửa cho cạnh tranh."
+          },
+          {
+            "headline": "Google chơi đuổi kịp AI search và xây dựng mối quan hệ với chatbot",
+            "link": "https://www.technologyreview.com/2025/03/17/1113264/the-download-google-playing-ai-search-catchup-and-forming-relationships-with-chatbots/?utm_source=tldrai",
+            "source": "Technology Review",
+            "summary": "Google đang thêm các tính năng AI mới từ Gemini vào công cụ tìm kiếm của mình, nhưng điều này được xem là đang đuổi kịp ChatGPT của OpenAI."
+          }
+        ],
+        "title": "Liên kết nhanh"
+      }
+    ]
+  }
+}

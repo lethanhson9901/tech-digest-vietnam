@@ -1,0 +1,44 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"Listed AI\",\n  \"reportTitle\": \"Báo cáo về Giải pháp AI cho Onboarding SaaS\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Tối ưu quy trình Onboarding SaaS với AI\",\n          \"link\": \"https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai\",\n          \"source\": \"Listed AI\",\n          \"summary\": \"Listed AI phân tích cách các công cụ AI có thể giúp onboarding người dùng SaaS hiệu quả hơn, biến khách hàng tiềm năng thành người dùng trung thành. Báo cáo cung cấp framework tự động hóa onboarding, các prompt AI chi tiết để thiết kế trải nghiệm tương tác, các bước tích hợp lộ trình học tập dựa trên hành vi và quy trình kiểm tra, tinh chỉnh dựa trên dữ liệu người dùng thực tế.\"\n        },\n        {\n          \"headline\": \"Morning Brew: Cập nhật tin tức kinh doanh một cách hấp dẫn\",\n          \"link\": \"https://morningbrew.com/daily/subscribe?utm_campaign=QMHBJZCDRS&utm_medium=paid_newsletter&utm_source=beehiiv&_bhiiv=opp_50955288-5b57-4c3a-9a70-c8a21601e697_652e2efc&bhcl_id=a81dd242-b549-42e9-a39c-9259e1e19fe0_93af6105-80f3-48e1-bb1d-2435ba910775\",\n          \"source\": \"Morning Brew\",\n          \"summary\": \"Morning Brew cung cấp tin tức kinh doanh một cách ngắn gọn, hài hước và dễ tiếp thu, giúp người đọc nắm bắt thông tin quan trọng một cách nhanh chóng. Bản tin hoàn toàn miễn phí và được hơn 4.3 triệu người đọc.\"\n        },\n        {\n          \"headline\": \"Xây dựng hệ thống Onboarding dựa trên AI\",\n          \"link\": \"https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai\",\n          \"source\": \"Listed AI\",\n          \"summary\": \"Bài viết đề xuất sử dụng AI để tạo ra một hệ thống onboarding thích ứng, cá nhân hóa hướng dẫn và hỗ trợ dựa trên hành vi người dùng. Các công cụ AI như Pendo hoặc WalkMe có thể được sử dụng để phân tích tương tác người dùng và kích hoạt trợ giúp theo ngữ cảnh. ChatGPT có thể được sử dụng để trả lời các câu hỏi thường gặp và cung cấp hướng dẫn chuyên sâu.\"\n        },\n        {\n          \"headline\": \"Tối ưu Onboarding để tăng tương tác lâu dài\",\n          \"link\": \"https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai\",\n          \"source\": \"Listed AI\",\n          \"summary\": \"Bài viết đưa ra các chiến lược để mở rộng hỗ trợ AI sau các hướng dẫn ban đầu, thông qua việc sử dụng lời nhắc nhở và theo dõi tiến độ. Các chiến lược này bao gồm gửi thông báo cá nhân hóa và giới thiệu các lộ trình học tập được gam hóa để khuyến khích việc áp dụng các tính năng sâu hơn.\"\n        }\n      ],\n      \"title\": \"Tóm tắt nội dung chính\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 5.650394439697266,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "Listed AI",
+    "reportTitle": "Báo cáo về Giải pháp AI cho Onboarding SaaS",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Tối ưu quy trình Onboarding SaaS với AI",
+            "link": "https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai",
+            "source": "Listed AI",
+            "summary": "Listed AI phân tích cách các công cụ AI có thể giúp onboarding người dùng SaaS hiệu quả hơn, biến khách hàng tiềm năng thành người dùng trung thành. Báo cáo cung cấp framework tự động hóa onboarding, các prompt AI chi tiết để thiết kế trải nghiệm tương tác, các bước tích hợp lộ trình học tập dựa trên hành vi và quy trình kiểm tra, tinh chỉnh dựa trên dữ liệu người dùng thực tế."
+          },
+          {
+            "headline": "Morning Brew: Cập nhật tin tức kinh doanh một cách hấp dẫn",
+            "link": "https://morningbrew.com/daily/subscribe?utm_campaign=QMHBJZCDRS&utm_medium=paid_newsletter&utm_source=beehiiv&_bhiiv=opp_50955288-5b57-4c3a-9a70-c8a21601e697_652e2efc&bhcl_id=a81dd242-b549-42e9-a39c-9259e1e19fe0_93af6105-80f3-48e1-bb1d-2435ba910775",
+            "source": "Morning Brew",
+            "summary": "Morning Brew cung cấp tin tức kinh doanh một cách ngắn gọn, hài hước và dễ tiếp thu, giúp người đọc nắm bắt thông tin quan trọng một cách nhanh chóng. Bản tin hoàn toàn miễn phí và được hơn 4.3 triệu người đọc."
+          },
+          {
+            "headline": "Xây dựng hệ thống Onboarding dựa trên AI",
+            "link": "https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai",
+            "source": "Listed AI",
+            "summary": "Bài viết đề xuất sử dụng AI để tạo ra một hệ thống onboarding thích ứng, cá nhân hóa hướng dẫn và hỗ trợ dựa trên hành vi người dùng. Các công cụ AI như Pendo hoặc WalkMe có thể được sử dụng để phân tích tương tác người dùng và kích hoạt trợ giúp theo ngữ cảnh. ChatGPT có thể được sử dụng để trả lời các câu hỏi thường gặp và cung cấp hướng dẫn chuyên sâu."
+          },
+          {
+            "headline": "Tối ưu Onboarding để tăng tương tác lâu dài",
+            "link": "https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai",
+            "source": "Listed AI",
+            "summary": "Bài viết đưa ra các chiến lược để mở rộng hỗ trợ AI sau các hướng dẫn ban đầu, thông qua việc sử dụng lời nhắc nhở và theo dõi tiến độ. Các chiến lược này bao gồm gửi thông báo cá nhân hóa và giới thiệu các lộ trình học tập được gam hóa để khuyến khích việc áp dụng các tính năng sâu hơn."
+          }
+        ],
+        "title": "Tóm tắt nội dung chính"
+      }
+    ]
+  }
+}

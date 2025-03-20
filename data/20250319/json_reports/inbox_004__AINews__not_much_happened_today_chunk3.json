@@ -1,0 +1,288 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"Tổng hợp từ các nguồn mở\",\n  \"reportTitle\": \"Điểm tin AI hàng tuần: Các đột phá về Reasoning & RL, Use case thực tế và Hype Hackathon\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"DAPO vượt trội DeepSeek R1\",\n          \"link\": \"https://arxiv.org/abs/2503.09573\",\n          \"source\": \"arXiv\",\n          \"summary\": \"DAPO (Decoupled clip and dynamic sampling policy optimization) mang lại kết quả RL sắc nét hơn. Việc cắt tỉa linh hoạt và lấy mẫu động giúp cải thiện đáng kể khả năng reasoning của các mô hình lớn.\"\n        },\n        {\n          \"headline\": \"Lời nguyền chiều sâu' ảnh hưởng đến các lớp LLM\",\n          \"link\": \"https://arxiv.org/abs/2502.05795\",\n          \"source\": \"arXiv\",\n          \"summary\": \"Các nhà nghiên cứu cho rằng Pre-LN là nguyên nhân gây ra sự tăng trưởng theo cấp số nhân về phương sai đầu ra trên nhiều khối transformer. Các phương pháp LayerNorm scaling có thể sửa chữa một nửa số lớp bị lãng phí của mô hình.\"\n        },\n        {\n          \"headline\": \"Block Diffusion thu hẹp khoảng cách giữa AR & Diffusion\",\n          \"link\": \"https://github.com/kuleshov-group/bd3lms\",\n          \"source\": \"GitHub\",\n          \"summary\": \"Phương pháp mới này kết hợp tạo sinh autoregressive với lấy mẫu diffusion cho văn bản. Nó cung cấp đầu ra có độ dài tùy ý, kv caching và giải mã song song mà không làm chậm LLM tiêu chuẩn.\"\n        }\n      ],\n      \"title\": \"Các đột phá về Reasoning & RL\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"AI Agents Hackathon tại GTC 2025\",\n          \"link\": \"https://lu.ma/meofrw3d\",\n          \"source\": \"lu.ma\",\n          \"summary\": \"Các nhà phát triển cạnh tranh để giành giải thưởng hơn 50.000 đô la bằng cách xây dựng các AI agent đa phương thức. Các nhà tài trợ hứa hẹn một phiên pitch trực tiếp kéo dài 3 phút, thúc đẩy tích hợp công cụ nâng cao.\"\n        },\n        {\n          \"headline\": \"Người dùng NotebookLM lên kế hoạch giảm liều thuốc\",\n          \"link\": \"https://cloud.google.com/products/agentspace?hl=en\",\n          \"source\": \"Google Cloud\",\n          \"summary\": \"Người dùng đưa các bài báo về sức khỏe, dữ liệu cá nhân và tài liệu tham khảo về chất hướng thần vào knowledge graph. NotebookLM biên soạn các kế hoạch giảm liều dựa trên các nguồn được tuyển chọn.\"\n        },\n        {\n          \"headline\": \"LocalDocs hoặc là sập\",\n          \"link\": \"https://github.com/nomic-ai/gpt4all/issues/3540\",\n          \"source\": \"GitHub\",\n          \"summary\": \"Một số người thử nghiệm GPT4All đã mất toàn bộ bộ sưu tập PDF sau khi một tệp duy nhất làm hỏng các embedding job. Họ đã khôi phục dữ liệu một phần bằng cách lưu bản sao lưu localdocs và nhập lại văn bản.\"\n        }\n      ],\n      \"title\": \"Use case thực tế & Hype Hackathon\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Gemma 3 Grind Geeks' Gears\",\n          \"link\": \"https://discord.com/channels/1179035537009545276\",\n          \"source\": \"Unsloth AI Discord\",\n          \"summary\": \"Người dùng báo cáo một loạt các vấn đề khi tinh chỉnh các mô hình Gemma 3, bao gồm các lỗi liên quan đến HybridCache và mixed precision, cho thấy Gemma 3 có thể chỉ tinh chỉnh đáng tin cậy ở FP32. Một số người đề xuất cài đặt các phiên bản cụ thể của gói `transformers`, nhưng những người khác chỉ cần nhận xét các lệnh gán fp16 và bf16, đặt chúng thành `false`.\"\n        },\n        {\n          \"headline\": \"Quantization Quandaries Quell Quickness\",\n          \"link\": \"https://discord.com/channels/1179035537009545276\",\n          \"source\": \"Unsloth AI Discord\",\n          \"summary\": \"Người dùng cân nhắc sự đánh đổi giữa lượng tử hóa Q4 và Q8, đặt câu hỏi liệu lượng tử hóa động 4 bit của Unsloth chỉ dành cho đào tạo hay nó có làm tăng độ chính xác khi sử dụng cục bộ hay không. Các thành viên làm rõ rằng quants 4 bit động chỉ hoạt động trong vLLM, trong khi GGUF được thiết kế để sử dụng cục bộ, nhưng các tệp safe tensor cho phép phục vụ và suy luận, đồng thời nói thêm rằng không ai sử dụng tệp GGUF để phục vụ các triển khai thương mại.\"\n        },\n        {\n          \"headline\": \"Tokenizer Tinkering Transforms Training\",\n          \"link\": \"https://discord.com/channels/1179035537009545276\",\n          \"source\": \"Unsloth AI Discord\",\n          \"summary\": \"Một người dùng đã hỏi về việc cập nhật tokenizer trong quá trình pre-training liên tục, vì mô hình cơ sở có thể cắt bớt các từ chuyên biệt thành các subword, có khả năng làm lu mờ kết quả. Một thành viên đề nghị tìm kiếm _tokenizer add tokens_ và chia sẻ một chủ đề Reddit về việc thêm token mới vào mô hình LLaMA 2.\"\n        },\n        {\n          \"headline\": \"Context Length Conundrums Confound Calculations\",\n          \"link\": \"https://discord.com/channels/1179035537009545276\",\n          \"source\": \"Unsloth AI Discord\",\n          \"summary\": \"Các thành viên làm rõ rằng độ dài context là một giới hạn, không phải là siêu tham số của một mô hình và context càng dài thì càng cần nhiều bộ nhớ. Họ cũng chia sẻ các tài nguyên như blog của Substratus.ai và không gian Hugging Face để ước tính mức sử dụng bộ nhớ, nhấn mạnh rằng nó khác nhau đáng kể giữa các mô hình.\"\n        }\n      ],\n      \"title\": \"Unsloth AI (Daniel Han) Discord\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Cursor's 0.47.x Plagues Users\",\n          \"link\": \"https://discord.com/channels/1074847526655643750\",\n          \"source\": \"Cursor IDE Discord\",\n          \"summary\": \"Người dùng báo cáo các phiên bản Cursor 0.47.x không ổn định, thường xuyên bị đóng băng và gặp sự cố, khiến người dùng phải quay lại 0.46.x hoặc di chuyển sang các lựa chọn thay thế như Windsurf. Một người dùng có PC cao cấp không thấy bất kỳ cải thiện nào, dẫn đến những người khác lưu ý việc thực thi quy tắc bị hỏng với context hạn chế là nguyên nhân gốc rễ.\"\n        },\n        {\n          \"headline\": \"MCP Setup Creates Confusion\",\n          \"link\": \"https://discord.com/channels/1074847526655643750\",\n          \"source\": \"Cursor IDE Discord\",\n          \"summary\": \"Các thành viên cộng đồng gặp khó khăn trong việc thiết lập máy chủ Model Context Protocol (MCP), vì UI chuyển hướng đến tệp mcp.json thay vì hiển thị modal cấu hình; trên Linux, người dùng không gặp vấn đề gì khi cài đặt. Các giải pháp bao gồm chỉnh sửa thủ công tệp mcp.json, đảm bảo tiền tố dòng lệnh chính xác, xác minh API key và tham khảo các hướng dẫn trực tuyến để được hướng dẫn.\"\n        },\n        {\n          \"headline\": \"Sonnet 3.7 Users Demand Prompting Tweaks\",\n          \"link\": \"https://discord.com/channels/1074847526655643750\",\n          \"source\": \"Cursor IDE Discord\",\n          \"summary\": \"Người dùng chia sẻ rằng Claude 3.7 Sonnet hoạt động kém hiệu quả, tốn nhiều token hơn trong khi đôi khi hoạt động \\\"chậm phát triển\\\", làm phức tạp hóa các tác vụ, loại bỏ mã thừa hoặc bỏ qua các quy tắc. Các thành viên cộng đồng đề xuất sử dụng \\\"sequential thinking MCP\\\" hoặc \\\"3.5 + sequential thinking\\\" để kiểm soát tốt hơn, cũng như xác định các quy tắc cụ thể để hạn chế mô hình.\"\n        },\n        {\n          \"headline\": \"\\\"Vibe Coders\\\" Spar with Coding Purists\",\n          \"link\": \"https://discord.com/channels/1074847526655643750\",\n          \"source\": \"Cursor IDE Discord\",\n          \"summary\": \"Một cuộc tranh luận nổ ra về tính hiệu quả của \\\"vibe coding\\\", với tuyên bố rằng nó chỉ phù hợp cho các dự án nhanh chóng, chất lượng thấp so với phát triển nghiêm túc đòi hỏi các nhà phát triển lành nghề. Một số người cho rằng vai trò chính của AI là hỗ trợ, không phải thay thế các nhà phát triển, nhấn mạnh sự cần thiết của kiến thức kỹ thuật để hướng dẫn và xác thực mã do AI tạo ra, với những lo ngại về các lỗ hổng bảo mật trong cơ sở mã do AI tạo ra.\"\n        },\n        {\n          \"headline\": \"Neovim Fans Dream of Cursor's Perfect Emulation\",\n          \"link\": \"https://discord.com/channels/1074847526655643750\",\n          \"source\": \"Cursor IDE Discord\",\n          \"summary\": \"Người dùng tìm kiếm các keybindings Neovim bên trong Cursor để giảm việc sử dụng chuột. Một người khác đề xuất phân nhánh Neovim để có trải nghiệm liền mạch.\"\n        }\n      ],\n      \"title\": \"Cursor IDE Discord\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Gemini's Code Generation Stumbles\",\n          \"link\": \"https://discord.com/channels/974519864045756446\",\n          \"source\": \"OpenAI Discord\",\n          \"summary\": \"Trong khi Gemini vượt trội trong chatbot, nó gặp khó khăn trong việc tạo mã Swift chức năng, thường xuyên tạo ra mã _không có hy vọng hoạt động_. Mặc dù được đánh giá cao về các phản hồi giống con người, nhưng việc tạo mã của Gemini 4.5 là đáng ngờ vì _nó không cần lý luận để tạo ra một phản hồi hấp dẫn_.\"\n        },\n        {\n          \"headline\": \"Future AI is Self-Reflective\",\n          \"link\": \"https://discord.com/channels/974519864045756446\",\n          \"source\": \"OpenAI Discord\",\n          \"summary\": \"Một thành viên đã tạo ra một GPT tùy chỉnh nâng cao phản ánh về việc học của nó, tạo ra các câu hỏi phản ánh và mô phỏng nhiều tính cách, mô tả rằng _nó tìm kiếm, phản ánh và thậm chí tạo ra_. AI sử dụng các tệp bộ nhớ để xây dựng dựa trên những hiểu biết sâu sắc của nó, cho phép mô phỏng bên trong mô phỏng, nơi các tính cách AI có thể tạo ra các cuộc đối thoại nội bộ dựa trên kiến thức chuyên môn, để giải quyết các thách thức và tạo ra các nhóm chuyên gia để được hướng dẫn.\"\n        },\n        {\n          \"headline\": \"GPT-4o Steals the Show\",\n          \"link\": \"https://discord.com/channels/974519864045756446\",\n          \"source\": \"OpenAI Discord\",\n          \"summary\": \"Các thành viên báo cáo rằng GPT-4o rất thú vị khi sử dụng và hoạt động tốt nhất trong số các mô hình GPT-4.5, có thể _thực sự làm được hầu hết mọi thứ_. Một người dùng nhận thấy rằng trong số rất nhiều mô hình, 4.5 sử dụng nó tốt nhất.\"\n        },\n        {\n          \"headline\": \"AI Reliance Sparks Debate\",\n          \"link\": \"https://discord.com/channels/974519864045756446\",\n          \"source\": \"OpenAI Discord\",\n          \"summary\": \"Một cuộc thảo luận nổ ra về việc dựa quá nhiều vào AI, có khả năng cản trở sự phát triển cá nhân và tư duy phản biện, trong khi một số người cho rằng AI có thể nâng cao năng suất cho những người đã có kỹ năng. Những người khác phản bác rằng việc học hỏi và cải thiện kỹ năng vẫn rất quan trọng, vì các công cụ AI nâng cao khả năng hiện có chứ không phải thay thế chúng hoàn toàn.\"\n        },\n        {\n          \"headline\": \"AI OS discussed in theory\",\n          \"link\": \"https://discord.com/channels/974519864045756446\",\n          \"source\": \"OpenAI Discord\",\n          \"summary\": \"Một thành viên đã đề xuất một AI-controlled OS với các lệnh thoại cho các tác vụ cơ bản, chẳng hạn như _'Hey (AI name), open my photos and browse them one at a time, 5 seconds per image'_. Các thành viên bày tỏ sự hoài nghi, lưu ý rằng các hệ thống hiện có đã làm những điều tương tự mà không cần một OS mới và các AI agent hiện tại không đủ đáng tin cậy.\"\n        }\n      ],\n      \"title\": \"OpenAI Discord\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Latency Gains Importance as AI Scales\",\n          \"link\": \"https://discord.com/channels/1053877538025386074\",\n          \"source\": \"Nous Research AI Discord\",\n          \"summary\": \"Khi các mô hình AI mở rộng, quá trình đào tạo và suy luận có thể trở nên nhạy cảm hơn với độ trễ, có khả năng dẫn đến các mô hình truyền thông điệp, nhưng _tensor_templar_ thích sự ổn định hơn tốc độ. Topology đồ thị đang thu hút sự chú ý như là một giải pháp có khả năng mở rộng hơn so với các mạng thần kinh hiện tại vì việc truy cập thông tin từ mạng sẽ tốn kém hơn khi có nhiều trọng số hơn.\"\n        },\n        {\n          \"headline\": \"MoEs Approximate or Exceed Dense Networks\",\n          \"link\": \"https://discord.com/channels/1053877538025386074\",\n          \"source\": \"Nous Research AI Discord\",\n          \"summary\": \"Các thành viên đã thảo luận về các mô hình Mixture of Experts (MoEs) thưa thớt như là sự gần đúng của các mạng dày đặc, với một thành viên cho rằng MoE không nắm bắt được sự phức tạp tốt như vậy, tham khảo công trình của DeepSeek về việc dự đoán nhiều token cùng một lúc. Cuộc trò chuyện cân nhắc liệu MoE đơn giản chỉ là xấp xỉ một mạng dày đặc hay không và liệu đồ thị mất mát có xác nhận quan niệm này hay không.\"\n        },\n        {\n          \"headline\": \"LLMs Emulate Voices with TTS\",\n          \"link\": \"https://discord.com/channels/1053877538025386074\",\n          \"source\": \"Nous Research AI Discord\",\n          \"summary\": \"Các thành viên đã khám phá việc sử dụng LLM dựa trên văn bản tiên tiến để xuất ra một mẫu giọng nói thông qua mã, như clip này. Mục tiêu là tạo ra một clip giọng nói tổng hợp và so sánh nó với bản gốc dựa trên sở thích của con người, tập trung vào LLM cục bộ để tối ưu hóa và đào tạo.\"\n        },\n        {\n          \"headline\": \"Copyright Fuels AI Debate\",\n          \"link\": \"https://discord.com/channels/1053877538025386074\",\n          \"source\": \"Nous Research AI Discord\",\n          \"summary\": \"Thảo luận nảy sinh rằng các LLM của Trung Quốc được đào tạo trên các thư viện bóng tối bất hợp pháp, cho thấy phương Tây cần đại tu luật bản quyền vì an ninh quốc gia và tham khảo bài đăng trên blog này. Tuyên bố nói rằng các công ty tuân thủ bản quyền đang ở thế bất lợi, với các mô hình video của Trung Quốc được cho là vượt trội do không tuân thủ bản quyền.\"\n        },\n        {\n          \"headline\": \"Curse of Depth strikes LLMs\",\n          \"link\": \"https://discord.com/channels/1053877538025386074\",\n          \"source\": \"Nous Research AI Discord\",\n          \"summary\": \"Một bài báo mới giới thiệu 'Lời nguyền chiều sâu', lưu ý rằng gần một nửa số lớp trong các LLM hiện đại như Llama, Mistral, DeepSeek và Qwen kém hiệu quả hơn dự kiến, cho rằng điều này là do Pre-Layer Normalization (Pre-LN). Biện pháp khắc phục được đề xuất là LayerNorm Scaling để giảm thiểu phương sai đầu ra tăng theo cấp số nhân theo độ sâu của mô hình.\"\n        }\n      ],\n      \"title\": \"Nous Research AI Discord\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Claude 3.7 Has Mixed Reviews!\",\n          \"link\": \"https://discord.com/channels/1131200896827654144\",\n          \"source\": \"Aider (Paul Gauthier) Discord\",\n          \"summary\": \"Người dùng báo cáo Claude 3.7 đôi khi _không liên quan_ và _ảo giác_, trong khi những người khác thấy nó hiệu quả bằng cách thiết kế các prompt để _ghi nhớ KISS và YAGNI_, cũng theo dõi trang trạng thái Anthropic để biết các vấn đề về dịch vụ. Các phản hồi trống có thể xảy ra, có thể là do các vấn đề về dịch vụ; một số người đang sử dụng Claude Desktop với Aider trên MCP để có được quyền tự chủ do Claude quản lý dễ dàng hơn, lưu ý rằng việc chạy Aider trong Claude có thể tốn kém.\"\n        },\n        {\n          \"headline\": \"Git History Rewrites Spark Debate\",\n          \"link\": \"https://discord.com/channels/1131200896827654144\",\n          \"source\": \"Aider (Paul Gauthier) Discord\",\n          \"summary\": \"Một số người dùng ấn tượng với khả năng viết lại Git commit history của Claude Code, cô đọng một PR thành các commit dành riêng cho tính năng. Mặc dù các commit messages chính xác, nhưng AI gặp khó khăn trong việc chia nhỏ các thay đổi một cách hợp lý, đôi khi dẫn đến các dấu phân cách không khớp và các tác vụ không hoàn thành.\"\n        },\n        {\n          \"headline\": \"Mistral Small 3.1 Debuts as Multilingual Model\",\n          \"link\": \"https://discord.com/channels/1131200896827654144\",\n          \"source\": \"Aider (Paul Gauthier) Discord\",\n          \"summary\": \"Mistral AI đã công bố Mistral Small 3.1, một mô hình đa phương thức, đa ngôn ngữ theo giấy phép Apache 2.0 và phù hợp cho các ứng dụng trên thiết bị do tính chất nhẹ và khả năng chạy trên một RTX 4090 hoặc Mac với RAM 32GB. Nó cung cấp các cuộc hội thoại phản hồi nhanh, gọi hàm độ trễ thấp và có thể tùy chỉnh cho các domain cụ thể.\"\n        },\n        {\n          \"headline\": \"Aider v0.77.0 Slowdown Troubles Users\",\n          \"link\": \"https://discord.com/channels/1131200896827654144\",\n          \"source\": \"Aider (Paul Gauthier) Discord\",\n          \"summary\": \"Aider v0.77.0 có _chậm chạp và sử dụng CPU cao_ khi tạo ra các đầu ra CSV lớn trực tiếp trong kho lưu trữ. Việc xóa hầu hết các thư mục đầu ra dữ liệu chứa các tệp CSV lớn dường như đã giải quyết được vấn đề cho người dùng và một người dùng đã hỏi về việc tích hợp Aider với agents.json để tương tác API.\"\n        },\n        {\n          \"headline\": \"Bedrock Claude 3.7 Sonnet Error Blamed on AWS Region\",\n          \"link\": \"https://discord.com/channels/1131200896827654144\",\n          \"source\": \"Aider (Paul Gauthier) Discord\",\n          \"summary\": \"Một `APIConnectionError` khi sử dụng AWS Bedrock Claude 3.7 Sonnet, trích dẫn một thông báo lỗi _\\\"access to the model with the specified model ID\\\"_, đã gây khó khăn cho một người dùng. Vấn đề đã được giải quyết bằng cách đặt chính xác khu vực AWS trong cả `~/.aws/configs` và `~/.env`.\"\n        }\n      ],\n      \"title\": \"Aider (Paul Gauthier) Discord\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Llama.cpp Goes Mobile with Adreno GPU Support\",\n          \"link\": \"https://discord.com/channels/1110598183144399058\",\n          \"source\": \"LM Studio Discord\",\n          \"summary\": \"Một [OpenCL backend thử nghiệm cho Adreno GPU] đang được giới thiệu trong llama.cpp, cho phép sử dụng các thiết bị di động với LM Studio. Bản cập nhật này mở ra sức mạnh tính toán trên các thiết bị di động cho các trường hợp sử dụng rộng hơn.\"\n        },\n        {\n          \"headline\": \"Mistral Small 3.1 Boasts Impressive Specs\",\n          \"link\": \"https://discord.com/channels/1110598183144399058\",\n          \"source\": \"LM Studio Discord\",\n          \"summary\": \"Mistral AI đã công bố [Mistral Small 3.1], tăng cường text performance, multimodal understanding và mở rộng context window lên 128k tokens theo giấy phép Apache 2.0. Một thành viên bày tỏ sự hoài nghi về GGUF support do vision adapter.\"\n        },\n        {\n          \"headline\": \"AMD's Strix Halo APU Challenges RTX 5080\",\n          \"link\": \"https://discord.com/channels/1110598183144399058\",\n          \"source\": \"LM Studio Discord\",\n          \"summary\": \"AMD Ryzen AI MAX+ 395 Strix Halo APU được báo cáo là hoạt động tốt hơn RTX 5080 trong các bài kiểm tra DeepSeek R1 AI vì VRAM lớn hơn của nó. VRAM lớn hơn mang lại cho nó lợi thế hơn trong các tác vụ AI.\"\n        },\n        {\n          \"headline\": \"LM Studio API Struggles with Images\",\n          \"link\": \"https://discord.com/channels/1110598183144399058\",\n          \"source\": \"LM Studio Discord\",\n          \"summary\": \"Người dùng đang gặp phải các vấn đề khi gửi hình ảnh thông qua LM Studio API, mặc dù tài liệu LM Studio API cho thấy hỗ trợ tải lên hình ảnh trong Chat interface. Các thành viên báo cáo khó khăn trong việc gửi dữ liệu hình ảnh đúng cách.\"\n        },\n        {\n          \"headline\": \"RTX 8000 Emerges as Inference Bargain\",\n          \"link\": \"https://discord.com/channels/1110598183144399058\",\n          \"source\": \"LM Studio Discord\",\n          \"summary\": \"RTX 8000 với 48GB VRAM đang được quảng cáo là một lựa chọn hiệu quả về chi phí cho LLM inference với giá khoảng 2000 đô la, có khả năng hoạt động tốt hơn so với RTX 3090 kép bằng cách loại bỏ chi phí giao tiếp giữa GPU. Có những lo ngại rằng RTX 8000 dựa trên kiến trúc Turing cũ hơn có thể gặp khó khăn với các mô hình mới.\"\n        }\n      ],\n      \"title\": \"LM Studio Discord\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Anthropic's Claude 3.7 Sonnet Hits Error Snag\",\n          \"link\": \"https://discord.com/channels/1091220969173028894\",\n          \"source\": \"OpenRouter (Alex Atallah) Discord\",\n          \"summary\": \"Anthropic API đã gặp phải các lỗi tăng cao đối với Claude 3.7 Sonnet, trong khoảng thời gian từ 21:45–22:14 UTC. Vấn đề đã được giải quyết bằng một bản sửa lỗi, nhưng những người dùng gặp phải các lỗi này đã tự hỏi về việc hoàn trả tín dụng và đề xuất sử dụng 3.5 như một giải pháp thay thế khả thi.\"\n        },\n        {\n          \"headline\": \"Gemma 3 Experiences Growing Pains\",\n          \"link\": \"https://discord.com/channels/1091220969173028894\",\n          \"source\": \"OpenRouter (Alex Atallah) Discord\",\n          \"summary\": \"Người dùng báo cáo các phản hồi trống từ google/gemma-3-12b-it, có thể là do quá tải, mặc dù không có phí thường cho biết chức năng phù hợp. So sánh đã được thực hiện với Claude và Grok3, với một người dùng cho rằng nó tốt hơn GPT4o nhưng tệ hơn grok3.\"\n        },\n        {\n          \"headline\": \"OpenAPI Spec Gets a Polish\",\n          \"link\": \"https://discord.com/channels/1091220969173028894\",\n          \"source\": \"OpenRouter (Alex Atallah) Discord\",\n          \"summary\": \"OpenRouter OpenAPI spec đang được cải thiện, với các bản cập nhật có sẵn trong API reference section của tài liệu.\"\n        }\n      ],\n      \"title\": \"OpenRouter (Alex Atallah) Discord\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 30.782286167144775,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "Tổng hợp từ các nguồn mở",
+    "reportTitle": "Điểm tin AI hàng tuần: Các đột phá về Reasoning & RL, Use case thực tế và Hype Hackathon",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "DAPO vượt trội DeepSeek R1",
+            "link": "https://arxiv.org/abs/2503.09573",
+            "source": "arXiv",
+            "summary": "DAPO (Decoupled clip and dynamic sampling policy optimization) mang lại kết quả RL sắc nét hơn. Việc cắt tỉa linh hoạt và lấy mẫu động giúp cải thiện đáng kể khả năng reasoning của các mô hình lớn."
+          },
+          {
+            "headline": "Lời nguyền chiều sâu' ảnh hưởng đến các lớp LLM",
+            "link": "https://arxiv.org/abs/2502.05795",
+            "source": "arXiv",
+            "summary": "Các nhà nghiên cứu cho rằng Pre-LN là nguyên nhân gây ra sự tăng trưởng theo cấp số nhân về phương sai đầu ra trên nhiều khối transformer. Các phương pháp LayerNorm scaling có thể sửa chữa một nửa số lớp bị lãng phí của mô hình."
+          },
+          {
+            "headline": "Block Diffusion thu hẹp khoảng cách giữa AR & Diffusion",
+            "link": "https://github.com/kuleshov-group/bd3lms",
+            "source": "GitHub",
+            "summary": "Phương pháp mới này kết hợp tạo sinh autoregressive với lấy mẫu diffusion cho văn bản. Nó cung cấp đầu ra có độ dài tùy ý, kv caching và giải mã song song mà không làm chậm LLM tiêu chuẩn."
+          }
+        ],
+        "title": "Các đột phá về Reasoning & RL"
+      },
+      {
+        "articles": [
+          {
+            "headline": "AI Agents Hackathon tại GTC 2025",
+            "link": "https://lu.ma/meofrw3d",
+            "source": "lu.ma",
+            "summary": "Các nhà phát triển cạnh tranh để giành giải thưởng hơn 50.000 đô la bằng cách xây dựng các AI agent đa phương thức. Các nhà tài trợ hứa hẹn một phiên pitch trực tiếp kéo dài 3 phút, thúc đẩy tích hợp công cụ nâng cao."
+          },
+          {
+            "headline": "Người dùng NotebookLM lên kế hoạch giảm liều thuốc",
+            "link": "https://cloud.google.com/products/agentspace?hl=en",
+            "source": "Google Cloud",
+            "summary": "Người dùng đưa các bài báo về sức khỏe, dữ liệu cá nhân và tài liệu tham khảo về chất hướng thần vào knowledge graph. NotebookLM biên soạn các kế hoạch giảm liều dựa trên các nguồn được tuyển chọn."
+          },
+          {
+            "headline": "LocalDocs hoặc là sập",
+            "link": "https://github.com/nomic-ai/gpt4all/issues/3540",
+            "source": "GitHub",
+            "summary": "Một số người thử nghiệm GPT4All đã mất toàn bộ bộ sưu tập PDF sau khi một tệp duy nhất làm hỏng các embedding job. Họ đã khôi phục dữ liệu một phần bằng cách lưu bản sao lưu localdocs và nhập lại văn bản."
+          }
+        ],
+        "title": "Use case thực tế & Hype Hackathon"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Gemma 3 Grind Geeks' Gears",
+            "link": "https://discord.com/channels/1179035537009545276",
+            "source": "Unsloth AI Discord",
+            "summary": "Người dùng báo cáo một loạt các vấn đề khi tinh chỉnh các mô hình Gemma 3, bao gồm các lỗi liên quan đến HybridCache và mixed precision, cho thấy Gemma 3 có thể chỉ tinh chỉnh đáng tin cậy ở FP32. Một số người đề xuất cài đặt các phiên bản cụ thể của gói `transformers`, nhưng những người khác chỉ cần nhận xét các lệnh gán fp16 và bf16, đặt chúng thành `false`."
+          },
+          {
+            "headline": "Quantization Quandaries Quell Quickness",
+            "link": "https://discord.com/channels/1179035537009545276",
+            "source": "Unsloth AI Discord",
+            "summary": "Người dùng cân nhắc sự đánh đổi giữa lượng tử hóa Q4 và Q8, đặt câu hỏi liệu lượng tử hóa động 4 bit của Unsloth chỉ dành cho đào tạo hay nó có làm tăng độ chính xác khi sử dụng cục bộ hay không. Các thành viên làm rõ rằng quants 4 bit động chỉ hoạt động trong vLLM, trong khi GGUF được thiết kế để sử dụng cục bộ, nhưng các tệp safe tensor cho phép phục vụ và suy luận, đồng thời nói thêm rằng không ai sử dụng tệp GGUF để phục vụ các triển khai thương mại."
+          },
+          {
+            "headline": "Tokenizer Tinkering Transforms Training",
+            "link": "https://discord.com/channels/1179035537009545276",
+            "source": "Unsloth AI Discord",
+            "summary": "Một người dùng đã hỏi về việc cập nhật tokenizer trong quá trình pre-training liên tục, vì mô hình cơ sở có thể cắt bớt các từ chuyên biệt thành các subword, có khả năng làm lu mờ kết quả. Một thành viên đề nghị tìm kiếm _tokenizer add tokens_ và chia sẻ một chủ đề Reddit về việc thêm token mới vào mô hình LLaMA 2."
+          },
+          {
+            "headline": "Context Length Conundrums Confound Calculations",
+            "link": "https://discord.com/channels/1179035537009545276",
+            "source": "Unsloth AI Discord",
+            "summary": "Các thành viên làm rõ rằng độ dài context là một giới hạn, không phải là siêu tham số của một mô hình và context càng dài thì càng cần nhiều bộ nhớ. Họ cũng chia sẻ các tài nguyên như blog của Substratus.ai và không gian Hugging Face để ước tính mức sử dụng bộ nhớ, nhấn mạnh rằng nó khác nhau đáng kể giữa các mô hình."
+          }
+        ],
+        "title": "Unsloth AI (Daniel Han) Discord"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Cursor's 0.47.x Plagues Users",
+            "link": "https://discord.com/channels/1074847526655643750",
+            "source": "Cursor IDE Discord",
+            "summary": "Người dùng báo cáo các phiên bản Cursor 0.47.x không ổn định, thường xuyên bị đóng băng và gặp sự cố, khiến người dùng phải quay lại 0.46.x hoặc di chuyển sang các lựa chọn thay thế như Windsurf. Một người dùng có PC cao cấp không thấy bất kỳ cải thiện nào, dẫn đến những người khác lưu ý việc thực thi quy tắc bị hỏng với context hạn chế là nguyên nhân gốc rễ."
+          },
+          {
+            "headline": "MCP Setup Creates Confusion",
+            "link": "https://discord.com/channels/1074847526655643750",
+            "source": "Cursor IDE Discord",
+            "summary": "Các thành viên cộng đồng gặp khó khăn trong việc thiết lập máy chủ Model Context Protocol (MCP), vì UI chuyển hướng đến tệp mcp.json thay vì hiển thị modal cấu hình; trên Linux, người dùng không gặp vấn đề gì khi cài đặt. Các giải pháp bao gồm chỉnh sửa thủ công tệp mcp.json, đảm bảo tiền tố dòng lệnh chính xác, xác minh API key và tham khảo các hướng dẫn trực tuyến để được hướng dẫn."
+          },
+          {
+            "headline": "Sonnet 3.7 Users Demand Prompting Tweaks",
+            "link": "https://discord.com/channels/1074847526655643750",
+            "source": "Cursor IDE Discord",
+            "summary": "Người dùng chia sẻ rằng Claude 3.7 Sonnet hoạt động kém hiệu quả, tốn nhiều token hơn trong khi đôi khi hoạt động \"chậm phát triển\", làm phức tạp hóa các tác vụ, loại bỏ mã thừa hoặc bỏ qua các quy tắc. Các thành viên cộng đồng đề xuất sử dụng \"sequential thinking MCP\" hoặc \"3.5 + sequential thinking\" để kiểm soát tốt hơn, cũng như xác định các quy tắc cụ thể để hạn chế mô hình."
+          },
+          {
+            "headline": "\"Vibe Coders\" Spar with Coding Purists",
+            "link": "https://discord.com/channels/1074847526655643750",
+            "source": "Cursor IDE Discord",
+            "summary": "Một cuộc tranh luận nổ ra về tính hiệu quả của \"vibe coding\", với tuyên bố rằng nó chỉ phù hợp cho các dự án nhanh chóng, chất lượng thấp so với phát triển nghiêm túc đòi hỏi các nhà phát triển lành nghề. Một số người cho rằng vai trò chính của AI là hỗ trợ, không phải thay thế các nhà phát triển, nhấn mạnh sự cần thiết của kiến thức kỹ thuật để hướng dẫn và xác thực mã do AI tạo ra, với những lo ngại về các lỗ hổng bảo mật trong cơ sở mã do AI tạo ra."
+          },
+          {
+            "headline": "Neovim Fans Dream of Cursor's Perfect Emulation",
+            "link": "https://discord.com/channels/1074847526655643750",
+            "source": "Cursor IDE Discord",
+            "summary": "Người dùng tìm kiếm các keybindings Neovim bên trong Cursor để giảm việc sử dụng chuột. Một người khác đề xuất phân nhánh Neovim để có trải nghiệm liền mạch."
+          }
+        ],
+        "title": "Cursor IDE Discord"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Gemini's Code Generation Stumbles",
+            "link": "https://discord.com/channels/974519864045756446",
+            "source": "OpenAI Discord",
+            "summary": "Trong khi Gemini vượt trội trong chatbot, nó gặp khó khăn trong việc tạo mã Swift chức năng, thường xuyên tạo ra mã _không có hy vọng hoạt động_. Mặc dù được đánh giá cao về các phản hồi giống con người, nhưng việc tạo mã của Gemini 4.5 là đáng ngờ vì _nó không cần lý luận để tạo ra một phản hồi hấp dẫn_."
+          },
+          {
+            "headline": "Future AI is Self-Reflective",
+            "link": "https://discord.com/channels/974519864045756446",
+            "source": "OpenAI Discord",
+            "summary": "Một thành viên đã tạo ra một GPT tùy chỉnh nâng cao phản ánh về việc học của nó, tạo ra các câu hỏi phản ánh và mô phỏng nhiều tính cách, mô tả rằng _nó tìm kiếm, phản ánh và thậm chí tạo ra_. AI sử dụng các tệp bộ nhớ để xây dựng dựa trên những hiểu biết sâu sắc của nó, cho phép mô phỏng bên trong mô phỏng, nơi các tính cách AI có thể tạo ra các cuộc đối thoại nội bộ dựa trên kiến thức chuyên môn, để giải quyết các thách thức và tạo ra các nhóm chuyên gia để được hướng dẫn."
+          },
+          {
+            "headline": "GPT-4o Steals the Show",
+            "link": "https://discord.com/channels/974519864045756446",
+            "source": "OpenAI Discord",
+            "summary": "Các thành viên báo cáo rằng GPT-4o rất thú vị khi sử dụng và hoạt động tốt nhất trong số các mô hình GPT-4.5, có thể _thực sự làm được hầu hết mọi thứ_. Một người dùng nhận thấy rằng trong số rất nhiều mô hình, 4.5 sử dụng nó tốt nhất."
+          },
+          {
+            "headline": "AI Reliance Sparks Debate",
+            "link": "https://discord.com/channels/974519864045756446",
+            "source": "OpenAI Discord",
+            "summary": "Một cuộc thảo luận nổ ra về việc dựa quá nhiều vào AI, có khả năng cản trở sự phát triển cá nhân và tư duy phản biện, trong khi một số người cho rằng AI có thể nâng cao năng suất cho những người đã có kỹ năng. Những người khác phản bác rằng việc học hỏi và cải thiện kỹ năng vẫn rất quan trọng, vì các công cụ AI nâng cao khả năng hiện có chứ không phải thay thế chúng hoàn toàn."
+          },
+          {
+            "headline": "AI OS discussed in theory",
+            "link": "https://discord.com/channels/974519864045756446",
+            "source": "OpenAI Discord",
+            "summary": "Một thành viên đã đề xuất một AI-controlled OS với các lệnh thoại cho các tác vụ cơ bản, chẳng hạn như _'Hey (AI name), open my photos and browse them one at a time, 5 seconds per image'_. Các thành viên bày tỏ sự hoài nghi, lưu ý rằng các hệ thống hiện có đã làm những điều tương tự mà không cần một OS mới và các AI agent hiện tại không đủ đáng tin cậy."
+          }
+        ],
+        "title": "OpenAI Discord"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Latency Gains Importance as AI Scales",
+            "link": "https://discord.com/channels/1053877538025386074",
+            "source": "Nous Research AI Discord",
+            "summary": "Khi các mô hình AI mở rộng, quá trình đào tạo và suy luận có thể trở nên nhạy cảm hơn với độ trễ, có khả năng dẫn đến các mô hình truyền thông điệp, nhưng _tensor_templar_ thích sự ổn định hơn tốc độ. Topology đồ thị đang thu hút sự chú ý như là một giải pháp có khả năng mở rộng hơn so với các mạng thần kinh hiện tại vì việc truy cập thông tin từ mạng sẽ tốn kém hơn khi có nhiều trọng số hơn."
+          },
+          {
+            "headline": "MoEs Approximate or Exceed Dense Networks",
+            "link": "https://discord.com/channels/1053877538025386074",
+            "source": "Nous Research AI Discord",
+            "summary": "Các thành viên đã thảo luận về các mô hình Mixture of Experts (MoEs) thưa thớt như là sự gần đúng của các mạng dày đặc, với một thành viên cho rằng MoE không nắm bắt được sự phức tạp tốt như vậy, tham khảo công trình của DeepSeek về việc dự đoán nhiều token cùng một lúc. Cuộc trò chuyện cân nhắc liệu MoE đơn giản chỉ là xấp xỉ một mạng dày đặc hay không và liệu đồ thị mất mát có xác nhận quan niệm này hay không."
+          },
+          {
+            "headline": "LLMs Emulate Voices with TTS",
+            "link": "https://discord.com/channels/1053877538025386074",
+            "source": "Nous Research AI Discord",
+            "summary": "Các thành viên đã khám phá việc sử dụng LLM dựa trên văn bản tiên tiến để xuất ra một mẫu giọng nói thông qua mã, như clip này. Mục tiêu là tạo ra một clip giọng nói tổng hợp và so sánh nó với bản gốc dựa trên sở thích của con người, tập trung vào LLM cục bộ để tối ưu hóa và đào tạo."
+          },
+          {
+            "headline": "Copyright Fuels AI Debate",
+            "link": "https://discord.com/channels/1053877538025386074",
+            "source": "Nous Research AI Discord",
+            "summary": "Thảo luận nảy sinh rằng các LLM của Trung Quốc được đào tạo trên các thư viện bóng tối bất hợp pháp, cho thấy phương Tây cần đại tu luật bản quyền vì an ninh quốc gia và tham khảo bài đăng trên blog này. Tuyên bố nói rằng các công ty tuân thủ bản quyền đang ở thế bất lợi, với các mô hình video của Trung Quốc được cho là vượt trội do không tuân thủ bản quyền."
+          },
+          {
+            "headline": "Curse of Depth strikes LLMs",
+            "link": "https://discord.com/channels/1053877538025386074",
+            "source": "Nous Research AI Discord",
+            "summary": "Một bài báo mới giới thiệu 'Lời nguyền chiều sâu', lưu ý rằng gần một nửa số lớp trong các LLM hiện đại như Llama, Mistral, DeepSeek và Qwen kém hiệu quả hơn dự kiến, cho rằng điều này là do Pre-Layer Normalization (Pre-LN). Biện pháp khắc phục được đề xuất là LayerNorm Scaling để giảm thiểu phương sai đầu ra tăng theo cấp số nhân theo độ sâu của mô hình."
+          }
+        ],
+        "title": "Nous Research AI Discord"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Claude 3.7 Has Mixed Reviews!",
+            "link": "https://discord.com/channels/1131200896827654144",
+            "source": "Aider (Paul Gauthier) Discord",
+            "summary": "Người dùng báo cáo Claude 3.7 đôi khi _không liên quan_ và _ảo giác_, trong khi những người khác thấy nó hiệu quả bằng cách thiết kế các prompt để _ghi nhớ KISS và YAGNI_, cũng theo dõi trang trạng thái Anthropic để biết các vấn đề về dịch vụ. Các phản hồi trống có thể xảy ra, có thể là do các vấn đề về dịch vụ; một số người đang sử dụng Claude Desktop với Aider trên MCP để có được quyền tự chủ do Claude quản lý dễ dàng hơn, lưu ý rằng việc chạy Aider trong Claude có thể tốn kém."
+          },
+          {
+            "headline": "Git History Rewrites Spark Debate",
+            "link": "https://discord.com/channels/1131200896827654144",
+            "source": "Aider (Paul Gauthier) Discord",
+            "summary": "Một số người dùng ấn tượng với khả năng viết lại Git commit history của Claude Code, cô đọng một PR thành các commit dành riêng cho tính năng. Mặc dù các commit messages chính xác, nhưng AI gặp khó khăn trong việc chia nhỏ các thay đổi một cách hợp lý, đôi khi dẫn đến các dấu phân cách không khớp và các tác vụ không hoàn thành."
+          },
+          {
+            "headline": "Mistral Small 3.1 Debuts as Multilingual Model",
+            "link": "https://discord.com/channels/1131200896827654144",
+            "source": "Aider (Paul Gauthier) Discord",
+            "summary": "Mistral AI đã công bố Mistral Small 3.1, một mô hình đa phương thức, đa ngôn ngữ theo giấy phép Apache 2.0 và phù hợp cho các ứng dụng trên thiết bị do tính chất nhẹ và khả năng chạy trên một RTX 4090 hoặc Mac với RAM 32GB. Nó cung cấp các cuộc hội thoại phản hồi nhanh, gọi hàm độ trễ thấp và có thể tùy chỉnh cho các domain cụ thể."
+          },
+          {
+            "headline": "Aider v0.77.0 Slowdown Troubles Users",
+            "link": "https://discord.com/channels/1131200896827654144",
+            "source": "Aider (Paul Gauthier) Discord",
+            "summary": "Aider v0.77.0 có _chậm chạp và sử dụng CPU cao_ khi tạo ra các đầu ra CSV lớn trực tiếp trong kho lưu trữ. Việc xóa hầu hết các thư mục đầu ra dữ liệu chứa các tệp CSV lớn dường như đã giải quyết được vấn đề cho người dùng và một người dùng đã hỏi về việc tích hợp Aider với agents.json để tương tác API."
+          },
+          {
+            "headline": "Bedrock Claude 3.7 Sonnet Error Blamed on AWS Region",
+            "link": "https://discord.com/channels/1131200896827654144",
+            "source": "Aider (Paul Gauthier) Discord",
+            "summary": "Một `APIConnectionError` khi sử dụng AWS Bedrock Claude 3.7 Sonnet, trích dẫn một thông báo lỗi _\"access to the model with the specified model ID\"_, đã gây khó khăn cho một người dùng. Vấn đề đã được giải quyết bằng cách đặt chính xác khu vực AWS trong cả `~/.aws/configs` và `~/.env`."
+          }
+        ],
+        "title": "Aider (Paul Gauthier) Discord"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Llama.cpp Goes Mobile with Adreno GPU Support",
+            "link": "https://discord.com/channels/1110598183144399058",
+            "source": "LM Studio Discord",
+            "summary": "Một [OpenCL backend thử nghiệm cho Adreno GPU] đang được giới thiệu trong llama.cpp, cho phép sử dụng các thiết bị di động với LM Studio. Bản cập nhật này mở ra sức mạnh tính toán trên các thiết bị di động cho các trường hợp sử dụng rộng hơn."
+          },
+          {
+            "headline": "Mistral Small 3.1 Boasts Impressive Specs",
+            "link": "https://discord.com/channels/1110598183144399058",
+            "source": "LM Studio Discord",
+            "summary": "Mistral AI đã công bố [Mistral Small 3.1], tăng cường text performance, multimodal understanding và mở rộng context window lên 128k tokens theo giấy phép Apache 2.0. Một thành viên bày tỏ sự hoài nghi về GGUF support do vision adapter."
+          },
+          {
+            "headline": "AMD's Strix Halo APU Challenges RTX 5080",
+            "link": "https://discord.com/channels/1110598183144399058",
+            "source": "LM Studio Discord",
+            "summary": "AMD Ryzen AI MAX+ 395 Strix Halo APU được báo cáo là hoạt động tốt hơn RTX 5080 trong các bài kiểm tra DeepSeek R1 AI vì VRAM lớn hơn của nó. VRAM lớn hơn mang lại cho nó lợi thế hơn trong các tác vụ AI."
+          },
+          {
+            "headline": "LM Studio API Struggles with Images",
+            "link": "https://discord.com/channels/1110598183144399058",
+            "source": "LM Studio Discord",
+            "summary": "Người dùng đang gặp phải các vấn đề khi gửi hình ảnh thông qua LM Studio API, mặc dù tài liệu LM Studio API cho thấy hỗ trợ tải lên hình ảnh trong Chat interface. Các thành viên báo cáo khó khăn trong việc gửi dữ liệu hình ảnh đúng cách."
+          },
+          {
+            "headline": "RTX 8000 Emerges as Inference Bargain",
+            "link": "https://discord.com/channels/1110598183144399058",
+            "source": "LM Studio Discord",
+            "summary": "RTX 8000 với 48GB VRAM đang được quảng cáo là một lựa chọn hiệu quả về chi phí cho LLM inference với giá khoảng 2000 đô la, có khả năng hoạt động tốt hơn so với RTX 3090 kép bằng cách loại bỏ chi phí giao tiếp giữa GPU. Có những lo ngại rằng RTX 8000 dựa trên kiến trúc Turing cũ hơn có thể gặp khó khăn với các mô hình mới."
+          }
+        ],
+        "title": "LM Studio Discord"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Anthropic's Claude 3.7 Sonnet Hits Error Snag",
+            "link": "https://discord.com/channels/1091220969173028894",
+            "source": "OpenRouter (Alex Atallah) Discord",
+            "summary": "Anthropic API đã gặp phải các lỗi tăng cao đối với Claude 3.7 Sonnet, trong khoảng thời gian từ 21:45–22:14 UTC. Vấn đề đã được giải quyết bằng một bản sửa lỗi, nhưng những người dùng gặp phải các lỗi này đã tự hỏi về việc hoàn trả tín dụng và đề xuất sử dụng 3.5 như một giải pháp thay thế khả thi."
+          },
+          {
+            "headline": "Gemma 3 Experiences Growing Pains",
+            "link": "https://discord.com/channels/1091220969173028894",
+            "source": "OpenRouter (Alex Atallah) Discord",
+            "summary": "Người dùng báo cáo các phản hồi trống từ google/gemma-3-12b-it, có thể là do quá tải, mặc dù không có phí thường cho biết chức năng phù hợp. So sánh đã được thực hiện với Claude và Grok3, với một người dùng cho rằng nó tốt hơn GPT4o nhưng tệ hơn grok3."
+          },
+          {
+            "headline": "OpenAPI Spec Gets a Polish",
+            "link": "https://discord.com/channels/1091220969173028894",
+            "source": "OpenRouter (Alex Atallah) Discord",
+            "summary": "OpenRouter OpenAPI spec đang được cải thiện, với các bản cập nhật có sẵn trong API reference section của tài liệu."
+          }
+        ],
+        "title": "OpenRouter (Alex Atallah) Discord"
+      }
+    ]
+  }
+}

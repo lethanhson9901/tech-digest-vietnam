@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash-lite",
+  "text": "{\n  \"from\": \"Pen Name\",\n  \"reportTitle\": \"Báo cáo về sự phát triển của Rust và Linux Kernel\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Rust và sự an toàn bộ nhớ trong Linux Kernel\",\n          \"link\": \"https://www.rust-lang.org/\",\n          \"source\": \"Rust\",\n          \"summary\": \"Rust nổi bật với tính năng an toàn bộ nhớ, tập trung vào quản lý vòng đời đối tượng và quyền sở hữu bộ nhớ, không nhất thiết loại bỏ hoàn toàn các lỗi. Việc áp dụng Rust thúc đẩy cải thiện trong cơ sở mã C hiện có, vì nhu cầu tạo liên kết Rust khuyến khích đánh giá lại mã C để tăng cường độ an toàn và rõ ràng. Cộng đồng kernel Linux đang tích cực tìm cách nâng cao tính an toàn cho mã C thông qua các kỹ thuật như kiểm tra giới hạn và phần mở rộng trình biên dịch.\"\n        },\n        {\n          \"headline\": \"Tích hợp Rust vào Linux Kernel\",\n          \"link\": \"https://www.linuxkernelfoundation.com/\",\n          \"source\": \"Linux Kernel Foundation\",\n          \"summary\": \"Có sự kháng cự từ một số nhà phát triển kernel cốt lõi với việc giới thiệu các ngôn ngữ mới, họ thích duy trì một cơ sở mã đơn ngôn ngữ. Tuy nhiên, những nỗ lực đang được tiến hành để viết nhiều trình điều khiển hơn bằng Rust, bao gồm cả trình điều khiển GPU thử nghiệm. Rust đặc biệt phù hợp với các trình điều khiển phần cứng đơn giản hơn. Các chính phủ ngày càng yêu cầu sử dụng các ngôn ngữ an toàn bộ nhớ, đây là một yếu tố khác thúc đẩy việc áp dụng Rust trong Linux.\"\n        },\n        {\n          \"headline\": \"Đóng góp vào Linux Kernel: Lợi ích và Cách thức\",\n          \"link\": \"https://kernelnewbies.org/\",\n          \"source\": \"Kernel Newbies\",\n          \"summary\": \"Xây dựng và thử nghiệm kernel tại chỗ là điều kiện tiên quyết để gửi các thay đổi. Đóng góp, dù chỉ một patch, mang lại những lợi ích chuyên môn đáng kể. Nó củng cố sơ yếu lý lịch của nhà phát triển bằng cách chứng minh khả năng cộng tác và làm việc với các cơ sở mã phức tạp và đã được thiết lập. Đóng góp cung cấp cơ hội học tập quý giá, tiếp xúc với các quan điểm, thực hành viết mã khác nhau và các vấn đề kỹ thuật đầy thách thức. Người mới có thể tìm thấy điểm khởi đầu bằng cách làm việc trên các phần ít quan trọng hơn của kernel, chẳng hạn như sửa các vấn đề về kiểu viết mã hoặc loại bỏ mã chết trong các trình điều khiển cũ hơn.\"\n        }\n      ],\n      \"title\": \"Tổng quan\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 7.659612417221069,
+  "attempts": 1,
+  "api_key_index": 1,
+  "structured_data": {
+    "from": "Pen Name",
+    "reportTitle": "Báo cáo về sự phát triển của Rust và Linux Kernel",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Rust và sự an toàn bộ nhớ trong Linux Kernel",
+            "link": "https://www.rust-lang.org/",
+            "source": "Rust",
+            "summary": "Rust nổi bật với tính năng an toàn bộ nhớ, tập trung vào quản lý vòng đời đối tượng và quyền sở hữu bộ nhớ, không nhất thiết loại bỏ hoàn toàn các lỗi. Việc áp dụng Rust thúc đẩy cải thiện trong cơ sở mã C hiện có, vì nhu cầu tạo liên kết Rust khuyến khích đánh giá lại mã C để tăng cường độ an toàn và rõ ràng. Cộng đồng kernel Linux đang tích cực tìm cách nâng cao tính an toàn cho mã C thông qua các kỹ thuật như kiểm tra giới hạn và phần mở rộng trình biên dịch."
+          },
+          {
+            "headline": "Tích hợp Rust vào Linux Kernel",
+            "link": "https://www.linuxkernelfoundation.com/",
+            "source": "Linux Kernel Foundation",
+            "summary": "Có sự kháng cự từ một số nhà phát triển kernel cốt lõi với việc giới thiệu các ngôn ngữ mới, họ thích duy trì một cơ sở mã đơn ngôn ngữ. Tuy nhiên, những nỗ lực đang được tiến hành để viết nhiều trình điều khiển hơn bằng Rust, bao gồm cả trình điều khiển GPU thử nghiệm. Rust đặc biệt phù hợp với các trình điều khiển phần cứng đơn giản hơn. Các chính phủ ngày càng yêu cầu sử dụng các ngôn ngữ an toàn bộ nhớ, đây là một yếu tố khác thúc đẩy việc áp dụng Rust trong Linux."
+          },
+          {
+            "headline": "Đóng góp vào Linux Kernel: Lợi ích và Cách thức",
+            "link": "https://kernelnewbies.org/",
+            "source": "Kernel Newbies",
+            "summary": "Xây dựng và thử nghiệm kernel tại chỗ là điều kiện tiên quyết để gửi các thay đổi. Đóng góp, dù chỉ một patch, mang lại những lợi ích chuyên môn đáng kể. Nó củng cố sơ yếu lý lịch của nhà phát triển bằng cách chứng minh khả năng cộng tác và làm việc với các cơ sở mã phức tạp và đã được thiết lập. Đóng góp cung cấp cơ hội học tập quý giá, tiếp xúc với các quan điểm, thực hành viết mã khác nhau và các vấn đề kỹ thuật đầy thách thức. Người mới có thể tìm thấy điểm khởi đầu bằng cách làm việc trên các phần ít quan trọng hơn của kernel, chẳng hạn như sửa các vấn đề về kiểu viết mã hoặc loại bỏ mã chết trong các trình điều khiển cũ hơn."
+          }
+        ],
+        "title": "Tổng quan"
+      }
+    ]
+  }
+}

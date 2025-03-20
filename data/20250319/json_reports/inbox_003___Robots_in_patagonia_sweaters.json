@@ -1,0 +1,59 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash-lite",
+  "text": "{\n  \"from\": \"The Frontier by Product Hunt\",\n  \"reportTitle\": \"Robot trong áo len Patagonia\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Your VC là một robot\",\n          \"link\": \"https://www.producthunt.com/posts/sesame-4\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"No Cap: Một nhà đầu tư thiên thần được hỗ trợ bởi AI, tự động hóa các quyết định tài trợ giai đoạn đầu cho các công ty khởi nghiệp. Twos PALs: Một trợ lý AI cá nhân được thiết kế để tổ chức các tác vụ, ghi chú và ý tưởng thành các danh sách có cấu trúc. Mistral Small 3.1: Một mô hình AI nhẹ nhưng mạnh mẽ, được tối ưu hóa cho suy luận tốc độ cao và hiệu quả. Cuckoo: Một trình dịch AI thời gian thực được xây dựng để giao tiếp đa ngôn ngữ liền mạch. Wispr Flow for Windows: Một công cụ đọc chính tả do AI điều khiển cho phép người dùng viết nhanh gấp ba lần bằng cách nói một cách tự nhiên, với định dạng và sửa lỗi theo thời gian thực trên tất cả các ứng dụng.\"\n        }\n      ],\n      \"title\": \"Các sản phẩm nổi bật\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"New Relic\",\n          \"link\": \"https://newrelic.com/event/new-relic-now-on-demand?utm_source=product_hunt&utm_medium=e_newsletter&utm_campaign=amer-fy25-q4-dg-nr-now-feb-virtual-event-on-demand&utm_content=ai_newsletter\",\n          \"source\": \"New Relic\",\n          \"summary\": \"New Relic giới thiệu về tương lai của Intelligent Observability. Cung cấp các phiên theo yêu cầu với các chuyên gia trong ngành, thảo luận về các cải tiến tập trung vào AI, hiệu suất hệ thống và các bản phát hành lớn. Bạn có thể xem các hội thảo tương tác với các tình huống thực tế.\"\n        }\n      ],\n      \"title\": \"Được tài trợ bởi\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Trung Quốc có đang thắng thế trong cuộc đua AI?\",\n          \"link\": \"https://www.producthunt.com/posts/manus\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Manus AI, sản phẩm mới nhất của Trung Quốc trong cuộc đua giành lấy các tác nhân AI tự động. Khác với các trợ lý AI điển hình, Manus hoạt động ở chế độ nền, xử lý các tác vụ phức tạp mà không cần hướng dẫn. Nó được xây dựng trên một hệ thống đa tác nhân. Tuy nhiên, Manus đã gặp phải một số vấn đề liên quan đến việc làm sai lệch dữ liệu và sao chép văn bản từ các trang web hiện có, đặt ra các câu hỏi về độ tin cậy và giám sát. Nếu thành công, nó có thể là cái nhìn thoáng qua về tương lai của các tác nhân AI tự động hoàn toàn.\"\n        }\n      ],\n      \"title\": \"Ý tưởng lớn\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Những người xây dựng phần mềm có đang biến mất?\",\n          \"link\": \"https://www.producthunt.com/p/general/do-you-think-software-will-lose-its-value-as-a-product-to-build\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"AI và các công cụ no-code có nghĩa là bất kỳ ai cũng có thể xây dựng một cái gì đó trong vài phút. Các cuộc thảo luận xoay quanh việc: phần mềm liệu có còn giá trị, hay là thách thức thực sự nằm ở những gì đến sau đó? Một số ý kiến: 💬 Nika: Chi phí thực sự nằm ở marketing, hỗ trợ khách hàng. Alan Rivera: Bạn đang đổi chi phí phát triển cho một loạt các đăng ký SaaS. Hussein: các công cụ SaaS có vẻ như kỳ diệu lúc đầu, nhưng bạn sẽ thấy hóa đơn của mình tăng nhanh\"\n        }\n      ],\n      \"title\": \"Các cuộc thảo luận thịnh hành\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 9.319958925247192,
+  "attempts": 1,
+  "api_key_index": 1,
+  "structured_data": {
+    "from": "The Frontier by Product Hunt",
+    "reportTitle": "Robot trong áo len Patagonia",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Your VC là một robot",
+            "link": "https://www.producthunt.com/posts/sesame-4",
+            "source": "Product Hunt",
+            "summary": "No Cap: Một nhà đầu tư thiên thần được hỗ trợ bởi AI, tự động hóa các quyết định tài trợ giai đoạn đầu cho các công ty khởi nghiệp. Twos PALs: Một trợ lý AI cá nhân được thiết kế để tổ chức các tác vụ, ghi chú và ý tưởng thành các danh sách có cấu trúc. Mistral Small 3.1: Một mô hình AI nhẹ nhưng mạnh mẽ, được tối ưu hóa cho suy luận tốc độ cao và hiệu quả. Cuckoo: Một trình dịch AI thời gian thực được xây dựng để giao tiếp đa ngôn ngữ liền mạch. Wispr Flow for Windows: Một công cụ đọc chính tả do AI điều khiển cho phép người dùng viết nhanh gấp ba lần bằng cách nói một cách tự nhiên, với định dạng và sửa lỗi theo thời gian thực trên tất cả các ứng dụng."
+          }
+        ],
+        "title": "Các sản phẩm nổi bật"
+      },
+      {
+        "articles": [
+          {
+            "headline": "New Relic",
+            "link": "https://newrelic.com/event/new-relic-now-on-demand?utm_source=product_hunt&utm_medium=e_newsletter&utm_campaign=amer-fy25-q4-dg-nr-now-feb-virtual-event-on-demand&utm_content=ai_newsletter",
+            "source": "New Relic",
+            "summary": "New Relic giới thiệu về tương lai của Intelligent Observability. Cung cấp các phiên theo yêu cầu với các chuyên gia trong ngành, thảo luận về các cải tiến tập trung vào AI, hiệu suất hệ thống và các bản phát hành lớn. Bạn có thể xem các hội thảo tương tác với các tình huống thực tế."
+          }
+        ],
+        "title": "Được tài trợ bởi"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Trung Quốc có đang thắng thế trong cuộc đua AI?",
+            "link": "https://www.producthunt.com/posts/manus",
+            "source": "Product Hunt",
+            "summary": "Manus AI, sản phẩm mới nhất của Trung Quốc trong cuộc đua giành lấy các tác nhân AI tự động. Khác với các trợ lý AI điển hình, Manus hoạt động ở chế độ nền, xử lý các tác vụ phức tạp mà không cần hướng dẫn. Nó được xây dựng trên một hệ thống đa tác nhân. Tuy nhiên, Manus đã gặp phải một số vấn đề liên quan đến việc làm sai lệch dữ liệu và sao chép văn bản từ các trang web hiện có, đặt ra các câu hỏi về độ tin cậy và giám sát. Nếu thành công, nó có thể là cái nhìn thoáng qua về tương lai của các tác nhân AI tự động hoàn toàn."
+          }
+        ],
+        "title": "Ý tưởng lớn"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Những người xây dựng phần mềm có đang biến mất?",
+            "link": "https://www.producthunt.com/p/general/do-you-think-software-will-lose-its-value-as-a-product-to-build",
+            "source": "Product Hunt",
+            "summary": "AI và các công cụ no-code có nghĩa là bất kỳ ai cũng có thể xây dựng một cái gì đó trong vài phút. Các cuộc thảo luận xoay quanh việc: phần mềm liệu có còn giá trị, hay là thách thức thực sự nằm ở những gì đến sau đó? Một số ý kiến: 💬 Nika: Chi phí thực sự nằm ở marketing, hỗ trợ khách hàng. Alan Rivera: Bạn đang đổi chi phí phát triển cho một loạt các đăng ký SaaS. Hussein: các công cụ SaaS có vẻ như kỳ diệu lúc đầu, nhưng bạn sẽ thấy hóa đơn của mình tăng nhanh"
+          }
+        ],
+        "title": "Các cuộc thảo luận thịnh hành"
+      }
+    ]
+  }
+}

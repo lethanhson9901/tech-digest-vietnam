@@ -1,0 +1,124 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"TLDR Design\",\n  \"reportTitle\": \"Tổng hợp tin tức thiết kế ngày 19/03/2025\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Adobe Stock ra mắt tính năng AI mới cho phép chỉnh sửa ảnh trực tiếp, không cần Photoshop\",\n          \"link\": \"https://www.zdnet.com/article/adobes-new-ai-feature-lets-you-edit-stock-images-on-the-fly-no-photoshop-needed/?utm_source=tldrdesign\",\n          \"source\": \"ZDNet\",\n          \"summary\": \"Adobe Stock giới thiệu tính năng \\\"Customize\\\" mới, hỗ trợ bởi Adobe Firefly, cho phép người dùng chỉnh sửa ảnh trực tiếp trên nền tảng. Tính năng này giúp mở rộng hình ảnh và áp dụng các phong cách khác nhau mà không cần Photoshop, đơn giản hóa quy trình làm việc cho các nhà thiết kế, nhà tiếp thị và chủ doanh nghiệp.\"\n        },\n        {\n          \"headline\": \"Roblox giới thiệu mô hình AI mới có thể tạo ra các đối tượng 3D\",\n          \"link\": \"https://www.theverge.com/news/630977/roblox-cube-3d-objects-mesh-ai-text-prompt?utm_source=tldrdesign\",\n          \"source\": \"The Verge\",\n          \"summary\": \"Roblox Cube 3D là một mô hình AI mã nguồn mở để tạo ra các đối tượng 3D. Nó mã hóa các hình dạng như mô hình văn bản để dự đoán các từ, nâng cao hiệu quả tạo 3D. Được đào tạo trên các bộ dữ liệu được cấp phép và công khai, Cube 3D cuối cùng sẽ hỗ trợ đầu vào hình ảnh và tích hợp với các công cụ AI của Roblox để tạo đa phương thức.\"\n        },\n        {\n          \"headline\": \"Stability AI ra mắt mô hình AI mới biến ảnh thành cảnh 3D\",\n          \"link\": \"https://techcrunch.com/2025/03/18/stability-ais-new-ai-model-turns-photos-into-3d-scenes/?guccounter&utm_source=tldrdesign\",\n          \"source\": \"TechCrunch\",\n          \"summary\": \"Stability AI giới thiệu Stable Virtual Camera, một công cụ biến ảnh thành video động, giống 3D với các chuyển động camera tùy chỉnh. Các nhà nghiên cứu có thể truy cập nó trên Hugging Face, mặc dù nó có một số hạn chế với các cảnh phức tạp và một số kết cấu nhất định. Bất chấp những khó khăn tài chính trong quá khứ, công ty đã trở lại với lãnh đạo mới, quan hệ đối tác và đổi mới, bao gồm cả công nghệ âm thanh do AI tạo ra.\"\n        }\n      ],\n      \"title\": \"Tin tức & Xu hướng\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Sự biến mất của Giám đốc UX: Liệu các UXers có đang trở thành Quản lý Sản phẩm?\",\n          \"link\": \"https://medium.com/design-bootcamp/the-disappearing-ux-director-are-uxers-becoming-product-managers-554b65968da0?utm_source=tldrdesign\",\n          \"source\": \"Medium\",\n          \"summary\": \"Sự suy giảm của vai trò Giám đốc UX bắt nguồn từ sự phát triển của Agile & Lean UX, các quyết định hướng đến kinh doanh và sự hợp nhất ngành. Nhiều chuyên gia UX đang chuyển sang quản lý sản phẩm, thích ứng với trách nhiệm rộng hơn trong một bối cảnh đang thay đổi.\"\n        },\n        {\n          \"headline\": \"Figma không phải là một công cụ thiết kế - nó là một cỗ máy Rube Goldberg để tránh code\",\n          \"link\": \"https://uxdesign.cc/figmas-not-a-design-tool-it-s-a-rube-goldberg-machine-for-avoiding-code-2a24f11add5d?utm_source=tldrdesign\",\n          \"source\": \"uxdesign.cc\",\n          \"summary\": \"Nhiều nhà thiết kế dựa vào các công cụ như Figma, tạo ra các tương tác kỹ thuật số phức tạp nhưng không thực tế trong khi tránh mã. Nắm bắt kiến thức cơ bản về web và các ràng buộc kỹ thuật có thể dẫn đến các thiết kế hiệu quả và chức năng hơn.\"\n        },\n        {\n          \"headline\": \"Thiết kế hướng đến người dùng có còn cần thiết kế lấy người dùng làm trung tâm?\",\n          \"link\": \"https://jakobnielsenphd.substack.com/p/user-driven-design?utm_source=tldrdesign\",\n          \"source\": \"jakobnielsenphd.substack.com\",\n          \"summary\": \"“Mã hóa rung cảm” và “thiết kế rung cảm” do AI điều khiển đang thách thức thiết kế lấy người dùng làm trung tâm truyền thống, có khả năng dân chủ hóa việc tạo phần mềm. Khi AI tăng tốc phát triển, người dùng có thể tạo các ứng dụng phù hợp, chuyển trọng tâm UX từ phòng ngừa sang sửa chữa. Các chuyên gia về khả năng sử dụng sẽ thích ứng, nhấn mạnh việc tinh chỉnh công cụ AI, thử nghiệm nhanh chóng và hướng dẫn chiến lược để điều hướng sự bùng nổ phần mềm do người dùng tạo ra này.\"\n        }\n      ],\n      \"title\": \"Ý kiến & Hướng dẫn\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Perspective Toolkit (Plugin Figma)\",\n          \"link\": \"https://links.tldrnewsletter.com/8Xt9nD\",\n          \"source\": \"Figma\",\n          \"summary\": \"Skew giao diện người dùng hoặc hình ảnh không phá hủy ở chế độ xem isometric, áp dụng phối cảnh 3D đầy đủ với điều khiển FoV hoặc sử dụng vectơ bốn điểm để có tổng tính linh hoạt.\"\n        },\n        {\n          \"headline\": \"Thay đổi khuôn mặt và giọng nói theo thời gian thực (Website)\",\n          \"link\": \"https://magicam.ai/?utm_source=tldrdesign\",\n          \"source\": \"magicam.ai\",\n          \"summary\": \"Hoán đổi liền mạch khuôn mặt trong các luồng trực tiếp chất lượng cao chỉ bằng một bức ảnh.\"\n        }\n      ],\n      \"title\": \"Ra mắt & Công cụ\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Tám cánh tay, vô số khả năng: Thay đổi thương hiệu dựa trên bạch tuộc có khả năng tạo hình của MullenLowe biến hình và di chuyển\",\n          \"link\": \"https://the-brandidentity.com/project/eight-arms-infinite-possibilities-mullenlowes-generative-octopus-led-rebrand-morphs-and-moves?utm_source=tldrdesign\",\n          \"source\": \"the-brandidentity.com\",\n          \"summary\": \"Việc thay đổi thương hiệu của MullenLowe có một bản sắc tạo ra, lấy cảm hứng từ bạch tuộc tượng trưng cho sự sáng tạo và khả năng thích ứng. Nó nhằm mục đích luôn phát triển và nổi bật về mặt nghệ thuật với một kiểu chữ tùy chỉnh, hệ thống thiết kế động và hình ảnh đậm nét.\"\n        },\n        {\n          \"headline\": \"Thiết kế Nhận diện Thương hiệu và Hình ảnh nổi bật của Ayla\",\n          \"link\": \"https://abduzeedo.com/aylas-striking-branding-and-visual-identity-design?utm_source=tldrdesign\",\n          \"source\": \"abduzeedo.com\",\n          \"summary\": \"Thương hiệu Ayla của LOTIPA kết hợp chủ nghĩa tối giản với sự hiện diện táo bạo, sử dụng màu cam rực rỡ, tông màu trung tính và màu đen đậm để tạo vẻ ngoài nổi bật nhưng trang nhã. Thiết kế trực quan và đáng nhớ phản ánh triết lý của thương hiệu là trao quyền cho những lựa chọn táo bạo.\"\n        },\n        {\n          \"headline\": \"Giảm tỷ lệ thoát trang bằng thiết kế UX trực quan\",\n          \"link\": \"https://www.loop11.com/reducing-bounce-rate-with-intuitive-ux-design/?utm_source=tldrdesign\",\n          \"source\": \"loop11.com\",\n          \"summary\": \"Tỷ lệ thoát trang cao báo hiệu người dùng rời đi mà không tương tác, thường là do thiết kế UX kém. Cải thiện tốc độ trang web, điều hướng, chất lượng nội dung và khả năng phản hồi trên thiết bị di động sẽ làm giảm tỷ lệ thoát trang. Hệ thống phân cấp trực quan và thử nghiệm A/B giúp nâng cao hơn nữa trải nghiệm người dùng. Ưu tiên thiết kế trực quan giúp khách truy cập tương tác, tăng chuyển đổi và thành công tổng thể của trang web.\"\n        }\n      ],\n      \"title\": \"Khác\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Bạn phải thực sự có chủ ý\",\n          \"link\": \"https://www.itsnicethat.com/articles/creative-career-conundrums-if-you-could-jobs-advice-170325?utm_source=tldrdesign\",\n          \"source\": \"itsnicethat.com\",\n          \"summary\": \"Để vượt qua những rào cản trong sự nghiệp, các nhà thiết kế nên đặt ra các mục tiêu rõ ràng, luôn chủ động với các dự án cá nhân, tham gia các cuộc thi và tìm kiếm sự cố vấn để tạo dựng động lực trong ngành.\"\n        },\n        {\n          \"headline\": \"Dấu ấn của Bond cho quần đảo lớn nhất thế giới có hình dạng từ các thành tạo đảo\",\n          \"link\": \"https://www.itsnicethat.com/articles/bond-saaristo-graphic-design-project-110325?utm_source=tldrdesign\",\n          \"source\": \"itsnicethat.com\",\n          \"summary\": \"Thương hiệu điểm đến của Bond dành cho quần đảo của Phần Lan nắm bắt được bản chất của nó thông qua một dấu ấn địa hình sử dụng các hòn đảo thực tế.\"\n        },\n        {\n          \"headline\": \"Breadcrumbs đã chết trong thiết kế web\",\n          \"link\": \"https://webdesignerdepot.com/breadcrumbs-are-dead-in-web-design/?utm_source=tldrdesign\",\n          \"source\": \"webdesignerdepot.com\",\n          \"summary\": \"Từng là một công cụ hữu ích để điều hướng các trang web phân cấp, breadcrumbs đã trở nên ít phù hợp hơn trong trải nghiệm web hiện đại, năng động.\"\n        }\n      ],\n      \"title\": \"Liên kết nhanh\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 13.792936086654663,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "TLDR Design",
+    "reportTitle": "Tổng hợp tin tức thiết kế ngày 19/03/2025",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Adobe Stock ra mắt tính năng AI mới cho phép chỉnh sửa ảnh trực tiếp, không cần Photoshop",
+            "link": "https://www.zdnet.com/article/adobes-new-ai-feature-lets-you-edit-stock-images-on-the-fly-no-photoshop-needed/?utm_source=tldrdesign",
+            "source": "ZDNet",
+            "summary": "Adobe Stock giới thiệu tính năng \"Customize\" mới, hỗ trợ bởi Adobe Firefly, cho phép người dùng chỉnh sửa ảnh trực tiếp trên nền tảng. Tính năng này giúp mở rộng hình ảnh và áp dụng các phong cách khác nhau mà không cần Photoshop, đơn giản hóa quy trình làm việc cho các nhà thiết kế, nhà tiếp thị và chủ doanh nghiệp."
+          },
+          {
+            "headline": "Roblox giới thiệu mô hình AI mới có thể tạo ra các đối tượng 3D",
+            "link": "https://www.theverge.com/news/630977/roblox-cube-3d-objects-mesh-ai-text-prompt?utm_source=tldrdesign",
+            "source": "The Verge",
+            "summary": "Roblox Cube 3D là một mô hình AI mã nguồn mở để tạo ra các đối tượng 3D. Nó mã hóa các hình dạng như mô hình văn bản để dự đoán các từ, nâng cao hiệu quả tạo 3D. Được đào tạo trên các bộ dữ liệu được cấp phép và công khai, Cube 3D cuối cùng sẽ hỗ trợ đầu vào hình ảnh và tích hợp với các công cụ AI của Roblox để tạo đa phương thức."
+          },
+          {
+            "headline": "Stability AI ra mắt mô hình AI mới biến ảnh thành cảnh 3D",
+            "link": "https://techcrunch.com/2025/03/18/stability-ais-new-ai-model-turns-photos-into-3d-scenes/?guccounter&utm_source=tldrdesign",
+            "source": "TechCrunch",
+            "summary": "Stability AI giới thiệu Stable Virtual Camera, một công cụ biến ảnh thành video động, giống 3D với các chuyển động camera tùy chỉnh. Các nhà nghiên cứu có thể truy cập nó trên Hugging Face, mặc dù nó có một số hạn chế với các cảnh phức tạp và một số kết cấu nhất định. Bất chấp những khó khăn tài chính trong quá khứ, công ty đã trở lại với lãnh đạo mới, quan hệ đối tác và đổi mới, bao gồm cả công nghệ âm thanh do AI tạo ra."
+          }
+        ],
+        "title": "Tin tức & Xu hướng"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Sự biến mất của Giám đốc UX: Liệu các UXers có đang trở thành Quản lý Sản phẩm?",
+            "link": "https://medium.com/design-bootcamp/the-disappearing-ux-director-are-uxers-becoming-product-managers-554b65968da0?utm_source=tldrdesign",
+            "source": "Medium",
+            "summary": "Sự suy giảm của vai trò Giám đốc UX bắt nguồn từ sự phát triển của Agile & Lean UX, các quyết định hướng đến kinh doanh và sự hợp nhất ngành. Nhiều chuyên gia UX đang chuyển sang quản lý sản phẩm, thích ứng với trách nhiệm rộng hơn trong một bối cảnh đang thay đổi."
+          },
+          {
+            "headline": "Figma không phải là một công cụ thiết kế - nó là một cỗ máy Rube Goldberg để tránh code",
+            "link": "https://uxdesign.cc/figmas-not-a-design-tool-it-s-a-rube-goldberg-machine-for-avoiding-code-2a24f11add5d?utm_source=tldrdesign",
+            "source": "uxdesign.cc",
+            "summary": "Nhiều nhà thiết kế dựa vào các công cụ như Figma, tạo ra các tương tác kỹ thuật số phức tạp nhưng không thực tế trong khi tránh mã. Nắm bắt kiến thức cơ bản về web và các ràng buộc kỹ thuật có thể dẫn đến các thiết kế hiệu quả và chức năng hơn."
+          },
+          {
+            "headline": "Thiết kế hướng đến người dùng có còn cần thiết kế lấy người dùng làm trung tâm?",
+            "link": "https://jakobnielsenphd.substack.com/p/user-driven-design?utm_source=tldrdesign",
+            "source": "jakobnielsenphd.substack.com",
+            "summary": "“Mã hóa rung cảm” và “thiết kế rung cảm” do AI điều khiển đang thách thức thiết kế lấy người dùng làm trung tâm truyền thống, có khả năng dân chủ hóa việc tạo phần mềm. Khi AI tăng tốc phát triển, người dùng có thể tạo các ứng dụng phù hợp, chuyển trọng tâm UX từ phòng ngừa sang sửa chữa. Các chuyên gia về khả năng sử dụng sẽ thích ứng, nhấn mạnh việc tinh chỉnh công cụ AI, thử nghiệm nhanh chóng và hướng dẫn chiến lược để điều hướng sự bùng nổ phần mềm do người dùng tạo ra này."
+          }
+        ],
+        "title": "Ý kiến & Hướng dẫn"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Perspective Toolkit (Plugin Figma)",
+            "link": "https://links.tldrnewsletter.com/8Xt9nD",
+            "source": "Figma",
+            "summary": "Skew giao diện người dùng hoặc hình ảnh không phá hủy ở chế độ xem isometric, áp dụng phối cảnh 3D đầy đủ với điều khiển FoV hoặc sử dụng vectơ bốn điểm để có tổng tính linh hoạt."
+          },
+          {
+            "headline": "Thay đổi khuôn mặt và giọng nói theo thời gian thực (Website)",
+            "link": "https://magicam.ai/?utm_source=tldrdesign",
+            "source": "magicam.ai",
+            "summary": "Hoán đổi liền mạch khuôn mặt trong các luồng trực tiếp chất lượng cao chỉ bằng một bức ảnh."
+          }
+        ],
+        "title": "Ra mắt & Công cụ"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Tám cánh tay, vô số khả năng: Thay đổi thương hiệu dựa trên bạch tuộc có khả năng tạo hình của MullenLowe biến hình và di chuyển",
+            "link": "https://the-brandidentity.com/project/eight-arms-infinite-possibilities-mullenlowes-generative-octopus-led-rebrand-morphs-and-moves?utm_source=tldrdesign",
+            "source": "the-brandidentity.com",
+            "summary": "Việc thay đổi thương hiệu của MullenLowe có một bản sắc tạo ra, lấy cảm hứng từ bạch tuộc tượng trưng cho sự sáng tạo và khả năng thích ứng. Nó nhằm mục đích luôn phát triển và nổi bật về mặt nghệ thuật với một kiểu chữ tùy chỉnh, hệ thống thiết kế động và hình ảnh đậm nét."
+          },
+          {
+            "headline": "Thiết kế Nhận diện Thương hiệu và Hình ảnh nổi bật của Ayla",
+            "link": "https://abduzeedo.com/aylas-striking-branding-and-visual-identity-design?utm_source=tldrdesign",
+            "source": "abduzeedo.com",
+            "summary": "Thương hiệu Ayla của LOTIPA kết hợp chủ nghĩa tối giản với sự hiện diện táo bạo, sử dụng màu cam rực rỡ, tông màu trung tính và màu đen đậm để tạo vẻ ngoài nổi bật nhưng trang nhã. Thiết kế trực quan và đáng nhớ phản ánh triết lý của thương hiệu là trao quyền cho những lựa chọn táo bạo."
+          },
+          {
+            "headline": "Giảm tỷ lệ thoát trang bằng thiết kế UX trực quan",
+            "link": "https://www.loop11.com/reducing-bounce-rate-with-intuitive-ux-design/?utm_source=tldrdesign",
+            "source": "loop11.com",
+            "summary": "Tỷ lệ thoát trang cao báo hiệu người dùng rời đi mà không tương tác, thường là do thiết kế UX kém. Cải thiện tốc độ trang web, điều hướng, chất lượng nội dung và khả năng phản hồi trên thiết bị di động sẽ làm giảm tỷ lệ thoát trang. Hệ thống phân cấp trực quan và thử nghiệm A/B giúp nâng cao hơn nữa trải nghiệm người dùng. Ưu tiên thiết kế trực quan giúp khách truy cập tương tác, tăng chuyển đổi và thành công tổng thể của trang web."
+          }
+        ],
+        "title": "Khác"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Bạn phải thực sự có chủ ý",
+            "link": "https://www.itsnicethat.com/articles/creative-career-conundrums-if-you-could-jobs-advice-170325?utm_source=tldrdesign",
+            "source": "itsnicethat.com",
+            "summary": "Để vượt qua những rào cản trong sự nghiệp, các nhà thiết kế nên đặt ra các mục tiêu rõ ràng, luôn chủ động với các dự án cá nhân, tham gia các cuộc thi và tìm kiếm sự cố vấn để tạo dựng động lực trong ngành."
+          },
+          {
+            "headline": "Dấu ấn của Bond cho quần đảo lớn nhất thế giới có hình dạng từ các thành tạo đảo",
+            "link": "https://www.itsnicethat.com/articles/bond-saaristo-graphic-design-project-110325?utm_source=tldrdesign",
+            "source": "itsnicethat.com",
+            "summary": "Thương hiệu điểm đến của Bond dành cho quần đảo của Phần Lan nắm bắt được bản chất của nó thông qua một dấu ấn địa hình sử dụng các hòn đảo thực tế."
+          },
+          {
+            "headline": "Breadcrumbs đã chết trong thiết kế web",
+            "link": "https://webdesignerdepot.com/breadcrumbs-are-dead-in-web-design/?utm_source=tldrdesign",
+            "source": "webdesignerdepot.com",
+            "summary": "Từng là một công cụ hữu ích để điều hướng các trang web phân cấp, breadcrumbs đã trở nên ít phù hợp hơn trong trải nghiệm web hiện đại, năng động."
+          }
+        ],
+        "title": "Liên kết nhanh"
+      }
+    ]
+  }
+}

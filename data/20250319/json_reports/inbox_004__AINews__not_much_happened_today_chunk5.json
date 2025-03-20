@@ -1,0 +1,282 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash-lite",
+  "text": "{\n  \"from\": \"Báo cáo tổng hợp tin tức\",\n  \"reportTitle\": \"Tổng hợp Tin tức về Trí tuệ Nhân tạo (AI) và Học máy (ML) - Tuần [Đang cập nhật]\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"AgentSpace tích hợp với NotebookLM\",\n          \"link\": \"https://cloud.google.com/products/agentspace?hl=en\",\n          \"source\": \"Google Agentspace\",\n          \"summary\": \"Thành viên gợi ý AgentSpace có thể là giải pháp tích hợp NotebookLM vào portal/CRM nội bộ với video và bài viết cơ sở tri thức, liên kết đến Google Agentspace. AgentSpace tích hợp với NotebookLM và hỗ trợ nhiều nguồn dữ liệu, mặc dù NotebookLM hiện không có API và kết nối trực tiếp đến những nguồn này.\"\n        }\n      ],\n      \"title\": \"Google Agentspace\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Tìm Kiếm Bộ Đếm Hiệu Năng GPU!\",\n          \"link\": \"https://discord.com/channels/1189498204333543425\",\n          \"source\": \"Discord GPU MODE\",\n          \"summary\": \"Một giáo sư đang tìm kiếm các nhà cung cấp cloud giá phải chăng cung cấp bộ đếm hiệu năng GPU để chạy Nsight Compute cho việc triển khai sm90 kernels vì Modal và Vast.ai không cung cấp quyền truy cập. Nebius.ai được đề xuất vì các bộ đếm hiệu năng GPU giá rẻ, Datacrunch cung cấp các khoản tín dụng tiềm năng cho sinh viên.\"\n        },\n        {\n          \"headline\": \"Triton-windows Xuất Hiện Trên PyPI\",\n          \"link\": \"https://discord.com/channels/1189498204333543425\",\n          \"source\": \"Discord GPU MODE\",\n          \"summary\": \"Gói triton-windows hiện đã có trên PyPI, cho phép người dùng cài đặt hoặc nâng cấp bằng pip install -U triton-windows mà không cần tải xuống wheel từ GitHub.\"\n        },\n        {\n          \"headline\": \"CUDA Streams Trở Nên Kỳ Lạ\",\n          \"link\": \"https://discord.com/channels/1189498204333543425\",\n          \"source\": \"Discord GPU MODE\",\n          \"summary\": \"Một thành viên báo cáo các sự cố với CUDA streams, ghi nhận rằng hai kernels đôi khi không chạy đồng thời trên A800, ngay cả khi bộ nhớ chia sẻ có sẵn. Cụ thể, các kích thước lưới như (100,60) và (90,70) thực thi tuần tự, bất chấp bộ nhớ chia sẻ dồi dào, đặt ra câu hỏi về tính đồng thời.\"\n        },\n        {\n          \"headline\": \"Norm Layers Rời Đi, Tanh Tham Gia!\",\n          \"link\": \"https://discord.com/channels/1189498204333543425\",\n          \"source\": \"Discord GPU MODE\",\n          \"summary\": \"Một thành viên đề xuất bỏ LayerNorm cho tanh() trong Transformers để tăng tốc độ, lưu ý rằng LayerNorm cần làm giảm bằng cách sử dụng smem. Mặc dù tanh() tự nó yêu cầu exp và phép chia, phần cứng Nvidia cung cấp tanh.approx kể từ Turing/sm_75, tự hào có thông lượng 16/cycle/SM.\"\n        },\n        {\n          \"headline\": \"AI Agents Xuất Hiện Tại GTC\",\n          \"link\": \"https://lu.ma/meofrw3d\",\n          \"source\": \"Discord GPU MODE\",\n          \"summary\": \"Vertex Ventures US và CreatorsCorner đang tổ chức một AI Agents Hackathon tại NVIDIA GTC 2025, nơi người tham gia sẽ xây dựng các AI agents đa phương thức. Hackathon sẽ trao giải thưởng $50k+ cho các agents thể hiện khả năng suy luận và tương tác công cụ tinh vi.\"\n        }\n      ],\n      \"title\": \"Discord GPU MODE\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"EleutherAI Tuyển Dụng Chuyên Gia NLP Đa Ngôn Ngữ\",\n          \"link\": \"https://arxiv.org/abs/2408.10441\",\n          \"source\": \"Discord Eleuther\",\n          \"summary\": \"EleutherAI chào đón Catherine Arnett, một nhà nghiên cứu NLP chuyên về khoa học xã hội tính toán, tập trung vào NLP đa ngôn ngữ và đa ngữ, với nghiên cứu bao gồm xác định các thiên kiến tập trung vào tiếng Anh trong NLP và cải thiện các công nghệ ngôn ngữ cho các ngôn ngữ không phải tiếng Anh.\"\n        },\n        {\n          \"headline\": \"Block Diffusion Làm Mờ Ranh Giới Autoregressive-Diffusion\",\n          \"link\": \"https://arxiv.org/abs/2503.09573\",\n          \"source\": \"Discord Eleuther\",\n          \"summary\": \"Một bài báo mới giới thiệu Block Diffusion, kết hợp các mô hình autoregressive và diffusion để mô hình hóa ngôn ngữ, đạt được chất lượng cao, tạo ra độ dài tùy ý, bộ nhớ cache KV và khả năng song song hóa. Mã và bộ sưu tập Hugging Face liên quan cũng có sẵn.\"\n        },\n        {\n          \"headline\": \"Cộng Đồng Xây Dựng Giải Pháp Mã Hóa SMILES\",\n          \"link\": \"https://discord.com/channels/729741769192767510\",\n          \"source\": \"Discord Eleuther\",\n          \"summary\": \"Một thành viên hỏi về các mô hình hoặc kiến trúc hiện có có thể mã hóa một chuỗi SMILES thành các đồng phân lập thể khác nhau hoặc một đầu vào ChemDraw, nhằm mục đích chọn các mô tả hóa học. Họ cũng tìm kiếm các khuyến nghị cho các nền tảng GPU miễn phí ngoài notebooks, phù hợp với phát triển C++.\"\n        },\n        {\n          \"headline\": \"Hệ Thống Tìm Thấy Lỗi Phân Chia Fewshot\",\n          \"link\": \"https://discord.com/channels/729741769192767510\",\n          \"source\": \"Discord Eleuther\",\n          \"summary\": \"Khi một phân chia fewshot không được chỉ định, hệ thống sẽ quay lại theo thứ tự train > val > test để đánh giá. Cụ thể, hệ thống cố gắng sử dụng phân chia đào tạo, sau đó xác thực nếu có, và cuối cùng là phân chia kiểm tra.\"\n        },\n        {\n          \"headline\": \"Cuộc Thảo Luận Cung Cấp Chuyển Đổi Gen_kwargs\",\n          \"link\": \"https://discord.com/channels/729741769192767510\",\n          \"source\": \"Discord Eleuther\",\n          \"summary\": \"Cuộc thảo luận về việc thay đổi --gen_kwargs từ chuỗi được phân tách bằng dấu phẩy thành JSON để xử lý tốt hơn các giá trị tùy ý, ví dụ: chuyển đổi 'temperature=0,top_p=0.1' thành '{\\\"temperature\\\":0, \\\"stop\\\":[\\\"abc\\\"]}'. Mặc dù JSON cung cấp tính linh hoạt hơn, những lo ngại được đưa ra về sự phức tạp của việc chuyển JSON từ terminal để thay đổi các giá trị vô hướng đơn giản; một thỏa hiệp đã đạt được để cho phép chuyển JSON cho các đối số mô hình.\"\n        }\n      ],\n      \"title\": \"Discord Eleuther\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Tinygrad Thử Nghiệm Torch trên SDXL\",\n          \"link\": \"https://discord.com/channels/1068976834382925865\",\n          \"source\": \"Discord tinygrad (George Hotz)\",\n          \"summary\": \"Benchmark SDXL của Tinygrad trên 7900 XTX với BEAM=2 đạt 1.4 it/s, trong khi Torch với FlashAttention và TunableOp ROCm đạt 5.7 it/s, cho thấy khoảng cách hiệu năng đáng kể. George Hotz đề xuất so sánh các kernels để xác định các tối ưu hóa của Torch, đặt mục tiêu đầy tham vọng để vượt qua hiệu năng của Torch vào cuối năm nay.\"\n        },\n        {\n          \"headline\": \"Tiến Độ Thưởng Tốc Độ Tensor Cat Chậm\",\n          \"link\": \"https://x.com/t0kenl1mit/status/1900952693587538018\",\n          \"source\": \"Discord tinygrad (George Hotz)\",\n          \"summary\": \"Một thành viên chia sẻ các ghi chú bảng trắng của họ về phần thưởng Tensor Cat, đề cập rằng các thay đổi devectorizer đã cải thiện tốc độ add hoặc compare, nhưng hiệu năng vẫn tụt lại so với PyTorch. Họ hiện đang đánh giá việc liên kết mã C tùy chỉnh để tăng cường hơn nữa tốc độ, tin rằng cách tiếp cận này sẽ mở đường cho việc giải quyết các phần thưởng liên quan đến tốc độ khác.\"\n        },\n        {\n          \"headline\": \"Trạng Thái Thưởng BLAKE3 Trong Tình Trạng Lấp Lửng\",\n          \"link\": \"https://github.com/tinygrad/tinygrad/pull/7773\",\n          \"source\": \"Discord tinygrad (George Hotz)\",\n          \"summary\": \"Các câu hỏi nảy sinh liên quan đến trạng thái của phần thưởng \\\"BLAKE3 song song hiệu năng cao trong tinygrad\\\", với một thành viên nhận thấy thẻ bounty locked đã bị xóa trong PR. Mặc dù bảng tính đã được cập nhật, các mục tiêu thông lượng cụ thể cho BLAKE3 trên phần cứng đích vẫn cần được làm rõ.\"\n        },\n        {\n          \"headline\": \"Hướng Dẫn Demo WebGPU\",\n          \"link\": \"https://github.com/tinygrad/tinygrad/pull/9424\",\n          \"source\": \"Discord tinygrad (George Hotz)\",\n          \"summary\": \"Một thành viên hỏi về việc xuất bản trình phân loại electron/photon của họ dựa trên resnet18 bằng cách sử dụng Tinygrad làm ví dụ. Phương pháp được đề xuất bao gồm việc tạo một bản demo WebGPU, lưu trữ mã trên GitHub Pages, trọng số trên Hugging Face và tham chiếu PR xuất WebGPU refactor làm hướng dẫn.\"\n        },\n        {\n          \"headline\": \"Nghị trình Tinygrad Meeting #62 Được Tiết Lộ\",\n          \"link\": \"https://discord.com/channels/1068976834382925865\",\n          \"source\": \"Discord tinygrad (George Hotz)\",\n          \"summary\": \"Cuộc họp #62 sẽ có các cuộc thảo luận về nhiều chủ đề, bao gồm cập nhật công ty, MI300X, Intel GPU, quantized mobile net, BERT, scheduler và hơn thế nữa. Các chủ đề khác trong chương trình nghị sự bao gồm GPU trên USB, driver, tensor core, ONNX, bitonic sort, JIT MOE, WebGPU, Torch frontend, RetinaNet và AMD comgr -> llvm.\"\n        }\n      ],\n      \"title\": \"Discord tinygrad (George Hotz)\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Điều Phối RAG Khắc Phục với LlamaIndex\",\n          \"link\": \"https://twitter.com/llama_index/status/1901079091345818022\",\n          \"source\": \"Discord LlamaIndex\",\n          \"summary\": \"Akshay Pachaar chia sẻ một hướng dẫn về cách xây dựng một hệ thống tư duy có tính chất agentic từ đầu, tận dụng các quy trình LlamaIndex cho RAG khắc phục. Hướng dẫn chi tiết cách điều phối các agents theo hướng sự kiện phức tạp, có thể tùy chỉnh để cải thiện các quy trình tìm kiếm và truy xuất bằng cách sử dụng phương pháp này.\"\n        },\n        {\n          \"headline\": \"LlamaExtract Ra Mắt Công Khai\",\n          \"link\": \"https://twitter.com/llama_index/status/1901692607144861744\",\n          \"source\": \"Discord LlamaIndex\",\n          \"summary\": \"LlamaExtract, một giao diện người dùng web và API được thiết kế để trích xuất dữ liệu có cấu trúc từ các tài liệu dựa trên một lược đồ được xác định, hiện đang ở phiên bản beta công khai. Công cụ này có thể truy cập thông qua cloud tại cloud.llamaindex.ai và yêu cầu khóa API, nhưng hiện tại không khả dụng để thực thi cục bộ.\"\n        },\n        {\n          \"headline\": \"Hackathon AI Agents Hứa Hẹn Giải Thưởng\",\n          \"link\": \"https://discord.com/channels/1059199217496772688\",\n          \"source\": \"Discord LlamaIndex\",\n          \"summary\": \"Vertex Ventures US và CreatorsCorner đang tổ chức một AI hackathon tại NVIDIA GTC 2025, mời những người tham gia xây dựng các AI agents tiên tiến với hơn $50k giải thưởng. Những người tham gia được giao nhiệm vụ phát triển một AI agent đa phương thức có khả năng suy luận tinh vi, ra quyết định chiến lược và tương tác công cụ, trình bày các giải pháp của họ trong một bài thuyết trình 3 phút.\"\n        },\n        {\n          \"headline\": \"Agents Liên Tiếp Thích Quy Trình Công Việc\",\n          \"link\": \"https://docs.llamaindex.ai/en/stable/examples/llm/anthropic/#toolfunction-calling\",\n          \"source\": \"Discord LlamaIndex\",\n          \"summary\": \"Người dùng trên Discord khuyến nghị tận dụng LlamaIndex Workflows hơn là gọi công cụ thủ công để xây dựng các agents liên tiếp, với một người dùng cung cấp một ví dụ Anthropic. Cuộc thảo luận xoay quanh việc duy trì quyền kiểm soát việc sử dụng công cụ mà không bị ràng buộc với nhà cung cấp LLM cụ thể như Claude.\"\n        },\n        {\n          \"headline\": \"Ra Mắt Trung Tâm Nghiên Cứu Mô Hình Ngôn Ngữ-Thị Giác\",\n          \"link\": \"https://github.com/thubZ09/vision-language-model-hub.git\",\n          \"source\": \"Discord LlamaIndex\",\n          \"summary\": \"Một hub do cộng đồng điều khiển dành riêng cho nghiên cứu Mô hình Ngôn ngữ-Thị giác (VLMs) đã ra mắt và có sẵn tại đây, nhằm thúc đẩy sự hợp tác giữa các nhà nghiên cứu trong học tập đa mô thức. Người tạo hub đang tích cực tìm kiếm các đóng góp, đề xuất và phản hồi để nâng cao tài nguyên, với các bản cập nhật hàng tuần được lên kế hoạch.\"\n        }\n      ],\n      \"title\": \"Discord LlamaIndex\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"GPT4All Chờ Đợi Gemma 3\",\n          \"link\": \"https://github.com/nomic-ai/gpt4all/issues/3540\",\n          \"source\": \"Discord Nomic.ai (GPT4All)\",\n          \"summary\": \"Các thành viên háo hức chờ đợi việc bổ sung Gemma 3 và Nomic Embed Text V2 vào GPT4All, tùy thuộc vào bản cập nhật sắp tới cho GPT4All. Vấn đề #3540 theo dõi điều này trên Github, lưu ý rằng Llama.cpp cần được cập nhật để hỗ trợ Gemma 3 và Phi-4.\"\n        },\n        {\n          \"headline\": \"Sự Cố Thu Thập LocalDocs Gây Lo Ngại\",\n          \"link\": \"https://discord.com/channels/1076964370942267462\",\n          \"source\": \"Discord Nomic.ai (GPT4All)\",\n          \"summary\": \"Người dùng báo cáo rằng bộ sưu tập LocalDoc của họ bị trống sau sự cố và đang yêu cầu hỗ trợ về cách khôi phục. Một thành viên đề xuất lưu tệp localdocs mới nhất và sao chép nó trở lại sau khi gặp sự cố, vì đôi khi chỉ một PDF xấu có thể làm sập hệ thống.\"\n        },\n        {\n          \"headline\": \"Giới Hạn Cấp Phép Mô Hình Sắp Xảy Ra\",\n          \"link\": \"https://discord.com/channels/1076964370942267462\",\n          \"source\": \"Discord Nomic.ai (GPT4All)\",\n          \"summary\": \"Các thành viên tranh luận về các vấn đề liên quan đến các thỏa thuận cấp phép mô hình trên Hugging Face, tập trung vào Gemma 3. Một câu hỏi quan trọng là liệu Google sẽ nhắm mục tiêu tái phân tích lại các thỏa thuận cấp phép của họ hay không.\"\n        },\n        {\n          \"headline\": \"OneNote Notebook Điều Hướng Nomic\",\n          \"link\": \"https://discord.com/channels/1076964370942267462\",\n          \"source\": \"Discord Nomic.ai (GPT4All)\",\n          \"summary\": \"Một người dùng hỏi về việc kết hợp nội dung OneNote vào các tài liệu cục bộ, tìm kiếm lời khuyên về chiến lược tối ưu. Người ta đề nghị rằng việc xuất nội dung OneNote sang định dạng dựa trên văn bản sẽ tạo điều kiện tích hợp dễ dàng.\"\n        },\n        {\n          \"headline\": \"Giả Thuyết Nước Lạnh Làm Vỡ Container Đóng\",\n          \"link\": \"https://discord.com/channels/1076964370942267462\",\n          \"source\": \"Discord Nomic.ai (GPT4All)\",\n          \"summary\": \"Các thành viên khám phá một kịch bản giả định về việc để một lọ nước đóng kín bên ngoài qua đêm ở nhiệt độ dưới mức đóng băng. Các mô hình đã đồng ý gần như nhất trí rằng lọ sẽ vỡ do nước giãn nở khi đóng băng.\"\n        }\n      ],\n      \"title\": \"Discord Nomic.ai (GPT4All)\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Thời gian biểu Tinh chỉnh Command-A TBD\",\n          \"link\": \"https://discord.com/channels/954421988141711382\",\n          \"source\": \"Discord Cohere\",\n          \"summary\": \"Một thành viên hỏi về thời gian biểu để cho phép tinh chỉnh Command A trên nền tảng Cohere, thành viên nhóm Cohere cho biết là chưa có kế hoạch nào. Họ cũng hỏi về các trường hợp sử dụng (thương mại so với nghiên cứu).\"\n        },\n        {\n          \"headline\": \"Azure Cohere Rerank v3 Terraform Gặp Sự Cố\",\n          \"link\": \"https://discord.com/channels/954421988141711382\",\n          \"source\": \"Discord Cohere\",\n          \"summary\": \"Thành viên gặp lỗi 400 Bad Request khi cố gắng tạo Azure Cohere Rerank v3 bằng Terraform vì các vấn đề về giải tuần tự hóa. Họ được chuyển hướng đến một kênh hỗ trợ để được hỗ trợ chuyên dụng.\"\n        },\n        {\n          \"headline\": \"Command-A Đối Mặt Sự Cố Vercel SDK\",\n          \"link\": \"https://docs.cohere.com/versioning-reference\",\n          \"source\": \"Discord Cohere\",\n          \"summary\": \"Một người dùng báo cáo các vấn đề với Command A sử dụng việc tạo đối tượng với Vercel SDK, vì thông tin mô hình không chính xác hiển thị việc tạo đối tượng không được hỗ trợ. Cảnh báo đề xuất đặt phiên bản API và trỏ đến tham chiếu về phiên bản Cohere.\"\n        },\n        {\n          \"headline\": \"Kênh Mới Đề Xuất Cho Triển Khai CMD A\",\n          \"link\": \"https://discord.com/channels/954421988141711382\",\n          \"source\": \"Discord Cohere\",\n          \"summary\": \"Một thành viên đề xuất tạo một kênh để thảo luận về các triển khai riêng của các mô hình như CMD A, đặc biệt là xung quanh các triển khai của khách hàng. Một thành viên nhóm Cohere đã được yêu cầu thiết lập kênh.\"\n        }\n      ],\n      \"title\": \"Discord Cohere\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Thiết Kế Tích Hợp MCP Tranh Luận\",\n          \"link\": \"https://github.com/philschmid/mcp-openai-gemini-llama-example/blob/master/sqlite_llama_mcp_agent.py\",\n          \"source\": \"Discord DSPy\",\n          \"summary\": \"Việc tích hợp tiềm năng của MCP với DSPy liên quan đến một host MCP (chương trình DSPy), client MCP và server MCP, cung cấp một implementation tham chiếu để lấy cảm hứng. Một số thành viên đã bày tỏ lo ngại rằng thiết kế có thể làm mọi thứ trở nên quá phức tạp.\"\n        },\n        {\n          \"headline\": \"Các Khẳng Định Bị Rời Bỏ, Sự Tinh Chế Xuất Hiện\",\n          \"link\": \"https://dspy.ai/tutorials/output_refinement/best-of-n-and-refine/\",\n          \"source\": \"Discord DSPy\",\n          \"summary\": \"Tài liệu assertions/suggestions không có sẵn và dspy.Suggest không còn là một phần của DSPy, với các thành viên yêu cầu làm rõ về việc thay thế nó. Các assertions chỉ tồn tại cho đến v2.5, với Output Refinement (BestOfN và Refine) là giải pháp trong v2.6+.\"\n        },\n        {\n          \"headline\": \"QdrantRM Tạm Ngừng Hoạt Động?\",\n          \"link\": \"https://discord.com/channels/1161519468141355160\",\n          \"source\": \"Discord DSPy\",\n          \"summary\": \"Một thành viên hỏi liệu QdrantRM (Qdrant Retrieval Model?) đã bị xóa trong v2.6. Không có phản hồi nào được đưa ra cho câu hỏi này.\"\n        }\n      ],\n      \"title\": \"Discord DSPy\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Xiong Tiết Lộ Agents Đa Phương Thức\",\n          \"link\": \"https://www.youtube.com/live/n__Tim8K2IY\",\n          \"source\": \"Discord LLM Agents (Berkeley MOOC)\",\n          \"summary\": \"Caiming Xiong, Phó Chủ tịch cấp cao về Nghiên cứu AI tại Salesforce, đã trình bày một bài giảng về agents đa phương thức, bao gồm tích hợp nhận thức, nền tảng, lý luận và hành động trên các phương thức, nhấn mạnh các môi trường thực tế (OSWorld) và tập dữ liệu quy mô lớn (AgentTrek). Cuộc thảo luận bao gồm các kiến trúc mô hình hóa tiên tiến (Aguvis, Magma) và chuỗi suy nghĩ-và-hành động tổng hợp (TACO) để liên kết thị giác-ngôn ngữ-hành động.\"\n        },\n        {\n          \"headline\": \"Việc Đăng Ký Vẫn Mở cho Khóa Học Agents LLM Nâng Cao\",\n          \"link\": \"https://discord.com/channels/1280234300012494859\",\n          \"source\": \"Discord LLM Agents (Berkeley MOOC)\",\n          \"summary\": \"Nhiều người dùng hỏi về việc đăng ký khóa học Agents LLM Nâng cao và một thành viên xác nhận rằng việc đăng ký vẫn đang mở. Ngoài ra, một thành viên đã làm rõ rằng sinh viên vẫn có thể đăng ký vào MOOC và kiếm chứng chỉ vào cuối khóa.\"\n        },\n        {\n          \"headline\": \"LLMs Tự Cải Thiện Thông Qua Tự Phản Tư\",\n          \"link\": \"https://discord.com/channels/1280234300012494859\",\n          \"source\": \"Discord LLM Agents (Berkeley MOOC)\",\n          \"summary\": \"Một thành viên yêu cầu làm rõ về việc tự phản tư và tự tinh chỉnh chỉ hoạt động với đánh giá bên ngoài không, lưu ý các phát biểu mâu thuẫn giữa Bài giảng 1 và 2, cụ thể là tự phản tư và tự tinh chỉnh chỉ hoạt động với đánh giá bên ngoài, khi Bài giảng 2 tuyên bố LLMs tự cải thiện bằng cách gán phần thưởng cho đầu ra của riêng chúng và tối ưu hóa. Slide 67 của Bài giảng 1 mâu thuẫn với Slide 51 của Bài giảng 2.\"\n        },\n        {\n          \"headline\": \"LLMs Được Đào Tạo về Các Cuộc Hội Thoại Chung\",\n          \"link\": \"https://discord.com/channels/1280234300012494859\",\n          \"source\": \"Discord LLM Agents (Berkeley MOOC)\",\n          \"summary\": \"LLMs có khả năng được đào tạo trên các cuộc trò chuyện chung và các nhà cung cấp dịch vụ đã xây dựng dịch vụ và SDK của họ để tuân theo các mẫu như vậy, đóng khung các lời nhắc dưới dạng một cuộc trò chuyện giữa hệ thống và người dùng.\"\n        }\n      ],\n      \"title\": \"Discord LLM Agents (Berkeley MOOC)\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 48.99812602996826,
+  "attempts": 1,
+  "api_key_index": 1,
+  "structured_data": {
+    "from": "Báo cáo tổng hợp tin tức",
+    "reportTitle": "Tổng hợp Tin tức về Trí tuệ Nhân tạo (AI) và Học máy (ML) - Tuần [Đang cập nhật]",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "AgentSpace tích hợp với NotebookLM",
+            "link": "https://cloud.google.com/products/agentspace?hl=en",
+            "source": "Google Agentspace",
+            "summary": "Thành viên gợi ý AgentSpace có thể là giải pháp tích hợp NotebookLM vào portal/CRM nội bộ với video và bài viết cơ sở tri thức, liên kết đến Google Agentspace. AgentSpace tích hợp với NotebookLM và hỗ trợ nhiều nguồn dữ liệu, mặc dù NotebookLM hiện không có API và kết nối trực tiếp đến những nguồn này."
+          }
+        ],
+        "title": "Google Agentspace"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Tìm Kiếm Bộ Đếm Hiệu Năng GPU!",
+            "link": "https://discord.com/channels/1189498204333543425",
+            "source": "Discord GPU MODE",
+            "summary": "Một giáo sư đang tìm kiếm các nhà cung cấp cloud giá phải chăng cung cấp bộ đếm hiệu năng GPU để chạy Nsight Compute cho việc triển khai sm90 kernels vì Modal và Vast.ai không cung cấp quyền truy cập. Nebius.ai được đề xuất vì các bộ đếm hiệu năng GPU giá rẻ, Datacrunch cung cấp các khoản tín dụng tiềm năng cho sinh viên."
+          },
+          {
+            "headline": "Triton-windows Xuất Hiện Trên PyPI",
+            "link": "https://discord.com/channels/1189498204333543425",
+            "source": "Discord GPU MODE",
+            "summary": "Gói triton-windows hiện đã có trên PyPI, cho phép người dùng cài đặt hoặc nâng cấp bằng pip install -U triton-windows mà không cần tải xuống wheel từ GitHub."
+          },
+          {
+            "headline": "CUDA Streams Trở Nên Kỳ Lạ",
+            "link": "https://discord.com/channels/1189498204333543425",
+            "source": "Discord GPU MODE",
+            "summary": "Một thành viên báo cáo các sự cố với CUDA streams, ghi nhận rằng hai kernels đôi khi không chạy đồng thời trên A800, ngay cả khi bộ nhớ chia sẻ có sẵn. Cụ thể, các kích thước lưới như (100,60) và (90,70) thực thi tuần tự, bất chấp bộ nhớ chia sẻ dồi dào, đặt ra câu hỏi về tính đồng thời."
+          },
+          {
+            "headline": "Norm Layers Rời Đi, Tanh Tham Gia!",
+            "link": "https://discord.com/channels/1189498204333543425",
+            "source": "Discord GPU MODE",
+            "summary": "Một thành viên đề xuất bỏ LayerNorm cho tanh() trong Transformers để tăng tốc độ, lưu ý rằng LayerNorm cần làm giảm bằng cách sử dụng smem. Mặc dù tanh() tự nó yêu cầu exp và phép chia, phần cứng Nvidia cung cấp tanh.approx kể từ Turing/sm_75, tự hào có thông lượng 16/cycle/SM."
+          },
+          {
+            "headline": "AI Agents Xuất Hiện Tại GTC",
+            "link": "https://lu.ma/meofrw3d",
+            "source": "Discord GPU MODE",
+            "summary": "Vertex Ventures US và CreatorsCorner đang tổ chức một AI Agents Hackathon tại NVIDIA GTC 2025, nơi người tham gia sẽ xây dựng các AI agents đa phương thức. Hackathon sẽ trao giải thưởng $50k+ cho các agents thể hiện khả năng suy luận và tương tác công cụ tinh vi."
+          }
+        ],
+        "title": "Discord GPU MODE"
+      },
+      {
+        "articles": [
+          {
+            "headline": "EleutherAI Tuyển Dụng Chuyên Gia NLP Đa Ngôn Ngữ",
+            "link": "https://arxiv.org/abs/2408.10441",
+            "source": "Discord Eleuther",
+            "summary": "EleutherAI chào đón Catherine Arnett, một nhà nghiên cứu NLP chuyên về khoa học xã hội tính toán, tập trung vào NLP đa ngôn ngữ và đa ngữ, với nghiên cứu bao gồm xác định các thiên kiến tập trung vào tiếng Anh trong NLP và cải thiện các công nghệ ngôn ngữ cho các ngôn ngữ không phải tiếng Anh."
+          },
+          {
+            "headline": "Block Diffusion Làm Mờ Ranh Giới Autoregressive-Diffusion",
+            "link": "https://arxiv.org/abs/2503.09573",
+            "source": "Discord Eleuther",
+            "summary": "Một bài báo mới giới thiệu Block Diffusion, kết hợp các mô hình autoregressive và diffusion để mô hình hóa ngôn ngữ, đạt được chất lượng cao, tạo ra độ dài tùy ý, bộ nhớ cache KV và khả năng song song hóa. Mã và bộ sưu tập Hugging Face liên quan cũng có sẵn."
+          },
+          {
+            "headline": "Cộng Đồng Xây Dựng Giải Pháp Mã Hóa SMILES",
+            "link": "https://discord.com/channels/729741769192767510",
+            "source": "Discord Eleuther",
+            "summary": "Một thành viên hỏi về các mô hình hoặc kiến trúc hiện có có thể mã hóa một chuỗi SMILES thành các đồng phân lập thể khác nhau hoặc một đầu vào ChemDraw, nhằm mục đích chọn các mô tả hóa học. Họ cũng tìm kiếm các khuyến nghị cho các nền tảng GPU miễn phí ngoài notebooks, phù hợp với phát triển C++."
+          },
+          {
+            "headline": "Hệ Thống Tìm Thấy Lỗi Phân Chia Fewshot",
+            "link": "https://discord.com/channels/729741769192767510",
+            "source": "Discord Eleuther",
+            "summary": "Khi một phân chia fewshot không được chỉ định, hệ thống sẽ quay lại theo thứ tự train > val > test để đánh giá. Cụ thể, hệ thống cố gắng sử dụng phân chia đào tạo, sau đó xác thực nếu có, và cuối cùng là phân chia kiểm tra."
+          },
+          {
+            "headline": "Cuộc Thảo Luận Cung Cấp Chuyển Đổi Gen_kwargs",
+            "link": "https://discord.com/channels/729741769192767510",
+            "source": "Discord Eleuther",
+            "summary": "Cuộc thảo luận về việc thay đổi --gen_kwargs từ chuỗi được phân tách bằng dấu phẩy thành JSON để xử lý tốt hơn các giá trị tùy ý, ví dụ: chuyển đổi 'temperature=0,top_p=0.1' thành '{\"temperature\":0, \"stop\":[\"abc\"]}'. Mặc dù JSON cung cấp tính linh hoạt hơn, những lo ngại được đưa ra về sự phức tạp của việc chuyển JSON từ terminal để thay đổi các giá trị vô hướng đơn giản; một thỏa hiệp đã đạt được để cho phép chuyển JSON cho các đối số mô hình."
+          }
+        ],
+        "title": "Discord Eleuther"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Tinygrad Thử Nghiệm Torch trên SDXL",
+            "link": "https://discord.com/channels/1068976834382925865",
+            "source": "Discord tinygrad (George Hotz)",
+            "summary": "Benchmark SDXL của Tinygrad trên 7900 XTX với BEAM=2 đạt 1.4 it/s, trong khi Torch với FlashAttention và TunableOp ROCm đạt 5.7 it/s, cho thấy khoảng cách hiệu năng đáng kể. George Hotz đề xuất so sánh các kernels để xác định các tối ưu hóa của Torch, đặt mục tiêu đầy tham vọng để vượt qua hiệu năng của Torch vào cuối năm nay."
+          },
+          {
+            "headline": "Tiến Độ Thưởng Tốc Độ Tensor Cat Chậm",
+            "link": "https://x.com/t0kenl1mit/status/1900952693587538018",
+            "source": "Discord tinygrad (George Hotz)",
+            "summary": "Một thành viên chia sẻ các ghi chú bảng trắng của họ về phần thưởng Tensor Cat, đề cập rằng các thay đổi devectorizer đã cải thiện tốc độ add hoặc compare, nhưng hiệu năng vẫn tụt lại so với PyTorch. Họ hiện đang đánh giá việc liên kết mã C tùy chỉnh để tăng cường hơn nữa tốc độ, tin rằng cách tiếp cận này sẽ mở đường cho việc giải quyết các phần thưởng liên quan đến tốc độ khác."
+          },
+          {
+            "headline": "Trạng Thái Thưởng BLAKE3 Trong Tình Trạng Lấp Lửng",
+            "link": "https://github.com/tinygrad/tinygrad/pull/7773",
+            "source": "Discord tinygrad (George Hotz)",
+            "summary": "Các câu hỏi nảy sinh liên quan đến trạng thái của phần thưởng \"BLAKE3 song song hiệu năng cao trong tinygrad\", với một thành viên nhận thấy thẻ bounty locked đã bị xóa trong PR. Mặc dù bảng tính đã được cập nhật, các mục tiêu thông lượng cụ thể cho BLAKE3 trên phần cứng đích vẫn cần được làm rõ."
+          },
+          {
+            "headline": "Hướng Dẫn Demo WebGPU",
+            "link": "https://github.com/tinygrad/tinygrad/pull/9424",
+            "source": "Discord tinygrad (George Hotz)",
+            "summary": "Một thành viên hỏi về việc xuất bản trình phân loại electron/photon của họ dựa trên resnet18 bằng cách sử dụng Tinygrad làm ví dụ. Phương pháp được đề xuất bao gồm việc tạo một bản demo WebGPU, lưu trữ mã trên GitHub Pages, trọng số trên Hugging Face và tham chiếu PR xuất WebGPU refactor làm hướng dẫn."
+          },
+          {
+            "headline": "Nghị trình Tinygrad Meeting #62 Được Tiết Lộ",
+            "link": "https://discord.com/channels/1068976834382925865",
+            "source": "Discord tinygrad (George Hotz)",
+            "summary": "Cuộc họp #62 sẽ có các cuộc thảo luận về nhiều chủ đề, bao gồm cập nhật công ty, MI300X, Intel GPU, quantized mobile net, BERT, scheduler và hơn thế nữa. Các chủ đề khác trong chương trình nghị sự bao gồm GPU trên USB, driver, tensor core, ONNX, bitonic sort, JIT MOE, WebGPU, Torch frontend, RetinaNet và AMD comgr -> llvm."
+          }
+        ],
+        "title": "Discord tinygrad (George Hotz)"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Điều Phối RAG Khắc Phục với LlamaIndex",
+            "link": "https://twitter.com/llama_index/status/1901079091345818022",
+            "source": "Discord LlamaIndex",
+            "summary": "Akshay Pachaar chia sẻ một hướng dẫn về cách xây dựng một hệ thống tư duy có tính chất agentic từ đầu, tận dụng các quy trình LlamaIndex cho RAG khắc phục. Hướng dẫn chi tiết cách điều phối các agents theo hướng sự kiện phức tạp, có thể tùy chỉnh để cải thiện các quy trình tìm kiếm và truy xuất bằng cách sử dụng phương pháp này."
+          },
+          {
+            "headline": "LlamaExtract Ra Mắt Công Khai",
+            "link": "https://twitter.com/llama_index/status/1901692607144861744",
+            "source": "Discord LlamaIndex",
+            "summary": "LlamaExtract, một giao diện người dùng web và API được thiết kế để trích xuất dữ liệu có cấu trúc từ các tài liệu dựa trên một lược đồ được xác định, hiện đang ở phiên bản beta công khai. Công cụ này có thể truy cập thông qua cloud tại cloud.llamaindex.ai và yêu cầu khóa API, nhưng hiện tại không khả dụng để thực thi cục bộ."
+          },
+          {
+            "headline": "Hackathon AI Agents Hứa Hẹn Giải Thưởng",
+            "link": "https://discord.com/channels/1059199217496772688",
+            "source": "Discord LlamaIndex",
+            "summary": "Vertex Ventures US và CreatorsCorner đang tổ chức một AI hackathon tại NVIDIA GTC 2025, mời những người tham gia xây dựng các AI agents tiên tiến với hơn $50k giải thưởng. Những người tham gia được giao nhiệm vụ phát triển một AI agent đa phương thức có khả năng suy luận tinh vi, ra quyết định chiến lược và tương tác công cụ, trình bày các giải pháp của họ trong một bài thuyết trình 3 phút."
+          },
+          {
+            "headline": "Agents Liên Tiếp Thích Quy Trình Công Việc",
+            "link": "https://docs.llamaindex.ai/en/stable/examples/llm/anthropic/#toolfunction-calling",
+            "source": "Discord LlamaIndex",
+            "summary": "Người dùng trên Discord khuyến nghị tận dụng LlamaIndex Workflows hơn là gọi công cụ thủ công để xây dựng các agents liên tiếp, với một người dùng cung cấp một ví dụ Anthropic. Cuộc thảo luận xoay quanh việc duy trì quyền kiểm soát việc sử dụng công cụ mà không bị ràng buộc với nhà cung cấp LLM cụ thể như Claude."
+          },
+          {
+            "headline": "Ra Mắt Trung Tâm Nghiên Cứu Mô Hình Ngôn Ngữ-Thị Giác",
+            "link": "https://github.com/thubZ09/vision-language-model-hub.git",
+            "source": "Discord LlamaIndex",
+            "summary": "Một hub do cộng đồng điều khiển dành riêng cho nghiên cứu Mô hình Ngôn ngữ-Thị giác (VLMs) đã ra mắt và có sẵn tại đây, nhằm thúc đẩy sự hợp tác giữa các nhà nghiên cứu trong học tập đa mô thức. Người tạo hub đang tích cực tìm kiếm các đóng góp, đề xuất và phản hồi để nâng cao tài nguyên, với các bản cập nhật hàng tuần được lên kế hoạch."
+          }
+        ],
+        "title": "Discord LlamaIndex"
+      },
+      {
+        "articles": [
+          {
+            "headline": "GPT4All Chờ Đợi Gemma 3",
+            "link": "https://github.com/nomic-ai/gpt4all/issues/3540",
+            "source": "Discord Nomic.ai (GPT4All)",
+            "summary": "Các thành viên háo hức chờ đợi việc bổ sung Gemma 3 và Nomic Embed Text V2 vào GPT4All, tùy thuộc vào bản cập nhật sắp tới cho GPT4All. Vấn đề #3540 theo dõi điều này trên Github, lưu ý rằng Llama.cpp cần được cập nhật để hỗ trợ Gemma 3 và Phi-4."
+          },
+          {
+            "headline": "Sự Cố Thu Thập LocalDocs Gây Lo Ngại",
+            "link": "https://discord.com/channels/1076964370942267462",
+            "source": "Discord Nomic.ai (GPT4All)",
+            "summary": "Người dùng báo cáo rằng bộ sưu tập LocalDoc của họ bị trống sau sự cố và đang yêu cầu hỗ trợ về cách khôi phục. Một thành viên đề xuất lưu tệp localdocs mới nhất và sao chép nó trở lại sau khi gặp sự cố, vì đôi khi chỉ một PDF xấu có thể làm sập hệ thống."
+          },
+          {
+            "headline": "Giới Hạn Cấp Phép Mô Hình Sắp Xảy Ra",
+            "link": "https://discord.com/channels/1076964370942267462",
+            "source": "Discord Nomic.ai (GPT4All)",
+            "summary": "Các thành viên tranh luận về các vấn đề liên quan đến các thỏa thuận cấp phép mô hình trên Hugging Face, tập trung vào Gemma 3. Một câu hỏi quan trọng là liệu Google sẽ nhắm mục tiêu tái phân tích lại các thỏa thuận cấp phép của họ hay không."
+          },
+          {
+            "headline": "OneNote Notebook Điều Hướng Nomic",
+            "link": "https://discord.com/channels/1076964370942267462",
+            "source": "Discord Nomic.ai (GPT4All)",
+            "summary": "Một người dùng hỏi về việc kết hợp nội dung OneNote vào các tài liệu cục bộ, tìm kiếm lời khuyên về chiến lược tối ưu. Người ta đề nghị rằng việc xuất nội dung OneNote sang định dạng dựa trên văn bản sẽ tạo điều kiện tích hợp dễ dàng."
+          },
+          {
+            "headline": "Giả Thuyết Nước Lạnh Làm Vỡ Container Đóng",
+            "link": "https://discord.com/channels/1076964370942267462",
+            "source": "Discord Nomic.ai (GPT4All)",
+            "summary": "Các thành viên khám phá một kịch bản giả định về việc để một lọ nước đóng kín bên ngoài qua đêm ở nhiệt độ dưới mức đóng băng. Các mô hình đã đồng ý gần như nhất trí rằng lọ sẽ vỡ do nước giãn nở khi đóng băng."
+          }
+        ],
+        "title": "Discord Nomic.ai (GPT4All)"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Thời gian biểu Tinh chỉnh Command-A TBD",
+            "link": "https://discord.com/channels/954421988141711382",
+            "source": "Discord Cohere",
+            "summary": "Một thành viên hỏi về thời gian biểu để cho phép tinh chỉnh Command A trên nền tảng Cohere, thành viên nhóm Cohere cho biết là chưa có kế hoạch nào. Họ cũng hỏi về các trường hợp sử dụng (thương mại so với nghiên cứu)."
+          },
+          {
+            "headline": "Azure Cohere Rerank v3 Terraform Gặp Sự Cố",
+            "link": "https://discord.com/channels/954421988141711382",
+            "source": "Discord Cohere",
+            "summary": "Thành viên gặp lỗi 400 Bad Request khi cố gắng tạo Azure Cohere Rerank v3 bằng Terraform vì các vấn đề về giải tuần tự hóa. Họ được chuyển hướng đến một kênh hỗ trợ để được hỗ trợ chuyên dụng."
+          },
+          {
+            "headline": "Command-A Đối Mặt Sự Cố Vercel SDK",
+            "link": "https://docs.cohere.com/versioning-reference",
+            "source": "Discord Cohere",
+            "summary": "Một người dùng báo cáo các vấn đề với Command A sử dụng việc tạo đối tượng với Vercel SDK, vì thông tin mô hình không chính xác hiển thị việc tạo đối tượng không được hỗ trợ. Cảnh báo đề xuất đặt phiên bản API và trỏ đến tham chiếu về phiên bản Cohere."
+          },
+          {
+            "headline": "Kênh Mới Đề Xuất Cho Triển Khai CMD A",
+            "link": "https://discord.com/channels/954421988141711382",
+            "source": "Discord Cohere",
+            "summary": "Một thành viên đề xuất tạo một kênh để thảo luận về các triển khai riêng của các mô hình như CMD A, đặc biệt là xung quanh các triển khai của khách hàng. Một thành viên nhóm Cohere đã được yêu cầu thiết lập kênh."
+          }
+        ],
+        "title": "Discord Cohere"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Thiết Kế Tích Hợp MCP Tranh Luận",
+            "link": "https://github.com/philschmid/mcp-openai-gemini-llama-example/blob/master/sqlite_llama_mcp_agent.py",
+            "source": "Discord DSPy",
+            "summary": "Việc tích hợp tiềm năng của MCP với DSPy liên quan đến một host MCP (chương trình DSPy), client MCP và server MCP, cung cấp một implementation tham chiếu để lấy cảm hứng. Một số thành viên đã bày tỏ lo ngại rằng thiết kế có thể làm mọi thứ trở nên quá phức tạp."
+          },
+          {
+            "headline": "Các Khẳng Định Bị Rời Bỏ, Sự Tinh Chế Xuất Hiện",
+            "link": "https://dspy.ai/tutorials/output_refinement/best-of-n-and-refine/",
+            "source": "Discord DSPy",
+            "summary": "Tài liệu assertions/suggestions không có sẵn và dspy.Suggest không còn là một phần của DSPy, với các thành viên yêu cầu làm rõ về việc thay thế nó. Các assertions chỉ tồn tại cho đến v2.5, với Output Refinement (BestOfN và Refine) là giải pháp trong v2.6+."
+          },
+          {
+            "headline": "QdrantRM Tạm Ngừng Hoạt Động?",
+            "link": "https://discord.com/channels/1161519468141355160",
+            "source": "Discord DSPy",
+            "summary": "Một thành viên hỏi liệu QdrantRM (Qdrant Retrieval Model?) đã bị xóa trong v2.6. Không có phản hồi nào được đưa ra cho câu hỏi này."
+          }
+        ],
+        "title": "Discord DSPy"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Xiong Tiết Lộ Agents Đa Phương Thức",
+            "link": "https://www.youtube.com/live/n__Tim8K2IY",
+            "source": "Discord LLM Agents (Berkeley MOOC)",
+            "summary": "Caiming Xiong, Phó Chủ tịch cấp cao về Nghiên cứu AI tại Salesforce, đã trình bày một bài giảng về agents đa phương thức, bao gồm tích hợp nhận thức, nền tảng, lý luận và hành động trên các phương thức, nhấn mạnh các môi trường thực tế (OSWorld) và tập dữ liệu quy mô lớn (AgentTrek). Cuộc thảo luận bao gồm các kiến trúc mô hình hóa tiên tiến (Aguvis, Magma) và chuỗi suy nghĩ-và-hành động tổng hợp (TACO) để liên kết thị giác-ngôn ngữ-hành động."
+          },
+          {
+            "headline": "Việc Đăng Ký Vẫn Mở cho Khóa Học Agents LLM Nâng Cao",
+            "link": "https://discord.com/channels/1280234300012494859",
+            "source": "Discord LLM Agents (Berkeley MOOC)",
+            "summary": "Nhiều người dùng hỏi về việc đăng ký khóa học Agents LLM Nâng cao và một thành viên xác nhận rằng việc đăng ký vẫn đang mở. Ngoài ra, một thành viên đã làm rõ rằng sinh viên vẫn có thể đăng ký vào MOOC và kiếm chứng chỉ vào cuối khóa."
+          },
+          {
+            "headline": "LLMs Tự Cải Thiện Thông Qua Tự Phản Tư",
+            "link": "https://discord.com/channels/1280234300012494859",
+            "source": "Discord LLM Agents (Berkeley MOOC)",
+            "summary": "Một thành viên yêu cầu làm rõ về việc tự phản tư và tự tinh chỉnh chỉ hoạt động với đánh giá bên ngoài không, lưu ý các phát biểu mâu thuẫn giữa Bài giảng 1 và 2, cụ thể là tự phản tư và tự tinh chỉnh chỉ hoạt động với đánh giá bên ngoài, khi Bài giảng 2 tuyên bố LLMs tự cải thiện bằng cách gán phần thưởng cho đầu ra của riêng chúng và tối ưu hóa. Slide 67 của Bài giảng 1 mâu thuẫn với Slide 51 của Bài giảng 2."
+          },
+          {
+            "headline": "LLMs Được Đào Tạo về Các Cuộc Hội Thoại Chung",
+            "link": "https://discord.com/channels/1280234300012494859",
+            "source": "Discord LLM Agents (Berkeley MOOC)",
+            "summary": "LLMs có khả năng được đào tạo trên các cuộc trò chuyện chung và các nhà cung cấp dịch vụ đã xây dựng dịch vụ và SDK của họ để tuân theo các mẫu như vậy, đóng khung các lời nhắc dưới dạng một cuộc trò chuyện giữa hệ thống và người dùng."
+          }
+        ],
+        "title": "Discord LLM Agents (Berkeley MOOC)"
+      }
+    ]
+  }
+}

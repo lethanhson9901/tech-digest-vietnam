@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash-lite",
+  "text": "{\n  \"from\": \"The Pragmatic Engineer <pragmaticengineer+deepdives@substack.com>\",\n  \"reportTitle\": \"Khảo sát về Tech Stack của bạn\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Khảo sát: Tech Stack của bạn như thế nào?\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/survey-whats-in-your-tech-stack\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"The Pragmatic Engineer đang tiến hành một cuộc khảo sát lớn để tìm hiểu về các công cụ, ngôn ngữ, framework và nền tảng mà các chuyên gia công nghệ đang sử dụng. Cuộc khảo sát nhắm đến hơn 950,000 người đăng ký để có cái nhìn tổng quan về xu hướng công nghệ hiện tại. Người tham gia sẽ hoàn thành một khảo sát (5-15 phút) về các công cụ, nền tảng, và các công cụ tùy chỉnh. Kết quả khảo sát sẽ được công bố vào tháng 5, người tham gia sẽ nhận được kết quả sớm và phân tích độc quyền.\"\n        }\n      ],\n      \"title\": \"Tóm tắt thông tin\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 3.8055620193481445,
+  "attempts": 1,
+  "api_key_index": 1,
+  "structured_data": {
+    "from": "The Pragmatic Engineer <pragmaticengineer+deepdives@substack.com>",
+    "reportTitle": "Khảo sát về Tech Stack của bạn",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Khảo sát: Tech Stack của bạn như thế nào?",
+            "link": "https://newsletter.pragmaticengineer.com/p/survey-whats-in-your-tech-stack",
+            "source": "The Pragmatic Engineer",
+            "summary": "The Pragmatic Engineer đang tiến hành một cuộc khảo sát lớn để tìm hiểu về các công cụ, ngôn ngữ, framework và nền tảng mà các chuyên gia công nghệ đang sử dụng. Cuộc khảo sát nhắm đến hơn 950,000 người đăng ký để có cái nhìn tổng quan về xu hướng công nghệ hiện tại. Người tham gia sẽ hoàn thành một khảo sát (5-15 phút) về các công cụ, nền tảng, và các công cụ tùy chỉnh. Kết quả khảo sát sẽ được công bố vào tháng 5, người tham gia sẽ nhận được kết quả sớm và phân tích độc quyền."
+          }
+        ],
+        "title": "Tóm tắt thông tin"
+      }
+    ]
+  }
+}
