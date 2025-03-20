@@ -201,8 +201,12 @@ def get_llm_ready_emails(config, max_chunk_size=15000):
             print("Please check your email and app password in config.yaml")
             return
         
-        # Create a directory to save LLM-ready content
-        save_dir = f"llm_content_{yesterday.strftime('%Y%m%d')}"
+        # Tạo thư mục gốc theo ngày
+        base_dir = f"{yesterday.strftime('%Y%m%d')}"
+        os.makedirs(base_dir, exist_ok=True)
+        
+        # Tạo thư mục con cho nội dung email gốc
+        save_dir = os.path.join(base_dir, "raw_emails")
         os.makedirs(save_dir, exist_ok=True)
         
         # Initialize HTML to text converter
@@ -347,7 +351,8 @@ def get_llm_ready_emails(config, max_chunk_size=15000):
         print(f"\nAll emails from {date_str} have been processed and saved to '{save_dir}'.")
         
         # Now chunk the files if they're too large
-        chunked_dir = f"chunked_content_{yesterday.strftime('%Y%m%d')}"
+        chunked_dir = os.path.join(base_dir, "chunked_emails")
+        os.makedirs(chunked_dir, exist_ok=True)
         
         print(f"\nChunking large files (limit: {max_chunk_size} characters)...")
         print(f"Source directory: {save_dir}")
@@ -387,20 +392,3 @@ def get_llm_ready_emails(config, max_chunk_size=15000):
             pass
 
 
-if __name__ == "__main__":
-    # Load configuration
-    config = load_config()
-    
-    # Default chunk size
-    max_chunk_size = 15000
-    
-    # Override chunk size from command line if provided
-    if len(sys.argv) > 1:
-        try:
-            max_chunk_size = int(sys.argv[1])
-            print(f"Using custom chunk size: {max_chunk_size}")
-        except ValueError:
-            print(f"Invalid chunk size: {sys.argv[1]}, using default: {max_chunk_size}")
-    
-    # Execute the main function
-    get_llm_ready_emails(config, max_chunk_size)

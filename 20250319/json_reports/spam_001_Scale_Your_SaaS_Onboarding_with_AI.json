@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"Listed AI\",\n  \"reportTitle\": \"Báo cáo về Giải pháp AI cho Onboarding SaaS\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Tối ưu Hóa Onboarding SaaS với AI\",\n          \"link\": \"https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai\",\n          \"source\": \"Listed AI\",\n          \"summary\": \"Listed AI vừa phát hành một bài báo chuyên sâu về cách sử dụng AI để cải thiện quy trình onboarding cho các sản phẩm SaaS. Bài viết nhấn mạnh rằng một quy trình onboarding hiệu quả có thể tạo ra sự khác biệt lớn giữa một khách hàng gắn bó, trung thành và một người dùng bỏ đi sau khi chưa từng đăng nhập lại. Bài viết cung cấp một khuôn khổ để tự động hóa onboarding SaaS bằng các hướng dẫn và hỗ trợ dựa trên AI, hai prompt AI chi tiết để thiết kế trải nghiệm onboarding tương tác, các bước để tích hợp lộ trình học tập dựa trên hành vi và hỗ trợ người dùng chủ động, và quy trình để kiểm tra và tinh chỉnh quy trình onboarding dựa trên dữ liệu tương tác thực tế của người dùng. Xem chi tiết tại [đây](https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai).\"\n        },\n        {\n          \"headline\": \"Morning Brew: Bản tin kinh doanh không thể bỏ qua\",\n          \"link\": \"https://morningbrew.com/daily/subscribe?utm_campaign=QMHBJZCDRS&utm_medium=paid_newsletter&utm_source=beehiiv&_bhiiv=opp_50955288-5b57-4c3a-9a70-c8a21601e697_652e2efc&bhcl_id=a81dd242-b549-42e9-a39c-9259e1e19fe0_93af6105-80f3-48e1-bb1d-2435ba910775\",\n          \"source\": \"Morning Brew\",\n          \"summary\": \"Morning Brew đang thay đổi cách các chuyên gia tiếp cận tin tức kinh doanh. Bản tin này loại bỏ các thuật ngữ chuyên môn và những câu chuyện dài dòng, thay vào đó cung cấp những tin tức ảnh hưởng đến cuộc sống và sự nghiệp của bạn một cách dí dỏm và hài hước. Bản tin Morning Brew hoàn toàn miễn phí, giúp bạn dễ dàng cập nhật thông tin một cách thú vị.\"\n        }\n      ],\n      \"title\": \"Tóm tắt nội dung chính\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Thiết lập nền tảng vững chắc cho Onboarding\",\n          \"link\": \"https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai\",\n          \"source\": \"Listed AI\",\n          \"summary\": \"Onboarding không chỉ là một hướng dẫn sử dụng, mà còn là ấn tượng đầu tiên về sản phẩm của bạn. Một trải nghiệm onboarding gây khó hiểu, chậm chạp hoặc thiếu tính cá nhân có thể khiến người dùng rời bỏ trước khi họ nhận ra giá trị thực sự của sản phẩm. AI có thể giúp bạn hướng dẫn người dùng một cách linh hoạt dựa trên hành vi và tương tác của họ với sản phẩm, kích hoạt hỗ trợ theo ngữ cảnh tại các điểm quan trọng trong hành trình người dùng, điều chỉnh quy trình onboarding theo thời gian thực dựa trên tỷ lệ tương tác và bỏ dở, và giảm tỷ lệ churn bằng cách duy trì sự tương tác của người dùng và giải quyết các vấn đề sớm.\"\n        }\n      ],\n      \"title\": \"Phân tích chuyên sâu về Onboarding\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Xây dựng hệ thống Onboarding dựa trên AI\",\n          \"link\": \"https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai\",\n          \"source\": \"Listed AI\",\n          \"summary\": \"Listed AI cung cấp một prompt để xây dựng một hệ thống onboarding thích ứng, cá nhân hóa các hướng dẫn và hỗ trợ dựa trên hành vi người dùng. Prompt này yêu cầu bạn đóng vai một chuyên gia onboarding SaaS, sử dụng AI để tự động hóa tương tác người dùng, và cung cấp các đầu vào như quy trình onboarding hiện tại, thông tin chi tiết về hành vi người dùng và mục tiêu giảm churn. Prompt này có thể tạo ra một chiến lược onboarding động, các công cụ AI để phân tích hành vi và kích hoạt hỗ trợ cá nhân hóa, một khuôn khổ có cấu trúc cho các hướng dẫn, hướng dẫn từng bước và FAQ dựa trên AI, và các bước để liên tục lặp lại và cải thiện bằng cách sử dụng dữ liệu thời gian thực.\"\n        },\n        {\n          \"headline\": \"Tối ưu hóa Onboarding để tăng tương tác dài hạn\",\n          \"link\": \"https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai\",\n          \"source\": \"Listed AI\",\n          \"summary\": \"Listed AI cũng cung cấp một prompt khác để tinh chỉnh quy trình onboarding hiện tại dựa trên AI nhằm tăng khả năng giữ chân và sự hài lòng của người dùng trong dài hạn. Prompt này yêu cầu bạn đóng vai một nhà chiến lược giữ chân SaaS, tối ưu hóa onboarding dựa trên AI, và cung cấp các đầu vào như quy trình onboarding hiện tại dựa trên AI, số liệu tương tác của người dùng và mục tiêu cải thiện việc chấp nhận tính năng và giảm churn sau 30 ngày đầu tiên. Prompt này có thể tạo ra thông tin chi tiết về nơi người dùng rời bỏ sau khi onboarding, các chiến lược để mở rộng hỗ trợ dựa trên AI vượt ra ngoài các hướng dẫn ban đầu và các đề xuất để tương tác liên tục thông qua lời nhắc và theo dõi tiến độ dựa trên AI.\"\n        }\n      ],\n      \"title\": \"Các Prompt AI Hữu ích\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Tại sao những Prompt này lại quan trọng?\",\n          \"link\": \"https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai\",\n          \"source\": \"Listed AI\",\n          \"summary\": \"Onboarding là một quá trình then chốt, giúp người dùng thiết lập và duy trì tương tác. Các quy trình onboarding dựa trên AI giúp các công ty SaaS giảm tỷ lệ churn bằng cách giải quyết các điểm khó khăn sớm, tăng cường việc áp dụng các tính năng với các hướng dẫn thông minh, cá nhân hóa, cung cấp hỗ trợ theo thời gian thực, được hỗ trợ bởi AI, phát triển theo hành trình của người dùng và mở rộng quy mô một cách hiệu quả mà không cần mở rộng đội ngũ hỗ trợ.\"\n        }\n      ],\n      \"title\": \"Tầm quan trọng của Onboarding dựa trên AI\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 8.815052270889282,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "Listed AI",
+    "reportTitle": "Báo cáo về Giải pháp AI cho Onboarding SaaS",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Tối ưu Hóa Onboarding SaaS với AI",
+            "link": "https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai",
+            "source": "Listed AI",
+            "summary": "Listed AI vừa phát hành một bài báo chuyên sâu về cách sử dụng AI để cải thiện quy trình onboarding cho các sản phẩm SaaS. Bài viết nhấn mạnh rằng một quy trình onboarding hiệu quả có thể tạo ra sự khác biệt lớn giữa một khách hàng gắn bó, trung thành và một người dùng bỏ đi sau khi chưa từng đăng nhập lại. Bài viết cung cấp một khuôn khổ để tự động hóa onboarding SaaS bằng các hướng dẫn và hỗ trợ dựa trên AI, hai prompt AI chi tiết để thiết kế trải nghiệm onboarding tương tác, các bước để tích hợp lộ trình học tập dựa trên hành vi và hỗ trợ người dùng chủ động, và quy trình để kiểm tra và tinh chỉnh quy trình onboarding dựa trên dữ liệu tương tác thực tế của người dùng. Xem chi tiết tại [đây](https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai)."
+          },
+          {
+            "headline": "Morning Brew: Bản tin kinh doanh không thể bỏ qua",
+            "link": "https://morningbrew.com/daily/subscribe?utm_campaign=QMHBJZCDRS&utm_medium=paid_newsletter&utm_source=beehiiv&_bhiiv=opp_50955288-5b57-4c3a-9a70-c8a21601e697_652e2efc&bhcl_id=a81dd242-b549-42e9-a39c-9259e1e19fe0_93af6105-80f3-48e1-bb1d-2435ba910775",
+            "source": "Morning Brew",
+            "summary": "Morning Brew đang thay đổi cách các chuyên gia tiếp cận tin tức kinh doanh. Bản tin này loại bỏ các thuật ngữ chuyên môn và những câu chuyện dài dòng, thay vào đó cung cấp những tin tức ảnh hưởng đến cuộc sống và sự nghiệp của bạn một cách dí dỏm và hài hước. Bản tin Morning Brew hoàn toàn miễn phí, giúp bạn dễ dàng cập nhật thông tin một cách thú vị."
+          }
+        ],
+        "title": "Tóm tắt nội dung chính"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Thiết lập nền tảng vững chắc cho Onboarding",
+            "link": "https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai",
+            "source": "Listed AI",
+            "summary": "Onboarding không chỉ là một hướng dẫn sử dụng, mà còn là ấn tượng đầu tiên về sản phẩm của bạn. Một trải nghiệm onboarding gây khó hiểu, chậm chạp hoặc thiếu tính cá nhân có thể khiến người dùng rời bỏ trước khi họ nhận ra giá trị thực sự của sản phẩm. AI có thể giúp bạn hướng dẫn người dùng một cách linh hoạt dựa trên hành vi và tương tác của họ với sản phẩm, kích hoạt hỗ trợ theo ngữ cảnh tại các điểm quan trọng trong hành trình người dùng, điều chỉnh quy trình onboarding theo thời gian thực dựa trên tỷ lệ tương tác và bỏ dở, và giảm tỷ lệ churn bằng cách duy trì sự tương tác của người dùng và giải quyết các vấn đề sớm."
+          }
+        ],
+        "title": "Phân tích chuyên sâu về Onboarding"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Xây dựng hệ thống Onboarding dựa trên AI",
+            "link": "https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai",
+            "source": "Listed AI",
+            "summary": "Listed AI cung cấp một prompt để xây dựng một hệ thống onboarding thích ứng, cá nhân hóa các hướng dẫn và hỗ trợ dựa trên hành vi người dùng. Prompt này yêu cầu bạn đóng vai một chuyên gia onboarding SaaS, sử dụng AI để tự động hóa tương tác người dùng, và cung cấp các đầu vào như quy trình onboarding hiện tại, thông tin chi tiết về hành vi người dùng và mục tiêu giảm churn. Prompt này có thể tạo ra một chiến lược onboarding động, các công cụ AI để phân tích hành vi và kích hoạt hỗ trợ cá nhân hóa, một khuôn khổ có cấu trúc cho các hướng dẫn, hướng dẫn từng bước và FAQ dựa trên AI, và các bước để liên tục lặp lại và cải thiện bằng cách sử dụng dữ liệu thời gian thực."
+          },
+          {
+            "headline": "Tối ưu hóa Onboarding để tăng tương tác dài hạn",
+            "link": "https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai",
+            "source": "Listed AI",
+            "summary": "Listed AI cũng cung cấp một prompt khác để tinh chỉnh quy trình onboarding hiện tại dựa trên AI nhằm tăng khả năng giữ chân và sự hài lòng của người dùng trong dài hạn. Prompt này yêu cầu bạn đóng vai một nhà chiến lược giữ chân SaaS, tối ưu hóa onboarding dựa trên AI, và cung cấp các đầu vào như quy trình onboarding hiện tại dựa trên AI, số liệu tương tác của người dùng và mục tiêu cải thiện việc chấp nhận tính năng và giảm churn sau 30 ngày đầu tiên. Prompt này có thể tạo ra thông tin chi tiết về nơi người dùng rời bỏ sau khi onboarding, các chiến lược để mở rộng hỗ trợ dựa trên AI vượt ra ngoài các hướng dẫn ban đầu và các đề xuất để tương tác liên tục thông qua lời nhắc và theo dõi tiến độ dựa trên AI."
+          }
+        ],
+        "title": "Các Prompt AI Hữu ích"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Tại sao những Prompt này lại quan trọng?",
+            "link": "https://listedaidaily.beehiiv.com/p/scale-your-saas-onboarding-with-ai",
+            "source": "Listed AI",
+            "summary": "Onboarding là một quá trình then chốt, giúp người dùng thiết lập và duy trì tương tác. Các quy trình onboarding dựa trên AI giúp các công ty SaaS giảm tỷ lệ churn bằng cách giải quyết các điểm khó khăn sớm, tăng cường việc áp dụng các tính năng với các hướng dẫn thông minh, cá nhân hóa, cung cấp hỗ trợ theo thời gian thực, được hỗ trợ bởi AI, phát triển theo hành trình của người dùng và mở rộng quy mô một cách hiệu quả mà không cần mở rộng đội ngũ hỗ trợ."
+          }
+        ],
+        "title": "Tầm quan trọng của Onboarding dựa trên AI"
+      }
+    ]
+  }
+}

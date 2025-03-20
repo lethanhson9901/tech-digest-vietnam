@@ -1,0 +1,44 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash-lite",
+  "text": "{\n  \"from\": \"The Pragmatic Engineer\",\n  \"reportTitle\": \"Báo cáo: Cách Linux Được Xây Dựng với Greg Kroah-Hartman\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Linux: Hệ điều hành phổ biến nhất và cách nó được xây dựng\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Bài viết thảo luận về cách Linux được xây dựng, với sự tham gia của Greg Kroah-Hartman, một người bảo trì kernel Linux trong 25 năm. Bài viết bao gồm các chủ đề như mức độ phổ biến của Linux, trách nhiệm của kernel, quá trình hợp nhất thay đổi, chu kỳ phát triển 9 tuần, thử nghiệm kernel và lợi ích của việc đóng góp vào mã nguồn mở. Tìm hiểu thêm tại: [https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah]\"\n        },\n        {\n          \"headline\": \"Điểm nổi bật từ cuộc trò chuyện với Greg Kroah-Hartman\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Greg Kroah-Hartman chia sẻ về cách thay đổi được hợp nhất vào kernel Linux, mô hình tin cậy độc đáo và lý do kỹ sư nên đóng góp vào các dự án mã nguồn mở. Bài viết nhấn mạnh vai trò quan trọng của Linux trong các thiết bị khác nhau (từ điện thoại Android đến Trạm vũ trụ quốc tế) và cách thức phát triển \\\"ích kỷ\\\" của các nhà phát triển lại có lợi cho hệ điều hành. Tìm hiểu thêm tại: [https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah]\"\n        },\n        {\n          \"headline\": \"Quá trình phát triển và những công cụ của Linux kernel – Email và Git\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Bài viết mô tả cách thức phát triển kernel Linux, bao gồm chu kỳ phát triển 9 tuần, phương pháp thử nghiệm và vai trò của email cũng như Git. Linux không sử dụng GitHub vì đã có Git để giải quyết các vấn đề kiểm soát mã nguồn. Tìm hiểu thêm tại: [https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah]\"\n        },\n        {\n          \"headline\": \"Lợi ích của việc đóng góp vào Linux kernel và các dự án mã nguồn mở\",\n          \"link\": \"https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah\",\n          \"source\": \"The Pragmatic Engineer\",\n          \"summary\": \"Việc đóng góp vào Linux kernel không chỉ giúp giải quyết các vấn đề của các nhà phát triển mà còn là một cách để nâng cao sự nghiệp, thể hiện khả năng cộng tác, làm việc với các cơ sở mã hiện có và giải quyết các vấn đề thực tế. Khoảng 80% người đóng góp được trả lương bởi công ty của họ. Tìm hiểu thêm tại: [https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah]\"\n        }\n      ],\n      \"title\": \"Tóm tắt Báo cáo\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 8.629085063934326,
+  "attempts": 1,
+  "api_key_index": 1,
+  "structured_data": {
+    "from": "The Pragmatic Engineer",
+    "reportTitle": "Báo cáo: Cách Linux Được Xây Dựng với Greg Kroah-Hartman",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Linux: Hệ điều hành phổ biến nhất và cách nó được xây dựng",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Bài viết thảo luận về cách Linux được xây dựng, với sự tham gia của Greg Kroah-Hartman, một người bảo trì kernel Linux trong 25 năm. Bài viết bao gồm các chủ đề như mức độ phổ biến của Linux, trách nhiệm của kernel, quá trình hợp nhất thay đổi, chu kỳ phát triển 9 tuần, thử nghiệm kernel và lợi ích của việc đóng góp vào mã nguồn mở. Tìm hiểu thêm tại: [https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah]"
+          },
+          {
+            "headline": "Điểm nổi bật từ cuộc trò chuyện với Greg Kroah-Hartman",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Greg Kroah-Hartman chia sẻ về cách thay đổi được hợp nhất vào kernel Linux, mô hình tin cậy độc đáo và lý do kỹ sư nên đóng góp vào các dự án mã nguồn mở. Bài viết nhấn mạnh vai trò quan trọng của Linux trong các thiết bị khác nhau (từ điện thoại Android đến Trạm vũ trụ quốc tế) và cách thức phát triển \"ích kỷ\" của các nhà phát triển lại có lợi cho hệ điều hành. Tìm hiểu thêm tại: [https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah]"
+          },
+          {
+            "headline": "Quá trình phát triển và những công cụ của Linux kernel – Email và Git",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Bài viết mô tả cách thức phát triển kernel Linux, bao gồm chu kỳ phát triển 9 tuần, phương pháp thử nghiệm và vai trò của email cũng như Git. Linux không sử dụng GitHub vì đã có Git để giải quyết các vấn đề kiểm soát mã nguồn. Tìm hiểu thêm tại: [https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah]"
+          },
+          {
+            "headline": "Lợi ích của việc đóng góp vào Linux kernel và các dự án mã nguồn mở",
+            "link": "https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah",
+            "source": "The Pragmatic Engineer",
+            "summary": "Việc đóng góp vào Linux kernel không chỉ giúp giải quyết các vấn đề của các nhà phát triển mà còn là một cách để nâng cao sự nghiệp, thể hiện khả năng cộng tác, làm việc với các cơ sở mã hiện có và giải quyết các vấn đề thực tế. Khoảng 80% người đóng góp được trả lương bởi công ty của họ. Tìm hiểu thêm tại: [https://newsletter.pragmaticengineer.com/p/how-linux-is-built-with-greg-kroah]"
+          }
+        ],
+        "title": "Tóm tắt Báo cáo"
+      }
+    ]
+  }
+}

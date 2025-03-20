@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash",
+  "text": "{\n  \"from\": \"The Frontier by Product Hunt\",\n  \"reportTitle\": \"Điểm tin AI nổi bật trên Product Hunt: Robot đầu tư và cuộc đua AI của Trung Quốc\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"No Cap: Robot hóa việc đầu tư mạo hiểm\",\n          \"link\": \"https://www.producthunt.com/posts/no-cap\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"No Cap là một nhà đầu tư thiên thần AI, tự động hóa các quyết định tài trợ giai đoạn đầu cho các công ty khởi nghiệp. Nó nhằm mục đích hợp lý hóa và dân chủ hóa quy trình đầu tư bằng cách tận dụng machine learning để xác định các dự án đầy hứa hẹn.\"\n        },\n        {\n          \"headline\": \"Twos PALs: Trợ lý AI cá nhân giúp bạn sắp xếp mọi thứ\",\n          \"link\": \"https://www.producthunt.com/posts/twos-pals\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Twos PALs là một trợ lý AI cá nhân được thiết kế để tổ chức các nhiệm vụ, ghi chú và ý tưởng thành các danh sách có cấu trúc. Nó giúp người dùng theo kịp danh sách việc cần làm của họ với nỗ lực tối thiểu, giúp năng suất trở nên tự nhiên hơn.\"\n        },\n        {\n          \"headline\": \"Mistral Small 3.1: Mô hình AI nhỏ gọn, hiệu suất cao\",\n          \"link\": \"https://www.producthunt.com/posts/mistral-small-3-1\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Mistral Small 3.1 là một mô hình AI nhẹ nhưng mạnh mẽ, được tối ưu hóa cho suy luận tốc độ cao và hiệu quả. Nó cân bằng kích thước nhỏ gọn với hiệu suất mạnh mẽ, phù hợp cho các ứng dụng nhạy cảm về độ trễ.\"\n        },\n        {\n          \"headline\": \"Cuckoo: Trình dịch AI thời gian thực cho giao tiếp đa ngôn ngữ\",\n          \"link\": \"https://www.producthunt.com/posts/cuckoo-6\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Cuckoo là một trình dịch AI thời gian thực được xây dựng để giao tiếp đa ngôn ngữ liền mạch. Nó cho phép các nhóm toàn cầu làm việc cùng nhau mà không gặp rào cản ngôn ngữ, đảm bảo sự hợp tác suôn sẻ hơn.\"\n        },\n        {\n          \"headline\": \"Wispr Flow for Windows: Công cụ đọc chính tả AI giúp bạn viết nhanh hơn\",\n          \"link\": \"https://www.producthunt.com/posts/wispr-flow-for-windows\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Wispr Flow for Windows là một công cụ đọc chính tả dựa trên AI, cho phép người dùng viết nhanh hơn gấp ba lần bằng cách nói một cách tự nhiên, với khả năng định dạng và sửa lỗi theo thời gian thực trên tất cả các ứng dụng.\"\n        }\n      ],\n      \"title\": \"Top Launches\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Manus AI: Liệu Trung Quốc có đang dẫn đầu cuộc đua AI?\",\n          \"link\": \"https://www.producthunt.com/posts/manus\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"Manus AI là sản phẩm mới nhất của Trung Quốc trong cuộc đua giành các tác nhân AI tự động và nó đang gây được tiếng vang lớn. Không giống như các trợ lý AI thông thường cần được nhắc nhở liên tục, Manus chạy ngầm, xử lý các tác vụ phức tạp — như phân tích xu hướng chứng khoán hoặc xếp hạng ứng viên xin việc — mà không cần chờ hướng dẫn. Nó được xây dựng trên một hệ thống đa tác nhân chia các vấn đề lớn thành các tác vụ nhỏ hơn, sau đó thực hiện chúng không đồng bộ trên đám mây. Về lý thuyết, đó là một bước tiến tới AI hoạt động giống như một trợ lý thực tế hơn là một trình tự động hoàn thành được tôn vinh. Nhưng nó có thực sự xứng đáng với sự cường điệu? Các thử nghiệm ban đầu cho thấy nhiều hứa hẹn, nhưng Manus đã vấp ngã - tạo dữ liệu trong các báo cáo tài chính và lấy văn bản trực tiếp từ các trang web hiện có. Điều đó đặt ra những câu hỏi lớn về lòng tin và sự giám sát, đặc biệt khi Trung Quốc thúc đẩy Manus trở thành một nhân tố chính trong hệ sinh thái AI của mình. Nếu nó hoạt động như dự định, nó có thể là một cái nhìn thoáng qua về tương lai của các tác nhân AI hoàn toàn tự động. Nếu không, ít nhất nó sẽ tạo ra một số nghiên cứu điển hình thú vị về những gì xảy ra khi AI trở nên quá độc lập.\"\n        }\n      ],\n      \"title\": \"The Big Idea\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Liệu những người xây dựng phần mềm có đang trên đà tuyệt chủng?\",\n          \"link\": \"https://www.producthunt.com/p/general/do-you-think-software-will-lose-its-value-as-a-product-to-build\",\n          \"source\": \"Product Hunt\",\n          \"summary\": \"AI và các công cụ no-code có nghĩa là bất kỳ ai cũng có thể xây dựng một cái gì đó chỉ trong vài phút, vì vậy Alex, người sáng lập Questflow, đã bắt đầu một cuộc tranh luận: Liệu phần mềm có còn giá trị hay thách thức thực sự là mọi thứ diễn ra sau đó? Một số ý kiến từ cuộc thảo luận: Nếu một ứng dụng mất mười phút để xây dựng thay vì hàng tháng, tất nhiên, nó có giá trị ít hơn. Nhưng bây giờ chi phí thực sự nằm ở khâu marketing, hỗ trợ khách hàng và thực sự khiến mọi người sử dụng nó. Các công cụ No-code rất tuyệt, nhưng chúng không miễn phí. Bạn đang hoán đổi chi phí phát triển cho một loạt các đăng ký SaaS cộng lại rất nhanh. Ban đầu thì rẻ, nhưng không rẻ như vẻ ngoài của nó. Các công cụ SaaS có cảm giác như phép thuật lúc đầu, sau đó bạn kiểm tra bảng kê thanh toán của mình và nhận ra rằng bạn về cơ bản đang tài trợ cho Series A của họ. Vậy, phần mềm có đang trở thành một hàng hóa, hay việc xây dựng chỉ là phần dễ dàng bây giờ?\"\n        }\n      ],\n      \"title\": \"Trending Discussions\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 9.702235698699951,
+  "attempts": 1,
+  "api_key_index": 0,
+  "structured_data": {
+    "from": "The Frontier by Product Hunt",
+    "reportTitle": "Điểm tin AI nổi bật trên Product Hunt: Robot đầu tư và cuộc đua AI của Trung Quốc",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "No Cap: Robot hóa việc đầu tư mạo hiểm",
+            "link": "https://www.producthunt.com/posts/no-cap",
+            "source": "Product Hunt",
+            "summary": "No Cap là một nhà đầu tư thiên thần AI, tự động hóa các quyết định tài trợ giai đoạn đầu cho các công ty khởi nghiệp. Nó nhằm mục đích hợp lý hóa và dân chủ hóa quy trình đầu tư bằng cách tận dụng machine learning để xác định các dự án đầy hứa hẹn."
+          },
+          {
+            "headline": "Twos PALs: Trợ lý AI cá nhân giúp bạn sắp xếp mọi thứ",
+            "link": "https://www.producthunt.com/posts/twos-pals",
+            "source": "Product Hunt",
+            "summary": "Twos PALs là một trợ lý AI cá nhân được thiết kế để tổ chức các nhiệm vụ, ghi chú và ý tưởng thành các danh sách có cấu trúc. Nó giúp người dùng theo kịp danh sách việc cần làm của họ với nỗ lực tối thiểu, giúp năng suất trở nên tự nhiên hơn."
+          },
+          {
+            "headline": "Mistral Small 3.1: Mô hình AI nhỏ gọn, hiệu suất cao",
+            "link": "https://www.producthunt.com/posts/mistral-small-3-1",
+            "source": "Product Hunt",
+            "summary": "Mistral Small 3.1 là một mô hình AI nhẹ nhưng mạnh mẽ, được tối ưu hóa cho suy luận tốc độ cao và hiệu quả. Nó cân bằng kích thước nhỏ gọn với hiệu suất mạnh mẽ, phù hợp cho các ứng dụng nhạy cảm về độ trễ."
+          },
+          {
+            "headline": "Cuckoo: Trình dịch AI thời gian thực cho giao tiếp đa ngôn ngữ",
+            "link": "https://www.producthunt.com/posts/cuckoo-6",
+            "source": "Product Hunt",
+            "summary": "Cuckoo là một trình dịch AI thời gian thực được xây dựng để giao tiếp đa ngôn ngữ liền mạch. Nó cho phép các nhóm toàn cầu làm việc cùng nhau mà không gặp rào cản ngôn ngữ, đảm bảo sự hợp tác suôn sẻ hơn."
+          },
+          {
+            "headline": "Wispr Flow for Windows: Công cụ đọc chính tả AI giúp bạn viết nhanh hơn",
+            "link": "https://www.producthunt.com/posts/wispr-flow-for-windows",
+            "source": "Product Hunt",
+            "summary": "Wispr Flow for Windows là một công cụ đọc chính tả dựa trên AI, cho phép người dùng viết nhanh hơn gấp ba lần bằng cách nói một cách tự nhiên, với khả năng định dạng và sửa lỗi theo thời gian thực trên tất cả các ứng dụng."
+          }
+        ],
+        "title": "Top Launches"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Manus AI: Liệu Trung Quốc có đang dẫn đầu cuộc đua AI?",
+            "link": "https://www.producthunt.com/posts/manus",
+            "source": "Product Hunt",
+            "summary": "Manus AI là sản phẩm mới nhất của Trung Quốc trong cuộc đua giành các tác nhân AI tự động và nó đang gây được tiếng vang lớn. Không giống như các trợ lý AI thông thường cần được nhắc nhở liên tục, Manus chạy ngầm, xử lý các tác vụ phức tạp — như phân tích xu hướng chứng khoán hoặc xếp hạng ứng viên xin việc — mà không cần chờ hướng dẫn. Nó được xây dựng trên một hệ thống đa tác nhân chia các vấn đề lớn thành các tác vụ nhỏ hơn, sau đó thực hiện chúng không đồng bộ trên đám mây. Về lý thuyết, đó là một bước tiến tới AI hoạt động giống như một trợ lý thực tế hơn là một trình tự động hoàn thành được tôn vinh. Nhưng nó có thực sự xứng đáng với sự cường điệu? Các thử nghiệm ban đầu cho thấy nhiều hứa hẹn, nhưng Manus đã vấp ngã - tạo dữ liệu trong các báo cáo tài chính và lấy văn bản trực tiếp từ các trang web hiện có. Điều đó đặt ra những câu hỏi lớn về lòng tin và sự giám sát, đặc biệt khi Trung Quốc thúc đẩy Manus trở thành một nhân tố chính trong hệ sinh thái AI của mình. Nếu nó hoạt động như dự định, nó có thể là một cái nhìn thoáng qua về tương lai của các tác nhân AI hoàn toàn tự động. Nếu không, ít nhất nó sẽ tạo ra một số nghiên cứu điển hình thú vị về những gì xảy ra khi AI trở nên quá độc lập."
+          }
+        ],
+        "title": "The Big Idea"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Liệu những người xây dựng phần mềm có đang trên đà tuyệt chủng?",
+            "link": "https://www.producthunt.com/p/general/do-you-think-software-will-lose-its-value-as-a-product-to-build",
+            "source": "Product Hunt",
+            "summary": "AI và các công cụ no-code có nghĩa là bất kỳ ai cũng có thể xây dựng một cái gì đó chỉ trong vài phút, vì vậy Alex, người sáng lập Questflow, đã bắt đầu một cuộc tranh luận: Liệu phần mềm có còn giá trị hay thách thức thực sự là mọi thứ diễn ra sau đó? Một số ý kiến từ cuộc thảo luận: Nếu một ứng dụng mất mười phút để xây dựng thay vì hàng tháng, tất nhiên, nó có giá trị ít hơn. Nhưng bây giờ chi phí thực sự nằm ở khâu marketing, hỗ trợ khách hàng và thực sự khiến mọi người sử dụng nó. Các công cụ No-code rất tuyệt, nhưng chúng không miễn phí. Bạn đang hoán đổi chi phí phát triển cho một loạt các đăng ký SaaS cộng lại rất nhanh. Ban đầu thì rẻ, nhưng không rẻ như vẻ ngoài của nó. Các công cụ SaaS có cảm giác như phép thuật lúc đầu, sau đó bạn kiểm tra bảng kê thanh toán của mình và nhận ra rằng bạn về cơ bản đang tài trợ cho Series A của họ. Vậy, phần mềm có đang trở thành một hàng hóa, hay việc xây dựng chỉ là phần dễ dàng bây giờ?"
+          }
+        ],
+        "title": "Trending Discussions"
+      }
+    ]
+  }
+}

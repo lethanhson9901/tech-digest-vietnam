@@ -1,0 +1,282 @@
+{
+  "success": true,
+  "model": "gemini-2.0-flash-lite",
+  "text": "{\n  \"from\": \"Người dùng\",\n  \"reportTitle\": \"Tổng hợp tin tức AI - Phân tích và Đánh giá\",\n  \"sections\": [\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Python được tích hợp để tăng tính nhất quán trong tài liệu\",\n          \"link\": \"\",\n          \"source\": \"Chưa rõ\",\n          \"summary\": \"Nhóm đang tích hợp ví dụ Python để tăng tính nhất quán trong tài liệu, bổ sung cho các ví dụ Python và TypeScript hiện có.\"\n        },\n        {\n          \"headline\": \"Steelskull L3.3 R1 70B chính thức ra mắt trên OpenRouter\",\n          \"link\": \"https://huggingface.co/BigHuggyD/SteelSkull_L3.3-Electra-R1-70b-FP8-Dynamic\",\n          \"source\": \"OpenRouter\",\n          \"summary\": \"Mô hình Steelskull L3.3 R1 70B hiện đã có mặt trên OpenRouter, đáp ứng nhu cầu của cộng đồng người dùng.\"\n        }\n      ],\n      \"title\": \"Phát triển mô hình & Tài liệu\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Personality.gg gia nhập thị trường chatbot AI\",\n          \"link\": \"https://personality.gg\",\n          \"source\": \"Personality.gg\",\n          \"summary\": \"Personality.gg ra mắt, cho phép tạo, trò chuyện và kết nối với các nhân vật AI, sử dụng các mô hình như Claude, Gemini và mô hình Personality-v1.\"\n        }\n      ],\n      \"title\": \"Ứng dụng và Nền tảng AI\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Perplexity Pro: Miễn phí một tháng sử dụng\",\n          \"link\": \"https://discord.com/channels/1047197230748151888\",\n          \"source\": \"Perplexity AI Discord\",\n          \"summary\": \"Một người dùng tìm thấy chương trình khuyến mãi trên ứng dụng Windows của Perplexity, cung cấp một tháng miễn phí sử dụng Perplexity Pro khi sử dụng ứng dụng liên tục trong 7 ngày.\"\n        },\n        {\n          \"headline\": \"Gemini 2 Flash gặp khó khăn trong việc duy trì ngữ cảnh\",\n          \"link\": \"https://discord.com/channels/1047197230748151888\",\n          \"source\": \"Perplexity AI Discord\",\n          \"summary\": \"Người dùng tranh luận về khả năng duy trì ngữ cảnh của Gemini 2 Flash trên Perplexity, với nhiều trải nghiệm trái chiều. Một số người dùng thích sử dụng Sonnet hơn.\"\n        },\n        {\n          \"headline\": \"Ernie 4.5 của Baidu cạnh tranh với DeepSeek R1\",\n          \"link\": \"https://x.com/baidu_inc/status/1901089355890036897?s=46\",\n          \"source\": \"Perplexity AI Discord\",\n          \"summary\": \"Baidu dự kiến sẽ phát hành mã nguồn mở Ernie 4.5 vào khoảng cuối tháng 6, với tiềm năng tích hợp vào Perplexity. Ernie X1 được quảng cáo là có hiệu suất tương đương DeepSeek R1 với chi phí bằng một nửa.\"\n        },\n        {\n          \"headline\": \"Deepseek R1 có tỷ lệ 'ảo giác' cao\",\n          \"link\": \"https://github.com/vectara/hallucination-leaderboard\",\n          \"source\": \"Perplexity AI Discord\",\n          \"summary\": \"Deepseek R1 thường tạo ra các lỗi sai sót về mặt thực tế, với tỷ lệ 'ảo giác' cao (trên 14%), theo bảng xếp hạng 'ảo giác' trên GitHub.\"\n        },\n        {\n          \"headline\": \"Giới hạn hình ảnh trong API sonar reasoning\",\n          \"link\": \"https://discord.com/channels/1047197230748151888\",\n          \"source\": \"Perplexity AI Discord\",\n          \"summary\": \"API sonar-reasoning-pro trả về tối đa 5 hình ảnh và người dùng đặt câu hỏi liệu giới hạn này có thể được cấu hình hay không. Tài liệu không cung cấp bất kỳ thông tin nào về việc tăng giới hạn này.\"\n        }\n      ],\n      \"title\": \"Tin tức về Perplexity AI\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Tranh luận về C và Rust\",\n          \"link\": \"https://faultlore.com/blah/c-isnt-a-language/\",\n          \"source\": \"Yannick Kilcher Discord\",\n          \"summary\": \"Các thành viên tranh luận về ưu điểm của C so với Rust. Một thành viên cho rằng C nên 'chết' trong khi một thành viên khác lại khẳng định thiết kế của C cho phép nó được sử dụng trên nhiều nền tảng.\"\n        },\n        {\n          \"headline\": \"LLM gặp khó khăn với bộ đệm vòng\",\n          \"link\": \"https://discord.com/channels/714501525455634453\",\n          \"source\": \"Yannick Kilcher Discord\",\n          \"summary\": \"Các thành viên nhận thấy rằng các LLM hàng đầu gặp khó khăn trong việc triển khai một bộ đệm vòng với ánh xạ bộ nhớ, điều này nhắc nhở đề xuất ánh xạ bộ đệm vào hai vùng ảo liên tiếp.\"\n        },\n        {\n          \"headline\": \"Cơ chế Attention thu hút sự quan tâm\",\n          \"link\": \"https://discord.com/channels/714501525455634453\",\n          \"source\": \"Yannick Kilcher Discord\",\n          \"summary\": \"Các thành viên thảo luận về Fitness-Based Attention (FBA), cho rằng Attention chỉ mang tính tĩnh và dựa trên 'sự tương đồng'.\"\n        },\n        {\n          \"headline\": \"Gemma 3 được ra mắt\",\n          \"link\": \"https://www.youtube.com/watch?v=n5nEd600iM0\",\n          \"source\": \"Yannick Kilcher Discord\",\n          \"summary\": \"Gemma 3 là một dòng mô hình mở nhẹ (1B–27B tham số) tích hợp khả năng hiểu thị giác, hỗ trợ đa ngôn ngữ và cửa sổ ngữ cảnh mở rộng (lên đến 128K token).\"\n        },\n        {\n          \"headline\": \"Mistral Small 3.1 gây ấn tượng với thông số kỹ thuật\",\n          \"link\": \"https://mistral.ai/fr/news/mistral-small-3-1\",\n          \"source\": \"Mistral AI\",\n          \"summary\": \"Mistral AI công bố Mistral Small 3.1, tự hào về hiệu suất văn bản được cải thiện, khả năng hiểu đa phương thức và cửa sổ ngữ cảnh 128k token, vượt trội hơn Gemma 3 và GPT-4o Mini.\"\n        }\n      ],\n      \"title\": \"Thảo luận trong cộng đồng AI\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"SmolVLM2 thu nhỏ thế giới VLM\",\n          \"link\": \"https://x.com/pcuenq/status/1896632829372715442\",\n          \"source\": \"HuggingFace Discord\",\n          \"summary\": \"HuggingFace ra mắt SmolVLM2, VLM nhỏ nhất, được thể hiện đang chạy phiên bản 500M trên một ứng dụng iPhone.\"\n        },\n        {\n          \"headline\": \"Gradio Sketch 2.0 đơn giản hóa việc xây dựng ứng dụng\",\n          \"link\": \"https://x.com/abidlabs/status/1897782056308142266\",\n          \"source\": \"HuggingFace Discord\",\n          \"summary\": \"Gradio Sketch 2.0 đơn giản hóa việc xây dựng ứng dụng Gradio bằng cách hỗ trợ thêm các sự kiện mà không cần viết mã.\"\n        },\n        {\n          \"headline\": \"Hệ thống lái xe tự động được phân chia?\",\n          \"link\": \"https://medium.com/@samiratra95/autonomous-driving-modular-pipeline-vs-end-to-end-and-llms-642ca7f4ef89\",\n          \"source\": \"HuggingFace Discord\",\n          \"summary\": \"Một thành viên đã đăng một bài đăng trên blog về các đánh đổi kiến trúc của các hệ thống lái xe tự động. Bài đăng đối chiếu các phương pháp 'đường ống mô-đun' so với 'mô hình end-to-end', bao gồm cả việc thảo luận về việc tận dụng LLM.\"\n        },\n        {\n          \"headline\": \"Khóa học HuggingFace Agents gặp một số vấn đề\",\n          \"link\": \"https://discord.com/channels/879548962464493619\",\n          \"source\": \"HuggingFace Discord\",\n          \"summary\": \"Một thành viên báo cáo các sự cố với khóa học HuggingFace Agents, cho biết mọi sổ ghi chép đều bị hỏng và khóa học yêu cầu tín dụng suy luận HF.\"\n        },\n        {\n          \"headline\": \"Gemmasutra cung cấp CPU Chutzpah\",\n          \"link\": \"https://huggingface.co/TheDrummer/Gemmasutra-Mini-2B-v1\",\n          \"source\": \"HuggingFace Discord\",\n          \"summary\": \"Một thành viên yêu cầu một mô hình trò chuyện NSFW có thể chạy trên CPU và được giới thiệu Gemmasutra-Mini-2B-v1.\"\n        }\n      ],\n      \"title\": \"Tin tức Hugging Face\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Arc Prize tập trung vào ngữ cảnh dài\",\n          \"link\": \"https://x.com/arcprize/status/1900627173280804941\",\n          \"source\": \"Interconnects (Nathan Lambert) Discord\",\n          \"summary\": \"Arc Prize thông báo tập trung vào các đánh giá ngữ cảnh dài do 'tình trạng tồi tệ' của các mô hình ngữ cảnh dài hiện tại vào ngày 24 tháng 3 năm 2025. Điều này ngụ ý rằng các mô hình hiện tại đang gặp khó khăn với các phụ thuộc đường dài.\"\n        },\n        {\n          \"headline\": \"Figure xây dựng nhà máy humanoid BotQ\",\n          \"link\": \"https://www.figure.ai/news/botq\",\n          \"source\": \"Interconnects (Nathan Lambert) Discord\",\n          \"summary\": \"Figure ra mắt BotQ, một cơ sở sản xuất số lượng lớn mới chuyên về robot hình người, có khả năng sản xuất tới 12.000 robot hình người mỗi năm.\"\n        },\n        {\n          \"headline\": \"Together AI mở ThunderKittens cho Blackwell\",\n          \"link\": \"https://www.together.ai/blog/thunderkittens-nvidia-blackwell-gpus\",\n          \"source\": \"Interconnects (Nathan Lambert) Discord\",\n          \"summary\": \"Together AI đang phát hành mã nguồn mở các kernel được viết cho kiến trúc NVIDIA Blackwell thông qua framework ThunderKittens . Các kernel này nhằm mục đích tối ưu hóa hiệu suất trên các GPU thế hệ tiếp theo.\"\n        },\n        {\n          \"headline\": \"ICLR đối mặt với sự tấn công của 'slop papers'\",\n          \"link\": \"https://discord.com/channels/1179127597926469703\",\n          \"source\": \"Interconnects (Nathan Lambert) Discord\",\n          \"summary\": \"Các thành viên lo ngại rằng các hội nghị như ICLR sẽ bị spam bởi các 'slop papers' do AI và con người sẽ phải đọc chúng.\"\n        },\n        {\n          \"headline\": \"DeepSeek tóm tắt đồ ăn Trung Quốc\",\n          \"link\": \"https://x.com/yifever/status/1900803902049857694\",\n          \"source\": \"Interconnects (Nathan Lambert) Discord\",\n          \"summary\": \"Các ứng dụng giao đồ ăn Trung Quốc đã tích hợp DeepSeek để tạo ra các bản tóm tắt về các món ăn, có khả năng biến nó thành biểu tượng quốc gia.\"\n        }\n      ],\n      \"title\": \"Xu hướng từ Interconnects\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Các kiến trúc đa tác nhân: Swarm, Mesh và Sequence\",\n          \"link\": \"https://en.wikipedia.org/wiki/Telephone_game\",\n          \"source\": \"MCP (Glama) Discord\",\n          \"summary\": \"Các thành viên thảo luận về các kiến trúc Swarm, Mesh và Sequence cho các hệ thống đa tác nhân, giải quyết các sự cố với các tác nhân phụ bị mất tập trung trong các thiết lập phân cấp.\"\n        },\n        {\n          \"headline\": \"OpenSwarm đổi tên thành openai-agents\",\n          \"link\": \"https://discord.com/channels/1312302100125843476\",\n          \"source\": \"MCP (Glama) Discord\",\n          \"summary\": \"Một thành viên báo cáo rằng dự án OpenSwarm của họ đã được OpenAI đổi tên thành openai-agents cho một khách hàng trả tiền, yêu cầu ổn định trong vòng 4 tuần.\"\n        },\n        {\n          \"headline\": \"Claude Code: Giải mã các câu lệnh hệ thống\",\n          \"link\": \"https://leehanchung.github.io/blogs/2025/03/07/claude-code/\",\n          \"source\": \"MCP (Glama) Discord\",\n          \"summary\": \"Một thành viên đã đảo ngược kỹ thuật Claude Code, trích xuất các câu lệnh hệ thống của nó và chia sẻ nó trên Hacker News.\"\n        },\n        {\n          \"headline\": \"Vibe Coding trở nên 'Tuyệt vời'\",\n          \"link\": \"https://github.com/filipecalegario/awesome-vibe-coding\",\n          \"source\": \"MCP (Glama) Discord\",\n          \"summary\": \"Cộng đồng đã nhấn mạnh Awesome Vibe Coding, một danh sách được tuyển chọn gồm các công cụ, trình soạn thảo và tài nguyên được thiết kế để tăng cường tính trực quan và hiệu quả của việc viết mã với sự hỗ trợ của AI.\"\n        },\n        {\n          \"headline\": \"MacOS Control MCP mong muốn\",\n          \"link\": \"https://discord.com/channels/1312302100125843476\",\n          \"source\": \"MCP (Glama) Discord\",\n          \"summary\": \"Một thành viên yêu cầu một MCP để cho phép các mô hình điều khiển MacOS, cung cấp cho chúng khả năng 'thị giác' trên các ứng dụng gốc và không phải gốc. Đề xuất liên quan đến một mô hình 'người lập kế hoạch' như Qwen 2.5.\"\n        }\n      ],\n      \"title\": \"Diễn biến MCP\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"GPT-4 giải bài toán toán trong ngày sinh nhật\",\n          \"link\": \"https://x.com/poshenloh/status/1900721180887203879\",\n          \"source\": \"Latent SpaceDiscord\",\n          \"summary\": \"Nhân kỷ niệm 2 năm của GPT-4, PoShen Loh báo cáo rằng GPT-o1 đã đạt được điểm số hoàn hảo trong một bài kiểm tra toán học bậc đại học của Carnegie Mellon.\"\n        },\n        {\n          \"headline\": \"SAE Bench ra mắt để thúc đẩy nghiên cứu\",\n          \"link\": \"https://x.com/NeelNanda5/status/1900872633664544769\",\n          \"source\": \"Latent SpaceDiscord\",\n          \"summary\": \"SAE Bench 1.0, một bộ đánh giá Sparse Autoencoder, đã được phát hành đầy đủ với các chỉ số mới, hiệu suất nhiệm vụ xuôi dòng và đánh giá các sai sót đã biết.\"\n        },\n        {\n          \"headline\": \"Baidu phát hành mô hình ERNIE, sánh ngang DeepSeek R1\",\n          \"link\": \"https://yiyan.baidu.com/\",\n          \"source\": \"Latent SpaceDiscord\",\n          \"summary\": \"Baidu ra mắt các mô hình ERNIE 4.5 & X1; ERNIE X1 hoạt động tương đương với DeepSeek R1 với chi phí bằng một nửa. ERNIE Bot hiện miễn phí cho người dùng cá nhân và có thể truy cập trên trang web chính thức của Baidu.\"\n        },\n        {\n          \"headline\": \"Mistral Small 3.1 tự hào với ngữ cảnh dài\",\n          \"link\": \"https://mistral.ai/fr/news/mistral-small-3-1\",\n          \"source\": \"Latent Space Discord\",\n          \"summary\": \"Mistral AI đã công bố Mistral Small 3.1, với hiệu suất văn bản được cải thiện, khả năng hiểu đa phương thức và cửa sổ ngữ cảnh 128k token.\"\n        },\n        {\n          \"headline\": \"Levels.io dùng Vibe Code và Flight Sim để kiếm $1 triệu ARR\",\n          \"link\": \"https://x.com/levelsio/status/1893350391158292550\",\n          \"source\": \"Latent Space Discord\",\n          \"summary\": \"Các thành viên đã thảo luận về trình mô phỏng chuyến bay của Levels.io, được tạo bằng Cursor, nhanh chóng đạt 1 triệu đô la ARR bằng cách bán quảng cáo bên trong trò chơi.\"\n        }\n      ],\n      \"title\": \"Điểm tin từ Latent Space\"\n    },\n    {\n      \"articles\": [\n        {\n          \"headline\": \"Gemini trên Android vẫn còn hạn chế\",\n          \"link\": \"https://discord.com/channels/1124402182171672732\",\n          \"source\": \"Notebook LM Discord\",\n          \"summary\": \"Thành viên bày tỏ sự thất vọng về Gemini, thay thế Google Assistant trên Android, với hy vọng cải thiện sớm.\"\n        },\n        {\n          \"headline\": \"Deepseek R1 khuấy động thị trường AI\",\n          \"link\": \"https://discord.com/channels/1124402182171672732\",\n          \"source\": \"Notebook LM Discord\",\n          \"summary\": \"Sự ra mắt của Deepseek R1 có khả năng suy luận với chi phí thấp đã thúc đẩy sự leo thang đáng kể trên thị trường AI, bao gồm cả Gemini 2.0.\"\n        },\n        {\n          \"headline\": \"NotebookLM hỗ trợ giảm dần thuốc\",\n          \"link\": \"https://discord.com/channels/1124402182171672732\",\n          \"source\": \"Notebook LM Discord\",\n          \"summary\": \"Người dùng chia sẻ các trường hợp sử dụng, bao gồm tóm tắt thông tin về các chất hướng thần mới, tìm xu hướng trong dữ liệu sức khỏe, giao tiếp với gia đình và xây dựng một lịch trình giảm thuốc điều trị tâm thần.\"\n        },\n        {\n          \"headline\": \"Trích xuất dữ liệu từ Google Sheets vào NotebookLM\",\n          \"link\": \"https://discord.com/channels/1124402182171672732\",\n          \"source\": \"Notebook LM Discord\",\n          \"summary\": \"Các thành viên đã thảo luận về các phương pháp trích xuất Google Sheets thành định dạng có thể đọc được cho NotebookLM, với một người đề xuất việc sử dụng BigQuery và các truy vấn SQL do Gemini tạo để phân tích dữ liệu.\"\n        }\n      ],\n      \"title\": \"Cập nhật về Notebook LM\"\n    }\n  ]\n}",
+  "error": "",
+  "time": 30.82896065711975,
+  "attempts": 1,
+  "api_key_index": 1,
+  "structured_data": {
+    "from": "Người dùng",
+    "reportTitle": "Tổng hợp tin tức AI - Phân tích và Đánh giá",
+    "sections": [
+      {
+        "articles": [
+          {
+            "headline": "Python được tích hợp để tăng tính nhất quán trong tài liệu",
+            "link": "",
+            "source": "Chưa rõ",
+            "summary": "Nhóm đang tích hợp ví dụ Python để tăng tính nhất quán trong tài liệu, bổ sung cho các ví dụ Python và TypeScript hiện có."
+          },
+          {
+            "headline": "Steelskull L3.3 R1 70B chính thức ra mắt trên OpenRouter",
+            "link": "https://huggingface.co/BigHuggyD/SteelSkull_L3.3-Electra-R1-70b-FP8-Dynamic",
+            "source": "OpenRouter",
+            "summary": "Mô hình Steelskull L3.3 R1 70B hiện đã có mặt trên OpenRouter, đáp ứng nhu cầu của cộng đồng người dùng."
+          }
+        ],
+        "title": "Phát triển mô hình & Tài liệu"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Personality.gg gia nhập thị trường chatbot AI",
+            "link": "https://personality.gg",
+            "source": "Personality.gg",
+            "summary": "Personality.gg ra mắt, cho phép tạo, trò chuyện và kết nối với các nhân vật AI, sử dụng các mô hình như Claude, Gemini và mô hình Personality-v1."
+          }
+        ],
+        "title": "Ứng dụng và Nền tảng AI"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Perplexity Pro: Miễn phí một tháng sử dụng",
+            "link": "https://discord.com/channels/1047197230748151888",
+            "source": "Perplexity AI Discord",
+            "summary": "Một người dùng tìm thấy chương trình khuyến mãi trên ứng dụng Windows của Perplexity, cung cấp một tháng miễn phí sử dụng Perplexity Pro khi sử dụng ứng dụng liên tục trong 7 ngày."
+          },
+          {
+            "headline": "Gemini 2 Flash gặp khó khăn trong việc duy trì ngữ cảnh",
+            "link": "https://discord.com/channels/1047197230748151888",
+            "source": "Perplexity AI Discord",
+            "summary": "Người dùng tranh luận về khả năng duy trì ngữ cảnh của Gemini 2 Flash trên Perplexity, với nhiều trải nghiệm trái chiều. Một số người dùng thích sử dụng Sonnet hơn."
+          },
+          {
+            "headline": "Ernie 4.5 của Baidu cạnh tranh với DeepSeek R1",
+            "link": "https://x.com/baidu_inc/status/1901089355890036897?s=46",
+            "source": "Perplexity AI Discord",
+            "summary": "Baidu dự kiến sẽ phát hành mã nguồn mở Ernie 4.5 vào khoảng cuối tháng 6, với tiềm năng tích hợp vào Perplexity. Ernie X1 được quảng cáo là có hiệu suất tương đương DeepSeek R1 với chi phí bằng một nửa."
+          },
+          {
+            "headline": "Deepseek R1 có tỷ lệ 'ảo giác' cao",
+            "link": "https://github.com/vectara/hallucination-leaderboard",
+            "source": "Perplexity AI Discord",
+            "summary": "Deepseek R1 thường tạo ra các lỗi sai sót về mặt thực tế, với tỷ lệ 'ảo giác' cao (trên 14%), theo bảng xếp hạng 'ảo giác' trên GitHub."
+          },
+          {
+            "headline": "Giới hạn hình ảnh trong API sonar reasoning",
+            "link": "https://discord.com/channels/1047197230748151888",
+            "source": "Perplexity AI Discord",
+            "summary": "API sonar-reasoning-pro trả về tối đa 5 hình ảnh và người dùng đặt câu hỏi liệu giới hạn này có thể được cấu hình hay không. Tài liệu không cung cấp bất kỳ thông tin nào về việc tăng giới hạn này."
+          }
+        ],
+        "title": "Tin tức về Perplexity AI"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Tranh luận về C và Rust",
+            "link": "https://faultlore.com/blah/c-isnt-a-language/",
+            "source": "Yannick Kilcher Discord",
+            "summary": "Các thành viên tranh luận về ưu điểm của C so với Rust. Một thành viên cho rằng C nên 'chết' trong khi một thành viên khác lại khẳng định thiết kế của C cho phép nó được sử dụng trên nhiều nền tảng."
+          },
+          {
+            "headline": "LLM gặp khó khăn với bộ đệm vòng",
+            "link": "https://discord.com/channels/714501525455634453",
+            "source": "Yannick Kilcher Discord",
+            "summary": "Các thành viên nhận thấy rằng các LLM hàng đầu gặp khó khăn trong việc triển khai một bộ đệm vòng với ánh xạ bộ nhớ, điều này nhắc nhở đề xuất ánh xạ bộ đệm vào hai vùng ảo liên tiếp."
+          },
+          {
+            "headline": "Cơ chế Attention thu hút sự quan tâm",
+            "link": "https://discord.com/channels/714501525455634453",
+            "source": "Yannick Kilcher Discord",
+            "summary": "Các thành viên thảo luận về Fitness-Based Attention (FBA), cho rằng Attention chỉ mang tính tĩnh và dựa trên 'sự tương đồng'."
+          },
+          {
+            "headline": "Gemma 3 được ra mắt",
+            "link": "https://www.youtube.com/watch?v=n5nEd600iM0",
+            "source": "Yannick Kilcher Discord",
+            "summary": "Gemma 3 là một dòng mô hình mở nhẹ (1B–27B tham số) tích hợp khả năng hiểu thị giác, hỗ trợ đa ngôn ngữ và cửa sổ ngữ cảnh mở rộng (lên đến 128K token)."
+          },
+          {
+            "headline": "Mistral Small 3.1 gây ấn tượng với thông số kỹ thuật",
+            "link": "https://mistral.ai/fr/news/mistral-small-3-1",
+            "source": "Mistral AI",
+            "summary": "Mistral AI công bố Mistral Small 3.1, tự hào về hiệu suất văn bản được cải thiện, khả năng hiểu đa phương thức và cửa sổ ngữ cảnh 128k token, vượt trội hơn Gemma 3 và GPT-4o Mini."
+          }
+        ],
+        "title": "Thảo luận trong cộng đồng AI"
+      },
+      {
+        "articles": [
+          {
+            "headline": "SmolVLM2 thu nhỏ thế giới VLM",
+            "link": "https://x.com/pcuenq/status/1896632829372715442",
+            "source": "HuggingFace Discord",
+            "summary": "HuggingFace ra mắt SmolVLM2, VLM nhỏ nhất, được thể hiện đang chạy phiên bản 500M trên một ứng dụng iPhone."
+          },
+          {
+            "headline": "Gradio Sketch 2.0 đơn giản hóa việc xây dựng ứng dụng",
+            "link": "https://x.com/abidlabs/status/1897782056308142266",
+            "source": "HuggingFace Discord",
+            "summary": "Gradio Sketch 2.0 đơn giản hóa việc xây dựng ứng dụng Gradio bằng cách hỗ trợ thêm các sự kiện mà không cần viết mã."
+          },
+          {
+            "headline": "Hệ thống lái xe tự động được phân chia?",
+            "link": "https://medium.com/@samiratra95/autonomous-driving-modular-pipeline-vs-end-to-end-and-llms-642ca7f4ef89",
+            "source": "HuggingFace Discord",
+            "summary": "Một thành viên đã đăng một bài đăng trên blog về các đánh đổi kiến trúc của các hệ thống lái xe tự động. Bài đăng đối chiếu các phương pháp 'đường ống mô-đun' so với 'mô hình end-to-end', bao gồm cả việc thảo luận về việc tận dụng LLM."
+          },
+          {
+            "headline": "Khóa học HuggingFace Agents gặp một số vấn đề",
+            "link": "https://discord.com/channels/879548962464493619",
+            "source": "HuggingFace Discord",
+            "summary": "Một thành viên báo cáo các sự cố với khóa học HuggingFace Agents, cho biết mọi sổ ghi chép đều bị hỏng và khóa học yêu cầu tín dụng suy luận HF."
+          },
+          {
+            "headline": "Gemmasutra cung cấp CPU Chutzpah",
+            "link": "https://huggingface.co/TheDrummer/Gemmasutra-Mini-2B-v1",
+            "source": "HuggingFace Discord",
+            "summary": "Một thành viên yêu cầu một mô hình trò chuyện NSFW có thể chạy trên CPU và được giới thiệu Gemmasutra-Mini-2B-v1."
+          }
+        ],
+        "title": "Tin tức Hugging Face"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Arc Prize tập trung vào ngữ cảnh dài",
+            "link": "https://x.com/arcprize/status/1900627173280804941",
+            "source": "Interconnects (Nathan Lambert) Discord",
+            "summary": "Arc Prize thông báo tập trung vào các đánh giá ngữ cảnh dài do 'tình trạng tồi tệ' của các mô hình ngữ cảnh dài hiện tại vào ngày 24 tháng 3 năm 2025. Điều này ngụ ý rằng các mô hình hiện tại đang gặp khó khăn với các phụ thuộc đường dài."
+          },
+          {
+            "headline": "Figure xây dựng nhà máy humanoid BotQ",
+            "link": "https://www.figure.ai/news/botq",
+            "source": "Interconnects (Nathan Lambert) Discord",
+            "summary": "Figure ra mắt BotQ, một cơ sở sản xuất số lượng lớn mới chuyên về robot hình người, có khả năng sản xuất tới 12.000 robot hình người mỗi năm."
+          },
+          {
+            "headline": "Together AI mở ThunderKittens cho Blackwell",
+            "link": "https://www.together.ai/blog/thunderkittens-nvidia-blackwell-gpus",
+            "source": "Interconnects (Nathan Lambert) Discord",
+            "summary": "Together AI đang phát hành mã nguồn mở các kernel được viết cho kiến trúc NVIDIA Blackwell thông qua framework ThunderKittens . Các kernel này nhằm mục đích tối ưu hóa hiệu suất trên các GPU thế hệ tiếp theo."
+          },
+          {
+            "headline": "ICLR đối mặt với sự tấn công của 'slop papers'",
+            "link": "https://discord.com/channels/1179127597926469703",
+            "source": "Interconnects (Nathan Lambert) Discord",
+            "summary": "Các thành viên lo ngại rằng các hội nghị như ICLR sẽ bị spam bởi các 'slop papers' do AI và con người sẽ phải đọc chúng."
+          },
+          {
+            "headline": "DeepSeek tóm tắt đồ ăn Trung Quốc",
+            "link": "https://x.com/yifever/status/1900803902049857694",
+            "source": "Interconnects (Nathan Lambert) Discord",
+            "summary": "Các ứng dụng giao đồ ăn Trung Quốc đã tích hợp DeepSeek để tạo ra các bản tóm tắt về các món ăn, có khả năng biến nó thành biểu tượng quốc gia."
+          }
+        ],
+        "title": "Xu hướng từ Interconnects"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Các kiến trúc đa tác nhân: Swarm, Mesh và Sequence",
+            "link": "https://en.wikipedia.org/wiki/Telephone_game",
+            "source": "MCP (Glama) Discord",
+            "summary": "Các thành viên thảo luận về các kiến trúc Swarm, Mesh và Sequence cho các hệ thống đa tác nhân, giải quyết các sự cố với các tác nhân phụ bị mất tập trung trong các thiết lập phân cấp."
+          },
+          {
+            "headline": "OpenSwarm đổi tên thành openai-agents",
+            "link": "https://discord.com/channels/1312302100125843476",
+            "source": "MCP (Glama) Discord",
+            "summary": "Một thành viên báo cáo rằng dự án OpenSwarm của họ đã được OpenAI đổi tên thành openai-agents cho một khách hàng trả tiền, yêu cầu ổn định trong vòng 4 tuần."
+          },
+          {
+            "headline": "Claude Code: Giải mã các câu lệnh hệ thống",
+            "link": "https://leehanchung.github.io/blogs/2025/03/07/claude-code/",
+            "source": "MCP (Glama) Discord",
+            "summary": "Một thành viên đã đảo ngược kỹ thuật Claude Code, trích xuất các câu lệnh hệ thống của nó và chia sẻ nó trên Hacker News."
+          },
+          {
+            "headline": "Vibe Coding trở nên 'Tuyệt vời'",
+            "link": "https://github.com/filipecalegario/awesome-vibe-coding",
+            "source": "MCP (Glama) Discord",
+            "summary": "Cộng đồng đã nhấn mạnh Awesome Vibe Coding, một danh sách được tuyển chọn gồm các công cụ, trình soạn thảo và tài nguyên được thiết kế để tăng cường tính trực quan và hiệu quả của việc viết mã với sự hỗ trợ của AI."
+          },
+          {
+            "headline": "MacOS Control MCP mong muốn",
+            "link": "https://discord.com/channels/1312302100125843476",
+            "source": "MCP (Glama) Discord",
+            "summary": "Một thành viên yêu cầu một MCP để cho phép các mô hình điều khiển MacOS, cung cấp cho chúng khả năng 'thị giác' trên các ứng dụng gốc và không phải gốc. Đề xuất liên quan đến một mô hình 'người lập kế hoạch' như Qwen 2.5."
+          }
+        ],
+        "title": "Diễn biến MCP"
+      },
+      {
+        "articles": [
+          {
+            "headline": "GPT-4 giải bài toán toán trong ngày sinh nhật",
+            "link": "https://x.com/poshenloh/status/1900721180887203879",
+            "source": "Latent SpaceDiscord",
+            "summary": "Nhân kỷ niệm 2 năm của GPT-4, PoShen Loh báo cáo rằng GPT-o1 đã đạt được điểm số hoàn hảo trong một bài kiểm tra toán học bậc đại học của Carnegie Mellon."
+          },
+          {
+            "headline": "SAE Bench ra mắt để thúc đẩy nghiên cứu",
+            "link": "https://x.com/NeelNanda5/status/1900872633664544769",
+            "source": "Latent SpaceDiscord",
+            "summary": "SAE Bench 1.0, một bộ đánh giá Sparse Autoencoder, đã được phát hành đầy đủ với các chỉ số mới, hiệu suất nhiệm vụ xuôi dòng và đánh giá các sai sót đã biết."
+          },
+          {
+            "headline": "Baidu phát hành mô hình ERNIE, sánh ngang DeepSeek R1",
+            "link": "https://yiyan.baidu.com/",
+            "source": "Latent SpaceDiscord",
+            "summary": "Baidu ra mắt các mô hình ERNIE 4.5 & X1; ERNIE X1 hoạt động tương đương với DeepSeek R1 với chi phí bằng một nửa. ERNIE Bot hiện miễn phí cho người dùng cá nhân và có thể truy cập trên trang web chính thức của Baidu."
+          },
+          {
+            "headline": "Mistral Small 3.1 tự hào với ngữ cảnh dài",
+            "link": "https://mistral.ai/fr/news/mistral-small-3-1",
+            "source": "Latent Space Discord",
+            "summary": "Mistral AI đã công bố Mistral Small 3.1, với hiệu suất văn bản được cải thiện, khả năng hiểu đa phương thức và cửa sổ ngữ cảnh 128k token."
+          },
+          {
+            "headline": "Levels.io dùng Vibe Code và Flight Sim để kiếm $1 triệu ARR",
+            "link": "https://x.com/levelsio/status/1893350391158292550",
+            "source": "Latent Space Discord",
+            "summary": "Các thành viên đã thảo luận về trình mô phỏng chuyến bay của Levels.io, được tạo bằng Cursor, nhanh chóng đạt 1 triệu đô la ARR bằng cách bán quảng cáo bên trong trò chơi."
+          }
+        ],
+        "title": "Điểm tin từ Latent Space"
+      },
+      {
+        "articles": [
+          {
+            "headline": "Gemini trên Android vẫn còn hạn chế",
+            "link": "https://discord.com/channels/1124402182171672732",
+            "source": "Notebook LM Discord",
+            "summary": "Thành viên bày tỏ sự thất vọng về Gemini, thay thế Google Assistant trên Android, với hy vọng cải thiện sớm."
+          },
+          {
+            "headline": "Deepseek R1 khuấy động thị trường AI",
+            "link": "https://discord.com/channels/1124402182171672732",
+            "source": "Notebook LM Discord",
+            "summary": "Sự ra mắt của Deepseek R1 có khả năng suy luận với chi phí thấp đã thúc đẩy sự leo thang đáng kể trên thị trường AI, bao gồm cả Gemini 2.0."
+          },
+          {
+            "headline": "NotebookLM hỗ trợ giảm dần thuốc",
+            "link": "https://discord.com/channels/1124402182171672732",
+            "source": "Notebook LM Discord",
+            "summary": "Người dùng chia sẻ các trường hợp sử dụng, bao gồm tóm tắt thông tin về các chất hướng thần mới, tìm xu hướng trong dữ liệu sức khỏe, giao tiếp với gia đình và xây dựng một lịch trình giảm thuốc điều trị tâm thần."
+          },
+          {
+            "headline": "Trích xuất dữ liệu từ Google Sheets vào NotebookLM",
+            "link": "https://discord.com/channels/1124402182171672732",
+            "source": "Notebook LM Discord",
+            "summary": "Các thành viên đã thảo luận về các phương pháp trích xuất Google Sheets thành định dạng có thể đọc được cho NotebookLM, với một người đề xuất việc sử dụng BigQuery và các truy vấn SQL do Gemini tạo để phân tích dữ liệu."
+          }
+        ],
+        "title": "Cập nhật về Notebook LM"
+      }
+    ]
+  }
+}
