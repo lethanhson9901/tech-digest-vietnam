@@ -9,3 +9,6 @@ Trang web tổng hợp và dịch tự động tin tức công nghệ từ các 
 - Tạo bản tin tổng hợp hàng ngày
 - Gửi email newsletter đến người đăng ký
 - Lưu trữ nội dung trên trang web để dễ dàng truy cập
+
+## Frontend
+npm install react react-dom react-markdown react-syntax-highlighter
