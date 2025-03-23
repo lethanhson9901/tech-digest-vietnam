@@ -2,3 +2,8 @@ html2text
 pyyaml
 google-generativeai
 firebase-admin
+pymongo
+fastapi
+uvicorn
+pymongo
+pydantic

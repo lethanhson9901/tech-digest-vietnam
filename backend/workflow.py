@@ -10,7 +10,7 @@ from cleanup import cleanup_files
 from convert import convert_to_beautiful_md
 from fetch_emails import get_llm_ready_emails, load_config
 from generate_report import generate_json_reports
-from upload_files_to_firebase import upload_directory_to_firebase, upload_to_firebase
+from upload_files_to_mongo import upload_directory_to_mongodb, upload_to_mongodb
 
 
 def main():
@@ -89,7 +89,7 @@ def main():
             print("\n=== STEP 4: UPLOADING FILES TO FIREBASE ===")
             try:
                 # Upload markdown file
-                md_firebase_url = upload_to_firebase(md_file)
+                md_firebase_url = upload_to_mongodb(md_file)
                 if md_firebase_url:
                     print(f"Markdown file uploaded successfully. Public URL: {md_firebase_url}")
                 else:
@@ -97,7 +97,7 @@ def main():
 
                 # Upload JSON files
                 json_dir = os.path.join(base_path, "json_reports")
-                json_upload_results = upload_directory_to_firebase(json_dir)
+                json_upload_results = upload_directory_to_mongodb(json_dir)
                 for file, url in json_upload_results.items():
                     if url:
                         print(f"JSON file {file} uploaded successfully. Public URL: {url}")

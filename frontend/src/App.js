@@ -1,5 +1,7 @@
 // src/App.js
 import React, { useEffect, useState } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Archive from './components/Archive';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -79,20 +81,29 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <Header>
-        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-      </Header>
-      <main>
-        <Sidebar tocItems={tocItems} />
-        <Content 
-          title={title} 
-          sections={contentSections} 
-          isLoading={isLoading} 
-        />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="app">
+        <Header>
+          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+        </Header>
+        <main>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Sidebar tocItems={tocItems} />
+                <Content 
+                  title={title} 
+                  sections={contentSections} 
+                  isLoading={isLoading} 
+                />
+              </>
+            } />
+            <Route path="/archive" element={<Archive />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

@@ -1,7 +1,7 @@
 gemini:
   # Required: API Keys
   api_keys:
-      - "AIxxx"
+    - "AIxxx"
  
   # Optional: Generation Settings
   generation:
@@ -31,12 +31,12 @@ gemini:
   default_model: "gemini-2.0-pro-exp-02-05"
   system_instruction: null  # Custom system prompt
  
-# anht xfoj mbhc kxjw
+# gmail received news
 gmail:
   email: "your-email@gmail.com"
   email_app_password: "generated app password" # https://support.google.com/mail/thread/205453566/how-to-generate-an-app-password?hl=en
-
 # where to save result data
 storage:
   # Default base path (can include date formatting)
-  base_path: "data/{date}"  # This will create folders like data/20250319
+  base_path: "../data/{date}"  # This will create folders like data/20250319
+  mongo_db_uri: "your mongodb uri"
