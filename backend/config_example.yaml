@@ -1,7 +1,21 @@
 gemini:
   # Required: API Keys
   api_keys:
-    - "AIxxx"
+    - "AIzaSyDq33scvT5F9vUwyGjBQXS6T6CsH1AF_Qo" #hoasung9901
+    - "AIzaSyA6EQ62KvwwvEyxPIeA6C2AMx9u74BYQEA" #lethanhson9901
+    - "AIzaSyCcgsm0upf3b-Dbqp85KrfJzLRweYEUXC0" #lethanhson9902
+    - "AIzaSyCYnA3b2dXKPg1vXk4TZ-WGF2ZqAX18JQI" #lethanhson9903
+    - "AIzaSyCoCT-QRMeF9e1RK-goZ1ERDipdZvRS4QA" #lethanhson9904
+    - "AIzaSyCCL7BweH1DT17G9cG1T01VM0bXDrW1cXQ" #lethanhson9905
+    - "AIzaSyCtLUegpYNpaYZ2UC4Tgu6l6jV25kiAMrE" #lethanhson9906
+    - "AIzaSyAXSrpbfkQVUFyX2CUW9K_o4fLOse4AT3o" #lethanhson9907
+    - "AIzaSyCgZ5BmXELyTFsPRHRmFMVZ5J0dhODYAWk"
+    - "AIzaSyC3dsHny6rrVhHAb5Fszc1Lp0wP6rC8o-M" #lethanhson99901
+    - "AIzaSyABFAhsvvJIKQI6gZQ_vtAqexsaXRj6Vkg" #lethanhson99902
+    - "AIzaSyBIBMvBoiT3Apka409aqNB97WpJ1LTe4O8" #lethanhson99903
+    - "AIzaSyCiUckum9d7Cvi7z1_8xRRUNbH3RYdBbzM" #lethanhson99904
+    - "AIzaSyCfC4AS9CHZhZw18JFqt5Pg-oI72m7ZmMI" #lethanhson99905
+    - "AIzaSyBpujJtW5iMlxONebuEaikZOp_80GsIi1M" #lethanhson99906
  
   # Optional: Generation Settings
   generation:
@@ -33,10 +47,11 @@ gemini:
  
 # gmail received news
 gmail:
-  email: "your-email@gmail.com"
-  email_app_password: "generated app password" # https://support.google.com/mail/thread/205453566/how-to-generate-an-app-password?hl=en
+  email: "lethanhson9910@gmail.com"
+  email_app_password: "anht xfoj mbhc kxjw"
+
 # where to save result data
 storage:
   # Default base path (can include date formatting)
   base_path: "../data/{date}"  # This will create folders like data/20250319
-  mongo_db_uri: "your mongodb uri"
+  mongo_db_uri: "mongodb+srv://lethanhson9901:WCUf7zMeNpxZhCl8@cluster0.wbloa.mongodb.net/?appName=Cluster0"
