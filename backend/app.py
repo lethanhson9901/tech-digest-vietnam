@@ -1,4 +1,3 @@
-# app.py
 import base64
 import os
 import secrets
@@ -45,8 +44,8 @@ app.add_middleware(
 security = HTTPBasic()
 
 # Credentials (in production, store these in environment variables)
-CRON_USERNAME = "tson"
-CRON_PASSWORD = "Tsondeptrai99@"
+CRON_USERNAME = os.getenv("CRON_USERNAME", "tson")
+CRON_PASSWORD = os.getenv("CRON_PASSWORD", "Tsondeptrai99@")
 
 # Pydantic models
 class Report(BaseModel):
@@ -59,37 +58,36 @@ class ReportList(BaseModel):
     reports: List[Report]
     count: int
 
-# MongoDB connection
-def get_mongo_client():
-    """Get MongoDB client from config"""
+# MongoDB connection dependency
+def get_db():
+    """Database connection dependency"""
     try:
-        with open('config.yaml', 'r') as file:
-            config = yaml.safe_load(file)
+        # Try to get connection string from environment first, then config file
+        uri = os.getenv("MONGO_URI")
+        if not uri:
+            try:
+                with open('config.yaml', 'r') as file:
+                    config = yaml.safe_load(file)
+                uri = config['storage']['mongo_db_uri']
+            except Exception as e:
+                print(f"Failed to load config: {str(e)}")
+                raise HTTPException(status_code=500, detail=f"Database configuration error: {str(e)}")
         
-        uri = config['storage']['mongo_db_uri']
-        return MongoClient(uri, server_api=ServerApi('1'))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Failed to connect to database: {str(e)}")
-
-@app.on_event("startup")
-async def startup_db_client():
-    """Verify database connection on startup"""
-    try:
-        client = get_mongo_client()
+        # Connect to MongoDB
+        client = MongoClient(uri, server_api=ServerApi('1'))
+        db = client.tech_digest
+        
+        # Test connection
         client.admin.command('ping')
-        app.mongodb_client = client
-        app.database = client.tech_digest
-        print("Connected to MongoDB!")
+        
+        try:
+            yield db
+        finally:
+            client.close()
+            
     except Exception as e:
-        print(f"Failed to connect to MongoDB: {str(e)}")
-        raise
-
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    """Close database connection on shutdown"""
-    if hasattr(app, "mongodb_client"):
-        app.mongodb_client.close()
-        print("MongoDB connection closed")
+        print(f"Database connection error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Database connection error: {str(e)}")
 
 # Authentication function for basic auth
 def verify_basic_auth(credentials: HTTPBasicCredentials = Depends(security)):
@@ -147,6 +145,7 @@ async def root():
 
 @app.get("/reports", response_model=ReportList)
 async def get_reports(
+    db = Depends(get_db),
     skip: int = Query(0, ge=0),
     limit: int = Query(10, ge=1, le=100),
     search: Optional[str] = None,
@@ -186,10 +185,10 @@ async def get_reports(
     
     try:
         # Get total count for pagination
-        total_count = app.database.reports.count_documents(query)
+        total_count = db.reports.count_documents(query)
         
         # Get reports with pagination - convert cursor to list immediately
-        cursor = app.database.reports.find(query).skip(skip).limit(limit).sort("upload_date", -1)
+        cursor = db.reports.find(query).skip(skip).limit(limit).sort("upload_date", -1)
         reports_data = list(cursor)  # Convert cursor to list
         
         reports = []
@@ -206,9 +205,9 @@ async def get_reports(
         raise HTTPException(status_code=500, detail=f"Failed to fetch reports: {str(e)}")
 
 @app.get("/reports/{report_id}", response_model=Report)
-async def get_report(report_id: str):
+async def get_report(report_id: str, db = Depends(get_db)):
     try:
-        report = app.database.reports.find_one({"_id": ObjectId(report_id)})
+        report = db.reports.find_one({"_id": ObjectId(report_id)})
         if report:
             return Report(
                 id=str(report["_id"]),
@@ -222,6 +221,7 @@ async def get_report(report_id: str):
 
 @app.get("/json-reports", response_model=ReportList)
 async def get_json_reports(
+    db = Depends(get_db),
     skip: int = Query(0, ge=0),
     limit: int = Query(10, ge=1, le=100),
     search: Optional[str] = None
@@ -244,10 +244,10 @@ async def get_json_reports(
     
     try:
         # Get total count for pagination
-        total_count = app.database.json_reports.count_documents(query)
+        total_count = db.json_reports.count_documents(query)
         
         # Get reports with pagination - convert cursor to list immediately
-        cursor = app.database.json_reports.find(query).skip(skip).limit(limit).sort("upload_date", -1)
+        cursor = db.json_reports.find(query).skip(skip).limit(limit).sort("upload_date", -1)
         reports_data = list(cursor)  # Convert cursor to list
         
         reports = []
@@ -264,17 +264,14 @@ async def get_json_reports(
         raise HTTPException(status_code=500, detail=f"Failed to fetch JSON reports: {str(e)}")
 
 @app.get("/json-reports/{report_id}", response_model=Report)
-async def get_json_report(report_id: str):
+async def get_json_report(report_id: str, db = Depends(get_db)):
     """
     Get a specific JSON report by ID
     
     - **report_id**: MongoDB ObjectID as string
     """
-    from bson.objectid import ObjectId
-    
     try:
-        # Remove the 'await' keyword here
-        report = app.database.json_reports.find_one({"_id": ObjectId(report_id)})
+        report = db.json_reports.find_one({"_id": ObjectId(report_id)})
         if report:
             return Report(
                 id=str(report["_id"]),
@@ -291,7 +288,7 @@ async def get_json_report(report_id: str):
 async def run_workflow(
     request: Request, 
     background_tasks: BackgroundTasks,
-    # Support both authentication methods
+    db = Depends(get_db),
     username: str = Depends(verify_header_auth)
 ):
     """
@@ -301,11 +298,11 @@ async def run_workflow(
     Requires authentication with username: tson and password: Tsondeptrai99@
     """
     # Start the workflow in the background
-    background_tasks.add_task(execute_workflow)
+    background_tasks.add_task(execute_workflow, db)
     
     # Log the cron job execution to MongoDB for tracking
     try:
-        app.database.cron_logs.insert_one({
+        db.cron_logs.insert_one({
             "execution_time": datetime.utcnow(),
             "status": "started",
             "ip": request.client.host,
@@ -316,13 +313,13 @@ async def run_workflow(
     
     return {"status": "success", "message": "Workflow started in background"}
 
-def execute_workflow():
+def execute_workflow(db):
     """Execute the workflow.py script as a subprocess"""
     log_id = None
     
     # Create a log entry
     try:
-        result = app.database.cron_logs.insert_one({
+        result = db.cron_logs.insert_one({
             "execution_time": datetime.utcnow(),
             "status": "running",
             "start_time": datetime.utcnow()
@@ -346,7 +343,7 @@ def execute_workflow():
         
         # Update the log with results
         if log_id:
-            app.database.cron_logs.update_one(
+            db.cron_logs.update_one(
                 {"_id": log_id},
                 {"$set": {
                     "status": status,
@@ -369,7 +366,7 @@ def execute_workflow():
     except Exception as e:
         # Update log with error
         if log_id:
-            app.database.cron_logs.update_one(
+            db.cron_logs.update_one(
                 {"_id": log_id},
                 {"$set": {
                     "status": "error",
@@ -383,6 +380,7 @@ def execute_workflow():
 # Add an endpoint to view cron logs (protected by the same authentication)
 @app.get("/api/cron-logs")
 async def get_cron_logs(
+    db = Depends(get_db),
     limit: int = 10,
     username: str = Depends(verify_basic_auth)
 ):
@@ -391,7 +389,7 @@ async def get_cron_logs(
     Requires authentication
     """
     try:
-        logs = list(app.database.cron_logs.find().sort("execution_time", -1).limit(limit))
+        logs = list(db.cron_logs.find().sort("execution_time", -1).limit(limit))
         return {
             "logs": [
                 {

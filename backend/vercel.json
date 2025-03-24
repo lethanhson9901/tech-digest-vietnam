@@ -12,13 +12,8 @@
         "dest": "app.py"
       }
     ],
-    "crons": [
-      {
-        "path": "/api/cron",
-        "schedule": "0 0 * * *",
-        "headers": {
-          "Authorization": "Bearer tson:Tsondeptrai99@"
-        }
-      }
-    ]
-}
+    "env": {
+      "MONGO_URI": "@mongo_uri"
+    }
+  }
+  
