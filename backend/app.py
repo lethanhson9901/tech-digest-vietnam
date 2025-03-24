@@ -58,6 +58,15 @@ class ReportList(BaseModel):
     reports: List[Report]
     count: int
 
+# New Pydantic models for summary view
+class ReportSummary(BaseModel):
+    id: str
+    filename: str
+
+class ReportSummaryList(BaseModel):
+    reports: List[ReportSummary]
+    count: int
+
 # MongoDB connection dependency
 def get_db():
     """Database connection dependency"""
@@ -143,7 +152,7 @@ async def root():
     """Root endpoint"""
     return {"message": "Welcome to Tech Digest API", "status": "active"}
 
-@app.get("/reports", response_model=ReportList)
+@app.get("/reports", response_model=ReportSummaryList)
 async def get_reports(
     db = Depends(get_db),
     skip: int = Query(0, ge=0),
@@ -153,7 +162,7 @@ async def get_reports(
     date_to: Optional[str] = None
 ):
     """
-    Get all reports with optional filtering
+    Get all reports with optional filtering (summary format - ID and filename only)
     """
     query = {}
     
@@ -188,21 +197,43 @@ async def get_reports(
         total_count = db.reports.count_documents(query)
         
         # Get reports with pagination - convert cursor to list immediately
-        cursor = db.reports.find(query).skip(skip).limit(limit).sort("upload_date", -1)
-        reports_data = list(cursor)  # Convert cursor to list
+        # Only retrieve _id and filename fields
+        cursor = db.reports.find(query, {"_id": 1, "filename": 1}).skip(skip).limit(limit).sort("upload_date", -1)
+        reports_data = list(cursor)
         
         reports = []
         for doc in reports_data:
-            reports.append(Report(
+            reports.append(ReportSummary(
                 id=str(doc["_id"]),
-                filename=doc["filename"],
-                content=doc["content"],
-                upload_date=doc["upload_date"]
+                filename=doc["filename"]
             ))
         
-        return ReportList(reports=reports, count=total_count)
+        return ReportSummaryList(reports=reports, count=total_count)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to fetch reports: {str(e)}")
+
+@app.get("/reports/latest", response_model=Report)
+async def get_latest_report(db = Depends(get_db)):
+    """
+    Get the most recently uploaded report with full content
+    """
+    try:
+        # Find the most recent report by sorting on upload_date in descending order
+        latest_report = db.reports.find_one(
+            sort=[("upload_date", -1)]  # -1 means descending order
+        )
+        
+        if latest_report:
+            return Report(
+                id=str(latest_report["_id"]),
+                filename=latest_report["filename"],
+                content=latest_report["content"],
+                upload_date=latest_report["upload_date"]
+            )
+        else:
+            raise HTTPException(status_code=404, detail="No reports found in the database")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to fetch latest report: {str(e)}")
 
 @app.get("/reports/{report_id}", response_model=Report)
 async def get_report(report_id: str, db = Depends(get_db)):
@@ -219,7 +250,7 @@ async def get_report(report_id: str, db = Depends(get_db)):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to fetch report: {str(e)}")
 
-@app.get("/json-reports", response_model=ReportList)
+@app.get("/json-reports", response_model=ReportSummaryList)
 async def get_json_reports(
     db = Depends(get_db),
     skip: int = Query(0, ge=0),
@@ -247,21 +278,42 @@ async def get_json_reports(
         total_count = db.json_reports.count_documents(query)
         
         # Get reports with pagination - convert cursor to list immediately
-        cursor = db.json_reports.find(query).skip(skip).limit(limit).sort("upload_date", -1)
-        reports_data = list(cursor)  # Convert cursor to list
+        cursor = db.json_reports.find(query, {"_id": 1, "filename": 1}).skip(skip).limit(limit).sort("upload_date", -1)
+        reports_data = list(cursor)
         
         reports = []
         for doc in reports_data:
-            reports.append(Report(
+            reports.append(ReportSummary(
                 id=str(doc["_id"]),
-                filename=doc["filename"],
-                content=doc["content"],
-                upload_date=doc["upload_date"]
+                filename=doc["filename"]
             ))
         
-        return ReportList(reports=reports, count=total_count)
+        return ReportSummaryList(reports=reports, count=total_count)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to fetch JSON reports: {str(e)}")
+
+@app.get("/json-reports/latest", response_model=Report)
+async def get_latest_json_report(db = Depends(get_db)):
+    """
+    Get the most recently uploaded JSON report with full content
+    """
+    try:
+        # Find the most recent JSON report by sorting on upload_date in descending order
+        latest_report = db.json_reports.find_one(
+            sort=[("upload_date", -1)]  # -1 means descending order
+        )
+        
+        if latest_report:
+            return Report(
+                id=str(latest_report["_id"]),
+                filename=latest_report["filename"],
+                content=latest_report["content"],
+                upload_date=latest_report["upload_date"]
+            )
+        else:
+            raise HTTPException(status_code=404, detail="No JSON reports found in the database")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to fetch latest JSON report: {str(e)}")
 
 @app.get("/json-reports/{report_id}", response_model=Report)
 async def get_json_report(report_id: str, db = Depends(get_db)):
