@@ -1,13 +1,26 @@
 # app.py
+import base64
 import os
+import secrets
+import subprocess
 from datetime import datetime
 from typing import List, Optional
 
 import yaml
 from bson.objectid import ObjectId
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import (
+    BackgroundTasks,
+    Depends,
+    FastAPI,
+    Header,
+    HTTPException,
+    Query,
+    Request,
+    status,
+)
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from pydantic import BaseModel
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
@@ -27,6 +40,13 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Security
+security = HTTPBasic()
+
+# Credentials (in production, store these in environment variables)
+CRON_USERNAME = "tson"
+CRON_PASSWORD = "Tsondeptrai99@"
 
 # Pydantic models
 class Report(BaseModel):
@@ -70,6 +90,54 @@ async def shutdown_db_client():
     if hasattr(app, "mongodb_client"):
         app.mongodb_client.close()
         print("MongoDB connection closed")
+
+# Authentication function for basic auth
+def verify_basic_auth(credentials: HTTPBasicCredentials = Depends(security)):
+    is_username_correct = secrets.compare_digest(credentials.username, CRON_USERNAME)
+    is_password_correct = secrets.compare_digest(credentials.password, CRON_PASSWORD)
+    
+    if not (is_username_correct and is_password_correct):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid credentials",
+            headers={"WWW-Authenticate": "Basic"},
+        )
+    return credentials.username
+
+# Authentication function for header auth (useful for Vercel cron which might not support Basic Auth)
+def verify_header_auth(authorization: Optional[str] = Header(None)):
+    if not authorization:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Authorization header missing",
+            headers={"WWW-Authenticate": "Basic"},
+        )
+        
+    try:
+        # Check if it's Basic auth
+        auth_type, auth_value = authorization.split(' ', 1)
+        if auth_type.lower() == 'basic':
+            credentials = base64.b64decode(auth_value).decode('utf-8')
+            username, password = credentials.split(':', 1)
+            
+            is_username_correct = secrets.compare_digest(username, CRON_USERNAME)
+            is_password_correct = secrets.compare_digest(password, CRON_PASSWORD)
+            
+            if is_username_correct and is_password_correct:
+                return username
+        
+        # Also support a simple token approach for Vercel
+        elif authorization == f"Bearer {CRON_USERNAME}:{CRON_PASSWORD}":
+            return CRON_USERNAME
+            
+    except Exception:
+        pass
+        
+    raise HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Invalid credentials",
+        headers={"WWW-Authenticate": "Basic"},
+    )
 
 # Routes
 @app.get("/", response_class=JSONResponse)
@@ -218,7 +286,128 @@ async def get_json_report(report_id: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to fetch JSON report: {str(e)}")
 
+# Cron job endpoint for scheduled tasks
+@app.post("/api/cron")
+async def run_workflow(
+    request: Request, 
+    background_tasks: BackgroundTasks,
+    # Support both authentication methods
+    username: str = Depends(verify_header_auth)
+):
+    """
+    Endpoint for scheduled workflow execution.
+    This will be triggered by Vercel's cron job.
+    
+    Requires authentication with username: tson and password: Tsondeptrai99@
+    """
+    # Start the workflow in the background
+    background_tasks.add_task(execute_workflow)
+    
+    # Log the cron job execution to MongoDB for tracking
+    try:
+        app.database.cron_logs.insert_one({
+            "execution_time": datetime.utcnow(),
+            "status": "started",
+            "ip": request.client.host,
+            "authenticated_as": username
+        })
+    except Exception as e:
+        print(f"Failed to log cron execution: {str(e)}")
+    
+    return {"status": "success", "message": "Workflow started in background"}
+
+def execute_workflow():
+    """Execute the workflow.py script as a subprocess"""
+    log_id = None
+    
+    # Create a log entry
+    try:
+        result = app.database.cron_logs.insert_one({
+            "execution_time": datetime.utcnow(),
+            "status": "running",
+            "start_time": datetime.utcnow()
+        })
+        log_id = result.inserted_id
+    except Exception as e:
+        print(f"Failed to create log entry: {str(e)}")
+    
+    try:
+        # Execute the workflow script
+        process = subprocess.run(
+            ["python", "workflow.py"],
+            capture_output=True,
+            text=True,
+            check=False  # Don't raise exception on non-zero exit
+        )
+        
+        # Determine success based on exit code
+        success = process.returncode == 0
+        status = "completed" if success else "failed"
+        
+        # Update the log with results
+        if log_id:
+            app.database.cron_logs.update_one(
+                {"_id": log_id},
+                {"$set": {
+                    "status": status,
+                    "end_time": datetime.utcnow(),
+                    "exit_code": process.returncode,
+                    "stdout": process.stdout[-10000:] if process.stdout else "",  # Limit output size
+                    "stderr": process.stderr[-10000:] if process.stderr else ""   # Limit output size
+                }}
+            )
+        
+        # Log results
+        if success:
+            print(f"Workflow executed successfully")
+        else:
+            print(f"Workflow execution failed with exit code {process.returncode}")
+            print(f"Error: {process.stderr}")
+        
+        return success
+        
+    except Exception as e:
+        # Update log with error
+        if log_id:
+            app.database.cron_logs.update_one(
+                {"_id": log_id},
+                {"$set": {
+                    "status": "error",
+                    "end_time": datetime.utcnow(),
+                    "error": str(e)
+                }}
+            )
+        print(f"Error executing workflow: {str(e)}")
+        return False
+
+# Add an endpoint to view cron logs (protected by the same authentication)
+@app.get("/api/cron-logs")
+async def get_cron_logs(
+    limit: int = 10,
+    username: str = Depends(verify_basic_auth)
+):
+    """
+    View recent cron job execution logs
+    Requires authentication
+    """
+    try:
+        logs = list(app.database.cron_logs.find().sort("execution_time", -1).limit(limit))
+        return {
+            "logs": [
+                {
+                    **{k: v for k, v in log.items() if k != "_id"}, 
+                    "id": str(log["_id"]),
+                    "execution_time": log["execution_time"].isoformat() if "execution_time" in log else None,
+                    "start_time": log["start_time"].isoformat() if "start_time" in log else None,
+                    "end_time": log["end_time"].isoformat() if "end_time" in log else None
+                } 
+                for log in logs
+            ]
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to fetch cron logs: {str(e)}")
+
 # Run with: uvicorn app:app --reload
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=False)
