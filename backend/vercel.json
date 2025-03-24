@@ -11,6 +11,14 @@
         "src": "/(.*)",
         "dest": "app.py"
       }
+    ],
+    "crons": [
+      {
+        "path": "/api/cron",
+        "schedule": "0 0 * * *",
+        "headers": {
+          "Authorization": "Bearer tson:Tsondeptrai99@"
+        }
+      }
     ]
 }
-  

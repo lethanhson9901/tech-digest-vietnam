@@ -54,4 +54,4 @@ gmail:
 storage:
   # Default base path (can include date formatting)
   base_path: "../data/{date}"  # This will create folders like data/20250319
-  mongo_db_uri: "mongodb+srv://lethanhson9901:WCUf7zMeNpxZhCl8@cluster0.wbloa.mongodb.net/?appName=Cluster0"
+  mongo_db_uri: "mongodb+srv://lethanhson9901:WCUf7zMeNpxZhCl8@cluster0.wbloa.mongodb.net/?retryWrites=true&w=majority"

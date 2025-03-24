@@ -7,3 +7,5 @@ fastapi
 uvicorn
 pymongo
 pydantic
+python-multipart
+certifi
