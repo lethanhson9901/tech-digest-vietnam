@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+# Tech Digest Vietnam
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React application for browsing technical reports and digests about the Vietnamese tech ecosystem. This application provides an intuitive interface for reading the latest technology trends, news, and insights.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Latest Report View**: Quick access to the most recent tech digest
+- **Archive Browser**: Search and filter through past reports
+- **Dark Mode Support**: Toggle between light and dark themes for comfortable reading
+- **Responsive Design**: Optimized for both desktop and mobile devices
+- **Advanced Search**: Find reports by keywords, titles, or content
+- **Date Filtering**: Filter reports by date ranges
+- **Table of Contents**: Easy navigation within reports
+- **Enhanced Reading Experience**: Clean typography and layout for readability
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The application follows a standard React project structure with organized components, pages, hooks, and utilities:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+src/
+├── components/      # Reusable UI components
+├── hooks/           # Custom React hooks
+├── pages/           # Page components
+├── services/        # API and external service integrations
+├── utils/           # Utility functions
+├── App.jsx          # Main application component
+└── index.js         # Application entry point
+```
 
-### `npm test`
+## Key Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Header**: Navigation and dark mode toggle
+- **MarkdownRenderer**: Renders markdown content with enhanced styling
+- **TableOfContents**: Generates navigation from document headings
+- **SearchBar**: Advanced search functionality
+- **DateRangePicker**: Date range filtering component
+- **ListViewReportsList**: Displays reports in a list format
+- **Pagination**: Handles pagination for report lists
 
-### `npm run build`
+## Pages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **HomePage**: Landing page with featured content
+- **LatestReportPage**: Displays the most recent tech digest
+- **ArchivePage**: Browse and search through all past reports
+- **ReportDetailPage**: Detailed view of a specific report
+- **NotFoundPage**: 404 error page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- Node.js (v14.0.0 or higher)
+- npm or yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/tech-digest-app.git
+   cd tech-digest-app
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Start the development server:
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
 
-## Learn More
+4. The application will be available at `http://localhost:3000`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Environment Variables
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create a `.env` file in the root directory with the following variables:
 
-### Code Splitting
+```
+REACT_APP_API_BASE_URL=https://tech-digest-vietnam.vercel.app
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## API Integration
 
-### Analyzing the Bundle Size
+The application integrates with a backend API that provides:
+- List of tech digest reports
+- Report details
+- Latest report
+- Search functionality
+- Date filtering
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Styling
 
-### Making a Progressive Web App
+The project uses:
+- Tailwind CSS for utility-based styling
+- Custom CSS for specialized components
+- Dark mode support with theme persistence
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contributing
 
-### Advanced Configuration
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## License
 
-### Deployment
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Acknowledgments
 
-### `npm run build` fails to minify
+- React team for the amazing library
+- Tailwind CSS for the utility-first CSS framework
+- date-fns for date formatting
+- react-markdown for markdown rendering
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+Built with ❤️ for the Vietnamese tech community
