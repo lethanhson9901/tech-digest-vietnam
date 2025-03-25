@@ -1,4 +1,4 @@
-// src/App.jsx (updated for dark mode)
+// src/App.jsx
 import React, { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Header from './components/Header';
@@ -31,7 +31,8 @@ const App = () => {
   };
 
   return (
-    <Router>
+    // Thêm basename vào Router
+    <Router basename="/tech-digest-vietnam">
       <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
         <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <main className="container mx-auto px-4 py-8">
