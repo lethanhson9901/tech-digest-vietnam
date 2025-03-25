@@ -1,4 +1,5 @@
 // src/App.js
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Archive from './components/Archive';
@@ -19,28 +20,34 @@ function App() {
     return savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   });
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch the markdown file
-    setIsLoading(true);
-    fetch('tech_news_digest_20250319.md')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to load markdown file');
+    // Fetch the latest report from API
+    const fetchLatestReport = async () => {
+      setIsLoading(true);
+      try {
+        const response = await axios.get('https://tech-digest-vietnam.vercel.app/reports/latest');
+        
+        if (response.data && response.data.content) {
+          // Parse the markdown content using your existing parseMarkdown utility
+          const { title: parsedTitle, tocItems, contentSections } = parseMarkdown(response.data.content);
+          setTitle(parsedTitle);
+          setTocItems(tocItems);
+          setContentSections(contentSections);
+        } else {
+          throw new Error('Invalid response format');
         }
-        return response.text();
-      })
-      .then(text => {
-        const { title: parsedTitle, tocItems, contentSections } = parseMarkdown(text);
-        setTitle(parsedTitle);
-        setTocItems(tocItems);
-        setContentSections(contentSections);
+        
         setIsLoading(false);
-      })
-      .catch(error => {
-        console.error('Error loading markdown:', error);
+      } catch (err) {
+        console.error('Error fetching latest report:', err);
+        setError('Failed to load the latest report. Please try again later.');
         setIsLoading(false);
-      });
+      }
+    };
+
+    fetchLatestReport();
   }, []);
 
   // Handle theme changes
@@ -80,6 +87,31 @@ function App() {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
   };
 
+  // Render error message if there's an error
+  const renderContent = () => {
+    if (error) {
+      return (
+        <div className="content">
+          <div className="error-message">
+            <h2>Error</h2>
+            <p>{error}</p>
+          </div>
+        </div>
+      );
+    }
+    
+    return (
+      <>
+        <Sidebar tocItems={tocItems} />
+        <Content 
+          title={title} 
+          sections={contentSections} 
+          isLoading={isLoading} 
+        />
+      </>
+    );
+  };
+
   return (
     <Router>
       <div className="app">
@@ -88,16 +120,7 @@ function App() {
         </Header>
         <main>
           <Routes>
-            <Route path="/" element={
-              <>
-                <Sidebar tocItems={tocItems} />
-                <Content 
-                  title={title} 
-                  sections={contentSections} 
-                  isLoading={isLoading} 
-                />
-              </>
-            } />
+            <Route path="/" element={renderContent()} />
             <Route path="/archive" element={<Archive />} />
           </Routes>
         </main>

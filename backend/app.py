@@ -347,7 +347,7 @@ async def run_workflow(
     Endpoint for scheduled workflow execution.
     This will be triggered by Vercel's cron job.
     
-    Requires authentication with username: tson and password: Tsondeptrai99@
+    Requires authentication with username
     """
     # Start the workflow in the background
     background_tasks.add_task(execute_workflow, db)
