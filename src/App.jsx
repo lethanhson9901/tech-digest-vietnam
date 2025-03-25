@@ -30,9 +30,17 @@ const App = () => {
     });
   };
 
+  // Get basename from package.json homepage or default to empty string
+  const getBasename = () => {
+    // For GitHub Pages: extract path from homepage in package.json
+    if (process.env.PUBLIC_URL) {
+      return process.env.PUBLIC_URL;
+    }
+    return '/tech-digest-vietnam';
+  };
+
   return (
-    // Thêm basename vào Router
-    <Router basename="/tech-digest-vietnam">
+    <Router basename={getBasename()}>
       <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
         <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <main className="container mx-auto px-4 py-8">
