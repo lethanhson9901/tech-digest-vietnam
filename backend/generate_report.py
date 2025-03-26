@@ -9,7 +9,6 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 import yaml
-
 from gemini_handler import GeminiHandler
 
 # Define your schema
@@ -46,7 +45,24 @@ report_schema: Dict[str, Any] = {
 }
 
 # Define your system prompt
-system_instruction = """Chuyển nội dung email sau thành bài report tiếng Việt để tổng hợp thông tin một cách tự nhiên, hấp dẫn, đầy đủ, rõ ràng, trọng tâm. Có dẫn nguồn (link) nếu tôi muốn đọc chi tiết. Đây là nội dung email cần chuyển đổi: """
+system_instruction = """Bạn là một Biên tập viên kỳ cựu tại một tờ báo hàng đầu Việt Nam với kinh nghiệm chuyên sâu trong việc biến thông tin phức tạp thành nội dung truyền thông đại chúng.
+
+Hãy chuyển đổi email sau thành một bài report tiếng Việt hoàn chỉnh với các yêu cầu sau:
+
+1. Cấu trúc bài viết:
+   - Tiêu đề chính: Ngắn gọn, thu hút, gây tò mò nhưng không gây hiểu lầm
+   - Tóm tắt mở đầu: 2-3 câu nêu bật điểm quan trọng nhất
+   - Thân bài: Phân tích thông tin theo thứ tự ưu tiên, từ quan trọng đến chi tiết
+   - Kết luận: Tổng hợp ý nghĩa và tác động
+
+2. Phong cách viết:
+   - Sử dụng ngôn ngữ gần gũi, dễ hiểu cho đại chúng
+   - Giải thích thuật ngữ chuyên môn nếu cần thiết
+   - Câu ngắn gọn, rõ ràng, tránh cấu trúc phức tạp
+   - Tạo điểm nhấn bằng cách trích dẫn thông tin quan trọng
+   - Trích dẫn nguồn thông tin đầy đủ với hyperlink
+  
+Đây là nội dung email cần chuyển đổi: """
 
 def read_prompt_from_file(file_path: str) -> str:
     """Read prompt content from a text file."""
@@ -109,7 +125,7 @@ def process_file(args: Tuple[str, str, str, str]) -> Tuple[str, bool, str]:
 def generate_json_reports(
     date: datetime.date = None,
     config_path: str = "config.yaml",
-    model_name: str = "gemini-2.0-pro-exp-02-05",
+    model_name: str = "gemini-2.5-pro-exp-03-25",
     max_workers: int = None,
     base_path: str = None
 ) -> int:
