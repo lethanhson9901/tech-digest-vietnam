@@ -1,0 +1,590 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Source references */
+.source-reference {
+  color: #6b7280;
+  font-style: italic;
+  font-size: 0.875rem;
+  margin: 0.75rem 0;
+}
+
+/* Subsection titles */
+.subsection-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Read more links */
+.read-more-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: #4f46e5;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.read-more-link:hover {
+  text-decoration: underline;
+  color: #4338ca;
+}
+
+.read-more-link::after {
+  content: " →";
+}
+
+/* Enhanced heading styles */
+.prose h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #374151;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Enhanced prose styling */
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.prose em {
+  font-style: italic;
+  color: #6b7280;
+}
+
+/* Better list styling */
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.75rem;
+  margin: 1rem 0;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.75rem;
+  margin: 1rem 0;
+}
+
+.prose li {
+  margin: 0.5rem 0;
+  padding-left: 0.25rem;
+}
+
+.prose a {
+  color: #4f46e5;
+  text-decoration: underline;
+  transition: color 0.15s;
+}
+
+.prose a:hover {
+  color: #4338ca;
+}
+
+/* Improved blockquote styling */
+.prose blockquote {
+  border-left: 4px solid #c7d2fe;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #4b5563;
+  margin: 1.5rem 0;
+  background-color: #f9fafb;
+  padding: 0.75rem 1rem;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.prose code {
+  font-family: monospace;
+  background-color: #f3f4f6;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  color: #4f46e5;
+}
+
+.prose pre {
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 2rem 0;
+}
+
+/* Table of contents styling */
+.toc-container {
+  background-color: #eef2ff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border: 1px solid #e0e7ff;
+  position: sticky;
+  top: 1rem;
+}
+
+.toc-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.toc-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  display: flex;
+  margin: 0.5rem 0;
+  padding-left: 0.5rem;
+}
+
+.toc-number {
+  color: #4f46e5;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  min-width: 1.5rem;
+}
+
+.toc-link {
+  color: #4f46e5;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.15s;
+}
+
+.toc-link:hover {
+  text-decoration: underline;
+  color: #4338ca;
+}
+
+.toc-link.active {
+  color: #3730a3;
+  font-weight: 600;
+}
+
+.toc-subtitle {
+  color: #6b7280;
+  font-style: italic;
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+}
+
+/* Level-based indentation for TOC */
+.toc-level-3 {
+  padding-left: 1.5rem;
+}
+
+.toc-level-4 {
+  padding-left: 3rem;
+}
+
+/* Section highlighting when active */
+.section-highlight {
+  background-color: #f9fafb;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.section-highlight:target {
+  background-color: #eef2ff;
+  animation: highlight 2s ease;
+}
+
+@keyframes highlight {
+  0% { background-color: #e0e7ff; }
+  100% { background-color: #eef2ff; }
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: #4f46e5;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.back-to-top:hover {
+  background-color: #4338ca;
+}
+
+.back-to-top svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  .toc-container {
+    position: relative;
+    top: 0;
+    margin: 1rem 0 2rem 0;
+  }
+  
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .back-to-top svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+/* Dark Mode Styling */
+body.dark-theme {
+  background-color: #0f172a; /* Deep blue background instead of pure black */
+  color: #e2e8f0;
+}
+
+/* Header styling for dark mode */
+.dark-theme header {
+  background: linear-gradient(to right, #312e81, #4c1d95) !important; /* Deep indigo to purple gradient */
+}
+
+/* Card backgrounds */
+.dark-theme .bg-white {
+  background-color: #1e293b; /* Slate 800 - darker blue-gray */
+  color: #e2e8f0; /* Slate 200 - light gray text */
+}
+
+/* Text colors */
+.dark-theme .text-gray-800 {
+  color: #e2e8f0 !important; /* Light gray for headers */
+}
+
+.dark-theme .text-gray-700 {
+  color: #cbd5e1 !important; /* Slate 300 */
+}
+
+.dark-theme .text-gray-600, 
+.dark-theme .text-gray-500 {
+  color: #94a3b8 !important; /* Slate 400 */
+}
+
+/* Border colors */
+.dark-theme .border-gray-200 {
+  border-color: #334155 !important; /* Slate 700 */
+}
+
+/* Table of contents styling */
+.dark-theme .toc-container {
+  background-color: #1e293b; /* Slate 800 */
+  border-color: #334155; /* Slate 700 */
+}
+
+.dark-theme .toc-heading {
+  color: #e2e8f0;
+}
+
+.dark-theme .toc-link {
+  color: #a5b4fc; /* Indigo 300 */
+}
+
+.dark-theme .toc-link:hover {
+  color: #818cf8; /* Indigo 400 */
+}
+
+.dark-theme .toc-link.active {
+  color: #6366f1; /* Indigo 500 */
+  font-weight: 600;
+}
+
+/* Code blocks */
+.dark-theme code {
+  background-color: #334155 !important; /* Slate 700 */
+  color: #a5b4fc !important; /* Indigo 300 */
+}
+
+.dark-theme pre {
+  background-color: #1f2937 !important; /* Gray 800 */
+}
+
+/* Blockquotes */
+.dark-theme blockquote {
+  background-color: #263449 !important; /* Custom dark blue-gray */
+  border-left-color: #6366f1 !important; /* Indigo 500 */
+}
+
+/* Links */
+.dark-theme a {
+  color: #818cf8 !important; /* Indigo 400 */
+}
+
+.dark-theme a:hover {
+  color: #a5b4fc !important; /* Indigo 300 */
+}
+
+/* Buttons */
+.dark-theme .bg-indigo-600 {
+  background-color: #4f46e5 !important; /* Indigo 600 */
+}
+
+.dark-theme .bg-indigo-600:hover {
+  background-color: #4338ca !important; /* Indigo 700 */
+}
+
+/* Section highlighting */
+.dark-theme .section-highlight {
+  background-color: #1e293b; /* Slate 800 */
+}
+
+.dark-theme .section-highlight:target {
+  background-color: #263449; /* Custom dark blue-gray */
+}
+
+/* Back to top button */
+.dark-theme .back-to-top {
+  background-color: #4f46e5; /* Indigo 600 */
+}
+
+.dark-theme .back-to-top:hover {
+  background-color: #4338ca; /* Indigo 700 */
+}
+
+/* Card hover effects */
+.dark-theme .hover\:bg-gray-50:hover {
+  background-color: #263449 !important; /* Custom dark blue-gray */
+}
+
+/* Footer */
+.dark-theme footer {
+  background-color: #0f172a !important; /* Slate 900 */
+  border-top: 1px solid #334155; /* Slate 700 */
+}
+
+/* Enhanced dark mode toggle button */
+.dark-mode-toggle {
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 0 0.25rem;
+}
+
+.dark-mode-toggle::after {
+  content: '';
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.dark-theme .dark-mode-toggle {
+  background-color: rgba(99, 102, 241, 0.6);
+}
+
+.dark-theme .dark-mode-toggle::after {
+  transform: translateX(1.5rem);
+}
+
+.dark-mode-icon {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.dark-theme .dark-mode-sun {
+  opacity: 0;
+}
+
+.dark-theme .dark-mode-moon {
+  opacity: 1;
+}
+
+/* Additional fixes for text visibility in dark mode */
+.dark-theme .prose h1,
+.dark-theme .prose h2,
+.dark-theme .prose h3,
+.dark-theme .prose h4,
+.dark-theme .prose h5,
+.dark-theme .prose h6 {
+  color: #f1f5f9 !important; /* Slate 100 - very light for headings */
+  border-bottom-color: #334155 !important; /* Slate 700 */
+}
+
+.dark-theme .prose p,
+.dark-theme .prose ul,
+.dark-theme .prose ol,
+.dark-theme .prose li {
+  color: #e2e8f0 !important; /* Slate 200 - light gray for body text */
+}
+
+.dark-theme .prose strong {
+  color: #f1f5f9 !important; /* Slate 100 - very light for strong text */
+}
+
+.dark-theme .prose em {
+  color: #cbd5e1 !important; /* Slate 300 - medium light for emphasis */
+}
+
+/* Fix for source references */
+.dark-theme .source-reference {
+  color: #94a3b8 !important; /* Slate 400 - visible but subdued */
+}
+
+/* Fix for table of contents subtitle */
+.dark-theme .toc-subtitle {
+  color: #94a3b8 !important; /* Slate 400 */
+}
+
+/* Fix for subsection titles */
+.dark-theme .subsection-title {
+  color: #e2e8f0 !important; /* Slate 200 */
+}
+
+/* Improve visibility of specific components */
+.dark-theme .section-highlight h1,
+.dark-theme .section-highlight h2,
+.dark-theme .section-highlight h3,
+.dark-theme .section-highlight h4 {
+  color: #f8fafc !important; /* Slate 50 - very light for headings */
+}
+
+.dark-theme .section-highlight p,
+.dark-theme .section-highlight li {
+  color: #e2e8f0 !important; /* Slate 200 - light gray for body text */
+}
+
+/* Fix for report titles and dates */
+.dark-theme .from-indigo-600,
+.dark-theme .to-purple-600 {
+  --tw-gradient-from: #4338ca !important;
+  --tw-gradient-to: #7e22ce !important;
+}
+
+/* Fix for date display in reports */
+.dark-theme .bg-white\/20 {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Make sure emoji and images are visible */
+.dark-theme img,
+.dark-theme svg {
+  filter: brightness(1.1);
+}
+
+/* Fix for table of contents active item */
+.dark-theme .toc-item.active,
+.dark-theme .toc-link.active {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: #93c5fd !important; /* Blue 300 */
+}
+
+/* Fix for read more links */
+.dark-theme .read-more-link {
+  color: #93c5fd !important; /* Blue 300 */
+}
+
+.dark-theme .read-more-link:hover {
+  color: #bfdbfe !important; /* Blue 200 */
+}
+
+/* Ensure all text in the report is visible */
+.dark-theme .prose * {
+  color: #e2e8f0 !important;
+}
+
+.dark-theme .prose h1,
+.dark-theme .prose h2,
+.dark-theme .prose h3,
+.dark-theme .prose h4,
+.dark-theme .prose strong {
+  color: #f1f5f9 !important;
+}
+
+.dark-theme .prose a,
+.dark-theme .prose a * {
+  color: #93c5fd !important;
+}
+
+.dark-theme .prose a:hover,
+.dark-theme .prose a:hover * {
+  color: #bfdbfe !important;
+}
+
+.dark-theme .prose code,
+.dark-theme .prose code * {
+  color: #a5b4fc !important;
+}
+
+.dark-theme .prose em,
+.dark-theme .prose blockquote,
+.dark-theme .prose blockquote * {
+  color: #cbd5e1 !important;
+}
