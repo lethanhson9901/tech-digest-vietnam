@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import ErrorMessage from '../components/ErrorMessage';
 import LoadingSpinner from '../components/LoadingSpinner';
 import MarkdownRenderer from '../components/MarkdownRenderer';
+import TagComponent from '../components/TagComponent';
 import { fetchLatestReport } from '../services/api';
 
 const HomePage = () => {
@@ -12,6 +13,7 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [showFullContent, setShowFullContent] = useState(false);
 
   useEffect(() => {
     const loadLatestReport = async () => {
@@ -39,8 +41,16 @@ const HomePage = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center min-h-[60vh]">
+      <div className="flex flex-col justify-center items-center min-h-[60vh] space-y-6">
         <LoadingSpinner />
+        <div className="text-center">
+          <div className="animate-pulse space-y-3">
+            <div className="h-6 rounded-lg w-48 mb-2 mx-auto" 
+                 style={{ background: 'var(--color-neutral-200)' }}></div>
+            <div className="h-4 rounded-lg w-32 mx-auto"
+                 style={{ background: 'var(--color-neutral-200)' }}></div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -54,88 +64,466 @@ const HomePage = () => {
   }
 
   return (
-    <div className={`max-w-4xl mx-auto transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-      {/* Hero Section */}
-      <div className="mb-8 text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Welcome to Tech Digest Vietnam</h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Stay updated with the latest technology trends, news, and insights from the Vietnamese tech ecosystem.
-        </p>
+    <div className={`max-w-5xl mx-auto transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+      {/* Enhanced Hero Section */}
+      <div className="mb-16 text-center relative">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden -z-10">
+          <div className="absolute top-0 left-1/4 w-72 h-72 rounded-full opacity-20 animate-float-gentle"
+               style={{ background: 'var(--gradient-primary)' }}></div>
+          <div className="absolute top-20 right-1/4 w-48 h-48 rounded-full opacity-15 animate-float-gentle"
+               style={{ background: 'var(--gradient-secondary)', animationDelay: '-2s' }}></div>
+        </div>
+        
+        <div className="relative">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight"
+              style={{ 
+                background: 'var(--gradient-primary)', 
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>
+            Tech Digest Vietnam
+          </h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-8"
+             style={{ color: 'var(--color-neutral-600)' }}>
+            📊 Cập nhật <span className="font-semibold" style={{ color: 'var(--color-primary-600)' }}>xu hướng công nghệ</span> mới nhất từ hệ sinh thái công nghệ Việt Nam
+          </p>
+          
+          {/* Feature badges */}
+          <div className="flex justify-center items-center space-x-8 mt-8">
+            <div className="flex items-center space-x-3 px-4 py-2 rounded-full"
+                 style={{ 
+                   background: 'var(--color-primary-50)',
+                   border: `1px solid var(--color-primary-200)`
+                 }}>
+              <svg className="w-5 h-5" style={{ color: 'var(--color-primary-600)' }} fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+              </svg>
+              <span className="text-sm font-medium" style={{ color: 'var(--color-primary-700)' }}>
+                Cập nhật hàng ngày
+              </span>
+            </div>
+            <div className="flex items-center space-x-3 px-4 py-2 rounded-full"
+                 style={{ 
+                   background: 'var(--color-accent-emerald-light)/10',
+                   border: `1px solid var(--color-accent-emerald-light)/30`
+                 }}>
+              <svg className="w-5 h-5" style={{ color: 'var(--color-accent-emerald)' }} fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-sm font-medium" style={{ color: 'var(--color-accent-emerald-dark)' }}>
+                Đáng tin cậy
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
       
-      {/* Latest Report Card */}
-      <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:shadow-xl mb-8">
-        <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-            <h1 className="text-2xl font-bold text-white">Latest Tech Digest</h1>
+      {/* Enhanced Latest Report Card */}
+      <div className="rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] hover:-translate-y-2 mb-16"
+           style={{ 
+             background: 'white',
+             border: `1px solid var(--color-neutral-200)`,
+             boxShadow: 'var(--shadow-accent)'
+           }}>
+        <div className="px-8 py-10"
+             style={{ background: 'var(--gradient-primary)' }}>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex-1">
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="p-3 rounded-2xl backdrop-blur-sm"
+                     style={{ background: 'rgba(255, 255, 255, 0.2)' }}>
+                  <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h1 className="text-3xl font-bold text-white">Latest Tech Digest</h1>
+              </div>
+              <p className="text-white/90 text-lg font-medium">{report.filename}</p>
+            </div>
             {report.upload_date && (
-              <div className="bg-white/20 text-white px-3 py-1 rounded-full text-sm mt-2 md:mt-0 inline-block">
-                {format(new Date(report.upload_date), 'MMMM d, yyyy')}
+              <div className="mt-6 lg:mt-0">
+                <div className="text-white px-6 py-3 rounded-full text-sm font-semibold backdrop-blur-sm"
+                     style={{ 
+                       background: 'rgba(255, 255, 255, 0.2)',
+                       border: '1px solid rgba(255, 255, 255, 0.3)'
+                     }}>
+                  📅 {format(new Date(report.upload_date), 'MMMM d, yyyy')}
+                </div>
               </div>
             )}
           </div>
-          <p className="text-indigo-100 mt-2">{report.filename}</p>
         </div>
         
-        <div className="p-6 relative">
-          {/* Preview of the content with max height */}
-          <div className="prose prose-indigo max-w-none max-h-[500px] overflow-hidden relative">
+        <div className="p-8 relative">
+          {/* Content Preview */}
+          <div className={`prose prose-lg max-w-none transition-all duration-500 ${
+            showFullContent ? 'max-h-none' : 'max-h-[400px] overflow-hidden'
+          }`}
+          style={{
+            '--tw-prose-headings': 'var(--color-neutral-900)',
+            '--tw-prose-body': 'var(--color-neutral-700)',
+            '--tw-prose-links': 'var(--color-primary-600)',
+          }}>
             <MarkdownRenderer content={report.content} />
-            {/* Gradient overlay to indicate there's more content */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
           </div>
           
-          {/* Read more button */}
-          <div className="mt-6 text-center">
+          {/* Enhanced gradient overlay when content is collapsed */}
+          {!showFullContent && (
+            <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
+                 style={{ 
+                   background: 'linear-gradient(to top, white 0%, white 60%, transparent 100%)'
+                 }}></div>
+          )}
+          
+          {/* Enhanced action buttons */}
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to={`/reports/${report.id}`}
-              className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
+              className="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-2xl shadow-lg text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+              style={{ 
+                background: 'var(--gradient-primary)',
+                boxShadow: 'var(--shadow-secondary)'
+              }}
             >
-              Read Full Report
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+              📖 Đọc bài viết đầy đủ
+              <svg className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </Link>
+            
+            <button
+              onClick={() => setShowFullContent(!showFullContent)}
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-2xl transition-all duration-300 hover:shadow-lg"
+              style={{ 
+                color: 'var(--color-primary-700)',
+                background: 'var(--color-primary-50)',
+                border: `2px solid var(--color-primary-200)`
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = 'var(--color-primary-100)';
+                e.target.style.borderColor = 'var(--color-primary-300)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = 'var(--color-primary-50)';
+                e.target.style.borderColor = 'var(--color-primary-200)';
+              }}
+            >
+              {showFullContent ? '📤 Thu gọn' : '📥 Xem thêm'}
+            </button>
           </div>
         </div>
       </div>
       
-      {/* Quick Links Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <Link to="/archive" className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all transform hover:-translate-y-1">
-          <div className="flex items-center mb-4">
-            <div className="bg-indigo-100 p-3 rounded-full">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+      {/* Enhanced Quick Links Section */}
+      <div className="mb-16">
+        <h2 className="text-4xl font-bold text-center mb-12"
+            style={{ color: 'var(--color-neutral-900)' }}>
+          Khám phá thêm
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Archive Card */}
+          <Link 
+            to="/archive" 
+            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl"
+            style={{ 
+              background: 'white',
+              border: `1px solid var(--color-neutral-200)`
+            }}
+          >
+            <div className="flex items-center mb-6">
+              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300"
+                   style={{ background: 'var(--color-primary-100)' }}>
+                <svg className="h-8 w-8" style={{ color: 'var(--color-primary-600)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-xl font-bold mb-3 transition-colors duration-200"
+                style={{ color: 'var(--color-neutral-800)' }}
+                onMouseEnter={(e) => e.target.style.color = 'var(--color-primary-600)'}
+                onMouseLeave={(e) => e.target.style.color = 'var(--color-neutral-800)'}>
+              📚 Kho lưu trữ
+            </h3>
+            <p className="leading-relaxed mb-4"
+               style={{ color: 'var(--color-neutral-600)' }}>
+              Duyệt tất cả các báo cáo công nghệ trước đây và tìm hiểu xu hướng phát triển.
+            </p>
+            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200"
+                 style={{ color: 'var(--color-primary-600)' }}>
+              Khám phá ngay
+              <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </div>
-            <h2 className="ml-4 text-xl font-semibold text-gray-800">Archive</h2>
+          </Link>
+          
+          {/* Latest Reports Card */}
+          <Link 
+            to="/latest" 
+            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl"
+            style={{ 
+              background: 'white',
+              border: `1px solid var(--color-neutral-200)`
+            }}
+          >
+            <div className="flex items-center mb-6">
+              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300"
+                   style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
+                <svg className="h-8 w-8" style={{ color: 'var(--color-accent-emerald)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-xl font-bold mb-3 transition-colors duration-200"
+                style={{ color: 'var(--color-neutral-800)' }}
+                onMouseEnter={(e) => e.target.style.color = 'var(--color-accent-emerald)'}
+                onMouseLeave={(e) => e.target.style.color = 'var(--color-neutral-800)'}>
+              ⚡ Báo cáo mới nhất
+            </h3>
+            <p className="leading-relaxed mb-4"
+               style={{ color: 'var(--color-neutral-600)' }}>
+              Xem những thông tin công nghệ mới nhất và cập nhật từ thị trường Việt Nam.
+            </p>
+            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200"
+                 style={{ color: 'var(--color-accent-emerald)' }}>
+              Xem ngay
+              <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </Link>
+
+          {/* Combined Analysis Card */}
+          <Link 
+            to="/combined-analysis" 
+            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl"
+            style={{ 
+              background: 'white',
+              border: `1px solid var(--color-neutral-200)`
+            }}
+          >
+            <div className="flex items-center mb-6">
+              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300"
+                   style={{ background: 'rgba(249, 115, 22, 0.1)' }}>
+                <svg className="h-8 w-8" style={{ color: 'var(--color-accent-orange)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-xl font-bold mb-3 transition-colors duration-200"
+                style={{ color: 'var(--color-neutral-800)' }}
+                onMouseEnter={(e) => e.target.style.color = 'var(--color-accent-orange)'}
+                onMouseLeave={(e) => e.target.style.color = 'var(--color-neutral-800)'}>
+              📊 Phân tích tổng hợp
+            </h3>
+            <p className="leading-relaxed mb-4"
+               style={{ color: 'var(--color-neutral-600)' }}>
+              Phân tích chuyên sâu các xu hướng công nghệ và insights từ dữ liệu.
+            </p>
+            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200"
+                 style={{ color: 'var(--color-accent-orange)' }}>
+              Phân tích ngay
+              <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </Link>
+        </div>
+      </div>
+
+      {/* Features Section - New */}
+      <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 mb-16">
+        <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Tại sao chọn Tech Digest Vietnam?</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="text-center">
+            <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-800 mb-2">Đáng tin cậy</h3>
+            <p className="text-gray-600 text-sm">Thông tin được kiểm chứng và cập nhật chính xác</p>
           </div>
-          <p className="text-gray-600">Browse all previous tech digest reports.</p>
+          <div className="text-center">
+            <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-800 mb-2">Cập nhật thường xuyên</h3>
+            <p className="text-gray-600 text-sm">Thông tin mới được cập nhật hàng tuần</p>
+          </div>
+          <div className="text-center">
+            <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-800 mb-2">Dễ đọc</h3>
+            <p className="text-gray-600 text-sm">Giao diện thân thiện và dễ sử dụng</p>
+          </div>
+          <div className="text-center">
+            <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-800 mb-2">Chuyên sâu</h3>
+            <p className="text-gray-600 text-sm">Phân tích chi tiết về công nghệ Việt Nam</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Links with enhanced animations */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <Link to="/archive" className="interactive-hover">
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-xl border border-blue-200 hover:border-blue-300 transition-all duration-300">
+            <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Browse Archive</h3>
+            <p className="text-gray-600 text-sm">Explore our complete collection of tech reports</p>
+          </div>
         </Link>
-        
-        <Link to="/latest" className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all transform hover:-translate-y-1">
-          <div className="flex items-center mb-4">
-            <div className="bg-green-100 p-3 rounded-full">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+        <Link to="/latest" className="interactive-hover">
+          <div className="bg-gradient-to-br from-green-50 to-emerald-100 p-6 rounded-xl border border-green-200 hover:border-green-300 transition-all duration-300">
+            <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h2 className="ml-4 text-xl font-semibold text-gray-800">Latest Report</h2>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Latest Report</h3>
+            <p className="text-gray-600 text-sm">Read the most recent tech insights</p>
           </div>
-          <p className="text-gray-600">View our most recent tech insights.</p>
         </Link>
-        
-        <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all">
-          <div className="flex items-center mb-4">
-            <div className="bg-purple-100 p-3 rounded-full">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+
+        <Link to="/about" className="interactive-hover">
+          <div className="bg-gradient-to-br from-purple-50 to-violet-100 p-6 rounded-xl border border-purple-200 hover:border-purple-300 transition-all duration-300">
+            <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h2 className="ml-4 text-xl font-semibold text-gray-800">About Us</h2>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">About Us</h3>
+            <p className="text-gray-600 text-sm">Learn more about Tech Digest Vietnam</p>
           </div>
-          <p className="text-gray-600">Learn more about Tech Digest Vietnam and our mission.</p>
+        </Link>
+      </div>
+
+      {/* Tech Topics Showcase with new tag system */}
+      <div className="bg-white rounded-xl shadow-lg p-6 mb-8 animate-fadeIn">
+        <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.99 1.99 0 013 12V7a4 4 0 014-4z" />
+          </svg>
+          Popular Tech Topics
+        </h3>
+        <p className="text-gray-600 mb-6">Explore the latest trends in technology and innovation</p>
+        
+        <div className="space-y-6">
+          {/* AI & Machine Learning */}
+          <div>
+            <h4 className="text-lg font-medium text-gray-800 mb-3">Artificial Intelligence & Machine Learning</h4>
+            <div className="flex flex-wrap gap-2">
+              <TagComponent variant="primary" size="medium">AI Development</TagComponent>
+              <TagComponent variant="info" size="medium">Machine Learning</TagComponent>
+              <TagComponent variant="success" size="medium">Deep Learning</TagComponent>
+              <TagComponent variant="warning" size="medium">Neural Networks</TagComponent>
+              <TagComponent variant="secondary" size="medium">Computer Vision</TagComponent>
+            </div>
+          </div>
+
+          {/* Web Technologies */}
+          <div>
+            <h4 className="text-lg font-medium text-gray-800 mb-3">Web Technologies</h4>
+            <div className="flex flex-wrap gap-2">
+              <TagComponent variant="primary" size="small">React</TagComponent>
+              <TagComponent variant="info" size="small">Node.js</TagComponent>
+              <TagComponent variant="success" size="small">TypeScript</TagComponent>
+              <TagComponent variant="warning" size="small">GraphQL</TagComponent>
+              <TagComponent variant="danger" size="small">WebAssembly</TagComponent>
+              <TagComponent variant="secondary" size="small">Progressive Web Apps</TagComponent>
+            </div>
+          </div>
+
+          {/* Cloud & DevOps */}
+          <div>
+            <h4 className="text-lg font-medium text-gray-800 mb-3">Cloud & DevOps</h4>
+            <div className="flex flex-wrap gap-2">
+              <TagComponent variant="primary" size="large">AWS</TagComponent>
+              <TagComponent variant="info" size="medium">Docker</TagComponent>
+              <TagComponent variant="success" size="medium">Kubernetes</TagComponent>
+              <TagComponent variant="warning" size="medium">CI/CD</TagComponent>
+              <TagComponent variant="secondary" size="medium">Microservices</TagComponent>
+            </div>
+          </div>
+
+          {/* Emerging Technologies */}
+          <div>
+            <h4 className="text-lg font-medium text-gray-800 mb-3">Emerging Technologies</h4>
+            <div className="flex flex-wrap gap-2">
+              <TagComponent variant="primary" size="medium" closable onClose={() => console.log('Closed Blockchain')}>
+                Blockchain
+              </TagComponent>
+              <TagComponent variant="info" size="medium" closable onClose={() => console.log('Closed IoT')}>
+                Internet of Things
+              </TagComponent>
+              <TagComponent variant="success" size="medium" closable onClose={() => console.log('Closed Quantum')}>
+                Quantum Computing
+              </TagComponent>
+              <TagComponent variant="warning" size="medium" closable onClose={() => console.log('Closed AR/VR')}>
+                AR/VR
+              </TagComponent>
+              <TagComponent variant="danger" size="medium" closable onClose={() => console.log('Closed Edge')}>
+                Edge Computing
+              </TagComponent>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features section with enhanced styling */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="text-center">
+          <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 className="font-semibold text-gray-800 mb-2">Đáng tin cậy</h3>
+          <p className="text-gray-600 text-sm">Thông tin được kiểm chứng và cập nhật chính xác</p>
+        </div>
+        <div className="text-center">
+          <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+            </svg>
+          </div>
+          <h3 className="font-semibold text-gray-800 mb-2">Cập nhật thường xuyên</h3>
+          <p className="text-gray-600 text-sm">Thông tin mới được cập nhật hàng tuần</p>
+        </div>
+        <div className="text-center">
+          <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+            </svg>
+          </div>
+          <h3 className="font-semibold text-gray-800 mb-2">Dễ đọc</h3>
+          <p className="text-gray-600 text-sm">Giao diện thân thiện và dễ sử dụng</p>
+        </div>
+        <div className="text-center">
+          <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </div>
+          <h3 className="font-semibold text-gray-800 mb-2">Chuyên sâu</h3>
+          <p className="text-gray-600 text-sm">Phân tích chi tiết về công nghệ Việt Nam</p>
         </div>
       </div>
     </div>

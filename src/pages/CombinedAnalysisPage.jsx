@@ -1,4 +1,3 @@
-// src/pages/ArchivePage.jsx (enhanced version)
 import React, { useEffect, useState } from 'react';
 import DateRangePicker from '../components/DateRangePicker';
 import ErrorMessage from '../components/ErrorMessage';
@@ -6,10 +5,10 @@ import ListViewReportsList from '../components/ListViewReportsList';
 import LoadingSpinner from '../components/LoadingSpinner';
 import SearchBar from '../components/SearchBar';
 import TagComponent from '../components/TagComponent';
-import { useReports } from '../hooks/useReports';
+import { useCombinedAnalysis } from '../hooks/useContent';
 
-const ArchivePage = () => {
-  const { reports, totalCount, isLoading, error, params, updateParams } = useReports();
+const CombinedAnalysisPage = () => {
+  const { reports, totalCount, isLoading, error, params, updateParams } = useCombinedAnalysis();
   const [showFilters, setShowFilters] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
   const [activeFilters, setActiveFilters] = useState({
@@ -55,7 +54,7 @@ const ArchivePage = () => {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6 animate-fadeIn">
-        <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-6 relative overflow-hidden">
+        <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 px-6 py-6 relative overflow-hidden">
           {/* Animated background elements */}
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-0 -left-4 w-24 h-24 bg-white rounded-full animate-float" style={{ animationDelay: '0s' }}></div>
@@ -66,10 +65,10 @@ const ArchivePage = () => {
           <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between">
             <div>
               <h1 className="text-3xl font-bold text-white animate-slideIn">
-                Tech Digest Archive
+                Combined Analysis
               </h1>
-              <p className="text-indigo-100 mt-2 animate-slideIn" style={{ animationDelay: '0.1s' }}>
-                Browse {totalCount || 'all'} technical reports with advanced filtering
+              <p className="text-emerald-100 mt-2 animate-slideIn" style={{ animationDelay: '0.1s' }}>
+                Browse {totalCount || 'all'} comprehensive tech analysis reports with advanced insights
               </p>
             </div>
             <div className="flex items-center mt-4 md:mt-0 space-x-3 animate-slideIn" style={{ animationDelay: '0.2s' }}>
@@ -93,7 +92,7 @@ const ArchivePage = () => {
                 </svg>
                 {showFilters ? 'Hide Filters' : 'Show Filters'}
                 {activeFilterCount > 0 && (
-                  <span className="ml-2 bg-white text-indigo-600 rounded-full w-5 h-5 inline-flex items-center justify-center text-xs font-bold animate-pulse-glow">
+                  <span className="ml-2 bg-white text-emerald-600 rounded-full w-5 h-5 inline-flex items-center justify-center text-xs font-bold animate-pulse-glow">
                     {activeFilterCount}
                   </span>
                 )}
@@ -143,6 +142,7 @@ const ArchivePage = () => {
               onSearch={handleSearch} 
               searchValue={params.search}
               onClear={() => updateParams({ search: '', skip: 0 })}
+              placeholder="Search combined analysis reports..."
             />
           </div>
           
@@ -150,9 +150,9 @@ const ArchivePage = () => {
           <div className={`transition-all duration-500 ease-in-out overflow-hidden ${
             showFilters ? 'max-h-96 opacity-100 mb-6 transform translate-y-0' : 'max-h-0 opacity-0 transform -translate-y-4'
           }`}>
-            <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-lg p-4 border border-gray-200">
+            <div className="bg-gradient-to-r from-gray-50 to-teal-50 rounded-lg p-4 border border-gray-200">
               <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-emerald-600" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clipRule="evenodd" />
                 </svg>
                 Date Range Filter
@@ -167,12 +167,12 @@ const ArchivePage = () => {
               <LoadingSpinner 
                 type="tech" 
                 size="large" 
-                color="indigo"
+                color="emerald"
                 showText
-                text="Loading tech reports..."
+                text="Loading combined analysis..."
               />
               <div className="text-gray-500 text-sm">
-                Fetching the latest technology insights...
+                Fetching comprehensive tech insights...
               </div>
             </div>
           ) : error ? (
@@ -188,7 +188,7 @@ const ArchivePage = () => {
                 error={error} 
                 params={params} 
                 updateParams={updateParams}
-                contentType="reports"
+                contentType="combined-analysis"
               />
             </div>
           )}
@@ -201,15 +201,15 @@ const ArchivePage = () => {
           <h3 className="text-lg font-semibold text-gray-800 mb-4">Quick Stats</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="text-center">
-              <div className="text-2xl font-bold text-indigo-600">{totalCount || reports.length}</div>
-              <div className="text-sm text-gray-500">Total Reports</div>
+              <div className="text-2xl font-bold text-emerald-600">{totalCount || reports.length}</div>
+              <div className="text-sm text-gray-500">Total Analysis</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">{reports.length}</div>
+              <div className="text-2xl font-bold text-teal-600">{reports.length}</div>
               <div className="text-sm text-gray-500">Current Page</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600">
+              <div className="text-2xl font-bold text-cyan-600">
                 {activeFilterCount}
               </div>
               <div className="text-sm text-gray-500">Active Filters</div>
@@ -221,4 +221,4 @@ const ArchivePage = () => {
   );
 };
 
-export default ArchivePage;
+export default CombinedAnalysisPage; 

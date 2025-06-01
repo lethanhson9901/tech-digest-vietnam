@@ -6,8 +6,76 @@ import ErrorMessage from './ErrorMessage';
 import LoadingSpinner from './LoadingSpinner';
 import Pagination from './Pagination';
 
-const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, updateParams }) => {
+const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, updateParams, contentType = 'reports' }) => {
   const [hoveredId, setHoveredId] = useState(null);
+
+  // Generate the appropriate link path based on content type
+  const getLinkPath = (report) => {
+    switch (contentType) {
+      case 'json-reports':
+        return `/json-reports/${report.id}`;
+      case 'combined-analysis':
+        return `/combined-analysis/${report.id}`;
+      default:
+        return `/reports/${report.id}`;
+    }
+  };
+
+  // Get appropriate icon for content type
+  const getContentIcon = () => {
+    switch (contentType) {
+      case 'json-reports':
+        return (
+          <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ${hoveredId ? 'text-blue-600' : 'text-blue-500'} transition-colors duration-200`} viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+          </svg>
+        );
+      case 'combined-analysis':
+        return (
+          <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ${hoveredId ? 'text-emerald-600' : 'text-emerald-500'} transition-colors duration-200`} viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+          </svg>
+        );
+      default:
+        return (
+          <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ${hoveredId ? 'text-indigo-600' : 'text-indigo-500'} transition-colors duration-200`} viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
+          </svg>
+        );
+    }
+  };
+
+  // Get appropriate color scheme for content type
+  const getColorScheme = () => {
+    switch (contentType) {
+      case 'json-reports':
+        return {
+          hover: 'bg-blue-50',
+          iconBg: 'bg-blue-100',
+          iconBgHover: 'bg-blue-100',
+          textColor: 'text-blue-600',
+          badgeColor: 'bg-blue-100 text-blue-800'
+        };
+      case 'combined-analysis':
+        return {
+          hover: 'bg-emerald-50',
+          iconBg: 'bg-emerald-100',
+          iconBgHover: 'bg-emerald-100',
+          textColor: 'text-emerald-600',
+          badgeColor: 'bg-emerald-100 text-emerald-800'
+        };
+      default:
+        return {
+          hover: 'bg-indigo-50',
+          iconBg: 'bg-gray-100',
+          iconBgHover: 'bg-indigo-100',
+          textColor: 'text-indigo-600',
+          badgeColor: 'bg-green-100 text-green-800'
+        };
+    }
+  };
+
+  const colors = getColorScheme();
 
   if (isLoading && reports.length === 0) {
     return <LoadingSpinner />;
@@ -18,12 +86,13 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
   }
 
   if (reports.length === 0) {
+    const contentTypeLabel = contentType === 'combined-analysis' ? 'combined analysis' : contentType.replace('-', ' ');
     return (
       <div className="text-center py-12 bg-white rounded-lg shadow">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
-        <h3 className="mt-4 text-lg font-medium text-gray-900">No reports found</h3>
+        <h3 className="mt-4 text-lg font-medium text-gray-900">No {contentTypeLabel} found</h3>
         <p className="mt-1 text-gray-500">Try adjusting your search or filter criteria</p>
         <button 
           onClick={() => updateParams({ search: '', dateFrom: '', dateTo: '', skip: 0 })}
@@ -46,17 +115,15 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
               onMouseLeave={() => setHoveredId(null)}
               className="transition-colors duration-200"
             >
-              <Link to={`/reports/${report.id}`} className={`block ${hoveredId === report.id ? 'bg-indigo-50' : 'hover:bg-gray-50'}`}>
+              <Link to={getLinkPath(report)} className={`block ${hoveredId === report.id ? colors.hover : 'hover:bg-gray-50'}`}>
                 <div className="px-4 py-4 sm:px-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <div className={`p-2 rounded-full ${hoveredId === report.id ? 'bg-indigo-100' : 'bg-gray-100'} transition-colors duration-200`}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ${hoveredId === report.id ? 'text-indigo-600' : 'text-indigo-500'} transition-colors duration-200`} viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
-                        </svg>
+                      <div className={`p-2 rounded-full ${hoveredId === report.id ? colors.iconBgHover : colors.iconBg} transition-colors duration-200`}>
+                        {getContentIcon()}
                       </div>
                       <div className="ml-3">
-                        <p className="truncate text-sm font-medium text-indigo-600">{report.filename}</p>
+                        <p className={`truncate text-sm font-medium ${colors.textColor}`}>{report.filename}</p>
                         {/* Extract a preview from content if available */}
                         {report.content && (
                           <p className="mt-1 text-xs text-gray-500 line-clamp-1">
@@ -67,7 +134,7 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
                     </div>
                     {report.upload_date && (
                       <div className="ml-2 flex flex-shrink-0">
-                        <p className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
+                        <p className={`inline-flex rounded-full px-2 text-xs font-semibold leading-5 ${colors.badgeColor}`}>
                           {format(new Date(report.upload_date), 'MMM d, yyyy')}
                         </p>
                       </div>
@@ -80,11 +147,11 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                         </svg>
-                        View Report
+                        View {contentType === 'combined-analysis' ? 'Analysis' : 'Report'}
                       </p>
                     </div>
                     <div className={`transition-transform duration-200 ${hoveredId === report.id ? 'translate-x-1' : ''}`}>
-                      <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ${hoveredId === report.id ? 'text-indigo-500' : 'text-gray-400'}`} viewBox="0 0 20 20" fill="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ${hoveredId === report.id ? colors.textColor.replace('text-', 'text-').replace('-600', '-500') : 'text-gray-400'}`} viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
@@ -103,7 +170,7 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
           <div className="text-sm text-gray-700 mb-4 sm:mb-0">
             Showing <span className="font-medium">{Math.min(params.skip + 1, totalCount)}</span> to{' '}
             <span className="font-medium">{Math.min(params.skip + reports.length, totalCount)}</span> of{' '}
-            <span className="font-medium">{totalCount}</span> reports
+            <span className="font-medium">{totalCount}</span> {contentType === 'combined-analysis' ? 'analysis reports' : contentType.replace('-', ' ')}
           </div>
           <Pagination
             currentPage={Math.floor(params.skip / params.limit) + 1}
