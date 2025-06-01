@@ -10,6 +10,7 @@ import LatestReportPage from './pages/LatestReportPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ReportDetailPage from './pages/ReportDetailPage';
 import BackToTop from './components/BackToTop';
+import FontDemo from './components/FontDemo';
 
 // Enhanced UX Components
 import { ToastProvider } from './components/ToastNotification';
@@ -208,6 +209,7 @@ const App = () => {
                   <Route path="/archive" element={<ArchivePage />} />
                   <Route path="/combined-analysis" element={<CombinedAnalysisPage />} />
                   <Route path="/combined-analysis/:id" element={<CombinedAnalysisDetailPage />} />
+                  <Route path="/font-demo" element={<FontDemo />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </main>

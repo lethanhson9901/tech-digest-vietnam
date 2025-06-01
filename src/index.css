@@ -1,5 +1,8 @@
 /* Import Google Fonts - optimized for Vietnamese text readability */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+/* Import custom font styles */
+@import './styles/fonts.css';
 
 @tailwind base;
 @tailwind components;
@@ -7,10 +10,10 @@
 
 /* Modern CSS Custom Properties for consistent color system */
 :root {
-  /* Typography - Modern, readable fonts optimized for Vietnamese */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --font-secondary: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', 'Courier New', monospace;
+  /* Typography - Optimized for Vietnamese readability */
+  --font-primary: 'Inter', 'Noto Sans', 'Roboto', 'Open Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-secondary: 'Noto Serif', 'Merriweather', 'Georgia', 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', 'Courier New', monospace;
   
   /* Font weights */
   --font-light: 300;
@@ -20,11 +23,11 @@
   --font-bold: 700;
   --font-extrabold: 800;
   
-  /* Font sizes with better hierarchy */
+  /* Font sizes with better hierarchy - optimized for Vietnamese */
   --text-xs: 0.75rem;      /* 12px */
   --text-sm: 0.875rem;     /* 14px */
-  --text-base: 1rem;       /* 16px */
-  --text-lg: 1.125rem;     /* 18px */
+  --text-base: 1rem;       /* 16px - base reading size */
+  --text-lg: 1.125rem;     /* 18px - comfortable reading */
   --text-xl: 1.25rem;      /* 20px */
   --text-2xl: 1.5rem;      /* 24px */
   --text-3xl: 1.875rem;    /* 30px */
@@ -32,11 +35,11 @@
   --text-5xl: 3rem;        /* 48px */
   --text-6xl: 3.75rem;     /* 60px */
   
-  /* Line heights optimized for readability */
+  /* Line heights optimized for Vietnamese diacritics */
   --leading-tight: 1.25;
   --leading-snug: 1.375;
-  --leading-normal: 1.5;
-  --leading-relaxed: 1.625;
+  --leading-normal: 1.6;     /* Better for Vietnamese */
+  --leading-relaxed: 1.7;    /* Ideal for long-form Vietnamese content */
   --leading-loose: 2;
 
   /* Primary Colors - Harmonious blue-purple spectrum */
@@ -1848,82 +1851,8 @@ body.dark-theme {
   font-style: italic;
 }
 
-.prose ul {
-  @apply list-none mb-4 space-y-2;
-  padding-left: 0;
-}
-
-.prose ul li {
-  @apply relative pl-6;
-  color: var(--color-neutral-700);
-}
-
-.prose ul li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 6px;
-  height: 6px;
-  background: var(--color-primary-500);
-  border-radius: 50%;
-}
-
-.prose ol {
-  @apply list-none mb-4 space-y-2;
-  counter-reset: list-counter;
-  padding-left: 0;
-}
-
-.prose ol li {
-  @apply relative pl-8;
-  counter-increment: list-counter;
-  color: var(--color-neutral-700);
-}
-
-.prose ol li::before {
-  content: counter(list-counter);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 24px;
-  height: 24px;
-  background: var(--color-primary-100);
-  color: var(--color-primary-700);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.prose a {
-  color: var(--color-primary-600);
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  transition: color var(--transition-fast);
-}
-
-.prose a:hover {
-  color: var(--color-primary-700);
-}
-
-.prose a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background: var(--gradient-primary);
-  transform: scaleX(0);
-  transition: transform var(--transition-fast);
-}
-
-.prose a:hover::after {
-  transform: scaleX(1);
+.prose small {
+  color: var(--color-neutral-500);
 }
 
 .prose blockquote {
