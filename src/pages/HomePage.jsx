@@ -353,7 +353,7 @@ const HomePage = () => {
               </svg>
             </div>
             <h3 className="font-semibold text-gray-800 mb-2">Cập nhật thường xuyên</h3>
-            <p className="text-gray-600 text-sm">Thông tin mới được cập nhật hàng tuần</p>
+            <p className="text-gray-600 text-sm">Thông tin mới được cập nhật hàng ngày</p>
           </div>
           <div className="text-center">
             <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -505,7 +505,7 @@ const HomePage = () => {
             </svg>
           </div>
           <h3 className="font-semibold text-gray-800 mb-2">Cập nhật thường xuyên</h3>
-          <p className="text-gray-600 text-sm">Thông tin mới được cập nhật hàng tuần</p>
+          <p className="text-gray-600 text-sm">Thông tin mới được cập nhật hàng ngày</p>
         </div>
         <div className="text-center">
           <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
