@@ -297,37 +297,59 @@ const HomePage = () => {
 
           {/* Combined Analysis Card */}
           <Link 
-            to="/combined-analysis" 
-            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl"
+            to="/combined-analysis/latest" 
+            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl relative overflow-hidden"
             style={{ 
               background: 'white',
               border: `1px solid var(--color-neutral-200)`
             }}
           >
-            <div className="flex items-center mb-6">
-              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300"
-                   style={{ background: 'rgba(249, 115, 22, 0.1)' }}>
-                <svg className="h-8 w-8" style={{ color: 'var(--color-accent-orange)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
+            {/* Animated background on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-amber-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
+            <div className="relative z-10">
+              <div className="flex items-center mb-6">
+                <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 group-hover:shadow-lg"
+                     style={{ background: 'rgba(249, 115, 22, 0.1)' }}>
+                  <svg className="h-8 w-8 transition-colors duration-300" style={{ color: 'var(--color-accent-orange)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
               </div>
-            </div>
-            <h3 className="text-xl font-bold mb-3 transition-colors duration-200"
-                style={{ color: 'var(--color-neutral-800)' }}
-                onMouseEnter={(e) => e.target.style.color = 'var(--color-accent-orange)'}
-                onMouseLeave={(e) => e.target.style.color = 'var(--color-neutral-800)'}>
-              📊 Phân tích tổng hợp
-            </h3>
-            <p className="leading-relaxed mb-4"
-               style={{ color: 'var(--color-neutral-600)' }}>
-              Phân tích chuyên sâu các xu hướng công nghệ và insights từ dữ liệu.
-            </p>
-            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200"
-                 style={{ color: 'var(--color-accent-orange)' }}>
-              Phân tích ngay
-              <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
+              <h3 className="text-xl font-bold mb-3 transition-colors duration-200"
+                  style={{ color: 'var(--color-neutral-800)' }}
+                  onMouseEnter={(e) => e.target.style.color = 'var(--color-accent-orange)'}
+                  onMouseLeave={(e) => e.target.style.color = 'var(--color-neutral-800)'}>
+                📊 Phân tích tổng hợp
+              </h3>
+              <p className="leading-relaxed mb-6"
+                 style={{ color: 'var(--color-neutral-600)' }}>
+                Phân tích chuyên sâu các xu hướng công nghệ và insights từ dữ liệu.
+              </p>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200"
+                     style={{ color: 'var(--color-accent-orange)' }}>
+                  <span className="relative">
+                    Phân tích ngay
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-current group-hover:w-full transition-all duration-300"></span>
+                  </span>
+                  <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                
+                {/* Action indicator */}
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center text-xs px-3 py-1 rounded-full"
+                       style={{ 
+                         background: 'rgba(249, 115, 22, 0.1)',
+                         color: 'var(--color-accent-orange)'
+                       }}>
+                    <div className="w-2 h-2 bg-current rounded-full mr-2 animate-pulse"></div>
+                    Mới nhất
+                  </div>
+                </div>
+              </div>
             </div>
           </Link>
         </div>

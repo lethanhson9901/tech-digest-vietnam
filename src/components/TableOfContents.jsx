@@ -39,8 +39,8 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveId(entry.target.id);
-          }
-        });
+        }
+      });
       },
       {
         rootMargin: '-20% 0% -80% 0%',
@@ -70,10 +70,10 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
         top: y,
         behavior: 'smooth'
       });
-
+      
       // Update URL hash without triggering page jump
       window.history.pushState(null, null, `#${id}`);
-
+      
       // Call onItemClick for mobile to close dropdown
       if (onItemClick) {
         onItemClick();
@@ -141,7 +141,7 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
           <div className="p-2.5 bg-emerald-100 rounded-2xl mr-3">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
-            </svg>
+          </svg>
           </div>
           Mục Lục
         </h3>
@@ -160,7 +160,7 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
           </svg>
         </button>
       </div>
-
+      
       {/* Navigation */}
       <nav className={`lg:block overflow-y-auto lg:max-h-[calc(100vh-12rem)] ${
         isCollapsed ? 'hidden' : 'block'
@@ -168,7 +168,7 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
         <div className="p-5 space-y-2">
           {headings.map((heading, index) => (
             <button
-              key={index}
+              key={index} 
               onClick={() => scrollToSection(heading.id)}
               className={`
                 w-full text-left px-4 py-3.5 rounded-2xl text-sm transition-all duration-200 

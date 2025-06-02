@@ -2113,3 +2113,22 @@ body.dark-theme {
 .dark-theme .prose pre code {
   color: var(--color-neutral-200);
 }
+
+/* Loading bar animation for latest analysis page */
+@keyframes loading-bar {
+  0% {
+    width: 0%;
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0.8;
+  }
+}
+
+.animate-loading-bar {
+  animation: loading-bar 2s ease-in-out infinite;
+}

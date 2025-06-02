@@ -5,6 +5,7 @@ import Header from './components/Header';
 import ArchivePage from './pages/ArchivePage';
 import CombinedAnalysisPage from './pages/CombinedAnalysisPage';
 import CombinedAnalysisDetailPage from './pages/CombinedAnalysisDetailPage';
+import LatestCombinedAnalysisPage from './pages/LatestCombinedAnalysisPage';
 import HomePage from './pages/HomePage';
 import LatestReportPage from './pages/LatestReportPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -208,6 +209,7 @@ const App = () => {
                   <Route path="/latest" element={<LatestReportPage />} />
                   <Route path="/archive" element={<ArchivePage />} />
                   <Route path="/combined-analysis" element={<CombinedAnalysisPage />} />
+                  <Route path="/combined-analysis/latest" element={<LatestCombinedAnalysisPage />} />
                   <Route path="/combined-analysis/:id" element={<CombinedAnalysisDetailPage />} />
                   <Route path="/font-demo" element={<FontDemo />} />
                   <Route path="*" element={<NotFoundPage />} />
