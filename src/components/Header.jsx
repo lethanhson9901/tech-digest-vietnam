@@ -212,10 +212,9 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
                   >
                     <button
                       className={
-                        (isDropdownActive(item.dropdownItems)
-                          ? 'bg-white/20 text-primary-700 font-semibold '
-                          : isActive('/archive')) +
-                        ' flex items-center min-h-[44px] min-w-[44px] px-4 py-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-400'
+                        isDropdownActive(item.dropdownItems)
+                          ? 'bg-white/20 text-white font-semibold px-4 py-2 rounded-xl shadow-lg transition-all duration-300'
+                          : 'text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-xl transition-all duration-300'
                       }
                       style={{ background: 'transparent', boxShadow: 'none' }}
                       aria-haspopup="true"
@@ -233,7 +232,7 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
                     </button>
                     <div
                       id={`dropdown-${item.label}`}
-                      className={`absolute left-0 mt-2 w-56 bg-white/95 rounded-xl shadow-2xl py-2 z-50 transition-all duration-200 ease-in-out pointer-events-auto
+                      className={`absolute left-0 mt-2 w-56 bg-white/95 dark:bg-neutral-800/95 rounded-xl shadow-2xl dark:shadow-dark-xl py-2 z-50 transition-all duration-200 ease-in-out pointer-events-auto
                         ${openDropdown === item.label ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
                       style={{
                         backdropFilter: 'blur(8px)',
@@ -246,7 +245,7 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
                         <Link
                           key={sub.path}
                           to={sub.path}
-                          className={`flex items-center px-5 py-3 text-gray-800 hover:bg-primary-50 transition-colors font-medium min-h-[44px] min-w-[44px] rounded-lg ${location.pathname.startsWith(sub.path) ? 'bg-primary-100 font-semibold text-primary-700' : ''}`}
+                          className={`flex items-center px-5 py-3 text-gray-800 dark:text-gray-100 hover:bg-primary-50 dark:hover:bg-neutral-700 transition-colors font-medium min-h-[44px] min-w-[44px] rounded-lg ${location.pathname.startsWith(sub.path) ? 'bg-primary-100 dark:bg-primary-700/30 font-semibold text-primary-700 dark:text-primary-200' : ''}`}
                           tabIndex={0}
                           role="menuitem"
                           onClick={() => { setOpenDropdown(null); setIsMenuOpen(false); }}
