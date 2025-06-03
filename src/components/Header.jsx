@@ -1,11 +1,13 @@
 // src/components/Header.jsx (enhanced version)
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = ({ toggleDarkMode, isDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null); // Track which dropdown is open
+  const dropdownRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -40,6 +42,56 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
     };
   }, [isMenuOpen]);
 
+  // Close dropdown on outside click (desktop only)
+  useEffect(() => {
+    // Only attach outside click for desktop
+    if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
+      function handleClickOutside(event) {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+          setOpenDropdown(null);
+        }
+      }
+      if (openDropdown) {
+        document.addEventListener('mousedown', handleClickOutside);
+      } else {
+        document.removeEventListener('mousedown', handleClickOutside);
+      }
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [openDropdown]);
+
+  // Keyboard navigation for dropdown
+  const handleDropdownKeyDown = (e, item) => {
+    if (!item.isDropdown) return;
+    if (e.key === 'Enter' || e.key === ' ') {
+      setOpenDropdown(item.label === openDropdown ? null : item.label);
+    } else if (e.key === 'ArrowDown') {
+      const first = document.querySelector(`#dropdown-${item.label} a`);
+      if (first) first.focus();
+    } else if (e.key === 'Escape') {
+      setOpenDropdown(null);
+    }
+  };
+
+  // Highlight active dropdown item
+  const isDropdownActive = (dropdownItems) => {
+    return dropdownItems.some(sub => location.pathname.startsWith(sub.path));
+  };
+
+  // Navbar compact on scroll
+  const navHeight = isScrolled ? '3.5rem' : '4.5rem';
+  const navShadow = isScrolled ? '0 6px 24px rgba(0,0,0,0.18)' : '0 2px 8px rgba(0,0,0,0.08)';
+
+  // Dropdown icons
+  const dropdownIcons = {
+    '/archive': (
+      <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+    ),
+    '/combined-analysis': (
+      <svg className="w-5 h-5 mr-2 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+    )
+  };
+
   const isActive = (path) => {
     return location.pathname === path 
       ? 'text-white font-semibold px-4 py-2 rounded-xl shadow-lg transition-all duration-300' 
@@ -66,17 +118,7 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
       )
     },
     {
-      path: '/archive',
-      label: 'Kho lưu trữ',
-      icon: (
-        <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
-          <path fillRule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clipRule="evenodd" />
-        </svg>
-      )
-    },
-    {
-      path: '/combined-analysis',
+      path: '/combined-analysis/latest',
       label: 'Phân tích tổng hợp',
       icon: (
         <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -84,6 +126,26 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
           <path d="M10 3a1 1 0 011 1v.5a1.5 1.5 0 001.5 1.5H13a1 1 0 110 2h-.5A1.5 1.5 0 0011 9.5V10a1 1 0 11-2 0v-.5A1.5 1.5 0 007.5 8H7a1 1 0 110-2h.5A1.5 1.5 0 009 4.5V4a1 1 0 011-1z" />
         </svg>
       )
+    },
+    {
+      label: 'Kho lưu trữ',
+      isDropdown: true,
+      icon: (
+        <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+          <path fillRule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clipRule="evenodd" />
+        </svg>
+      ),
+      dropdownItems: [
+        {
+          path: '/archive',
+          label: 'Kho báo cáo',
+        },
+        {
+          path: '/combined-analysis',
+          label: 'Kho phân tích',
+        }
+      ]
     }
   ];
 
@@ -103,7 +165,9 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
         ? isDarkMode 
           ? 'var(--color-neutral-700)' 
           : 'var(--color-primary-400)'
-        : 'transparent'
+        : 'transparent',
+      minHeight: navHeight,
+      boxShadow: navShadow
     }}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
@@ -134,26 +198,86 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
           {/* Enhanced Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-3">
             <nav className="flex space-x-2">
-              {navigationItems.map((item) => (
-                <Link 
-                  key={item.path}
-                  to={item.path} 
-                  className={isActive(item.path)}
-                  style={{
-                    background: location.pathname === item.path 
-                      ? 'rgba(255, 255, 255, 0.2)' 
-                      : 'transparent',
-                    boxShadow: location.pathname === item.path 
-                      ? '0 8px 32px rgba(255, 255, 255, 0.1)' 
-                      : 'none'
-                  }}
-                >
-                  <span className="flex items-center space-x-2">
-                    {item.icon}
-                    <span className="font-medium">{item.label}</span>
-                  </span>
-                </Link>
-              ))}
+              {navigationItems.map((item) =>
+                item.isDropdown ? (
+                  <div
+                    key={item.label}
+                    className="relative group hidden lg:block"
+                    ref={dropdownRef}
+                    tabIndex={0}
+                    onMouseEnter={() => setOpenDropdown(item.label)}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                    onFocus={() => setOpenDropdown(item.label)}
+                    onBlur={() => setOpenDropdown(null)}
+                  >
+                    <button
+                      className={
+                        (isDropdownActive(item.dropdownItems)
+                          ? 'bg-white/20 text-primary-700 font-semibold '
+                          : isActive('/archive')) +
+                        ' flex items-center min-h-[44px] min-w-[44px] px-4 py-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-400'
+                      }
+                      style={{ background: 'transparent', boxShadow: 'none' }}
+                      aria-haspopup="true"
+                      aria-expanded={openDropdown === item.label}
+                      onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                      onKeyDown={e => handleDropdownKeyDown(e, item)}
+                    >
+                      <span className="flex items-center space-x-2">
+                        {item.icon}
+                        <span className="font-medium">{item.label}</span>
+                        <svg className={`w-4 h-4 ml-1 transition-transform duration-200 ${openDropdown === item.label ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </span>
+                    </button>
+                    <div
+                      id={`dropdown-${item.label}`}
+                      className={`absolute left-0 mt-2 w-56 bg-white/95 rounded-xl shadow-2xl py-2 z-50 transition-all duration-200 ease-in-out pointer-events-auto
+                        ${openDropdown === item.label ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
+                      style={{
+                        backdropFilter: 'blur(8px)',
+                        WebkitBackdropFilter: 'blur(8px)',
+                        minWidth: 180
+                      }}
+                      role="menu"
+                    >
+                      {item.dropdownItems.map((sub, idx) => (
+                        <Link
+                          key={sub.path}
+                          to={sub.path}
+                          className={`flex items-center px-5 py-3 text-gray-800 hover:bg-primary-50 transition-colors font-medium min-h-[44px] min-w-[44px] rounded-lg ${location.pathname.startsWith(sub.path) ? 'bg-primary-100 font-semibold text-primary-700' : ''}`}
+                          tabIndex={0}
+                          role="menuitem"
+                          onClick={() => { setOpenDropdown(null); setIsMenuOpen(false); }}
+                        >
+                          {dropdownIcons[sub.path]}
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link 
+                    key={item.path}
+                    to={item.path} 
+                    className={isActive(item.path)}
+                    style={{
+                      background: location.pathname === item.path 
+                        ? 'rgba(255, 255, 255, 0.2)' 
+                        : 'transparent',
+                      boxShadow: location.pathname === item.path 
+                        ? '0 8px 32px rgba(255, 255, 255, 0.1)' 
+                        : 'none'
+                    }}
+                  >
+                    <span className="flex items-center space-x-2">
+                      {item.icon}
+                      <span className="font-medium">{item.label}</span>
+                    </span>
+                  </Link>
+                )
+              )}
             </nav>
             
             {/* Enhanced Search Button */}
@@ -255,20 +379,58 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
           <div className="lg:hidden mt-4 animate-fadeIn">
             <div className="px-2 pt-2 pb-3 space-y-1 rounded-2xl backdrop-blur-xl"
                  style={{ background: 'rgba(255, 255, 255, 0.1)' }}>
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`${
-                    location.pathname === item.path
+              {navigationItems.map((item) =>
+                item.isDropdown ? (
+                  <div key={item.label} className="mb-2 block lg:hidden">
+                    <button
+                      className={`w-full flex items-center px-4 py-3 text-base rounded-xl transition-all duration-200 text-white/80 hover:bg-white/10 hover:text-white font-medium justify-between min-h-[44px] min-w-[44px] ${openDropdown === item.label ? 'bg-white/10' : ''}`}
+                      onClick={e => {
+                        e.stopPropagation();
+                        setOpenDropdown(openDropdown === item.label ? null : item.label);
+                      }}
+                      aria-expanded={openDropdown === item.label}
+                      type="button"
+                    >
+                      <span className="flex items-center space-x-2">
+                        {item.icon}
+                        {item.label}
+                        <svg className={`w-4 h-4 ml-2 transition-transform duration-200 ${openDropdown === item.label ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </span>
+                    </button>
+                    <div className={`pl-4 transition-all duration-200 ${openDropdown === item.label ? 'block' : 'hidden'}`}
+                      style={{
+                        background: 'rgba(255,255,255,0.08)',
+                        borderRadius: 12
+                      }}
+                    >
+                      {item.dropdownItems.map((sub) => (
+                        <Link
+                          key={sub.path}
+                          to={sub.path}
+                          className={`flex items-center px-4 py-3 text-white/90 hover:bg-white/10 rounded-lg transition-colors min-h-[44px] min-w-[44px] ${location.pathname.startsWith(sub.path) ? 'bg-primary-900/10 font-semibold text-primary-200' : ''}`}
+                          onClick={() => { setOpenDropdown(null); setIsMenuOpen(false); }}
+                        >
+                          {dropdownIcons[sub.path]}
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`$${location.pathname === item.path
                       ? 'bg-white/20 text-white font-semibold'
-                      : 'text-white/80 hover:bg-white/10 hover:text-white'
-                  } group flex items-center px-4 py-3 text-base rounded-xl transition-all duration-200`}
-                >
-                  <span className="mr-3">{item.icon}</span>
-                  {item.label}
-                </Link>
-              ))}
+                      : 'text-white/80 hover:bg-white/10 hover:text-white'} group flex items-center px-4 py-3 text-base rounded-xl transition-all duration-200`}
+                  >
+                    <span className="mr-3">{item.icon}</span>
+                    {item.label}
+                  </Link>
+                )
+              )}
             </div>
           </div>
         )}
