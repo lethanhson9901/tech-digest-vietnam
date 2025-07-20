@@ -58,7 +58,7 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
   const data = subredditReport.structured_data;
   
   return (
-    <div ref={ref} className="p-4 lg:p-6 rounded-2xl backdrop-blur-lg border transition-all duration-300 hover:scale-[1.02] bg-white/80 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 shadow-lg dark:shadow-gray-900/20">
+    <div ref={ref} className="p-4 lg:p-6 rounded-2xl backdrop-blur-lg border transition-all duration-300 hover:scale-[1.02] bg-gray-100 dark:bg-gray-800/50 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 shadow-lg dark:shadow-gray-900/20">
       {/* Subreddit Header */}
       <div className="mb-4">
         <div className="flex items-center justify-between mb-2">
@@ -69,7 +69,7 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
             #{index + 1}
           </span>
         </div>
-        <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+        <p className="text-sm text-gray-700 dark:text-gray-400 line-clamp-2">
           {data.reportTitle}
         </p>
       </div>
@@ -84,8 +84,8 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
               </svg>
               Tóm tắt chuyên sâu
             </summary>
-            <div className="mt-2 p-3 rounded-lg bg-gray-100/80 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700/50">
-              <p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-3">
+            <div className="mt-2 p-3 rounded-lg bg-gray-200 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700/50">
+              <p className="text-xs text-gray-700 dark:text-gray-400 line-clamp-3">
                 {data.executiveSummary}
               </p>
             </div>
@@ -95,8 +95,8 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
 
       {/* Community Mood */}
       {data.communityMood && (
-        <div className="mb-4 p-3 rounded-lg bg-purple-100/80 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-700/30">
-          <p className="text-xs text-purple-700 dark:text-purple-300 italic line-clamp-2">
+        <div className="mb-4 p-3 rounded-lg bg-purple-200 dark:bg-purple-900/20 border border-purple-300 dark:border-purple-700/30">
+          <p className="text-xs text-purple-800 dark:text-purple-300 italic line-clamp-2">
             "{data.communityMood}"
           </p>
         </div>
@@ -109,12 +109,12 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
           <div className="flex flex-wrap gap-1">
             {data.trendingTopics.slice(0, 3).map((topic, topicIndex) => (
               <span key={topicIndex} 
-                    className="text-xs px-2 py-1 rounded-full bg-orange-100 dark:bg-orange-600/20 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-600/30">
+                    className="text-xs px-2 py-1 rounded-full bg-orange-200 dark:bg-orange-600/20 text-orange-800 dark:text-orange-300 border border-orange-300 dark:border-orange-600/30">
                 {topic}
               </span>
             ))}
             {data.trendingTopics.length > 3 && (
-              <span className="text-xs px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+              <span className="text-xs px-2 py-1 rounded-full bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
                 +{data.trendingTopics.length - 3}
               </span>
             )}
@@ -131,27 +131,27 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
               <div key={sectionIndex}>
                 <h5 className="text-xs font-medium text-gray-600 dark:text-gray-300 mb-1">{section.title}</h5>
                 {section.articles && section.articles.slice(0, 2).map((article, articleIndex) => (
-                  <div key={articleIndex} className="p-2 rounded-lg bg-gray-100/80 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700/50">
+                  <div key={articleIndex} className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700/50">
                     <div className="flex items-start justify-between mb-1">
                       <h6 className="text-xs font-medium text-gray-900 dark:text-white line-clamp-2 flex-1 mr-2">
                         {article.headline}
                       </h6>
                       <div className="flex items-center space-x-1 text-xs flex-shrink-0">
-                        <span className="px-1 py-0.5 rounded bg-green-100 dark:bg-green-600/20 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-600/30">
+                        <span className="px-1 py-0.5 rounded bg-green-200 dark:bg-green-600/20 text-green-800 dark:text-green-300 border border-green-300 dark:border-green-600/30">
                           {article.score}↑
                         </span>
-                        <span className="px-1 py-0.5 rounded bg-blue-100 dark:bg-blue-600/20 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-600/30">
+                        <span className="px-1 py-0.5 rounded bg-blue-200 dark:bg-blue-600/20 text-blue-800 dark:text-blue-300 border border-blue-300 dark:border-blue-600/30">
                           {article.numComments}💬
                         </span>
                       </div>
                     </div>
                     
-                    <p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-2 mb-1">
+                    <p className="text-xs text-gray-700 dark:text-gray-400 line-clamp-2 mb-1">
                       {article.summary}
                     </p>
                     
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-500 dark:text-gray-500">
+                      <span className="text-xs text-gray-600 dark:text-gray-500">
                         {article.source}
                       </span>
                       {article.link && (
@@ -159,7 +159,7 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
                           href={article.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-xs text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                          className="text-xs text-blue-700 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
                         >
                           Xem →
                         </a>
@@ -231,7 +231,7 @@ const SearchAndFilter = ({ onSearch, onFilter, totalCount, filteredCount }) => {
   };
 
   return (
-    <div className="mb-6 p-4 rounded-xl bg-white/80 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700/50 shadow-lg dark:shadow-gray-900/20">
+    <div className="mb-6 p-4 rounded-xl bg-gray-100 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700/50 shadow-lg dark:shadow-gray-900/20">
       <div className="flex flex-col lg:flex-row gap-4">
         {/* Search */}
         <div className="flex-1">
@@ -241,9 +241,9 @@ const SearchAndFilter = ({ onSearch, onFilter, totalCount, filteredCount }) => {
               placeholder="Tìm kiếm subreddit, chủ đề..."
               value={searchTerm}
               onChange={handleSearch}
-              className="w-full pl-10 pr-4 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 bg-gray-200 dark:bg-gray-700 border border-gray-400 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
-            <svg className="absolute left-3 top-2.5 w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="absolute left-3 top-2.5 w-5 h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </div>
@@ -258,7 +258,7 @@ const SearchAndFilter = ({ onSearch, onFilter, totalCount, filteredCount }) => {
               className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                 selectedCategory === category.value
                   ? 'bg-blue-500 text-white shadow-sm'
-                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                  : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
               }`}
             >
               <span className="mr-1">{category.icon}</span>
@@ -273,7 +273,7 @@ const SearchAndFilter = ({ onSearch, onFilter, totalCount, filteredCount }) => {
           <select
             value={sortBy}
             onChange={(e) => handleSortChange(e.target.value)}
-            className="px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-3 py-2 bg-gray-200 dark:bg-gray-700 border border-gray-400 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             {sortOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -1099,7 +1099,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
   return (
     <div className="max-w-6xl mx-auto">
       {/* Header Section */}
-      <div className="mb-8 p-6 rounded-2xl backdrop-blur-lg bg-white/80 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 shadow-lg dark:shadow-gray-900/20">
+      <div className="mb-8 p-6 rounded-2xl backdrop-blur-lg bg-gray-100 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700 shadow-lg dark:shadow-gray-900/20">
         
         {/* Analytics Dashboard */}
         <AnalyticsDashboard reports={processedReports} />
