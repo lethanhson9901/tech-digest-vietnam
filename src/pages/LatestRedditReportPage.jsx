@@ -41,7 +41,7 @@ const LatestRedditReportPage = () => {
   }, [report]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#F8F9FA] dark:bg-gray-900">
       <RedditReportView 
         report={report}
         isLoading={isLoading}

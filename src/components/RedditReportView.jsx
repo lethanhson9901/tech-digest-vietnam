@@ -58,18 +58,18 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
   const data = subredditReport.structured_data;
   
   return (
-    <div ref={ref} className="p-4 lg:p-6 rounded-2xl backdrop-blur-lg border transition-all duration-300 hover:scale-[1.02] bg-gray-100 dark:bg-gray-800/50 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 shadow-lg dark:shadow-gray-900/20">
+    <div ref={ref} className="p-4 lg:p-6 rounded-2xl backdrop-blur-lg border transition-all duration-300 hover:scale-[1.02] bg-white dark:bg-gray-800/50 border-[#E5E7EB] dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 shadow-sm dark:shadow-gray-900/20">
       {/* Subreddit Header */}
       <div className="mb-4">
         <div className="flex items-center justify-between mb-2">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+          <h2 className="text-lg font-bold text-[#1F2937] dark:text-white">
             🏛️ r/{data.subreddit || `subreddit-${index + 1}`}
           </h2>
-          <span className="text-xs px-2 py-1 rounded-full bg-blue-500 text-white">
+          <span className="text-xs px-2 py-1 rounded-full bg-[#3B82F6] text-white">
             #{index + 1}
           </span>
         </div>
-        <p className="text-sm text-gray-700 dark:text-gray-400 line-clamp-2">
+        <p className="text-sm text-[#4B5563] dark:text-gray-400 line-clamp-2">
           {data.reportTitle}
         </p>
       </div>
@@ -78,14 +78,14 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
       {data.executiveSummary && (
         <div className="mb-4">
           <details className="group">
-            <summary className="cursor-pointer text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors flex items-center">
+            <summary className="cursor-pointer text-sm text-[#4B5563] dark:text-gray-300 hover:text-[#1F2937] dark:hover:text-white transition-colors flex items-center">
               <svg className="w-4 h-4 mr-2 transition-transform group-open:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
               Tóm tắt chuyên sâu
             </summary>
-            <div className="mt-2 p-3 rounded-lg bg-gray-200 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700/50">
-              <p className="text-xs text-gray-700 dark:text-gray-400 line-clamp-3">
+            <div className="mt-2 p-3 rounded-lg bg-[#EFF6FF] dark:bg-gray-800/50 border border-[#DBEAFE] dark:border-gray-700/50">
+              <p className="text-xs text-[#4B5563] dark:text-gray-400 line-clamp-3">
                 {data.executiveSummary}
               </p>
             </div>
@@ -95,8 +95,8 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
 
       {/* Community Mood */}
       {data.communityMood && (
-        <div className="mb-4 p-3 rounded-lg bg-purple-200 dark:bg-purple-900/20 border border-purple-300 dark:border-purple-700/30">
-          <p className="text-xs text-purple-800 dark:text-purple-300 italic line-clamp-2">
+        <div className="mb-4 p-3 rounded-lg bg-[#EFF6FF] dark:bg-purple-900/20 border border-[#DBEAFE] dark:border-purple-700/30">
+          <p className="text-xs text-[#4B5563] dark:text-purple-300 italic line-clamp-2">
             "{data.communityMood}"
           </p>
         </div>
@@ -105,16 +105,16 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
       {/* Trending Topics */}
       {data.trendingTopics && data.trendingTopics.length > 0 && (
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Chủ đề nổi bật:</h4>
+          <h4 className="text-sm font-semibold text-[#1F2937] dark:text-white mb-2">Chủ đề nổi bật:</h4>
           <div className="flex flex-wrap gap-1">
             {data.trendingTopics.slice(0, 3).map((topic, topicIndex) => (
               <span key={topicIndex} 
-                    className="text-xs px-2 py-1 rounded-full bg-orange-200 dark:bg-orange-600/20 text-orange-800 dark:text-orange-300 border border-orange-300 dark:border-orange-600/30">
+                    className="text-xs px-2 py-1 rounded-full bg-[#DBEAFE] dark:bg-orange-600/20 text-[#3B82F6] dark:text-orange-300 border border-[#BFDBFE] dark:border-orange-600/30">
                 {topic}
               </span>
             ))}
             {data.trendingTopics.length > 3 && (
-              <span className="text-xs px-2 py-1 rounded-full bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
+              <span className="text-xs px-2 py-1 rounded-full bg-[#F3F4F6] dark:bg-gray-700 text-[#4B5563] dark:text-gray-300">
                 +{data.trendingTopics.length - 3}
               </span>
             )}
@@ -125,33 +125,33 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
       {/* Sample Articles */}
       {data.sections && data.sections.length > 0 && (
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Bài viết tiêu biểu:</h4>
+          <h4 className="text-sm font-semibold text-[#1F2937] dark:text-white mb-2">Bài viết tiêu biểu:</h4>
           <div className="space-y-2">
             {data.sections.slice(0, 2).map((section, sectionIndex) => (
               <div key={sectionIndex}>
-                <h5 className="text-xs font-medium text-gray-600 dark:text-gray-300 mb-1">{section.title}</h5>
+                <h5 className="text-xs font-medium text-[#6B7280] dark:text-gray-300 mb-1">{section.title}</h5>
                 {section.articles && section.articles.slice(0, 2).map((article, articleIndex) => (
-                  <div key={articleIndex} className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700/50">
+                  <div key={articleIndex} className="p-2 rounded-lg bg-[#F9FAFB] dark:bg-gray-800/50 border border-[#E5E7EB] dark:border-gray-700/50">
                     <div className="flex items-start justify-between mb-1">
-                      <h6 className="text-xs font-medium text-gray-900 dark:text-white line-clamp-2 flex-1 mr-2">
+                      <h6 className="text-xs font-medium text-[#1F2937] dark:text-white line-clamp-2 flex-1 mr-2">
                         {article.headline}
                       </h6>
                       <div className="flex items-center space-x-1 text-xs flex-shrink-0">
-                        <span className="px-1 py-0.5 rounded bg-green-200 dark:bg-green-600/20 text-green-800 dark:text-green-300 border border-green-300 dark:border-green-600/30">
+                        <span className="px-1 py-0.5 rounded bg-[#D1FAE5] dark:bg-green-600/20 text-[#10B981] dark:text-green-300 border border-[#A7F3D0] dark:border-green-600/30">
                           {article.score}↑
                         </span>
-                        <span className="px-1 py-0.5 rounded bg-blue-200 dark:bg-blue-600/20 text-blue-800 dark:text-blue-300 border border-blue-300 dark:border-blue-600/30">
+                        <span className="px-1 py-0.5 rounded bg-[#DBEAFE] dark:bg-blue-600/20 text-[#3B82F6] dark:text-blue-300 border border-[#BFDBFE] dark:border-blue-600/30">
                           {article.numComments}💬
                         </span>
                       </div>
                     </div>
                     
-                    <p className="text-xs text-gray-700 dark:text-gray-400 line-clamp-2 mb-1">
+                    <p className="text-xs text-[#4B5563] dark:text-gray-400 line-clamp-2 mb-1">
                       {article.summary}
                     </p>
                     
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-600 dark:text-gray-500">
+                      <span className="text-xs text-[#6B7280] dark:text-gray-500">
                         {article.source}
                       </span>
                       {article.link && (
@@ -159,7 +159,7 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
                           href={article.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-xs text-blue-700 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                          className="text-xs text-[#3B82F6] dark:text-blue-400 hover:text-[#2563EB] dark:hover:text-blue-300 transition-colors"
                         >
                           Xem →
                         </a>
@@ -174,10 +174,10 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
       )}
 
       {/* View Full Report Button */}
-      <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700/50">
+      <div className="mt-4 pt-4 border-t border-[#E5E7EB] dark:border-gray-700/50">
         <button
           onClick={() => onViewDetail(data)}
-          className="w-full flex items-center justify-center px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
+          className="w-full flex items-center justify-center px-4 py-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
         >
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
@@ -231,7 +231,7 @@ const SearchAndFilter = ({ onSearch, onFilter, totalCount, filteredCount }) => {
   };
 
   return (
-    <div className="mb-6 p-4 rounded-xl bg-gray-100 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700/50 shadow-lg dark:shadow-gray-900/20">
+    <div className="mb-6 p-4 rounded-xl bg-white dark:bg-gray-800/50 border border-[#E5E7EB] dark:border-gray-700/50 shadow-sm dark:shadow-gray-900/20">
       <div className="flex flex-col lg:flex-row gap-4">
         {/* Search */}
         <div className="flex-1">
@@ -241,9 +241,9 @@ const SearchAndFilter = ({ onSearch, onFilter, totalCount, filteredCount }) => {
               placeholder="Tìm kiếm subreddit, chủ đề..."
               value={searchTerm}
               onChange={handleSearch}
-              className="w-full pl-10 pr-4 py-2 bg-gray-200 dark:bg-gray-700 border border-gray-400 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 bg-[#F9FAFB] dark:bg-gray-700 border border-[#D1D5DB] dark:border-gray-600 rounded-lg text-[#1F2937] dark:text-white placeholder-[#6B7280] dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent"
             />
-            <svg className="absolute left-3 top-2.5 w-5 h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="absolute left-3 top-2.5 w-5 h-5 text-[#6B7280] dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </div>
@@ -257,8 +257,8 @@ const SearchAndFilter = ({ onSearch, onFilter, totalCount, filteredCount }) => {
               onClick={() => handleCategoryChange(category.value)}
               className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                 selectedCategory === category.value
-                  ? 'bg-blue-500 text-white shadow-sm'
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                  ? 'bg-[#3B82F6] text-white shadow-sm'
+                  : 'bg-[#F3F4F6] dark:bg-gray-700 text-[#4B5563] dark:text-gray-300 hover:bg-[#E5E7EB] dark:hover:bg-gray-600'
               }`}
             >
               <span className="mr-1">{category.icon}</span>
@@ -269,11 +269,11 @@ const SearchAndFilter = ({ onSearch, onFilter, totalCount, filteredCount }) => {
 
         {/* Sort Options */}
         <div className="flex items-center space-x-2">
-          <span className="text-sm text-gray-600 dark:text-gray-400">Sắp xếp:</span>
+          <span className="text-sm text-[#6B7280] dark:text-gray-400">Sắp xếp:</span>
           <select
             value={sortBy}
             onChange={(e) => handleSortChange(e.target.value)}
-            className="px-3 py-2 bg-gray-200 dark:bg-gray-700 border border-gray-400 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-3 py-2 bg-[#F3F4F6] dark:bg-gray-700 border border-[#D1D5DB] dark:border-gray-600 rounded-lg text-[#1F2937] dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
           >
             {sortOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -285,13 +285,13 @@ const SearchAndFilter = ({ onSearch, onFilter, totalCount, filteredCount }) => {
       </div>
 
       {/* Results Count */}
-      <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700/50">
+      <div className="mt-3 pt-3 border-t border-[#E5E7EB] dark:border-gray-700/50">
         <div className="flex items-center justify-between text-sm">
-          <span className="text-gray-600 dark:text-gray-400">
+          <span className="text-[#6B7280] dark:text-gray-400">
             Hiển thị {filteredCount} / {totalCount} subreddits
           </span>
           {searchTerm && (
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-[#3B82F6] dark:text-blue-400">
               Kết quả tìm kiếm: "{searchTerm}"
             </span>
           )}
@@ -578,56 +578,56 @@ const AnalyticsDashboard = ({ reports }) => {
   return (
     <div className="mb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {/* Key Metrics */}
-      <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+      <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-[#E5E7EB] dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-gray-600 dark:text-gray-300">Subreddits</p>
-            <p className="text-2xl font-bold text-gray-900 dark:text-white">{stats.totalSubreddits}</p>
+            <p className="text-sm text-[#6B7280] dark:text-gray-300">Subreddits</p>
+            <p className="text-2xl font-bold text-[#1F2937] dark:text-white">{stats.totalSubreddits}</p>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-600/30 flex items-center justify-center">
-            <svg className="w-5 h-5 text-blue-500 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg bg-[#DBEAFE] dark:bg-blue-600/30 flex items-center justify-center">
+            <svg className="w-5 h-5 text-[#3B82F6] dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
             </svg>
           </div>
         </div>
       </div>
 
-      <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+      <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-[#E5E7EB] dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-gray-600 dark:text-gray-300">Bài viết</p>
-            <p className="text-2xl font-bold text-gray-900 dark:text-white">{stats.totalArticles}</p>
+            <p className="text-sm text-[#6B7280] dark:text-gray-300">Bài viết</p>
+            <p className="text-2xl font-bold text-[#1F2937] dark:text-white">{stats.totalArticles}</p>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-green-50 dark:bg-green-600/30 flex items-center justify-center">
-            <svg className="w-5 h-5 text-green-500 dark:text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg bg-[#D1FAE5] dark:bg-green-600/30 flex items-center justify-center">
+            <svg className="w-5 h-5 text-[#10B981] dark:text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
           </div>
         </div>
       </div>
 
-      <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+      <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-[#E5E7EB] dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-gray-600 dark:text-gray-300">Điểm TB</p>
-            <p className="text-2xl font-bold text-gray-900 dark:text-white">{stats.avgScore}</p>
+            <p className="text-sm text-[#6B7280] dark:text-gray-300">Điểm TB</p>
+            <p className="text-2xl font-bold text-[#1F2937] dark:text-white">{stats.avgScore}</p>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-orange-50 dark:bg-orange-600/30 flex items-center justify-center">
-            <svg className="w-5 h-5 text-orange-500 dark:text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg bg-[#FEF3C7] dark:bg-orange-600/30 flex items-center justify-center">
+            <svg className="w-5 h-5 text-[#F59E0B] dark:text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
         </div>
       </div>
 
-      <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+      <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-[#E5E7EB] dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-gray-600 dark:text-gray-300">Bình luận TB</p>
-            <p className="text-2xl font-bold text-gray-900 dark:text-white">{stats.avgComments}</p>
+            <p className="text-sm text-[#6B7280] dark:text-gray-300">Bình luận TB</p>
+            <p className="text-2xl font-bold text-[#1F2937] dark:text-white">{stats.avgComments}</p>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-purple-50 dark:bg-purple-600/30 flex items-center justify-center">
-            <svg className="w-5 h-5 text-purple-500 dark:text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg bg-[#E0E7FF] dark:bg-purple-600/30 flex items-center justify-center">
+            <svg className="w-5 h-5 text-[#6366F1] dark:text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
           </div>
@@ -873,7 +873,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
             <div className="flex items-center space-x-3 mt-4 lg:mt-0">
               <button
                 onClick={() => navigate('/reddit-reports-archive')}
-                className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105"
+                className="inline-flex items-center px-4 py-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105"
               >
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0l-4-4m4 4l-4 4" />
@@ -883,7 +883,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
               
               <button
                 onClick={() => window.location.reload()}
-                className="inline-flex items-center px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105"
+                className="inline-flex items-center px-4 py-2 bg-white text-[#3B82F6] border border-[#3B82F6] hover:bg-[#3B82F6] hover:text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105"
                 title="Làm mới để lấy báo cáo mới nhất"
               >
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1099,7 +1099,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
   return (
     <div className="max-w-6xl mx-auto">
       {/* Header Section */}
-      <div className="mb-8 p-6 rounded-2xl backdrop-blur-lg bg-gray-100 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700 shadow-lg dark:shadow-gray-900/20">
+      <div className="mb-8 p-6 rounded-2xl backdrop-blur-lg bg-[#F8F9FA] dark:bg-gray-800/50 border border-[#E5E7EB] dark:border-gray-700 shadow-sm dark:shadow-gray-900/20">
         
         {/* Analytics Dashboard */}
         <AnalyticsDashboard reports={processedReports} />
@@ -1117,17 +1117,17 @@ const RedditReportView = ({ report, isLoading, error }) => {
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
           <div className="flex-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-blue-500">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#3B82F6]">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                         d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
               </div>
               <div>
-                <h1 className="text-2xl lg:text-3xl font-bold mb-2 text-gray-900 dark:text-white">
+                <h1 className="text-2xl lg:text-3xl font-bold mb-2 text-[#1F2937] dark:text-white">
                   {reportTitle}
                 </h1>
-                <div className="flex flex-wrap items-center gap-3 text-sm text-gray-600 dark:text-gray-300">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-[#6B7280] dark:text-gray-300">
                   <span className="flex items-center">
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
@@ -1150,7 +1150,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
           <div className="flex items-center space-x-3 mt-4 lg:mt-0">
             <button
               onClick={() => navigate('/reddit-reports-archive')}
-              className="inline-flex items-center px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
+              className="inline-flex items-center px-4 py-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0l-4-4m4 4l-4 4" />
@@ -1160,7 +1160,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
             
             <button
               onClick={() => window.location.reload()}
-              className="inline-flex items-center px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
+              className="inline-flex items-center px-4 py-2 bg-white text-[#3B82F6] border border-[#3B82F6] hover:bg-[#3B82F6] hover:text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
               title="Làm mới để lấy báo cáo mới nhất"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
