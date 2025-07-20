@@ -65,7 +65,7 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
           <h2 className="text-lg font-bold text-gray-900 dark:text-white">
             🏛️ r/{data.subreddit || `subreddit-${index + 1}`}
           </h2>
-          <span className="text-xs px-2 py-1 rounded-full bg-blue-600 text-white">
+          <span className="text-xs px-2 py-1 rounded-full bg-blue-500 text-white">
             #{index + 1}
           </span>
         </div>
@@ -177,7 +177,7 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
       <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700/50">
         <button
           onClick={() => onViewDetail(data)}
-          className="w-full flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-lg"
+          className="w-full flex items-center justify-center px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
         >
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
@@ -257,8 +257,8 @@ const SearchAndFilter = ({ onSearch, onFilter, totalCount, filteredCount }) => {
               onClick={() => handleCategoryChange(category.value)}
               className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                 selectedCategory === category.value
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                  ? 'bg-blue-500 text-white shadow-sm'
+                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
               }`}
             >
               <span className="mr-1">{category.icon}</span>
@@ -578,56 +578,56 @@ const AnalyticsDashboard = ({ reports }) => {
   return (
     <div className="mb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {/* Key Metrics */}
-      <div className="p-4 rounded-xl bg-gradient-to-br from-blue-100/80 to-purple-100/80 dark:from-blue-600/20 dark:to-purple-600/20 border border-blue-200 dark:border-blue-600/30 shadow-lg">
+      <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-blue-700 dark:text-blue-300">Subreddits</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">Subreddits</p>
             <p className="text-2xl font-bold text-gray-900 dark:text-white">{stats.totalSubreddits}</p>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-blue-200/80 dark:bg-blue-600/30 flex items-center justify-center">
-            <svg className="w-5 h-5 text-blue-600 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-600/30 flex items-center justify-center">
+            <svg className="w-5 h-5 text-blue-500 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
             </svg>
           </div>
         </div>
       </div>
 
-      <div className="p-4 rounded-xl bg-gradient-to-br from-green-100/80 to-emerald-100/80 dark:from-green-600/20 dark:to-emerald-600/20 border border-green-200 dark:border-green-600/30 shadow-lg">
+      <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-green-700 dark:text-green-300">Bài viết</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">Bài viết</p>
             <p className="text-2xl font-bold text-gray-900 dark:text-white">{stats.totalArticles}</p>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-green-200/80 dark:bg-green-600/30 flex items-center justify-center">
-            <svg className="w-5 h-5 text-green-600 dark:text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg bg-green-50 dark:bg-green-600/30 flex items-center justify-center">
+            <svg className="w-5 h-5 text-green-500 dark:text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
           </div>
         </div>
       </div>
 
-      <div className="p-4 rounded-xl bg-gradient-to-br from-orange-100/80 to-red-100/80 dark:from-orange-600/20 dark:to-red-600/20 border border-orange-200 dark:border-orange-600/30 shadow-lg">
+      <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-orange-700 dark:text-orange-300">Điểm TB</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">Điểm TB</p>
             <p className="text-2xl font-bold text-gray-900 dark:text-white">{stats.avgScore}</p>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-orange-200/80 dark:bg-orange-600/30 flex items-center justify-center">
-            <svg className="w-5 h-5 text-orange-600 dark:text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg bg-orange-50 dark:bg-orange-600/30 flex items-center justify-center">
+            <svg className="w-5 h-5 text-orange-500 dark:text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
         </div>
       </div>
 
-      <div className="p-4 rounded-xl bg-gradient-to-br from-purple-100/80 to-pink-100/80 dark:from-purple-600/20 dark:to-pink-600/20 border border-purple-200 dark:border-purple-600/30 shadow-lg">
+      <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-purple-700 dark:text-purple-300">Bình luận TB</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">Bình luận TB</p>
             <p className="text-2xl font-bold text-gray-900 dark:text-white">{stats.avgComments}</p>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-purple-200/80 dark:bg-purple-600/30 flex items-center justify-center">
-            <svg className="w-5 h-5 text-purple-600 dark:text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg bg-purple-50 dark:bg-purple-600/30 flex items-center justify-center">
+            <svg className="w-5 h-5 text-purple-500 dark:text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
           </div>
@@ -1117,7 +1117,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
           <div className="flex-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-blue-500">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                         d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -1150,7 +1150,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
           <div className="flex items-center space-x-3 mt-4 lg:mt-0">
             <button
               onClick={() => navigate('/reddit-reports-archive')}
-              className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-lg"
+              className="inline-flex items-center px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0l-4-4m4 4l-4 4" />
@@ -1160,7 +1160,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
             
             <button
               onClick={() => window.location.reload()}
-              className="inline-flex items-center px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-lg"
+              className="inline-flex items-center px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
               title="Làm mới để lấy báo cáo mới nhất"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
