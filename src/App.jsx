@@ -8,7 +8,10 @@ import CombinedAnalysisDetailPage from './pages/CombinedAnalysisDetailPage';
 import LatestCombinedAnalysisPage from './pages/LatestCombinedAnalysisPage';
 import HomePage from './pages/HomePage';
 import LatestReportPage from './pages/LatestReportPage';
+import LatestRedditReportPage from './pages/LatestRedditReportPage';
 import NotFoundPage from './pages/NotFoundPage';
+import RedditReportsArchivePage from './pages/RedditReportsArchivePage';
+import RedditReportDetailPage from './pages/RedditReportDetailPage';
 import ReportDetailPage from './pages/ReportDetailPage';
 import BackToTop from './components/BackToTop';
 import FontDemo from './components/FontDemo';
@@ -212,6 +215,9 @@ const App = () => {
                   <Route path="/combined-analysis/latest" element={<LatestCombinedAnalysisPage />} />
                   <Route path="/combined-analysis/:id" element={<CombinedAnalysisDetailPage />} />
                   <Route path="/font-demo" element={<FontDemo />} />
+                  <Route path="/reddit-reports" element={<LatestRedditReportPage />} />
+                  <Route path="/reddit-reports/:id" element={<RedditReportDetailPage />} />
+                  <Route path="/reddit-reports-archive" element={<RedditReportsArchivePage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </main>

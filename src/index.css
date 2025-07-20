@@ -80,6 +80,10 @@
   --color-accent-rose: #f43f5e;
   --color-accent-rose-light: #fb7185;
   --color-accent-rose-dark: #e11d48;
+  
+  --color-accent-blue: #3b82f6;
+  --color-accent-blue-light: #60a5fa;
+  --color-accent-blue-dark: #2563eb;
 
   /* Neutral Colors - Warmer grays with slight blue undertone */
   --color-neutral-50: #f8fafc;
@@ -183,6 +187,32 @@
   --color-accent-rose: hsl(340, 80%, 60%); /* Adjusted for better dark mode visibility */
   --color-accent-rose-light: hsl(340, 80%, 65%);
   --color-accent-rose-dark: hsl(340, 80%, 55%);
+  
+  --color-accent-blue: hsl(221, 75%, 55%); /* #3B82F6 */
+  --color-accent-blue-light: hsl(221, 75%, 60%);
+  --color-accent-blue-dark: hsl(221, 75%, 50%);
+
+  /* Line clamp utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
 
 
   /* Background Gradients for Dark Theme */

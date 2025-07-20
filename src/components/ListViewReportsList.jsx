@@ -16,6 +16,8 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
         return `/json-reports/${report.id}`;
       case 'combined-analysis':
         return `/combined-analysis/${report.id}`;
+      case 'reddit-reports':
+        return `/reddit-reports/${report.id}`;
       default:
         return `/reports/${report.id}`;
     }
@@ -34,6 +36,12 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
         return (
           <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ${hoveredId ? 'text-emerald-600' : 'text-emerald-500'} transition-colors duration-200`} viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+          </svg>
+        );
+      case 'reddit-reports':
+        return (
+          <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ${hoveredId ? 'text-orange-600' : 'text-orange-500'} transition-colors duration-200`} viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
           </svg>
         );
       default:
@@ -63,6 +71,14 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
           iconBgHover: 'bg-emerald-100',
           textColor: 'text-emerald-600',
           badgeColor: 'bg-emerald-100 text-emerald-800'
+        };
+      case 'reddit-reports':
+        return {
+          hover: 'bg-orange-50',
+          iconBg: 'bg-orange-100',
+          iconBgHover: 'bg-orange-100',
+          textColor: 'text-orange-600',
+          badgeColor: 'bg-orange-100 text-orange-800'
         };
       default:
         return {
