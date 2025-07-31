@@ -9,14 +9,13 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
   useEffect(() => {
     if (!content) return;
 
-    // Extract headings from markdown content
-    const headingRegex = /^(#{1,6})\s+(.+)$/gm;
+    // Extract headings from markdown content - chỉ lấy format "## #" (chính xác)
+    const headingRegex = /^##\s+#\s+(.+)$/gm;
     const extractedHeadings = [];
     let match;
 
     while ((match = headingRegex.exec(content)) !== null) {
-      const level = match[1].length;
-      const text = match[2].trim();
+      const text = match[1].trim();
       const id = text
         .toLowerCase()
         .replace(/[^\w\s-]/g, '')
@@ -26,11 +25,13 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
       extractedHeadings.push({
         id,
         text,
-        level
+        level: 2 // Tất cả đều là level 2 vì format "## #"
       });
     }
 
-    setHeadings(extractedHeadings);
+    // Chỉ lấy 14 report lớn nhất
+    const limitedHeadings = extractedHeadings.slice(0, 14);
+    setHeadings(limitedHeadings);
   }, [content]);
 
   useEffect(() => {
@@ -50,7 +51,7 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
 
     // Wait a bit for the DOM to be ready
     const timeout = setTimeout(() => {
-      const headingElements = document.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]');
+      const headingElements = document.querySelectorAll('h2[id]');
       headingElements.forEach((el) => observer.observe(el));
     }, 100);
 
@@ -101,10 +102,6 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
             className={`
               w-full text-left px-4 py-3 rounded-2xl text-sm transition-all duration-200 
               group hover:bg-emerald-100 relative
-              ${heading.level === 1 ? 'font-semibold' : ''}
-              ${heading.level === 2 ? 'ml-3 font-medium' : ''}
-              ${heading.level === 3 ? 'ml-6' : ''}
-              ${heading.level >= 4 ? 'ml-9 text-gray-600' : ''}
               ${activeId === heading.id 
                 ? 'bg-emerald-100 text-emerald-800 shadow-sm ring-2 ring-emerald-200' 
                 : 'text-gray-700 hover:text-emerald-700'
@@ -143,7 +140,7 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
               <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
           </svg>
           </div>
-          Mục Lục
+          Mục Lục (14 Report Lớn Nhất)
         </h3>
         {/* Toggle button for mobile */}
         <button 
@@ -173,10 +170,6 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
               className={`
                 w-full text-left px-4 py-3.5 rounded-2xl text-sm transition-all duration-200 
                 group hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 hover:shadow-sm
-                ${heading.level === 1 ? 'font-bold' : ''}
-                ${heading.level === 2 ? 'ml-3 font-semibold' : ''}
-                ${heading.level === 3 ? 'ml-6 font-medium' : ''}
-                ${heading.level >= 4 ? 'ml-9 text-gray-600' : ''}
                 ${activeId === heading.id 
                   ? 'bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-800 shadow-md ring-2 ring-emerald-200 scale-105' 
                   : 'text-gray-700 hover:text-emerald-700'

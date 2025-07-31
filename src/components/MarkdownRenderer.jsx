@@ -50,7 +50,7 @@ const MarkdownRenderer = ({ content }) => {
       return (
         <h1 
           id={id} 
-          className="font-sans text-3xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b border-gray-200 leading-tight tracking-vietnamese-tight" 
+          className="text-3xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b border-gray-200 leading-tight" 
           {...props} 
         />
       );
@@ -66,7 +66,7 @@ const MarkdownRenderer = ({ content }) => {
       return (
         <h2 
           id={id} 
-          className="font-sans text-2xl font-bold text-gray-800 mt-6 mb-3 pb-2 border-b border-gray-200 leading-tight tracking-vietnamese-tight" 
+          className="text-2xl font-bold text-gray-800 mt-6 mb-3 pb-2 border-b border-gray-200 leading-tight" 
           {...props} 
         />
       );
@@ -81,7 +81,7 @@ const MarkdownRenderer = ({ content }) => {
       return (
         <h3 
           id={id} 
-          className="font-sans text-xl font-semibold text-gray-800 mt-5 mb-2 leading-snug tracking-vietnamese-tight" 
+          className="text-xl font-semibold text-gray-800 mt-5 mb-2 leading-snug" 
           {...props} 
         />
       );
@@ -96,14 +96,14 @@ const MarkdownRenderer = ({ content }) => {
       return (
         <h4 
           id={id} 
-          className="font-sans text-lg font-semibold text-gray-700 mt-4 mb-2 leading-snug tracking-vietnamese-tight" 
+          className="text-lg font-semibold text-gray-700 mt-4 mb-2 leading-snug" 
           {...props} 
         />
       );
     },
     // Style paragraphs with Vietnamese-optimized typography
     p: ({ node, ...props }) => (
-      <p className="font-sans text-vietnamese-body leading-vietnamese tracking-vietnamese text-gray-700 mb-4" {...props} />
+      <p className="text-base leading-relaxed text-gray-700 mb-4" {...props} />
     ),
     // Style links
     a: ({ node, ...props }) => (
@@ -111,11 +111,11 @@ const MarkdownRenderer = ({ content }) => {
     ),
     // Style list items with better spacing for Vietnamese
     li: ({ node, ordered, ...props }) => (
-      <li className="font-sans text-vietnamese-body leading-vietnamese tracking-vietnamese my-1 ml-4" {...props} />
+      <li className="text-base leading-relaxed my-1 ml-4" {...props} />
     ),
     // Style blockquotes with serif font
     blockquote: ({ node, ...props }) => (
-      <blockquote className="font-serif text-vietnamese-lg leading-vietnamese-relaxed pl-4 border-l-4 border-indigo-300 italic text-gray-700 my-4" {...props} />
+      <blockquote className="font-serif text-lg leading-relaxed pl-4 border-l-4 border-indigo-300 italic text-gray-700 my-4" {...props} />
     ),
     // Style code elements
     code: ({ node, inline, className, children, ...props }) => {
@@ -131,15 +131,15 @@ const MarkdownRenderer = ({ content }) => {
     },
     // Style emphasis and strong with better Vietnamese support
     em: ({ node, ...props }) => (
-      <em className="font-sans italic text-gray-600 font-medium" {...props} />
+      <em className="italic text-gray-600 font-medium" {...props} />
     ),
     strong: ({ node, ...props }) => (
-      <strong className="font-sans font-bold text-gray-800" {...props} />
+      <strong className="font-bold text-gray-800" {...props} />
     ),
   };
 
   return (
-    <div className="prose prose-vietnamese max-w-none font-vietnamese">
+    <div className="prose prose-vietnamese max-w-none">
       <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
         {processedContent}
       </ReactMarkdown>
