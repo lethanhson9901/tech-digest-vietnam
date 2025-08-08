@@ -108,8 +108,8 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
         <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
-        <h3 className="mt-4 text-lg font-medium text-gray-900">No {contentTypeLabel} found</h3>
-        <p className="mt-1 text-gray-500">Try adjusting your search or filter criteria</p>
+        <h3 className="mt-4 text-lg font-medium text-primary">No {contentTypeLabel} found</h3>
+        <p className="mt-1 text-muted">Try adjusting your search or filter criteria</p>
         <button 
           onClick={() => updateParams({ search: '', dateFrom: '', dateTo: '', skip: 0 })}
           className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -123,7 +123,7 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
   return (
     <div className="space-y-6">
       <div className="overflow-hidden bg-white shadow sm:rounded-md">
-        <ul className="divide-y divide-gray-200">
+         <ul className="divide-y divide-gray-200">
           {reports.map((report) => (
             <li 
               key={report.id}
@@ -142,14 +142,14 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
                         <p className={`truncate text-sm font-medium ${colors.textColor}`}>{report.filename}</p>
                         {/* Extract a preview from content if available */}
                         {report.content && (
-                          <p className="mt-1 text-xs text-gray-500 line-clamp-1">
+                         <p className="mt-1 text-xs text-muted line-clamp-1">
                             {report.content.substring(0, 100).replace(/[#*]/g, '')}...
                           </p>
                         )}
                       </div>
                     </div>
                     {report.upload_date && (
-                      <div className="ml-2 flex flex-shrink-0">
+                     <div className="ml-2 flex flex-shrink-0">
                         <p className={`inline-flex rounded-full px-2 text-xs font-semibold leading-5 ${colors.badgeColor}`}>
                           {format(new Date(report.upload_date), 'MMM d, yyyy')}
                         </p>
@@ -158,8 +158,8 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
                   </div>
                   <div className="mt-2 flex justify-between">
                     <div className="sm:flex">
-                      <p className="flex items-center text-sm text-gray-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <p className="flex items-center text-sm text-muted">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                         </svg>
@@ -183,7 +183,7 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
 
       <div className="bg-white p-4 rounded-lg shadow">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-          <div className="text-sm text-gray-700 mb-4 sm:mb-0">
+                     <div className="text-sm text-secondary mb-4 sm:mb-0">
             Showing <span className="font-medium">{Math.min(params.skip + 1, totalCount)}</span> to{' '}
             <span className="font-medium">{Math.min(params.skip + reports.length, totalCount)}</span> of{' '}
             <span className="font-medium">{totalCount}</span> {contentType === 'combined-analysis' ? 'analysis reports' : contentType.replace('-', ' ')}

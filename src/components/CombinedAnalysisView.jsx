@@ -74,7 +74,7 @@ const CombinedAnalysisView = ({ analysis, isLoading, error }) => {
             
             {/* Mobile Social Links */}
             <div className="mt-4 pt-4 border-t border-emerald-200 flex items-center justify-center space-x-4">
-              <span className="text-xs text-gray-600 font-medium">Kết nối:</span>
+              <span className="text-xs text-secondary font-medium">Kết nối:</span>
               <SocialLinks compact className="flex-shrink-0" />
             </div>
           </div>
@@ -130,8 +130,8 @@ const CombinedAnalysisView = ({ analysis, isLoading, error }) => {
             <div className="border-t border-gray-200 bg-gradient-to-r from-gray-50 to-emerald-50 px-6 py-8">
               <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <div className="text-center md:text-left">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Tech Digest Vietnam</h3>
-                  <p className="text-sm text-gray-600 max-w-md">
+                  <h3 className="text-lg font-semibold text-primary mb-2">Tech Digest Vietnam</h3>
+                  <p className="text-sm text-secondary max-w-md">
                     Phân tích chuyên sâu các xu hướng công nghệ mới nhất, 
                     giúp bạn nắm bắt cơ hội trong thời đại số.
                   </p>
@@ -139,7 +139,7 @@ const CombinedAnalysisView = ({ analysis, isLoading, error }) => {
                 
                 <div className="flex flex-col items-center md:items-end space-y-4">
                   <SocialLinks />
-                  <div className="text-xs text-gray-500 text-center md:text-right">
+                  <div className="text-xs text-muted text-center md:text-right">
                     © 2025 Tech Digest Vietnam. All rights reserved.
                   </div>
                 </div>

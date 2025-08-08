@@ -162,7 +162,7 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
           ) : (
             <svg 
               className={`w-5 h-5 transition-colors duration-200 ${
-                isActive ? 'text-indigo-500' : 'text-gray-400 dark:text-gray-500'
+                isActive ? 'text-indigo-500' : 'text-muted'
               }`}
               fill="none" 
               stroke="currentColor" 
@@ -191,8 +191,8 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
           className={`
             w-full pl-10 pr-10 py-3 
             bg-transparent
-            text-gray-900 dark:text-gray-100
-            placeholder-gray-500 dark:placeholder-gray-400
+            text-primary
+            placeholder-gray-500
             border-none outline-none
             font-medium
             transition-all duration-200
@@ -245,7 +245,7 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
         >
           <div className="py-2">
             {/* Suggestions Header */}
-            <div className="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider border-b border-gray-100 dark:border-gray-700">
+            <div className="px-4 py-2 text-xs font-semibold text-muted uppercase tracking-wider border-b border-gray-100 dark:border-gray-700">
               Gợi ý tìm kiếm
             </div>
             
@@ -260,7 +260,7 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
                   transition-all duration-150
                   ${selectedSuggestionIndex === index 
                     ? 'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300' 
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700/50'
+                    : 'text-secondary hover:bg-gray-50 dark:hover:bg-gray-700/50'
                   }
                   focus:outline-none focus:bg-indigo-50 dark:focus:bg-indigo-900/20
                 `}
@@ -268,10 +268,10 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
               >
                 <div className="flex items-center">
                   <svg 
-                    className={`w-4 h-4 mr-3 transition-colors duration-150 ${
+              className={`w-4 h-4 mr-3 transition-colors duration-150 ${
                       selectedSuggestionIndex === index 
                         ? 'text-indigo-500' 
-                        : 'text-gray-400 dark:text-gray-500'
+                        : 'text-muted'
                     }`}
                     fill="none" 
                     stroke="currentColor" 
@@ -308,7 +308,7 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
 
           {/* Quick Actions */}
           <div className="border-t border-gray-100 dark:border-gray-700 p-2">
-            <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+            <div className="flex items-center justify-between text-xs text-muted">
               <span>
                 <kbd className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded font-mono">↑↓</kbd> di chuyển
               </span>
@@ -325,7 +325,7 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
 
       {/* Search Status */}
       {localValue && !isLoading && (
-        <div className="absolute -bottom-6 left-0 text-xs text-gray-500 dark:text-gray-400">
+        <div className="absolute -bottom-6 left-0 text-xs text-muted">
           Đang tìm: "<span className="font-medium text-indigo-600 dark:text-indigo-400">{localValue}</span>"
         </div>
       )}

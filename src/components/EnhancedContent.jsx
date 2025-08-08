@@ -66,7 +66,7 @@ const EnhancedContent = ({ title, date, sections, tocItems }) => {
       return (
         <h2 
           id={id} 
-          className="text-2xl font-bold text-gray-800 mt-8 mb-4 pb-2 border-b border-gray-200 group flex items-center" 
+          className="text-2xl font-bold text-primary mt-8 mb-4 pb-2 border-b border-gray-200 group flex items-center" 
           {...props} 
         >
           {props.children}
@@ -88,7 +88,7 @@ const EnhancedContent = ({ title, date, sections, tocItems }) => {
       return (
         <h3 
           id={id} 
-          className="text-xl font-semibold text-gray-800 mt-6 mb-3 group flex items-center" 
+          className="text-xl font-semibold text-primary mt-6 mb-3 group flex items-center" 
           {...props} 
         >
           {props.children}
@@ -111,7 +111,7 @@ const EnhancedContent = ({ title, date, sections, tocItems }) => {
       }
       return (
         <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto my-4">
-          <code className="font-mono text-sm text-gray-800" {...props}>
+          <code className="font-mono text-sm text-primary" {...props}>
             {children}
           </code>
         </pre>
@@ -158,7 +158,7 @@ const EnhancedContent = ({ title, date, sections, tocItems }) => {
     },
     // Style blockquotes
     blockquote: ({ node, ...props }) => (
-      <blockquote className="border-l-4 border-indigo-300 pl-4 py-2 my-4 bg-indigo-50 rounded-r-md text-gray-700 italic" {...props} />
+      <blockquote className="border-l-4 border-indigo-300 pl-4 py-2 my-4 bg-indigo-50 rounded-r-md text-secondary italic" {...props} />
     ),
     // Style lists
     ul: ({ node, ...props }) => (
@@ -168,7 +168,7 @@ const EnhancedContent = ({ title, date, sections, tocItems }) => {
       <ol className="list-decimal pl-6 my-4 space-y-2" {...props} />
     ),
     li: ({ node, ...props }) => (
-      <li className="text-gray-700" {...props} />
+      <li className="text-secondary" {...props} />
     ),
   };
 
@@ -228,7 +228,7 @@ const EnhancedContent = ({ title, date, sections, tocItems }) => {
             {/* Sections */}
             {sections.map((section, index) => (
               <div key={index} id={section.id} className={`mt-8 section-highlight ${section.isToc ? 'hidden' : ''}`}>
-                <h2 className="text-2xl font-bold text-gray-800 mb-4 pb-2 border-b border-gray-200">
+                <h2 className="text-2xl font-bold text-primary mb-4 pb-2 border-b border-gray-200">
                   {section.title}
                 </h2>
                 <div className="prose prose-indigo max-w-none">

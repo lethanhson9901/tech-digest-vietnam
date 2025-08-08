@@ -49,7 +49,7 @@ const SocialLinks = ({ className = "", compact = false }) => {
             href={social.url}
             onClick={(e) => handleSocialClick(e, social.url)}
             className={`
-              p-1.5 rounded-full text-gray-500 transition-all duration-200 
+              p-1.5 rounded-full text-muted transition-all duration-200 
               ${social.color} transform hover:scale-110 cursor-pointer
             `}
             aria-label={`Theo dõi trên ${social.name}`}
@@ -65,8 +65,8 @@ const SocialLinks = ({ className = "", compact = false }) => {
   }
 
   return (
-    <div className={`flex items-center space-x-4 ${className}`}>
-      <span className="text-sm font-medium text-gray-600">Kết nối với tôi:</span>
+      <div className={`flex items-center space-x-4 ${className}`}>
+      <span className="text-sm font-medium text-secondary">Kết nối với tôi:</span>
       <div className="flex space-x-2">
         {socialLinks.map((social) => (
           <a
@@ -74,7 +74,7 @@ const SocialLinks = ({ className = "", compact = false }) => {
             href={social.url}
             onClick={(e) => handleSocialClick(e, social.url)}
             className={`
-              p-2.5 rounded-full text-gray-500 transition-all duration-200 
+              p-2.5 rounded-full text-muted transition-all duration-200 
               ${social.color} transform hover:scale-110 hover:shadow-md cursor-pointer
             `}
             aria-label={`Theo dõi trên ${social.name}`}

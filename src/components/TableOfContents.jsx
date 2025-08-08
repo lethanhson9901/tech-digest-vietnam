@@ -104,7 +104,7 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
               group hover:bg-emerald-100 relative
               ${activeId === heading.id 
                 ? 'bg-emerald-100 text-emerald-800 shadow-sm ring-2 ring-emerald-200' 
-                : 'text-gray-700 hover:text-emerald-700'
+                : 'text-secondary hover:text-emerald-700'
               }
             `}
           >
@@ -134,7 +134,7 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
         className="flex items-center justify-between p-5 bg-gradient-to-r from-emerald-50 to-teal-50 border-b border-gray-100 cursor-pointer lg:cursor-default"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
-        <h3 className="text-lg font-bold text-gray-800 flex items-center">
+        <h3 className="text-lg font-bold text-primary flex items-center">
           <div className="p-2.5 bg-emerald-100 rounded-2xl mr-3">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
@@ -144,7 +144,7 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
         </h3>
         {/* Toggle button for mobile */}
         <button 
-          className="lg:hidden text-gray-500 hover:text-gray-700 transition-colors p-2 rounded-2xl hover:bg-gray-100"
+          className="lg:hidden text-muted hover:text-secondary transition-colors p-2 rounded-2xl hover:bg-gray-100"
           aria-label={isCollapsed ? 'Expand table of contents' : 'Collapse table of contents'}
         >
           <svg 
@@ -172,7 +172,7 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
                 group hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 hover:shadow-sm
                 ${activeId === heading.id 
                   ? 'bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-800 shadow-md ring-2 ring-emerald-200 scale-105' 
-                  : 'text-gray-700 hover:text-emerald-700'
+                  : 'text-secondary hover:text-emerald-700'
                 }
               `}
             >
@@ -199,8 +199,8 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
         
         {/* Enhanced Progress indicator */}
         <div className="p-5 border-t border-gray-100 bg-gradient-to-r from-gray-50 to-emerald-50 rounded-b-3xl">
-          <div className="flex items-center justify-between mb-3">
-            <div className="text-xs font-semibold text-gray-600">Tiến độ đọc</div>
+            <div className="flex items-center justify-between mb-3">
+            <div className="text-xs font-semibold text-secondary">Tiến độ đọc</div>
             <div className="text-xs font-bold text-emerald-600 bg-emerald-100 px-2.5 py-1 rounded-full">
               {activeId ? 
                 `${headings.findIndex(heading => heading.id === activeId) + 1} / ${headings.length}` :
@@ -222,7 +222,7 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
               <div className="absolute inset-0 bg-white/30 rounded-full animate-pulse"></div>
             </div>
           </div>
-          <div className="text-xs text-gray-500 mt-2 text-center bg-white/50 rounded-2xl py-2 px-3">
+          <div className="text-xs text-muted mt-2 text-center bg-white/50 rounded-2xl py-2 px-3">
             {activeId ? 
               `Đang đọc: ${headings.find(h => h.id === activeId)?.text.substring(0, 30)}...` :
               'Chưa bắt đầu đọc'

@@ -50,7 +50,7 @@ const MarkdownRenderer = ({ content }) => {
       return (
         <h1 
           id={id} 
-          className="text-3xl font-bold text-gray-900 dark:text-white mt-8 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 leading-tight" 
+          className="text-3xl font-bold text-primary mt-8 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 leading-tight" 
           {...props} 
         />
       );
@@ -66,7 +66,7 @@ const MarkdownRenderer = ({ content }) => {
       return (
         <h2 
           id={id} 
-          className="text-2xl font-bold text-gray-800 dark:text-white mt-6 mb-3 pb-2 border-b border-gray-200 dark:border-gray-700 leading-tight" 
+          className="text-2xl font-bold text-primary mt-6 mb-3 pb-2 border-b border-gray-200 dark:border-gray-700 leading-tight" 
           {...props} 
         />
       );
@@ -81,7 +81,7 @@ const MarkdownRenderer = ({ content }) => {
       return (
         <h3 
           id={id} 
-          className="text-xl font-semibold text-gray-800 dark:text-white mt-5 mb-2 leading-snug" 
+          className="text-xl font-semibold text-primary mt-5 mb-2 leading-snug" 
           {...props} 
         />
       );
@@ -96,14 +96,14 @@ const MarkdownRenderer = ({ content }) => {
       return (
         <h4 
           id={id} 
-          className="text-lg font-semibold text-gray-700 dark:text-gray-300 mt-4 mb-2 leading-snug" 
+          className="text-lg font-semibold text-secondary mt-4 mb-2 leading-snug" 
           {...props} 
         />
       );
     },
     // Style paragraphs with Vietnamese-optimized typography
     p: ({ node, ...props }) => (
-      <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 mb-4" {...props} />
+      <p className="text-base leading-relaxed text-secondary mb-4" {...props} />
     ),
     // Style links
     a: ({ node, ...props }) => (
@@ -111,11 +111,11 @@ const MarkdownRenderer = ({ content }) => {
     ),
     // Style list items with better spacing for Vietnamese
     li: ({ node, ordered, ...props }) => (
-      <li className="text-base leading-relaxed text-gray-700 dark:text-gray-300 my-1 ml-4" {...props} />
+      <li className="text-base leading-relaxed text-secondary my-1 ml-4" {...props} />
     ),
     // Style blockquotes with serif font
     blockquote: ({ node, ...props }) => (
-      <blockquote className="font-serif text-lg leading-relaxed pl-4 border-l-4 border-indigo-300 dark:border-indigo-600 italic text-gray-700 dark:text-gray-300 my-4" {...props} />
+      <blockquote className="font-serif text-lg leading-relaxed pl-4 border-l-4 border-indigo-300 italic text-secondary my-4" {...props} />
     ),
     // Style code elements
     code: ({ node, inline, className, children, ...props }) => {
@@ -131,10 +131,10 @@ const MarkdownRenderer = ({ content }) => {
     },
     // Style emphasis and strong with better Vietnamese support
     em: ({ node, ...props }) => (
-      <em className="italic text-gray-600 dark:text-gray-400 font-medium" {...props} />
+      <em className="italic text-muted font-medium" {...props} />
     ),
     strong: ({ node, ...props }) => (
-      <strong className="font-bold text-gray-800 dark:text-white" {...props} />
+      <strong className="font-bold text-primary" {...props} />
     ),
   };
 

@@ -63,13 +63,13 @@ const Pagination = ({
     <div className="flex flex-col items-center space-y-4 my-8">
       {/* Pagination Info */}
       {showInfo && totalItems > 0 && (
-        <div className="text-sm text-gray-600 dark:text-gray-400 animate-fadeIn">
+        <div className="text-sm text-secondary animate-fadeIn">
           Hiển thị{' '}
-          <span className="font-semibold text-gray-900 dark:text-gray-100">
+          <span className="font-semibold text-primary">
             {startItem} - {endItem}
           </span>{' '}
           trong{' '}
-          <span className="font-semibold text-gray-900 dark:text-gray-100">
+          <span className="font-semibold text-primary">
             {totalItems}
           </span>{' '}
           kết quả
@@ -116,7 +116,7 @@ const Pagination = ({
           {visiblePages.map((page, index) => (
             <React.Fragment key={`${page}-${index}`}>
               {page === '...' ? (
-                <span className="px-3 py-2 text-gray-500 dark:text-gray-400 select-none">
+                <span className="px-3 py-2 text-muted select-none">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15h2v-2h-2v2zm0-4h2V7h-2v6z"/>
                   </svg>
@@ -130,7 +130,7 @@ const Pagination = ({
                     focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
                     ${page === currentPage
                       ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/30 scale-105 border-2 border-indigo-300'
-                      : 'text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:scale-105 shadow-sm hover:shadow-md'
+                      : 'text-secondary bg-white border border-gray-300 hover:bg-gray-50 hover:border-gray-400 hover:scale-105 shadow-sm hover:shadow-md'
                     }
                   `}
                   aria-label={`Trang ${page}`}
@@ -154,8 +154,8 @@ const Pagination = ({
             group relative flex items-center px-3 py-2 text-sm font-medium rounded-lg
             transition-all duration-200 ease-in-out
             ${canGoForward 
-              ? 'text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:scale-105 shadow-sm hover:shadow-md' 
-              : 'text-gray-400 dark:text-gray-600 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 cursor-not-allowed opacity-50'
+              ? 'text-secondary bg-white border border-gray-300 hover:bg-gray-50 hover:border-gray-400 hover:scale-105 shadow-sm hover:shadow-md' 
+              : 'text-muted bg-gray-100 border border-gray-200 cursor-not-allowed opacity-50'
             }
             focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
           `}
@@ -207,7 +207,7 @@ const Pagination = ({
 
       {/* Page Size Selector (Optional) */}
       {itemsPerPage && totalItems > 20 && (
-        <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+        <div className="flex items-center space-x-2 text-sm text-secondary">
           <span>Hiển thị:</span>
           <select
             value={itemsPerPage}
@@ -215,7 +215,7 @@ const Pagination = ({
               // This would need to be handled by parent component
               console.log('Change page size to:', e.target.value);
             }}
-            className="px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="px-2 py-1 text-sm border border-gray-300 rounded bg-white text-primary focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             <option value={10}>10</option>
             <option value={20}>20</option>

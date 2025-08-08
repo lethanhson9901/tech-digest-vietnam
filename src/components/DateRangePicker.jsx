@@ -31,7 +31,7 @@ const DateRangePicker = ({ onDateRangeChange }) => {
 
   return (
     <div className={`bg-white p-5 rounded-lg shadow-md border ${isActive ? 'border-indigo-300' : 'border-gray-200'} transition-colors`}>
-      <h3 className="text-lg font-medium text-gray-800 mb-3 flex items-center">
+      <h3 className="text-lg font-medium text-primary mb-3 flex items-center">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
@@ -52,7 +52,7 @@ const DateRangePicker = ({ onDateRangeChange }) => {
       <div className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-600 mb-1">From</label>
+            <label className="block text-sm font-medium text-secondary mb-1">From</label>
             <input
               type="date"
               value={dateFrom}
@@ -61,7 +61,7 @@ const DateRangePicker = ({ onDateRangeChange }) => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-600 mb-1">To</label>
+            <label className="block text-sm font-medium text-secondary mb-1">To</label>
             <input
               type="date"
               value={dateTo}
@@ -83,9 +83,9 @@ const DateRangePicker = ({ onDateRangeChange }) => {
             </svg>
             Apply
           </button>
-          <button
+           <button
             onClick={handleReset}
-            className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 flex items-center justify-center"
+             className="flex-1 bg-gray-200 hover:bg-gray-300 text-secondary py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 flex items-center justify-center"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -95,8 +95,8 @@ const DateRangePicker = ({ onDateRangeChange }) => {
         </div>
         
         {/* Quick date range options */}
-        <div className="pt-2 border-t border-gray-200">
-          <p className="text-sm text-gray-600 mb-2">Quick select:</p>
+          <div className="pt-2 border-t border-gray-200">
+          <p className="text-sm text-secondary mb-2">Quick select:</p>
           <div className="grid grid-cols-2 gap-2 text-xs">
             <button 
               onClick={() => {
@@ -107,7 +107,7 @@ const DateRangePicker = ({ onDateRangeChange }) => {
                 setDateFrom(format(lastWeek, 'yyyy-MM-dd'));
                 setDateTo(format(today, 'yyyy-MM-dd'));
               }}
-              className="bg-gray-100 hover:bg-gray-200 text-gray-700 py-1 px-2 rounded transition-colors"
+              className="bg-gray-100 hover:bg-gray-200 text-secondary py-1 px-2 rounded transition-colors"
             >
               Last 7 days
             </button>
@@ -120,7 +120,7 @@ const DateRangePicker = ({ onDateRangeChange }) => {
                 setDateFrom(format(lastMonth, 'yyyy-MM-dd'));
                 setDateTo(format(today, 'yyyy-MM-dd'));
               }}
-              className="bg-gray-100 hover:bg-gray-200 text-gray-700 py-1 px-2 rounded transition-colors"
+              className="bg-gray-100 hover:bg-gray-200 text-secondary py-1 px-2 rounded transition-colors"
             >
               Last 30 days
             </button>
@@ -133,7 +133,7 @@ const DateRangePicker = ({ onDateRangeChange }) => {
                 setDateFrom(format(lastQuarter, 'yyyy-MM-dd'));
                 setDateTo(format(today, 'yyyy-MM-dd'));
               }}
-              className="bg-gray-100 hover:bg-gray-200 text-gray-700 py-1 px-2 rounded transition-colors"
+              className="bg-gray-100 hover:bg-gray-200 text-secondary py-1 px-2 rounded transition-colors"
             >
               Last 3 months
             </button>
@@ -146,7 +146,7 @@ const DateRangePicker = ({ onDateRangeChange }) => {
                 setDateFrom(format(lastYear, 'yyyy-MM-dd'));
                 setDateTo(format(today, 'yyyy-MM-dd'));
               }}
-              className="bg-gray-100 hover:bg-gray-200 text-gray-700 py-1 px-2 rounded transition-colors"
+              className="bg-gray-100 hover:bg-gray-200 text-secondary py-1 px-2 rounded transition-colors"
             >
               Last year
             </button>

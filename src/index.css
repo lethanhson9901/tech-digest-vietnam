@@ -122,6 +122,12 @@
   --focus-ring-width: 2px;
   --focus-ring-offset: 2px;
   --focus-ring-color: var(--color-primary-500);
+
+  /* Unified text tokens for consistent theme typography */
+  --text-primary: var(--color-neutral-800);
+  --text-secondary: var(--color-neutral-600);
+  --text-muted: var(--color-neutral-500);
+  --text-inverse: #ffffff;
 }
 
 /* Dark theme overrides */
@@ -217,6 +223,11 @@
 
   /* Background Gradients for Dark Theme */
   --bg-gradient-dark: linear-gradient(135deg, var(--dark-bg-primary) 0%, var(--dark-bg-deepest) 100%);
+
+  /* Map unified text tokens to dark counterparts */
+  --text-primary: var(--dark-text-primary);
+  --text-secondary: var(--dark-text-secondary);
+  --text-muted: var(--dark-text-disabled);
 }
 
 /* Global smooth scrolling and modern fundamentals */
@@ -236,13 +247,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg-gradient-light);
-  color: var(--color-neutral-700);
+  color: var(--text-primary);
   transition: background var(--transition-normal), color var(--transition-normal);
 }
 
 body.dark-theme {
   background: var(--bg-gradient-dark);
-  color: var(--dark-text-primary);
+  color: var(--text-primary);
 }
 
 /* Enhanced Focus Management */
@@ -395,12 +406,10 @@ a:hover {
 .dark-theme h4,
 .dark-theme h5,
 .dark-theme h6 {
-  color: var(--dark-text-primary);
+  color: var(--text-primary);
 }
 
-.dark-theme p {
-  color: var(--dark-text-primary);
-}
+.dark-theme p { color: var(--text-secondary); }
 
 .dark-theme span {
   /* color: var(--dark-text-primary); Consider removing or making more specific */
@@ -410,9 +419,7 @@ a:hover {
   color: var(--dark-text-secondary);
 }
 
-.dark-theme a {
-  color: var(--dark-accent-primary-bg);
-}
+.dark-theme a { color: var(--color-primary-500); }
 
 .dark-theme a:hover {
   color: var(--dark-accent-primary-hover-bg);
@@ -420,7 +427,7 @@ a:hover {
 
 .dark-theme .bg-white {
   background-color: var(--dark-bg-secondary);
-  color: var(--dark-text-primary);
+  color: var(--text-primary);
 }
 
 .dark-theme .text-gray-900 { color: var(--dark-text-primary); }
@@ -1477,26 +1484,12 @@ body.dark-theme {
   border: 1px solid rgba(71, 85, 105, 0.3);
 }
 
-.dark-theme .text-gray-900 {
-  color: #f1f5f9 !important;
-}
-
-.dark-theme .text-gray-800 {
-  color: #e2e8f0 !important;
-}
-
-.dark-theme .text-gray-700 {
-  color: #cbd5e1 !important;
-}
-
-.dark-theme .text-gray-600, 
-.dark-theme .text-gray-500 {
-  color: #94a3b8 !important;
-}
-
-.dark-theme .text-gray-400 {
-  color: #64748b !important;
-}
+.dark-theme .text-gray-900 { color: var(--text-primary) !important; }
+.dark-theme .text-gray-800 { color: var(--text-primary) !important; }
+.dark-theme .text-gray-700 { color: var(--text-secondary) !important; }
+.dark-theme .text-gray-600,
+.dark-theme .text-gray-500 { color: var(--text-muted) !important; }
+.dark-theme .text-gray-400 { color: var(--text-muted) !important; }
 
 .dark-theme .border-gray-200,
 .dark-theme .border-gray-100 {
@@ -1531,11 +1524,11 @@ body.dark-theme {
 }
 
 .dark-theme .prose p {
-  color: #cbd5e1 !important;
+  color: var(--text-secondary) !important;
 }
 
 .dark-theme .prose strong {
-  color: #f1f5f9 !important;
+  color: var(--text-primary) !important;
 }
 
 .dark-theme .prose em {
@@ -1597,13 +1590,8 @@ body.dark-theme {
   color: #cbd5e1;
 }
 
-.dark-theme a {
-  color: #a5b4fc;
-}
-
-.dark-theme a:hover {
-  color: #c7d2fe;
-}
+.dark-theme a { color: var(--color-primary-400); }
+.dark-theme a:hover { color: var(--color-primary-300); }
 
 .dark-theme .bg-indigo-600 {
   background: linear-gradient(135deg, #4f46e5, #7c3aed) !important;
@@ -2040,7 +2028,7 @@ body.dark-theme {
 .dark-theme .prose h4,
 .dark-theme .prose h5,
 .dark-theme .prose h6 {
-  color: var(--color-neutral-100);
+  color: var(--text-primary);
 }
 
 .dark-theme .prose p,
@@ -2247,3 +2235,42 @@ body.dark-theme {
 .animate-loading-bar {
   animation: loading-bar 2s ease-in-out infinite;
 }
+
+/* Utility aliases for unified typography tokens */
+@layer utilities {
+  .text-primary { color: var(--text-primary) !important; }
+  .text-secondary { color: var(--text-secondary) !important; }
+  .text-muted { color: var(--text-muted) !important; }
+  .text-inverse { color: var(--text-inverse) !important; }
+}
+
+/* Custom utility mappings for non-standard dark: classes used in JSX */
+/* These ensure consistent behavior without relying on Tailwind to generate them */
+.dark .dark\:text-dark-text-primary { color: var(--dark-text-primary) !important; }
+.dark .dark\:text-dark-text-secondary { color: var(--dark-text-secondary) !important; }
+.dark .dark\:text-dark-accent-primary-bg { color: var(--dark-accent-primary-bg) !important; }
+.dark .dark\:text-dark-accent-secondary-bg { color: var(--dark-accent-secondary-bg) !important; }
+.dark .dark\:text-dark-accent-emerald { color: var(--dark-accent-emerald) !important; }
+.dark .dark\:text-dark-accent-orange { color: var(--dark-accent-orange) !important; }
+
+.dark .dark\:bg-dark-bg-primary { background-color: var(--dark-bg-primary) !important; }
+.dark .dark\:bg-dark-bg-secondary { background-color: var(--dark-bg-secondary) !important; }
+.dark .dark\:bg-dark-bg-tertiary { background-color: var(--dark-bg-tertiary) !important; }
+.dark .dark\:bg-dark-border-primary { background-color: var(--dark-border-primary) !important; }
+
+/* Semi-transparent background variants */
+.dark .dark\:bg-dark-accent-emerald\/10 { background-color: color-mix(in srgb, var(--dark-accent-emerald) 10%, transparent) !important; }
+.dark .dark\:bg-dark-accent-emerald\/20 { background-color: color-mix(in srgb, var(--dark-accent-emerald) 20%, transparent) !important; }
+.dark .dark\:bg-dark-accent-primary-bg\/20 { background-color: color-mix(in srgb, var(--dark-accent-primary-bg) 20%, transparent) !important; }
+.dark .dark\:bg-dark-accent-secondary-bg\/20 { background-color: color-mix(in srgb, var(--dark-accent-secondary-bg) 20%, transparent) !important; }
+.dark .dark\:bg-dark-accent-orange\/20 { background-color: color-mix(in srgb, var(--dark-accent-orange) 20%, transparent) !important; }
+
+/* Borders */
+.dark .dark\:border-dark-border-secondary { border-color: var(--dark-border-secondary) !important; }
+.dark .dark\:border-dark-border-primary { border-color: var(--dark-border-primary) !important; }
+.dark .dark\:border-dark-accent-emerald\/30 { border-color: color-mix(in srgb, var(--dark-accent-emerald) 30%, transparent) !important; }
+
+/* Hover variants encoded as classes in JSX */
+.dark .dark\:hover\:bg-dark-border-primary:hover { background-color: var(--dark-border-primary) !important; }
+.dark .group:hover .dark\:group-hover\:text-dark-accent-primary-bg { color: var(--dark-accent-primary-bg) !important; }
+.dark .group:hover .dark\:group-hover\:text-dark-accent-emerald { color: var(--dark-accent-emerald) !important; }
