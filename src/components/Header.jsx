@@ -97,8 +97,8 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
 
   const isActive = (path) => {
     return location.pathname === path 
-      ? 'text-white font-semibold px-4 py-2 rounded-xl shadow-lg transition-all duration-300' 
-      : 'text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-xl transition-all duration-300';
+      ? 'text-inverse font-semibold px-4 py-2 rounded-xl shadow-lg transition-all duration-300 bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50' 
+      : 'text-inverse opacity-80 hover:opacity-100 hover:bg-white/10 px-4 py-2 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50';
   };
 
   const navigationItems = [
@@ -202,10 +202,10 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
               <div className="absolute inset-0 bg-white/30 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
             </div>
             <div className="transition-all duration-300 group-hover:translate-x-1">
-              <h1 className="text-xl md:text-2xl font-bold tracking-tight text-white">
+              <h1 className="text-xl md:text-2xl font-bold tracking-tight text-inverse">
                 Tech Digest Vietnam
               </h1>
-              <p className="text-xs text-white/80 hidden md:block font-medium">
+              <p className="text-xs text-inverse hidden md:block font-medium opacity-80">
                 🚀 Xu hướng công nghệ Việt Nam
               </p>
             </div>
@@ -229,8 +229,8 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
                     <button
                       className={
                         isDropdownActive(item.dropdownItems)
-                          ? 'bg-white/20 text-white font-semibold px-4 py-2 rounded-xl shadow-lg transition-all duration-300'
-                          : 'text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-xl transition-all duration-300'
+                          ? 'bg-white/20 text-inverse font-semibold px-4 py-2 rounded-xl shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50'
+                          : 'text-inverse opacity-80 hover:opacity-100 hover:bg-white/10 px-4 py-2 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50'
                       }
                       style={{ background: 'transparent', boxShadow: 'none' }}
                       aria-haspopup="true"
@@ -261,9 +261,10 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
                         <Link
                           key={sub.path}
                           to={sub.path}
-                          className={`flex items-center px-5 py-3 text-gray-800 dark:text-gray-100 hover:bg-primary-50 dark:hover:bg-neutral-700 transition-colors font-medium min-h-[44px] min-w-[44px] rounded-lg ${location.pathname.startsWith(sub.path) ? 'bg-primary-100 dark:bg-primary-700/30 font-semibold text-primary-700 dark:text-primary-200' : ''}`}
+                          className={`flex items-center px-5 py-3 text-secondary hover:bg-primary-50 dark:hover:bg-neutral-700 transition-colors font-medium min-h-[44px] min-w-[44px] rounded-lg ${location.pathname.startsWith(sub.path) ? 'bg-primary-100 dark:bg-primary-700/30 font-semibold text-primary' : ''}`}
                           tabIndex={0}
                           role="menuitem"
+                          aria-current={location.pathname.startsWith(sub.path) ? 'page' : undefined}
                           onClick={() => { setOpenDropdown(null); setIsMenuOpen(false); }}
                         >
                           {dropdownIcons[sub.path]}
@@ -298,7 +299,7 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
             {/* Enhanced Search Button */}
             <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="p-3 text-white/80 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300 hover:scale-105"
+              className="p-3 text-inverse opacity-80 hover:opacity-100 hover:bg-white/10 rounded-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/50"
               aria-label="Tìm kiếm"
               style={{ boxShadow: isSearchOpen ? '0 0 20px rgba(255, 255, 255, 0.2)' : 'none' }}
             >
@@ -342,7 +343,7 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
             {/* Mobile Search Button */}
             <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200"
+              className="p-2.5 text-inverse opacity-80 hover:opacity-100 hover:bg-white/10 rounded-xl transition-all duration-200"
               aria-label="Tìm kiếm"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -371,7 +372,7 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
             {/* Enhanced Menu Toggle Button */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="mobile-menu p-2.5 rounded-xl text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 hover:bg-white/10"
+              className="mobile-menu p-2.5 rounded-xl text-inverse transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 hover:bg-white/10"
               aria-label="Menu"
             >
               <div className="relative w-6 h-6">
@@ -437,9 +438,10 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`$${location.pathname === item.path
-                      ? 'bg-white/20 text-white font-semibold'
-                      : 'text-white/80 hover:bg-white/10 hover:text-white'} group flex items-center px-4 py-3 text-base rounded-xl transition-all duration-200`}
+                    className={`${location.pathname === item.path
+                      ? 'bg-white/20 text-inverse font-semibold'
+                      : 'text-inverse opacity-80 hover:bg-white/10 hover:opacity-100'} group flex items-center px-4 py-3 text-base rounded-xl transition-all duration-200`}
+                    aria-current={location.pathname === item.path ? 'page' : undefined}
                   >
                     <span className="mr-3">{item.icon}</span>
                     {item.label}
