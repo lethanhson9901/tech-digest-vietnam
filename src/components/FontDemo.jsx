@@ -30,7 +30,7 @@ const FontDemo = () => {
             1. Inter Font (Primary)
           </h2>
           <div className="space-y-4 font-sans">
-            <h3 className="text-xl font-semibold text-gray-800">
+            <h3 className="text-xl font-semibold text-primary">
               {sampleText.heading}
             </h3>
             <h4 className="text-lg font-medium text-secondary">
@@ -55,7 +55,7 @@ const FontDemo = () => {
             2. Noto Sans (Fallback)
           </h2>
           <div className="space-y-4" style={{ fontFamily: 'Noto Sans, sans-serif' }}>
-            <h3 className="text-xl font-semibold text-gray-800">
+            <h3 className="text-xl font-semibold text-primary">
               {sampleText.heading}
             </h3>
             <h4 className="text-lg font-medium text-secondary">
@@ -88,7 +88,7 @@ const FontDemo = () => {
             4. Font Size Comparison
           </h2>
           <div className="space-y-4">
-            <div className="p-4 bg-gray-50 rounded-lg">
+            <div className="p-4 bg-neutral-50 rounded-lg">
               <h5 className="text-sm font-medium text-muted mb-2">16px (text-base) - Standard</h5>
               <p className="text-base leading-normal font-sans text-secondary">
                 Công nghệ thông tin và chuyển đổi số đang thay đổi cách chúng ta làm việc, học tập và giao tiếp.

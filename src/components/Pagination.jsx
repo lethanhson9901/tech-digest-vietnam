@@ -86,8 +86,8 @@ const Pagination = ({
             group relative flex items-center px-3 py-2 text-sm font-medium rounded-lg
             transition-all duration-200 ease-in-out
             ${canGoBack 
-              ? 'text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:scale-105 shadow-sm hover:shadow-md' 
-              : 'text-gray-400 dark:text-gray-600 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 cursor-not-allowed opacity-50'
+              ? 'text-secondary bg-white dark:bg-gray-800 border border-neutral-300 dark:border-gray-600 hover:bg-neutral-50 dark:hover:bg-gray-700 hover:border-neutral-400 dark:hover:border-gray-500 hover:scale-105 shadow-sm hover:shadow-md' 
+              : 'text-muted bg-neutral-100 dark:bg-gray-800 border border-neutral-200 dark:border-gray-700 cursor-not-allowed opacity-50'
             }
             focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
           `}
@@ -128,9 +128,9 @@ const Pagination = ({
                     relative min-w-[2.5rem] h-10 px-3 py-2 text-sm font-medium rounded-lg
                     transition-all duration-200 ease-in-out
                     focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
-                    ${page === currentPage
+                  ${page === currentPage
                       ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/30 scale-105 border-2 border-indigo-300'
-                      : 'text-secondary bg-white border border-gray-300 hover:bg-gray-50 hover:border-gray-400 hover:scale-105 shadow-sm hover:shadow-md'
+                      : 'text-secondary bg-white border border-neutral-300 hover:bg-neutral-50 hover:border-neutral-400 hover:scale-105 shadow-sm hover:shadow-md'
                     }
                   `}
                   aria-label={`Trang ${page}`}
@@ -154,8 +154,8 @@ const Pagination = ({
             group relative flex items-center px-3 py-2 text-sm font-medium rounded-lg
             transition-all duration-200 ease-in-out
             ${canGoForward 
-              ? 'text-secondary bg-white border border-gray-300 hover:bg-gray-50 hover:border-gray-400 hover:scale-105 shadow-sm hover:shadow-md' 
-              : 'text-muted bg-gray-100 border border-gray-200 cursor-not-allowed opacity-50'
+              ? 'text-secondary bg-white border border-neutral-300 hover:bg-neutral-50 hover:border-neutral-400 hover:scale-105 shadow-sm hover:shadow-md' 
+              : 'text-muted bg-neutral-100 border border-neutral-200 cursor-not-allowed opacity-50'
             }
             focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
           `}
@@ -215,7 +215,7 @@ const Pagination = ({
               // This would need to be handled by parent component
               console.log('Change page size to:', e.target.value);
             }}
-            className="px-2 py-1 text-sm border border-gray-300 rounded bg-white text-primary focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="px-2 py-1 text-sm border border-neutral-300 rounded bg-white text-primary focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             <option value={10}>10</option>
             <option value={20}>20</option>
@@ -227,7 +227,7 @@ const Pagination = ({
       )}
 
       {/* Progress Bar */}
-      <div className="w-full max-w-xs bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 overflow-hidden">
+      <div className="w-full max-w-xs bg-neutral-200 dark:bg-gray-700 rounded-full h-1.5 overflow-hidden">
         <div 
           className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-500 ease-out"
           style={{ width: `${(currentPage / totalPages) * 100}%` }}

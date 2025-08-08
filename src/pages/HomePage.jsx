@@ -192,7 +192,7 @@ const HomePage = () => {
       
       {/* Enhanced Quick Links Section */}
       <div className="mb-16">
-        <h2 className="text-4xl font-bold text-center mb-12 text-neutral-900 dark:text-dark-text-primary">
+        <h2 className="text-4xl font-bold text-center mb-12 text-primary">
           Khám phá thêm
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -276,7 +276,7 @@ const HomePage = () => {
       </div>
 
       {/* Features Section - New */}
-      <div className="bg-gray-50 dark:bg-dark-bg-secondary rounded-3xl p-8 md:p-12 mb-16">
+      <div className="bg-neutral-50 dark:bg-dark-bg-secondary rounded-3xl p-8 md:p-12 mb-16">
         <h2 className="text-3xl font-bold text-center mb-12 text-primary">Tại sao chọn Tech Digest Vietnam?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-center">
@@ -285,8 +285,8 @@ const HomePage = () => {
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="font-semibold text-gray-800 dark:text-dark-text-primary mb-2">Đáng tin cậy</h3>
-            <p className="text-gray-600 dark:text-dark-text-secondary text-sm">Thông tin được kiểm chứng và cập nhật chính xác</p>
+            <h3 className="font-semibold text-primary mb-2">Đáng tin cậy</h3>
+            <p className="text-secondary text-sm">Thông tin được kiểm chứng và cập nhật chính xác</p>
           </div>
           <div className="text-center">
             <div className="bg-green-100 dark:bg-dark-accent-emerald/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -294,8 +294,8 @@ const HomePage = () => {
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
               </svg>
             </div>
-            <h3 className="font-semibold text-gray-800 dark:text-dark-text-primary mb-2">Cập nhật thường xuyên</h3>
-            <p className="text-gray-600 dark:text-dark-text-secondary text-sm">Thông tin mới được cập nhật hàng ngày</p>
+            <h3 className="font-semibold text-primary mb-2">Cập nhật thường xuyên</h3>
+            <p className="text-secondary text-sm">Thông tin mới được cập nhật hàng ngày</p>
           </div>
           <div className="text-center">
             <div className="bg-purple-100 dark:bg-dark-accent-secondary-bg/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -303,8 +303,8 @@ const HomePage = () => {
                 <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
               </svg>
             </div>
-            <h3 className="font-semibold text-gray-800 dark:text-dark-text-primary mb-2">Dễ đọc</h3>
-            <p className="text-gray-600 dark:text-dark-text-secondary text-sm">Giao diện thân thiện và dễ sử dụng</p>
+            <h3 className="font-semibold text-primary mb-2">Dễ đọc</h3>
+            <p className="text-secondary text-sm">Giao diện thân thiện và dễ sử dụng</p>
           </div>
           <div className="text-center">
             <div className="bg-orange-100 dark:bg-dark-accent-orange/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -312,8 +312,8 @@ const HomePage = () => {
                 <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </div>
-            <h3 className="font-semibold text-gray-800 dark:text-dark-text-primary mb-2">Chuyên sâu</h3>
-            <p className="text-gray-600 dark:text-dark-text-secondary text-sm">Phân tích chi tiết về công nghệ Việt Nam</p>
+            <h3 className="font-semibold text-primary mb-2">Chuyên sâu</h3>
+            <p className="text-secondary text-sm">Phân tích chi tiết về công nghệ Việt Nam</p>
           </div>
         </div>
       </div>
@@ -327,8 +327,8 @@ const HomePage = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Browse Archive</h3>
-            <p className="text-gray-600 dark:text-gray-300 text-sm">Explore our collection of tech reports</p>
+            <h3 className="text-lg font-semibold text-primary mb-2">Browse Archive</h3>
+            <p className="text-secondary text-sm">Explore our collection of tech reports</p>
           </div>
         </Link>
 
@@ -339,8 +339,8 @@ const HomePage = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Latest Report</h3>
-            <p className="text-gray-600 dark:text-gray-300 text-sm">Read the most recent tech insights</p>
+            <h3 className="text-lg font-semibold text-primary mb-2">Latest Report</h3>
+            <p className="text-secondary text-sm">Read the most recent tech insights</p>
           </div>
         </Link>
 
@@ -351,8 +351,8 @@ const HomePage = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">About Us</h3>
-            <p className="text-gray-600 dark:text-gray-300 text-sm">Learn more about Tech Digest Vietnam</p>
+            <h3 className="text-lg font-semibold text-primary mb-2">About Us</h3>
+            <p className="text-secondary text-sm">Learn more about Tech Digest Vietnam</p>
           </div>
         </Link>
       </div>
@@ -437,8 +437,8 @@ const HomePage = () => {
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h3 className="font-semibold text-gray-800 dark:text-dark-text-primary mb-2">Đáng tin cậy</h3>
-          <p className="text-gray-600 dark:text-dark-text-secondary text-sm">Thông tin được kiểm chứng và cập nhật chính xác</p>
+          <h3 className="font-semibold text-primary mb-2">Đáng tin cậy</h3>
+          <p className="text-secondary text-sm">Thông tin được kiểm chứng và cập nhật chính xác</p>
         </div>
         <div className="text-center">
           <div className="bg-green-100 dark:bg-dark-accent-emerald/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -446,8 +446,8 @@ const HomePage = () => {
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
             </svg>
           </div>
-          <h3 className="font-semibold text-gray-800 dark:text-dark-text-primary mb-2">Cập nhật thường xuyên</h3>
-          <p className="text-gray-600 dark:text-dark-text-secondary text-sm">Thông tin mới được cập nhật hàng ngày</p>
+          <h3 className="font-semibold text-primary mb-2">Cập nhật thường xuyên</h3>
+          <p className="text-secondary text-sm">Thông tin mới được cập nhật hàng ngày</p>
         </div>
         <div className="text-center">
           <div className="bg-purple-100 dark:bg-dark-accent-secondary-bg/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -455,8 +455,8 @@ const HomePage = () => {
               <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
             </svg>
           </div>
-          <h3 className="font-semibold text-gray-800 dark:text-dark-text-primary mb-2">Dễ đọc</h3>
-          <p className="text-gray-600 dark:text-dark-text-secondary text-sm">Giao diện thân thiện và dễ sử dụng</p>
+          <h3 className="font-semibold text-primary mb-2">Dễ đọc</h3>
+          <p className="text-secondary text-sm">Giao diện thân thiện và dễ sử dụng</p>
         </div>
         <div className="text-center">
           <div className="bg-orange-100 dark:bg-dark-accent-orange/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -464,8 +464,8 @@ const HomePage = () => {
               <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
           </div>
-          <h3 className="font-semibold text-gray-800 dark:text-dark-text-primary mb-2">Chuyên sâu</h3>
-          <p className="text-gray-600 dark:text-dark-text-secondary text-sm">Phân tích chi tiết về công nghệ Việt Nam</p>
+          <h3 className="font-semibold text-primary mb-2">Chuyên sâu</h3>
+          <p className="text-secondary text-sm">Phân tích chi tiết về công nghệ Việt Nam</p>
         </div>
       </div>
     </div>

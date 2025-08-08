@@ -27,7 +27,7 @@ const ArchivePage = () => {
     if (isInitialLoad && !isLoading) {
       setIsInitialLoad(false);
     }
-  }, [params, isLoading]);
+  }, [params, isLoading, isInitialLoad]);
 
   const handleSearch = (searchTerm) => {
     updateParams({ search: searchTerm, skip: 0 });
@@ -150,7 +150,7 @@ const ArchivePage = () => {
           <div className={`transition-all duration-500 ease-in-out overflow-hidden ${
             showFilters ? 'max-h-96 opacity-100 mb-6 transform translate-y-0' : 'max-h-0 opacity-0 transform -translate-y-4'
           }`}>
-            <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-lg p-4 border border-gray-200">
+            <div className="bg-gradient-to-r from-neutral-50 to-blue-50 rounded-lg p-4 border border-neutral-200">
               <h3 className="text-lg font-semibold text-primary mb-4 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clipRule="evenodd" />
@@ -171,7 +171,7 @@ const ArchivePage = () => {
                 showText
                 text="Loading tech reports..."
               />
-              <div className="text-gray-500 text-sm">
+              <div className="text-muted text-sm">
                 Fetching the latest technology insights...
               </div>
             </div>

@@ -69,7 +69,7 @@ export const useContent = (contentType, initialParams = {}) => {
     };
 
     loadContent();
-  }, [params, contentType]);
+  }, [params, contentType, apiFunctions]);
 
   const updateParams = (newParams) => {
     setParams(prev => ({ ...prev, ...newParams }));

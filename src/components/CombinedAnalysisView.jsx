@@ -30,7 +30,7 @@ const CombinedAnalysisView = ({ analysis, isLoading, error }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 relative">
       {/* Mobile Sticky TOC Header */}
-      <div className="lg:hidden sticky top-0 z-30 bg-white/98 backdrop-blur-md border-b border-gray-200 shadow-md">
+      <div className="lg:hidden sticky top-0 z-30 bg-white/98 backdrop-blur-md border-b border-neutral-200 shadow-md">
         <div className="flex items-center justify-between p-3">
           <button 
             onClick={() => navigate(-1)} 
@@ -127,7 +127,7 @@ const CombinedAnalysisView = ({ analysis, isLoading, error }) => {
             </div>
             
             {/* Footer with Social Links */}
-            <div className="border-t border-gray-200 bg-gradient-to-r from-gray-50 to-emerald-50 px-6 py-8">
+            <div className="border-t border-neutral-200 bg-gradient-to-r from-neutral-50 to-emerald-50 px-6 py-8">
               <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <div className="text-center md:text-left">
                   <h3 className="text-lg font-semibold text-primary mb-2">Tech Digest Vietnam</h3>

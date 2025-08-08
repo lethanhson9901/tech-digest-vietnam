@@ -104,13 +104,13 @@ const EnhancedContent = ({ title, date, sections, tocItems }) => {
     code: ({ node, inline, className, children, ...props }) => {
       if (inline) {
         return (
-          <code className="bg-gray-100 text-indigo-700 px-1.5 py-0.5 rounded font-mono text-sm" {...props}>
+          <code className="bg-neutral-100 text-indigo-700 px-1.5 py-0.5 rounded font-mono text-sm" {...props}>
             {children}
           </code>
         );
       }
       return (
-        <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto my-4">
+        <pre className="bg-neutral-100 p-4 rounded-lg overflow-x-auto my-4">
           <code className="font-mono text-sm text-primary" {...props}>
             {children}
           </code>

@@ -128,10 +128,10 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
 
   // Desktop version (full featured)
   return (
-    <div className="bg-white rounded-3xl shadow-lg overflow-hidden lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] border border-gray-100">
+    <div className="bg-white rounded-3xl shadow-lg overflow-hidden lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] border border-neutral-100">
       {/* Header with toggle for mobile */}
       <div 
-        className="flex items-center justify-between p-5 bg-gradient-to-r from-emerald-50 to-teal-50 border-b border-gray-100 cursor-pointer lg:cursor-default"
+        className="flex items-center justify-between p-5 bg-gradient-to-r from-emerald-50 to-teal-50 border-b border-neutral-100 cursor-pointer lg:cursor-default"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
         <h3 className="text-lg font-bold text-primary flex items-center">
@@ -144,7 +144,7 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
         </h3>
         {/* Toggle button for mobile */}
         <button 
-          className="lg:hidden text-muted hover:text-secondary transition-colors p-2 rounded-2xl hover:bg-gray-100"
+          className="lg:hidden text-muted hover:text-secondary transition-colors p-2 rounded-2xl hover:bg-neutral-100"
           aria-label={isCollapsed ? 'Expand table of contents' : 'Collapse table of contents'}
         >
           <svg 
@@ -198,7 +198,7 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
         </div>
         
         {/* Enhanced Progress indicator */}
-        <div className="p-5 border-t border-gray-100 bg-gradient-to-r from-gray-50 to-emerald-50 rounded-b-3xl">
+        <div className="p-5 border-t border-neutral-100 bg-gradient-to-r from-neutral-50 to-emerald-50 rounded-b-3xl">
             <div className="flex items-center justify-between mb-3">
             <div className="text-xs font-semibold text-secondary">Tiến độ đọc</div>
             <div className="text-xs font-bold text-emerald-600 bg-emerald-100 px-2.5 py-1 rounded-full">
@@ -208,7 +208,7 @@ const TableOfContents = ({ content, isMobile = false, onItemClick }) => {
               }
             </div>
           </div>
-          <div className="h-3 bg-gray-200 rounded-full overflow-hidden shadow-inner">
+          <div className="h-3 bg-neutral-200 rounded-full overflow-hidden shadow-inner">
             <div 
               className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full transition-all duration-500 shadow-sm relative"
               style={{ 

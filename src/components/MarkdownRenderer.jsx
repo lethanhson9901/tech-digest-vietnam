@@ -51,8 +51,10 @@ const MarkdownRenderer = ({ content }) => {
         <h1 
           id={id} 
           className="text-3xl font-bold text-primary mt-8 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 leading-tight" 
-          {...props} 
-        />
+          {...props}
+        >
+          {props.children}
+        </h1>
       );
     },
     h2: ({ node, ...props }) => {
@@ -67,8 +69,10 @@ const MarkdownRenderer = ({ content }) => {
         <h2 
           id={id} 
           className="text-2xl font-bold text-primary mt-6 mb-3 pb-2 border-b border-gray-200 dark:border-gray-700 leading-tight" 
-          {...props} 
-        />
+          {...props}
+        >
+          {props.children}
+        </h2>
       );
     },
     h3: ({ node, ...props }) => {
@@ -82,8 +86,10 @@ const MarkdownRenderer = ({ content }) => {
         <h3 
           id={id} 
           className="text-xl font-semibold text-primary mt-5 mb-2 leading-snug" 
-          {...props} 
-        />
+          {...props}
+        >
+          {props.children}
+        </h3>
       );
     },
     h4: ({ node, ...props }) => {
@@ -97,8 +103,10 @@ const MarkdownRenderer = ({ content }) => {
         <h4 
           id={id} 
           className="text-lg font-semibold text-secondary mt-4 mb-2 leading-snug" 
-          {...props} 
-        />
+          {...props}
+        >
+          {props.children}
+        </h4>
       );
     },
     // Style paragraphs with Vietnamese-optimized typography
@@ -107,7 +115,9 @@ const MarkdownRenderer = ({ content }) => {
     ),
     // Style links
     a: ({ node, ...props }) => (
-      <a className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 underline font-medium transition-colors duration-200" {...props} />
+      <a className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 underline font-medium transition-colors duration-200" {...props}>
+        {props.children}
+      </a>
     ),
     // Style list items with better spacing for Vietnamese
     li: ({ node, ordered, ...props }) => (
@@ -121,13 +131,34 @@ const MarkdownRenderer = ({ content }) => {
     code: ({ node, inline, className, children, ...props }) => {
       if (inline) {
         return (
-          <span className="font-mono bg-gray-100 dark:bg-gray-800 text-indigo-700 dark:text-indigo-400 px-1 py-0.5 rounded text-sm" {...props}>
+          <span className="font-mono bg-neutral-100 dark:bg-gray-800 text-indigo-700 dark:text-indigo-400 px-1 py-0.5 rounded text-sm" {...props}>
             {children}
           </span>
         );
       }
-      // Return empty if code blocks aren't needed
-      return null;
+      const codeText = String(children).replace(/\n$/, '');
+      const langMatch = /language-(\w+)/.exec(className || '');
+      const language = langMatch ? langMatch[1] : 'text';
+      const handleCopy = () => {
+        if (navigator?.clipboard?.writeText) {
+          navigator.clipboard.writeText(codeText).catch(() => {});
+        }
+      };
+      return (
+        <div className="relative group my-4">
+          <button
+            type="button"
+            onClick={handleCopy}
+            className="absolute top-2 right-2 z-10 px-2 py-1 text-xs rounded bg-neutral-800 text-inverse opacity-0 group-hover:opacity-100 transition-opacity"
+            aria-label="Sao chép mã"
+          >
+            Copy
+          </button>
+          <pre className="bg-neutral-100 dark:bg-gray-900 text-sm rounded-lg overflow-x-auto p-4 border border-neutral-200 dark:border-gray-700">
+            <code className={`font-mono language-${language}`}>{codeText}</code>
+          </pre>
+        </div>
+      );
     },
     // Style emphasis and strong with better Vietnamese support
     em: ({ node, ...props }) => (

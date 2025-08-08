@@ -1,6 +1,18 @@
 // src/components/SearchBar.jsx (enhanced version)
 import React, { useState, useRef, useEffect } from 'react';
 
+// Static common search terms (module-level to satisfy hook deps rules)
+const COMMON_SEARCH_TERMS = [
+  'AI', 'Machine Learning', 'Deep Learning', 'Neural Networks',
+  'Blockchain', 'Cryptocurrency', 'Web3', 'DeFi',
+  'Cloud Computing', 'DevOps', 'Kubernetes', 'Docker',
+  'React', 'JavaScript', 'Python', 'Node.js',
+  'Cybersecurity', 'Data Science', 'Big Data', 'Analytics',
+  'Mobile Development', 'iOS', 'Android', 'Flutter',
+  'UI/UX', 'Design Systems', 'Figma', 'Prototyping',
+  'Startup', 'Tech News', 'Innovation', 'Funding'
+];
+
 const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
   const [localValue, setLocalValue] = useState(searchValue);
   const [isActive, setIsActive] = useState(false);
@@ -10,17 +22,7 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
   const searchRef = useRef(null);
   const suggestionsRef = useRef(null);
 
-  // Common search terms for suggestions
-  const commonSearchTerms = [
-    'AI', 'Machine Learning', 'Deep Learning', 'Neural Networks',
-    'Blockchain', 'Cryptocurrency', 'Web3', 'DeFi',
-    'Cloud Computing', 'DevOps', 'Kubernetes', 'Docker',
-    'React', 'JavaScript', 'Python', 'Node.js',
-    'Cybersecurity', 'Data Science', 'Big Data', 'Analytics',
-    'Mobile Development', 'iOS', 'Android', 'Flutter',
-    'UI/UX', 'Design Systems', 'Figma', 'Prototyping',
-    'Startup', 'Tech News', 'Innovation', 'Funding'
-  ];
+  // Suggestions sẽ dựa trên COMMON_SEARCH_TERMS
 
   useEffect(() => {
     setLocalValue(searchValue);
@@ -29,7 +31,7 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
   useEffect(() => {
     // Generate suggestions based on current input
     if (localValue.trim() && localValue.length > 1) {
-      const filtered = commonSearchTerms.filter(term =>
+      const filtered = COMMON_SEARCH_TERMS.filter(term =>
         term.toLowerCase().includes(localValue.toLowerCase()) ||
         localValue.toLowerCase().includes(term.toLowerCase())
       ).slice(0, 5);
@@ -135,7 +137,7 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
         rounded-xl shadow-sm
         ${isActive 
           ? 'border-indigo-500 shadow-lg shadow-indigo-500/20 scale-[1.02]' 
-          : 'border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500'
+          : 'border-neutral-200 dark:border-gray-600 hover:border-neutral-300 dark:hover:border-gray-500'
         }
         ${isLoading ? 'animate-pulse-glow' : ''}
       `}>
@@ -192,7 +194,7 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
             w-full pl-10 pr-10 py-3 
             bg-transparent
             text-primary
-            placeholder-gray-500
+            placeholder-neutral-500
             border-none outline-none
             font-medium
             transition-all duration-200
@@ -204,12 +206,11 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
 
         {/* Clear Button */}
         {localValue && (
-          <button
+            <button
             onClick={handleClear}
-            className={`
+              className={`
               absolute right-3 p-1
-              text-gray-400 hover:text-gray-600 
-              dark:text-gray-500 dark:hover:text-gray-300
+              text-muted hover:text-secondary
               transition-all duration-200
               hover:scale-110 hover:rotate-90
               focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
@@ -236,7 +237,7 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
           className={`
             absolute top-full left-0 right-0 z-50 mt-2
             bg-white dark:bg-gray-800
-            border border-gray-200 dark:border-gray-600
+            border border-neutral-200 dark:border-gray-600
             rounded-xl shadow-xl shadow-black/10 dark:shadow-black/30
             backdrop-blur-sm
             animate-fadeIn
@@ -245,7 +246,7 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
         >
           <div className="py-2">
             {/* Suggestions Header */}
-            <div className="px-4 py-2 text-xs font-semibold text-muted uppercase tracking-wider border-b border-gray-100 dark:border-gray-700">
+            <div className="px-4 py-2 text-xs font-semibold text-muted uppercase tracking-wider border-b border-neutral-100 dark:border-gray-700">
               Gợi ý tìm kiếm
             </div>
             
@@ -260,7 +261,7 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
                   transition-all duration-150
                   ${selectedSuggestionIndex === index 
                     ? 'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300' 
-                    : 'text-secondary hover:bg-gray-50 dark:hover:bg-gray-700/50'
+                    : 'text-secondary hover:bg-neutral-50 dark:hover:bg-gray-700/50'
                   }
                   focus:outline-none focus:bg-indigo-50 dark:focus:bg-indigo-900/20
                 `}
@@ -307,16 +308,16 @@ const SearchBar = ({ onSearch, onClear, searchValue = '' }) => {
           </div>
 
           {/* Quick Actions */}
-          <div className="border-t border-gray-100 dark:border-gray-700 p-2">
+          <div className="border-t border-neutral-100 dark:border-gray-700 p-2">
             <div className="flex items-center justify-between text-xs text-muted">
               <span>
-                <kbd className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded font-mono">↑↓</kbd> di chuyển
+                <kbd className="px-2 py-1 bg-neutral-100 dark:bg-gray-700 rounded font-mono">↑↓</kbd> di chuyển
               </span>
               <span>
-                <kbd className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded font-mono">Enter</kbd> chọn
+                <kbd className="px-2 py-1 bg-neutral-100 dark:bg-gray-700 rounded font-mono">Enter</kbd> chọn
               </span>
               <span>
-                <kbd className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded font-mono">Esc</kbd> đóng
+                <kbd className="px-2 py-1 bg-neutral-100 dark:bg-gray-700 rounded font-mono">Esc</kbd> đóng
               </span>
             </div>
           </div>

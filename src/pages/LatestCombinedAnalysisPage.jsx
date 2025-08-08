@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CombinedAnalysisView from '../components/CombinedAnalysisView';
-import ErrorMessage from '../components/ErrorMessage';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { fetchLatestCombinedAnalysis } from '../services/api';
 
@@ -47,7 +46,7 @@ const LatestCombinedAnalysisPage = () => {
   // Loading state with enhanced animation
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center">
+      <div className="min-h-screen bg-neutral-50 flex flex-col justify-center items-center">
         <div className="text-center space-y-6">
           <LoadingSpinner 
             type="tech" 
@@ -57,16 +56,16 @@ const LatestCombinedAnalysisPage = () => {
             text="Đang tải phân tích mới nhất..."
           />
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold text-gray-800 animate-pulse">
+            <h2 className="text-2xl font-bold text-primary animate-pulse">
               🚀 Đang chuẩn bị phân tích tổng hợp
             </h2>
-            <p className="text-gray-600 max-w-md">
+            <p className="text-secondary max-w-md">
               Chúng tôi đang tổng hợp những insights công nghệ mới nhất cho bạn...
             </p>
           </div>
           
           {/* Progress Animation */}
-          <div className="w-80 bg-gray-200 rounded-full h-2 overflow-hidden">
+            <div className="w-80 bg-neutral-200 rounded-full h-2 overflow-hidden">
             <div className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full animate-loading-bar"></div>
           </div>
         </div>
@@ -77,7 +76,7 @@ const LatestCombinedAnalysisPage = () => {
   // Error state
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center">
+      <div className="min-h-screen bg-neutral-50 flex flex-col justify-center items-center">
         <div className="max-w-2xl mx-auto px-4 text-center">
           <div className="bg-white rounded-2xl shadow-xl p-8 border border-red-100">
             <div className="mb-6">
@@ -88,10 +87,10 @@ const LatestCombinedAnalysisPage = () => {
               </div>
             </div>
             
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            <h2 className="text-2xl font-bold text-primary mb-4">
               Không thể tải phân tích mới nhất
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary mb-6">
               {error}
             </p>
             
@@ -108,7 +107,7 @@ const LatestCombinedAnalysisPage = () => {
               
               <button
                 onClick={() => navigate('/combined-analysis')}
-                className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-colors duration-200"
+                className="inline-flex items-center justify-center px-6 py-3 border border-neutral-300 text-base font-medium rounded-lg text-secondary bg-white hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-colors duration-200"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0l-4-4m4 4l-4 4" />
@@ -124,7 +123,7 @@ const LatestCombinedAnalysisPage = () => {
 
   // Success state - render the analysis
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-neutral-50">
       {/* Header Banner */}
       <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white py-6">
         <div className="max-w-7xl mx-auto px-4">

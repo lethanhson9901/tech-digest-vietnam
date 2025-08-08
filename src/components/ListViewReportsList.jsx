@@ -83,7 +83,7 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
       default:
         return {
           hover: 'bg-indigo-50',
-          iconBg: 'bg-gray-100',
+          iconBg: 'bg-neutral-100',
           iconBgHover: 'bg-indigo-100',
           textColor: 'text-indigo-600',
           badgeColor: 'bg-green-100 text-green-800'
@@ -105,7 +105,7 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
     const contentTypeLabel = contentType === 'combined-analysis' ? 'combined analysis' : contentType.replace('-', ' ');
     return (
       <div className="text-center py-12 bg-white rounded-lg shadow">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+         <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
         <h3 className="mt-4 text-lg font-medium text-primary">No {contentTypeLabel} found</h3>
@@ -123,7 +123,7 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
   return (
     <div className="space-y-6">
       <div className="overflow-hidden bg-white shadow sm:rounded-md">
-         <ul className="divide-y divide-gray-200">
+         <ul className="divide-y divide-neutral-200">
           {reports.map((report) => (
             <li 
               key={report.id}
@@ -131,7 +131,7 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
               onMouseLeave={() => setHoveredId(null)}
               className="transition-colors duration-200"
             >
-              <Link to={getLinkPath(report)} className={`block ${hoveredId === report.id ? colors.hover : 'hover:bg-gray-50'}`}>
+              <Link to={getLinkPath(report)} className={`block ${hoveredId === report.id ? colors.hover : 'hover:bg-neutral-50'}`}>
                 <div className="px-4 py-4 sm:px-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
@@ -167,7 +167,7 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
                       </p>
                     </div>
                     <div className={`transition-transform duration-200 ${hoveredId === report.id ? 'translate-x-1' : ''}`}>
-                      <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ${hoveredId === report.id ? colors.textColor.replace('text-', 'text-').replace('-600', '-500') : 'text-gray-400'}`} viewBox="0 0 20 20" fill="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ${hoveredId === report.id ? colors.textColor.replace('text-', 'text-').replace('-600', '-500') : 'text-muted'}`} viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
