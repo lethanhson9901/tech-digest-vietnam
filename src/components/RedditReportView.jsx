@@ -1,5 +1,5 @@
 import { format } from 'date-fns';
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ErrorMessage from './ErrorMessage';
 import LoadingSpinner from './LoadingSpinner';
@@ -108,13 +108,15 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
           <h4 className="text-sm font-semibold text-primary mb-2">Chủ đề nổi bật:</h4>
           <div className="flex flex-wrap gap-1">
             {data.trendingTopics.slice(0, 3).map((topic, topicIndex) => (
-              <span key={topicIndex} 
-                    className="text-xs px-2 py-1 rounded-full bg-primary-50 dark:bg-dark-accent-primary-bg/20 text-primary-600 dark:text-dark-accent-primary-bg border border-primary-200 dark:border-dark-accent-primary-bg/30">
+              <span
+                key={topicIndex}
+                className="text-xs px-2 py-1 rounded-full bg-primary-50 dark:bg-dark-accent-primary-bg/20 text-primary-600 dark:text-dark-accent-primary-bg border border-primary-200 dark:border-gray-600"
+              >
                 {topic}
               </span>
             ))}
             {data.trendingTopics.length > 3 && (
-              <span className="text-xs px-2 py-1 rounded-full bg-neutral-100 dark:bg-neutral-700 text-secondary">
+              <span className="text-xs px-2 py-1 rounded-full bg-neutral-100 dark:bg-neutral-700 text-secondary dark:text-gray-300 border border-neutral-200 dark:border-gray-600">
                 +{data.trendingTopics.length - 3}
               </span>
             )}
@@ -140,7 +142,7 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
                         <span className="px-1 py-0.5 rounded bg-emerald-100 dark:bg-dark-accent-emerald/20 text-emerald-600 dark:text-dark-accent-emerald border border-emerald-200 dark:border-dark-accent-emerald/30">
                           {article.score}↑
                         </span>
-                        <span className="px-1 py-0.5 rounded bg-primary-100 dark:bg-dark-accent-primary-bg/20 text-primary-600 dark:text-dark-accent-primary-bg border border-primary-200 dark:border-dark-accent-primary-bg/30">
+                        <span className="px-1 py-0.5 rounded bg-primary-100 dark:bg-dark-accent-primary-bg/20 text-primary-600 dark:text-dark-accent-primary-bg border border-primary-200 dark:border-gray-600">
                           {article.numComments}💬
                         </span>
                       </div>
@@ -193,19 +195,11 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
 };
 
 // Search and Filter Component
-const SearchAndFilter = ({ onSearch, onFilter, totalCount, filteredCount }) => {
+const SearchAndFilter = ({ onSearch, onSortChange, totalCount, filteredCount }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [sortBy, setSortBy] = useState('score');
+  const [sortBy, setSortBy] = useState('recent');
 
-  const categories = [
-    { value: 'all', label: 'Tất cả', icon: '🏠' },
-    { value: 'tech', label: 'Công nghệ', icon: '💻' },
-    { value: 'gaming', label: 'Gaming', icon: '🎮' },
-    { value: 'science', label: 'Khoa học', icon: '🔬' },
-    { value: 'news', label: 'Tin tức', icon: '📰' },
-    { value: 'entertainment', label: 'Giải trí', icon: '🎭' }
-  ];
+  // Removed category filters to simplify UI per request
 
   const sortOptions = [
     { value: 'score', label: 'Điểm cao nhất', icon: '⬆️' },
@@ -220,14 +214,9 @@ const SearchAndFilter = ({ onSearch, onFilter, totalCount, filteredCount }) => {
     onSearch(value);
   };
 
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-    onFilter({ category, sortBy });
-  };
-
   const handleSortChange = (sort) => {
     setSortBy(sort);
-    onFilter({ category: selectedCategory, sortBy: sort });
+    onSortChange(sort);
   };
 
   return (
@@ -247,24 +236,6 @@ const SearchAndFilter = ({ onSearch, onFilter, totalCount, filteredCount }) => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </div>
-        </div>
-
-        {/* Category Filter */}
-        <div className="flex flex-wrap gap-2">
-          {categories.map((category) => (
-            <button
-              key={category.value}
-              onClick={() => handleCategoryChange(category.value)}
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                selectedCategory === category.value
-                  ? 'bg-primary-600 text-inverse shadow-sm'
-                  : 'bg-neutral-100 dark:bg-gray-700 text-secondary dark:text-gray-300 hover:bg-neutral-200 dark:hover:bg-gray-600'
-              }`}
-            >
-              <span className="mr-1">{category.icon}</span>
-              {category.label}
-            </button>
-          ))}
         </div>
 
         {/* Sort Options */}
@@ -308,24 +279,24 @@ const SubredditDetailModal = ({ isOpen, onClose, subredditData, subredditName })
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
       {/* Backdrop */}
-      <div className="fixed inset-0 bg-black bg-opacity-75 transition-opacity" onClick={onClose} />
+      <div className="fixed inset-0 bg-black/75 transition-opacity" onClick={onClose} />
       
       {/* Modal */}
       <div className="flex min-h-full items-center justify-center p-4">
-        <div className="relative w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl bg-gray-900 border border-gray-700 shadow-2xl">
+        <div className="relative w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl bg-white dark:bg-gray-900 border border-neutral-200 dark:border-gray-700 shadow-2xl">
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-gray-700">
+          <div className="flex items-center justify-between p-6 border-b border-neutral-200 dark:border-gray-700">
             <div>
-              <h2 className="text-2xl font-bold text-white">
+              <h2 className="text-2xl font-bold text-primary dark:text-white">
                 🏛️ r/{subredditName}
               </h2>
-              <p className="text-gray-400 mt-1">
+              <p className="text-secondary dark:text-gray-400 mt-1">
                 Báo cáo chi tiết subreddit
               </p>
             </div>
             <button
               onClick={onClose}
-              className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white transition-colors"
+              className="p-2 rounded-lg bg-neutral-100 dark:bg-gray-800 hover:bg-neutral-200 dark:hover:bg-gray-700 text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -337,15 +308,15 @@ const SubredditDetailModal = ({ isOpen, onClose, subredditData, subredditName })
           <div className="overflow-y-auto max-h-[calc(90vh-120px)] p-6">
             {/* Executive Summary */}
             {subredditData.executiveSummary && (
-              <div className="mb-8 p-6 rounded-xl bg-gray-800 border border-gray-700">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+              <div className="mb-8 p-6 rounded-xl bg-neutral-50 dark:bg-gray-800/60 border border-neutral-200 dark:border-gray-700">
+                <h3 className="text-xl font-bold text-primary dark:text-white mb-4 flex items-center">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                           d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                   Tóm tắt chuyên sâu
                 </h3>
-                <div className="prose prose-lg max-w-none text-gray-300">
+                <div className="prose prose-lg dark:prose-invert max-w-none">
                   <MarkdownRenderer content={subredditData.executiveSummary} />
                 </div>
               </div>
@@ -353,15 +324,15 @@ const SubredditDetailModal = ({ isOpen, onClose, subredditData, subredditName })
 
             {/* Community Mood */}
             {subredditData.communityMood && (
-              <div className="mb-8 p-6 rounded-xl bg-purple-900/30 border border-purple-700/30">
-                <h3 className="text-xl font-bold text-purple-300 mb-4 flex items-center">
+              <div className="mb-8 p-6 rounded-xl bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-700/30">
+                <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-4 flex items-center">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                           d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
                   Tâm trạng cộng đồng
                 </h3>
-                <p className="text-lg text-gray-300 italic">
+                <p className="text-lg text-secondary dark:text-gray-300 italic">
                   "{subredditData.communityMood}"
                 </p>
               </div>
@@ -370,7 +341,7 @@ const SubredditDetailModal = ({ isOpen, onClose, subredditData, subredditName })
             {/* Trending Topics */}
             {subredditData.trendingTopics && subredditData.trendingTopics.length > 0 && (
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                <h3 className="text-xl font-bold text-primary dark:text-white mb-4 flex items-center">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                           d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -380,7 +351,7 @@ const SubredditDetailModal = ({ isOpen, onClose, subredditData, subredditName })
                 <div className="flex flex-wrap gap-3">
                   {subredditData.trendingTopics.map((topic, index) => (
                     <span key={index} 
-                          className="px-4 py-2 rounded-full bg-orange-600/20 text-orange-300 border border-orange-600/30 text-sm font-medium">
+                          className="px-4 py-2 rounded-full bg-orange-100 text-orange-700 border border-orange-200 dark:bg-orange-600/20 dark:text-orange-300 dark:border-orange-600/30 text-sm font-medium">
                       {topic}
                     </span>
                   ))}
@@ -401,29 +372,29 @@ const SubredditDetailModal = ({ isOpen, onClose, subredditData, subredditName })
                 
                 <div className="space-y-6">
                   {section.articles && section.articles.map((article, articleIndex) => (
-                    <div key={articleIndex} className="p-6 rounded-xl bg-gray-800 border border-gray-700">
+                    <div key={articleIndex} className="p-6 rounded-xl bg-neutral-50 dark:bg-gray-800 border border-neutral-200 dark:border-gray-700">
                       <div className="flex items-start justify-between mb-4">
-                        <h4 className="text-lg font-semibold text-white flex-1 mr-4">
+                        <h4 className="text-lg font-semibold text-primary dark:text-white flex-1 mr-4">
                           {article.headline}
                         </h4>
                         <div className="flex items-center space-x-2 flex-shrink-0">
-                          <span className="px-3 py-1 rounded-lg bg-green-600/20 text-green-300 border border-green-600/30 text-sm">
+                          <span className="px-3 py-1 rounded-lg bg-emerald-100 text-emerald-700 border border-emerald-200 dark:bg-green-600/20 dark:text-green-300 dark:border-green-600/30 text-sm">
                             {article.score} ↑
                           </span>
-                          <span className="px-3 py-1 rounded-lg bg-blue-600/20 text-blue-300 border border-blue-600/30 text-sm">
+                          <span className="px-3 py-1 rounded-lg bg-blue-100 text-blue-700 border border-blue-200 dark:bg-blue-600/20 dark:text-blue-300 dark:border-blue-600/30 text-sm">
                             {article.numComments} 💬
                           </span>
                         </div>
                       </div>
 
-                      <div className="mb-4 text-gray-300">
+                      <div className="mb-4 text-secondary dark:text-gray-300">
                         <MarkdownRenderer content={article.summary} />
                       </div>
 
                       {article.keyTakeaways && article.keyTakeaways.length > 0 && (
                         <div className="mb-4">
-                          <h5 className="font-semibold text-white mb-2">Điểm chính:</h5>
-                          <ul className="list-disc list-inside space-y-1 text-gray-300">
+                          <h5 className="font-semibold text-primary dark:text-white mb-2">Điểm chính:</h5>
+                          <ul className="list-disc list-inside space-y-1 text-secondary dark:text-gray-300">
                             {article.keyTakeaways.map((takeaway, index) => (
                               <li key={index}>{takeaway}</li>
                             ))}
@@ -432,11 +403,11 @@ const SubredditDetailModal = ({ isOpen, onClose, subredditData, subredditName })
                       )}
 
                       <div className="flex flex-wrap items-center gap-3 mb-4">
-                        <span className="text-sm text-gray-400">
+                        <span className="text-sm text-muted dark:text-gray-400">
                           Tác giả: {article.source}
                         </span>
                         {article.flair && (
-                          <span className="text-xs px-2 py-1 rounded-lg bg-orange-600/20 text-orange-300 border border-orange-600/30">
+                          <span className="text-xs px-2 py-1 rounded-lg bg-orange-100 text-orange-700 border border-orange-200 dark:bg-orange-600/20 dark:text-orange-300 dark:border-orange-600/30">
                             {article.flair}
                           </span>
                         )}
@@ -473,7 +444,7 @@ const SubredditDetailModal = ({ isOpen, onClose, subredditData, subredditName })
                             href={article.originalUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg text-sm font-medium transition-colors"
+                            className="inline-flex items-center px-4 py-2 bg-neutral-600 hover:bg-neutral-700 text-white rounded-lg text-sm font-medium transition-colors"
                           >
                             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
@@ -584,8 +555,8 @@ const AnalyticsDashboard = ({ reports }) => {
             <p className="text-sm text-muted dark:text-gray-300">Subreddits</p>
             <p className="text-2xl font-bold text-primary dark:text-white">{stats.totalSubreddits}</p>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-indigo-100 dark:bg-blue-600/30 flex items-center justify-center">
-            <svg className="w-5 h-5 text-indigo-600 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 dark:bg-blue-600/30 dark:text-blue-300 flex items-center justify-center">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
             </svg>
           </div>
@@ -598,8 +569,8 @@ const AnalyticsDashboard = ({ reports }) => {
             <p className="text-sm text-muted dark:text-gray-300">Bài viết</p>
             <p className="text-2xl font-bold text-primary dark:text-white">{stats.totalArticles}</p>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-green-600/30 flex items-center justify-center">
-            <svg className="w-5 h-5 text-emerald-600 dark:text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 dark:bg-green-600/30 dark:text-green-300 flex items-center justify-center">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
           </div>
@@ -612,8 +583,8 @@ const AnalyticsDashboard = ({ reports }) => {
             <p className="text-sm text-muted dark:text-gray-300">Điểm TB</p>
             <p className="text-2xl font-bold text-primary dark:text-white">{stats.avgScore}</p>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-amber-100 dark:bg-orange-600/30 flex items-center justify-center">
-            <svg className="w-5 h-5 text-amber-600 dark:text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 dark:bg-orange-600/30 dark:text-orange-300 flex items-center justify-center">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
@@ -626,8 +597,8 @@ const AnalyticsDashboard = ({ reports }) => {
             <p className="text-sm text-muted dark:text-gray-300">Bình luận TB</p>
             <p className="text-2xl font-bold text-primary dark:text-white">{stats.avgComments}</p>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-indigo-100 dark:bg-purple-600/30 flex items-center justify-center">
-            <svg className="w-5 h-5 text-indigo-600 dark:text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 dark:bg-purple-600/30 dark:text-purple-300 flex items-center justify-center">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
           </div>
@@ -646,8 +617,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
   const [selectedSubreddit, setSelectedSubreddit] = useState(null);
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterCategory, setFilterCategory] = useState('all');
-  const [sortBy, setSortBy] = useState('score');
+  const [sortBy, setSortBy] = useState('recent');
 
   // Parse the content if it's a string - moved before early returns
   let reportData = report;
@@ -692,35 +662,6 @@ const RedditReportView = ({ report, isLoading, error }) => {
       });
     }
     
-    // Category filter (simplified - can be enhanced with actual category detection)
-    if (filterCategory !== 'all') {
-      filtered = filtered.filter(report => {
-        const data = report.structured_data;
-        const subreddit = data.subreddit?.toLowerCase() || '';
-        const title = data.reportTitle?.toLowerCase() || '';
-        
-        switch (filterCategory) {
-          case 'tech':
-            return subreddit.includes('tech') || subreddit.includes('programming') || 
-                   title.includes('tech') || title.includes('programming');
-          case 'gaming':
-            return subreddit.includes('gaming') || subreddit.includes('game') || 
-                   title.includes('gaming') || title.includes('game');
-          case 'science':
-            return subreddit.includes('science') || subreddit.includes('research') || 
-                   title.includes('science') || title.includes('research');
-          case 'news':
-            return subreddit.includes('news') || subreddit.includes('worldnews') || 
-                   title.includes('news') || title.includes('world');
-          case 'entertainment':
-            return subreddit.includes('entertainment') || subreddit.includes('movies') || 
-                   title.includes('entertainment') || title.includes('movie');
-          default:
-            return true;
-        }
-      });
-    }
-    
     // Sort
     filtered.sort((a, b) => {
       const dataA = a.structured_data;
@@ -753,7 +694,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
     });
     
     return filtered;
-  }, [isCombinedReport, reportData?.subredditReports, searchTerm, filterCategory, sortBy]);
+  }, [isCombinedReport, reportData?.subredditReports, searchTerm, sortBy]);
 
   // Early returns after all hooks
   if (isLoading) {
@@ -1072,10 +1013,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
         {/* Search and Filter */}
         <SearchAndFilter
           onSearch={setSearchTerm}
-          onFilter={({ category, sortBy: sort }) => {
-            setFilterCategory(category);
-            setSortBy(sort);
-          }}
+          onSortChange={(sort) => setSortBy(sort)}
           totalCount={subredditReports.length}
           filteredCount={processedReports.length}
         />
