@@ -43,6 +43,11 @@ module.exports = {
         'accent-blue-light': 'var(--color-accent-blue-light)',
         'accent-blue-dark': 'var(--color-accent-blue-dark)',
 
+        // Accent orange (used widely in components)
+        'accent-orange': 'var(--color-accent-orange)',
+        'accent-orange-light': 'var(--color-accent-orange-light)',
+        'accent-orange-dark': 'var(--color-accent-orange-dark)',
+
         // Neutral palette mapped to variables to keep consistent in dark mode via .dark overrides
         neutral: {
           50: 'var(--color-neutral-50)',
@@ -147,6 +152,37 @@ module.exports = {
               color: '#6b7280',
             },
           },
+        },
+        invert: {
+          css: {
+            color: 'var(--dark-text-primary)',
+            a: {
+              color: 'var(--color-primary-400)',
+              textDecoration: 'none',
+              fontWeight: '500',
+              '&:hover': {
+                color: 'var(--color-primary-300)'
+              }
+            },
+            'h1, h2, h3, h4, h5, h6': {
+              color: 'var(--dark-text-primary)'
+            },
+            p: {
+              color: 'var(--dark-text-secondary)'
+            },
+            code: {
+              backgroundColor: 'var(--color-neutral-800)',
+              color: 'var(--color-primary-400)'
+            },
+            pre: {
+              backgroundColor: 'var(--color-neutral-900)',
+              color: 'var(--color-neutral-100)'
+            },
+            blockquote: {
+              borderLeftColor: 'var(--color-primary-600)',
+              color: 'var(--dark-text-secondary)'
+            }
+          }
         },
         vietnamese: {
           css: {

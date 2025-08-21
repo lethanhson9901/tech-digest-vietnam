@@ -132,18 +132,18 @@
 
 /* Dark theme overrides */
 .dark {
-  /* Base Dark Palette - Deep Slate Blue/Gray */
+  /* Base Dark Palette - tuned for better contrast */
   --dark-bg-deepest: hsl(222, 39%, 8%);    /* #0D131E - For very subtle backgrounds or elements */
   --dark-bg-primary: hsl(222, 35%, 12%);   /* #131A2A - Main background */
-  --dark-bg-secondary: hsl(220, 30%, 17%);  /* #1D2436 - Elevated surfaces (cards, modals) */
-  --dark-bg-tertiary: hsl(220, 28%, 22%); /* #252E42 - Hover states on secondary surfaces */
+  --dark-bg-secondary: hsl(220, 30%, 18%);  /* +1% lightness for card contrast */
+  --dark-bg-tertiary: hsl(220, 28%, 24%); /* +2% lightness for hover clarity */
 
   --dark-text-primary: hsl(210, 25%, 90%); /* #E0E7F0 - Main text */
-  --dark-text-secondary: hsl(210, 20%, 75%);/* #B8C2D1 - Subdued text */
-  --dark-text-disabled: hsl(210, 15%, 55%); /* #818DA2 - Disabled text */
+  --dark-text-secondary: hsl(210, 20%, 82%);/* +7% for readability */
+  --dark-text-disabled: hsl(210, 15%, 62%); /* +7% for minimum contrast */
 
-  --dark-border-primary: hsl(220, 25%, 25%);  /* #2E384D - Borders on primary bg */
-  --dark-border-secondary: hsl(220, 25%, 30%);/* #38435C - Borders on secondary bg / subtle dividers */
+  --dark-border-primary: hsl(220, 25%, 32%);  /* +7% for clearer separators */
+  --dark-border-secondary: hsl(220, 25%, 38%);/* +8% for elevated dividers */
 
   /* Re-aliasing existing neutrals for dark theme */
   --color-neutral-50: var(--dark-bg-primary);
@@ -198,27 +198,7 @@
   --color-accent-blue-light: hsl(221, 75%, 60%);
   --color-accent-blue-dark: hsl(221, 75%, 50%);
 
-  /* Line clamp utilities */
-  .line-clamp-1 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-  }
-  
-  .line-clamp-2 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-  }
-  
-  .line-clamp-3 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-  }
+  /* Line clamp utilities: sử dụng plugin @tailwindcss/line-clamp thay vì tự định nghĩa */
 
 
   /* Background Gradients for Dark Theme */
@@ -229,6 +209,20 @@
   --text-secondary: var(--dark-text-secondary);
   --text-muted: var(--dark-text-disabled);
 }
+
+/* Tương đương một số quy tắc .dark-theme phổ biến để chuẩn bị migrate bỏ dark-theme */
+.dark .bg-white { background-color: var(--dark-bg-secondary); color: var(--text-primary); }
+.dark .text-gray-900 { color: var(--dark-text-primary); }
+.dark .text-gray-800 { color: var(--dark-text-primary); }
+.dark .text-gray-700 { color: var(--dark-text-secondary); }
+.dark .text-gray-600, 
+.dark .text-gray-500 { color: var(--dark-text-secondary); }
+.dark .text-gray-400 { color: var(--dark-text-disabled); }
+.dark .border-gray-200,
+.dark .border-gray-300,
+.dark .border-gray-100 { border-color: var(--dark-border-primary); }
+.dark .bg-gray-50 { background-color: var(--dark-bg-primary); }
+.dark .bg-gray-100 { background-color: var(--dark-bg-secondary); }
 
 /* Global smooth scrolling and modern fundamentals */
 html {
@@ -1510,7 +1504,17 @@ body.dark-theme {
   border-bottom-color: rgba(71, 85, 105, 0.5);
 }
 
+.dark .prose h1 {
+  color: #f1f5f9 !important;
+  border-bottom-color: rgba(71, 85, 105, 0.5);
+}
+
 .dark-theme .prose h2 {
+  color: #e2e8f0 !important;
+  border-bottom-color: rgba(71, 85, 105, 0.3);
+}
+
+.dark .prose h2 {
   color: #e2e8f0 !important;
   border-bottom-color: rgba(71, 85, 105, 0.3);
 }
@@ -1524,6 +1528,10 @@ body.dark-theme {
 }
 
 .dark-theme .prose p {
+  color: var(--text-secondary) !important;
+}
+
+.dark .prose p {
   color: var(--text-secondary) !important;
 }
 
@@ -1548,6 +1556,11 @@ body.dark-theme {
   border-color: rgba(71, 85, 105, 0.5);
 }
 
+.dark .toc-container {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border-color: rgba(71, 85, 105, 0.5);
+}
+
 .dark-theme .toc-heading {
   color: #f1f5f9;
 }
@@ -1556,7 +1569,15 @@ body.dark-theme {
   color: #cbd5e1;
 }
 
+.dark .toc-link {
+  color: #d1d5db;
+}
+
 .dark-theme .toc-link:hover {
+  color: #a5b4fc;
+}
+
+.dark .toc-link:hover {
   color: #a5b4fc;
 }
 
@@ -1593,6 +1614,9 @@ body.dark-theme {
 .dark-theme a { color: var(--color-primary-400); }
 .dark-theme a:hover { color: var(--color-primary-300); }
 
+.dark a { color: var(--color-primary-400); text-decoration-thickness: 1px; }
+.dark a:hover { color: var(--color-primary-300); text-underline-offset: 2px; }
+
 .dark-theme .bg-indigo-600 {
   background: linear-gradient(135deg, #4f46e5, #7c3aed) !important;
 }
@@ -1605,12 +1629,26 @@ body.dark-theme {
   background: rgba(99, 102, 241, 0.1);
 }
 
+.dark .section-highlight {
+  background: rgba(99, 102, 241, 0.1);
+}
+
 .dark-theme .section-highlight:target {
   background: rgba(99, 102, 241, 0.2);
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3);
 }
 
+.dark .section-highlight:target {
+  background: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3);
+}
+
 .dark-theme .back-to-top {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+.dark .back-to-top {
   background: linear-gradient(135deg, #4f46e5, #7c3aed);
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
 }
@@ -1624,6 +1662,11 @@ body.dark-theme {
 }
 
 .dark-theme footer {
+  background: linear-gradient(135deg, #0f172a, #1e293b) !important;
+  border-top: 1px solid rgba(30, 41, 59, 0.3);
+}
+
+.dark footer {
   background: linear-gradient(135deg, #0f172a, #1e293b) !important;
   border-top: 1px solid rgba(30, 41, 59, 0.3);
 }
@@ -1648,7 +1691,18 @@ body.dark-theme {
   color: #cbd5e1;
 }
 
+.dark .source-reference {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: #475569;
+  color: #cbd5e1;
+}
+
 .dark-theme .source-reference:hover {
+  background: rgba(30, 41, 59, 0.7);
+  border-color: #6366f1;
+}
+
+.dark .source-reference:hover {
   background: rgba(30, 41, 59, 0.7);
   border-color: #6366f1;
 }
@@ -1658,7 +1712,17 @@ body.dark-theme {
   border-color: var(--color-primary-900);
 }
 
+.dark .subsection-title {
+  color: var(--color-neutral-200);
+  border-color: var(--color-primary-900);
+}
+
 .dark-theme .read-more-link {
+  color: #a5b4fc;
+  background: rgba(79, 70, 229, 0.1);
+}
+
+.dark .read-more-link {
   color: #a5b4fc;
   background: rgba(79, 70, 229, 0.1);
 }
@@ -1668,13 +1732,29 @@ body.dark-theme {
   background: rgba(79, 70, 229, 0.2);
 }
 
+.dark .read-more-link:hover {
+  color: #c7d2fe;
+  background: rgba(79, 70, 229, 0.2);
+}
+
 /* Improved focus states for dark theme */
 .dark-theme .focus-visible {
   outline-color: #a5b4fc;
 }
 
+.dark .focus-visible {
+  outline-color: #a5b4fc;
+}
+
 /* Tag styling for dark theme with better contrast */
 .dark-theme .tag {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #a5b4fc;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.2);
+}
+
+.dark .tag {
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   border: 1px solid rgba(99, 102, 241, 0.3);
   color: #a5b4fc;
@@ -1687,7 +1767,20 @@ body.dark-theme {
   color: #c7d2fe;
 }
 
+.dark .tag:hover {
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+  border-color: rgba(99, 102, 241, 0.6);
+  color: #c7d2fe;
+}
+
 .dark-theme .tag-primary {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  border: 1px solid rgba(124, 58, 237, 0.4);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+.dark .tag-primary {
   background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
   color: white;
   border: 1px solid rgba(124, 58, 237, 0.4);
@@ -1701,7 +1794,21 @@ body.dark-theme {
   box-shadow: 0 4px 12px rgba(71, 85, 105, 0.4);
 }
 
+.dark .tag-secondary {
+  background: linear-gradient(135deg, #475569 0%, #64748b 100%);
+  color: white;
+  border: 1px solid rgba(100, 116, 139, 0.4);
+  box-shadow: 0 4px 12px rgba(71, 85, 105, 0.4);
+}
+
 .dark-theme .tag-success {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
+}
+
+.dark .tag-success {
   background: linear-gradient(135deg, #059669 0%, #10b981 100%);
   color: white;
   border: 1px solid rgba(16, 185, 129, 0.4);
@@ -1715,6 +1822,13 @@ body.dark-theme {
   box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
 }
 
+.dark .tag-warning {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+  color: white;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+}
+
 .dark-theme .tag-danger {
   background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
   color: white;
@@ -1722,7 +1836,21 @@ body.dark-theme {
   box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
 }
 
+.dark .tag-danger {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  color: white;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+}
+
 .dark-theme .tag-info {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  color: white;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.dark .tag-info {
   background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
   color: white;
   border: 1px solid rgba(59, 130, 246, 0.4);
@@ -1978,22 +2106,31 @@ body.dark-theme {
 
 .prose code {
   font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
-  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
-  color: #4f46e5;
-  padding: 0.25rem 0.5rem;
+  background: #f7fafc; /* light bg for inline code */
+  color: #2d3748; /* slate-800 */
+  padding: 0.15rem 0.4rem;
   border-radius: 0.375rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #e2e8f0; /* gray-200 */
 }
 
 .prose pre {
-  background: linear-gradient(135deg, #1f2937, #374151);
-  color: #f9fafb;
-  padding: 1.5rem;
+  background: #f7fafc; /* light theme pre bg */
+  color: #1f2937; /* slate-800 */
+  padding: 1.25rem;
   border-radius: 0.75rem;
   overflow-x: auto;
-  margin: 1.5rem 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1.25rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0; /* gray-200 */
   position: relative;
+}
+
+/* Ensure code inside pre inherits the correct text color and has no own bg */
+.prose pre code {
+  background: transparent;
+  color: inherit;
+  border: none;
+  padding: 0;
 }
 
 .prose pre::before {
@@ -2040,10 +2177,11 @@ body.dark-theme {
   color: var(--color-neutral-100);
 }
 
-.dark-theme .prose code {
-  background: var(--color-neutral-800);
-  color: var(--color-primary-400);
-  border-color: var(--color-neutral-700);
+.dark-theme .prose code,
+.dark .prose code {
+  background: #1f2937; /* slate-800 */
+  color: #e2e8f0; /* gray-200 */
+  border-color: #374151; /* slate-700 */
 }
 
 .dark-theme .prose blockquote {
@@ -2208,9 +2346,17 @@ body.dark-theme {
   border-color: var(--color-neutral-700);
 }
 
-.dark-theme .prose pre {
-  background: linear-gradient(135deg, var(--color-neutral-900), var(--color-neutral-800));
-  border-color: var(--color-neutral-700);
+.dark-theme .prose pre,
+.dark .prose pre {
+  background: #111827; /* slate-900 */
+  color: #e5e7eb; /* gray-200 */
+  border-color: #374151; /* slate-700 */
+}
+
+.dark .prose pre code,
+.dark-theme .prose pre code {
+  background: transparent;
+  color: inherit;
 }
 
 .dark-theme .prose pre code {
@@ -2242,6 +2388,20 @@ body.dark-theme {
   .text-secondary { color: var(--text-secondary) !important; }
   .text-muted { color: var(--text-muted) !important; }
   .text-inverse { color: var(--text-inverse) !important; }
+
+  /* Background gradient utilities for app surfaces */
+  .bg-gradient-app-light { background: var(--bg-gradient-light) !important; }
+  .bg-gradient-app-dark { background: var(--bg-gradient-dark) !important; }
+
+  /* Brand gradient utilities */
+  .bg-gradient-primary { background: var(--gradient-primary) !important; }
+  .bg-gradient-secondary { background: var(--gradient-secondary) !important; }
+  .bg-gradient-accent { background: var(--gradient-accent) !important; }
+
+  /* Shadow utilities using CSS variables */
+  .shadow-primary-var { box-shadow: var(--shadow-primary) !important; }
+  .shadow-secondary-var { box-shadow: var(--shadow-secondary) !important; }
+  .shadow-accent-var { box-shadow: var(--shadow-accent) !important; }
 }
 
 /* Custom utility mappings for non-standard dark: classes used in JSX */

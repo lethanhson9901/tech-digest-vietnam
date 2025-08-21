@@ -37,104 +37,11 @@ const MarkdownRenderer = ({ content }) => {
 
   const processedContent = processContent(content);
 
-  // Custom components for better rendering with Vietnamese-optimized typography
+  // Rút gọn overrides: để typography/prose xử lý, chỉ thêm copy cho code block
   const components = {
-    // Improve heading styles with auto-ID generation
-    h1: ({ node, ...props }) => {
-      const id = props.children.toString()
-        .toLowerCase()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/[\s_-]+/g, '-')
-        .replace(/^-+|-+$/g, '');
-      
-      return (
-        <h1 
-          id={id} 
-          className="text-3xl font-bold text-primary mt-8 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 leading-tight" 
-          {...props}
-        >
-          {props.children}
-        </h1>
-      );
-    },
-    h2: ({ node, ...props }) => {
-      const text = props.children.toString();
-      const id = text
-        .toLowerCase()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/[\s_-]+/g, '-')
-        .replace(/^-+|-+$/g, '');
-      
-      return (
-        <h2 
-          id={id} 
-          className="text-2xl font-bold text-primary mt-6 mb-3 pb-2 border-b border-gray-200 dark:border-gray-700 leading-tight" 
-          {...props}
-        >
-          {props.children}
-        </h2>
-      );
-    },
-    h3: ({ node, ...props }) => {
-      const id = props.children.toString()
-        .toLowerCase()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/[\s_-]+/g, '-')
-        .replace(/^-+|-+$/g, '');
-      
-      return (
-        <h3 
-          id={id} 
-          className="text-xl font-semibold text-primary mt-5 mb-2 leading-snug" 
-          {...props}
-        >
-          {props.children}
-        </h3>
-      );
-    },
-    h4: ({ node, ...props }) => {
-      const id = props.children.toString()
-        .toLowerCase()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/[\s_-]+/g, '-')
-        .replace(/^-+|-+$/g, '');
-      
-      return (
-        <h4 
-          id={id} 
-          className="text-lg font-semibold text-secondary mt-4 mb-2 leading-snug" 
-          {...props}
-        >
-          {props.children}
-        </h4>
-      );
-    },
-    // Style paragraphs with Vietnamese-optimized typography
-    p: ({ node, ...props }) => (
-      <p className="text-base leading-relaxed text-secondary mb-4" {...props} />
-    ),
-    // Style links
-    a: ({ node, ...props }) => (
-      <a className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 underline font-medium transition-colors duration-200" {...props}>
-        {props.children}
-      </a>
-    ),
-    // Style list items with better spacing for Vietnamese
-    li: ({ node, ordered, ...props }) => (
-      <li className="text-base leading-relaxed text-secondary my-1 ml-4" {...props} />
-    ),
-    // Style blockquotes with serif font
-    blockquote: ({ node, ...props }) => (
-      <blockquote className="font-serif text-lg leading-relaxed pl-4 border-l-4 border-indigo-300 italic text-secondary my-4" {...props} />
-    ),
-    // Style code elements
     code: ({ node, inline, className, children, ...props }) => {
       if (inline) {
-        return (
-          <span className="font-mono bg-neutral-100 dark:bg-gray-800 text-indigo-700 dark:text-indigo-400 px-1 py-0.5 rounded text-sm" {...props}>
-            {children}
-          </span>
-        );
+        return <code {...props}>{children}</code>;
       }
       const codeText = String(children).replace(/\n$/, '');
       const langMatch = /language-(\w+)/.exec(className || '');
@@ -149,24 +56,17 @@ const MarkdownRenderer = ({ content }) => {
           <button
             type="button"
             onClick={handleCopy}
-            className="absolute top-2 right-2 z-10 px-2 py-1 text-xs rounded bg-neutral-800 text-inverse opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute top-2 right-2 z-10 px-2 py-1 text-xs rounded bg-neutral-800 text-white opacity-0 group-hover:opacity-100 transition-opacity"
             aria-label="Sao chép mã"
           >
             Copy
           </button>
-          <pre className="bg-neutral-100 dark:bg-gray-900 text-sm rounded-lg overflow-x-auto p-4 border border-neutral-200 dark:border-gray-700">
-            <code className={`font-mono language-${language}`}>{codeText}</code>
+          <pre className="bg-neutral-50 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-100 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-x-auto p-4">
+            <code className={`font-mono text-sm language-${language}`}>{codeText}</code>
           </pre>
         </div>
       );
     },
-    // Style emphasis and strong with better Vietnamese support
-    em: ({ node, ...props }) => (
-      <em className="italic text-muted font-medium" {...props} />
-    ),
-    strong: ({ node, ...props }) => (
-      <strong className="font-bold text-primary" {...props} />
-    ),
   };
 
   return (

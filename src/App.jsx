@@ -1,26 +1,26 @@
 // src/App.jsx
 import React, { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import ArchivePage from './pages/ArchivePage';
-import CombinedAnalysisPage from './pages/CombinedAnalysisPage';
-import CombinedAnalysisDetailPage from './pages/CombinedAnalysisDetailPage';
-import LatestCombinedAnalysisPage from './pages/LatestCombinedAnalysisPage';
-import HomePage from './pages/HomePage';
-import LatestReportPage from './pages/LatestReportPage';
-import LatestRedditReportPage from './pages/LatestRedditReportPage';
-import NotFoundPage from './pages/NotFoundPage';
-import RedditReportsArchivePage from './pages/RedditReportsArchivePage';
-import RedditReportDetailPage from './pages/RedditReportDetailPage';
-import ReportDetailPage from './pages/ReportDetailPage';
 import BackToTop from './components/BackToTop';
 import FontDemo from './components/FontDemo';
+import Header from './components/Header';
+import ArchivePage from './pages/ArchivePage';
+import CombinedAnalysisDetailPage from './pages/CombinedAnalysisDetailPage';
+import CombinedAnalysisPage from './pages/CombinedAnalysisPage';
+import HomePage from './pages/HomePage';
+import LatestCombinedAnalysisPage from './pages/LatestCombinedAnalysisPage';
+import LatestRedditReportPage from './pages/LatestRedditReportPage';
+import LatestReportPage from './pages/LatestReportPage';
+import NotFoundPage from './pages/NotFoundPage';
+import RedditReportDetailPage from './pages/RedditReportDetailPage';
+import RedditReportsArchivePage from './pages/RedditReportsArchivePage';
+import ReportDetailPage from './pages/ReportDetailPage';
 
 // Enhanced UX Components
-import { ToastProvider } from './components/ToastNotification';
-import { FocusProvider, SkipToMain, KeyboardShortcut } from './components/FocusManager';
+import { FocusProvider, KeyboardShortcut, SkipToMain } from './components/FocusManager';
 import LoadingSpinner from './components/LoadingSpinner';
 import SocialLinks from './components/SocialLinks';
+import { ToastProvider } from './components/ToastNotification';
 
 import './App.css';
 
@@ -63,11 +63,11 @@ const App = () => {
     localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
     
     if (isDarkMode) {
-      document.body.classList.add('dark-theme');
       document.documentElement.classList.add('dark');
+      document.body.classList.add('dark-theme');
     } else {
-      document.body.classList.remove('dark-theme');
       document.documentElement.classList.remove('dark');
+      document.body.classList.remove('dark-theme');
     }
 
     // Update meta theme-color for mobile browsers
@@ -107,29 +107,22 @@ const App = () => {
   if (isLoading) {
     return (
       <div 
-        className="min-h-screen flex items-center justify-center relative overflow-hidden"
-        style={{ background: 'var(--bg-gradient-light)' }}
+        className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-app-light"
         role="status"
         aria-live="polite"
         aria-label="Đang tải ứng dụng"
       >
         {/* Background elements */}
         <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-          <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-20 animate-float-gentle"
-               style={{ background: 'var(--gradient-primary)' }}></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full opacity-20 animate-float-gentle"
-               style={{ background: 'var(--gradient-secondary)', animationDelay: '-3s' }}></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-20 animate-float-gentle bg-gradient-primary"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full opacity-20 animate-float-gentle bg-gradient-secondary" style={{ animationDelay: '-3s' }}></div>
         </div>
 
         <div className="text-center relative z-10 max-w-md mx-auto px-6">
           <div className="relative mb-8">
             {/* Main logo with enhanced accessibility */}
             <div 
-              className="w-24 h-24 mx-auto mb-6 rounded-2xl flex items-center justify-center animate-bounce-soft relative focus:outline-none focus:ring-4 focus:ring-offset-4"
-              style={{ 
-                background: 'var(--gradient-primary)',
-                focusRingColor: 'var(--color-primary-300)'
-              }}
+              className="w-24 h-24 mx-auto mb-6 rounded-2xl flex items-center justify-center animate-bounce-soft relative focus:outline-none focus:ring-4 focus:ring-offset-4 bg-gradient-primary"
               tabIndex="0"
               role="img"
               aria-label="Logo Tech Digest Vietnam"
@@ -139,16 +132,13 @@ const App = () => {
                       d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
               </svg>
             </div>
-            <div className="absolute inset-0 w-24 h-24 mx-auto rounded-2xl animate-glow-pulse opacity-60"
-                 style={{ background: 'var(--gradient-primary)' }} aria-hidden="true" />
+            <div className="absolute inset-0 w-24 h-24 mx-auto rounded-2xl animate-glow-pulse opacity-60 bg-gradient-primary" aria-hidden="true" />
           </div>
           
-          <h1 className="text-3xl font-bold mb-3 animate-fadeIn"
-              style={{ color: 'var(--color-primary-700)' }}>
+          <h1 className="text-3xl font-bold mb-3 animate-fadeIn text-primary">
             Tech Digest Vietnam
           </h1>
-          <p className="text-lg mb-6 animate-fadeIn"
-             style={{ color: 'var(--color-neutral-600)' }}>
+          <p className="text-lg mb-6 animate-fadeIn text-secondary">
             Đang khởi tạo ứng dụng...
           </p>
           
@@ -180,11 +170,7 @@ const App = () => {
             {/* Offline indicator */}
             {!isOnline && (
               <div 
-                className="fixed top-0 left-0 right-0 z-50 p-3 text-center font-medium"
-                style={{
-                  background: 'var(--color-accent-orange)',
-                  color: 'white'
-                }}
+                className="fixed top-0 left-0 right-0 z-50 p-3 text-center font-medium bg-accent-orange text-white"
                 role="alert"
                 aria-live="assertive"
               >
@@ -193,8 +179,7 @@ const App = () => {
             )}
 
             <div 
-              className="min-h-screen transition-colors duration-500" 
-              style={{ background: isDarkMode ? 'var(--bg-gradient-dark)' : 'var(--bg-gradient-light)' }}
+              className={`min-h-screen transition-colors duration-500 ${isDarkMode ? 'bg-gradient-app-dark' : 'bg-gradient-app-light'}`}
             >
               <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
               

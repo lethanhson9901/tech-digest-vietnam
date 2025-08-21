@@ -170,18 +170,8 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
       isScrolled 
         ? 'shadow-xl border-b' 
         : ''
-    }`}
+    } ${isScrolled ? (isDarkMode ? 'bg-[rgba(15,23,42,0.95)] border-neutral-700' : 'bg-[rgba(99,102,241,0.95)] border-primary-400') : 'bg-gradient-primary'}`}
     style={{
-      background: isScrolled 
-        ? isDarkMode 
-          ? 'rgba(15, 23, 42, 0.95)' 
-          : 'rgba(99, 102, 241, 0.95)'
-        : 'var(--gradient-primary)',
-      borderBottomColor: isScrolled 
-        ? isDarkMode 
-          ? 'var(--color-neutral-700)' 
-          : 'var(--color-primary-400)'
-        : 'transparent',
       minHeight: navHeight,
       boxShadow: navShadow
     }}>
@@ -190,8 +180,7 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
           {/* Enhanced Logo Section */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="bg-white/95 backdrop-blur-sm p-3 rounded-2xl shadow-xl transition-all duration-300 group-hover:shadow-2xl group-hover:scale-105 group-hover:bg-white"
-                   style={{ boxShadow: 'var(--shadow-accent)' }}>
+              <div className="bg-white/95 backdrop-blur-sm p-3 rounded-2xl shadow-xl transition-all duration-300 group-hover:shadow-2xl group-hover:scale-105 group-hover:bg-white shadow-accent-var">
                 <svg className="h-8 w-8 transition-colors duration-300" 
                      style={{ color: 'var(--color-primary-600)' }}
                      viewBox="0 0 20 20" fill="currentColor">
