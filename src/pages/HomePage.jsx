@@ -195,7 +195,7 @@ const HomePage = () => {
         <h2 className="text-4xl font-bold text-center mb-12 text-primary">
           Khám phá thêm
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Archive Card */}
           <Link 
             to="/archive" 
@@ -247,24 +247,52 @@ const HomePage = () => {
               </svg>
             </div>
           </Link>
+
+          {/* Reddit Reports Card */}
           <Link 
-            to="/latest" 
+            to="/reddit-reports" 
             className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
           >
             <div className="flex items-center mb-6">
-              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-accent-emerald-light/10 dark:bg-dark-accent-emerald/10">
-                <svg className="h-8 w-8 text-accent-emerald dark:text-dark-accent-emerald" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-orange-100 dark:bg-orange-900/20">
+                <svg className="h-8 w-8 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-accent-emerald dark:group-hover:text-dark-accent-emerald">
-              📊 Phân tích tổng hợp
+            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-orange-600 dark:group-hover:text-orange-400">
+              💬 Báo cáo Reddit
             </h3>
             <p className="leading-relaxed mb-4 text-secondary">
-              Phân tích chuyên sâu các xu hướng công nghệ và insights từ dữ liệu.
+              Thảo luận và insights từ cộng đồng Reddit về công nghệ Việt Nam.
             </p>
-            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-accent-emerald dark:text-dark-accent-emerald">
+            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-orange-600 dark:text-orange-400">
+              Xem ngay
+              <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </Link>
+
+          {/* HackerNews Reports Card */}
+          <Link 
+            to="/hackernews-reports" 
+            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
+          >
+            <div className="flex items-center mb-6">
+              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-orange-100 dark:bg-orange-900/20">
+                <svg className="h-8 w-8 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-orange-600 dark:group-hover:text-orange-400">
+              🔥 Tin nổi bật HN
+            </h3>
+            <p className="leading-relaxed mb-4 text-secondary">
+              Những bài viết nổi bật và thảo luận từ HackerNews về công nghệ.
+            </p>
+            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-orange-600 dark:text-orange-400">
               Xem ngay
               <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -319,7 +347,7 @@ const HomePage = () => {
       </div>
 
       {/* Quick Links with enhanced animations */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
         <Link to="/archive" className="interactive-hover group">
           <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl border border-blue-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-gray-500 transition-all duration-300">
             <div className="w-12 h-12 bg-blue-500 dark:bg-blue-600 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
@@ -341,6 +369,30 @@ const HomePage = () => {
             </div>
             <h3 className="text-lg font-semibold text-primary mb-2">Latest Report</h3>
             <p className="text-secondary text-sm">Read the most recent tech insights</p>
+          </div>
+        </Link>
+
+        <Link to="/reddit-reports" className="interactive-hover group">
+          <div className="bg-gradient-to-br from-orange-50 to-red-100 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl border border-orange-200 dark:border-gray-600 hover:border-orange-300 dark:hover:border-gray-500 transition-all duration-300">
+            <div className="w-12 h-12 bg-orange-500 dark:bg-orange-600 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-primary mb-2">Reddit Reports</h3>
+            <p className="text-secondary text-sm">Community discussions from Reddit</p>
+          </div>
+        </Link>
+
+        <Link to="/hackernews-reports" className="interactive-hover group">
+          <div className="bg-gradient-to-br from-orange-50 to-red-100 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl border border-orange-200 dark:border-gray-600 hover:border-orange-300 dark:hover:border-gray-500 transition-all duration-300">
+            <div className="w-12 h-12 bg-orange-500 dark:bg-orange-600 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-primary mb-2">HN Reports</h3>
+            <p className="text-secondary text-sm">Top stories from HackerNews</p>
           </div>
         </Link>
 

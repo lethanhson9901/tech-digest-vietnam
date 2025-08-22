@@ -92,6 +92,18 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
     ),
     '/reddit-reports-archive': (
       <svg className="w-5 h-5 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+    ),
+    '/hackernews-reports-archive': (
+      <svg className="w-5 h-5 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
+    ),
+    '/combined-analysis/latest': (
+      <svg className="w-5 h-5 mr-2 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+    ),
+    '/reddit-reports': (
+      <svg className="w-5 h-5 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+    ),
+    '/hackernews-reports': (
+      <svg className="w-5 h-5 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
     )
   };
 
@@ -121,23 +133,42 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
       )
     },
     {
-      path: '/combined-analysis/latest',
-      label: 'Phân tích tổng hợp',
+      label: 'Báo cáo',
+      isDropdown: true,
       icon: (
         <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
           <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
-          <path d="M10 3a1 1 0 011 1v.5a1.5 1.5 0 001.5 1.5H13a1 1 0 110 2h-.5A1.5 1.5 0 0011 9.5V10a1 1 0 11-2 0v-.5A1.5 1.5 0 007.5 8H7a1 1 0 110-2h.5A1.5 1.5 0 009 4.5V4a1 1 0 011-1z" />
         </svg>
-      )
-    },
-    {
-      path: '/reddit-reports',
-      label: 'Báo cáo Reddit',
-      icon: (
-        <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      )
+      ),
+      dropdownItems: [
+        {
+          path: '/combined-analysis/latest',
+          label: 'Phân tích tổng hợp',
+          icon: (
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          )
+        },
+        {
+          path: '/reddit-reports',
+          label: 'Thảo luận Reddit',
+          icon: (
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          )
+        },
+        {
+          path: '/hackernews-reports',
+          label: 'Tin nổi bật HN',
+          icon: (
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+            </svg>
+          )
+        }
+      ]
     },
     {
       label: 'Kho lưu trữ',
@@ -151,15 +182,39 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
       dropdownItems: [
         {
           path: '/archive',
-          label: 'Kho báo cáo',
+          label: 'Báo cáo tổng hợp',
+          icon: (
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          )
         },
         {
           path: '/combined-analysis',
-          label: 'Kho phân tích',
+          label: 'Phân tích chuyên sâu',
+          icon: (
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          )
         },
         {
           path: '/reddit-reports-archive',
-          label: 'Kho Reddit',
+          label: 'Thảo luận Reddit',
+          icon: (
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          )
+        },
+        {
+          path: '/hackernews-reports-archive',
+          label: 'Tin nổi bật HN',
+          icon: (
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+            </svg>
+          )
         }
       ]
     }
@@ -237,7 +292,7 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
                     </button>
                     <div
                       id={`dropdown-${item.label}`}
-                      className={`absolute left-0 mt-2 w-56 bg-white/95 dark:bg-neutral-800/95 rounded-xl shadow-2xl dark:shadow-dark-xl py-2 z-50 transition-all duration-200 ease-in-out pointer-events-auto
+                      className={`absolute left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl shadow-2xl py-2 z-50 transition-all duration-200 ease-in-out pointer-events-auto border border-gray-200 dark:border-gray-700
                         ${openDropdown === item.label ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
                       style={{
                         backdropFilter: 'blur(8px)',
@@ -250,13 +305,13 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
                         <Link
                           key={sub.path}
                           to={sub.path}
-                          className={`flex items-center px-5 py-3 text-secondary hover:bg-primary-50 dark:hover:bg-neutral-700 transition-colors font-medium min-h-[44px] min-w-[44px] rounded-lg ${location.pathname.startsWith(sub.path) ? 'bg-primary-100 dark:bg-primary-700/30 font-semibold text-primary' : ''}`}
+                          className={`flex items-center px-5 py-3 text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium min-h-[44px] min-w-[44px] rounded-lg ${location.pathname.startsWith(sub.path) ? 'bg-gray-200 dark:bg-gray-600 font-semibold text-gray-900 dark:text-white' : ''}`}
                           tabIndex={0}
                           role="menuitem"
                           aria-current={location.pathname.startsWith(sub.path) ? 'page' : undefined}
                           onClick={() => { setOpenDropdown(null); setIsMenuOpen(false); }}
                         >
-                          {dropdownIcons[sub.path]}
+                          {sub.icon || dropdownIcons[sub.path]}
                           {sub.label}
                         </Link>
                       ))}
