@@ -19,7 +19,6 @@ import RedditReportDetailPage from './pages/RedditReportDetailPage';
 import RedditReportsArchivePage from './pages/RedditReportsArchivePage';
 import ReportDetailPage from './pages/ReportDetailPage';
 
-
 // Enhanced UX Components
 import { FocusProvider, KeyboardShortcut, SkipToMain } from './components/FocusManager';
 import LoadingSpinner from './components/LoadingSpinner';

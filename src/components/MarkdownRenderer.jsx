@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-const MarkdownRenderer = ({ content }) => {
+const MarkdownRenderer = ({ content, autoTOC = false }) => {
   useEffect(() => {
     // Add IDs to headings for TOC navigation after rendering
     const headings = document.querySelectorAll('.prose h2, .prose h3, .prose h4');
@@ -18,12 +18,57 @@ const MarkdownRenderer = ({ content }) => {
     });
   }, [content]);
 
+  // Generate table of contents from h2 headings
+  const generateTOC = (content) => {
+    if (!content) return '';
+    
+    const lines = content.split('\n');
+    const h2Headings = [];
+    
+    lines.forEach(line => {
+      const trimmedLine = line.trim();
+      if (trimmedLine.startsWith('## ') && !trimmedLine.startsWith('###')) {
+        const headingText = trimmedLine.replace('## ', '').trim();
+        if (headingText) {
+          const id = headingText
+            .toLowerCase()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/[\s_-]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+          h2Headings.push({ text: headingText, id });
+        }
+      }
+    });
+    
+    if (h2Headings.length === 0) return '';
+    
+    let toc = '## Mục lục\n\n';
+    h2Headings.forEach((heading, index) => {
+      toc += `${index + 1}. [${heading.text}](#${heading.id})\n`;
+    });
+    toc += '\n---\n\n';
+    
+    return toc;
+  };
+
+  // Check if content already has a table of contents
+  const hasTOC = (content) => {
+    if (!content) return false;
+    const lines = content.split('\n');
+    for (let i = 0; i < Math.min(10, lines.length); i++) {
+      const line = lines[i].trim();
+      if (line === '## Mục lục' || line.toLowerCase().includes('mục lục') || line.toLowerCase().includes('table of contents')) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   // Pre-process content to remove visible HTML ID tags, backticks, and replace &nbsp; with newlines
   const processContent = (content) => {
     if (!content) return '';
     
-    // Remove the visible ID attributes from headings and replace &nbsp; with newlines
-    return content
+    let processedContent = content
       // Replace &nbsp; with newline
       .replace(/&nbsp;/g, '\n')
       // Replace patterns like <a id="something"></a> with empty string
@@ -35,6 +80,16 @@ const MarkdownRenderer = ({ content }) => {
       // Remove any remaining id="something" from the text
       .replace(/<a id="([^"]+)">/g, '')
       .replace(/<\/a>/g, '');
+    
+    // Add table of contents if autoTOC is enabled and not already present
+    if (autoTOC && !hasTOC(processedContent)) {
+      const toc = generateTOC(processedContent);
+      if (toc) {
+        processedContent = toc + processedContent;
+      }
+    }
+    
+    return processedContent;
   };
 
   const processedContent = processContent(content);
