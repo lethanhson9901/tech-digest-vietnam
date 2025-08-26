@@ -215,35 +215,23 @@ const ArticleDetailModal = ({ isOpen, onClose, articleData }) => {
                 </div>
               )}
 
-              {/* Community Insights */}
-              {articleData.communityInsights && articleData.communityInsights.length > 0 && (
+              {/* Community Reaction */}
+              {articleData.communityReaction && (
                 <div className="bg-slate-50 dark:bg-slate-700/50 p-6 rounded-xl border border-slate-200 dark:border-slate-600">
                   <h4 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center">
                     <svg className="w-5 h-5 mr-2 text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
-                    Thảo luận cộng đồng
+                    Phản ứng cộng đồng
                   </h4>
-                  <div className="space-y-4">
-                    {articleData.communityInsights.map((insight, index) => (
-                      <div key={index} className="bg-white dark:bg-slate-600 p-4 rounded-lg border border-slate-200 dark:border-slate-500">
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="text-sm font-semibold text-slate-900 dark:text-slate-100 bg-slate-200 dark:bg-slate-500 px-3 py-1 rounded-full">
-                            {insight.author}
-                          </span>
-                        </div>
-                        <blockquote className="text-slate-700 dark:text-slate-300 italic mb-3 text-lg border-l-4 border-slate-400 pl-4">
-                          "{insight.quote}"
-                        </blockquote>
-                        <p className="text-slate-600 dark:text-slate-400">{insight.analysis}</p>
-                      </div>
-                    ))}
+                  <div className="bg-white dark:bg-slate-600 p-4 rounded-lg border border-slate-200 dark:border-slate-500">
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-lg">{articleData.communityReaction}</p>
                   </div>
                 </div>
               )}
 
-              {/* Technical Discussions */}
-              {articleData.technicalDiscussions && articleData.technicalDiscussions.length > 0 && (
+              {/* Technical Discussion */}
+              {articleData.technicalDiscussion && (
                 <div className="bg-slate-50 dark:bg-slate-700/50 p-6 rounded-xl border border-slate-200 dark:border-slate-600">
                   <h4 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center">
                     <svg className="w-5 h-5 mr-2 text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -251,49 +239,8 @@ const ArticleDetailModal = ({ isOpen, onClose, articleData }) => {
                     </svg>
                     Thảo luận kỹ thuật
                   </h4>
-                  <div className="space-y-4">
-                    {articleData.technicalDiscussions.map((discussion, index) => (
-                      <div key={index} className="bg-white dark:bg-slate-600 p-4 rounded-lg border border-slate-200 dark:border-slate-500">
-                        <h5 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">
-                          {discussion.topic}
-                        </h5>
-                        {discussion.viewpoints && discussion.viewpoints.length > 0 && (
-                          <div className="space-y-3">
-                            {discussion.viewpoints.map((viewpoint, vIndex) => (
-                              <div key={vIndex} className="border-l-4 border-slate-400 pl-4">
-                                <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2">
-                                  {viewpoint.perspective}
-                                </p>
-                                {viewpoint.pros && (
-                                  <p className="text-sm text-green-700 dark:text-green-400 mb-2 bg-green-50 dark:bg-green-900/20 p-2 rounded">
-                                    <strong>Ưu điểm:</strong> {viewpoint.pros}
-                                  </p>
-                                )}
-                                {viewpoint.cons && (
-                                  <p className="text-sm text-red-700 dark:text-red-400 mb-2 bg-red-50 dark:bg-red-900/20 p-2 rounded">
-                                    <strong>Nhược điểm:</strong> {viewpoint.cons}
-                                  </p>
-                                )}
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                        {discussion.conclusion && (
-                          <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                            <p className="text-sm text-blue-800 dark:text-blue-300">
-                              <strong>Kết luận:</strong> {discussion.conclusion}
-                            </p>
-                          </div>
-                        )}
-                        {discussion.lessons && (
-                          <div className="mt-3 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
-                            <p className="text-sm text-purple-800 dark:text-purple-300">
-                              <strong>Bài học:</strong> {discussion.lessons}
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                  <div className="bg-white dark:bg-slate-600 p-4 rounded-lg border border-slate-200 dark:border-slate-500">
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-lg whitespace-pre-line">{articleData.technicalDiscussion}</p>
                   </div>
                 </div>
               )}
@@ -365,41 +312,36 @@ const HackerNewsReportView = ({ report, isLoading, error }) => {
     }
   }
 
-  // Filter and process articles with search and sort
-  const processedSections = useMemo(() => {
-    if (!reportData?.sections) return [];
+  // Filter and process stories with search and sort
+  const processedStories = useMemo(() => {
+    if (!reportData?.stories) return [];
 
-    return reportData.sections.map(section => {
-      let filteredArticles = section.articles || [];
-      
-      // Apply search filter
-      if (searchTerm) {
-        filteredArticles = filteredArticles.filter(article =>
-          article.headline?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          article.summary?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          article.tags?.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-        );
+    let filteredStories = reportData.stories;
+    
+    // Apply search filter
+    if (searchTerm) {
+      filteredStories = filteredStories.filter(story =>
+        story.headline?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        story.summary?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        story.tags?.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+    }
+
+    // Apply sorting
+    filteredStories = [...filteredStories].sort((a, b) => {
+      switch (sortBy) {
+        case 'points':
+          return (b._source_story?.points || 0) - (a._source_story?.points || 0);
+        case 'comments':
+          return (b._source_story?.num_comments || 0) - (a._source_story?.num_comments || 0);
+        case 'recent':
+        default:
+          return 0; // Keep original order
       }
+    });
 
-      // Apply sorting
-      filteredArticles = [...filteredArticles].sort((a, b) => {
-        switch (sortBy) {
-          case 'points':
-            return b.points - a.points;
-          case 'comments':
-            return b.numComments - a.numComments;
-          case 'recent':
-          default:
-            return 0; // Keep original order
-        }
-      });
-
-      return {
-        ...section,
-        articles: filteredArticles
-      };
-    }).filter(section => section.articles.length > 0);
-  }, [reportData?.sections, searchTerm, sortBy]);
+    return filteredStories;
+  }, [reportData?.stories, searchTerm, sortBy]);
 
   if (isLoading) {
     return (
@@ -418,16 +360,11 @@ const HackerNewsReportView = ({ report, isLoading, error }) => {
   }
 
   const { 
-    reportTitle, 
-    analysisDate, 
-    totalStories, 
-    executiveSummary, 
-    trendingTopics = [],
-    communityMood,
-    technicalTrends = []
+    report_title, 
+    analysis_date, 
+    total_stories_analyzed, 
+    stories = []
   } = reportData;
-
-
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -452,36 +389,24 @@ const HackerNewsReportView = ({ report, isLoading, error }) => {
                 </div>
                 <div>
                   <h1 className="text-3xl lg:text-4xl font-bold mb-3 text-white leading-tight">
-                    {reportTitle || 'Tin nổi bật HackerNews'}
+                    {report_title || 'Tin nổi bật HackerNews'}
                   </h1>
                   <div className="flex items-center space-x-6 text-white/90">
                     <div className="flex items-center space-x-2">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
-                      <span className="font-medium">{analysisDate && format(new Date(analysisDate), 'dd/MM/yyyy')}</span>
+                      <span className="font-medium">{analysis_date && format(new Date(analysis_date), 'dd/MM/yyyy')}</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                       </svg>
-                      <span className="font-medium">{totalStories} bài viết</span>
+                      <span className="font-medium">{total_stories_analyzed} bài viết</span>
                     </div>
                   </div>
                 </div>
               </div>
-
-              {executiveSummary && (
-                <div className="mb-6 p-6 bg-orange-200/20 dark:bg-amber-700/20 backdrop-blur-sm rounded-2xl border border-orange-200/30 dark:border-amber-600/30">
-                  <h2 className="text-xl font-semibold text-orange-800 dark:text-amber-100 mb-3 flex items-center">
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Tóm tắt
-                  </h2>
-                  <p className="text-orange-700 dark:text-amber-200 leading-relaxed text-lg">{executiveSummary}</p>
-                </div>
-              )}
 
               {/* Enhanced Search and Filter Controls */}
               <div className="flex flex-col lg:flex-row gap-4">
@@ -537,103 +462,36 @@ const HackerNewsReportView = ({ report, isLoading, error }) => {
         </div>
       </div>
 
-      {/* Enhanced Trending Topics and Community Mood */}
-      {(trendingTopics.length > 0 || communityMood || technicalTrends.length > 0) && (
-        <div className="mb-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {trendingTopics.length > 0 && (
-            <div className="group bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-amber-800/15 dark:to-yellow-800/15 rounded-2xl p-8 shadow-lg border border-orange-200/30 dark:border-amber-600/20 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-orange-300 dark:bg-amber-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c1.1 0 2 .9 2 2v5.293l3.293-3.293a1 1 0 011.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L13 10.293V5c0-1.1-.9-2-2-2H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-orange-700 dark:text-amber-100">Chủ đề nổi bật</h3>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                {trendingTopics.map((topic, index) => (
-                  <TagComponent key={index} tag={topic} />
-                ))}
-              </div>
-            </div>
-          )}
-
-          {communityMood && (
-            <div className="group bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-amber-800/15 dark:to-yellow-800/15 rounded-2xl p-8 shadow-lg border border-orange-200/30 dark:border-amber-600/20 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-orange-300 dark:bg-amber-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-orange-700 dark:text-amber-100">Tâm trạng cộng đồng</h3>
-              </div>
-              <p className="text-orange-600 dark:text-amber-200 text-lg leading-relaxed">{communityMood}</p>
-            </div>
-          )}
-
-          {technicalTrends.length > 0 && (
-            <div className="group bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-amber-800/15 dark:to-yellow-800/15 rounded-2xl p-8 shadow-lg border border-orange-200/30 dark:border-amber-600/20 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-orange-300 dark:bg-amber-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-orange-700 dark:text-amber-100">Xu hướng kỹ thuật</h3>
-              </div>
-              <div className="space-y-3">
-                {technicalTrends.map((trend, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-orange-300 dark:bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-orange-600 dark:text-amber-200 text-lg">{trend}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Enhanced Sections */}
-      <div className="space-y-16">
-        {processedSections.map((section, sectionIndex) => (
-          <div key={sectionIndex} id={`section-${sectionIndex}`} className="scroll-mt-20">
-            <div className="mb-10 text-center">
-              <div className="inline-flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-300 to-yellow-400 dark:from-amber-600 dark:to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                  </svg>
-                </div>
-                <h2 className="text-3xl font-bold text-orange-700 dark:text-amber-100">
-                  {section.title}
-                </h2>
-              </div>
-              <div className="w-32 h-1 bg-gradient-to-r from-orange-300 to-yellow-400 dark:from-amber-600 dark:to-yellow-500 rounded-full mx-auto"></div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {section.articles.map((article, articleIndex) => (
-                <LazyArticleCard
-                  key={articleIndex}
-                  article={article}
-                  index={articleIndex}
-                  onViewDetail={(data) => {
-                    setSelectedArticle(data);
-                    setIsDetailModalOpen(true);
-                  }}
-                />
-              ))}
-            </div>
-          </div>
+      {/* Stories Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {processedStories.map((story, index) => (
+          <LazyArticleCard
+            key={index}
+            article={{
+              headline: story.headline,
+              summary: story.summary,
+              points: story._source_story?.points || 0,
+              numComments: story._source_story?.num_comments || 0,
+              url: story._source_story?.url || '#',
+              hnUrl: story._source_story?.hn_discuss_url || '#',
+              tags: story.tags || [],
+              keyTakeaways: story.key_takeaways || [],
+              communityReaction: story.community_reaction,
+              technicalDiscussion: story.technical_discussion
+            }}
+            index={index}
+            onViewDetail={(data) => {
+              setSelectedArticle(data);
+              setIsDetailModalOpen(true);
+            }}
+          />
         ))}
       </div>
 
       {/* Social Links */}
       <div className="mt-12">
         <SocialLinks 
-          title={reportTitle}
+          title={report_title}
           url={window.location.href}
         />
       </div>

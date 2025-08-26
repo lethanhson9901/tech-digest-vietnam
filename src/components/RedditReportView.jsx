@@ -55,27 +55,22 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
     );
   }
 
-  const data = subredditReport.structured_data;
-  
   return (
     <div ref={ref} className="p-4 lg:p-6 rounded-2xl backdrop-blur-lg border transition-all duration-300 hover:scale-[1.02] bg-white dark:bg-gray-800/50 border-neutral-200 dark:border-gray-700 hover:border-neutral-300 dark:hover:border-gray-600 shadow-sm dark:shadow-gray-900/20">
       {/* Subreddit Header */}
       <div className="mb-4">
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-lg font-bold text-primary">
-            🏛️ r/{data.subreddit || `subreddit-${index + 1}`}
+            🏛️ r/{subredditReport.subreddit || `subreddit-${index + 1}`}
           </h2>
           <span className="text-xs px-2 py-1 rounded-full bg-primary-600 text-inverse">
             #{index + 1}
           </span>
         </div>
-        <p className="text-sm text-secondary line-clamp-2">
-          {data.reportTitle}
-        </p>
       </div>
 
       {/* Executive Summary - Collapsed by default */}
-      {data.executiveSummary && (
+      {subredditReport.executive_summary && (
         <div className="mb-4">
           <details className="group">
             <summary className="cursor-pointer text-sm text-secondary hover:text-primary transition-colors flex items-center">
@@ -86,7 +81,7 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
             </summary>
             <div className="mt-2 p-3 rounded-lg bg-primary-50 dark:bg-gray-800/50 border border-primary-200 dark:border-gray-700/50">
               <p className="text-xs text-muted line-clamp-3">
-                {data.executiveSummary}
+                {subredditReport.executive_summary}
               </p>
             </div>
           </details>
@@ -94,82 +89,96 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
       )}
 
       {/* Community Mood */}
-      {data.communityMood && (
+      {subredditReport.community_mood && (
         <div className="mb-4 p-3 rounded-lg bg-primary-50 dark:bg-purple-900/20 border border-primary-200 dark:border-purple-700/30">
           <p className="text-xs text-secondary dark:text-purple-300 italic line-clamp-2">
-            "{data.communityMood}"
+            "{subredditReport.community_mood}"
           </p>
         </div>
       )}
 
-      {/* Trending Topics */}
-      {data.trendingTopics && data.trendingTopics.length > 0 && (
+      {/* Key Posts Analysis */}
+      {subredditReport.key_posts_analysis && subredditReport.key_posts_analysis.length > 0 && (
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-primary mb-2">Chủ đề nổi bật:</h4>
+          <h4 className="text-sm font-semibold text-primary mb-2">Bài viết quan trọng:</h4>
+          <div className="space-y-2">
+            {subredditReport.key_posts_analysis.slice(0, 2).map((post, postIndex) => (
+              <div key={postIndex} className="p-2 rounded-lg bg-neutral-50 dark:bg-gray-800/50 border border-neutral-200 dark:border-gray-700/50">
+                <div className="flex items-start justify-between mb-1">
+                  <h6 className="text-xs font-medium text-primary line-clamp-2 flex-1 mr-2">
+                    {post.post_title}
+                  </h6>
+                  <div className="flex items-center space-x-1 text-xs flex-shrink-0">
+                    <span className="px-1 py-0.5 rounded bg-emerald-100 dark:bg-dark-accent-emerald/20 text-emerald-600 dark:text-dark-accent-emerald border border-emerald-200 dark:border-dark-accent-emerald/30">
+                      {post.upvotes}↑
+                    </span>
+                  </div>
+                </div>
+                
+                <p className="text-xs text-muted line-clamp-2 mb-1">
+                  {post.analysis}
+                </p>
+                
+                <div className="flex items-center justify-between">
+                  {post.post_url && (
+                    <a
+                      href={post.post_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+                    >
+                      Xem →
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Emerging Trends */}
+      {subredditReport.emerging_trends && subredditReport.emerging_trends.length > 0 && (
+        <div className="mb-4">
+          <h4 className="text-sm font-semibold text-primary mb-2">Xu hướng mới:</h4>
           <div className="flex flex-wrap gap-1">
-            {data.trendingTopics.slice(0, 3).map((topic, topicIndex) => (
+            {subredditReport.emerging_trends.slice(0, 3).map((trend, trendIndex) => (
               <span
-                key={topicIndex}
+                key={trendIndex}
                 className="text-xs px-2 py-1 rounded-full bg-primary-50 dark:bg-dark-accent-primary-bg/20 text-primary-600 dark:text-dark-accent-primary-bg border border-primary-200 dark:border-gray-600"
               >
-                {topic}
+                {trend.trend}
               </span>
             ))}
-            {data.trendingTopics.length > 3 && (
+            {subredditReport.emerging_trends.length > 3 && (
               <span className="text-xs px-2 py-1 rounded-full bg-neutral-100 dark:bg-neutral-700 text-secondary dark:text-gray-300 border border-neutral-200 dark:border-gray-600">
-                +{data.trendingTopics.length - 3}
+                +{subredditReport.emerging_trends.length - 3}
               </span>
             )}
           </div>
         </div>
       )}
 
-      {/* Sample Articles */}
-      {data.sections && data.sections.length > 0 && (
+      {/* Sentiment Analysis */}
+      {subredditReport.sentiment_analysis && (
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-primary mb-2">Bài viết tiêu biểu:</h4>
-          <div className="space-y-2">
-            {data.sections.slice(0, 2).map((section, sectionIndex) => (
-              <div key={sectionIndex}>
-                <h5 className="text-xs font-medium text-muted mb-1">{section.title}</h5>
-                {section.articles && section.articles.slice(0, 2).map((article, articleIndex) => (
-                  <div key={articleIndex} className="p-2 rounded-lg bg-neutral-50 dark:bg-gray-800/50 border border-neutral-200 dark:border-gray-700/50">
-                    <div className="flex items-start justify-between mb-1">
-                      <h6 className="text-xs font-medium text-primary line-clamp-2 flex-1 mr-2">
-                        {article.headline}
-                      </h6>
-                      <div className="flex items-center space-x-1 text-xs flex-shrink-0">
-                        <span className="px-1 py-0.5 rounded bg-emerald-100 dark:bg-dark-accent-emerald/20 text-emerald-600 dark:text-dark-accent-emerald border border-emerald-200 dark:border-dark-accent-emerald/30">
-                          {article.score}↑
-                        </span>
-                        <span className="px-1 py-0.5 rounded bg-primary-100 dark:bg-dark-accent-primary-bg/20 text-primary-600 dark:text-dark-accent-primary-bg border border-primary-200 dark:border-gray-600">
-                          {article.numComments}💬
-                        </span>
-                      </div>
-                    </div>
-                    
-                    <p className="text-xs text-muted line-clamp-2 mb-1">
-                      {article.summary}
-                    </p>
-                    
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-muted">
-                        {article.source}
-                      </span>
-                      {article.link && (
-                        <a
-                          href={article.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
-                        >
-                          Xem →
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
+          <h4 className="text-sm font-semibold text-primary mb-2">Phân tích tình cảm:</h4>
+          <div className="flex flex-wrap gap-1">
+            {subredditReport.sentiment_analysis.positive_themes && subredditReport.sentiment_analysis.positive_themes.slice(0, 2).map((theme, themeIndex) => (
+              <span
+                key={themeIndex}
+                className="text-xs px-2 py-1 rounded-full bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-300 border border-green-200 dark:border-green-700/30"
+              >
+                😊 {theme}
+              </span>
+            ))}
+            {subredditReport.sentiment_analysis.negative_themes && subredditReport.sentiment_analysis.negative_themes.slice(0, 1).map((theme, themeIndex) => (
+              <span
+                key={themeIndex}
+                className="text-xs px-2 py-1 rounded-full bg-red-100 dark:bg-red-900/20 text-red-600 dark:text-red-300 border border-red-200 dark:border-red-700/30"
+              >
+                😞 {theme}
+              </span>
             ))}
           </div>
         </div>
@@ -178,7 +187,7 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
       {/* View Full Report Button */}
       <div className="mt-4 pt-4 border-t border-neutral-200 dark:border-gray-700/50">
         <button
-          onClick={() => onViewDetail(data)}
+          onClick={() => onViewDetail(subredditReport)}
           className="w-full flex items-center justify-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-inverse rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
         >
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -202,8 +211,7 @@ const SearchAndFilter = ({ onSearch, onSortChange, totalCount, filteredCount }) 
   // Removed category filters to simplify UI per request
 
   const sortOptions = [
-    { value: 'score', label: 'Điểm cao nhất', icon: '⬆️' },
-    { value: 'comments', label: 'Nhiều bình luận', icon: '💬' },
+    { value: 'score', label: 'Upvotes cao nhất', icon: '⬆️' },
     { value: 'alphabetical', label: 'A-Z', icon: '🔤' },
     { value: 'recent', label: 'Mới nhất', icon: '🕒' }
   ];
@@ -307,7 +315,7 @@ const SubredditDetailModal = ({ isOpen, onClose, subredditData, subredditName })
           {/* Content */}
           <div className="overflow-y-auto max-h-[calc(90vh-120px)] p-6">
             {/* Executive Summary */}
-            {subredditData.executiveSummary && (
+            {subredditData.executive_summary && (
               <div className="mb-8 p-6 rounded-xl bg-neutral-50 dark:bg-gray-800/60 border border-neutral-200 dark:border-gray-700">
                 <h3 className="text-xl font-bold text-primary dark:text-white mb-4 flex items-center">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -317,13 +325,13 @@ const SubredditDetailModal = ({ isOpen, onClose, subredditData, subredditName })
                   Tóm tắt chuyên sâu
                 </h3>
                 <div className="prose prose-lg dark:prose-invert max-w-none">
-                  <MarkdownRenderer content={subredditData.executiveSummary} />
+                  <MarkdownRenderer content={subredditData.executive_summary} />
                 </div>
               </div>
             )}
 
             {/* Community Mood */}
-            {subredditData.communityMood && (
+            {subredditData.community_mood && (
               <div className="mb-8 p-6 rounded-xl bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-700/30">
                 <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-4 flex items-center">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -333,101 +341,55 @@ const SubredditDetailModal = ({ isOpen, onClose, subredditData, subredditName })
                   Tâm trạng cộng đồng
                 </h3>
                 <p className="text-lg text-secondary dark:text-gray-300 italic">
-                  "{subredditData.communityMood}"
+                  "{subredditData.community_mood}"
                 </p>
               </div>
             )}
 
-            {/* Trending Topics */}
-            {subredditData.trendingTopics && subredditData.trendingTopics.length > 0 && (
+            {/* Key Posts Analysis */}
+            {subredditData.key_posts_analysis && subredditData.key_posts_analysis.length > 0 && (
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-primary dark:text-white mb-4 flex items-center">
+                <h3 className="text-xl font-bold text-primary dark:text-white mb-6 flex items-center">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                           d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  Chủ đề nổi bật
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {subredditData.trendingTopics.map((topic, index) => (
-                    <span key={index} 
-                          className="px-4 py-2 rounded-full bg-orange-100 text-orange-700 border border-orange-200 dark:bg-orange-600/20 dark:text-orange-300 dark:border-orange-600/30 text-sm font-medium">
-                      {topic}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* All Articles */}
-            {subredditData.sections && subredditData.sections.map((section, sectionIndex) => (
-              <div key={sectionIndex} className="mb-8">
-                <h3 className="text-xl font-bold text-white mb-6 flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                          d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                  </svg>
-                  {section.title}
+                  Bài viết quan trọng
                 </h3>
                 
                 <div className="space-y-6">
-                  {section.articles && section.articles.map((article, articleIndex) => (
-                    <div key={articleIndex} className="p-6 rounded-xl bg-neutral-50 dark:bg-gray-800 border border-neutral-200 dark:border-gray-700">
+                  {subredditData.key_posts_analysis.map((post, postIndex) => (
+                    <div key={postIndex} className="p-6 rounded-xl bg-neutral-50 dark:bg-gray-800 border border-neutral-200 dark:border-gray-700">
                       <div className="flex items-start justify-between mb-4">
                         <h4 className="text-lg font-semibold text-primary dark:text-white flex-1 mr-4">
-                          {article.headline}
+                          {post.post_title}
                         </h4>
                         <div className="flex items-center space-x-2 flex-shrink-0">
                           <span className="px-3 py-1 rounded-lg bg-emerald-100 text-emerald-700 border border-emerald-200 dark:bg-green-600/20 dark:text-green-300 dark:border-green-600/30 text-sm">
-                            {article.score} ↑
-                          </span>
-                          <span className="px-3 py-1 rounded-lg bg-blue-100 text-blue-700 border border-blue-200 dark:bg-blue-600/20 dark:text-blue-300 dark:border-blue-600/30 text-sm">
-                            {article.numComments} 💬
+                            {post.upvotes} ↑
                           </span>
                         </div>
                       </div>
 
                       <div className="mb-4 text-secondary dark:text-gray-300">
-                        <MarkdownRenderer content={article.summary} />
+                        <MarkdownRenderer content={post.analysis} />
                       </div>
 
-                      {article.keyTakeaways && article.keyTakeaways.length > 0 && (
+                      {post.key_takeaways && post.key_takeaways.length > 0 && (
                         <div className="mb-4">
                           <h5 className="font-semibold text-primary dark:text-white mb-2">Điểm chính:</h5>
                           <ul className="list-disc list-inside space-y-1 text-secondary dark:text-gray-300">
-                            {article.keyTakeaways.map((takeaway, index) => (
+                            {post.key_takeaways.map((takeaway, index) => (
                               <li key={index}>{takeaway}</li>
                             ))}
                           </ul>
                         </div>
                       )}
 
-                      <div className="flex flex-wrap items-center gap-3 mb-4">
-                        <span className="text-sm text-muted dark:text-gray-400">
-                          Tác giả: {article.source}
-                        </span>
-                        {article.flair && (
-                          <span className="text-xs px-2 py-1 rounded-lg bg-orange-100 text-orange-700 border border-orange-200 dark:bg-orange-600/20 dark:text-orange-300 dark:border-orange-600/30">
-                            {article.flair}
-                          </span>
-                        )}
-                      </div>
-
-                      {article.tags && article.tags.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {article.tags.map((tag, index) => (
-                            <span key={index} 
-                                  className="text-xs px-2 py-1 rounded-full bg-gray-700 text-gray-300">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-
                       <div className="flex flex-wrap gap-3">
-                        {article.link && (
+                        {post.post_url && (
                           <a
-                            href={article.link}
+                            href={post.post_url}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors"
@@ -439,26 +401,100 @@ const SubredditDetailModal = ({ isOpen, onClose, subredditData, subredditName })
                             Xem trên Reddit
                           </a>
                         )}
-                        {article.originalUrl && (
-                          <a
-                            href={article.originalUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center px-4 py-2 bg-neutral-600 hover:bg-neutral-700 text-white rounded-lg text-sm font-medium transition-colors"
-                          >
-                            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                            </svg>
-                            Link gốc
-                          </a>
-                        )}
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-            ))}
+            )}
+
+            {/* Emerging Trends */}
+            {subredditData.emerging_trends && subredditData.emerging_trends.length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-primary dark:text-white mb-4 flex items-center">
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                          d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  Xu hướng mới nổi
+                </h3>
+                <div className="space-y-4">
+                  {subredditData.emerging_trends.map((trend, index) => (
+                    <div key={index} className="p-4 rounded-xl bg-neutral-50 dark:bg-gray-800 border border-neutral-200 dark:border-gray-700">
+                      <h4 className="font-semibold text-primary dark:text-white mb-2">
+                        {trend.trend}
+                      </h4>
+                      <p className="text-secondary dark:text-gray-300 mb-3">
+                        {trend.description}
+                      </p>
+                      {trend.examples && trend.examples.length > 0 && (
+                        <div>
+                          <h5 className="font-medium text-primary dark:text-white mb-2">Ví dụ:</h5>
+                          <ul className="list-disc list-inside space-y-1 text-secondary dark:text-gray-300">
+                            {trend.examples.map((example, exampleIndex) => (
+                              <li key={exampleIndex}>{example}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Sentiment Analysis */}
+            {subredditData.sentiment_analysis && (
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-primary dark:text-white mb-4 flex items-center">
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                          d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Phân tích tình cảm
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {subredditData.sentiment_analysis.positive_themes && subredditData.sentiment_analysis.positive_themes.length > 0 && (
+                    <div className="p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700/30">
+                      <h4 className="font-semibold text-green-700 dark:text-green-300 mb-2 flex items-center">
+                        😊 Chủ đề tích cực
+                      </h4>
+                      <ul className="space-y-1">
+                        {subredditData.sentiment_analysis.positive_themes.map((theme, index) => (
+                          <li key={index} className="text-sm text-green-600 dark:text-green-400">• {theme}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {subredditData.sentiment_analysis.negative_themes && subredditData.sentiment_analysis.negative_themes.length > 0 && (
+                    <div className="p-4 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700/30">
+                      <h4 className="font-semibold text-red-700 dark:text-red-300 mb-2 flex items-center">
+                        😞 Chủ đề tiêu cực
+                      </h4>
+                      <ul className="space-y-1">
+                        {subredditData.sentiment_analysis.negative_themes.map((theme, index) => (
+                          <li key={index} className="text-sm text-red-600 dark:text-red-400">• {theme}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {subredditData.sentiment_analysis.neutral_themes && subredditData.sentiment_analysis.neutral_themes.length > 0 && (
+                    <div className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                      <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+                        😐 Chủ đề trung lập
+                      </h4>
+                      <ul className="space-y-1">
+                        {subredditData.sentiment_analysis.neutral_themes.map((theme, index) => (
+                          <li key={index} className="text-sm text-gray-600 dark:text-gray-400">• {theme}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -472,75 +508,60 @@ const AnalyticsDashboard = ({ reports }) => {
     if (!reports || reports.length === 0) return null;
 
     const totalSubreddits = reports.length;
-    const totalArticles = reports.reduce((sum, report) => {
-      const sections = report.structured_data?.sections || [];
-      return sum + sections.reduce((sectionSum, section) => {
-        return sectionSum + (section.articles?.length || 0);
-      }, 0);
+    const totalPosts = reports.reduce((sum, report) => {
+      return sum + (report.key_posts_analysis?.length || 0);
     }, 0);
 
-    const totalScore = reports.reduce((sum, report) => {
-      const sections = report.structured_data?.sections || [];
-      return sum + sections.reduce((sectionSum, section) => {
-        return sectionSum + (section.articles?.reduce((articleSum, article) => {
-          return articleSum + (article.score || 0);
-        }, 0) || 0);
-      }, 0);
+    const totalUpvotes = reports.reduce((sum, report) => {
+      return sum + (report.key_posts_analysis?.reduce((postSum, post) => {
+        return postSum + (post.upvotes || 0);
+      }, 0) || 0);
     }, 0);
 
-    const totalComments = reports.reduce((sum, report) => {
-      const sections = report.structured_data?.sections || [];
-      return sum + sections.reduce((sectionSum, section) => {
-        return sectionSum + (section.articles?.reduce((articleSum, article) => {
-          return articleSum + (article.numComments || 0);
-        }, 0) || 0);
-      }, 0);
-    }, 0);
-
-    // Top trending topics
-    const allTopics = reports.reduce((topics, report) => {
-      const trendingTopics = report.structured_data?.trendingTopics || [];
-      return [...topics, ...trendingTopics];
+    // Top emerging trends
+    const allTrends = reports.reduce((trends, report) => {
+      const emergingTrends = report.emerging_trends || [];
+      return [...trends, ...emergingTrends];
     }, []);
 
-    const topicCounts = allTopics.reduce((counts, topic) => {
-      counts[topic] = (counts[topic] || 0) + 1;
+    const trendCounts = allTrends.reduce((counts, trend) => {
+      counts[trend.trend] = (counts[trend.trend] || 0) + 1;
       return counts;
     }, {});
 
-    const topTopics = Object.entries(topicCounts)
+    const topTrends = Object.entries(trendCounts)
       .sort(([,a], [,b]) => b - a)
       .slice(0, 5)
-      .map(([topic, count]) => ({ topic, count }));
+      .map(([trend, count]) => ({ trend, count }));
 
-    // Community mood analysis
-    const moods = reports
-      .map(report => report.structured_data?.communityMood)
+    // Sentiment analysis
+    const allSentiments = reports
+      .map(report => report.sentiment_analysis)
       .filter(Boolean);
 
-    const positiveMoods = moods.filter(mood => 
-      mood.toLowerCase().includes('positive') || 
-      mood.toLowerCase().includes('optimistic') ||
-      mood.toLowerCase().includes('excited')
-    ).length;
+    const positiveThemes = allSentiments.reduce((sum, sentiment) => {
+      return sum + (sentiment.positive_themes?.length || 0);
+    }, 0);
 
-    const neutralMoods = moods.filter(mood => 
-      mood.toLowerCase().includes('neutral') || 
-      mood.toLowerCase().includes('mixed') ||
-      mood.toLowerCase().includes('balanced')
-    ).length;
+    const negativeThemes = allSentiments.reduce((sum, sentiment) => {
+      return sum + (sentiment.negative_themes?.length || 0);
+    }, 0);
 
-    const negativeMoods = moods.length - positiveMoods - neutralMoods;
+    const neutralThemes = allSentiments.reduce((sum, sentiment) => {
+      return sum + (sentiment.neutral_themes?.length || 0);
+    }, 0);
 
     return {
       totalSubreddits,
-      totalArticles,
-      totalScore,
-      totalComments,
-      avgScore: totalArticles > 0 ? Math.round(totalScore / totalArticles) : 0,
-      avgComments: totalArticles > 0 ? Math.round(totalComments / totalArticles) : 0,
-      topTopics,
-      moodAnalysis: { positive: positiveMoods, neutral: neutralMoods, negative: negativeMoods }
+      totalPosts,
+      totalUpvotes,
+      avgUpvotes: totalPosts > 0 ? Math.round(totalUpvotes / totalPosts) : 0,
+      topTrends,
+      sentimentAnalysis: { 
+        positive: positiveThemes, 
+        negative: negativeThemes, 
+        neutral: neutralThemes 
+      }
     };
   }, [reports]);
 
@@ -567,7 +588,7 @@ const AnalyticsDashboard = ({ reports }) => {
         <div className="flex items-center justify-between">
           <div>
             <p className="text-sm text-muted dark:text-gray-300">Bài viết</p>
-            <p className="text-2xl font-bold text-primary dark:text-white">{stats.totalArticles}</p>
+            <p className="text-2xl font-bold text-primary dark:text-white">{stats.totalPosts}</p>
           </div>
           <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 dark:bg-green-600/30 dark:text-green-300 flex items-center justify-center">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -580,8 +601,8 @@ const AnalyticsDashboard = ({ reports }) => {
       <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-neutral-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-muted dark:text-gray-300">Điểm TB</p>
-            <p className="text-2xl font-bold text-primary dark:text-white">{stats.avgScore}</p>
+            <p className="text-sm text-muted dark:text-gray-300">Upvotes TB</p>
+            <p className="text-2xl font-bold text-primary dark:text-white">{stats.avgUpvotes}</p>
           </div>
           <div className="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 dark:bg-orange-600/30 dark:text-orange-300 flex items-center justify-center">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -594,8 +615,8 @@ const AnalyticsDashboard = ({ reports }) => {
       <div className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-neutral-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-muted dark:text-gray-300">Bình luận TB</p>
-            <p className="text-2xl font-bold text-primary dark:text-white">{stats.avgComments}</p>
+            <p className="text-sm text-muted dark:text-gray-300">Tổng upvotes</p>
+            <p className="text-2xl font-bold text-primary dark:text-white">{stats.totalUpvotes}</p>
           </div>
           <div className="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 dark:bg-purple-600/30 dark:text-purple-300 flex items-center justify-center">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -631,32 +652,31 @@ const RedditReportView = ({ report, isLoading, error }) => {
   }
 
   // Handle combined reddit report structure
-  const isCombinedReport = reportData?.subredditReports && Array.isArray(reportData.subredditReports);
+  const isCombinedReport = reportData?.subreddit_reports && Array.isArray(reportData.subreddit_reports);
   
   // Filter and process reports with search, filter, and sort - moved before early returns
   const processedReports = useMemo(() => {
-    if (!isCombinedReport || !reportData?.subredditReports) {
+    if (!isCombinedReport || !reportData?.subreddit_reports) {
       return [];
     }
 
-    let filtered = reportData.subredditReports.filter(report => report.success && report.structured_data);
+    let filtered = reportData.subreddit_reports;
     
     // Search filter
     if (searchTerm) {
       const searchLower = searchTerm.toLowerCase();
       filtered = filtered.filter(report => {
-        const data = report.structured_data;
         return (
-          data.subreddit?.toLowerCase().includes(searchLower) ||
-          data.reportTitle?.toLowerCase().includes(searchLower) ||
-          data.executiveSummary?.toLowerCase().includes(searchLower) ||
-          data.trendingTopics?.some(topic => topic.toLowerCase().includes(searchLower)) ||
-          data.sections?.some(section => 
-            section.title?.toLowerCase().includes(searchLower) ||
-            section.articles?.some(article => 
-              article.headline?.toLowerCase().includes(searchLower) ||
-              article.summary?.toLowerCase().includes(searchLower)
-            )
+          report.subreddit?.toLowerCase().includes(searchLower) ||
+          report.executive_summary?.toLowerCase().includes(searchLower) ||
+          report.community_mood?.toLowerCase().includes(searchLower) ||
+          report.key_posts_analysis?.some(post => 
+            post.post_title?.toLowerCase().includes(searchLower) ||
+            post.analysis?.toLowerCase().includes(searchLower)
+          ) ||
+          report.emerging_trends?.some(trend => 
+            trend.trend?.toLowerCase().includes(searchLower) ||
+            trend.description?.toLowerCase().includes(searchLower)
           )
         );
       });
@@ -664,37 +684,21 @@ const RedditReportView = ({ report, isLoading, error }) => {
     
     // Sort
     filtered.sort((a, b) => {
-      const dataA = a.structured_data;
-      const dataB = b.structured_data;
-      
       switch (sortBy) {
         case 'score':
-          const scoreA = dataA.sections?.reduce((sum, section) => 
-            sum + (section.articles?.reduce((articleSum, article) => 
-              articleSum + (article.score || 0), 0) || 0), 0) || 0;
-          const scoreB = dataB.sections?.reduce((sum, section) => 
-            sum + (section.articles?.reduce((articleSum, article) => 
-              articleSum + (article.score || 0), 0) || 0), 0) || 0;
+          const scoreA = a.key_posts_analysis?.reduce((sum, post) => sum + (post.upvotes || 0), 0) || 0;
+          const scoreB = b.key_posts_analysis?.reduce((sum, post) => sum + (post.upvotes || 0), 0) || 0;
           return scoreB - scoreA;
-        case 'comments':
-          const commentsA = dataA.sections?.reduce((sum, section) => 
-            sum + (section.articles?.reduce((articleSum, article) => 
-              articleSum + (article.numComments || 0), 0) || 0), 0) || 0;
-          const commentsB = dataB.sections?.reduce((sum, section) => 
-            sum + (section.articles?.reduce((articleSum, article) => 
-              articleSum + (article.numComments || 0), 0) || 0), 0) || 0;
-          return commentsB - commentsA;
         case 'alphabetical':
-          return (dataA.subreddit || '').localeCompare(dataB.subreddit || '');
+          return (a.subreddit || '').localeCompare(b.subreddit || '');
         case 'recent':
-          return new Date(dataB.analysisDate || 0) - new Date(dataA.analysisDate || 0);
         default:
-          return 0;
+          return 0; // Keep original order
       }
     });
     
     return filtered;
-  }, [isCombinedReport, reportData?.subredditReports, searchTerm, sortBy]);
+  }, [isCombinedReport, reportData?.subreddit_reports, searchTerm, sortBy]);
 
   // Early returns after all hooks
   if (isLoading) {
@@ -716,20 +720,15 @@ const RedditReportView = ({ report, isLoading, error }) => {
   if (!isCombinedReport) {
     // Handle single subreddit report structure
     const { 
-      reportTitle, 
+      report_title, 
       subreddit, 
-      analysisDate, 
-      totalPosts, 
-      executiveSummary, 
-      sections = [] 
+      analysis_date, 
+      total_subreddits_analyzed, 
+      executive_summary, 
+      key_posts_analysis = [],
+      emerging_trends = [],
+      sentiment_analysis
     } = reportData;
-
-    // Generate table of contents from sections
-    const tocItems = sections.map((section, index) => ({
-      id: `section-${index}`,
-      title: section.title,
-      level: 2
-    }));
 
     return (
       <div className="max-w-4xl mx-auto">
@@ -748,7 +747,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
                 </div>
                 <div>
                   <h1 className="text-2xl lg:text-3xl font-bold mb-2 text-white">
-                    {reportTitle}
+                    {report_title}
                   </h1>
                   <div className="flex flex-wrap items-center gap-3 text-sm text-gray-300">
                     <span className="flex items-center">
@@ -763,14 +762,14 @@ const RedditReportView = ({ report, isLoading, error }) => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                               d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
-                      {analysisDate ? format(new Date(analysisDate), 'dd/MM/yyyy') : 'N/A'}
+                      {analysis_date ? format(new Date(analysis_date), 'dd/MM/yyyy') : 'N/A'}
                     </span>
                     <span className="flex items-center">
                       <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                               d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
-                      {totalPosts} bài viết
+                      {key_posts_analysis.length} bài viết
                     </span>
                   </div>
                 </div>
@@ -802,192 +801,190 @@ const RedditReportView = ({ report, isLoading, error }) => {
           </div>
         </div>
 
-        {/* Mobile TOC Toggle */}
-        <div className="lg:hidden mb-6">
-          <button
-            onClick={() => setIsMobileTocOpen(!isMobileTocOpen)}
-            className="w-full flex items-center justify-between p-4 rounded-xl backdrop-blur-lg"
-            style={{ background: 'rgba(255,255,255,0.08)' }}
-          >
-            <span className="font-medium text-white">
-              Mục lục
-            </span>
-            <svg 
-              className={`w-5 h-5 transition-transform text-gray-400 ${isMobileTocOpen ? 'rotate-180' : ''}`}
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          
-          {isMobileTocOpen && (
-            <div className="mt-2 p-4 rounded-xl backdrop-blur-lg"
+        {/* Main Content */}
+        <div className="flex-1">
+          {/* Executive Summary */}
+          {executive_summary && (
+            <div className="mb-8 p-6 rounded-2xl backdrop-blur-lg"
                  style={{ background: 'rgba(255,255,255,0.08)' }}>
-              <TableOfContents items={tocItems} />
+              <h2 className="text-xl font-bold mb-4 text-white">
+                Tóm tắt chuyên sâu
+              </h2>
+              <div className="prose prose-lg max-w-none text-gray-300">
+                <MarkdownRenderer content={executive_summary} />
+              </div>
             </div>
           )}
-        </div>
 
-        <div className="lg:flex lg:gap-8">
-          {/* Desktop Table of Contents */}
-          <div className="hidden lg:block lg:w-64 lg:flex-shrink-0">
-            <div className="sticky top-8">
-              <TableOfContents items={tocItems} />
-            </div>
-          </div>
-
-          {/* Main Content */}
-          <div className="flex-1">
-            {/* Executive Summary */}
-            {executiveSummary && (
-              <div className="mb-8 p-6 rounded-2xl backdrop-blur-lg"
-                   style={{ background: 'rgba(255,255,255,0.08)' }}>
-                <h2 className="text-xl font-bold mb-4 text-white">
-                  Tóm tắt chuyên sâu
-                </h2>
-                <div className="prose prose-lg max-w-none text-gray-300">
-                  <MarkdownRenderer content={executiveSummary} />
-                </div>
-              </div>
-            )}
-
-            {/* Sections */}
-            {sections.map((section, sectionIndex) => (
-              <div 
-                key={sectionIndex}
-                id={`section-${sectionIndex}`}
-                className="mb-8 p-6 rounded-2xl backdrop-blur-lg"
-                style={{ background: 'rgba(255,255,255,0.08)' }}
-              >
-                <h2 className="text-xl font-bold mb-6 text-white">
-                  {section.title}
-                </h2>
-                
-                <div className="space-y-6">
-                  {section.articles?.map((article, articleIndex) => (
-                    <div 
-                      key={articleIndex}
-                      className="p-4 rounded-xl"
-                      style={{ background: 'rgba(255,255,255,0.05)' }}
-                    >
-                      <div className="flex items-start justify-between mb-3">
-                        <h3 className="text-lg font-semibold flex-1 text-white">
-                          {article.headline}
-                        </h3>
-                        <div className="flex items-center space-x-2 ml-4">
-                          <span className="text-sm px-2 py-1 rounded-lg"
-                                style={{ 
-                                  background: 'var(--color-primary-500)',
-                                  color: 'white'
-                                }}>
-                            {article.score} ↑
-                          </span>
-                          <span className="text-sm px-2 py-1 rounded-lg"
-                                style={{ 
-                                  background: 'var(--color-accent-blue)',
-                                  color: 'white'
-                                }}>
-                            {article.numComments} 💬
-                          </span>
-                        </div>
-                      </div>
-
-                      <div className="mb-3"
-                           style={{ color: 'var(--color-neutral-300)' }}>
-                        <MarkdownRenderer content={article.summary} />
-                      </div>
-
-                      {article.keyTakeaways && article.keyTakeaways.length > 0 && (
-                        <div className="mb-3">
-                          <h4 className="font-semibold mb-2"
-                              style={{ color: 'var(--color-neutral-200)' }}>
-                            Điểm chính:
-                          </h4>
-                          <ul className="list-disc list-inside space-y-1"
-                              style={{ color: 'var(--color-neutral-300)' }}>
-                            {article.keyTakeaways.map((takeaway, index) => (
-                              <li key={index}>{takeaway}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      <div className="flex flex-wrap items-center gap-2 mb-3">
-                        <span className="text-sm"
-                              style={{ color: 'var(--color-neutral-400)' }}>
-                          Tác giả: {article.source}
+          {/* Key Posts Analysis */}
+          {key_posts_analysis.length > 0 && (
+            <div className="mb-8 p-6 rounded-2xl backdrop-blur-lg"
+                 style={{ background: 'rgba(255,255,255,0.08)' }}>
+              <h2 className="text-xl font-bold mb-6 text-white">
+                Bài viết quan trọng
+              </h2>
+              
+              <div className="space-y-6">
+                {key_posts_analysis.map((post, postIndex) => (
+                  <div 
+                    key={postIndex}
+                    className="p-4 rounded-xl"
+                    style={{ background: 'rgba(255,255,255,0.05)' }}
+                  >
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className="text-lg font-semibold flex-1 text-white">
+                        {post.post_title}
+                      </h3>
+                      <div className="flex items-center space-x-2 ml-4">
+                        <span className="text-sm px-2 py-1 rounded-lg"
+                              style={{ 
+                                background: 'var(--color-primary-500)',
+                                color: 'white'
+                              }}>
+                          {post.upvotes} ↑
                         </span>
-                        {article.flair && (
-                          <span className="text-xs px-2 py-1 rounded-lg"
-                                style={{ 
-                                  background: 'var(--color-accent-orange)',
-                                  color: 'white'
-                                }}>
-                            {article.flair}
-                          </span>
-                        )}
-                      </div>
-
-                      {article.tags && article.tags.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mb-3">
-                          {article.tags.map((tag, index) => (
-                            <TagComponent key={index} tag={tag} />
-                          ))}
-                        </div>
-                      )}
-
-                      <div className="flex flex-wrap gap-2">
-                        {article.link && (
-                          <a
-                            href={article.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center px-3 py-1 text-sm rounded-lg transition-all duration-200 hover:scale-105"
-                            style={{ 
-                              background: 'var(--color-primary-500)',
-                              color: 'white'
-                            }}
-                          >
-                            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                            Xem trên Reddit
-                          </a>
-                        )}
-                        {article.originalUrl && (
-                          <a
-                            href={article.originalUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center px-3 py-1 text-sm rounded-lg transition-all duration-200 hover:scale-105"
-                            style={{ 
-                              background: 'var(--color-accent-blue)',
-                              color: 'white'
-                            }}
-                          >
-                            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                            </svg>
-                            Link gốc
-                          </a>
-                        )}
                       </div>
                     </div>
-                  ))}
-                </div>
+
+                    <div className="mb-3"
+                         style={{ color: 'var(--color-neutral-300)' }}>
+                      <MarkdownRenderer content={post.analysis} />
+                    </div>
+
+                    {post.key_takeaways && post.key_takeaways.length > 0 && (
+                      <div className="mb-3">
+                        <h4 className="font-semibold mb-2"
+                            style={{ color: 'var(--color-neutral-200)' }}>
+                          Điểm chính:
+                        </h4>
+                        <ul className="list-disc list-inside space-y-1"
+                            style={{ color: 'var(--color-neutral-300)' }}>
+                          {post.key_takeaways.map((takeaway, index) => (
+                            <li key={index}>{takeaway}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    <div className="flex flex-wrap gap-2">
+                      {post.post_url && (
+                        <a
+                          href={post.post_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-3 py-1 text-sm rounded-lg transition-all duration-200 hover:scale-105"
+                          style={{ 
+                            background: 'var(--color-primary-500)',
+                            color: 'white'
+                          }}
+                        >
+                          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                          Xem trên Reddit
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          )}
+
+          {/* Emerging Trends */}
+          {emerging_trends.length > 0 && (
+            <div className="mb-8 p-6 rounded-2xl backdrop-blur-lg"
+                 style={{ background: 'rgba(255,255,255,0.08)' }}>
+              <h2 className="text-xl font-bold mb-6 text-white">
+                Xu hướng mới nổi
+              </h2>
+              
+              <div className="space-y-4">
+                {emerging_trends.map((trend, index) => (
+                  <div 
+                    key={index}
+                    className="p-4 rounded-xl"
+                    style={{ background: 'rgba(255,255,255,0.05)' }}
+                  >
+                    <h3 className="text-lg font-semibold text-white mb-2">
+                      {trend.trend}
+                    </h3>
+                    <p className="text-gray-300 mb-3">
+                      {trend.description}
+                    </p>
+                    {trend.examples && trend.examples.length > 0 && (
+                      <div>
+                        <h4 className="font-medium text-white mb-2">Ví dụ:</h4>
+                        <ul className="list-disc list-inside space-y-1 text-gray-300">
+                          {trend.examples.map((example, exampleIndex) => (
+                            <li key={exampleIndex}>{example}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Sentiment Analysis */}
+          {sentiment_analysis && (
+            <div className="mb-8 p-6 rounded-2xl backdrop-blur-lg"
+                 style={{ background: 'rgba(255,255,255,0.08)' }}>
+              <h2 className="text-xl font-bold mb-6 text-white">
+                Phân tích tình cảm
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {sentiment_analysis.positive_themes && sentiment_analysis.positive_themes.length > 0 && (
+                  <div className="p-4 rounded-xl bg-green-900/20 border border-green-700/30">
+                    <h4 className="font-semibold text-green-300 mb-2 flex items-center">
+                      😊 Chủ đề tích cực
+                    </h4>
+                    <ul className="space-y-1">
+                      {sentiment_analysis.positive_themes.map((theme, index) => (
+                        <li key={index} className="text-sm text-green-400">• {theme}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                
+                {sentiment_analysis.negative_themes && sentiment_analysis.negative_themes.length > 0 && (
+                  <div className="p-4 rounded-xl bg-red-900/20 border border-red-700/30">
+                    <h4 className="font-semibold text-red-300 mb-2 flex items-center">
+                      😞 Chủ đề tiêu cực
+                    </h4>
+                    <ul className="space-y-1">
+                      {sentiment_analysis.negative_themes.map((theme, index) => (
+                        <li key={index} className="text-sm text-red-400">• {theme}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                
+                {sentiment_analysis.neutral_themes && sentiment_analysis.neutral_themes.length > 0 && (
+                  <div className="p-4 rounded-xl bg-gray-800 border border-gray-700">
+                    <h4 className="font-semibold text-gray-300 mb-2 flex items-center">
+                      😐 Chủ đề trung lập
+                    </h4>
+                    <ul className="space-y-1">
+                      {sentiment_analysis.neutral_themes.map((theme, index) => (
+                        <li key={index} className="text-sm text-gray-400">• {theme}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Social Links */}
         <div className="mt-12">
           <SocialLinks 
-            title={reportTitle}
+            title={report_title}
             url={window.location.href}
           />
         </div>
@@ -997,9 +994,10 @@ const RedditReportView = ({ report, isLoading, error }) => {
 
   // This is a combined report with multiple subreddits
   const { 
-    reportTitle, 
-    analysisDate, 
-    subredditReports = [] 
+    report_title, 
+    analysis_date, 
+    total_subreddits_analyzed,
+    subreddit_reports = [] 
   } = reportData;
 
   return (
@@ -1014,7 +1012,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
         <SearchAndFilter
           onSearch={setSearchTerm}
           onSortChange={(sort) => setSortBy(sort)}
-          totalCount={subredditReports.length}
+          totalCount={subreddit_reports.length}
           filteredCount={processedReports.length}
         />
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
@@ -1028,7 +1026,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
               </div>
               <div>
                  <h1 className="text-2xl lg:text-3xl font-bold mb-2 text-primary">
-                  {reportTitle}
+                  {report_title}
                 </h1>
                  <div className="flex flex-wrap items-center gap-3 text-sm text-secondary">
                   <span className="flex items-center">
@@ -1036,14 +1034,14 @@ const RedditReportView = ({ report, isLoading, error }) => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                             d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    {analysisDate ? format(new Date(analysisDate), 'dd/MM/yyyy') : 'N/A'}
+                    {analysis_date ? format(new Date(analysis_date), 'dd/MM/yyyy') : 'N/A'}
                   </span>
                   <span className="flex items-center">
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                             d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                     </svg>
-                    {processedReports.length} subreddits
+                    {total_subreddits_analyzed} subreddits
                   </span>
                 </div>
               </div>
@@ -1095,7 +1093,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
       {/* Social Links */}
       <div className="mt-12">
         <SocialLinks 
-          title={reportTitle}
+          title={report_title}
           url={window.location.href}
         />
       </div>
