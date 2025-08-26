@@ -18,7 +18,7 @@ const MarkdownRenderer = ({ content }) => {
     });
   }, [content]);
 
-  // Pre-process content to remove visible HTML ID tags
+  // Pre-process content to remove visible HTML ID tags and backticks
   const processContent = (content) => {
     if (!content) return '';
     
@@ -37,34 +37,25 @@ const MarkdownRenderer = ({ content }) => {
 
   const processedContent = processContent(content);
 
-  // Rút gọn overrides: để typography/prose xử lý, chỉ thêm copy cho code block
+  // Sử dụng inline formatting đơn giản cho tất cả code elements với font tiếng Việt
   const components = {
     code: ({ node, inline, className, children, ...props }) => {
-      if (inline) {
-        return <code {...props}>{children}</code>;
-      }
-      const codeText = String(children).replace(/\n$/, '');
-      const langMatch = /language-(\w+)/.exec(className || '');
-      const language = langMatch ? langMatch[1] : 'text';
-      const handleCopy = () => {
-        if (navigator?.clipboard?.writeText) {
-          navigator.clipboard.writeText(codeText).catch(() => {});
-        }
-      };
+      // Loại bỏ tất cả dấu backticks từ nội dung
+      const cleanContent = String(children).replace(/`/g, '');
+      
+      // Luôn sử dụng inline formatting đơn giản với font phù hợp tiếng Việt
       return (
-        <div className="relative group my-4">
-          <button
-            type="button"
-            onClick={handleCopy}
-            className="absolute top-2 right-2 z-10 px-2 py-1 text-xs rounded bg-neutral-800 text-white opacity-0 group-hover:opacity-100 transition-opacity"
-            aria-label="Sao chép mã"
-          >
-            Copy
-          </button>
-          <pre className="bg-neutral-50 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-100 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-x-auto p-4">
-            <code className={`font-mono text-sm language-${language}`}>{codeText}</code>
-          </pre>
-        </div>
+        <code 
+          className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-1.5 py-0.5 rounded text-sm border border-gray-200 dark:border-gray-700 font-['JetBrains_Mono',_'Fira_Code',_'Cascadia_Code',_'SF_Mono',_'Monaco',_'Consolas',_'Liberation_Mono',_'Menlo',_'Courier',_'monospace']" 
+          style={{
+            fontFeatureSettings: '"liga" 1, "calt" 1',
+            fontVariantLigatures: 'contextual',
+            letterSpacing: '-0.01em'
+          }}
+          {...props}
+        >
+          {cleanContent}
+        </code>
       );
     },
   };

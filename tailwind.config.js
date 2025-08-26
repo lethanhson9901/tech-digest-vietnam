@@ -125,11 +125,16 @@ module.exports = {
               fontWeight: '600',
             },
             code: {
-              fontFamily: 'JetBrains Mono, Fira Code, monospace',
+              fontFamily: 'JetBrains Mono, Fira Code, Cascadia Code, SF Mono, Monaco, Consolas, Liberation Mono, Menlo, Courier, monospace',
               fontSize: '0.875rem',
               backgroundColor: '#f3f4f6',
+              color: '#1f2937',
               padding: '0.125rem 0.25rem',
               borderRadius: '0.25rem',
+              border: '1px solid #e5e7eb',
+              fontFeatureSettings: '"liga" 1, "calt" 1',
+              fontVariantLigatures: 'contextual',
+              letterSpacing: '-0.01em',
             },
             pre: {
               fontFamily: 'JetBrains Mono, Fira Code, monospace',
@@ -171,8 +176,12 @@ module.exports = {
               color: 'var(--dark-text-secondary)'
             },
             code: {
-              backgroundColor: 'var(--color-neutral-800)',
-              color: 'var(--color-primary-400)'
+              backgroundColor: '#374151',
+              color: '#e5e7eb',
+              border: '1px solid #4b5563',
+              fontFeatureSettings: '"liga" 1, "calt" 1',
+              fontVariantLigatures: 'contextual',
+              letterSpacing: '-0.01em',
             },
             pre: {
               backgroundColor: 'var(--color-neutral-900)',

@@ -18,6 +18,7 @@ import HackerNewsReportsArchivePage from './pages/HackerNewsReportsArchivePage';
 import RedditReportDetailPage from './pages/RedditReportDetailPage';
 import RedditReportsArchivePage from './pages/RedditReportsArchivePage';
 import ReportDetailPage from './pages/ReportDetailPage';
+import TestPage from './pages/TestPage';
 
 // Enhanced UX Components
 import { FocusProvider, KeyboardShortcut, SkipToMain } from './components/FocusManager';
@@ -202,6 +203,7 @@ const App = () => {
                   <Route path="/combined-analysis/latest" element={<LatestCombinedAnalysisPage />} />
                   <Route path="/combined-analysis/:id" element={<CombinedAnalysisDetailPage />} />
                   <Route path="/font-demo" element={<FontDemo />} />
+                  <Route path="/test" element={<TestPage />} />
                   <Route path="/reddit-reports" element={<LatestRedditReportPage />} />
                   <Route path="/reddit-reports/:id" element={<RedditReportDetailPage />} />
                   <Route path="/reddit-reports-archive" element={<RedditReportsArchivePage />} />

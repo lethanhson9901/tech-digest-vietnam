@@ -102,19 +102,22 @@ const EnhancedContent = ({ title, date, sections, tocItems }) => {
     },
     // Style code blocks
     code: ({ node, inline, className, children, ...props }) => {
-      if (inline) {
-        return (
-          <code className="bg-neutral-100 text-indigo-700 px-1.5 py-0.5 rounded font-mono text-sm" {...props}>
-            {children}
-          </code>
-        );
-      }
+      // Loại bỏ tất cả dấu backticks từ nội dung
+      const cleanContent = String(children).replace(/`/g, '');
+      
+      // Luôn sử dụng inline formatting đơn giản với font phù hợp tiếng Việt
       return (
-        <pre className="bg-neutral-100 p-4 rounded-lg overflow-x-auto my-4">
-          <code className="font-mono text-sm text-primary" {...props}>
-            {children}
-          </code>
-        </pre>
+        <code 
+          className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-1.5 py-0.5 rounded text-sm border border-gray-200 dark:border-gray-700 font-['JetBrains_Mono',_'Fira_Code',_'Cascadia_Code',_'SF_Mono',_'Monaco',_'Consolas',_'Liberation_Mono',_'Menlo',_'Courier',_'monospace']" 
+          style={{
+            fontFeatureSettings: '"liga" 1, "calt" 1',
+            fontVariantLigatures: 'contextual',
+            letterSpacing: '-0.01em'
+          }}
+          {...props}
+        >
+          {cleanContent}
+        </code>
       );
     },
     // Style links as "Read more"
