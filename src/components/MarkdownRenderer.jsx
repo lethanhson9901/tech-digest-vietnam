@@ -18,12 +18,14 @@ const MarkdownRenderer = ({ content }) => {
     });
   }, [content]);
 
-  // Pre-process content to remove visible HTML ID tags and backticks
+  // Pre-process content to remove visible HTML ID tags, backticks, and replace &nbsp; with newlines
   const processContent = (content) => {
     if (!content) return '';
     
-    // Remove the visible ID attributes from headings
+    // Remove the visible ID attributes from headings and replace &nbsp; with newlines
     return content
+      // Replace &nbsp; with newline
+      .replace(/&nbsp;/g, '\n')
       // Replace patterns like <a id="something"></a> with empty string
       .replace(/<a\s+id="([^"]+)"><\/a>/g, '')
       // Replace patterns like <a id="something">text</a> with just text

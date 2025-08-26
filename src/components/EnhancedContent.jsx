@@ -42,11 +42,13 @@ const EnhancedContent = ({ title, date, sections, tocItems }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [sections]);
 
-  // Process content to remove HTML ID tags
+  // Process content to remove HTML ID tags and replace &nbsp; with newlines
   const processContent = (content) => {
     if (!content) return '';
     
     return content
+      // Replace &nbsp; with newline
+      .replace(/&nbsp;/g, '\n')
       .replace(/<a\s+id="([^"]+)"><\/a>/g, '')
       .replace(/<a\s+id="([^"]+)">(.+?)<\/a>/g, '$2')
       .replace(/(.+?)<a id="(.+?)"><\/a>/g, '$1');
