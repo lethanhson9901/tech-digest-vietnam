@@ -206,7 +206,7 @@ const LazySubredditCard = ({ subredditReport, index, onViewDetail }) => {
 // Search and Filter Component
 const SearchAndFilter = ({ onSearch, onSortChange, totalCount, filteredCount }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortBy, setSortBy] = useState('recent');
+  const [sortBy, setSortBy] = useState('score'); // Mặc định sort theo upvotes cao nhất
 
   // Removed category filters to simplify UI per request
 
@@ -638,7 +638,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
   const [selectedSubreddit, setSelectedSubreddit] = useState(null);
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortBy, setSortBy] = useState('recent');
+  const [sortBy, setSortBy] = useState('score'); // Mặc định sort theo upvotes cao nhất
 
   // Parse the content if it's a string - moved before early returns
   let reportData = report;

@@ -15,6 +15,9 @@ import LatestReportPage from './pages/LatestReportPage';
 import NotFoundPage from './pages/NotFoundPage';
 import HackerNewsReportDetailPage from './pages/HackerNewsReportDetailPage';
 import HackerNewsReportsArchivePage from './pages/HackerNewsReportsArchivePage';
+import LatestProductHuntReportPage from './pages/LatestProductHuntReportPage';
+import ProductHuntReportDetailPage from './pages/ProductHuntReportDetailPage';
+import ProductHuntReportsArchivePage from './pages/ProductHuntReportsArchivePage';
 import RedditReportDetailPage from './pages/RedditReportDetailPage';
 import RedditReportsArchivePage from './pages/RedditReportsArchivePage';
 import ReportDetailPage from './pages/ReportDetailPage';
@@ -208,6 +211,9 @@ const App = () => {
                   <Route path="/hackernews-reports" element={<LatestHackerNewsReportPage />} />
                   <Route path="/hackernews-reports/:id" element={<HackerNewsReportDetailPage />} />
                   <Route path="/hackernews-reports-archive" element={<HackerNewsReportsArchivePage />} />
+                  <Route path="/product-hunt-reports" element={<LatestProductHuntReportPage />} />
+                  <Route path="/product-hunt-reports/:id" element={<ProductHuntReportDetailPage />} />
+                  <Route path="/product-hunt-reports-archive" element={<ProductHuntReportsArchivePage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </main>
