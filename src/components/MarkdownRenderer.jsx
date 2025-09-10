@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 
 const MarkdownRenderer = ({ content, autoTOC = false }) => {
   useEffect(() => {
@@ -69,6 +70,8 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
     if (!content) return '';
     
     let processedContent = content
+      // Convert literal "\n" sequences to real newlines
+      .replace(/\\n/g, '\n')
       // Replace &nbsp; with newline
       .replace(/&nbsp;/g, '\n')
       // Replace patterns like <a id="something"></a> with empty string
@@ -119,7 +122,7 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
 
   return (
     <div className="prose prose-vietnamese dark:prose-invert max-w-none">
-      <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+      <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]} components={components}>
         {processedContent}
       </ReactMarkdown>
     </div>
