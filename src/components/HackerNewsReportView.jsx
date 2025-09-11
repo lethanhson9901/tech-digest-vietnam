@@ -359,11 +359,11 @@ const HackerNewsReportView = ({ report, isLoading, error }) => {
     return <ErrorMessage message="Không tìm thấy báo cáo" />;
   }
 
-  const { 
+  const {
     report_title, 
     analysis_date, 
-    total_stories_analyzed, 
-    stories = []
+    total_stories_analyzed
+    // stories = [] // Commented out unused variable
   } = reportData;
 
   return (

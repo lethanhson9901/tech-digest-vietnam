@@ -327,3 +327,66 @@ export const fetchProductHuntReportById = async (id) => {
     throw error;
   }
 };
+
+// Weekly Tech Reports API functions
+export const fetchWeeklyTechReports = async ({ skip = 0, limit = 10, search = '', dateFrom = '', dateTo = '' }) => {
+  const params = new URLSearchParams({
+    skip,
+    limit,
+    ...(search && { search }),
+    ...(dateFrom && { date_from: dateFrom }),
+    ...(dateTo && { date_to: dateTo })
+  });
+
+  const response = await fetch(`${API_BASE_URL}/weekly-tech-reports?${params}`);
+  
+  if (!response.ok) {
+    throw new Error(`API error: ${response.status}`);
+  }
+  
+  return response.json();
+};
+
+export const fetchLatestWeeklyTechReport = async () => {
+  const response = await fetch(`${API_BASE_URL}/weekly-tech-reports/latest`);
+  
+  if (!response.ok) {
+    throw new Error(`API error: ${response.status}`);
+  }
+  
+  return response.json();
+};
+
+export const fetchWeeklyTechReportById = async (id) => {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+  
+  try {
+    console.log(`Fetching weekly tech report with ID: ${id}`);
+    console.log(`API URL: ${API_BASE_URL}/weekly-tech-reports/${id}`);
+    
+    const response = await fetch(`${API_BASE_URL}/weekly-tech-reports/${id}`, {
+      signal: controller.signal
+    });
+    
+    clearTimeout(timeoutId);
+    
+    console.log(`Response status: ${response.status}`);
+    console.log(`Response ok: ${response.ok}`);
+    
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status} - ${response.statusText}`);
+    }
+    
+    const data = await response.json();
+    console.log('Response data:', data);
+    return data;
+  } catch (error) {
+    clearTimeout(timeoutId);
+    if (error.name === 'AbortError') {
+      throw new Error('Request timeout - The server is taking too long to respond');
+    }
+    console.error('Fetch error:', error);
+    throw error;
+  }
+};

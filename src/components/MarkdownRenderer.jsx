@@ -97,7 +97,7 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
 
   const processedContent = processContent(content);
 
-  // Sử dụng inline formatting đơn giản cho tất cả code elements với font tiếng Việt
+  // Custom components cho markdown với font tiếng Việt và image styling
   const components = {
     code: ({ node, inline, className, children, ...props }) => {
       // Loại bỏ tất cả dấu backticks từ nội dung
@@ -116,6 +116,31 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
         >
           {cleanContent}
         </code>
+      );
+    },
+    img: ({ node, alt, src, title, ...props }) => {
+      return (
+        <div className="my-6 flex justify-center">
+          <div className="max-w-full overflow-hidden rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+            <img
+              src={src}
+              alt={alt || ''}
+              title={title}
+              className="w-full h-auto max-w-4xl object-contain transition-transform duration-300 hover:scale-105"
+              style={{
+                maxHeight: '70vh',
+                objectFit: 'contain'
+              }}
+              loading="lazy"
+              {...props}
+            />
+            {alt && (
+              <div className="px-4 py-2 bg-gray-50 dark:bg-gray-800 text-center">
+                <p className="text-sm text-gray-600 dark:text-gray-400 italic">{alt}</p>
+              </div>
+            )}
+          </div>
+        </div>
       );
     },
   };

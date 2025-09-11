@@ -4,7 +4,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import ListViewReportsList from '../components/ListViewReportsList';
 import LoadingSpinner from '../components/LoadingSpinner';
 import SearchBar from '../components/SearchBar';
-import TagComponent from '../components/TagComponent';
+// import TagComponent from '../components/TagComponent'; // Unused import
 import { useHackerNewsReports } from '../hooks/useHackerNewsReports';
 
 const HackerNewsReportsArchivePage = () => {

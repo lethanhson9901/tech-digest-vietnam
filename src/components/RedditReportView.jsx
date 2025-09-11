@@ -5,8 +5,8 @@ import ErrorMessage from './ErrorMessage';
 import LoadingSpinner from './LoadingSpinner';
 import MarkdownRenderer from './MarkdownRenderer';
 import SocialLinks from './SocialLinks';
-import TableOfContents from './TableOfContents';
-import TagComponent from './TagComponent';
+// import TableOfContents from './TableOfContents'; // Unused import
+// import TagComponent from './TagComponent'; // Unused import
 
 // Lazy Loading Hook
 const useIntersectionObserver = (options = {}) => {
@@ -634,7 +634,7 @@ const AnalyticsDashboard = ({ reports }) => {
 
 const RedditReportView = ({ report, isLoading, error }) => {
   const navigate = useNavigate();
-  const [isMobileTocOpen, setIsMobileTocOpen] = useState(false);
+  // const [isMobileTocOpen, setIsMobileTocOpen] = useState(false); // Unused state
   const [selectedSubreddit, setSelectedSubreddit] = useState(null);
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -723,7 +723,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
       report_title, 
       subreddit, 
       analysis_date, 
-      total_subreddits_analyzed, 
+      // total_subreddits_analyzed: singleReportSubredditCount, // Unused variable 
       executive_summary, 
       key_posts_analysis = [],
       emerging_trends = [],
