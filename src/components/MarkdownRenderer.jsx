@@ -146,7 +146,7 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
   };
 
   return (
-    <div className="prose prose-vietnamese dark:prose-invert max-w-none">
+    <div className="prose prose-vietnamese dark:prose-invert max-w-none prose-lg prose-blue">
       <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]} components={components}>
         {processedContent}
       </ReactMarkdown>

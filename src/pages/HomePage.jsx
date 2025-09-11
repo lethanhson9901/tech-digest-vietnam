@@ -190,57 +190,31 @@ const HomePage = () => {
         </div>
       </div>
       
-      {/* Enhanced Quick Links Section */}
+      {/* Enhanced Quick Links Section - 5 report types */}
       <div className="mb-16">
         <h2 className="text-4xl font-bold text-center mb-12 text-primary">
           Khám phá thêm
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Archive Card */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          {/* Weekly Tech Reports */}
           <Link 
-            to="/archive" 
+            to="/weekly-tech-reports" 
             className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
           >
             <div className="flex items-center mb-6">
-              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-primary-100 dark:bg-dark-bg-tertiary">
-                <svg className="h-8 w-8 text-primary-600 dark:text-dark-accent-primary-bg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-blue-100 dark:bg-blue-900/20">
+                <svg className="h-8 w-8 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-primary-600 dark:group-hover:text-dark-accent-primary-bg">
-              📚 Kho lưu trữ
+            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-blue-600 dark:group-hover:text-blue-400">
+              📖 Tạp chí Công nghệ
             </h3>
             <p className="leading-relaxed mb-4 text-secondary">
-              Duyệt tất cả các báo cáo công nghệ trước đây và tìm hiểu xu hướng phát triển.
+              Bản tin công nghệ Việt Nam hàng tuần, tuyển chọn và phân tích.
             </p>
-            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-primary-600 dark:text-dark-accent-primary-bg">
-              Khám phá ngay
-              <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </div>
-          </Link>
-          
-          {/* Latest Reports Card */}
-          <Link 
-            to="/latest" 
-            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
-          >
-            <div className="flex items-center mb-6">
-              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-accent-emerald-light/10 dark:bg-dark-accent-emerald/10">
-                <svg className="h-8 w-8 text-accent-emerald dark:text-dark-accent-emerald" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-accent-emerald dark:group-hover:text-dark-accent-emerald">
-              ⚡ Báo cáo mới nhất
-            </h3>
-            <p className="leading-relaxed mb-4 text-secondary">
-              Xem những thông tin công nghệ mới nhất và cập nhật từ thị trường Việt Nam.
-            </p>
-            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-accent-emerald dark:text-dark-accent-emerald">
+            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-blue-600 dark:text-blue-400">
               Xem ngay
               <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -248,7 +222,59 @@ const HomePage = () => {
             </div>
           </Link>
 
-          {/* Reddit Reports Card */}
+          {/* Combined Analysis */}
+          <Link 
+            to="/combined-analysis" 
+            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
+          >
+            <div className="flex items-center mb-6">
+              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-emerald-100 dark:bg-emerald-900/20">
+                <svg className="h-8 w-8 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
+              📊 Phân tích tổng hợp
+            </h3>
+            <p className="leading-relaxed mb-4 text-secondary">
+              Tổng hợp từ nhiều nguồn, phân tích xu hướng nổi bật.
+            </p>
+            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-emerald-600 dark:text-emerald-400">
+              Khám phá
+              <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </Link>
+
+          {/* Product Hunt Reports */}
+          <Link 
+            to="/product-hunt-reports" 
+            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
+          >
+            <div className="flex items-center mb-6">
+              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-orange-100 dark:bg-orange-900/20">
+                <svg className="h-8 w-8 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-orange-600 dark:group-hover:text-orange-400">
+              🚀 Product Hunt
+            </h3>
+            <p className="leading-relaxed mb-4 text-secondary">
+              Sản phẩm mới nổi bật mỗi ngày từ Product Hunt.
+            </p>
+            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-orange-600 dark:text-orange-400">
+              Xem ngay
+              <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </Link>
+
+          {/* Reddit Reports */}
           <Link 
             to="/reddit-reports" 
             className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
@@ -264,7 +290,7 @@ const HomePage = () => {
               💬 Báo cáo Reddit
             </h3>
             <p className="leading-relaxed mb-4 text-secondary">
-              Thảo luận và insights từ cộng đồng Reddit về công nghệ Việt Nam.
+              Thảo luận và insights từ cộng đồng Reddit.
             </p>
             <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-orange-600 dark:text-orange-400">
               Xem ngay
@@ -274,32 +300,31 @@ const HomePage = () => {
             </div>
           </Link>
 
-          {/* HackerNews Reports Card */}
+          {/* HackerNews Reports */}
           <Link 
             to="/hackernews-reports" 
             className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
           >
             <div className="flex items-center mb-6">
-              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-orange-100 dark:bg-orange-900/20">
-                <svg className="h-8 w-8 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-amber-100 dark:bg-amber-900/20">
+                <svg className="h-8 w-8 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-orange-600 dark:group-hover:text-orange-400">
-              🔥 Tin nổi bật HN
+            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-amber-600 dark:group-hover:text-amber-400">
+              🔥 Hacker News
             </h3>
             <p className="leading-relaxed mb-4 text-secondary">
-              Những bài viết nổi bật và thảo luận từ HackerNews về công nghệ.
+              Những câu chuyện công nghệ nổi bật từ HN.
             </p>
-            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-orange-600 dark:text-orange-400">
+            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-amber-600 dark:text-amber-400">
               Xem ngay
               <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </div>
           </Link>
-          
         </div>
       </div>
 
@@ -346,68 +371,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Quick Links with enhanced animations */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
-        <Link to="/archive" className="interactive-hover group">
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl border border-blue-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-gray-500 transition-all duration-300">
-            <div className="w-12 h-12 bg-blue-500 dark:bg-blue-600 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-primary mb-2">Browse Archive</h3>
-            <p className="text-secondary text-sm">Explore our collection of tech reports</p>
-          </div>
-        </Link>
-
-        <Link to="/latest" className="interactive-hover group">
-          <div className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl border border-green-200 dark:border-gray-600 hover:border-green-300 dark:hover:border-gray-500 transition-all duration-300">
-            <div className="w-12 h-12 bg-green-500 dark:bg-green-600 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-primary mb-2">Latest Report</h3>
-            <p className="text-secondary text-sm">Read the most recent tech insights</p>
-          </div>
-        </Link>
-
-        <Link to="/reddit-reports" className="interactive-hover group">
-          <div className="bg-gradient-to-br from-orange-50 to-red-100 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl border border-orange-200 dark:border-gray-600 hover:border-orange-300 dark:hover:border-gray-500 transition-all duration-300">
-            <div className="w-12 h-12 bg-orange-500 dark:bg-orange-600 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-primary mb-2">Reddit Reports</h3>
-            <p className="text-secondary text-sm">Community discussions from Reddit</p>
-          </div>
-        </Link>
-
-        <Link to="/hackernews-reports" className="interactive-hover group">
-          <div className="bg-gradient-to-br from-orange-50 to-red-100 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl border border-orange-200 dark:border-gray-600 hover:border-orange-300 dark:hover:border-gray-500 transition-all duration-300">
-            <div className="w-12 h-12 bg-orange-500 dark:bg-orange-600 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-primary mb-2">HN Reports</h3>
-            <p className="text-secondary text-sm">Top stories from HackerNews</p>
-          </div>
-        </Link>
-
-        <Link to="/about" className="interactive-hover group">
-          <div className="bg-gradient-to-br from-purple-50 to-violet-100 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl border border-purple-200 dark:border-gray-600 hover:border-purple-300 dark:hover:border-gray-500 transition-all duration-300">
-            <div className="w-12 h-12 bg-purple-500 dark:bg-purple-600 rounded-lg flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-primary mb-2">About Us</h3>
-            <p className="text-secondary text-sm">Learn more about Tech Digest Vietnam</p>
-          </div>
-        </Link>
-      </div>
+      
 
       {/* Tech Topics Showcase with new tag system */}
       <div className="bg-white dark:bg-dark-bg-secondary rounded-xl shadow-lg p-6 mb-8 animate-fadeIn">
@@ -478,46 +442,6 @@ const HomePage = () => {
               </TagComponent>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Features section with enhanced styling */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="text-center">
-          <div className="bg-blue-100 dark:bg-dark-accent-primary-bg/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-blue-600 dark:text-dark-accent-primary-bg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 className="font-semibold text-primary mb-2">Đáng tin cậy</h3>
-          <p className="text-secondary text-sm">Thông tin được kiểm chứng và cập nhật chính xác</p>
-        </div>
-        <div className="text-center">
-          <div className="bg-green-100 dark:bg-dark-accent-emerald/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-green-600 dark:text-dark-accent-emerald" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-            </svg>
-          </div>
-          <h3 className="font-semibold text-primary mb-2">Cập nhật thường xuyên</h3>
-          <p className="text-secondary text-sm">Thông tin mới được cập nhật hàng ngày</p>
-        </div>
-        <div className="text-center">
-          <div className="bg-purple-100 dark:bg-dark-accent-secondary-bg/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-purple-600 dark:text-dark-accent-secondary-bg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-            </svg>
-          </div>
-          <h3 className="font-semibold text-primary mb-2">Dễ đọc</h3>
-          <p className="text-secondary text-sm">Giao diện thân thiện và dễ sử dụng</p>
-        </div>
-        <div className="text-center">
-          <div className="bg-orange-100 dark:bg-dark-accent-orange/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-orange-600 dark:text-dark-accent-orange" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </div>
-          <h3 className="font-semibold text-primary mb-2">Chuyên sâu</h3>
-          <p className="text-secondary text-sm">Phân tích chi tiết về công nghệ Việt Nam</p>
         </div>
       </div>
     </div>
