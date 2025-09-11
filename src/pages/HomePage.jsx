@@ -1,5 +1,6 @@
 // src/pages/HomePage.jsx (enhanced version)
 import { format } from 'date-fns';
+import { vi } from 'date-fns/locale';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ErrorMessage from '../components/ErrorMessage';
@@ -14,6 +15,7 @@ const HomePage = () => {
   const [error, setError] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const [showFullContent, setShowFullContent] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
     const loadLatestReport = async () => {
@@ -32,11 +34,19 @@ const HomePage = () => {
     loadLatestReport();
     
     // Animation delay
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const handleMotionChange = () => setPrefersReducedMotion(mediaQuery.matches);
+    handleMotionChange();
+    mediaQuery.addEventListener?.('change', handleMotionChange);
+
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 300);
     
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      mediaQuery.removeEventListener?.('change', handleMotionChange);
+    };
   }, []);
 
   if (isLoading) {
@@ -62,14 +72,14 @@ const HomePage = () => {
   }
 
   return (
-    <div className={`max-w-5xl mx-auto transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+    <div className={`max-w-5xl mx-auto ${prefersReducedMotion ? '' : 'transition-all duration-700 transform'} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
       {/* Enhanced Hero Section */}
       <div className="mb-16 text-center relative">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden -z-10">
-          <div className="absolute top-0 left-1/4 w-72 h-72 rounded-full opacity-20 dark:opacity-10 animate-float-gentle"
+          <div className={`absolute top-0 left-1/4 w-72 h-72 rounded-full opacity-20 dark:opacity-10 ${prefersReducedMotion ? '' : 'animate-float-gentle'}`}
                style={{ background: 'var(--gradient-primary)' }}></div>
-          <div className="absolute top-20 right-1/4 w-48 h-48 rounded-full opacity-15 dark:opacity-5 animate-float-gentle"
+          <div className={`absolute top-20 right-1/4 w-48 h-48 rounded-full opacity-15 dark:opacity-5 ${prefersReducedMotion ? '' : 'animate-float-gentle'}`}
                style={{ background: 'var(--gradient-secondary)', animationDelay: '-2s' }}></div>
         </div>
         
@@ -88,7 +98,7 @@ const HomePage = () => {
           </p>
           
           {/* Feature badges */}
-          <div className="flex justify-center items-center space-x-8 mt-8">
+          <div className="flex flex-wrap justify-center items-center gap-4 mt-8">
             <div className="flex items-center space-x-3 px-4 py-2 rounded-full bg-primary-50 dark:bg-dark-bg-tertiary border border-primary-200 dark:border-dark-border-secondary">
               <svg className="w-5 h-5 text-primary-600 dark:text-dark-accent-primary-bg" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
@@ -125,7 +135,7 @@ const HomePage = () => {
                     <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <h1 className="text-3xl font-bold text-white">Latest Tech Digest</h1>
+                <h1 className="text-3xl font-bold text-white">Bản tin mới nhất</h1>
               </div>
               <p className="text-white/90 text-lg font-medium">{report.filename}</p>
             </div>
@@ -136,7 +146,7 @@ const HomePage = () => {
                        background: 'rgba(255, 255, 255, 0.2)',
                        border: '1px solid rgba(255, 255, 255, 0.3)'
                      }}>
-                  📅 {format(new Date(report.upload_date), 'MMMM d, yyyy')}
+                  📅 {format(new Date(report.upload_date), 'EEEE, dd MMMM yyyy', { locale: vi })}
                 </div>
               </div>
             )}
@@ -370,25 +380,25 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-
       
-
+      
+      
       {/* Tech Topics Showcase with new tag system */}
       <div className="bg-white dark:bg-dark-bg-secondary rounded-xl shadow-lg p-6 mb-8 animate-fadeIn">
         <h3 className="text-xl font-semibold text-primary mb-4 flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-indigo-600 dark:text-dark-accent-primary-bg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.99 1.99 0 013 12V7a4 4 0 014-4z" />
           </svg>
-          Popular Tech Topics
+          Chủ đề công nghệ nổi bật
         </h3>
-          <p className="text-secondary mb-6">Explore the latest trends in technology and innovation</p>
+          <p className="text-secondary mb-6">Khám phá các xu hướng mới nhất trong công nghệ và đổi mới</p>
         
         <div className="space-y-6">
           {/* AI & Machine Learning */}
           <div>
-            <h4 className="text-lg font-medium text-primary mb-3">Artificial Intelligence & Machine Learning</h4>
+            <h4 className="text-lg font-medium text-primary mb-3">Trí tuệ nhân tạo & Máy học</h4>
             <div className="flex flex-wrap gap-2">
-              <TagComponent variant="primary" size="medium">AI Development</TagComponent>
+              <TagComponent variant="primary" size="medium">Phát triển AI</TagComponent>
               <TagComponent variant="info" size="medium">Machine Learning</TagComponent>
               <TagComponent variant="success" size="medium">Deep Learning</TagComponent>
               <TagComponent variant="warning" size="medium">Neural Networks</TagComponent>
@@ -398,14 +408,14 @@ const HomePage = () => {
 
           {/* Web Technologies */}
           <div>
-            <h4 className="text-lg font-medium text-primary mb-3">Web Technologies</h4>
+            <h4 className="text-lg font-medium text-primary mb-3">Công nghệ Web</h4>
             <div className="flex flex-wrap gap-2">
               <TagComponent variant="primary" size="small">React</TagComponent>
               <TagComponent variant="info" size="small">Node.js</TagComponent>
               <TagComponent variant="success" size="small">TypeScript</TagComponent>
               <TagComponent variant="warning" size="small">GraphQL</TagComponent>
               <TagComponent variant="danger" size="small">WebAssembly</TagComponent>
-              <TagComponent variant="secondary" size="small">Progressive Web Apps</TagComponent>
+              <TagComponent variant="secondary" size="small">PWA</TagComponent>
             </div>
           </div>
 
@@ -423,7 +433,7 @@ const HomePage = () => {
 
           {/* Emerging Technologies */}
           <div>
-            <h4 className="text-lg font-medium text-primary mb-3">Emerging Technologies</h4>
+            <h4 className="text-lg font-medium text-primary mb-3">Công nghệ mới nổi</h4>
             <div className="flex flex-wrap gap-2">
               <TagComponent variant="primary" size="medium" closable onClose={() => console.log('Closed Blockchain')}>
                 Blockchain
