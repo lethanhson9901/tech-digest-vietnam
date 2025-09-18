@@ -93,7 +93,7 @@ const LazyArticleCard = ({ article, index, onViewDetail }) => {
       {article.tags && article.tags.length > 0 && (
         <div className="flex flex-wrap gap-2 mb-6">
           {article.tags.slice(0, 3).map((tag, tagIndex) => (
-            <TagComponent key={tagIndex} tag={tag} />
+            <TagComponent key={tagIndex}>{tag}</TagComponent>
           ))}
           {article.tags.length > 3 && (
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
@@ -110,7 +110,7 @@ const LazyArticleCard = ({ article, index, onViewDetail }) => {
             href={article.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 bg-orange-300 dark:bg-amber-600 hover:bg-orange-400 dark:hover:bg-amber-500 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
+            className="inline-flex items-center px-4 py-2 bg-orange-300 dark:bg-amber-600 hover:bg-orange-400 dark:hover:bg-amber-500 text-white dark:text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
           >
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -121,7 +121,7 @@ const LazyArticleCard = ({ article, index, onViewDetail }) => {
             href={article.hnUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 bg-orange-300 dark:bg-amber-600 hover:bg-orange-400 dark:hover:bg-amber-500 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
+            className="inline-flex items-center px-4 py-2 bg-orange-300 dark:bg-amber-600 hover:bg-orange-400 dark:hover:bg-amber-500 text-white dark:text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
           >
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
@@ -266,7 +266,7 @@ const ArticleDetailModal = ({ isOpen, onClose, articleData }) => {
                     href={articleData.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-orange-300 dark:bg-amber-600 hover:bg-orange-400 dark:hover:bg-amber-500 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
+                    className="inline-flex items-center px-4 py-2 bg-orange-300 dark:bg-amber-600 hover:bg-orange-400 dark:hover:bg-amber-500 text-white dark:text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
                   >
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -277,7 +277,7 @@ const ArticleDetailModal = ({ isOpen, onClose, articleData }) => {
                     href={articleData.hnUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-orange-300 dark:bg-amber-600 hover:bg-orange-400 dark:hover:bg-amber-500 text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
+                    className="inline-flex items-center px-4 py-2 bg-orange-300 dark:bg-amber-600 hover:bg-orange-400 dark:hover:bg-amber-500 text-white dark:text-white rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm"
                   >
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
@@ -299,7 +299,7 @@ const HackerNewsReportView = ({ report, isLoading, error }) => {
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortBy, setSortBy] = useState('recent');
+  const [sortBy, setSortBy] = useState('points');
 
   // Parse the content if it's a string
   let reportData = report;
@@ -317,6 +317,11 @@ const HackerNewsReportView = ({ report, isLoading, error }) => {
     if (!reportData?.stories) return [];
 
     let filteredStories = reportData.stories;
+    
+    // Debug: Log first story to check tags
+    if (filteredStories.length > 0) {
+      console.log('First story tags:', filteredStories[0].tags);
+    }
     
     // Apply search filter
     if (searchTerm) {
