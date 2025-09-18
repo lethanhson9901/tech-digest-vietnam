@@ -392,7 +392,7 @@ const SubredditDetailModal = ({ isOpen, onClose, subredditData, subredditName })
                             href={post.post_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors"
+                            className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white dark:text-white rounded-lg text-sm font-medium transition-colors"
                           >
                             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
@@ -872,7 +872,7 @@ const RedditReportView = ({ report, isLoading, error }) => {
                           href={post.post_url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center px-3 py-1 text-sm rounded-lg transition-all duration-200 hover:scale-105"
+                          className="inline-flex items-center px-3 py-1 text-sm rounded-lg transition-all duration-200 hover:scale-105 text-white"
                           style={{ 
                             background: 'var(--color-primary-500)',
                             color: 'white'
