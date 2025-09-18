@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tech-digest-vietnam/static/css/main.49b16298.css",
-    "main.js": "/tech-digest-vietnam/static/js/main.3e767c18.js",
+    "main.css": "/tech-digest-vietnam/static/css/main.dd28a4fb.css",
+    "main.js": "/tech-digest-vietnam/static/js/main.c77ec6fc.js",
     "static/js/453.baee2e79.chunk.js": "/tech-digest-vietnam/static/js/453.baee2e79.chunk.js",
     "index.html": "/tech-digest-vietnam/index.html",
-    "main.49b16298.css.map": "/tech-digest-vietnam/static/css/main.49b16298.css.map",
-    "main.3e767c18.js.map": "/tech-digest-vietnam/static/js/main.3e767c18.js.map",
+    "main.dd28a4fb.css.map": "/tech-digest-vietnam/static/css/main.dd28a4fb.css.map",
+    "main.c77ec6fc.js.map": "/tech-digest-vietnam/static/js/main.c77ec6fc.js.map",
     "453.baee2e79.chunk.js.map": "/tech-digest-vietnam/static/js/453.baee2e79.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.49b16298.css",
-    "static/js/main.3e767c18.js"
+    "static/css/main.dd28a4fb.css",
+    "static/js/main.c77ec6fc.js"
   ]
 }
