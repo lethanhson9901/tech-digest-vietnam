@@ -1,69 +1,10 @@
 // src/components/MarkdownRenderer.jsx
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkBreaks from 'remark-breaks';
 
-const MarkdownRenderer = ({ content, autoTOC = false }) => {
-  useEffect(() => {
-    // Add IDs to headings for TOC navigation after rendering
-    const headings = document.querySelectorAll('.prose h2, .prose h3, .prose h4');
-    headings.forEach(heading => {
-      if (!heading.id) {
-        heading.id = heading.textContent
-          .toLowerCase()
-          .replace(/[^\w\s-]/g, '')
-          .replace(/[\s_-]+/g, '-')
-          .replace(/^-+|-+$/g, '');
-      }
-    });
-  }, [content]);
-
-  // Generate table of contents from h2 headings
-  const generateTOC = (content) => {
-    if (!content) return '';
-    
-    const lines = content.split('\n');
-    const h2Headings = [];
-    
-    lines.forEach(line => {
-      const trimmedLine = line.trim();
-      if (trimmedLine.startsWith('## ') && !trimmedLine.startsWith('###')) {
-        const headingText = trimmedLine.replace('## ', '').trim();
-        if (headingText) {
-          const id = headingText
-            .toLowerCase()
-            .replace(/[^\w\s-]/g, '')
-            .replace(/[\s_-]+/g, '-')
-            .replace(/^-+|-+$/g, '');
-          h2Headings.push({ text: headingText, id });
-        }
-      }
-    });
-    
-    if (h2Headings.length === 0) return '';
-    
-    let toc = '## Mục lục\n\n';
-    h2Headings.forEach((heading, index) => {
-      toc += `${index + 1}. [${heading.text}](#${heading.id})\n`;
-    });
-    toc += '\n---\n\n';
-    
-    return toc;
-  };
-
-  // Check if content already has a table of contents
-  const hasTOC = (content) => {
-    if (!content) return false;
-    const lines = content.split('\n');
-    for (let i = 0; i < Math.min(10, lines.length); i++) {
-      const line = lines[i].trim();
-      if (line === '## Mục lục' || line.toLowerCase().includes('mục lục') || line.toLowerCase().includes('table of contents')) {
-        return true;
-      }
-    }
-    return false;
-  };
+const MarkdownRenderer = ({ content }) => {
 
   // Pre-process content to remove visible HTML ID tags, backticks, and replace &nbsp; with newlines
   const processContent = (content) => {
@@ -83,14 +24,6 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
       // Remove any remaining id="something" from the text
       .replace(/<a id="([^"]+)">/g, '')
       .replace(/<\/a>/g, '');
-    
-    // Add table of contents if autoTOC is enabled and not already present
-    if (autoTOC && !hasTOC(processedContent)) {
-      const toc = generateTOC(processedContent);
-      if (toc) {
-        processedContent = toc + processedContent;
-      }
-    }
     
     return processedContent;
   };
@@ -141,6 +74,35 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
             )}
           </div>
         </div>
+      );
+    },
+    // Style links - đảm bảo "Read More" mở tab mới
+    a: ({ node, href, children, ...props }) => {
+      // Check if it's a "Read More" link (case insensitive)
+      const isReadMore = children && 
+        (children[0] === 'Read more' || 
+         children[0] === 'Read More' || 
+         children[0] === 'read more' ||
+         String(children[0]).toLowerCase().includes('read more'));
+      
+      // Check if it's an external link
+      const isExternal = href?.startsWith('http');
+      
+      return (
+        <a 
+          href={href} 
+          className="text-indigo-600 hover:text-indigo-800 hover:underline"
+          {...(isReadMore || isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          {...props}
+        >
+          {children}
+          {(isReadMore || isExternal) && (
+            <svg xmlns="http://www.w3.org/2000/svg" className="inline-block h-3.5 w-3.5 ml-0.5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+            </svg>
+          )}
+        </a>
       );
     },
   };
