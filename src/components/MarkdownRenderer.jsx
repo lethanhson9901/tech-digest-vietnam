@@ -83,7 +83,7 @@ const MarkdownRenderer = ({ content }) => {
         (children[0] === 'Read more' || 
          children[0] === 'Read More' || 
          children[0] === 'read more' ||
-         String(children[0]).toLowerCase().includes('read more'));
+         String(children[0]).toLowerCase().trim() === 'read more');
       
       // Check if it's an external link
       const isExternal = href?.startsWith('http');
