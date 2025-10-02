@@ -75,7 +75,7 @@ const ReportDetailPage = () => {
         </div>
         
         <div className="p-6">
-          <MarkdownRenderer content={report.content} />
+          <MarkdownRenderer content={report.content} autoTOC={true} />
         </div>
       </div>
     </div>
