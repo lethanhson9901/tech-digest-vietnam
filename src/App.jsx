@@ -106,10 +106,12 @@ const App = () => {
 
   // Get basename from package.json homepage or default to empty string
   const getBasename = () => {
-    if (process.env.PUBLIC_URL) {
-      return process.env.PUBLIC_URL;
+    const publicUrl = process.env.PUBLIC_URL || '';
+    // Only use subpath if it's not root
+    if (publicUrl && publicUrl !== '/') {
+      return publicUrl;
     }
-    return '/tech-digest-vietnam';
+    return '';
   };
 
   // Enhanced loading screen with better accessibility
