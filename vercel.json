@@ -1,6 +1,6 @@
 {
   "name": "tech-digest-vn",
-  "buildCommand": "npm run build",
+  "buildCommand": "PUBLIC_URL=/ npm run build",
   "outputDirectory": "build",
   "rewrites": [
     {
