@@ -17,6 +17,26 @@ const HomePage = () => {
   const [showFullContent, setShowFullContent] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
+  // Hugging Face Hub state
+  const [hfHubTab, setHfHubTab] = useState('models'); // 'models' | 'datasets' | 'spaces'
+  const [hfHubLimit, setHfHubLimit] = useState(10);
+  const [hfHubLoading, setHfHubLoading] = useState(false);
+  const [hfHubError, setHfHubError] = useState(null);
+  const [hfHubItems, setHfHubItems] = useState([]);
+
+  // Daily Papers state
+  const [papersDate, setPapersDate] = useState(() => {
+    const d = new Date();
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
+  });
+  const [papersLimit, setPapersLimit] = useState(10);
+  const [papersLoading, setPapersLoading] = useState(false);
+  const [papersError, setPapersError] = useState(null);
+  const [papersItems, setPapersItems] = useState([]);
+
   useEffect(() => {
     const loadLatestReport = async () => {
       try {
@@ -25,14 +45,15 @@ const HomePage = () => {
         const data = await fetchLatestReport();
         setReport(data);
       } catch (err) {
-        setError(err.message);
+        setError(err.message || 'Failed to load latest report');
       } finally {
         setIsLoading(false);
       }
     };
 
+    // Initial data fetch kept for compatibility (can be removed later if not used)
     loadLatestReport();
-    
+
     // Animation delay
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const handleMotionChange = () => setPrefersReducedMotion(mediaQuery.matches);
@@ -48,6 +69,152 @@ const HomePage = () => {
       mediaQuery.removeEventListener?.('change', handleMotionChange);
     };
   }, []);
+
+  // Fetch Hugging Face Hub trending (client-side, no backend dependency)
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const fetchHub = async () => {
+      try {
+        setHfHubLoading(true);
+        setHfHubError(null);
+
+        const typeParam =
+          hfHubTab === 'datasets'
+            ? 'dataset'
+            : hfHubTab === 'spaces'
+            ? 'space'
+            : undefined;
+
+        const url = new URL('https://huggingface.co/api/trending');
+        if (typeParam) url.searchParams.set('type', typeParam);
+
+        const res = await fetch(url.toString(), {
+          method: 'GET',
+          signal: controller.signal,
+        });
+
+        if (!res.ok) {
+          throw new Error(`HF Hub ${res.status}`);
+        }
+
+        const json = await res.json();
+        // Normalize HF trending response:
+        // - Some responses: { recentlyTrending: [ { repoData, repoType } ] }
+        // - Others: raw array of repos
+        const rawItems = Array.isArray(json)
+          ? json
+          : Array.isArray(json.recentlyTrending)
+          ? json.recentlyTrending
+          : [];
+
+        const items = rawItems.map((entry) => {
+          const repo = entry.repoData || entry;
+          const repoType = entry.repoType || repo.repoType || hfHubTab.slice(0, -1) || 'model';
+
+          return {
+            id: repo.id,
+            author: repo.author,
+            authorData: repo.authorData,
+            repoType,
+            pipeline_tag: repo.pipeline_tag,
+            tags: repo.tags,
+            likes: repo.likes,
+            downloads:
+              repo.downloads ??
+              repo.downloadsAllTime ??
+              repo.downloadsLastMonth ??
+              undefined,
+            lastModified: repo.lastModified,
+            runtime: repo.runtime,
+          };
+        });
+
+        setHfHubItems(items.slice(0, hfHubLimit));
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          setHfHubError(err.message || 'Failed to load Hugging Face Hub trending');
+        }
+      } finally {
+        if (!controller.signal.aborted) {
+          setHfHubLoading(false);
+        }
+      }
+    };
+
+    fetchHub();
+
+    return () => controller.abort();
+  }, [hfHubTab, hfHubLimit]);
+
+  // Fetch Daily Papers
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const fetchPapers = async () => {
+      try {
+        setPapersLoading(true);
+        setPapersError(null);
+
+        const url = new URL('https://huggingface.co/api/daily_papers');
+        if (papersDate) url.searchParams.set('date', papersDate);
+
+        const res = await fetch(url.toString(), {
+          method: 'GET',
+          signal: controller.signal,
+        });
+
+        if (!res.ok) {
+          throw new Error(`Daily Papers ${res.status}`);
+        }
+
+        const json = await res.json();
+
+        // Normalize Daily Papers:
+        // API returns an array of entries: { paper, title, ... }
+        const rawItems = Array.isArray(json)
+          ? json
+          : Array.isArray(json.papers)
+          ? json.papers
+          : [];
+
+        const items = rawItems.map((entry) => {
+          const p = entry.paper || entry;
+          const arxivId = p.id || entry.id;
+          const authors = p.authors || [];
+          const submitter =
+            (p.submittedOnDailyBy && p.submittedOnDailyBy.fullname) ||
+            (entry.submittedBy && entry.submittedBy.fullname) ||
+            (authors[0] && (authors[0].name || authors[0].user?.fullname)) ||
+            '';
+          return {
+            id: arxivId,
+            title: p.title || entry.title,
+            numAuthors: authors.length,
+            submitter,
+            likes: p.upvotes ?? entry.upvotes ?? 0,
+            comments: entry.numComments ?? 0,
+            collections: entry.numCollections ?? 0,
+            url: arxivId ? `https://huggingface.co/papers/${arxivId}` : undefined,
+          };
+        });
+
+        setPapersItems(items.slice(0, papersLimit));
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          setPapersError(err.message || 'Failed to load Daily Papers');
+        }
+      } finally {
+        if (!controller.signal.aborted) {
+          setPapersLoading(false);
+        }
+      }
+    };
+
+    fetchPapers();
+
+    return () => controller.abort();
+  }, [papersDate, papersLimit]);
 
   if (isLoading) {
     return (
@@ -72,9 +239,9 @@ const HomePage = () => {
   }
 
   return (
-    <div className={`max-w-5xl mx-auto ${prefersReducedMotion ? '' : 'transition-all duration-700 transform'} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+    <div className={`max-w-6xl mx-auto px-4 ${prefersReducedMotion ? '' : 'transition-all duration-700 transform'} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
       {/* Enhanced Hero Section */}
-      <div className="mb-16 text-center relative">
+      <div className="mb-10 text-center relative">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden -z-10">
           <div className={`absolute top-0 left-1/4 w-72 h-72 rounded-full opacity-20 dark:opacity-10 ${prefersReducedMotion ? '' : 'animate-float-gentle'}`}
@@ -119,227 +286,421 @@ const HomePage = () => {
         </div>
       </div>
       
-      {/* Enhanced Latest Report Card */}
-      <div className="rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] hover:-translate-y-2 mb-16 bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
-           style={{ 
-             boxShadow: 'var(--shadow-accent)'
-           }}>
-        <div className="px-8 py-10"
-             style={{ background: 'var(--gradient-primary)' }}>
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex-1">
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="p-3 rounded-2xl backdrop-blur-sm"
-                     style={{ background: 'rgba(255, 255, 255, 0.2)' }}>
-                  <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <h1 className="text-3xl font-bold text-white">Bản tin mới nhất</h1>
+      
+      {/* HF Trending Layout */}
+      <div className="space-y-8 mb-14">
+        {/* Card 1: Hugging Face Hub Trending */}
+        <div className="bg-white dark:bg-[#0f172a] rounded-3xl shadow-lg border border-neutral-200 dark:border-[#1f2937] p-6 md:p-7">
+          {/* Header */}
+          <div className="flex items-start justify-between mb-1">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-yellow-300 to-orange-400 flex items-center justify-center">
+                <span className="text-xl">🤗</span>
               </div>
-              <p className="text-white/90 text-lg font-medium">{report.filename}</p>
+              <div>
+                <h2 className="font-semibold text-lg md:text-xl text-neutral-900 dark:text-dark-text-primary">
+                  Hugging Face Hub
+                </h2>
+                <p className="text-xs text-neutral-500 mt-0.5">
+                  Trending Models, Datasets & Spaces
+                </p>
+              </div>
             </div>
-            {report.upload_date && (
-              <div className="mt-6 lg:mt-0">
-                <div className="text-white px-6 py-3 rounded-full text-sm font-semibold backdrop-blur-sm"
-                     style={{ 
-                       background: 'rgba(255, 255, 255, 0.2)',
-                       border: '1px solid rgba(255, 255, 255, 0.3)'
-                     }}>
-                  📅 {format(new Date(report.upload_date), 'EEEE, dd MMMM yyyy', { locale: vi })}
-                </div>
+            <button
+              type="button"
+              className="w-7 h-7 flex items-center justify-center rounded-full text-neutral-400 hover:text-neutral-700 hover:bg-neutral-100 dark:hover:bg-dark-bg-tertiary transition-colors"
+            >
+              ⋮
+            </button>
+          </div>
+
+          {/* Controls (static UI, ready for wiring) */}
+          <div className="mt-4 mb-3 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            {/* Tabs */}
+            <div className="inline-flex rounded-full bg-neutral-100 dark:bg-dark-bg-tertiary p-1 text-xs">
+              <button
+                type="button"
+                onClick={() => setHfHubTab('models')}
+                className={`px-3 py-1.5 rounded-full text-xs ${
+                  hfHubTab === 'models'
+                    ? 'bg-white dark:bg-dark-bg-secondary text-neutral-900 dark:text-white shadow-sm'
+                    : 'text-neutral-500 hover:text-neutral-900'
+                }`}
+              >
+                Models
+              </button>
+              <button
+                type="button"
+                onClick={() => setHfHubTab('datasets')}
+                className={`px-3 py-1.5 rounded-full text-xs ${
+                  hfHubTab === 'datasets'
+                    ? 'bg-white dark:bg-dark-bg-secondary text-neutral-900 dark:text-white shadow-sm'
+                    : 'text-neutral-500 hover:text-neutral-900'
+                }`}
+              >
+                Datasets
+              </button>
+              <button
+                type="button"
+                onClick={() => setHfHubTab('spaces')}
+                className={`px-3 py-1.5 rounded-full text-xs ${
+                  hfHubTab === 'spaces'
+                    ? 'bg-white dark:bg-dark-bg-secondary text-neutral-900 dark:text-white shadow-sm'
+                    : 'text-neutral-500 hover:text-neutral-900'
+                }`}
+              >
+                Spaces
+              </button>
+            </div>
+            {/* Right controls: removed Time window & Top N for cleaner UI */}
+          </div>
+
+          {/* List (Hackernews-style rows) */}
+          <div className="mt-1">
+            {hfHubLoading && (
+              <div className="py-4 text-xs text-neutral-500">
+                Loading Hugging Face Hub trending…
               </div>
             )}
+
+            {hfHubError && !hfHubLoading && (
+              <div className="py-3 text-xs text-red-500">
+                {hfHubError}
+              </div>
+            )}
+
+            {!hfHubLoading && !hfHubError && hfHubItems.length === 0 && (
+              <div className="py-3 text-xs text-neutral-500">
+                No trending data available at the moment.
+              </div>
+            )}
+
+            {!hfHubLoading &&
+              !hfHubError &&
+              hfHubItems.map((item, index) => {
+                const rank = index + 1;
+
+                // Bản ghi chuẩn hóa từ recentlyTrending:
+                const repo = item.repoData || item;
+                const id = repo.id || item.id || '';
+                const owner = repo.author || '';
+                const fullName = id || owner || 'Unknown';
+
+                const type =
+                  item.repoType ||
+                  repo.repoType ||
+                  (hfHubTab === 'datasets'
+                    ? 'dataset'
+                    : hfHubTab === 'spaces'
+                    ? 'space'
+                    : 'model');
+
+                const pipeline = repo.pipeline_tag || (repo.tags && repo.tags[0]);
+
+                const likes =
+                  repo.likes ??
+                  item.likes ??
+                  repo.likeCount ??
+                  item.likeCount ??
+                  0;
+
+                const downloads =
+                  repo.downloads ??
+                  item.downloads ??
+                  repo.downloadsAllTime ??
+                  item.downloadsAllTime ??
+                  repo.downloadsLastMonth ??
+                  item.downloadsLastMonth ??
+                  null;
+
+                const updated =
+                  repo.lastModified ||
+                  item.lastModified ||
+                  repo.lastModifiedAt ||
+                  item.lastModifiedAt ||
+                  repo.lastUpdated ||
+                  item.lastUpdated ||
+                  null;
+
+                let url;
+                if (id) {
+                  if (type === 'dataset') {
+                    url = `https://huggingface.co/datasets/${id}`;
+                  } else if (type === 'space') {
+                    url = `https://huggingface.co/spaces/${id}`;
+                  } else {
+                    url = `https://huggingface.co/${id}`;
+                  }
+                }
+
+                return (
+                  <div
+                    key={`${fullName}-${rank}`}
+                    className="group flex items-center justify-between gap-4 py-2.5 px-2 rounded-lg hover:bg-neutral-50 dark:hover:bg-dark-bg-tertiary cursor-pointer transition-colors"
+                    onClick={() => {
+                      if (url) {
+                        window.open(url, '_blank', 'noopener,noreferrer');
+                      }
+                    }}
+                  >
+                    {/* Left side */}
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="w-5 text-[11px] font-semibold text-neutral-400 text-right">
+                        {rank}
+                      </div>
+                      <div className="w-6 h-6 rounded-full bg-neutral-200 dark:bg-neutral-700 flex-shrink-0 overflow-hidden">
+                        {repo.authorData?.avatarUrl && (
+                          <img
+                            src={repo.authorData.avatarUrl}
+                            alt={owner || 'avatar'}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        )}
+                      </div>
+                      <div className="min-w-0">
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-xs md:text-sm font-semibold text-primary-700 dark:text-dark-accent-primary-bg truncate">
+                            {fullName}
+                          </span>
+                          <span className="px-1.5 py-0.5 text-[8px] rounded-full bg-neutral-900/80 text-neutral-50 uppercase">
+                            {type}
+                          </span>
+                          {pipeline && (
+                            <span className="px-1.5 py-0.5 text-[8px] rounded-full bg-neutral-900/80 text-neutral-50">
+                              {pipeline}
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-[9px] text-neutral-500">
+                          ❤ {likes}
+                          {downloads != null && (
+                            <> · ⬇ {downloads.toLocaleString?.() || downloads}</>
+                          )}
+                          {updated && (
+                            <>
+                              {' '}
+                              · Last updated:{' '}
+                              {(() => {
+                                try {
+                                  return format(new Date(updated), 'yyyy-MM-dd');
+                                } catch {
+                                  return updated;
+                                }
+                              })()}
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                    {/* Right side */}
+                    <div className="text-right text-[9px] md:text-[10px] text-emerald-600 font-semibold">
+                      ❤ {likes}
+                      {downloads != null && (
+                        <div className="text-[8px] text-neutral-500">
+                          ⬇ {downloads.toLocaleString?.() || downloads}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
           </div>
-        </div>
-        
-        <div className="p-8 relative">
-          {/* Content Preview */}
-          <div className={`prose prose-lg max-w-none transition-all duration-500 dark:prose-invert ${
-            showFullContent ? 'max-h-none' : 'max-h-[400px] overflow-hidden'
-          }`}
-          style={{
-            '--tw-prose-headings': 'var(--color-neutral-900)',
-            '--tw-prose-body': 'var(--color-neutral-700)',
-            '--tw-prose-links': 'var(--color-primary-600)',
-          }}>
-            <MarkdownRenderer content={report.content} />
-          </div>
-          
-          {/* Enhanced gradient overlay when content is collapsed */}
-          {!showFullContent && (
-            <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-                 style={{ 
-                   background: 'linear-gradient(to top, var(--color-neutral-50) 0%, var(--color-neutral-50) 60%, transparent 100%)'
-                 }}></div>
-          )}
-          
-          {/* Enhanced action buttons */}
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to={`/reports/${report.id}`}
-              className="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-2xl shadow-lg text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-              style={{ 
-                background: 'var(--gradient-primary)',
-                boxShadow: 'var(--shadow-secondary)'
-              }}
-            >
-              📖 Đọc bài viết đầy đủ
-              <svg className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </Link>
-            
+
+          {/* Show more / less */}
+          <div className="mt-2 flex items-center justify-between text-[9px] text-neutral-500">
             <button
-              onClick={() => setShowFullContent(!showFullContent)}
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-2xl transition-all duration-300 hover:shadow-lg text-primary-700 dark:text-dark-accent-primary-bg bg-primary-50 dark:bg-dark-bg-tertiary border-2 border-primary-200 dark:border-dark-border-secondary hover:bg-primary-100 dark:hover:bg-dark-border-primary hover:border-primary-300 dark:hover:border-dark-border-secondary"
+              type="button"
+              onClick={() =>
+                setHfHubLimit((prev) => {
+                  const next = Math.max(10, prev - 10);
+                  return next;
+                })
+              }
+              className="hover:text-neutral-800 transition-colors flex items-center gap-1"
             >
-              {showFullContent ? '📤 Thu gọn' : '📥 Xem thêm'}
+              ▲ show less
+            </button>
+            <button
+              type="button"
+              onClick={() =>
+                setHfHubLimit((prev) => {
+                  const next = prev + 10;
+                  if (next <= 20) {
+                    return next;
+                  }
+                  // nếu đã vượt 20, forward sang Hugging Face theo tab hiện tại
+                  const base = 'https://huggingface.co';
+                  if (hfHubTab === 'datasets') {
+                    window.open(`${base}/datasets`, '_blank', 'noopener,noreferrer');
+                  } else if (hfHubTab === 'spaces') {
+                    window.open(`${base}/spaces`, '_blank', 'noopener,noreferrer');
+                  } else {
+                    window.open(`${base}/models`, '_blank', 'noopener,noreferrer');
+                  }
+                  return prev;
+                })
+              }
+              className="hover:text-neutral-800 transition-colors flex items-center gap-1"
+            >
+              ▼ show more
+            </button>
+          </div>
+
+          {/* Footer note removed for cleaner look */}
+        </div>
+
+        {/* Card 2: Hugging Face – Daily Papers */}
+        <div className="bg-white dark:bg-[#0f172a] rounded-3xl shadow-lg border border-neutral-200 dark:border-[#1f2937] p-6 md:p-7">
+          {/* Header */}
+          <div className="flex items-start justify-between mb-1">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+                <span className="text-lg">📚</span>
+              </div>
+              <div>
+                <h2 className="font-semibold text-lg md:text-xl text-neutral-900 dark:text-dark-text-primary">
+                  Daily Papers
+                </h2>
+                <p className="text-xs text-neutral-500 mt-0.5">
+                  Your daily dose of AI research by AK & the community
+                </p>
+              </div>
+            </div>
+            <button
+              type="button"
+              className="w-7 h-7 flex items-center justify-center rounded-full text-neutral-400 hover:text-neutral-700 hover:bg-neutral-100 dark:hover:bg-dark-bg-tertiary transition-colors"
+            >
+              ⋮
+            </button>
+          </div>
+
+          {/* Controls */}
+          <div className="mt-4 mb-3 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[10px] md:text-xs">
+            <div className="flex items-center gap-2">
+              <div className="inline-flex rounded-full bg-neutral-100 dark:bg-dark-bg-tertiary px-3 py-1">
+                <span className="text-[9px] text-neutral-600">Daily</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                // reload current view
+                setPapersLimit((prev) => prev);
+              }}
+              className="self-start md:self-auto px-3 py-1.5 rounded-full border border-neutral-200 dark:border-dark-border-secondary text-[10px] text-neutral-600 hover:bg-neutral-50 dark:hover:bg-dark-bg-tertiary transition-colors"
+            >
+              Refresh
+            </button>
+          </div>
+
+          {/* List skeleton */}
+          <div className="mt-1">
+            {papersLoading && (
+              <div className="py-4 text-xs text-neutral-500">Loading Daily Papers…</div>
+            )}
+            {papersError && !papersLoading && (
+              <div className="py-3 text-xs text-red-500">
+                {papersError}
+              </div>
+            )}
+            {!papersLoading && !papersError && papersItems.length === 0 && (
+              <div className="py-3 text-xs text-neutral-500">
+                No papers found for this date.
+              </div>
+            )}
+            {!papersLoading &&
+              !papersError &&
+              papersItems.map((paper, index) => {
+                const rank = index + 1;
+                const title = paper.title || 'Untitled paper';
+                const arxivId = paper.id || '';
+                const numAuthors = paper.numAuthors || 0;
+                const submitter = paper.submitter || '';
+                const likes = paper.likes ?? 0;
+                const comments = paper.comments ?? 0;
+                const collections = paper.collections ?? 0;
+                const url = paper.url || (arxivId ? `https://huggingface.co/papers/${arxivId}` : undefined);
+
+                return (
+                  <div
+                    key={`${arxivId || title}-${rank}`}
+                    className="group flex items-center justify-between gap-4 py-2.5 px-2 rounded-lg hover:bg-neutral-50 dark:hover:bg-dark-bg-tertiary cursor-pointer transition-colors"
+                    onClick={() => {
+                      if (url) {
+                        window.open(url, '_blank', 'noopener,noreferrer');
+                      }
+                    }}
+                  >
+                    {/* Left */}
+                    <div className="flex items-start gap-3 min-w-0">
+                      <div className="w-5 text-[11px] font-semibold text-neutral-400 text-right mt-0.5">
+                        {rank}
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-xs md:text-sm font-semibold text-primary-700 dark:text-dark-accent-primary-bg truncate">
+                          {title}
+                        </div>
+                        <div className="text-[9px] text-neutral-500">
+                          {arxivId && <>Arxiv: {arxivId} · </>}
+                          {numAuthors ? `${numAuthors} authors · ` : ''}
+                          {submitter && <>by {submitter}</>}
+                        </div>
+                      </div>
+                    </div>
+                    {/* Right */}
+                    <div className="text-right text-[8px] text-neutral-500">
+                      <div className="font-semibold text-emerald-400">
+                        ♥ {likes}
+                      </div>
+                      {comments > 0 && (
+                        <div>Comments {comments}</div>
+                      )}
+                      {collections > 0 && comments === 0 && (
+                        <div>Collections {collections}</div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+
+          {/* Show more / less */}
+          <div className="mt-2 flex items-center justify-between text-[9px] text-neutral-500">
+            <button
+              type="button"
+              onClick={() =>
+                setPapersLimit((prev) => Math.max(10, prev - 10))
+              }
+              className="hover:text-neutral-800 transition-colors flex items-center gap-1"
+            >
+              ▲ show less
+            </button>
+            <button
+              type="button"
+              onClick={() =>
+                setPapersLimit((prev) => {
+                  const next = prev + 10;
+                  if (next <= 20) {
+                    return next;
+                  }
+                  // Nếu đã vượt 20, forward sang trang Daily Papers
+                  window.open('https://huggingface.co/papers', '_blank', 'noopener,noreferrer');
+                  return prev;
+                })
+              }
+              className="hover:text-neutral-800 transition-colors flex items-center gap-1"
+            >
+              ▼ show more
             </button>
           </div>
         </div>
       </div>
-      
-      {/* Enhanced Quick Links Section - 5 report types */}
-      <div className="mb-16">
-        <h2 className="text-4xl font-bold text-center mb-12 text-primary">
-          Khám phá thêm
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Weekly Tech Reports */}
-          <Link 
-            to="/weekly-tech-reports" 
-            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
-          >
-            <div className="flex items-center mb-6">
-              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-blue-100 dark:bg-blue-900/20">
-                <svg className="h-8 w-8 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-blue-600 dark:group-hover:text-blue-400">
-              📖 Tạp chí Công nghệ
-            </h3>
-            <p className="leading-relaxed mb-4 text-secondary">
-              Bản tin công nghệ Việt Nam hàng tuần, tuyển chọn và phân tích.
-            </p>
-            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-blue-600 dark:text-blue-400">
-              Xem ngay
-              <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </div>
-          </Link>
 
-          {/* Combined Analysis */}
-          <Link 
-            to="/combined-analysis" 
-            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
-          >
-            <div className="flex items-center mb-6">
-              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-emerald-100 dark:bg-emerald-900/20">
-                <svg className="h-8 w-8 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
-              📊 Phân tích tổng hợp
-            </h3>
-            <p className="leading-relaxed mb-4 text-secondary">
-              Tổng hợp từ nhiều nguồn, phân tích xu hướng nổi bật.
-            </p>
-            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-emerald-600 dark:text-emerald-400">
-              Khám phá
-              <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </div>
-          </Link>
-
-          {/* Product Hunt Reports */}
-          <Link 
-            to="/product-hunt-reports" 
-            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
-          >
-            <div className="flex items-center mb-6">
-              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-orange-100 dark:bg-orange-900/20">
-                <svg className="h-8 w-8 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-orange-600 dark:group-hover:text-orange-400">
-              🚀 Product Hunt
-            </h3>
-            <p className="leading-relaxed mb-4 text-secondary">
-              Sản phẩm mới nổi bật mỗi ngày từ Product Hunt.
-            </p>
-            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-orange-600 dark:text-orange-400">
-              Xem ngay
-              <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </div>
-          </Link>
-
-          {/* Reddit Reports */}
-          <Link 
-            to="/reddit-reports" 
-            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
-          >
-            <div className="flex items-center mb-6">
-              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-orange-100 dark:bg-orange-900/20">
-                <svg className="h-8 w-8 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-orange-600 dark:group-hover:text-orange-400">
-              💬 Báo cáo Reddit
-            </h3>
-            <p className="leading-relaxed mb-4 text-secondary">
-              Thảo luận và insights từ cộng đồng Reddit.
-            </p>
-            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-orange-600 dark:text-orange-400">
-              Xem ngay
-              <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </div>
-          </Link>
-
-          {/* HackerNews Reports */}
-          <Link 
-            to="/hackernews-reports" 
-            className="group rounded-3xl shadow-lg p-8 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl bg-white dark:bg-dark-bg-secondary border border-neutral-200 dark:border-dark-border-secondary"
-          >
-            <div className="flex items-center mb-6">
-              <div className="p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300 bg-amber-100 dark:bg-amber-900/20">
-                <svg className="h-8 w-8 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold mb-3 transition-colors duration-200 text-primary group-hover:text-amber-600 dark:group-hover:text-amber-400">
-              🔥 Hacker News
-            </h3>
-            <p className="leading-relaxed mb-4 text-secondary">
-              Những câu chuyện công nghệ nổi bật từ HN.
-            </p>
-            <div className="flex items-center font-semibold group-hover:translate-x-2 transition-transform duration-200 text-amber-600 dark:text-amber-400">
-              Xem ngay
-              <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </div>
-          </Link>
-        </div>
-      </div>
+        {/* NOTE: Removed legacy "Khám phá thêm" quick-links grid here to avoid JSX duplication issues */}
 
       {/* Features Section - New */}
-      <div className="bg-neutral-50 dark:bg-dark-bg-secondary rounded-3xl p-8 md:p-12 mb-16">
+      <div className="bg-neutral-50 dark:bg-[#020817] rounded-3xl p-8 md:p-12 mb-16">
         <h2 className="text-3xl font-bold text-center mb-12 text-primary">Tại sao chọn Tech Digest Vietnam?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-center">
@@ -377,80 +738,6 @@ const HomePage = () => {
             </div>
             <h3 className="font-semibold text-primary mb-2">Chuyên sâu</h3>
             <p className="text-secondary text-sm">Phân tích chi tiết về công nghệ Việt Nam</p>
-          </div>
-        </div>
-      </div>
-      
-      
-      
-      {/* Tech Topics Showcase with new tag system */}
-      <div className="bg-white dark:bg-dark-bg-secondary rounded-xl shadow-lg p-6 mb-8 animate-fadeIn">
-        <h3 className="text-xl font-semibold text-primary mb-4 flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-indigo-600 dark:text-dark-accent-primary-bg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.99 1.99 0 013 12V7a4 4 0 014-4z" />
-          </svg>
-          Chủ đề công nghệ nổi bật
-        </h3>
-          <p className="text-secondary mb-6">Khám phá các xu hướng mới nhất trong công nghệ và đổi mới</p>
-        
-        <div className="space-y-6">
-          {/* AI & Machine Learning */}
-          <div>
-            <h4 className="text-lg font-medium text-primary mb-3">Trí tuệ nhân tạo & Máy học</h4>
-            <div className="flex flex-wrap gap-2">
-              <TagComponent variant="primary" size="medium">Phát triển AI</TagComponent>
-              <TagComponent variant="info" size="medium">Machine Learning</TagComponent>
-              <TagComponent variant="success" size="medium">Deep Learning</TagComponent>
-              <TagComponent variant="warning" size="medium">Neural Networks</TagComponent>
-              <TagComponent variant="secondary" size="medium">Computer Vision</TagComponent>
-            </div>
-          </div>
-
-          {/* Web Technologies */}
-          <div>
-            <h4 className="text-lg font-medium text-primary mb-3">Công nghệ Web</h4>
-            <div className="flex flex-wrap gap-2">
-              <TagComponent variant="primary" size="small">React</TagComponent>
-              <TagComponent variant="info" size="small">Node.js</TagComponent>
-              <TagComponent variant="success" size="small">TypeScript</TagComponent>
-              <TagComponent variant="warning" size="small">GraphQL</TagComponent>
-              <TagComponent variant="danger" size="small">WebAssembly</TagComponent>
-              <TagComponent variant="secondary" size="small">PWA</TagComponent>
-            </div>
-          </div>
-
-          {/* Cloud & DevOps */}
-          <div>
-            <h4 className="text-lg font-medium text-primary mb-3">Cloud & DevOps</h4>
-            <div className="flex flex-wrap gap-2">
-              <TagComponent variant="primary" size="large">AWS</TagComponent>
-              <TagComponent variant="info" size="medium">Docker</TagComponent>
-              <TagComponent variant="success" size="medium">Kubernetes</TagComponent>
-              <TagComponent variant="warning" size="medium">CI/CD</TagComponent>
-              <TagComponent variant="secondary" size="medium">Microservices</TagComponent>
-            </div>
-          </div>
-
-          {/* Emerging Technologies */}
-          <div>
-            <h4 className="text-lg font-medium text-primary mb-3">Công nghệ mới nổi</h4>
-            <div className="flex flex-wrap gap-2">
-              <TagComponent variant="primary" size="medium" closable onClose={() => console.log('Closed Blockchain')}>
-                Blockchain
-              </TagComponent>
-              <TagComponent variant="info" size="medium" closable onClose={() => console.log('Closed IoT')}>
-                Internet of Things
-              </TagComponent>
-              <TagComponent variant="success" size="medium" closable onClose={() => console.log('Closed Quantum')}>
-                Quantum Computing
-              </TagComponent>
-              <TagComponent variant="warning" size="medium" closable onClose={() => console.log('Closed AR/VR')}>
-                AR/VR
-              </TagComponent>
-              <TagComponent variant="danger" size="medium" closable onClose={() => console.log('Closed Edge')}>
-                Edge Computing
-              </TagComponent>
-            </div>
           </div>
         </div>
       </div>
