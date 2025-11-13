@@ -1,12 +1,8 @@
 // src/pages/HomePage.jsx (enhanced version)
 import { format } from 'date-fns';
-import { vi } from 'date-fns/locale';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import ErrorMessage from '../components/ErrorMessage';
 import LoadingSpinner from '../components/LoadingSpinner';
-import MarkdownRenderer from '../components/MarkdownRenderer';
-import TagComponent from '../components/TagComponent';
 import { fetchLatestReport } from '../services/api';
 
 const HomePage = () => {
@@ -14,7 +10,6 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [showFullContent, setShowFullContent] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   // Hugging Face Hub state
@@ -25,7 +20,7 @@ const HomePage = () => {
   const [hfHubItems, setHfHubItems] = useState([]);
 
   // Daily Papers state
-  const [papersDate, setPapersDate] = useState(() => {
+  const [papersDate] = useState(() => {
     const d = new Date();
     const yyyy = d.getFullYear();
     const mm = String(d.getMonth() + 1).padStart(2, '0');
