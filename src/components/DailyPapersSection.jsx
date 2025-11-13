@@ -1,5 +1,4 @@
 import React, { useState, useEffect, memo } from 'react';
-import { format } from 'date-fns';
 
 const DailyPapersSection = () => {
   const [papersDate] = useState(() => {
