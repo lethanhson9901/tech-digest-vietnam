@@ -4,6 +4,205 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkBreaks from 'remark-breaks';
 
+const slugify = (value) => {
+  if (value === undefined || value === null) return '';
+  return String(value)
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .trim();
+};
+
+const extractText = (value) => {
+  if (value === undefined || value === null) return '';
+  if (typeof value === 'string') return value;
+  if (typeof value === 'number') return String(value);
+  if (Array.isArray(value)) {
+    return value.map(extractText).join(' ');
+  }
+  if (typeof value === 'object' && value.props?.children) {
+    return extractText(value.props.children);
+  }
+  return '';
+};
+
+const enhanceOrganizedByTopic = (markdown) => {
+  if (!markdown) return markdown;
+
+  const headingList = [];
+  markdown.replace(/^#{2,6}\s+(.+)$/gm, (_, title) => {
+    headingList.push({
+      title,
+      slug: slugify(title)
+    });
+    return _;
+  });
+
+  const cleanTitle = (value) => {
+    if (!value) return '';
+    return value
+      .replace(/\(.*?\)/g, '')
+      .replace(/[*_`]/g, '')
+      .replace(/^\d+[\.\)]\s*/, '')
+      .replace(/[:：]\s*$/g, '')
+      .replace(/[–—-]\s*$/g, '')
+      .trim();
+  };
+
+  const findHeadingSlug = (value) => {
+    if (!value) return '';
+    const baseSlug = slugify(value);
+    if (!baseSlug) return '';
+    const exact = headingList.find((h) => h.slug === baseSlug);
+    if (exact) return exact.slug;
+    const partial = headingList.find(
+      (h) => h.slug.includes(baseSlug) || baseSlug.includes(h.slug)
+    );
+    return partial ? partial.slug : baseSlug;
+  };
+
+  const resolveSlugForTitle = (title) => {
+    const attempts = [title, cleanTitle(title)];
+    for (const attempt of attempts) {
+      const slug = findHeadingSlug(attempt);
+      if (slug) return slug;
+    }
+    return slugify(cleanTitle(title) || title);
+  };
+
+  const lines = markdown.split('\n');
+  let inToc = false;
+  let tocHeadingLevel = null;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const headingMatch = line.match(/^(#{2,6})\s+(.+)$/);
+    if (headingMatch) {
+      const headingText = headingMatch[2].toLowerCase();
+      const headingLevel = headingMatch[1].length;
+      const isOrganizedByTopic =
+        headingText.includes('organized by topic') ||
+        headingText.includes('mục lục');
+
+      if (isOrganizedByTopic) {
+        inToc = true;
+        tocHeadingLevel = headingLevel;
+        continue;
+      }
+
+      if (inToc && headingLevel <= tocHeadingLevel) {
+        inToc = false;
+      }
+    }
+
+    if (!inToc) continue;
+
+    const listMatch = line.match(
+      /^(\s*(?:[-*]|\d+\.|\d+\)|\d+-)\s+)(.+)$/
+    );
+    if (!listMatch) continue;
+
+    const prefix = listMatch[1];
+    const rest = listMatch[2].trim();
+    if (!rest) continue;
+
+    const existingLinkMatch = rest.match(/^\[(.+?)\]\(#([^)]+)\)(.*)$/);
+    if (existingLinkMatch) {
+      const linkText = existingLinkMatch[1].trim();
+      const trailing = existingLinkMatch[3] || '';
+      const headingSlug = resolveSlugForTitle(linkText);
+      lines[i] = `${prefix}[${linkText}](#${headingSlug})${trailing}`;
+      continue;
+    }
+
+    const headingSlug = resolveSlugForTitle(rest);
+    lines[i] = `${prefix}[${rest}](#${headingSlug})`;
+  }
+
+  return lines.join('\n');
+};
+
+const decodeTargetId = (value = '') => {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+};
+
+const findHeadingElement = (rawTargetId) => {
+  if (!rawTargetId) return null;
+
+  const decoded = decodeTargetId(rawTargetId).trim();
+  if (!decoded) return null;
+
+  const normalized = slugify(decoded);
+  const normalizedCompact = normalized.replace(/-/g, '');
+  const decodedLower = decoded.toLowerCase();
+  const decodedCompact = decodedLower.replace(/[-\s]/g, '');
+
+  const candidateIds = Array.from(new Set([
+    decoded,
+    decodedLower,
+    normalized,
+    normalizedCompact,
+    decoded.replace(/-/g, ''),
+    decodedCompact
+  ])).filter(Boolean);
+
+  for (const candidate of candidateIds) {
+    const element = document.getElementById(candidate);
+    if (element) {
+      return element;
+    }
+  }
+
+  const allHeadings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+  for (const heading of allHeadings) {
+    if (!heading) continue;
+    
+    const headingId = heading.id || '';
+    if (headingId) {
+      const headingIdLower = headingId.toLowerCase();
+      const headingIdNormalized = slugify(headingId);
+      const headingIdCompact = headingIdNormalized.replace(/-/g, '');
+      if (
+        headingId === decoded ||
+        headingIdLower === decodedLower ||
+        headingIdNormalized === normalized ||
+        headingIdCompact === normalizedCompact
+      ) {
+        return heading;
+      }
+    }
+
+    const headingTextSlug = slugify(heading.textContent || '');
+    const headingTextCompact = headingTextSlug.replace(/-/g, '');
+    if (
+      headingTextSlug === normalized ||
+      headingTextCompact === normalizedCompact
+    ) {
+      return heading;
+    }
+  }
+
+  return null;
+};
+
+const scrollToHeading = (targetId) => {
+  const targetElement = findHeadingElement(targetId);
+  if (targetElement) {
+    targetElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+    return true;
+  }
+  return false;
+};
+
 const MarkdownRenderer = ({ content, autoTOC = false }) => {
 
   // Pre-process content to remove visible HTML ID tags, backticks, and replace &nbsp; with newlines
@@ -27,52 +226,29 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
       .replace(/<a id="([^"]+)">/g, '')
       .replace(/<\/a>/g, '');
     
+    if (autoTOC) {
+      processedContent = enhanceOrganizedByTopic(processedContent);
+    }
+    
     return processedContent;
   };
 
   // Handle smooth scrolling for TOC links
   useEffect(() => {
     const handleTOCClick = (event) => {
-      const target = event.target;
-      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
-        event.preventDefault();
-        const targetId = target.getAttribute('href').substring(1);
-        console.log('TOC Click - Target ID:', targetId); // Debug log
-        
-        // Try to find element by ID
-        let targetElement = document.getElementById(targetId);
-        
-        // If not found, try to find by partial match or similar ID
-        if (!targetElement) {
-          const allHeadings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-          for (let heading of allHeadings) {
-            if (heading.id) {
-              // Try exact match first
-              if (heading.id === targetId) {
-                targetElement = heading;
-                break;
-              }
-              // Try partial match (remove all dashes and compare)
-              const headingIdClean = heading.id.replace(/-/g, '');
-              const targetIdClean = targetId.replace(/-/g, '');
-              if (headingIdClean === targetIdClean || headingIdClean.includes(targetIdClean)) {
-                targetElement = heading;
-                break;
-              }
-            }
-          }
-        }
-        
-        console.log('Found element:', targetElement); // Debug log
-        
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        } else {
-          console.warn('Element not found for ID:', targetId);
-        }
+      const link = event.target?.closest?.('a');
+      if (!link) return;
+      
+      const href = link.getAttribute('href') || '';
+      const hashIndex = href.indexOf('#');
+      if (hashIndex === -1) return;
+      
+      const targetId = href.substring(hashIndex + 1);
+      if (!targetId) return;
+      
+      event.preventDefault();
+      if (!scrollToHeading(targetId)) {
+        console.warn('Element not found for ID:', targetId);
       }
     };
 
@@ -90,17 +266,8 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
   const components = {
     // Custom heading component để tạo ID cho smooth scrolling
     h1: ({ node, children, ...props }) => {
-      const createId = (text) => {
-        return String(text)
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
-          .replace(/[^a-z0-9\s-]/g, '')
-          .replace(/\s+/g, '-')
-          .trim();
-      };
-      const id = children ? createId(children) : '';
-      console.log('H1 ID created:', id, 'from:', children); // Debug log
+      const headingText = extractText(children);
+      const id = slugify(headingText);
       return (
         <h1 id={id} className="text-3xl font-bold text-gray-900 dark:text-white mb-4 mt-8 first:mt-0" {...props}>
           {children}
@@ -108,17 +275,8 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
       );
     },
     h2: ({ node, children, ...props }) => {
-      const createId = (text) => {
-        return String(text)
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
-          .replace(/[^a-z0-9\s-]/g, '')
-          .replace(/\s+/g, '-')
-          .trim();
-      };
-      const id = children ? createId(children) : '';
-      console.log('H2 ID created:', id, 'from:', children); // Debug log
+      const headingText = extractText(children);
+      const id = slugify(headingText);
       return (
         <h2 id={id} className="text-2xl font-bold text-gray-900 dark:text-white mb-3 mt-6 first:mt-0" {...props}>
           {children}
@@ -126,17 +284,8 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
       );
     },
     h3: ({ node, children, ...props }) => {
-      const createId = (text) => {
-        return String(text)
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
-          .replace(/[^a-z0-9\s-]/g, '')
-          .replace(/\s+/g, '-')
-          .trim();
-      };
-      const id = children ? createId(children) : '';
-      console.log('H3 ID created:', id, 'from:', children); // Debug log
+      const headingText = extractText(children);
+      const id = slugify(headingText);
       return (
         <h3 id={id} className="text-xl font-bold text-gray-900 dark:text-white mb-2 mt-4 first:mt-0" {...props}>
           {children}
@@ -144,16 +293,8 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
       );
     },
     h4: ({ node, children, ...props }) => {
-      const createId = (text) => {
-        return String(text)
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
-          .replace(/[^a-z0-9\s-]/g, '')
-          .replace(/\s+/g, '-')
-          .trim();
-      };
-      const id = children ? createId(children) : '';
+      const headingText = extractText(children);
+      const id = slugify(headingText);
       return (
         <h4 id={id} className="text-lg font-bold text-gray-900 dark:text-white mb-2 mt-4 first:mt-0" {...props}>
           {children}
@@ -161,16 +302,8 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
       );
     },
     h5: ({ node, children, ...props }) => {
-      const createId = (text) => {
-        return String(text)
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
-          .replace(/[^a-z0-9\s-]/g, '')
-          .replace(/\s+/g, '-')
-          .trim();
-      };
-      const id = children ? createId(children) : '';
+      const headingText = extractText(children);
+      const id = slugify(headingText);
       return (
         <h5 id={id} className="text-base font-bold text-gray-900 dark:text-white mb-2 mt-3 first:mt-0" {...props}>
           {children}
@@ -178,16 +311,8 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
       );
     },
     h6: ({ node, children, ...props }) => {
-      const createId = (text) => {
-        return String(text)
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
-          .replace(/[^a-z0-9\s-]/g, '')
-          .replace(/\s+/g, '-')
-          .trim();
-      };
-      const id = children ? createId(children) : '';
+      const headingText = extractText(children);
+      const id = slugify(headingText);
       return (
         <h6 id={id} className="text-sm font-bold text-gray-900 dark:text-white mb-2 mt-3 first:mt-0" {...props}>
           {children}
@@ -281,46 +406,19 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
       className="prose prose-vietnamese dark:prose-invert max-w-none prose-lg prose-blue"
       onClick={(e) => {
         // Handle TOC clicks directly on the container
-        const target = e.target;
-        if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
-          e.preventDefault();
-          const targetId = target.getAttribute('href').substring(1);
-          console.log('Container TOC Click - Target ID:', targetId);
-          
-          // Try to find element by ID
-          let targetElement = document.getElementById(targetId);
-          
-          // If not found, try to find by partial match or similar ID
-          if (!targetElement) {
-            const allHeadings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-            for (let heading of allHeadings) {
-              if (heading.id) {
-                // Try exact match first
-                if (heading.id === targetId) {
-                  targetElement = heading;
-                  break;
-                }
-                // Try partial match (remove all dashes and compare)
-                const headingIdClean = heading.id.replace(/-/g, '');
-                const targetIdClean = targetId.replace(/-/g, '');
-                if (headingIdClean === targetIdClean || headingIdClean.includes(targetIdClean)) {
-                  targetElement = heading;
-                  break;
-                }
-              }
-            }
-          }
-          
-          console.log('Container Found element:', targetElement);
-          
-          if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          } else {
-            console.warn('Container Element not found for ID:', targetId);
-          }
+        const link = e.target?.closest?.('a');
+        if (!link) return;
+        
+        const href = link.getAttribute('href') || '';
+        const hashIndex = href.indexOf('#');
+        if (hashIndex === -1) return;
+        
+        const targetId = href.substring(hashIndex + 1);
+        if (!targetId) return;
+        
+        e.preventDefault();
+        if (!scrollToHeading(targetId)) {
+          console.warn('Container Element not found for ID:', targetId);
         }
       }}
     >
