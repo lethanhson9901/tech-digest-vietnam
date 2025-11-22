@@ -124,8 +124,12 @@ const HomePage = () => {
       <div className="space-y-8 mb-14">
         <HuggingFaceHubSection />
         <OpenRouterModelsSection />
-        <DailyPapersSection />
         <GitHubTrendingSection />
+      </div>
+
+      {/* Daily Papers Section at the bottom */}
+      <div className="mb-14">
+        <DailyPapersSection />
       </div>
 
         {/* NOTE: Removed legacy "Khám phá thêm" quick-links grid here to avoid JSX duplication issues */}
