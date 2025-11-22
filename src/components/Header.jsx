@@ -116,6 +116,9 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
     ),
     '/weekly-tech-reports-archive': (
       <svg className="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+    ),
+    '/quick-view': (
+      <svg className="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     )
   };
 
@@ -153,6 +156,15 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
         </svg>
       ),
       dropdownItems: [
+        {
+          path: '/quick-view',
+          label: 'Tóm tắt nhanh',
+          icon: (
+            <svg className="w-4 h-4 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          )
+        },
         {
           path: '/combined-analysis/latest',
           label: 'Phân tích tổng hợp',

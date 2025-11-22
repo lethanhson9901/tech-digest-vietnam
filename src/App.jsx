@@ -24,6 +24,7 @@ import ReportDetailPage from './pages/ReportDetailPage';
 import LatestWeeklyTechReportPage from './pages/LatestWeeklyTechReportPage';
 import WeeklyTechReportDetailPage from './pages/WeeklyTechReportDetailPage';
 import WeeklyTechReportsArchivePage from './pages/WeeklyTechReportsArchivePage';
+import QuickViewPage from './pages/QuickViewPage';
 
 // Enhanced UX Components
 import { FocusProvider, KeyboardShortcut, SkipToMain } from './components/FocusManager';
@@ -222,6 +223,7 @@ const App = () => {
                   <Route path="/weekly-tech-reports" element={<LatestWeeklyTechReportPage />} />
                   <Route path="/weekly-tech-reports/:id" element={<WeeklyTechReportDetailPage />} />
                   <Route path="/weekly-tech-reports-archive" element={<WeeklyTechReportsArchivePage />} />
+                  <Route path="/quick-view" element={<QuickViewPage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </main>
