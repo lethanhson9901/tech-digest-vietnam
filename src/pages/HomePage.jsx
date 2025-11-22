@@ -5,6 +5,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import HuggingFaceHubSection from '../components/HuggingFaceHubSection';
 import OpenRouterModelsSection from '../components/OpenRouterModelsSection';
 import DailyPapersSection from '../components/DailyPapersSection';
+import GitHubTrendingSection from '../components/GitHubTrendingSection';
 import { fetchLatestReport } from '../services/api';
 
 const HomePage = () => {
@@ -124,6 +125,7 @@ const HomePage = () => {
         <HuggingFaceHubSection />
         <OpenRouterModelsSection />
         <DailyPapersSection />
+        <GitHubTrendingSection />
       </div>
 
         {/* NOTE: Removed legacy "Khám phá thêm" quick-links grid here to avoid JSX duplication issues */}
