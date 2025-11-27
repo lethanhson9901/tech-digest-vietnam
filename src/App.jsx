@@ -25,6 +25,9 @@ import LatestWeeklyTechReportPage from './pages/LatestWeeklyTechReportPage';
 import WeeklyTechReportDetailPage from './pages/WeeklyTechReportDetailPage';
 import WeeklyTechReportsArchivePage from './pages/WeeklyTechReportsArchivePage';
 import QuickViewPage from './pages/QuickViewPage';
+import AINewsReportDetailPage from './pages/AINewsReportDetailPage';
+import AINewsReportsArchivePage from './pages/AINewsReportsArchivePage';
+import LatestAINewsReportPage from './pages/LatestAINewsReportPage';
 
 // Enhanced UX Components
 import { FocusProvider, KeyboardShortcut, SkipToMain } from './components/FocusManager';
@@ -223,6 +226,9 @@ const App = () => {
                   <Route path="/weekly-tech-reports" element={<LatestWeeklyTechReportPage />} />
                   <Route path="/weekly-tech-reports/:id" element={<WeeklyTechReportDetailPage />} />
                   <Route path="/weekly-tech-reports-archive" element={<WeeklyTechReportsArchivePage />} />
+                  <Route path="/ai-news" element={<LatestAINewsReportPage />} />
+                  <Route path="/ai-news/:id" element={<AINewsReportDetailPage />} />
+                  <Route path="/ai-news-archive" element={<AINewsReportsArchivePage />} />
                   <Route path="/quick-view" element={<QuickViewPage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>

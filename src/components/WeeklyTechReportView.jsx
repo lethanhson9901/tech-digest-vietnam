@@ -7,7 +7,7 @@ import LoadingSpinner from './LoadingSpinner';
 import MarkdownRenderer from './MarkdownRenderer';
 import SocialLinks from './SocialLinks';
 
-const WeeklyTechReportView = ({ report, isLoading, error }) => {
+const WeeklyTechReportView = ({ report, isLoading, error, contentType = 'weekly-tech-reports' }) => {
   const navigate = useNavigate();
   const [readingProgress, setReadingProgress] = useState(0);
   const [isHeaderMinimized, setIsHeaderMinimized] = useState(false);
@@ -23,6 +23,32 @@ const WeeklyTechReportView = ({ report, isLoading, error }) => {
   const getIssueNumber = (filename) => {
     const match = filename?.match(/issue-(\d+)/i);
     return match ? match[1] : null;
+  };
+
+  // Get content type display name
+  const getContentTypeName = (type) => {
+    const names = {
+      'weekly-tech-reports': 'Tạp chí Công nghệ hằng tuần',
+      'ai-news': 'AI News',
+      'combined-analysis': 'Phân tích tổng hợp',
+      'reddit-reports': 'Reddit Reports',
+      'hackernews-reports': 'Hacker News Reports',
+      'product-hunt-reports': 'Product Hunt Reports'
+    };
+    return names[type] || 'Báo cáo';
+  };
+
+  // Get archive path based on content type
+  const getArchivePath = (type) => {
+    const paths = {
+      'weekly-tech-reports': '/weekly-tech-reports-archive',
+      'ai-news': '/ai-news-archive',
+      'combined-analysis': '/combined-analysis',
+      'reddit-reports': '/reddit-reports-archive',
+      'hackernews-reports': '/hackernews-reports-archive',
+      'product-hunt-reports': '/product-hunt-reports-archive'
+    };
+    return paths[type] || '/archive';
   };
 
   // Reading progress tracking
@@ -46,8 +72,8 @@ const WeeklyTechReportView = ({ report, isLoading, error }) => {
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className="text-center space-y-6">
           <div className="relative">
-            <LoadingSpinner 
-              size="large" 
+            <LoadingSpinner
+              size="large"
               color="blue"
               showText={false}
             />
@@ -55,7 +81,7 @@ const WeeklyTechReportView = ({ report, isLoading, error }) => {
           </div>
           <div className="space-y-2">
             <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
-              Đang tải Tạp chí Công nghệ
+              Đang tải {getContentTypeName(contentType)}
             </h3>
             <p className="text-gray-500 dark:text-gray-400">
               Vui lòng chờ trong giây lát...
@@ -167,9 +193,9 @@ const WeeklyTechReportView = ({ report, isLoading, error }) => {
               <h1 className={`font-bold text-white transition-all duration-500 ${
                 isHeaderMinimized ? 'text-xl lg:text-2xl' : 'text-3xl lg:text-5xl'
               }`}>
-                {report.filename?.replace(/\.vi\.md$/, '').replace(/issue-\d+-/, '') || 'Tạp chí Công nghệ hằng tuần'}
+                {report.filename?.replace(/\.vi\.md$/, '').replace(/\.md$/, '').replace(/issue-\d+-/, '') || getContentTypeName(contentType)}
               </h1>
-              
+
               {!isHeaderMinimized && (
                 <div className="flex flex-wrap items-center gap-6 text-white/80">
                   <div className="flex items-center space-x-2">
@@ -178,12 +204,12 @@ const WeeklyTechReportView = ({ report, isLoading, error }) => {
                     </svg>
                     <span className="font-medium">{formatDate(report.upload_date)}</span>
                   </div>
-                  
+
                   <div className="flex items-center space-x-2">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <span>Tạp chí Công nghệ</span>
+                    <span>{getContentTypeName(contentType)}</span>
                   </div>
                 </div>
               )}
@@ -254,8 +280,8 @@ const WeeklyTechReportView = ({ report, isLoading, error }) => {
                 <span>Chia sẻ</span>
               </button>
               
-              <button 
-                onClick={() => navigate('/weekly-tech-reports-archive')}
+              <button
+                onClick={() => navigate(getArchivePath(contentType))}
                 className="flex items-center space-x-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
