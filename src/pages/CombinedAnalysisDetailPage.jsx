@@ -9,7 +9,7 @@ const CombinedAnalysisDetailPage = () => {
   const [analysis, setAnalysis] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  
+
   const { fetchById } = useCombinedAnalysis();
 
   useEffect(() => {
@@ -19,16 +19,13 @@ const CombinedAnalysisDetailPage = () => {
         setIsLoading(false);
         return;
       }
-      
+
       try {
-        console.log('Loading analysis with ID:', id);
         setIsLoading(true);
         setError(null);
         const data = await fetchById(id);
-        console.log('Analysis data loaded:', data);
         setAnalysis(data);
       } catch (err) {
-        console.error('Error loading analysis:', err);
         setError(err.message || 'Failed to load analysis');
       } finally {
         setIsLoading(false);
@@ -47,7 +44,7 @@ const CombinedAnalysisDetailPage = () => {
         if (element) {
           const yOffset = -80; // Offset for header
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          
+
           window.scrollTo({
             top: y,
             behavior: 'smooth'
@@ -66,7 +63,7 @@ const CombinedAnalysisDetailPage = () => {
     } else {
       document.title = `Analysis ${id} - Combined Analysis - Tech Digest Vietnam`;
     }
-    
+
     return () => {
       document.title = 'Tech Digest Vietnam';
     };
@@ -74,7 +71,7 @@ const CombinedAnalysisDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-neutral-50">
-      <CombinedAnalysisView 
+      <CombinedAnalysisView
         analysis={analysis}
         isLoading={isLoading}
         error={error}
@@ -83,4 +80,4 @@ const CombinedAnalysisDetailPage = () => {
   );
 };
 
-export default CombinedAnalysisDetailPage; 
+export default CombinedAnalysisDetailPage;
