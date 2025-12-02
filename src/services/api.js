@@ -402,6 +402,32 @@ export const fetchLatestQuickView = async () => {
   return response.json();
 };
 
+// China News API functions
+export const fetchChinaNews = async ({ source = '', limit = 10 }) => {
+  const params = new URLSearchParams({
+    ...(source && { source }),
+    limit
+  });
+
+  const response = await fetch(`${API_BASE_URL}/china-news/latest?${params}`);
+
+  if (!response.ok) {
+    throw new Error(`API error: ${response.status}`);
+  }
+
+  return response.json();
+};
+
+export const fetchLatestChinaNews = async () => {
+  const response = await fetch(`${API_BASE_URL}/china-news/latest`);
+
+  if (!response.ok) {
+    throw new Error(`API error: ${response.status}`);
+  }
+
+  return response.json();
+};
+
 // AI News Reports API functions
 export const fetchAINewsReports = async ({ skip = 0, limit = 10, search = '', dateFrom = '', dateTo = '' }) => {
   const params = new URLSearchParams({
