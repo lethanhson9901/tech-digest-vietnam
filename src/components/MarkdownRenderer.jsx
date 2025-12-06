@@ -162,7 +162,7 @@ const findHeadingElement = (rawTargetId) => {
   const allHeadings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
   for (const heading of allHeadings) {
     if (!heading) continue;
-    
+
     const headingId = heading.id || '';
     if (headingId) {
       const headingIdLower = headingId.toLowerCase();
@@ -208,7 +208,7 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
   // Pre-process content to remove visible HTML ID tags, backticks, and replace &nbsp; with newlines
   const processContent = (content) => {
     if (!content) return '';
-    
+
     let processedContent = content
       // Convert literal "\n" sequences to real newlines
       .replace(/\\n/g, '\n')
@@ -225,11 +225,11 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
       // Remove any remaining id="something" from the text
       .replace(/<a id="([^"]+)">/g, '')
       .replace(/<\/a>/g, '');
-    
+
     if (autoTOC) {
       processedContent = enhanceOrganizedByTopic(processedContent);
     }
-    
+
     return processedContent;
   };
 
@@ -238,14 +238,14 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
     const handleTOCClick = (event) => {
       const link = event.target?.closest?.('a');
       if (!link) return;
-      
+
       const href = link.getAttribute('href') || '';
       const hashIndex = href.indexOf('#');
       if (hashIndex === -1) return;
-      
+
       const targetId = href.substring(hashIndex + 1);
       if (!targetId) return;
-      
+
       event.preventDefault();
       if (!scrollToHeading(targetId)) {
         console.warn('Element not found for ID:', targetId);
@@ -254,7 +254,7 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
 
     // Add event listener for TOC clicks - use capture to ensure it runs
     document.addEventListener('click', handleTOCClick, true);
-    
+
     return () => {
       document.removeEventListener('click', handleTOCClick, true);
     };
@@ -322,11 +322,11 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
     code: ({ node, inline, className, children, ...props }) => {
       // Loại bỏ tất cả dấu backticks từ nội dung
       const cleanContent = String(children).replace(/`/g, '');
-      
+
       // Luôn sử dụng inline formatting đơn giản với font phù hợp tiếng Việt
       return (
-        <code 
-          className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-1.5 py-0.5 rounded text-sm border border-gray-200 dark:border-gray-700 font-['JetBrains_Mono',_'Fira_Code',_'Cascadia_Code',_'SF_Mono',_'Monaco',_'Consolas',_'Liberation_Mono',_'Menlo',_'Courier',_'monospace']" 
+        <code
+          className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-1.5 py-0.5 rounded text-sm border border-gray-200 dark:border-gray-700 font-['JetBrains_Mono',_'Fira_Code',_'Cascadia_Code',_'SF_Mono',_'Monaco',_'Consolas',_'Liberation_Mono',_'Menlo',_'Courier',_'monospace']"
           style={{
             fontFeatureSettings: '"liga" 1, "calt" 1',
             fontVariantLigatures: 'contextual',
@@ -366,24 +366,59 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
     // Style links - đảm bảo "Read More" mở tab mới và TOC links scroll smooth
     a: ({ node, href, children, ...props }) => {
       // Check if it's a "Read More" link (case insensitive)
-      const isReadMore = children && 
-        (children[0] === 'Read more' || 
-         children[0] === 'Read More' || 
+      const isReadMore = children &&
+        (children[0] === 'Read more' ||
+         children[0] === 'Read More' ||
          children[0] === 'read more' ||
          String(children[0]).toLowerCase().trim() === 'read more');
-      
+
       // Check if it's an external link
       const isExternal = href?.startsWith('http');
-      
+
       // Check if it's a TOC link (internal anchor)
       const isTOCLink = href?.startsWith('#');
-      
+
+      // Check if the link is an image file (image URL with common extensions)
+      const isImageLink = href && /\.(jpeg|jpg|gif|png|webp|svg|bmp|ico|tiff|avif)$/i.test(href);
+
+      // Check if the link is an S3 attachment (like the ones in the response.json)
+      const isS3Attachment = href && href.includes('s3.amazonaws.com') && !isExternal;
+      const isResendAttachment = href && href.includes('resend-attachments.s3.amazonaws.com');
+      const isImageS3Attachment = (isS3Attachment || isResendAttachment);
+
+      // If it's an image link, render it as an image component
+      if (isImageLink || isImageS3Attachment) {
+        const altText = Array.isArray(children) ? children.join(' ') : String(children || '');
+        return (
+          <div className="my-6 flex justify-center">
+            <div className="max-w-full overflow-hidden rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+              <img
+                src={href}
+                alt={altText}
+                className="w-full h-auto max-w-4xl object-contain transition-transform duration-300 hover:scale-105"
+                style={{
+                  maxHeight: '70vh',
+                  objectFit: 'contain'
+                }}
+                loading="lazy"
+                {...props}
+              />
+              {altText && (
+                <div className="px-4 py-2 bg-gray-50 dark:bg-gray-800 text-center">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 italic">{altText}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      }
+
       return (
-        <a 
-          href={href} 
+        <a
+          href={href}
           className={`${
-            isTOCLink 
-              ? "text-indigo-600 hover:text-indigo-800 hover:underline cursor-pointer" 
+            isTOCLink
+              ? "text-indigo-600 hover:text-indigo-800 hover:underline cursor-pointer"
               : "text-indigo-600 hover:text-indigo-800 hover:underline"
           }`}
           {...(isReadMore || isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
@@ -402,20 +437,20 @@ const MarkdownRenderer = ({ content, autoTOC = false }) => {
   };
 
   return (
-    <div 
+    <div
       className="prose prose-vietnamese dark:prose-invert max-w-none prose-lg prose-blue"
       onClick={(e) => {
         // Handle TOC clicks directly on the container
         const link = e.target?.closest?.('a');
         if (!link) return;
-        
+
         const href = link.getAttribute('href') || '';
         const hashIndex = href.indexOf('#');
         if (hashIndex === -1) return;
-        
+
         const targetId = href.substring(hashIndex + 1);
         if (!targetId) return;
-        
+
         e.preventDefault();
         if (!scrollToHeading(targetId)) {
           console.warn('Container Element not found for ID:', targetId);
