@@ -45,7 +45,7 @@ const enhanceOrganizedByTopic = (markdown) => {
     return value
       .replace(/\(.*?\)/g, '')
       .replace(/[*_`]/g, '')
-      .replace(/^\d+[\.\)]\s*/, '')
+      .replace(/^\d+[.\)]\s*/, '')
       .replace(/[:：]\s*$/g, '')
       .replace(/[–—-]\s*$/g, '')
       .trim();
