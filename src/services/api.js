@@ -19,8 +19,19 @@ export const fetchReports = async ({ skip = 0, limit = 10, search = '', dateFrom
   return response.json();
 };
 
-export const fetchLatestReport = async () => {
-  const response = await fetch(`${API_BASE_URL}/reports/latest`);
+export const fetchLatestReport = async ({ noCache = false } = {}) => {
+  const params = new URLSearchParams();
+
+  if (noCache) {
+    params.set('no-cache', '1');
+  }
+
+  const url = `${API_BASE_URL}/reports/latest${params.toString() ? `?${params}` : ''}`;
+  const fetchOptions = noCache 
+    ? { cache: 'no-store', headers: { 'Cache-Control': 'no-cache' } }
+    : undefined;
+
+  const response = await fetch(url, fetchOptions);
   
   if (!response.ok) {
     throw new Error(`API error: ${response.status}`);

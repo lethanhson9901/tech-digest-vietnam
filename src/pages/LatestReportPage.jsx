@@ -1,12 +1,14 @@
 // src/pages/LatestReportPage.jsx
 import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import ErrorMessage from '../components/ErrorMessage';
 import LoadingSpinner from '../components/LoadingSpinner';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 import { fetchLatestReport } from '../services/api';
 
 const LatestReportPage = () => {
+  const location = useLocation();
   const [report, setReport] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,7 +18,9 @@ const LatestReportPage = () => {
       try {
         setIsLoading(true);
         setError(null);
-        const data = await fetchLatestReport();
+        const noCacheParam = new URLSearchParams(location.search).get('no-cache');
+        const shouldBypassCache = noCacheParam !== null && noCacheParam.toLowerCase() !== 'false' && noCacheParam !== '0';
+        const data = await fetchLatestReport({ noCache: shouldBypassCache });
         setReport(data);
       } catch (err) {
         setError(err.message);
@@ -26,7 +30,7 @@ const LatestReportPage = () => {
     };
 
     loadLatestReport();
-  }, []);
+  }, [location.search]);
 
   if (isLoading) {
     return (

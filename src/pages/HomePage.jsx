@@ -1,5 +1,6 @@
 // src/pages/HomePage.jsx (enhanced version)
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import ErrorMessage from '../components/ErrorMessage';
 import LoadingSpinner from '../components/LoadingSpinner';
 import HuggingFaceHubSection from '../components/HuggingFaceHubSection';
@@ -9,6 +10,7 @@ import GitHubTrendingSection from '../components/GitHubTrendingSection';
 import { fetchLatestReport } from '../services/api';
 
 const HomePage = () => {
+  const location = useLocation();
   const [report, setReport] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -21,7 +23,9 @@ const HomePage = () => {
       try {
         setIsLoading(true);
         setError(null);
-        const data = await fetchLatestReport();
+        const noCacheParam = new URLSearchParams(location.search).get('no-cache');
+        const shouldBypassCache = noCacheParam !== null && noCacheParam.toLowerCase() !== 'false' && noCacheParam !== '0';
+        const data = await fetchLatestReport({ noCache: shouldBypassCache });
         setReport(data);
       } catch (err) {
         setError(err.message || 'Failed to load latest report');
@@ -47,7 +51,7 @@ const HomePage = () => {
       clearTimeout(timer);
       mediaQuery.removeEventListener?.('change', handleMotionChange);
     };
-  }, []);
+  }, [location.search]);
 
   if (isLoading) {
     return (
