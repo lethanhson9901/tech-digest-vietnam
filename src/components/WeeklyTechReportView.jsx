@@ -25,10 +25,18 @@ const WeeklyTechReportView = ({ report, isLoading, error, contentType = 'weekly-
     return match ? match[1] : null;
   };
 
+  const getDisplayTitle = (type, filename) => {
+    if (type === 'china-news') {
+      return 'Shawn Weekly';
+    }
+    return filename?.replace(/\.vi\.md$/, '').replace(/\.md$/, '').replace(/issue-\d+-/, '') || getContentTypeName(type);
+  };
+
   // Get content type display name
   const getContentTypeName = (type) => {
     const names = {
       'weekly-tech-reports': 'Tạp chí Công nghệ hằng tuần',
+      'china-news': 'Shawn Weekly',
       'ai-news': 'AI News',
       'combined-analysis': 'Phân tích tổng hợp',
       'reddit-reports': 'Reddit Reports',
@@ -42,6 +50,7 @@ const WeeklyTechReportView = ({ report, isLoading, error, contentType = 'weekly-
   const getArchivePath = (type) => {
     const paths = {
       'weekly-tech-reports': '/weekly-tech-reports-archive',
+      'china-news': '/china-news',
       'ai-news': '/ai-news-archive',
       'combined-analysis': '/combined-analysis',
       'reddit-reports': '/reddit-reports-archive',
@@ -50,6 +59,16 @@ const WeeklyTechReportView = ({ report, isLoading, error, contentType = 'weekly-
     };
     return paths[type] || '/archive';
   };
+
+  const getContentSubtitle = (type) => {
+    const subtitles = {
+      'weekly-tech-reports': 'Cập nhật công nghệ hàng tuần',
+      'china-news': 'Bản dịch tiếng Việt từ Shawn Weekly',
+    };
+    return subtitles[type] || 'Nội dung tuyển chọn mới nhất';
+  };
+
+  const shouldShowArchiveCta = (type) => type !== 'china-news';
 
   // Reading progress tracking
   useEffect(() => {
@@ -193,7 +212,7 @@ const WeeklyTechReportView = ({ report, isLoading, error, contentType = 'weekly-
               <h1 className={`font-bold text-white transition-all duration-500 ${
                 isHeaderMinimized ? 'text-xl lg:text-2xl' : 'text-3xl lg:text-5xl'
               }`}>
-                {report.filename?.replace(/\.vi\.md$/, '').replace(/\.md$/, '').replace(/issue-\d+-/, '') || getContentTypeName(contentType)}
+                {getDisplayTitle(contentType, report.filename)}
               </h1>
 
               {!isHeaderMinimized && (
@@ -235,7 +254,7 @@ const WeeklyTechReportView = ({ report, isLoading, error, contentType = 'weekly-
                       Nội dung chính
                     </h2>
                     <p className="text-gray-500 dark:text-gray-400 text-sm">
-                      Cập nhật công nghệ hàng tuần
+                      {getContentSubtitle(contentType)}
                     </p>
                   </div>
                 </div>
@@ -280,15 +299,17 @@ const WeeklyTechReportView = ({ report, isLoading, error, contentType = 'weekly-
                 <span>Chia sẻ</span>
               </button>
               
-              <button
-                onClick={() => navigate(getArchivePath(contentType))}
-                className="flex items-center space-x-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-                <span>Xem thêm</span>
-              </button>
+              {shouldShowArchiveCta(contentType) && (
+                <button
+                  onClick={() => navigate(getArchivePath(contentType))}
+                  className="flex items-center space-x-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                  <span>Xem thêm</span>
+                </button>
+              )}
             </div>
           </div>
         </main>
