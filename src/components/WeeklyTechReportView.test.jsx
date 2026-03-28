@@ -26,6 +26,6 @@ describe('WeeklyTechReportView', () => {
     expect(screen.getByRole('heading', { name: 'Shawn Weekly' })).toBeInTheDocument();
     expect(screen.getByText('Bản dịch tiếng Việt từ Shawn Weekly')).toBeInTheDocument();
     expect(screen.getByText('# Ban tin Shawn Weekly')).toBeInTheDocument();
-    expect(screen.queryByText('Xem thêm')).not.toBeInTheDocument();
+    expect(screen.getByText('Xem thêm')).toBeInTheDocument();
   });
 });

@@ -439,6 +439,49 @@ export const fetchLatestChinaNews = async () => {
   return response.json();
 };
 
+export const fetchChinaNewsReports = async ({ skip = 0, limit = 10, search = '', dateFrom = '', dateTo = '' }) => {
+  const params = new URLSearchParams({
+    skip,
+    limit,
+    ...(search && { search }),
+    ...(dateFrom && { date_from: dateFrom }),
+    ...(dateTo && { date_to: dateTo })
+  });
+
+  const response = await fetch(`${API_BASE_URL}/china-news?${params}`);
+
+  if (!response.ok) {
+    throw new Error(`API error: ${response.status}`);
+  }
+
+  return response.json();
+};
+
+export const fetchChinaNewsReportById = async (id) => {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/china-news/${id}`, {
+      signal: controller.signal
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status} - ${response.statusText}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    clearTimeout(timeoutId);
+    if (error.name === 'AbortError') {
+      throw new Error('Request timeout - The server is taking too long to respond');
+    }
+    throw error;
+  }
+};
+
 // AI News Reports API functions
 export const fetchAINewsReports = async ({ skip = 0, limit = 10, search = '', dateFrom = '', dateTo = '' }) => {
   const params = new URLSearchParams({

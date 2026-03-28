@@ -20,6 +20,8 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
         return `/reddit-reports/${report.id}`;
       case 'hackernews-reports':
         return `/hackernews-reports/${report.id}`;
+      case 'china-news':
+        return `/china-news/${report.id}`;
       default:
         return `/reports/${report.id}`;
     }
@@ -50,6 +52,12 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
         return (
           <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ${hoveredId ? 'text-orange-600' : 'text-orange-500'} transition-colors duration-200`} viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
+          </svg>
+        );
+      case 'china-news':
+        return (
+          <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ${hoveredId ? 'text-teal-600' : 'text-teal-500'} transition-colors duration-200`} viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm5.657-9A6.982 6.982 0 0011 4.343V9h4.657zM9 4.343A6.982 6.982 0 004.343 9H9V4.343zM4.343 11A6.982 6.982 0 009 15.657V11H4.343zM11 15.657A6.982 6.982 0 0015.657 11H11v4.657z" clipRule="evenodd" />
           </svg>
         );
       default:
@@ -87,6 +95,14 @@ const ListViewReportsList = ({ reports, totalCount, isLoading, error, params, up
           iconBgHover: 'bg-orange-100',
           textColor: 'text-orange-600',
           badgeColor: 'bg-orange-100 text-orange-800'
+        };
+      case 'china-news':
+        return {
+          hover: 'bg-teal-50',
+          iconBg: 'bg-teal-100',
+          iconBgHover: 'bg-teal-100',
+          textColor: 'text-teal-600',
+          badgeColor: 'bg-teal-100 text-teal-800'
         };
       default:
         return {

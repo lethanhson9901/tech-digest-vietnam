@@ -50,7 +50,7 @@ const WeeklyTechReportView = ({ report, isLoading, error, contentType = 'weekly-
   const getArchivePath = (type) => {
     const paths = {
       'weekly-tech-reports': '/weekly-tech-reports-archive',
-      'china-news': '/china-news',
+      'china-news': '/china-news-archive',
       'ai-news': '/ai-news-archive',
       'combined-analysis': '/combined-analysis',
       'reddit-reports': '/reddit-reports-archive',
@@ -68,7 +68,7 @@ const WeeklyTechReportView = ({ report, isLoading, error, contentType = 'weekly-
     return subtitles[type] || 'Nội dung tuyển chọn mới nhất';
   };
 
-  const shouldShowArchiveCta = (type) => type !== 'china-news';
+  const shouldShowArchiveCta = (_type) => true;
 
   // Reading progress tracking
   useEffect(() => {

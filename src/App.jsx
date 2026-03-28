@@ -29,6 +29,8 @@ import AINewsReportDetailPage from './pages/AINewsReportDetailPage';
 import AINewsReportsArchivePage from './pages/AINewsReportsArchivePage';
 import LatestAINewsReportPage from './pages/LatestAINewsReportPage';
 import ChinaNewsPage from './pages/ChinaNewsPage';
+import ChinaNewsArchivePage from './pages/ChinaNewsArchivePage';
+import ChinaNewsDetailPage from './pages/ChinaNewsDetailPage';
 
 // Enhanced UX Components
 import { FocusProvider, KeyboardShortcut, SkipToMain } from './components/FocusManager';
@@ -231,6 +233,8 @@ const App = () => {
                   <Route path="/ai-news/:id" element={<AINewsReportDetailPage />} />
                   <Route path="/ai-news-archive" element={<AINewsReportsArchivePage />} />
                   <Route path="/china-news" element={<ChinaNewsPage />} />
+                  <Route path="/china-news/:id" element={<ChinaNewsDetailPage />} />
+                  <Route path="/china-news-archive" element={<ChinaNewsArchivePage />} />
                   <Route path="/quick-view" element={<QuickViewPage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
