@@ -358,8 +358,19 @@ export const fetchWeeklyTechReports = async ({ skip = 0, limit = 10, search = ''
   return response.json();
 };
 
-export const fetchLatestWeeklyTechReport = async () => {
-  const response = await fetch(`${API_BASE_URL}/weekly-tech-reports/latest`);
+export const fetchLatestWeeklyTechReport = async ({ noCache = false } = {}) => {
+  const params = new URLSearchParams();
+
+  if (noCache) {
+    params.set('no-cache', '1');
+  }
+
+  const url = `${API_BASE_URL}/weekly-tech-reports/latest${params.toString() ? `?${params}` : ''}`;
+  const fetchOptions = noCache
+    ? { cache: 'no-store', headers: { 'Cache-Control': 'no-cache' } }
+    : undefined;
+
+  const response = await fetch(url, fetchOptions);
 
   if (!response.ok) {
     throw new Error(`API error: ${response.status}`);

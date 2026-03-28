@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { fetchWeeklyTechReports, fetchLatestWeeklyTechReport } from '../services/api';
 
 export const useWeeklyTechReports = ({ 
@@ -77,17 +77,17 @@ export const useWeeklyTechReports = ({
   };
 };
 
-export const useLatestWeeklyTechReport = () => {
+export const useLatestWeeklyTechReport = ({ noCache = false } = {}) => {
   const [report, setReport] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchLatest = async () => {
+  const fetchLatest = useCallback(async () => {
     setLoading(true);
     setError(null);
 
     try {
-      const data = await fetchLatestWeeklyTechReport();
+      const data = await fetchLatestWeeklyTechReport({ noCache });
       setReport(data);
     } catch (err) {
       setError(err.message);
@@ -95,11 +95,11 @@ export const useLatestWeeklyTechReport = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [noCache]);
 
   useEffect(() => {
     fetchLatest();
-  }, []);
+  }, [fetchLatest]);
 
   return {
     report,
